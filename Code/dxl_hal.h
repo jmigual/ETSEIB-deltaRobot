@@ -3,6 +3,10 @@
 #define _DYNAMIXEL_HAL_HEADER
 #include <QSerialPort>
 #include <QString>
+#include <QTime>
+
+#define MAXNUM_TXPACKET  (10000)
+#define MAXNUM_RXPACKET  (10000)
 
 class dxl_hal {
 private:
@@ -15,17 +19,9 @@ public:
     int open(QString &devName, int baudrate );
     void close(void);
     void clear(void);
-    int tx( unsigned char *pPacket, int numPacket );
-    int rx( unsigned char *pPacket, int numPacket );
-    void set_timeout( int NumRcvByte );
-    int timeout(void);
+    int change_baudrate(float baudrate);
+    int write( unsigned char *pPacket, int numPacket );
+    int read( unsigned char *pPacket, int numPacket );
+    double get_curr_time();
 };
-
-extern "C" {
-
-
-
-
-
-}
 #endif

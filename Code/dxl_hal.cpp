@@ -17,7 +17,7 @@ int dxl_hal::open(QString &devName, int baudrate )
     _serial.setFlowControl(QSerialPort::NoFlowControl);
     if(not _serial.open(QIODevice::ReadWrite)) return 0;
     
-
+    return 1;
 }
 
 void dxl_hal::close()
@@ -30,10 +30,17 @@ void dxl_hal::clear(void)
 {
 	// Clear communication buffer
     _serial.clear();
-
+    
 }
 
-int dxl_hal::tx( unsigned char *pPacket, int numPacket )
+int dxl_hal::change_baudrate(float baudrate)
+{
+    bool res = _serial.setBaudRate(qint32(baudrate));
+    return int(res);
+    
+}
+
+int dxl_hal::write( unsigned char *pPacket, int numPacket )
 {
 	// Transmiting date
 	// *pPacket: data array pointer
@@ -50,7 +57,7 @@ int dxl_hal::tx( unsigned char *pPacket, int numPacket )
 
 }
 
-int dxl_hal::rx( unsigned char *pPacket, int numPacket )
+int dxl_hal::read( unsigned char *pPacket, int numPacket )
 {
 	// Recieving date
 	// *pPacket: data array pointer
@@ -64,20 +71,10 @@ int dxl_hal::rx( unsigned char *pPacket, int numPacket )
         return n;
     }
     else return -1;
-
+    
 }
 
-void dxl_hal::set_timeout( int NumRcvByte )
+double dxl_hal::get_curr_time()
 {
-	// Start stop watch
-	// NumRcvByte: number of recieving data(to calculate maximum waiting time)
-    _time = NumRcvByte;
-}
-
-int dxl_hal::timeout(void)
-{
-	// Check timeout
-	// Return: 0 is false, 1 is true(timeout occurred)
-    return int(_timed);
-
+    return (double)QTime::currentTime().msecsSinceStartOfDay();
 }

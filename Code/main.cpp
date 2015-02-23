@@ -1,6 +1,7 @@
 #include <iostream>
 #include <conio.h>
 #include <stdio.h>
+#include <iostream>
 #include <QCoreApplication>
 #include "dynamixel.h"
 #include <QDebug>
@@ -10,9 +11,9 @@ int giID_List[2] = {1, 2};
 #define MAX_IN_CHAR 128
 
 
-#define P_TORQUE_ENABLE 562
-#define P_GOAL_POSITION 596
-#define P_PRESENT_POS	611
+#define P_TORQUE_ENABLE 24
+#define P_GOAL_POSITION 30
+#define P_PRESENT_POS	36
 
 #define POSITION_LENGTH 4
 
@@ -72,5 +73,9 @@ int main(int argc, char *argv[])
 	else
 		printf( "Succeed to open USB2Dynamixel!\n\n" );
     
-    
+    for (int i = 0; i < 2; ++i) {
+        din.write_byte(i, P_TORQUE_ENABLE, 1);
+        din.write_word(i, P_GOAL_POSITION, 0);
+    }
+    qDebug() <<  "End";
 }
