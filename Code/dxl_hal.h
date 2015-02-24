@@ -14,6 +14,7 @@ private:
     
     int _time = 30;
     bool _timed = false;
+    bool _open = false;
     
 public:
     int open(QString &devName, int baudrate );
@@ -23,5 +24,6 @@ public:
     int write( unsigned char *pPacket, int numPacket );
     int read( unsigned char *pPacket, int numPacket );
     double get_curr_time();
+    inline bool isOpen() { return _open; }
 };
 #endif

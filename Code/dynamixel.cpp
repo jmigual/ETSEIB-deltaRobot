@@ -7,7 +7,7 @@
 
 /////////////////// Dynamixel Protocol 1.0 ///////////////////
 ////////////// device control method //////////////
-int dxl::initialize( QString port_num, int baud_rate )
+int dynamixel::initialize( QString port_num, int baud_rate )
 {
 	unsigned int idx = 0;
 
@@ -45,7 +45,7 @@ int dxl::initialize( QString port_num, int baud_rate )
 	return 1;
 }
 
-int dxl::change_baudrate(int baud_rate )
+int dynamixel::change_baudrate(int baud_rate )
 {
     int result = 0;
     float baudrate = (float)baud_rate;
@@ -57,7 +57,7 @@ int dxl::change_baudrate(int baud_rate )
     return result;
 }
 
-int dxl::terminate(void)
+int dynamixel::terminate(void)
 {
 	int id = 0;
 	for(id = 0; id <= MAX_ID; id++)
@@ -73,7 +73,7 @@ int dxl::terminate(void)
 }
 
 ////////////// methods for timeout //////////////
-double dxl::get_packet_time(void)
+double dynamixel::get_packet_time(void)
 {
 	double elapsed_time;
 
@@ -86,19 +86,19 @@ double dxl::get_packet_time(void)
 	return elapsed_time;
 }
 
-void dxl::set_packet_timeout(int NumRcvByte)
+void dynamixel::set_packet_timeout(int NumRcvByte)
 {
 	gdPacketStartTime = dH.get_curr_time();
 	gdRcvWaitTime = (gdByteTransTime*(double)NumRcvByte + 2.0*LATENCY_TIME + 2.0);
 }
 
-void dxl::set_packet_timeout_ms(int msec)
+void dynamixel::set_packet_timeout_ms(int msec)
 {
 	gdPacketStartTime = dH.get_curr_time();
 	gdRcvWaitTime = (double)msec;
 }
 
-int dxl::is_packet_timeout(void)
+int dynamixel::is_packet_timeout(void)
 {
     if(this->get_packet_time() > gdRcvWaitTime)
         return 1;
@@ -106,13 +106,13 @@ int dxl::is_packet_timeout(void)
 }
 
 ///////// get communication result method /////////
-int dxl::get_comm_result(void)
+int dynamixel::get_comm_result(void)
 {
 	return gbCommStatus;
 }
 
 ///////// 1.0 packet communocation method /////////
-void dxl::tx_packet(void)
+void dynamixel::tx_packet(void)
 {
 	unsigned char pkt_idx = 0;
 	unsigned char TxNumByte, RealTxNumByte;
@@ -174,7 +174,7 @@ void dxl::tx_packet(void)
 	gbCommStatus = COMM_TXSUCCESS;
 }
 
-void dxl::rx_packet(void)
+void dynamixel::rx_packet(void)
 {
 	unsigned char i = 0, j = 0, nRead = 0;
 	unsigned char checksum = 0;
@@ -268,7 +268,7 @@ void dxl::rx_packet(void)
 	giBusUsing = 0;
 }
 
-void dxl::txrx_packet(void)
+void dynamixel::txrx_packet(void)
 {
 	tx_packet();
 
@@ -280,28 +280,28 @@ void dxl::txrx_packet(void)
 }
 
 ////////////// get/set packet methods /////////////
-void dxl::set_txpacket_id(int id)
+void dynamixel::set_txpacket_id(int id)
 {
 	gbInstructionPacket[PRT1_PKT_ID] = (unsigned char)id;
 }
 
-void dxl::set_txpacket_instruction(int instruction)
+void dynamixel::set_txpacket_instruction(int instruction)
 {
 	gbInstructionPacket[PRT1_PKT_INSTRUCTION] = (unsigned char)instruction;
 }
 
-void dxl::set_txpacket_parameter(int index, int value)
+void dynamixel::set_txpacket_parameter(int index, int value)
 {
 	gbInstructionPacket[PRT1_PKT_PARAMETER0+index] = (unsigned char)value;
 
 }
 
-void dxl::set_txpacket_length(int length)
+void dynamixel::set_txpacket_length(int length)
 {
 	gbInstructionPacket[PRT1_PKT_LENGTH] = (unsigned char)length;
 }
 
-int  dxl::get_rxpacket_error(int error)
+int  dynamixel::get_rxpacket_error(int error)
 {
 	if( gbStatusPacket[PRT1_PKT_ERRBIT] & (unsigned char)error )
 		return 1;
@@ -309,22 +309,22 @@ int  dxl::get_rxpacket_error(int error)
 	return 0;
 }
 
-int dxl::get_rxpacket_error_byte(void)
+int dynamixel::get_rxpacket_error_byte(void)
 {
 	return gbStatusPacket[PRT1_PKT_ERRBIT];
 }
 
-int  dxl::get_rxpacket_parameter( int index )
+int  dynamixel::get_rxpacket_parameter( int index )
 {
 	return (int)gbStatusPacket[PRT1_PKT_PARAMETER0+index];
 }
 
-int  dxl::get_rxpacket_length()
+int  dynamixel::get_rxpacket_length()
 {
 	return (int)gbStatusPacket[PRT1_PKT_LENGTH];
 }
 
-void dxl::ping( int id )
+void dynamixel::ping( int id )
 {
 	while(giBusUsing);
 
@@ -335,7 +335,7 @@ void dxl::ping( int id )
 	txrx_packet();
 }
 
-int dxl::read_byte( int id, int address )
+int dynamixel::read_byte( int id, int address )
 {
 	while(giBusUsing);
 
@@ -350,7 +350,7 @@ int dxl::read_byte( int id, int address )
 	return (int)gbStatusPacket[PRT1_PKT_PARAMETER0];
 }
 
-void dxl::write_byte( int id, int address, int value )
+void dynamixel::write_byte( int id, int address, int value )
 {
 	while(giBusUsing);
 
@@ -363,7 +363,7 @@ void dxl::write_byte( int id, int address, int value )
 	txrx_packet();
 }
 
-int dxl::read_word( int id, int address )
+int dynamixel::read_word( int id, int address )
 {
 	while(giBusUsing);
 
@@ -378,7 +378,7 @@ int dxl::read_word( int id, int address )
 	return MAKEWORD((int)gbStatusPacket[PRT1_PKT_PARAMETER0+0], (int)gbStatusPacket[PRT1_PKT_PARAMETER0+1]);
 }
 
-void dxl::write_word( int id, int address, int value )
+void dynamixel::write_word( int id, int address, int value )
 {
 	while(giBusUsing);
 
@@ -395,7 +395,7 @@ void dxl::write_word( int id, int address, int value )
 
 /////////////////// Dynamixel Protocol 1.0 ///////////////////
 ////////////// device control method //////////////
-int dxl2::initialize( QString port_num, int baud_rate )
+int dynamixel2::initialize( QString port_num, int baud_rate )
 {
 	unsigned int idx = 0;
 
@@ -433,7 +433,7 @@ int dxl2::initialize( QString port_num, int baud_rate )
 	return 1;
 }
 
-int dxl2::change_baudrate(int baud_rate )
+int dynamixel2::change_baudrate(int baud_rate )
 {
     int result = 0;
     float baudrate = (float)baud_rate;
@@ -445,7 +445,7 @@ int dxl2::change_baudrate(int baud_rate )
     return result;
 }
 
-int dxl2::terminate(void)
+int dynamixel2::terminate(void)
 {
 	int id = 0;
 	for(id = 0; id <= MAX_ID; id++)
@@ -461,7 +461,7 @@ int dxl2::terminate(void)
 }
 
 ////////////// methods for timeout //////////////
-double dxl2::get_packet_time(void)
+double dynamixel2::get_packet_time(void)
 {
 	double elapsed_time;
 
@@ -474,20 +474,20 @@ double dxl2::get_packet_time(void)
 	return elapsed_time;
 }
 
-int dxl2::is_packet_timeout(void)
+int dynamixel2::is_packet_timeout(void)
 {
     if(this->get_packet_time() > gdRcvWaitTime)
         return 1;
     return 0;
 }
 
-void dxl2::set_packet_timeout(int NumRcvByte)
+void dynamixel2::set_packet_timeout(int NumRcvByte)
 {
 	gdPacketStartTime = dH.get_curr_time();
 	gdRcvWaitTime = (gdByteTransTime*(double)NumRcvByte + 2.0*LATENCY_TIME + 2.0);
 }
 
-void dxl2::set_packet_timeout_ms(int msec)
+void dynamixel2::set_packet_timeout_ms(int msec)
 {
 	gdPacketStartTime = dH.get_curr_time();
 	gdRcvWaitTime = (double)msec;
@@ -546,7 +546,7 @@ unsigned short update_crc(unsigned short crc_accum, unsigned char *data_blk_ptr,
 	return crc_accum;
 }
 
-void dxl2::add_stuffing()
+void dynamixel2::add_stuffing()
 {
     int i = 0, index = 0;
 	int packet_length_in = MAKEWORD(gbInstructionPacket[PRT2_PKT_LENGTH_L], gbInstructionPacket[PRT2_PKT_LENGTH_H]);
@@ -593,7 +593,7 @@ void dxl2::add_stuffing()
 	gbInstructionPacket[PRT2_PKT_LENGTH_H] = HIBYTE(packet_length_out);
 }
 
-void dxl2::remove_stuffing()
+void dynamixel2::remove_stuffing()
 {
     int i = 0, index = 0;
     int packet_length_in = MAKEWORD(gbInstructionPacket[PRT2_PKT_LENGTH_L], gbInstructionPacket[PRT2_PKT_LENGTH_H]);
@@ -617,7 +617,7 @@ void dxl2::remove_stuffing()
 }
 
 ///////// 2.0 packet communocation method /////////
-void dxl2::tx_packet(void)
+void dynamixel2::tx_packet(void)
 {
 	int packet_tx_len, real_tx_len;
 	int length;
@@ -672,7 +672,7 @@ void dxl2::tx_packet(void)
 	gbCommStatus = COMM_TXSUCCESS;
 }
 
-void dxl2::rx_packet(void)
+void dynamixel2::rx_packet(void)
 {
     //int rx_length = 0, wait_length = PRT2_PKT_LENGTH_H + 4 + 1;    // 4 : INST ERROR CHKSUM_L CHKSUM_H
 	unsigned int i;
@@ -753,7 +753,7 @@ void dxl2::rx_packet(void)
     giBusUsing = 0;
 }
 
-void dxl2::txrx_packet(void)
+void dynamixel2::txrx_packet(void)
 {
 	int n = 0, num = 0;
 	int id = 0;
@@ -1000,43 +1000,43 @@ void dxl2::txrx_packet(void)
 
 
 ////////////// get/set packet methods /////////////
-void dxl2::set_txpacket_id(unsigned char id)
+void dynamixel2::set_txpacket_id(unsigned char id)
 {
 	gbInstructionPacket[PRT2_PKT_ID] = id;
 }
 
-void dxl2::set_txpacket_instruction(unsigned char instruction)
+void dynamixel2::set_txpacket_instruction(unsigned char instruction)
 {
 	gbInstructionPacket[PRT2_PKT_INSTRUCTION] = (unsigned char)instruction;
 }
 
-void dxl2::set_txpacket_parameter(unsigned short index, unsigned char value)
+void dynamixel2::set_txpacket_parameter(unsigned short index, unsigned char value)
 {
 	gbInstructionPacket[PRT2_INSTRUCTION_PKT_PARAMETER0+index] = value;
 }
 
-void dxl2::set_txpacket_length(unsigned short length)
+void dynamixel2::set_txpacket_length(unsigned short length)
 {
 	gbInstructionPacket[PRT2_PKT_LENGTH_L] = LOBYTE(length);
 	gbInstructionPacket[PRT2_PKT_LENGTH_H] = HIBYTE(length);
 }
 
-int dxl2::get_rxpacket_error_byte(void)
+int dynamixel2::get_rxpacket_error_byte(void)
 {
 	return gbStatusPacket[PRT2_PKT_ERRBIT];
 }
 
-int  dxl2::get_rxpacket_parameter( int index )
+int  dynamixel2::get_rxpacket_parameter( int index )
 {
 	return (int)gbStatusPacket[PRT2_STATUS_PKT_PARAMETER0+index];
 }
 
-int  dxl2::get_rxpacket_length()
+int  dynamixel2::get_rxpacket_length()
 {
 	return (int)MAKEWORD(gbStatusPacket[PRT2_PKT_LENGTH_L], gbStatusPacket[PRT2_PKT_LENGTH_H]);
 }
 
-void dxl2::ping(unsigned char id)
+void dynamixel2::ping(unsigned char id)
 {
 	gbCommStatus = COMM_TXFAIL;
 
@@ -1058,7 +1058,7 @@ void dxl2::ping(unsigned char id)
 	}
 }
 
-int  dxl2::get_ping_result(unsigned char id, int info_num)
+int  dynamixel2::get_ping_result(unsigned char id, int info_num)
 {
 	if(id <= MAX_ID && gPingData[id].iModelNo != -1 && gPingData[id].iFirmVer != -1)
 	{
@@ -1071,7 +1071,7 @@ int  dxl2::get_ping_result(unsigned char id, int info_num)
 	return 0;
 }
 
-void dxl2::broadcast_ping()
+void dynamixel2::broadcast_ping()
 {
 	int idx = 0;
 
@@ -1092,7 +1092,7 @@ void dxl2::broadcast_ping()
 	txrx_packet();
 }
 
-void dxl2::reboot(unsigned char id)
+void dynamixel2::reboot(unsigned char id)
 {
 	if(id == BROADCAST_ID)
 	{
@@ -1108,7 +1108,7 @@ void dxl2::reboot(unsigned char id)
     txrx_packet();
 }
 
-void dxl2::factory_reset(unsigned char id, int option)
+void dynamixel2::factory_reset(unsigned char id, int option)
 {
 	if(id == BROADCAST_ID)
 	{
@@ -1127,7 +1127,7 @@ void dxl2::factory_reset(unsigned char id, int option)
 	txrx_packet();
 }
 
-unsigned char  dxl2::read_byte(unsigned char id, int address)
+unsigned char  dynamixel2::read_byte(unsigned char id, int address)
 {
 	unsigned short length = 1;
 	gbCommStatus = COMM_TXFAIL; 
@@ -1148,7 +1148,7 @@ unsigned char  dxl2::read_byte(unsigned char id, int address)
 	return gbStatusPacket[PRT2_STATUS_PKT_PARAMETER0];
 }
 
-void dxl2::write_byte(unsigned char id, int address, unsigned char value)
+void dynamixel2::write_byte(unsigned char id, int address, unsigned char value)
 {
 	unsigned short length = 1;
 	gbInstructionPacket[PRT2_PKT_ID]						= id;
@@ -1162,7 +1162,7 @@ void dxl2::write_byte(unsigned char id, int address, unsigned char value)
 	txrx_packet();
 }
 
-unsigned short dxl2::read_word(unsigned char id, int address)
+unsigned short dynamixel2::read_word(unsigned char id, int address)
 {
 	unsigned short length = 2;
 	gbCommStatus = COMM_TXFAIL; 
@@ -1183,7 +1183,7 @@ unsigned short dxl2::read_word(unsigned char id, int address)
 	return MAKEWORD ( gbStatusPacket[PRT2_STATUS_PKT_PARAMETER0], gbStatusPacket[PRT2_STATUS_PKT_PARAMETER0+1]);
 }
 
-void dxl2::write_word(unsigned char id, int address, unsigned short value)
+void dynamixel2::write_word(unsigned char id, int address, unsigned short value)
 {
 	unsigned short length = 2;
 	gbInstructionPacket[PRT2_PKT_ID]						= id;
@@ -1198,7 +1198,7 @@ void dxl2::write_word(unsigned char id, int address, unsigned short value)
 	txrx_packet();
 }
 
-unsigned long dxl2::read_dword(unsigned char id, int address)
+unsigned long dynamixel2::read_dword(unsigned char id, int address)
 {
 	unsigned short length = 4;
 	gbCommStatus = COMM_TXFAIL; 
@@ -1220,7 +1220,7 @@ unsigned long dxl2::read_dword(unsigned char id, int address)
 		MAKEWORD ( gbStatusPacket[PRT2_STATUS_PKT_PARAMETER0+2], gbStatusPacket[PRT2_STATUS_PKT_PARAMETER0+3]));
 }
 
-void dxl2::write_dword(unsigned char id, int address, unsigned long value)
+void dynamixel2::write_dword(unsigned char id, int address, unsigned long value)
 {
 	unsigned short length = 4;
 	gbInstructionPacket[PRT2_PKT_ID]						= id;
@@ -1237,14 +1237,14 @@ void dxl2::write_dword(unsigned char id, int address, unsigned long value)
 	txrx_packet();
 }
 
-unsigned char  dxl2::get_bulk_read_data_byte(unsigned char id, unsigned int start_address)
+unsigned char  dynamixel2::get_bulk_read_data_byte(unsigned char id, unsigned int start_address)
 {
     if((start_address < gBulkData[id].iStartAddr) || ((gBulkData[id].iStartAddr + gBulkData[id].iLength-1) < start_address))
         return 0;
     return gBulkData[id].pucTable[(start_address-gBulkData[id].iStartAddr)];
 }
 
-unsigned short dxl2::get_bulk_read_data_word(unsigned char id, unsigned int start_address)
+unsigned short dynamixel2::get_bulk_read_data_word(unsigned char id, unsigned int start_address)
 {
     if( (start_address < gBulkData[id].iStartAddr) || ((gBulkData[id].iStartAddr + gBulkData[id].iLength-1) < start_address))
         return 0;
@@ -1252,7 +1252,7 @@ unsigned short dxl2::get_bulk_read_data_word(unsigned char id, unsigned int star
 						gBulkData[id].pucTable[(start_address-gBulkData[id].iStartAddr+1)]);
 }
 
-unsigned long  dxl2::get_bulk_read_data_dword(unsigned char id, unsigned int start_address)
+unsigned long  dynamixel2::get_bulk_read_data_dword(unsigned char id, unsigned int start_address)
 {
     if((start_address < gBulkData[id].iStartAddr) || ((gBulkData[id].iStartAddr + gBulkData[id].iLength-1) < start_address))
         return 0;
@@ -1262,14 +1262,14 @@ unsigned long  dxl2::get_bulk_read_data_dword(unsigned char id, unsigned int sta
                                       gBulkData[id].pucTable[(start_address-gBulkData[id].iStartAddr+3)]));
 }
 
-unsigned char  dxl2::get_sync_read_data_byte(unsigned char id, unsigned int start_address)
+unsigned char  dynamixel2::get_sync_read_data_byte(unsigned char id, unsigned int start_address)
 {
 	if((start_address < gSyncData[id].iStartAddr) || ((gSyncData[id].iStartAddr + gSyncData[id].iLength-1) < start_address))
 		return 0;
 	return gBulkData[id].pucTable[(start_address-gSyncData[id].iStartAddr)];
 }
 
-unsigned short dxl2::get_sync_read_data_word(unsigned char id, unsigned int start_address)
+unsigned short dynamixel2::get_sync_read_data_word(unsigned char id, unsigned int start_address)
 {
 	if((start_address < gSyncData[id].iStartAddr) || ((gSyncData[id].iStartAddr + gSyncData[id].iLength-1) < start_address))
 		return 0;
@@ -1277,7 +1277,7 @@ unsigned short dxl2::get_sync_read_data_word(unsigned char id, unsigned int star
 						gSyncData[id].pucTable[(start_address-gSyncData[id].iStartAddr+1)]);
 }
 
-unsigned long  dxl2::get_sync_read_data_dword(unsigned char id, unsigned int start_address)
+unsigned long  dynamixel2::get_sync_read_data_dword(unsigned char id, unsigned int start_address)
 {
 	if((start_address < gSyncData[id].iStartAddr) || ((gSyncData[id].iStartAddr + gSyncData[id].iLength-1) < start_address))
 		return 0;

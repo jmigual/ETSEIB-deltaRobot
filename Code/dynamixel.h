@@ -92,7 +92,7 @@ typedef struct ping_data {
     int iFirmVer;
 } PingData;
 
-class dxl {
+class dynamixel {
 private:
     dxl_hal dH;
     
@@ -113,6 +113,8 @@ private:
     SyncBulkData gBulkData[MAX_ID + 1];
     
 public:
+    inline bool isOpen() { return dH.isOpen(); }
+    
     /////////////////// Common Method for 1.0 & 2.0 ///////////////////	
     ////////////// device control method //////////////
     int initialize(QString port_num, int baud_rate);
@@ -158,7 +160,7 @@ public:
     int is_packet_timeout();
 };
 
-class dxl2 {
+class dynamixel2 {
     
 private:
     
@@ -180,6 +182,8 @@ private:
     SyncBulkData gBulkData[MAX_ID + 1];
     
 public:
+    
+    inline bool isOpen() { return dH.isOpen(); }
     
     /////////////////// Common Method for 1.0 & 2.0 ///////////////////	
     ////////////// device control method //////////////

@@ -1,85 +1,12 @@
-#include <iostream>
-#include <conio.h>
-#include <stdio.h>
-#include <iostream>
 #include <QCoreApplication>
 #include <QDebug>
-#include <QThread>
-
-
-#define P_TORQUE_ENABLE 24
-#define P_GOAL_POSITION 30
-#define P_PRESENT_POS	36
-
-#define POSITION_LENGTH 4
+#include "dynamixel.h"
 
 int main(int argc, char *argv[])
 {
 	QCoreApplication a(argc, argv);
+    dynamixel dxl;
+    dxl.initialize(QString("COM3"), 1000000);
     
-    int port_num = 0, baud_rate = 0;
-
-	while(true)
-	{
-		port_num = 0;
-		printf("Input COM port number : ");
-		scanf("%d", &port_num);
-		fflush(stdin);
-
-		baud_rate = 0;
-		printf("Input baudrate : ");
-		scanf("%d", &baud_rate);
-		fflush(stdin);
-
-		printf("\nYour input info. is\n");
-		printf("COM port number : %d\n", port_num);
-		printf("       Baudrate : %d\n", baud_rate);
-		char _temp;
-		while(true)
-		{
-			printf("Are you sure? (Y/N)  ");
-
-			scanf("%c", &_temp);
-			fflush(stdin);
-			if(_temp == 'y' || _temp == 'Y')
-				break;
-			else if(_temp == 'n' || _temp == 'N')
-				break;
-			else
-				printf("Incorrect Answer!\n");
-
-		}
-		if( (_temp == 'y') || (_temp == 'Y'))
-			break;
-		else
-			printf("\n");
-	}
-    QString name("COM");
-    name += QString::number(port_num);
-    qDebug() << name;
-    
-    dxl din;
-	if(din.initialize(name, baud_rate) == 0)
-	{
-		printf( "Failed to open USB2Dynamixel\n" );
-		printf( "Press any key to terminate...\n" );
-		_getch();
-		return 0;
-	}
-	else
-		printf( "Succeed to open USB2Dynamixel!\n\n" );
-    
-    for (int i = 0; i < 2; ++i) {
-        din.write_byte(i, P_TORQUE_ENABLE, 1);
-        din.write_word(i, P_GOAL_POSITION, 0);
-    }
-    QThread::sleep(1);
-    for (int i = 0; i < 1024; i += 5) {
-        for (int j = 0; j < 2; ++j) {
-            din.write_word(j, P_GOAL_POSITION, i);
-        }
-        qDebug() << "i: " << i;
-        QThread::msleep(40);
-    }
-    qDebug() <<  "End";
+    return a.exec();
 }

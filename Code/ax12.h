@@ -50,13 +50,12 @@ private:
         Lock                = 47,
         Punch               = 48
         
-    };
-    
+    };    
     
     int _ID;
     
 public:
-    explicit AX12(QObject *parent = 0);
+    explicit AX12(int ID = -1, QObject *parent = 0);
     ~AX12();
     
 signals:

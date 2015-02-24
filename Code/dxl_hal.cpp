@@ -16,7 +16,7 @@ int dxl_hal::open(QString &devName, int baudrate )
     _serial.setStopBits(QSerialPort::OneStop);
     _serial.setFlowControl(QSerialPort::NoFlowControl);
     if(not _serial.open(QIODevice::ReadWrite)) return 0;
-    
+    _open = true;
     return 1;
 }
 
@@ -24,6 +24,7 @@ void dxl_hal::close()
 {
 	// Closing device
     _serial.close();
+    _open = false;
 }
 
 void dxl_hal::clear(void)
