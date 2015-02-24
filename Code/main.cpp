@@ -3,12 +3,8 @@
 #include <stdio.h>
 #include <iostream>
 #include <QCoreApplication>
-#include "dynamixel.h"
 #include <QDebug>
-
-int giID_List[2] = {1, 2};
-
-#define MAX_IN_CHAR 128
+#include <QThread>
 
 
 #define P_TORQUE_ENABLE 24
@@ -76,6 +72,14 @@ int main(int argc, char *argv[])
     for (int i = 0; i < 2; ++i) {
         din.write_byte(i, P_TORQUE_ENABLE, 1);
         din.write_word(i, P_GOAL_POSITION, 0);
+    }
+    QThread::sleep(1);
+    for (int i = 0; i < 1024; i += 5) {
+        for (int j = 0; j < 2; ++j) {
+            din.write_word(j, P_GOAL_POSITION, i);
+        }
+        qDebug() << "i: " << i;
+        QThread::msleep(40);
     }
     qDebug() <<  "End";
 }

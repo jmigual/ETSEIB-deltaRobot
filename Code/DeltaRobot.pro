@@ -12,11 +12,13 @@ TARGET = DeltaRobot
 
 SOURCES += main.cpp \ 
     dynamixel.cpp \
-    dxl_hal.cpp
+    dxl_hal.cpp \
+    ax12.cpp
 
 HEADERS += \
     dxl_hal.h \
-    dynamixel.h
+    dynamixel.h \
+    ax12.h
 
 include(deployment.pri)
 qtcAddDeployment()
