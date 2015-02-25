@@ -159,7 +159,6 @@ Makefile: ../Code/DeltaRobot.pro C:/Qt/5.4/mingw491_32/mkspecs/win32-g++/qmake.c
 		C:/Qt/5.4/mingw491_32/mkspecs/features/exclusive_builds.prf \
 		C:/Qt/5.4/mingw491_32/mkspecs/features/default_pre.prf \
 		C:/Qt/5.4/mingw491_32/mkspecs/features/win32/default_pre.prf \
-		../Code/deployment.pri \
 		C:/Qt/5.4/mingw491_32/mkspecs/features/resolve_config.prf \
 		C:/Qt/5.4/mingw491_32/mkspecs/features/exclusive_builds_post.prf \
 		C:/Qt/5.4/mingw491_32/mkspecs/features/default_post.prf \
@@ -171,11 +170,13 @@ Makefile: ../Code/DeltaRobot.pro C:/Qt/5.4/mingw491_32/mkspecs/win32-g++/qmake.c
 		C:/Qt/5.4/mingw491_32/mkspecs/features/qt.prf \
 		C:/Qt/5.4/mingw491_32/mkspecs/features/resources.prf \
 		C:/Qt/5.4/mingw491_32/mkspecs/features/moc.prf \
+		C:/Qt/5.4/mingw491_32/mkspecs/features/win32/opengl.prf \
 		C:/Qt/5.4/mingw491_32/mkspecs/features/testcase_targets.prf \
 		C:/Qt/5.4/mingw491_32/mkspecs/features/exceptions.prf \
 		C:/Qt/5.4/mingw491_32/mkspecs/features/yacc.prf \
 		C:/Qt/5.4/mingw491_32/mkspecs/features/lex.prf \
 		../Code/DeltaRobot.pro \
+		C:/Qt/5.4/mingw491_32/lib/Qt5Gui.prl \
 		C:/Qt/5.4/mingw491_32/lib/Qt5SerialPort.prl \
 		C:/Qt/5.4/mingw491_32/lib/Qt5Core.prl
 	$(QMAKE) -spec win32-g++ -o Makefile ..\Code\DeltaRobot.pro
@@ -279,7 +280,6 @@ C:\Qt\5.4\mingw491_32\mkspecs\features\spec_post.prf:
 C:\Qt\5.4\mingw491_32\mkspecs\features\exclusive_builds.prf:
 C:\Qt\5.4\mingw491_32\mkspecs\features\default_pre.prf:
 C:\Qt\5.4\mingw491_32\mkspecs\features\win32\default_pre.prf:
-..\Code\deployment.pri:
 C:\Qt\5.4\mingw491_32\mkspecs\features\resolve_config.prf:
 C:\Qt\5.4\mingw491_32\mkspecs\features\exclusive_builds_post.prf:
 C:\Qt\5.4\mingw491_32\mkspecs\features\default_post.prf:
@@ -291,11 +291,13 @@ C:\Qt\5.4\mingw491_32\mkspecs\features\warn_on.prf:
 C:\Qt\5.4\mingw491_32\mkspecs\features\qt.prf:
 C:\Qt\5.4\mingw491_32\mkspecs\features\resources.prf:
 C:\Qt\5.4\mingw491_32\mkspecs\features\moc.prf:
+C:\Qt\5.4\mingw491_32\mkspecs\features\win32\opengl.prf:
 C:\Qt\5.4\mingw491_32\mkspecs\features\testcase_targets.prf:
 C:\Qt\5.4\mingw491_32\mkspecs\features\exceptions.prf:
 C:\Qt\5.4\mingw491_32\mkspecs\features\yacc.prf:
 C:\Qt\5.4\mingw491_32\mkspecs\features\lex.prf:
 ..\Code\DeltaRobot.pro:
+C:/Qt/5.4/mingw491_32/lib/Qt5Gui.prl:
 C:/Qt/5.4/mingw491_32/lib/Qt5SerialPort.prl:
 C:/Qt/5.4/mingw491_32/lib/Qt5Core.prl:
 qmake: FORCE
