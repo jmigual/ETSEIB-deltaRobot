@@ -3,8 +3,7 @@ using System.Collections;
 
 public class CameraController : MonoBehaviour {
 
-
-	public Transform ObjectiveInitial;
+	public GameObject center;
 	public float distance=10f;
 	public float distanceMin=3f;
 	public float distanceMax=30f;
@@ -17,15 +16,18 @@ public class CameraController : MonoBehaviour {
 	public float dragSpeed=10f;
 	public Color selectedColor=Color.red;
 
-
+	
+	private Transform ObjectiveInitial;
 	private Vector3 obj_pos;
 	private const float rad=2*Mathf.PI/360;
 	private Vector3 ObjectiveDesired;
 	private Vector2 LastMouse;
 	private GameObject selected;
 	private Color lastColor;
+	private bool switchingobjective=false;
 
 	void Start () {
+		ObjectiveInitial=center.transform;
 		selected=ObjectiveInitial.gameObject;
 		lastColor=selected.renderer.material.color;
 		selected.renderer.material.color=selectedColor;
@@ -59,11 +61,20 @@ public class CameraController : MonoBehaviour {
 			Debug.DrawRay (CamRay.origin, CamRay.direction);
 			RaycastHit floorHit;
 			if (Physics.Raycast (CamRay, out floorHit, camRayLength, 1)) {
-				ObjectiveDesired=floorHit.collider.gameObject.transform.position;
+				switchingobjective=true;
+				center=floorHit.collider.gameObject;
 			}
 		}
 		
-		obj_pos=Vector3.Lerp(obj_pos, ObjectiveDesired, objectiveSwitchSpeed*Time.deltaTime);
+		ObjectiveDesired=center.transform.position;
+		if (switchingobjective){
+			obj_pos=Vector3.Lerp(obj_pos, ObjectiveDesired, objectiveSwitchSpeed*Time.deltaTime);
+			Vector3 error=ObjectiveDesired-obj_pos;
+			if (error.magnitude<0.05)switchingobjective=false;
+		}
+		else{
+			obj_pos=ObjectiveDesired;
+		}
 	}
 	void update_angles (){
 		distance = Mathf.Clamp(distance - Input.GetAxis("Mouse ScrollWheel")*zoomspeed*Time.deltaTime, distanceMin, distanceMax);
