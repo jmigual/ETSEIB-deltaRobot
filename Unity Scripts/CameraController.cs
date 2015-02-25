@@ -6,8 +6,8 @@ public class CameraController : MonoBehaviour {
 
 	public Transform ObjectiveInitial;
 	public float distance=10f;
-	public float distanceMin = 3f;
-	public float distanceMax = 30f;
+	public float distanceMin=3f;
+	public float distanceMax=30f;
 	public float zoomspeed=500f;
 	public float theta;
 	public float phi;
@@ -15,21 +15,42 @@ public class CameraController : MonoBehaviour {
 	public float camRayLength=100f;
 	public float objectiveSwitchSpeed=10f;
 	public float dragSpeed=10f;
+	public Color selectedColor=Color.red;
+
 
 	private Vector3 obj_pos;
 	private const float rad=2*Mathf.PI/360;
 	private Vector3 ObjectiveDesired;
 	private Vector2 LastMouse;
+	private GameObject selected;
+	private Color lastColor;
 
 	void Start () {
+		selected=ObjectiveInitial.gameObject;
+		lastColor=selected.renderer.material.color;
+		selected.renderer.material.color=selectedColor;
 		obj_pos = ObjectiveInitial.position;
 		ObjectiveDesired=obj_pos;
 	}
 
 	void Update () {
+		update_selected ();
 		update_objective ();
 		update_angles ();
 		update_transform();
+	}
+	void update_selected (){
+		if (Input.GetKeyDown (KeyCode.Mouse0)){
+			Ray CamRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+			Debug.DrawRay (CamRay.origin, CamRay.direction);
+			RaycastHit floorHit;
+			if (Physics.Raycast (CamRay, out floorHit, camRayLength, 1)) {
+				selected.renderer.material.color=lastColor;
+				selected=floorHit.collider.gameObject;
+				lastColor=selected.renderer.material.color;
+				selected.renderer.material.color = selectedColor;
+			}
+		}
 	}
 
 	void update_objective (){
@@ -40,7 +61,7 @@ public class CameraController : MonoBehaviour {
 			if (Physics.Raycast (CamRay, out floorHit, camRayLength, 1)) {
 				ObjectiveDesired=floorHit.collider.gameObject.transform.position;
 			}
-		};
+		}
 		
 		obj_pos=Vector3.Lerp(obj_pos, ObjectiveDesired, objectiveSwitchSpeed*Time.deltaTime);
 	}
