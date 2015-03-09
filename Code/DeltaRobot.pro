@@ -37,3 +37,6 @@ FORMS += \
     mainwindow.ui \
     optionswindow.ui \
     optionsservos.ui
+
+RESOURCES += \
+    resources.qrc
