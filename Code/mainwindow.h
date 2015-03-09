@@ -3,10 +3,12 @@
 
 // Included libraries
 #include <QMainWindow>
+#include <QDebug>
 
 // User libraries
-#include "dynamixel.h"
 #include "ax12.h"
+#include "dynamixel.h"
+#include "optionswindow.h"
 
 namespace Ui {
 class MainWindow;
@@ -31,6 +33,10 @@ public:
     /// Default destructor
     ~MainWindow();
     
+private slots:
+    
+    /// To select the options
+    void on_actionOptions_triggered();
 };
 
 #endif // MAINWINDOW_H

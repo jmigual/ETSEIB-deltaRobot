@@ -21,13 +21,19 @@ SOURCES += main.cpp \
     dynamixel.cpp \
     dxl_hal.cpp \
     ax12.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    optionswindow.cpp \
+    optionsservos.cpp
 
 HEADERS += \
     dxl_hal.h \
     dynamixel.h \
     ax12.h \
-    mainwindow.h
+    mainwindow.h \
+    optionswindow.h \
+    optionsservos.h
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    optionswindow.ui \
+    optionsservos.ui

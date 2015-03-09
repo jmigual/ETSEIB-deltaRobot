@@ -6,11 +6,20 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    
-    dxl.initialize("COM3", 1000000);
+    this->setWindowTitle("DeltaRobot Control");
+    _dxl.initialize("COM3", 1000000);
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::on_actionOptions_triggered()
+{
+    OptionsWindow o;
+    o.exec();
+    
+    if (o.result()) qDebug() << "Acceptat";
+    else qDebug() << "Rebutjat";
 }
