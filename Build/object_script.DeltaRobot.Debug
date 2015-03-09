@@ -6,6 +6,7 @@ INPUT(
 ./debug\mainwindow.o
 ./debug\optionswindow.o
 ./debug\optionsservos.o
+./debug\qrc_resources.o
 ./debug\moc_ax12.o
 ./debug\moc_mainwindow.o
 ./debug\moc_optionswindow.o

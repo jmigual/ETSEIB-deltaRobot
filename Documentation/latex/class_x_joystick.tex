@@ -1,0 +1,96 @@
+\hypertarget{class_x_joystick}{}\section{X\+Joystick Class Reference}
+\label{class_x_joystick}\index{X\+Joystick@{X\+Joystick}}
+
+
+The \hyperlink{class_x_joystick}{X\+Joystick}\textquotesingle{}s class is used to control the S\+F\+M\+L Joystick\textquotesingle{}s class with {\itshape signals and slots}  
+
+
+
+
+{\ttfamily \#include $<$xjoystick.\+h$>$}
+
+
+
+Inheritance diagram for X\+Joystick\+:
+% FIG 0
+
+
+Collaboration diagram for X\+Joystick\+:
+% FIG 1
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_x_joystick_1_1_info}{Info}
+\begin{DoxyCompactList}\small\item\em Struct to handle the info. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_x_joystick_a2052bd66345c8447a91902289ec6516f}{}void \hyperlink{class_x_joystick_a2052bd66345c8447a91902289ec6516f}{update} ()\label{class_x_joystick_a2052bd66345c8447a91902289ec6516f}
+
+\begin{DoxyCompactList}\small\item\em Updates all data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_x_joystick_a46cf0117954ff155a3b55e9125e0b8d3}{}void \hyperlink{class_x_joystick_a46cf0117954ff155a3b55e9125e0b8d3}{changed} ()\label{class_x_joystick_a46cf0117954ff155a3b55e9125e0b8d3}
+
+\begin{DoxyCompactList}\small\item\em Emmitted when a joystick is connected or disconnected. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_x_joystick_a1d4f55adbffae86916947f248c9e5454}{}\hyperlink{class_x_joystick_a1d4f55adbffae86916947f248c9e5454}{X\+Joystick} (int I\+D=-\/1, float filter=0.\+001)\label{class_x_joystick_a1d4f55adbffae86916947f248c9e5454}
+
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hypertarget{class_x_joystick_a14ebfadbb78639e533368c620f8cdcb8}{}\hyperlink{class_x_joystick_a14ebfadbb78639e533368c620f8cdcb8}{$\sim$\+X\+Joystick} ()\label{class_x_joystick_a14ebfadbb78639e533368c620f8cdcb8}
+
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+\hypertarget{class_x_joystick_a1b65862348fb552e9607c37e1bd2a90d}{}int \hyperlink{class_x_joystick_a1b65862348fb552e9607c37e1bd2a90d}{amount} ()\label{class_x_joystick_a1b65862348fb552e9607c37e1bd2a90d}
+
+\begin{DoxyCompactList}\small\item\em Amount of joysticks connected. \end{DoxyCompactList}\item 
+\hypertarget{class_x_joystick_a8323d85b5923ee80e619e685267d9e18}{}bool \hyperlink{class_x_joystick_a8323d85b5923ee80e619e685267d9e18}{any\+Connected} ()\label{class_x_joystick_a8323d85b5923ee80e619e685267d9e18}
+
+\begin{DoxyCompactList}\small\item\em True if there\textquotesingle{}s any joystick connected. \end{DoxyCompactList}\item 
+\hypertarget{class_x_joystick_ab8e3e56c7b8f6f0dec911f351b4b361e}{}Q\+Vector$<$ \hyperlink{struct_x_joystick_1_1_info}{Info} $>$ \hyperlink{class_x_joystick_ab8e3e56c7b8f6f0dec911f351b4b361e}{available} ()\label{class_x_joystick_ab8e3e56c7b8f6f0dec911f351b4b361e}
+
+\begin{DoxyCompactList}\small\item\em Returns the system available joysticks. \end{DoxyCompactList}\item 
+\hypertarget{class_x_joystick_ad501613a09d6fc07a7054b8d6a8e83f1}{}bool \hyperlink{class_x_joystick_ad501613a09d6fc07a7054b8d6a8e83f1}{button} (int n)\label{class_x_joystick_ad501613a09d6fc07a7054b8d6a8e83f1}
+
+\begin{DoxyCompactList}\small\item\em Returns the button state. \end{DoxyCompactList}\item 
+\hypertarget{class_x_joystick_afb2d3fd919ba601fa8709bb97e1e0d48}{}int \hyperlink{class_x_joystick_afb2d3fd919ba601fa8709bb97e1e0d48}{button\+Count} ()\label{class_x_joystick_afb2d3fd919ba601fa8709bb97e1e0d48}
+
+\begin{DoxyCompactList}\small\item\em Returns the number of buttons. \end{DoxyCompactList}\item 
+int \hyperlink{class_x_joystick_a69ccd5ca34996e0e6b5b99ea7ddb4a5f}{current} ()
+\item 
+\hypertarget{class_x_joystick_ac72effd86a10e586deb6418db0b794fe}{}Q\+Vector$<$ P $>$ \hyperlink{class_x_joystick_ac72effd86a10e586deb6418db0b794fe}{get\+Axis} ()\label{class_x_joystick_ac72effd86a10e586deb6418db0b794fe}
+
+\begin{DoxyCompactList}\small\item\em Returns all the Joystick\textquotesingle{}s axis and it\textquotesingle{}s names. \end{DoxyCompactList}\item 
+\hypertarget{class_x_joystick_a436e8cb1940316d7ba3d0dd8d1f6002b}{}void \hyperlink{class_x_joystick_a436e8cb1940316d7ba3d0dd8d1f6002b}{axis\+Press} (unsigned char a, float value=100)\label{class_x_joystick_a436e8cb1940316d7ba3d0dd8d1f6002b}
+
+\begin{DoxyCompactList}\small\item\em To mantain an axis in a certain value. \end{DoxyCompactList}\item 
+\hypertarget{class_x_joystick_a55531560621ea0aedf9cf7f123294c79}{}void \hyperlink{class_x_joystick_a55531560621ea0aedf9cf7f123294c79}{axis\+Release} (unsigned char a)\label{class_x_joystick_a55531560621ea0aedf9cf7f123294c79}
+
+\begin{DoxyCompactList}\small\item\em To release an axis and restore it\textquotesingle{}s value with the joystick. \end{DoxyCompactList}\item 
+\hypertarget{class_x_joystick_afc3d48cab266b9596182229eb0df4384}{}const float \& \hyperlink{class_x_joystick_afc3d48cab266b9596182229eb0df4384}{operator\mbox{[}$\,$\mbox{]}} (int n) const \label{class_x_joystick_afc3d48cab266b9596182229eb0df4384}
+
+\begin{DoxyCompactList}\small\item\em Returns the \textquotesingle{}n\textquotesingle{} axis value. \end{DoxyCompactList}\item 
+\hypertarget{class_x_joystick_abfc58c4863c6ae9a4b4b1169114903e0}{}bool \hyperlink{class_x_joystick_abfc58c4863c6ae9a4b4b1169114903e0}{select} (int s)\label{class_x_joystick_abfc58c4863c6ae9a4b4b1169114903e0}
+
+\begin{DoxyCompactList}\small\item\em Selects the especified joystick. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_x_joystick}{X\+Joystick}\textquotesingle{}s class is used to control the S\+F\+M\+L Joystick\textquotesingle{}s class with {\itshape signals and slots} 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_x_joystick_a69ccd5ca34996e0e6b5b99ea7ddb4a5f}{}\index{X\+Joystick@{X\+Joystick}!current@{current}}
+\index{current@{current}!X\+Joystick@{X\+Joystick}}
+\subsubsection[{current}]{\setlength{\rightskip}{0pt plus 5cm}int X\+Joystick\+::current (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_x_joystick_a69ccd5ca34996e0e6b5b99ea7ddb4a5f}
+Returns the current selected joystick, -\/1 if there\textquotesingle{}s no selected joystick 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+xjoystick.\+h\item 
+xjoystick.\+cpp\end{DoxyCompactItemize}

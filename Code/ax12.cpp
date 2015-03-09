@@ -44,7 +44,15 @@ double AX12::getCurrentSpeed()
 
 double AX12::getCurrentVoltage()
 {
-    
+    char voltage = _dxl.read_byte(_ID, RAM::PresentVoltage);
+    return double(voltage/10.0);
+}
+
+void AX12::setGoalPosition(double goal)
+{
+    if (goal > 300.0) goal = 300.0;
+    else if (goal < 0) goal = 0;
+    _dxl.write_word(_ID, RAM::GoalPosition, int(goal));
 }
 
 void AX12::setID(int ID)

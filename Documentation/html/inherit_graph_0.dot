@@ -1,0 +1,11 @@
+digraph "Graphical Class Hierarchy"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="QObject",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="AX12",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_a_x12.html",tooltip="The AX12 class is used to control AX-12 motors from Dynamixel. "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="XJoystick",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_x_joystick.html",tooltip="The XJoystick&#39;s class is used to control the SFML Joystick&#39;s class with signals and slots ..."];
+}

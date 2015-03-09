@@ -94,7 +94,8 @@ public:
     /// To get the current ID
     inline int getID() { return _ID; }
     
-    
+    /// Sets the Goal's position (in degrees) or speed depending on the mode
+    void setGoalPosition(double goal);
     
     /// To set a new ID
     void setID(int ID);
@@ -106,7 +107,7 @@ public:
     void setMinMax(double min, double max);
     
     /// To set if a instruction must be done at the moment or later
-    /// <em>TRUE</em> to do instantly and <em>FALSE</em> to don't.
+    /// <em>TRUE</em> to do instantly and <em>FALSE</em> to do it later.
     inline void setWriteInstant(bool inst) { _writeInstant = inst; }
     
     

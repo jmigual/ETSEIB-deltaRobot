@@ -1,5 +1,5 @@
 <RCC>
-    <qresource prefix="/Icons">
+    <qresource prefix="/">
         <file>Images/Icons/_0000_dvd.ico</file>
         <file>Images/Icons/_0001_bluray.ico</file>
         <file>Images/Icons/_0002_cd.ico</file>
@@ -84,5 +84,6 @@
         <file>Images/Icons/user.ico</file>
         <file>Images/Icons/wallet.ico</file>
         <file>Images/Icons/warning.ico</file>
+        <file>Images/favicon.ico</file>
     </qresource>
 </RCC>
