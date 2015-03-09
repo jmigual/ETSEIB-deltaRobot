@@ -42,6 +42,11 @@ double AX12::getCurrentSpeed()
     return double((speed/1023)*100);
 }
 
+double AX12::getCurrentVoltage()
+{
+    
+}
+
 void AX12::setID(int ID)
 {
     _ID = ID;
