@@ -24,7 +24,6 @@ SOURCES += main.cpp \
     dxl_hal.cpp \
     ax12.cpp \
     mainwindow.cpp \
-    Options/optionsservos.cpp \
     Options/optionswindow.cpp
 
 HEADERS += \
@@ -32,12 +31,10 @@ HEADERS += \
     dynamixel.h \
     ax12.h \
     mainwindow.h \
-    Options/optionsservos.h \
     Options/optionswindow.h
 
 FORMS += \
     mainwindow.ui \
-    Options/optionsservos.ui \
     Options/optionswindow.ui
 
 RESOURCES += \

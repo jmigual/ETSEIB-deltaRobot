@@ -1,3 +1,5 @@
+/// @file ax12.h
+/// Contains the AX12 class declaration
 #ifndef AX12_H
 #define AX12_H
 
@@ -5,15 +7,13 @@
 #include <algorithm>
 #include "dynamixel.h"
 
-#define P_TORQUE_ENABLE 24
-#define P_GOAL_POSITION 30
-#define P_PRESENT_POS	36
-
 /// @brief The AX12 class is used to control AX-12 motors from Dynamixel
 class AX12 : public QObject
 {
     Q_OBJECT
 private:
+    
+    /// Contains all the EEPROM directions enumeration
     enum ROM 
     {
         ModelNumber         = 0,
@@ -32,6 +32,7 @@ private:
         AlarmShutdown       = 18
     };
     
+    /// Contains all the RAM directions enumerations
     enum RAM 
     {
         TorqueEnable        = 24,
@@ -64,14 +65,14 @@ private:
     /// True if we use the joint mode
     bool _mode;
     
-    /// True if all instructions must be done at the moment
-    bool _writeInstant;
-    
 public:
     
     /// Default constructor must pass an initialized dynamixel object
     /// if ID == -1 no action is done
-    explicit AX12(dynamixel &dxl, int ID = -1, QObject *parent = 0);
+    AX12(dynamixel &dxl, int ID = -1, QObject *parent = 0);
+    
+    /// Copy constructor
+    AX12(const AX12 &a);<
     
     /// Default destructor
     ~AX12();
@@ -107,10 +108,6 @@ public:
     
     /// To set the minimum and maximum angle from 0 to 300º
     void setMinMax(double min, double max);
-    
-    /// To set if a instruction must be done at the moment or later
-    /// <em>TRUE</em> to do instantly and <em>FALSE</em> to do it later.
-    inline void setWriteInstant(bool inst) { _writeInstant = inst; }
     
     
 signals:

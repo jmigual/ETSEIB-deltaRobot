@@ -1,3 +1,5 @@
+/// @file dynamixel.h
+/// Contains the dynamixel and dynamixel2 classes declaration
 // Dynamixel SDK platform independent header
 #ifndef _DYNAMIXEL_HEADER
 #define _DYNAMIXEL_HEADER
@@ -78,6 +80,7 @@
 #define LOBYTE(w)           ((unsigned char)(((unsigned long)(w)) & 0xff))
 #define HIBYTE(w)           ((unsigned char)((((unsigned long)(w)) >> 8) & 0xff))
 
+/// Struct used to handle data
 typedef struct data {
     unsigned char   iID;
     unsigned int    iStartAddr;
@@ -86,12 +89,14 @@ typedef struct data {
     unsigned char*  pucTable;
 } SyncBulkData;
 
+/// Struct used to do a ping
 typedef struct ping_data {
     int iID;
     int iModelNo;
     int iFirmVer;
 } PingData;
 
+/// Dynamixel 1.0 protocol class
 class dynamixel {
 private:
     dxl_hal dH;
@@ -113,6 +118,11 @@ private:
     SyncBulkData gBulkData[MAX_ID + 1];
     
 public:
+    
+    dynamixel();
+    
+    dynamixel(QString port_num, int baud_rate = 10000000);
+    
     inline bool isOpen() { return dH.isOpen(); }
     
     /////////////////// Common Method for 1.0 & 2.0 ///////////////////	
@@ -160,6 +170,7 @@ public:
     int is_packet_timeout();
 };
 
+/// Dynamixel 2.0 protocol class
 class dynamixel2 {
     
 private:

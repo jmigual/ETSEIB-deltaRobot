@@ -5,7 +5,6 @@
 #include <QListWidgetItem>
 #include <QDebug>
 #include <QStackedWidget>
-#include "optionsservos.h"
 
 namespace Ui {
 class OptionsWindow;
@@ -20,13 +19,7 @@ public:
     ~OptionsWindow();
     
 private slots:
-    
-    /// When the current selected item changes
 
-    
-    void on_option_currentItemChanged(QListWidgetItem *item, 
-                                      QListWidgetItem *);
-    
 private:
     /// Containsh the GUI
     Ui::OptionsWindow *ui;

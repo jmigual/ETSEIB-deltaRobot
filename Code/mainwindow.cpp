@@ -3,6 +3,7 @@
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
+    _servos(sCount + aSCount, _dxl),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);

@@ -1,3 +1,6 @@
+/// @file dynamixel.cpp
+/// Contains the dynamixel and dynamixel2 classes implementation
+
 #include "dynamixel.h"
 
 #define LATENCY_TIME		(16) //ms (USB2Dynamixel Default Latency Time)
@@ -7,6 +10,16 @@
 
 /////////////////// Dynamixel Protocol 1.0 ///////////////////
 ////////////// device control method //////////////
+dynamixel::dynamixel()
+{
+    
+}
+
+dynamixel::dynamixel(QString port_num, int baud_rate)
+{
+    initialize(port_num, baud_rate);
+}
+
 int dynamixel::initialize( QString port_num, int baud_rate )
 {
 	unsigned int idx = 0;
