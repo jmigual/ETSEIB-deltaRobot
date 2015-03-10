@@ -1,14 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\Survival\Assets\Scripts\Player\PlayerMovement.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Editor.cs">
     <Files>
-      <File FileName="..\Survival\Assets\Scripts\Player\PlayerMovement.cs" Line="1" Column="1" />
-      <File FileName="Assets\Standard Assets\Toon Shading\Outline-Custom.shader" Line="1" Column="1" />
-      <File FileName="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-LightedOutline.shader" Line="1" Column="1" />
-      <File FileName="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-BasicOutline.shader" Line="1" Column="1" />
-      <File FileName="Assets\Standard Assets\Image Effects (Pro Only)\EdgeDetectEffectNormals.js" Line="1" Column="1" />
-      <File FileName="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\EdgeDetectNormals.shader" Line="201" Column="3" />
-      <File FileName="Assets\color.cs" Line="9" Column="3" />
+      <File FileName="Assets\Scripts\Editor.cs" Line="40" Column="64" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
