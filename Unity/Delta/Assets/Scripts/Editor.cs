@@ -47,7 +47,7 @@ public class Editor : MonoBehaviour {
 		float dAngle = Vector3.Angle(toLastMouseRX , toPos);
 		if (Vector3.Dot (RX.transform.forward,Vector3.Cross (toLastMouseRX,toPos))<0)dAngle=-dAngle;
 		toLastMouseRX=toPos;
-		cruz.transform.Rotate(RX.transform.forward*dAngle);
+		cruz.transform.Rotate(RX.transform.forward*dAngle,Space.World);
 		//bola.transform.position=pos;
 		//Debug.DrawRay (RX.transform.position, Vector3.Cross(RX.transform.forward,Vector3.up).normalized*4);
 
