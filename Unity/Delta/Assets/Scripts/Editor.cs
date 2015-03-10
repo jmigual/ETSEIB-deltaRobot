@@ -5,7 +5,7 @@ public class Editor : MonoBehaviour {
 	
 	public Color selectedColor = Color.red;
 	public GameObject X,Y,Z;
-	public GameObject RX, bola;
+	public GameObject RX, cruz;
 	public float arrowlength = 10f;
 	public float translateSpeed = 25f;
 	public string mode = "t";
@@ -16,6 +16,7 @@ public class Editor : MonoBehaviour {
 	private bool dragging=false;
 	private GameObject draggingAxis;
 	private Vector2 LastMouse;
+	private Vector3 toLastMouseRX;
 
 	// Use this for initialization
 	void Start () {
@@ -28,18 +29,27 @@ public class Editor : MonoBehaviour {
 		Y.GetComponentInChildren<Renderer>().material.color = Color.green;
 		Z.GetComponentInChildren<Renderer>().material.color = Color.blue;
 		RX.GetComponentInChildren<Renderer>().material.color = Color.red;
+
+		Ray MouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+		float t=Vector3.Dot (RX.transform.position,RX.transform.forward)-Vector3.Dot (RX.transform.forward,MouseRay.origin);
+		t=t/Vector3.Dot (RX.transform.forward,MouseRay.direction);
+		toLastMouseRX=MouseRay.origin+t*MouseRay.direction-RX.transform.position;
 		//RY.GetComponentInChildren<Renderer>().material.color = Color.green;
 		//RZ.GetComponentInChildren<Renderer>().material.color = Color.blue;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		/*Ray MouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+		Ray MouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
 		float t=Vector3.Dot (RX.transform.position,RX.transform.forward)-Vector3.Dot (RX.transform.forward,MouseRay.origin);
 		t=t/Vector3.Dot (RX.transform.forward,MouseRay.direction);
-		Vector3 pos=MouseRay.origin+t*MouseRay.direction;
+		Vector3 toPos=MouseRay.origin+t*MouseRay.direction-RX.transform.position;
+		float dAngle = Vector3.Angle(toLastMouseRX , toPos);
+		if (Vector3.Dot (RX.transform.forward,Vector3.Cross (toLastMouseRX,toPos))<0)dAngle=-dAngle;
+		toLastMouseRX=toPos;
+		cruz.transform.Rotate(RX.transform.forward*dAngle);
 		//bola.transform.position=pos;
-		Debug.DrawRay (RX.transform.position, Vector3.Cross(RX.transform.forward,Vector3.up).normalized*4);*/
+		//Debug.DrawRay (RX.transform.position, Vector3.Cross(RX.transform.forward,Vector3.up).normalized*4);
 
 		X.SetActive(mode=="t");
 		Y.SetActive(mode=="t");
