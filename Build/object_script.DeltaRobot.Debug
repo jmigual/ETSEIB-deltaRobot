@@ -4,11 +4,11 @@ INPUT(
 ./debug\dxl_hal.o
 ./debug\ax12.o
 ./debug\mainwindow.o
-./debug\optionswindow.o
 ./debug\optionsservos.o
+./debug\optionswindow.o
 ./debug\qrc_resources.o
 ./debug\moc_ax12.o
 ./debug\moc_mainwindow.o
-./debug\moc_optionswindow.o
 ./debug\moc_optionsservos.o
+./debug\moc_optionswindow.o
 );

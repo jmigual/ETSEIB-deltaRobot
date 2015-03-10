@@ -1,0 +1,200 @@
+\hypertarget{class_a_x12}{}\section{A\+X12 Class Reference}
+\label{class_a_x12}\index{A\+X12@{A\+X12}}
+
+
+The \hyperlink{class_a_x12}{A\+X12} class is used to control A\+X-\/12 motors from Dynamixel.  
+
+
+
+
+{\ttfamily \#include $<$ax12.\+h$>$}
+
+
+
+Inheritance diagram for A\+X12\+:
+% FIG 0
+
+
+Collaboration diagram for A\+X12\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_a_x12_a31da599935777b1d8f81b2e014664dbe}{A\+X12} (\hyperlink{classdynamixel}{dynamixel} \&dxl, int I\+D=-\/1, Q\+Object $\ast$parent=0)
+\item 
+\hypertarget{class_a_x12_a5e9382e65479cdcb248f5303ac4c96d9}{}\hyperlink{class_a_x12_a5e9382e65479cdcb248f5303ac4c96d9}{$\sim$\+A\+X12} ()\label{class_a_x12_a5e9382e65479cdcb248f5303ac4c96d9}
+
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+double \hyperlink{class_a_x12_a0bd930c81b7a9c088ecab789b3a7e525}{get\+Current\+Load} ()
+\item 
+\hypertarget{class_a_x12_af9722b9c1f82fbfd97fe5e0a44369e8a}{}double \hyperlink{class_a_x12_af9722b9c1f82fbfd97fe5e0a44369e8a}{get\+Current\+Pos} ()\label{class_a_x12_af9722b9c1f82fbfd97fe5e0a44369e8a}
+
+\begin{DoxyCompactList}\small\item\em Returns the current position from 0º to 300º \end{DoxyCompactList}\item 
+\hypertarget{class_a_x12_ab16fad4c8c034d56acce15fc9102f34d}{}int \hyperlink{class_a_x12_ab16fad4c8c034d56acce15fc9102f34d}{get\+Current\+Temp} ()\label{class_a_x12_ab16fad4c8c034d56acce15fc9102f34d}
+
+\begin{DoxyCompactList}\small\item\em Returns the current Temperature in Celsius. \end{DoxyCompactList}\item 
+double \hyperlink{class_a_x12_a23c7ed54716c4b144a68d801f324e3ef}{get\+Current\+Speed} ()
+\item 
+\hypertarget{class_a_x12_a9ef946bfc1ad4dce5fed4101ed321efe}{}double \hyperlink{class_a_x12_a9ef946bfc1ad4dce5fed4101ed321efe}{get\+Current\+Voltage} ()\label{class_a_x12_a9ef946bfc1ad4dce5fed4101ed321efe}
+
+\begin{DoxyCompactList}\small\item\em Returns the current voltage in Volts. \end{DoxyCompactList}\item 
+\hypertarget{class_a_x12_a745ab1f31fa2cd8c7a5797aeb605cd0b}{}int \hyperlink{class_a_x12_a745ab1f31fa2cd8c7a5797aeb605cd0b}{get\+I\+D} ()\label{class_a_x12_a745ab1f31fa2cd8c7a5797aeb605cd0b}
+
+\begin{DoxyCompactList}\small\item\em To get the current I\+D. \end{DoxyCompactList}\item 
+\hypertarget{class_a_x12_a6b27a3c6314604b499d9fa47d180f5d3}{}void \hyperlink{class_a_x12_a6b27a3c6314604b499d9fa47d180f5d3}{set\+Goal\+Position} (double goal)\label{class_a_x12_a6b27a3c6314604b499d9fa47d180f5d3}
+
+\begin{DoxyCompactList}\small\item\em Sets the Goal\textquotesingle{}s position (in degrees) or speed depending on the mode. \end{DoxyCompactList}\item 
+\hypertarget{class_a_x12_ab9fe5d0e2286985977985de6d84b1103}{}void \hyperlink{class_a_x12_ab9fe5d0e2286985977985de6d84b1103}{set\+I\+D} (int I\+D)\label{class_a_x12_ab9fe5d0e2286985977985de6d84b1103}
+
+\begin{DoxyCompactList}\small\item\em To set a new I\+D. \end{DoxyCompactList}\item 
+\hypertarget{class_a_x12_ac48405a5f4aa73c1f2d56f633dfbec50}{}void \hyperlink{class_a_x12_ac48405a5f4aa73c1f2d56f633dfbec50}{set\+Joint\+Mode} (bool mode)\label{class_a_x12_ac48405a5f4aa73c1f2d56f633dfbec50}
+
+\begin{DoxyCompactList}\small\item\em To set Joint/\+Wheel mode, true if Joint. \end{DoxyCompactList}\item 
+\hypertarget{class_a_x12_a914864d133f8cbaf95594747aaff55f2}{}void \hyperlink{class_a_x12_a914864d133f8cbaf95594747aaff55f2}{set\+Min\+Max} (double min, double max)\label{class_a_x12_a914864d133f8cbaf95594747aaff55f2}
+
+\begin{DoxyCompactList}\small\item\em To set the minimum and maximum angle from 0 to 300º \end{DoxyCompactList}\item 
+void \hyperlink{class_a_x12_a084bc6dcb6ad1e5eefa42bfd5de72a4d}{set\+Write\+Instant} (bool inst)
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_a_x12_a08d272b502d65464202a3aa97825aec0}{}enum {\bfseries R\+O\+M} \{ \\*
+{\bfseries Model\+Number} = 0, 
+{\bfseries Version\+Firmware} = 2, 
+{\bfseries I\+D} = 3, 
+{\bfseries Baud\+Rate} = 4, 
+\\*
+{\bfseries Return\+Delay\+Time} = 5, 
+{\bfseries C\+W\+Angle\+Limit} = 6, 
+{\bfseries C\+C\+W\+Angle\+Limit} = 8, 
+{\bfseries Highest\+Limit\+Temp} = 11, 
+\\*
+{\bfseries Lowest\+Limit\+Voltage} = 12, 
+{\bfseries Highest\+Limit\+Voltage} = 13, 
+{\bfseries Max\+Torque} = 14, 
+{\bfseries Status\+Return\+Level} = 16, 
+\\*
+{\bfseries Alarm\+L\+E\+D} = 17, 
+{\bfseries Alarm\+Shutdown} = 18
+ \}\label{class_a_x12_a08d272b502d65464202a3aa97825aec0}
+
+\item 
+\hypertarget{class_a_x12_a672068c48bbee921e5856cc44b1c81c1}{}enum {\bfseries R\+A\+M} \{ \\*
+{\bfseries Torque\+Enable} = 24, 
+{\bfseries L\+E\+D} = 25, 
+{\bfseries C\+W\+Compliance\+Margin} = 26, 
+{\bfseries C\+C\+W\+Compliance\+Margin} = 27, 
+\\*
+{\bfseries C\+W\+Compliance\+Slope} = 28, 
+{\bfseries C\+C\+W\+Compliance\+Slope} = 29, 
+{\bfseries Goal\+Position} = 30, 
+{\bfseries Moving\+Speed} = 32, 
+\\*
+{\bfseries Torque\+Limit} = 34, 
+{\bfseries Present\+Position} = 36, 
+{\bfseries Present\+Speed} = 38, 
+{\bfseries Present\+Load} = 40, 
+\\*
+{\bfseries Present\+Voltage} = 42, 
+{\bfseries Present\+Temperature} = 43, 
+{\bfseries Registered} = 44, 
+{\bfseries Moving} = 46, 
+\\*
+{\bfseries Lock} = 47, 
+{\bfseries Punch} = 48
+ \}\label{class_a_x12_a672068c48bbee921e5856cc44b1c81c1}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_a_x12_a1e303392ec22c6e905865a8e267b78fe}{}\hyperlink{classdynamixel}{dynamixel} \& \hyperlink{class_a_x12_a1e303392ec22c6e905865a8e267b78fe}{\+\_\+dxl}\label{class_a_x12_a1e303392ec22c6e905865a8e267b78fe}
+
+\begin{DoxyCompactList}\small\item\em Refrence to a U\+S\+B2\+Dynamixel controler. \end{DoxyCompactList}\item 
+\hypertarget{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{}int \hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\+\_\+\+I\+D}\label{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}
+
+\begin{DoxyCompactList}\small\item\em Stores the current I\+D. \end{DoxyCompactList}\item 
+\hypertarget{class_a_x12_a2fd07e2e636003227a32d09d211bd6d4}{}bool \hyperlink{class_a_x12_a2fd07e2e636003227a32d09d211bd6d4}{\+\_\+mode}\label{class_a_x12_a2fd07e2e636003227a32d09d211bd6d4}
+
+\begin{DoxyCompactList}\small\item\em True if we use the joint mode. \end{DoxyCompactList}\item 
+\hypertarget{class_a_x12_aeb6e6414fe4a02d77a1d84d5213800e2}{}bool \hyperlink{class_a_x12_aeb6e6414fe4a02d77a1d84d5213800e2}{\+\_\+write\+Instant}\label{class_a_x12_aeb6e6414fe4a02d77a1d84d5213800e2}
+
+\begin{DoxyCompactList}\small\item\em True if all instructions must be done at the moment. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_a_x12}{A\+X12} class is used to control A\+X-\/12 motors from Dynamixel. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_a_x12_a31da599935777b1d8f81b2e014664dbe}{}\index{A\+X12@{A\+X12}!A\+X12@{A\+X12}}
+\index{A\+X12@{A\+X12}!A\+X12@{A\+X12}}
+\subsubsection[{A\+X12}]{\setlength{\rightskip}{0pt plus 5cm}A\+X12\+::\+A\+X12 (
+\begin{DoxyParamCaption}
+\item[{{\bf dynamixel} \&}]{dxl, }
+\item[{int}]{I\+D = {\ttfamily -\/1}, }
+\item[{Q\+Object $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\label{class_a_x12_a31da599935777b1d8f81b2e014664dbe}
+Default constructor must pass an initialized dynamixel object if I\+D == -\/1 no action is done 
+\begin{DoxyCode}
+3                                                   : 
+4     QObject(parent),
+5     \hyperlink{class_a_x12_a1e303392ec22c6e905865a8e267b78fe}{\_dxl}(dxl),
+6     \hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}(ID)
+7 \{
+8     \textcolor{keywordflow}{if} (\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID} < 0) \textcolor{keywordflow}{return};
+9     \hyperlink{class_a_x12_a1e303392ec22c6e905865a8e267b78fe}{\_dxl}.write\_byte(\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, RAM::TorqueEnable, \textcolor{keyword}{true});
+10 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_a_x12_a0bd930c81b7a9c088ecab789b3a7e525}{}\index{A\+X12@{A\+X12}!get\+Current\+Load@{get\+Current\+Load}}
+\index{get\+Current\+Load@{get\+Current\+Load}!A\+X12@{A\+X12}}
+\subsubsection[{get\+Current\+Load}]{\setlength{\rightskip}{0pt plus 5cm}double A\+X12\+::get\+Current\+Load (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_a_x12_a0bd930c81b7a9c088ecab789b3a7e525}
+Returns the current load from -\/100\% to 100\%, 100\% is Clock\+Wise and -\/100\% is Counter\+Clock\+Wise 
+\begin{DoxyCode}
+18 \{
+19     \textcolor{keywordtype}{int} load = \hyperlink{class_a_x12_a1e303392ec22c6e905865a8e267b78fe}{\_dxl}.read\_word(\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, RAM::PresentLoad);
+20     load -= 1024;
+21     \textcolor{keywordflow}{if} (load == -1024) load = 0;
+22     \textcolor{keywordflow}{return} double((load/1023)*100);
+23 \}
+\end{DoxyCode}
+\hypertarget{class_a_x12_a23c7ed54716c4b144a68d801f324e3ef}{}\index{A\+X12@{A\+X12}!get\+Current\+Speed@{get\+Current\+Speed}}
+\index{get\+Current\+Speed@{get\+Current\+Speed}!A\+X12@{A\+X12}}
+\subsubsection[{get\+Current\+Speed}]{\setlength{\rightskip}{0pt plus 5cm}double A\+X12\+::get\+Current\+Speed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_a_x12_a23c7ed54716c4b144a68d801f324e3ef}
+Returns the current speed from -\/100\% to 100\%, 100\% is Clock\+Wise and -\/100\% is Counter\+Clock\+Wise 
+\begin{DoxyCode}
+38 \{
+39     \textcolor{keywordtype}{int} speed = \hyperlink{class_a_x12_a1e303392ec22c6e905865a8e267b78fe}{\_dxl}.read\_word(\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, RAM::PresentSpeed);
+40     speed -= 1024;
+41     \textcolor{keywordflow}{if} (speed == -1024) speed = 0;
+42     \textcolor{keywordflow}{return} double((speed/1023)*100);
+43 \}
+\end{DoxyCode}
+\hypertarget{class_a_x12_a084bc6dcb6ad1e5eefa42bfd5de72a4d}{}\index{A\+X12@{A\+X12}!set\+Write\+Instant@{set\+Write\+Instant}}
+\index{set\+Write\+Instant@{set\+Write\+Instant}!A\+X12@{A\+X12}}
+\subsubsection[{set\+Write\+Instant}]{\setlength{\rightskip}{0pt plus 5cm}void A\+X12\+::set\+Write\+Instant (
+\begin{DoxyParamCaption}
+\item[{bool}]{inst}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_a_x12_a084bc6dcb6ad1e5eefa42bfd5de72a4d}
+To set if a instruction must be done at the moment or later {\itshape T\+R\+U\+E} to do instantly and {\itshape F\+A\+L\+S\+E} to do it later. 
+\begin{DoxyCode}
+111 \{ \hyperlink{class_a_x12_aeb6e6414fe4a02d77a1d84d5213800e2}{\_writeInstant} = inst; \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+ax12.\+h\item 
+ax12.\+cpp\end{DoxyCompactItemize}

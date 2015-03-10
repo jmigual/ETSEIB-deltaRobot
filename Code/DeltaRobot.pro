@@ -17,26 +17,37 @@ CONFIG(release, debug|release){
 INCLUDEPATH += C:/MinGW/Libraries/SFML-2.2/include
 DEPENDPATH += C:/MinGW/Libraries/SFML-2.2/include
 
+
+
 SOURCES += main.cpp \ 
     dynamixel.cpp \
     dxl_hal.cpp \
     ax12.cpp \
     mainwindow.cpp \
-    optionswindow.cpp \
-    optionsservos.cpp
+    Options/optionsservos.cpp \
+    Options/optionswindow.cpp
 
 HEADERS += \
     dxl_hal.h \
     dynamixel.h \
     ax12.h \
     mainwindow.h \
-    optionswindow.h \
-    optionsservos.h
+    Options/optionsservos.h \
+    Options/optionswindow.h
 
 FORMS += \
     mainwindow.ui \
-    optionswindow.ui \
-    optionsservos.ui
+    Options/optionsservos.ui \
+    Options/optionswindow.ui
 
 RESOURCES += \
     resources.qrc
+
+win32:CONFIG(release, debug|release): LIBS += -LC:/MinGW/Libraries/XJoystick/ -lXJoystick
+else:win32:CONFIG(debug, debug|release): LIBS += -LC:/MinGW/Libraries/XJoystick/ -lXJoystickd
+else:unix: LIBS += -LC:/MinGW/Libraries/XJoystick/ -lXJoystick
+
+INCLUDEPATH += C:/MinGW/Libraries/XJoystick
+DEPENDPATH += C:/MinGW/Libraries/XJoystick
+
+DISTFILES +=

@@ -1,3 +1,5 @@
+/// @file main.cpp
+/// Contains the Main of the program 
 #include <QApplication>
 #include <QDebug>
 #include "mainwindow.h"

@@ -8,7 +8,8 @@
 // User libraries
 #include "ax12.h"
 #include "dynamixel.h"
-#include "optionswindow.h"
+#include "Options/optionswindow.h"
+#include "xjoystick.h"
 
 namespace Ui {
 class MainWindow;

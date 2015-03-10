@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['mainwindow',['MainWindow',['../class_main_window.html',1,'MainWindow'],['../class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db',1,'MainWindow::MainWindow()']]]
+  ['factory_5freset',['factory_reset',['../d9/deb/classdynamixel2.html#ab10d0f6f3c77e02dc028ba19ac55c609',1,'dynamixel2']]],
+  ['filter',['filter',['../dc/dc5/class_x_joystick.html#a49901d35007803e1d88cf3eb382e4473',1,'XJoystick']]]
 ];

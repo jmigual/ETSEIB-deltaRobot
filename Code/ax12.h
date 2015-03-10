@@ -14,7 +14,8 @@ class AX12 : public QObject
 {
     Q_OBJECT
 private:
-    enum ROM {
+    enum ROM 
+    {
         ModelNumber         = 0,
         VersionFirmware     = 2,
         ID                  = 3,
@@ -31,7 +32,8 @@ private:
         AlarmShutdown       = 18
     };
     
-    enum RAM {
+    enum RAM 
+    {
         TorqueEnable        = 24,
         LED                 = 25,
         CWComplianceMargin  = 26,

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['operator_5b_5d',['operator[]',['../class_x_joystick.html#afc3d48cab266b9596182229eb0df4384',1,'XJoystick']]]
+  ['loopevent',['loopEvent',['../dc/dc5/class_x_joystick.html#ab503c7f23db422fed2f4378bf431be4e',1,'XJoystick']]]
 ];

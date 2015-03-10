@@ -1,0 +1,120 @@
+\hypertarget{class_options_window}{}\section{Options\+Window Class Reference}
+\label{class_options_window}\index{Options\+Window@{Options\+Window}}
+
+
+{\ttfamily \#include $<$optionswindow.\+h$>$}
+
+
+
+Inheritance diagram for Options\+Window\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=165pt]{d3/d77/class_options_window__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Options\+Window\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=165pt]{dd/d04/class_options_window__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_options_window_ac7ba16f211c07e2114015407c722840b}{Options\+Window} (Q\+Widget $\ast$parent=0)
+\item 
+\hyperlink{class_options_window_a034c885fe8bb4416e732a9571d14a6b4}{$\sim$\+Options\+Window} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_options_window_aeb3e7dca619cd95e750e4575013be313}{on\+\_\+option\+\_\+current\+Item\+Changed} (Q\+List\+Widget\+Item $\ast$item, Q\+List\+Widget\+Item $\ast$)
+\begin{DoxyCompactList}\small\item\em When the current selected item changes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Ui\+::\+Options\+Window $\ast$ \hyperlink{class_options_window_a8347442d5b3b670e8fff0c4102db1f88}{ui}
+\begin{DoxyCompactList}\small\item\em Containsh the G\+U\+I. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_options_window_ac7ba16f211c07e2114015407c722840b}{}\index{Options\+Window@{Options\+Window}!Options\+Window@{Options\+Window}}
+\index{Options\+Window@{Options\+Window}!Options\+Window@{Options\+Window}}
+\subsubsection[{Options\+Window}]{\setlength{\rightskip}{0pt plus 5cm}Options\+Window\+::\+Options\+Window (
+\begin{DoxyParamCaption}
+\item[{Q\+Widget $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\label{class_options_window_ac7ba16f211c07e2114015407c722840b}
+
+\begin{DoxyCode}
+4                                             :
+5     QDialog(parent),
+6     \hyperlink{class_options_window_a8347442d5b3b670e8fff0c4102db1f88}{ui}(\textcolor{keyword}{new} Ui::OptionsWindow)
+7 \{
+8     \hyperlink{class_options_window_a8347442d5b3b670e8fff0c4102db1f88}{ui}->setupUi(\textcolor{keyword}{this});
+9     this->setWindowTitle(\textcolor{stringliteral}{"Options"});
+10     
+11     \hyperlink{class_options_window_a8347442d5b3b670e8fff0c4102db1f88}{ui}->stack->addWidget(\textcolor{keyword}{new} \hyperlink{class_options_servos}{OptionsServos});
+12     \hyperlink{class_options_window_a8347442d5b3b670e8fff0c4102db1f88}{ui}->stack->addWidget(\textcolor{keyword}{new} QWidget);
+13 \}
+\end{DoxyCode}
+\hypertarget{class_options_window_a034c885fe8bb4416e732a9571d14a6b4}{}\index{Options\+Window@{Options\+Window}!````~Options\+Window@{$\sim$\+Options\+Window}}
+\index{````~Options\+Window@{$\sim$\+Options\+Window}!Options\+Window@{Options\+Window}}
+\subsubsection[{$\sim$\+Options\+Window}]{\setlength{\rightskip}{0pt plus 5cm}Options\+Window\+::$\sim$\+Options\+Window (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_options_window_a034c885fe8bb4416e732a9571d14a6b4}
+
+\begin{DoxyCode}
+16 \{
+17     \textcolor{keyword}{delete} \hyperlink{class_options_window_a8347442d5b3b670e8fff0c4102db1f88}{ui};
+18 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_options_window_aeb3e7dca619cd95e750e4575013be313}{}\index{Options\+Window@{Options\+Window}!on\+\_\+option\+\_\+current\+Item\+Changed@{on\+\_\+option\+\_\+current\+Item\+Changed}}
+\index{on\+\_\+option\+\_\+current\+Item\+Changed@{on\+\_\+option\+\_\+current\+Item\+Changed}!Options\+Window@{Options\+Window}}
+\subsubsection[{on\+\_\+option\+\_\+current\+Item\+Changed}]{\setlength{\rightskip}{0pt plus 5cm}void Options\+Window\+::on\+\_\+option\+\_\+current\+Item\+Changed (
+\begin{DoxyParamCaption}
+\item[{Q\+List\+Widget\+Item $\ast$}]{item, }
+\item[{Q\+List\+Widget\+Item $\ast$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{class_options_window_aeb3e7dca619cd95e750e4575013be313}
+
+
+When the current selected item changes. 
+
+
+\begin{DoxyCode}
+23 \{
+24     \textcolor{keywordflow}{if} (item->text() == \textcolor{stringliteral}{"Servos"}) \{
+25         qDebug() << \textcolor{stringliteral}{"Servos"};
+26         \hyperlink{class_options_window_a8347442d5b3b670e8fff0c4102db1f88}{ui}->stack->setCurrentIndex(0);
+27     \}
+28     \textcolor{keywordflow}{else} \{
+29         \hyperlink{class_options_window_a8347442d5b3b670e8fff0c4102db1f88}{ui}->stack->setCurrentIndex(1);
+30     \}
+31 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_options_window_a8347442d5b3b670e8fff0c4102db1f88}{}\index{Options\+Window@{Options\+Window}!ui@{ui}}
+\index{ui@{ui}!Options\+Window@{Options\+Window}}
+\subsubsection[{ui}]{\setlength{\rightskip}{0pt plus 5cm}Ui\+::\+Options\+Window$\ast$ Options\+Window\+::ui\hspace{0.3cm}{\ttfamily [private]}}\label{class_options_window_a8347442d5b3b670e8fff0c4102db1f88}
+
+
+Containsh the G\+U\+I. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{optionswindow_8h}{optionswindow.\+h}\item 
+\hyperlink{optionswindow_8cpp}{optionswindow.\+cpp}\end{DoxyCompactItemize}

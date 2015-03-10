@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['info',['Info',['../struct_x_joystick_1_1_info.html',1,'XJoystick']]]
+  ['info',['Info',['../dd/de5/struct_x_joystick_1_1_info.html',1,'XJoystick']]]
 ];
