@@ -1,0 +1,12 @@
+INPUT(
+./release\main.o
+./release\dynamixel.o
+./release\dxl_hal.o
+./release\ax12.o
+./release\mainwindow.o
+./release\optionswindow.o
+./release\qrc_resources.o
+./release\moc_ax12.o
+./release\moc_mainwindow.o
+./release\moc_optionswindow.o
+);
