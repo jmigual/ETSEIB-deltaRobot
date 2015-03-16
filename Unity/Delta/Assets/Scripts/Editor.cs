@@ -56,14 +56,17 @@ public class Editor : MonoBehaviour {
 		X.SetActive(mode=="t");
 		Y.SetActive(mode=="t");
 		Z.SetActive(mode=="t");
+		RX.SetActive(mode=="r");
 		X.transform.position = selected.transform.position;
 		Y.transform.position = selected.transform.position;
 		Z.transform.position = selected.transform.position;
+		RX.transform.position = selected.transform.position;
 		update_mode ();
 		update_selected();
 		X.transform.position = selected.transform.position;
 		Y.transform.position = selected.transform.position;
 		Z.transform.position = selected.transform.position;
+		RX.transform.position = selected.transform.position;
 	}
 	void update_mode (){
 		//Debug.Log (mode);
@@ -88,6 +91,14 @@ public class Editor : MonoBehaviour {
 			RaycastHit floorHit;
 			if (Physics.Raycast (CamRay, out floorHit, camRayLength, 1)) {
 				if (floorHit.collider.gameObject.CompareTag("Axis")){
+					LastMouse = Input.mousePosition;
+					dragging = true;
+					char auxc = floorHit.collider.gameObject.name[0];
+					if (auxc == 'X')draggingAxis = X;
+					if (auxc == 'Y')draggingAxis = Y;
+					if (auxc == 'Z')draggingAxis = Z;
+				}
+				if (floorHit.collider.gameObject.CompareTag("Rotator")){
 					LastMouse = Input.mousePosition;
 					dragging = true;
 					char auxc = floorHit.collider.gameObject.name[0];
