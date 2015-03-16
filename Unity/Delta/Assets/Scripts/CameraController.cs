@@ -128,4 +128,5 @@ public class CameraController : MonoBehaviour {
 		transform.position = obj_pos + despl;
 		transform.rotation = Quaternion.LookRotation (-despl);
 	}
+
 }

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Editor : MonoBehaviour {
 	
@@ -17,6 +18,7 @@ public class Editor : MonoBehaviour {
 	private GameObject draggingAxis;
 	private Vector2 LastMouse;
 	private Vector3 toLastMouseRX;
+	private string lastMode;
 
 	// Use this for initialization
 	void Start () {
@@ -118,6 +120,22 @@ public class Editor : MonoBehaviour {
 			float res = Vector2.Dot (despMouse,axisScreen)/Mathf.Pow(axisScreen.magnitude,2);
 			selected.transform.position+=draggingAxis.transform.up*res*translateSpeed;
 
+		}
+	}
+
+	public void PausePlay (){
+		Debug.Log (Time.timeScale);
+		if (Time.timeScale == 1) {
+						Time.timeScale = 0;
+						GameObject.FindGameObjectWithTag ("Pause").GetComponentInChildren <Text> ().text = "Play";
+						mode = lastMode;
+						
+				}
+		else {
+						Time.timeScale = 1;
+						GameObject.FindGameObjectWithTag("Pause").GetComponentInChildren <Text>().text = "Pause";
+						lastMode = mode;
+						mode = "-";
 		}
 	}
 }

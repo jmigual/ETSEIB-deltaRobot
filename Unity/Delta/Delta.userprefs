@@ -2,7 +2,8 @@
   <MonoDevelop.Ide.Workspace />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Editor.cs">
     <Files>
-      <File FileName="Assets\Scripts\Editor.cs" Line="40" Column="64" />
+      <File FileName="Assets\Scripts\CameraController.cs" Line="106" Column="94" />
+      <File FileName="Assets\Scripts\Editor.cs" Line="124" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
