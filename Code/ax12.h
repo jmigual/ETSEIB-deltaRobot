@@ -72,7 +72,7 @@ public:
     AX12(dynamixel &dxl, int ID = -1, QObject *parent = 0);
     
     /// Copy constructor
-    AX12(const AX12 &a);<
+    AX12(const AX12 &a);
     
     /// Default destructor
     ~AX12();
