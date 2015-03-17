@@ -319,7 +319,8 @@ Prefab:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2300002, guid: 0936869ba9a2b264ca54c3aebc60d465, type: 3}
   m_ParentPrefab: {fileID: 100100000, guid: 0936869ba9a2b264ca54c3aebc60d465, type: 3}
   m_RootGameObject: {fileID: 1686241346}
   m_IsPrefabParent: 0
@@ -502,7 +503,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 454755236}
   - 33: {fileID: 454755238}
-  - 23: {fileID: 454755237}
   m_Layer: 0
   m_Name: <STL_BINARY>_1
   m_TagString: Untagged
@@ -522,27 +522,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1686241347}
   m_RootOrder: 1
---- !u!23 &454755237
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300002, guid: 0936869ba9a2b264ca54c3aebc60d465,
-    type: 3}
-  m_PrefabInternal: {fileID: 318446918}
-  m_GameObject: {fileID: 454755235}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 7f585a46b337e814aa939fab188fe386, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
 --- !u!33 &454755238
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2294,7 +2273,7 @@ MonoBehaviour:
   RZ: {fileID: 1558869969}
   arrowlength: 4.4000001
   translateSpeed: 5
-  mode: r
+  mode: '-'
   relativeRotation: 1
 --- !u!4 &1898910140
 Transform:
