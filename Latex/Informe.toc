@@ -1,6 +1,13 @@
+\select@language {catalan}
 \contentsline {section}{\numberline {1}Ensamblatge general}{3}{section.1}
-\contentsline {section}{\numberline {2}Braç}{4}{section.2}
-\contentsline {subsection}{\numberline {2.1}Estructura}{4}{subsection.2.1}
-\contentsline {subsection}{\numberline {2.2}Estabilitzador}{4}{subsection.2.2}
-\contentsline {section}{\numberline {3}Avantbraç}{5}{section.3}
-\contentsline {section}{\numberline {4}Pinça}{6}{section.4}
+\contentsline {section}{\numberline {2}Servos}{4}{section.2}
+\contentsline {section}{\numberline {3}Braç}{5}{section.3}
+\contentsline {subsection}{\numberline {3.1}Estructura}{5}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Estabilitzador}{5}{subsection.3.2}
+\contentsline {section}{\numberline {4}Avantbraç}{6}{section.4}
+\contentsline {subsection}{\numberline {4.1}Vara}{6}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Alineador}{6}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Eix}{6}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Eix Pinça}{6}{subsection.4.4}
+\contentsline {subsection}{\numberline {4.5}Unió}{6}{subsection.4.5}
+\contentsline {section}{\numberline {5}Pinça}{7}{section.5}
