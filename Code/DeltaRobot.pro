@@ -34,14 +34,16 @@ SOURCES += main.cpp \
     dxl_hal.cpp \
     ax12.cpp \
     mainwindow.cpp \
-    optionswindow.cpp
+    optionswindow.cpp \
+    servothread.cpp
 
 HEADERS += \
     dxl_hal.h \
     dynamixel.h \
     ax12.h \
     mainwindow.h \
-    optionswindow.h
+    optionswindow.h \
+    servothread.h
 
 FORMS += \
     mainwindow.ui \

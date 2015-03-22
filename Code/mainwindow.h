@@ -10,6 +10,7 @@
 #include "ax12.h"
 #include "dynamixel.h"
 #include "optionswindow.h"
+#include "servothread.h"
 #include "xjoystick.h"
 
 namespace Ui {
@@ -34,15 +35,16 @@ public:
     /// Default destructor
     ~MainWindow();
 
-private:
-    /// Contains the comunication with the motors
-    dynamixel _dxl;
+private:    
     
     /// Contains all the servos utilization
     QVector< AX12 > _servos;
     
     /// Contains the user interface
     Ui::MainWindow *ui;
+    
+    /// Contains the thread controlling all the servos and external hardware
+    ServoThread _sT;
 
         
 private slots:

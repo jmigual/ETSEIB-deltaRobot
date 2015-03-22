@@ -3,12 +3,11 @@
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
-    _servos(sCount + aSCount, _dxl),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    this->setWindowTitle("DeltaRobot Control");
-    _dxl.initialize("COM3", 1000000);
+    this->setWindowTitle("DeltaRobot Control");    
+    _sT.start();
 }
 
 MainWindow::~MainWindow()

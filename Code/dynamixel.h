@@ -170,6 +170,8 @@ public:
     int is_packet_timeout();
 };
 
+extern dynamixel dxl;
+
 /// Dynamixel 2.0 protocol class
 class dynamixel2 {
     
@@ -251,5 +253,7 @@ public:
     void set_packet_timeout(int NumRcvByte);
     void set_packet_timeout_ms(int msec);
 };
+
+extern dynamixel2 dxl;
 
 #endif

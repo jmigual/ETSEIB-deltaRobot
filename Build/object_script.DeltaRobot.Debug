@@ -5,8 +5,10 @@ INPUT(
 ./debug\ax12.o
 ./debug\mainwindow.o
 ./debug\optionswindow.o
+./debug\servothread.o
 ./debug\qrc_resources.o
 ./debug\moc_ax12.o
 ./debug\moc_mainwindow.o
 ./debug\moc_optionswindow.o
+./debug\moc_servothread.o
 );

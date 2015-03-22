@@ -56,9 +56,6 @@ private:
         
     };    
     
-    /// Refrence to a USB2Dynamixel controler
-    dynamixel &_dxl;
-    
     /// Stores the current ID
     int _ID;
     
