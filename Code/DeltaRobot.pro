@@ -8,15 +8,25 @@ CONFIG += c++11
 #--------------
 # SFML include
 #--------------
-CONFIG(release, debug|release){
-    LIBS += -LC:/MinGW/Libraries/SFML-2.2/lib -lsfml-audio -lsfml-graphics -lsfml-network -lsfml-window -lsfml-system
-} else {
-    LIBS += -LC:/MinGW/Libraries/SFML-2.2/lib -lsfml-audio-d -lsfml-graphics-d -lsfml-network-d -lsfml-window-d -lsfml-system-d
+
+win32 {
+CONFIG(release, debug|release) LIBS += -L$$PWD/Libraries/SFML-2.2/lib -lsfml-window -lsfml-system
+else: LIBS += -L$$PWD/Libraries/SFML-2.2/lib -lsfml-window-d -lsfml-system-d
+}
+INCLUDEPATH += $$PWD/Libraries/SFML-2.2/include
+DEPENDPATH += $$PWD/Libraries/SFML-2.2/include
+
+#------------------
+# XJoystick Include
+#------------------
+
+win32 {
+CONFIG(release, debug|release): LIBS += -L$$PWD/Libraries/XJoystick/ -lXJoystick
+else:CONFIG(debug, debug|release): LIBS += -L$$PWD/Libraries/XJoystick/ -lXJoystickd
 }
 
-INCLUDEPATH += C:/MinGW/Libraries/SFML-2.2/include
-DEPENDPATH += C:/MinGW/Libraries/SFML-2.2/include
-
+INCLUDEPATH += $$PWD/Libraries/XJoystick
+DEPENDPATH += $$PWD/Libraries/XJoystick
 
 
 SOURCES += main.cpp \ 
@@ -24,27 +34,18 @@ SOURCES += main.cpp \
     dxl_hal.cpp \
     ax12.cpp \
     mainwindow.cpp \
-    Options/optionswindow.cpp
+    optionswindow.cpp
 
 HEADERS += \
     dxl_hal.h \
     dynamixel.h \
     ax12.h \
     mainwindow.h \
-    Options/optionswindow.h
+    optionswindow.h
 
 FORMS += \
     mainwindow.ui \
-    Options/optionswindow.ui
+    optionswindow.ui
 
 RESOURCES += \
     resources.qrc
-
-win32:CONFIG(release, debug|release): LIBS += -LC:/MinGW/Libraries/XJoystick/ -lXJoystick
-else:win32:CONFIG(debug, debug|release): LIBS += -LC:/MinGW/Libraries/XJoystick/ -lXJoystickd
-else:unix: LIBS += -LC:/MinGW/Libraries/XJoystick/ -lXJoystick
-
-INCLUDEPATH += C:/MinGW/Libraries/XJoystick
-DEPENDPATH += C:/MinGW/Libraries/XJoystick
-
-DISTFILES +=

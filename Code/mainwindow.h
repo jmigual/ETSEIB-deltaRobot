@@ -9,7 +9,7 @@
 // User libraries
 #include "ax12.h"
 #include "dynamixel.h"
-#include "Options/optionswindow.h"
+#include "optionswindow.h"
 #include "xjoystick.h"
 
 namespace Ui {
