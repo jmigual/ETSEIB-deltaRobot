@@ -5,7 +5,14 @@ ServoThread::ServoThread() :
     _sBaud(1000000),
     _sPort("COM3")
 {
-    QDir path(QStandardPaths::AppLocalDataLocation);
+    
+    // Searching for the system's writable location
+    QStandardPaths::StandardLocation loc = QStandardPaths::AppLocalDataLocation;
+    _writeD = QStandardPaths::writableLocation(loc);
+    
+    // Checking if the path exists
+    QDir data(_writeD);
+    if (!data.exists()) data.mkpath(_writeD);
 }
 
 ServoThread::~ServoThread()

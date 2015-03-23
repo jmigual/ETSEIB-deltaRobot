@@ -1,6 +1,6 @@
 \select@language {catalan}
 \contentsline {section}{\numberline {1}Ensamblatge general}{3}{section.1}
-\contentsline {section}{\numberline {2}Servos}{4}{section.2}
+\contentsline {section}{\numberline {2}Servomotors}{4}{section.2}
 \contentsline {section}{\numberline {3}Braç}{5}{section.3}
 \contentsline {subsection}{\numberline {3.1}Estructura}{5}{subsection.3.1}
 \contentsline {subsection}{\numberline {3.2}Estabilitzador}{5}{subsection.3.2}
