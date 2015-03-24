@@ -9,7 +9,7 @@ public class RobotCreator : MonoBehaviour {
 	public float theta1=60f,theta2=60f,theta3=60f;
 
 	private const float rad = 2f*Mathf.PI/360f;
-
+	private int signe = 1;
 	private LineRenderer[] Lines;
 	private int line;
 	//plataforma base
@@ -48,30 +48,26 @@ public class RobotCreator : MonoBehaviour {
 	void Update () {
 		line=0;
 		P=transform.position;
-		setAngles ();
 		drawBase ();
-		drawArms ();
 		drawPlatform();
+		setAngles ();
+		drawArms ();
 		drawForearm();
 	}
 	void setAngles (){
-		/* Su y=mi -z
-		 * Su z=mi -y
-		 * Su x=mi x
-		 * P<-->O
-		 * Su La=mi L1
-		 * Su Lb=mi L2
-		 * su L1=mi a
-		 * su L2=mi b
-		 * su theta=mi -theta
-		 */
-		float x0=P.x-O.x, y0=-O.z+P.z, z0=O.y-P.y;
-		float A=1+(L1-y0+L2*L2)/z0;
-		float B=2*((L1-y0+L2)/z0)*((b*b-x0*x0-z0*z0-a*a-L1*L1)/(2*z0))-2*L1;
-		float C=((b*b-x0*x0-z0*z0-a*a-L1*L1*L1*L1)/(2*z0))-L1*L1-a*a;
-		float Cy=(-B+Mathf.Sqrt(B*B-4*A*C))/(2*A);
-		float Cz=Mathf.Sqrt (b*b-x0*x0-(Cy-y0+L2)*(Cy-y0+L2))+z0;
-		theta1=-Mathf.Atan(Cz/(L1-Cy))/rad;
+		float x0 = E1.z - D1.z;
+		float y0 = E1.y - D1.y;
+		float z0 = E1.x - D1.x;
+		float r1 = a;
+		float r2 = b;
+		float n = r2 * r2 - r1 * r1 - z0 * z0 - x0 * x0 - y0 * y0;
+		float raiz = Mathf.Sqrt (n * n * y0 * y0 - 4 * (x0 * x0 + y0 * y0) * (-x0 * x0 * r1 * r1 + n * n / 4));
+		if (x0 < 0)raiz = -raiz;
+		float y = (-n*y0 + raiz ) / (2*(x0*x0+y0*y0));
+		if (y == r1)
+						signe = signe * -1;
+		float x = Mathf.Sqrt(r1 * r1 - y * y)*signe;
+		theta1= -Mathf.Atan2 (y,x)*180/Mathf.PI;
 	}
 	void drawBase(){
 		D1.Set(0,0,L1);

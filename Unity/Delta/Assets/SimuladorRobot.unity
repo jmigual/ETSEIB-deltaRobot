@@ -108,7 +108,7 @@ MonoBehaviour:
   center: {fileID: 790853745}
   distance: 20
   distanceMin: 3
-  distanceMax: 30
+  distanceMax: 50
   zoomspeed: 500
   theta: 45
   phi: 50
@@ -433,6 +433,47 @@ Transform:
   - {fileID: 1897022155}
   m_Father: {fileID: 0}
   m_RootOrder: 5
+--- !u!1 &843154042
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 843154044}
+  - 114: {fileID: 843154043}
+  m_Layer: 0
+  m_Name: Troll
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &843154043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 843154042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64e27f3db4daece498903b4d65bde77e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  r1: 17.2999992
+  r2: 23.6000004
+--- !u!4 &843154044
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 843154042}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 20, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
 --- !u!1 &908963462
 GameObject:
   m_ObjectHideFlags: 0
