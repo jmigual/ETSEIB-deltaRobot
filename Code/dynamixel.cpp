@@ -1299,3 +1299,6 @@ unsigned long  dynamixel2::get_sync_read_data_dword(unsigned char id, unsigned i
 						 MAKEWORD(gSyncData[id].pucTable[(start_address-gSyncData[id].iStartAddr)+2],
 									  gSyncData[id].pucTable[(start_address-gSyncData[id].iStartAddr)+3]));
 }
+
+dynamixel dxl;
+dynamixel2 dxl2;

@@ -7,6 +7,8 @@
 #include <algorithm>
 #include "dynamixel.h"
 
+
+
 /// @brief The AX12 class is used to control AX-12 motors from Dynamixel
 class AX12 : public QObject
 {
@@ -66,7 +68,7 @@ public:
     
     /// Default constructor must pass an initialized dynamixel object
     /// if ID == -1 no action is done
-    AX12(dynamixel &dxl, int ID = -1, QObject *parent = 0);
+    AX12(int ID = -1, QObject *parent = 0);
     
     /// Copy constructor
     AX12(const AX12 &a);

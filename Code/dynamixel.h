@@ -7,7 +7,6 @@
 #include <QString>
 #include "dxl_hal.h"
 
-
 #define MAX_ID				(252)
 #define BROADCAST_ID		(254)  //BroadCast ID
 
@@ -170,8 +169,6 @@ public:
     int is_packet_timeout();
 };
 
-extern dynamixel dxl;
-
 /// Dynamixel 2.0 protocol class
 class dynamixel2 {
     
@@ -254,6 +251,7 @@ public:
     void set_packet_timeout_ms(int msec);
 };
 
-extern dynamixel2 dxl;
+extern dynamixel dxl;
+extern dynamixel2 dxl2;
 
 #endif
