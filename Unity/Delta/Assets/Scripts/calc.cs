@@ -24,7 +24,7 @@ public class calc : MonoBehaviour {
 
 		y = (-n*y0 + Mathf.Sqrt(n*n*y0*y0 - 4 * (x0*x0+y0*y0)* (-x0*x0*r1*r1+n*n/4)) ) / (2*(x0*x0+y0*y0));
 		x = Mathf.Sqrt(r1 * r1 - y * y);
-		Debug.Log (Mathf.Atan2 (y,x)*180/Mathf.PI);
+		//Debug.Log (Mathf.Atan2 (y,x)*180/Mathf.PI);
 
 	}
 }

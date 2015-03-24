@@ -405,7 +405,7 @@ MonoBehaviour:
   a: 7
   b: 10
   L2: 2
-  O: {x: 0, y: 10, z: 0}
+  O: {x: 0, y: 20, z: 0}
   ColorRGBA: {r: .014489633, g: .985294104, b: .985294104, a: 1}
   arms: {r: .0207612664, g: .941176474, b: .0271089058, a: 1}
   forearms: {r: .0981834158, g: .213235319, b: .00470372476, a: 1}
@@ -413,6 +413,7 @@ MonoBehaviour:
   theta1: 60
   theta2: 60
   theta3: 60
+  controlled: 1
 --- !u!4 &790853747
 Transform:
   m_ObjectHideFlags: 0
@@ -442,6 +443,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 843154044}
   - 114: {fileID: 843154043}
+  - 114: {fileID: 843154045}
   m_Layer: 0
   m_Name: Troll
   m_TagString: Untagged
@@ -474,6 +476,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
+--- !u!114 &843154045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 843154042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eae997a069f17b4fabc45db400dd3e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  height: 10
+  radius: 5
+  w: 3
 --- !u!1 &908963462
 GameObject:
   m_ObjectHideFlags: 0

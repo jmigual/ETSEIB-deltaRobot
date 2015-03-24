@@ -7,9 +7,12 @@ public class RobotCreator : MonoBehaviour {
 	public Vector3 O;
 	public Color Base, arms, forearms, platform;
 	public float theta1=60f,theta2=60f,theta3=60f;
+	public bool controlled=false;
+
+	public static Vector3 Ocontrolled;
 
 	private const float rad = 2f*Mathf.PI/360f;
-	private int signe = 1;
+	//private int signe = 1;
 	private LineRenderer[] Lines;
 	private int line;
 	//plataforma base
@@ -46,6 +49,7 @@ public class RobotCreator : MonoBehaviour {
 		line++;
 	}
 	void Update () {
+		if (controlled)O=Ocontrolled;
 		line=0;
 		P=transform.position;
 		drawBase ();
@@ -55,19 +59,41 @@ public class RobotCreator : MonoBehaviour {
 		drawForearm();
 	}
 	void setAngles (){
-		float x0 = E1.z - D1.z;
-		float y0 = E1.y - D1.y;
-		float z0 = E1.x - D1.x;
-		float r1 = a;
-		float r2 = b;
+		float cos60=Mathf.Cos (60*rad);
+		float sin60=Mathf.Sin (60*rad);
+
+		float x0,y0,z0;
+		x0=O.z-P.z;
+		y0=O.y-P.y;
+		z0=O.x-P.x;
+
+		float x1,y1,z1;
+		x1=x0+L2-L1;
+		y1=y0;
+		z1=z0;
+		theta1=singleAngle (x1,y1,z1,a,b);
+
+		float x2,y2,z2;
+		x2=z0*sin60-x0*cos60+L2-L1;
+		y2=y0;
+		z2=-z0*cos60-x0*sin60;
+		theta2=singleAngle (x2,y2,z2,a,b);
+
+		float x3,y3,z3;
+		x3=-z0*sin60-x0*cos60+L2-L1;
+		y3=y0;
+		z3=-z0*cos60+x0*sin60;
+		theta3=singleAngle (x3,y3,z3,a,b);
+	}
+	float singleAngle (float x0, float y0, float z0, float r1, float r2){
 		float n = r2 * r2 - r1 * r1 - z0 * z0 - x0 * x0 - y0 * y0;
 		float raiz = Mathf.Sqrt (n * n * y0 * y0 - 4 * (x0 * x0 + y0 * y0) * (-x0 * x0 * r1 * r1 + n * n / 4));
 		if (x0 < 0)raiz = -raiz;
 		float y = (-n*y0 + raiz ) / (2*(x0*x0+y0*y0));
-		if (y == r1)
-						signe = signe * -1;
+		int signe=1;
+		if ((r2*r2-(y0+r1)*(y0+r1))<(x0*x0+z0*z0) && x0<0)signe = signe * -1;
 		float x = Mathf.Sqrt(r1 * r1 - y * y)*signe;
-		theta1= -Mathf.Atan2 (y,x)*180/Mathf.PI;
+		return -Mathf.Atan2 (y,x)*180/Mathf.PI;
 	}
 	void drawBase(){
 		D1.Set(0,0,L1);
