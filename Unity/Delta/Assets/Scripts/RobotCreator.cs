@@ -7,9 +7,12 @@ public class RobotCreator : MonoBehaviour {
 	public Vector3 O;
 	public Color Base, arms, forearms, platform;
 	public float theta1=60f,theta2=60f,theta3=60f;
+	public bool controlled=false;
+
+	public static Vector3 Ocontrolled;
 
 	private const float rad = 2f*Mathf.PI/360f;
-
+	//private int signe = 1;
 	private LineRenderer[] Lines;
 	private int line;
 	//plataforma base
@@ -46,32 +49,51 @@ public class RobotCreator : MonoBehaviour {
 		line++;
 	}
 	void Update () {
+		if (controlled)O=Ocontrolled;
 		line=0;
 		P=transform.position;
-		setAngles ();
 		drawBase ();
-		drawArms ();
 		drawPlatform();
+		setAngles ();
+		drawArms ();
 		drawForearm();
 	}
 	void setAngles (){
-		/* Su y=mi -z
-		 * Su z=mi -y
-		 * Su x=mi x
-		 * P<-->O
-		 * Su La=mi L1
-		 * Su Lb=mi L2
-		 * su L1=mi a
-		 * su L2=mi b
-		 * su theta=mi -theta
-		 */
-		float x0=P.x-O.x, y0=-O.z+P.z, z0=O.y-P.y;
-		float A=1+(L1-y0+L2*L2)/z0;
-		float B=2*((L1-y0+L2)/z0)*((b*b-x0*x0-z0*z0-a*a-L1*L1)/(2*z0))-2*L1;
-		float C=((b*b-x0*x0-z0*z0-a*a-L1*L1*L1*L1)/(2*z0))-L1*L1-a*a;
-		float Cy=(-B+Mathf.Sqrt(B*B-4*A*C))/(2*A);
-		float Cz=Mathf.Sqrt (b*b-x0*x0-(Cy-y0+L2)*(Cy-y0+L2))+z0;
-		theta1=-Mathf.Atan(Cz/(L1-Cy))/rad;
+		float cos60=Mathf.Cos (60*rad);
+		float sin60=Mathf.Sin (60*rad);
+
+		float x0,y0,z0;
+		x0=O.z-P.z;
+		y0=O.y-P.y;
+		z0=O.x-P.x;
+
+		float x1,y1,z1;
+		x1=x0+L2-L1;
+		y1=y0;
+		z1=z0;
+		theta1=singleAngle (x1,y1,z1,a,b);
+
+		float x2,y2,z2;
+		x2=z0*sin60-x0*cos60+L2-L1;
+		y2=y0;
+		z2=-z0*cos60-x0*sin60;
+		theta2=singleAngle (x2,y2,z2,a,b);
+
+		float x3,y3,z3;
+		x3=-z0*sin60-x0*cos60+L2-L1;
+		y3=y0;
+		z3=-z0*cos60+x0*sin60;
+		theta3=singleAngle (x3,y3,z3,a,b);
+	}
+	float singleAngle (float x0, float y0, float z0, float r1, float r2){
+		float n = r2 * r2 - r1 * r1 - z0 * z0 - x0 * x0 - y0 * y0;
+		float raiz = Mathf.Sqrt (n * n * y0 * y0 - 4 * (x0 * x0 + y0 * y0) * (-x0 * x0 * r1 * r1 + n * n / 4));
+		if (x0 < 0)raiz = -raiz;
+		float y = (-n*y0 + raiz ) / (2*(x0*x0+y0*y0));
+		int signe=1;
+		if ((r2*r2-(y0+r1)*(y0+r1))<(x0*x0+z0*z0) && x0<0)signe = signe * -1;
+		float x = Mathf.Sqrt(r1 * r1 - y * y)*signe;
+		return -Mathf.Atan2 (y,x)*180/Mathf.PI;
 	}
 	void drawBase(){
 		D1.Set(0,0,L1);
