@@ -13,3 +13,8 @@ OptionsWindow::~OptionsWindow()
 {
     delete ui;
 }
+
+void OptionsWindow::joystickChanged()
+{
+    
+}

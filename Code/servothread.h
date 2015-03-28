@@ -12,6 +12,7 @@
 
 // User libraries
 #include "ax12.h"
+#include <xjoystick.h>
 
 /// The ServoThread's class handles the comunication between the delta robot
 /// servos and the PC.
@@ -38,9 +39,6 @@ private:
     /// True when we must end executino
     bool _end;
     
-    /// Contains the servos used in the robot
-    QVector < AX12 > _servos;
-    
     /// To prevent memory errors
     QMutex _mutex;
     
@@ -49,6 +47,9 @@ private:
     
     /// Contains the used baud rate to comunicate with the servos
     int _sBaud;
+    
+    /// Contains the servos used in the robot
+    QVector < AX12 > _servos;
     
     /// Contains the selected com port used in the comunication with servos
     QString _sPort;
@@ -60,5 +61,7 @@ private:
     void run();
     
 };
+
+// TODO: Create data path
 
 #endif // SERVOTHREAD_H

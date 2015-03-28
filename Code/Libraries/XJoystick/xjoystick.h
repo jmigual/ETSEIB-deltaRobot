@@ -84,6 +84,9 @@ public:
     /// True if there's any joystick connected
     inline bool anyConnected() { return _joys.size() > 0; }
     
+    /// Returns the current number of axes
+    inline int axisCount() { return _aName.size(); }
+    
     /// Returns the system available joysticks
     QVector< Info > available();
     
@@ -97,8 +100,11 @@ public:
     /// joystick
     inline int current() { return _ID; }
     
-    /// Returns all the Joystick's axis and it's names
-    QVector< P > getAxis() { return _aName; }
+    /// Returns the all axes names
+    QVector< QString > getAllAxis();
+    
+    /// Returns the current Joystick's axis and it's names
+    inline QVector< P > getAxis() { return _aName; }
     
     /// To mantain an axis in a certain value
     void axisPress(unsigned char a, float value = 100);

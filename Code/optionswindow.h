@@ -18,6 +18,9 @@ public:
     explicit OptionsWindow(QWidget *parent = 0);
     ~OptionsWindow();
     
+public slots:
+    void joystickChanged();
+    
 private slots:
 
 private:

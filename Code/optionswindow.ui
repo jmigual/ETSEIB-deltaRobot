@@ -38,7 +38,7 @@
      <item>
       <widget class="QStackedWidget" name="stack">
        <property name="currentIndex">
-        <number>1</number>
+        <number>2</number>
        </property>
        <widget class="QWidget" name="joystick">
         <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -333,6 +333,13 @@
           </layout>
          </item>
          <item>
+          <widget class="QLabel" name="label_16">
+           <property name="text">
+            <string>Servo Port</string>
+           </property>
+          </widget>
+         </item>
+         <item>
           <layout class="QHBoxLayout" name="horizontalLayout_9">
            <item>
             <widget class="QLabel" name="label_8">
@@ -356,7 +363,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QSpinBox" name="baudRate">
+            <widget class="QSpinBox" name="baudRS">
              <property name="prefix">
               <string/>
              </property>
@@ -371,6 +378,64 @@
              </property>
              <property name="value">
               <number>1000000</number>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="Line" name="line">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_17">
+           <property name="text">
+            <string>Clamp Port</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_17">
+           <item>
+            <widget class="QLabel" name="label_18">
+             <property name="text">
+              <string>Port</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="portC"/>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_19">
+           <item>
+            <widget class="QLabel" name="label_20">
+             <property name="text">
+              <string>Baud Rate</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="baudRC">
+             <property name="prefix">
+              <string/>
+             </property>
+             <property name="minimum">
+              <number>300</number>
+             </property>
+             <property name="maximum">
+              <number>2000000</number>
+             </property>
+             <property name="singleStep">
+              <number>100</number>
+             </property>
+             <property name="value">
+              <number>9600</number>
              </property>
             </widget>
            </item>

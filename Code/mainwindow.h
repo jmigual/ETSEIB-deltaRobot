@@ -1,22 +1,28 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-// Included libraries
+// Standard libraries
+#include <utility>
+
+// Qt Libraries
 #include <QMainWindow>
 #include <QDebug>
 #include <QVector>
+
+// Other libraries
+#include <xjoystick.h>
 
 // User libraries
 #include "ax12.h"
 #include "dynamixel.h"
 #include "optionswindow.h"
 #include "servothread.h"
-#include "xjoystick.h"
 
 namespace Ui {
 class MainWindow;
 }
 
+using namespace std;
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -37,20 +43,32 @@ public:
 
 private:    
     
+    /// To handle the joystick
+    XJoystick _joy;
+    
     /// Contains all the servos utilization
     QVector< AX12 > _servos;
     
-    /// Contains the user interface
-    Ui::MainWindow *ui;
-    
     /// Contains the thread controlling all the servos and external hardware
     ServoThread _sT;
+    
+    /// To update the joystick value
+    QTimer _timer;
+    
+    /// Contains the user interface
+    Ui::MainWindow *ui;
 
         
 private slots:
     
+    /// Handles a joystick update
+    void joyChanged();
+    
     /// To select the options
     void on_actionOptions_triggered();
+    
+    /// Updates all data to the servo thread
+    void update();
 };
 
 #endif // MAINWINDOW_H
