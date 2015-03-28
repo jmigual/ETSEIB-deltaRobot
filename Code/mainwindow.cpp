@@ -14,7 +14,10 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(&_joy, SIGNAL(changed()), this, SLOT(joyChanged()));
     connect(&_timer, SIGNAL(timeout()), this, SLOT(update()));
     
-    QVector< pair<QString, int> > V(_joy.getAllAxis());
+    _joy.available();
+    _joy.getAllAxis();
+    _joy.getAxis();
+    _joy.select(0);
 }
 
 MainWindow::~MainWindow()
