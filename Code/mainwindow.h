@@ -5,16 +5,17 @@
 #include <utility>
 
 // Qt Libraries
-#include <QMainWindow>
 #include <QDebug>
+#include <QLabel>
+#include <QMainWindow>
 #include <QVector>
 
 // Other libraries
 #include <xjoystick.h>
 
 // User libraries
-#include "ax12.h"
-#include "dynamixel.h"
+#include "dxl/ax12.h"
+#include "dxl/dynamixel.h"
 #include "optionswindow.h"
 #include "servothread.h"
 
@@ -41,7 +42,19 @@ public:
     /// Default destructor
     ~MainWindow();
 
-private:    
+private:  
+    
+    /// Handles all the axis labels
+    QVector< QLabel *> _axis;
+    
+    /// Contains the axis value;
+    QVector < float > _axisV;
+    
+    /// Handles all the button labels
+    QVector< QLabel *> _buts;
+    
+    /// Contains the path to the data location
+    QString _dataP;
     
     /// To handle the joystick
     XJoystick _joy;

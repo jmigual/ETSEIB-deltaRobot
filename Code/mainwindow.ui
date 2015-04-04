@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>337</width>
-    <height>343</height>
+    <width>322</width>
+    <height>334</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Delta Robot Control</string>
   </property>
   <property name="windowIcon">
    <iconset resource="resources.qrc">
@@ -22,10 +22,10 @@
     <item>
      <layout class="QVBoxLayout" name="joy">
       <item>
-       <layout class="QHBoxLayout" name="joyAxes"/>
+       <widget class="QWidget" name="joyAxis" native="true"/>
       </item>
       <item>
-       <layout class="QHBoxLayout" name="joyButs"/>
+       <widget class="QWidget" name="joyButs" native="true"/>
       </item>
      </layout>
     </item>
@@ -190,7 +190,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>337</width>
+     <width>322</width>
      <height>21</height>
     </rect>
    </property>

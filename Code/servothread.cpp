@@ -1,18 +1,15 @@
 #include "servothread.h"
 
 ServoThread::ServoThread() :
+    _axis(XJoystick::AxisCount),
+    _buts(XJoystick::ButtonCount),
     _end(false),
+    _pause(false),
     _sBaud(1000000),
-    _sPort("COM3")
+    _sPort("COM3"),
+    _sPortChanged(false)
 {
     
-    // Searching for the system's writable location
-    QStandardPaths::StandardLocation loc = QStandardPaths::AppLocalDataLocation;
-    _writeD = QStandardPaths::writableLocation(loc);
-    
-    // Checking if the path exists
-    QDir data(_writeD);
-    if (!data.exists()) data.mkpath(_writeD);
 }
 
 ServoThread::~ServoThread()
@@ -25,7 +22,17 @@ ServoThread::~ServoThread()
     wait();
 }
 
-void ServoThread::loadData()
+void ServoThread::loadData(QVector<float> &aV, QVector<bool> &buts)
+{
+    _mutex.lock();
+    // Copying the joystick values
+    _axis = aV;
+    _buts = buts;
+    
+    _mutex.unlock();
+}
+
+void ServoThread::write(QString &dir)
 {
     
 }
@@ -48,6 +55,9 @@ void ServoThread::run()
         msleep(10);
         _mutex.lock();
         if (not _end and _pause) _cond.wait(&_mutex);
+        
+        
+        
         _mutex.unlock();
     }
 }

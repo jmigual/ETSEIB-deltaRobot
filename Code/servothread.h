@@ -10,9 +10,11 @@
 #include <QVector>
 #include <QWaitCondition>
 
-// User libraries
-#include "ax12.h"
+// Other libraries
 #include <xjoystick.h>
+
+// User libraries
+#include "dxl/ax12.h"
 
 /// The ServoThread's class handles the comunication between the delta robot
 /// servos and the PC.
@@ -28,10 +30,47 @@ public:
     /// Default destructor
     ~ServoThread();
     
+    /// Continues program's execution
+    inline void cont()
+    {
+        _mutex.lock();
+        _pause = false;
+        _cond.wakeOne();
+        _mutex.unlock();
+    }
+    
+    /// Ends the execution
+    inline void end()
+    {
+        _mutex.lock();
+        _end = true;
+        _cond.wakeOne();
+        _mutex.unlock();
+        
+        wait();
+    }
+    
     /// Adds the loaded data
-    void loadData();
+    void loadData(QVector< float > &aV, QVector<bool> &buts);
+    
+    /// Pauses the execution
+    inline void pause()
+    {
+        _mutex.lock();
+        _pause = true;
+        _mutex.unlock();
+    }
+    
+    /// Writes data to the selected directory
+    void write(QString &dir); 
     
 private:
+    
+    /// Contains the axis value
+    QVector < float > _axis;
+    
+    /// Contains the buttons value
+    QVector < bool > _buts;
     
     /// To start and pause the thread
     QWaitCondition _cond;
@@ -54,14 +93,12 @@ private:
     /// Contains the selected com port used in the comunication with servos
     QString _sPort;
     
-    /// Contains the path to the data directory
-    QString _writeD;
+    /// True if the servos port changes
+    bool _sPortChanged;
     
     /// Used to create another thread
     void run();
     
 };
-
-// TODO: Create data path
 
 #endif // SERVOTHREAD_H

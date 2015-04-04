@@ -30,17 +30,17 @@ DEPENDPATH += $$PWD/Libraries/XJoystick
 
 
 SOURCES += main.cpp \ 
-    dynamixel.cpp \
-    dxl_hal.cpp \
-    ax12.cpp \
+    dxl/dynamixel.cpp \
+    dxl/dxl_hal.cpp \
+    dxl/ax12.cpp \
     mainwindow.cpp \
     optionswindow.cpp \
     servothread.cpp
 
 HEADERS += \
-    dxl_hal.h \
-    dynamixel.h \
-    ax12.h \
+    dxl/dxl_hal.h \
+    dxl/dynamixel.h \
+    dxl/ax12.h \
     mainwindow.h \
     optionswindow.h \
     servothread.h
