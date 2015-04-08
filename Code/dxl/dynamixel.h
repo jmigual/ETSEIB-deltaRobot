@@ -120,7 +120,7 @@ public:
     
     dynamixel();
     
-    dynamixel(QString port_num, int baud_rate = 10000000);
+    dynamixel(QString port_num, int baud_rate = 1000000);
     
     inline bool isOpen() { return dH.isOpen(); }
     
@@ -131,7 +131,7 @@ public:
     int terminate(void);
     
     ///////// get communication result method /////////
-    int get_comm_result(void);
+    inline int get_comm_result() { return gbCommStatus; }
     
     
     
@@ -250,8 +250,5 @@ public:
     void set_packet_timeout(int NumRcvByte);
     void set_packet_timeout_ms(int msec);
 };
-
-extern dynamixel dxl;
-extern dynamixel2 dxl2;
 
 #endif

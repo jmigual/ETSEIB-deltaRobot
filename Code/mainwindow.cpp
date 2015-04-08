@@ -6,6 +6,7 @@ MainWindow::MainWindow(QWidget *parent) :
     _axis(XJoystick::AxisCount),
     _axisV(XJoystick::AxisCount),
     _buts(XJoystick::ButtonCount),
+    _butsV(XJoystick::ButtonCount),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
@@ -30,6 +31,7 @@ MainWindow::MainWindow(QWidget *parent) :
     }
     ui->joyAxis->setLayout(wL);
     
+    // Adding buttons
     wL = new QGridLayout;
     for (int i = 0; i < XJoystick::ButtonCount; ++i) {
         _buts[i] = new QLabel(QString::number(i + 1));
@@ -41,7 +43,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->joyAxis->hide();
     ui->joyButs->hide();
     ui->line->hide();
-    
     // TODO: Create dataPath
 }
 
@@ -58,7 +59,6 @@ void MainWindow::joyChanged()
     bool found = false;
     int i = 0;
     while (i < V.size() and not found) { found = V[i].ID == sel; ++i; }
-    
     if (not found) {
         if (V.size() > 0) {
             _joy.select(V[0].ID);
@@ -80,24 +80,27 @@ void MainWindow::joyChanged()
             ui->line->hide();
         }
     }
+    emit joystickChanged();
 }
 
 
 void MainWindow::on_actionOptions_triggered()
 {
-    OptionsWindow o;
+    OptionsWindow o(_joy, this);
     o.exec();
     
-    if (o.result()) qDebug() << "Acceptat";
-    else qDebug() << "Rebutjat";
+    connect(this, SIGNAL(joystickChanged()), &o, SLOT(joystickChanged()));
+    
+    if (o.result()) o.storeData();
 }
 
 void MainWindow::update()
 {
     _joy.update();
-    for (int i = 0; i < XJoystick::AxisCount; ++i) {
-        _axisV[i] = _joy[i];
-    }
+    for (int i = 0; i < XJoystick::AxisCount; ++i) _axisV[i] = _joy[i];
+    for (int i = 0; i < XJoystick::ButtonCount; ++i) _butsV[i] = _joy.button(i);
+    
+    _sT.setData(_axisV, _butsV);
     
     // TODO: Finish update function
 }

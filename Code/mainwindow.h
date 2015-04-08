@@ -41,6 +41,11 @@ public:
     
     /// Default destructor
     ~MainWindow();
+    
+signals:
+    
+    /// Emmitted when a joystick changes
+    void joystickChanged();
 
 private:  
     
@@ -53,8 +58,15 @@ private:
     /// Handles all the button labels
     QVector< QLabel *> _buts;
     
+    /// Handles all buttons values
+    QVector < bool > _butsV;
+    
     /// Contains the path to the data location
     QString _dataP;
+    
+    int _jAxisX = -1;   ///< Axis for the X value
+    int _jAxisY = -1;   ///< Axis for the Y value
+    int _jAxisZ = -1;   ///< AXis for the Z value
     
     /// To handle the joystick
     XJoystick _joy;

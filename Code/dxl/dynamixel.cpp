@@ -93,8 +93,7 @@ double dynamixel::get_packet_time(void)
     elapsed_time = (double)(dH.get_curr_time() - gdPacketStartTime);
 
     // Overflow
-    if(elapsed_time < 0)
-        gdPacketStartTime = dH.get_curr_time();
+    if(elapsed_time < 0) gdPacketStartTime = dH.get_curr_time();
 	
 	return elapsed_time;
 }
@@ -116,12 +115,6 @@ int dynamixel::is_packet_timeout(void)
     if(this->get_packet_time() > gdRcvWaitTime)
         return 1;
     return 0;
-}
-
-///////// get communication result method /////////
-int dynamixel::get_comm_result(void)
-{
-	return gbCommStatus;
 }
 
 ///////// 1.0 packet communocation method /////////
@@ -1299,6 +1292,3 @@ unsigned long  dynamixel2::get_sync_read_data_dword(unsigned char id, unsigned i
 						 MAKEWORD(gSyncData[id].pucTable[(start_address-gSyncData[id].iStartAddr)+2],
 									  gSyncData[id].pucTable[(start_address-gSyncData[id].iStartAddr)+3]));
 }
-
-dynamixel dxl;
-dynamixel2 dxl2;
