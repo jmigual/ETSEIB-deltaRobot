@@ -21,8 +21,6 @@ OptionsWindow::OptionsWindow(XJoystick &J, ServoThread *servo, QWidget *parent) 
     for (int i = 0; i < A.size(); ++i) ui->joyMZ->addItem(A[i], i);
     
     joystickChanged();
-    
-    QVector<int> V(_servo->getServosID());
 }
 
 OptionsWindow::~OptionsWindow()
@@ -38,15 +36,25 @@ void OptionsWindow::storeData()
 
 void OptionsWindow::joystickChanged()
 {
+    // Clear all the items and write the new items
     ui->joySel->clear();
     ui->joySel->addItem("None", -1);
     
+    // Adding items and searching the current
+    int pos = 0;
     QVector<XJoystick::Info> V(_joy.available());
-    for (XJoystick::Info &j : V) {
-        QString text(j.name);
-        text += ": " + QString::number(j.ID);
-        ui->joySel->addItem(text, j.ID);
+    for (int i = 0; i < V.size(); ++i) {
+        QString text(V[i].name);
+        text += ": " + QString::number(V[i].ID);
+        if (V[i].ID == _joy.current()) pos = i;
+        ui->joySel->addItem(text, V[i].ID);
     }
+    ui->joySel->setCurrentIndex(pos);
     
     ui->joyN->setText(QString::number(V.size()));
+}
+
+void OptionsWindow::on_servoRefresh_clicked()
+{
+    dynamixel dxl;
 }

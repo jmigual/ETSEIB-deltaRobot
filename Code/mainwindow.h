@@ -9,6 +9,7 @@
 #include <QLabel>
 #include <QMainWindow>
 #include <QVector>
+#include <QStandardPaths>
 
 // Other libraries
 #include <xjoystick.h>
@@ -70,9 +71,6 @@ private:
     
     /// To handle the joystick
     XJoystick _joy;
-    
-    /// Contains all the servos utilization
-    QVector< AX12 > _servos;
     
     /// Contains the thread controlling all the servos and external hardware
     ServoThread _sT;

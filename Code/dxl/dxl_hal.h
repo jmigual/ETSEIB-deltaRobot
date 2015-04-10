@@ -1,6 +1,8 @@
 // Dynamixel SDK platform dependent header
 #ifndef _DYNAMIXEL_HAL_HEADER
 #define _DYNAMIXEL_HAL_HEADER
+
+#include <QDebug>
 #include <QSerialPort>
 #include <QString>
 #include <QTime>

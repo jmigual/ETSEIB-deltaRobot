@@ -88,12 +88,12 @@ void ServoThread::run()
             dxl.terminate();
             _cond.wait(&_mutex);
             dxl.initialize(sPort, sBaud);
-        }
-        
+        }        
         _dChanged = false;
         _mutex.unlock();
     }
-    dxl.terminate();
     
+    dxl.terminate();
+    exit(0);
 }
 
