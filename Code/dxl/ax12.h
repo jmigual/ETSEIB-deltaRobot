@@ -120,6 +120,10 @@ public:
     /// To set the minimum and maximum angle from 0 to 300º
     void setMinMax(double min, double max);
     
+    /// To set the maximum speed from 0% to 100% if joint mode or from -100%
+    /// to 100% if wheel mode
+    void setSpeed(double speed);
+    
     
 signals:
     

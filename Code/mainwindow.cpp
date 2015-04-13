@@ -46,7 +46,8 @@ MainWindow::MainWindow(QWidget *parent) :
     // TODO: Create dataPath
     
     _dataP = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
-    qDebug() << _dataP;
+    QDir dir(_dataP);
+    if (!dir.exists()) dir.mkpath(_dataP);
 }
 
 MainWindow::~MainWindow()

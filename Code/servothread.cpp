@@ -6,7 +6,7 @@ ServoThread::ServoThread() :
     _dChanged(false),
     _end(false),
     _mod(Mode::manual),
-    _pause(false),
+    _pause(true),
     _sBaud(1000000),
     _servos(3),
     _sPort("COM3"),
