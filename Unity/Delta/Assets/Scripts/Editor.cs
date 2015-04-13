@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System.IO;
+using System;
 
 public class Editor : MonoBehaviour {
 	
@@ -11,8 +13,13 @@ public class Editor : MonoBehaviour {
 	public float translateSpeed = 25f;
 	public string mode = "t";
 	public bool relativeRotation = true;
+	public GameObject DominoPiece;
+	public GameObject Force;
+	public string path;
+	public static float timescale = 2f;
 
 	private GameObject selected;
+	private bool selectedExists;
 	private float camRayLength;
 	private Color lastColor;
 	private bool dragging=false;
@@ -26,9 +33,10 @@ public class Editor : MonoBehaviour {
 	void Start () {
 		Time.timeScale=0f;
 		selected = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>().center;
+		selectedExists = true;
 		camRayLength = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>().camRayLength;
-		lastColor = selected.renderer.material.color;
-		selected.renderer.material.color = selectedColor;
+		lastColor = selected.GetComponent<Renderer>().material.color;
+		selected.GetComponent<Renderer>().material.color = selectedColor;
 		if (relativeRotation){
 			RXinitial=RX.transform.rotation;
 			RYinitial=RY.transform.rotation;
@@ -62,36 +70,41 @@ public class Editor : MonoBehaviour {
 		RX.SetActive(mode=="r");
 		RY.SetActive(mode=="r");
 		RZ.SetActive(mode=="r");	
-		X.transform.position = selected.transform.position;
-		Y.transform.position = selected.transform.position;
-		Z.transform.position = selected.transform.position;
-		RX.transform.position = selected.transform.position;
-		RY.transform.position = selected.transform.position;
-		RZ.transform.position = selected.transform.position;
-		if (relativeRotation){
-			RX.transform.rotation = selected.transform.rotation*RXinitial;
-			RY.transform.rotation = selected.transform.rotation*RYinitial;
-			RZ.transform.rotation = selected.transform.rotation*RZinitial;
+		if (selectedExists) {
+			X.transform.position = selected.transform.position;
+			Y.transform.position = selected.transform.position;
+			Z.transform.position = selected.transform.position;
+			RX.transform.position = selected.transform.position;
+			RY.transform.position = selected.transform.position;
+			RZ.transform.position = selected.transform.position;
+			if (relativeRotation){
+				RX.transform.rotation = selected.transform.rotation*RXinitial;
+				RY.transform.rotation = selected.transform.rotation*RYinitial;
+				RZ.transform.rotation = selected.transform.rotation*RZinitial;
+			}
 		}
 	}
+
 	void update_mode (){
-		//Debug.Log (mode);
 		if (Time.timeScale==0){
 			if (Input.GetKeyDown(KeyCode.T)){
 				if (mode=="t")mode="-";
-				else mode="t";
+				else if (selectedExists) mode="t";
 			}
 			if (Input.GetKeyDown(KeyCode.R)){
 				if (mode=="r")mode="-";
-				else mode="r";
+				else if (selectedExists) mode="r";
 			}
 		}
-		/*if (Input.GetKeyDown(KeyCode.X)){
-			Destroy (selected);
-		}*/
 	}
+
 	void update_selected (){
-		
+		if (Input.GetKeyDown (KeyCode.Delete)) {
+			Destroy (selected);
+			selectedExists = false;
+			mode = "-";
+			Camera.main.GetComponent <CameraController>().centered = false;
+		}
 		//Debug.Log(dragging);
 		if (Input.GetKeyDown (KeyCode.Mouse0)){
 			Ray CamRay = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -107,7 +120,6 @@ public class Editor : MonoBehaviour {
 					if (auxc == 'Z')draggingAxis = Z;
 				}
 				else if (floorHit.collider.gameObject.CompareTag("Rotator")){
-					Debug.Log ("Hola");
 					dragging = true;
 					char auxc = floorHit.collider.gameObject.name[0];
 					if (auxc == 'X')draggingRotator = RX;
@@ -119,10 +131,11 @@ public class Editor : MonoBehaviour {
 					toLastMouseR=MouseRay.origin+t*MouseRay.direction-draggingRotator.transform.position;
 				}
 				else{
-					selected.renderer.material.color = lastColor;
+					if (selectedExists) selected.GetComponent<Renderer>().material.color = lastColor;
 					selected = floorHit.collider.gameObject;
-					lastColor = selected.renderer.material.color;
-					selected.renderer.material.color = selectedColor;
+					lastColor = selected.GetComponent<Renderer>().material.color;
+					selected.GetComponent<Renderer>().material.color = selectedColor;
+					selectedExists = true;
 				}
 			}
 		}
@@ -155,19 +168,46 @@ public class Editor : MonoBehaviour {
 		}
 	}
 
+	// CANVAS FUNCTIONS
+
 	public void PausePlay (){
 		//Debug.Log (Time.timeScale);
-		if (Time.timeScale == 1) {
+		if (Time.timeScale == timescale) {
 						Time.timeScale = 0;
 						GameObject.FindGameObjectWithTag ("Pause").GetComponentInChildren <Text> ().text = "Play";
 						mode = lastMode;
 						
 				}
 		else {
-						Time.timeScale = 1;
+						Time.timeScale = timescale;
 						GameObject.FindGameObjectWithTag("Pause").GetComponentInChildren <Text>().text = "Pause";
 						lastMode = mode;
 						mode = "-";
 		}
+	}
+
+	public void AddD (){
+		if (Time.timeScale == 0) {
+						GameObject piece = (GameObject)Instantiate (DominoPiece, DominoPiece.transform.position, DominoPiece.transform.rotation);
+						piece.GetComponent<dominoPosition> ().adding = true;
+				}
+			
+	}
+
+	public void AddF (){
+		if (Time.timeScale == 0) {
+						GameObject piece = (GameObject)Instantiate (Force, Force.transform.position, Force.transform.rotation);
+						piece.GetComponent<dominoPosition> ().adding = true;
+				}
+	}
+
+	public void saveState (){
+		string content = "";
+		GameObject[] pieces = GameObject.FindGameObjectsWithTag ("Player");
+		for (int i = 0; i<pieces.Length; ++i)
+						content = content + pieces [i].transform.position.x.ToString () +", " +
+								pieces [i].transform.position.y.ToString() + ", " +
+								pieces [i].transform.position.z.ToString() + Environment.NewLine;
+		System.IO.File.WriteAllText(path, content);
 	}
 }

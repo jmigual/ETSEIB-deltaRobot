@@ -4,6 +4,7 @@ using System.Collections;
 public class CameraController : MonoBehaviour {
 
 	public GameObject center;
+	public bool centered = true;
 	public float distance=10f;
 	public float distanceMin=3f;
 	public float distanceMax=30f;
@@ -24,7 +25,7 @@ public class CameraController : MonoBehaviour {
 	private Vector3 ObjectiveDesired;
 	private Vector2 LastMouse;
 	private bool switchingobjective=false;
-	private bool centered=true;
+
 	private float desiredDistance;
 
 	void Start () {
@@ -35,6 +36,7 @@ public class CameraController : MonoBehaviour {
 	}
 
 	void Update () {
+		Debug.Log (centered);
 		update_objective ();
 		update_angles ();
 		update_transform();
