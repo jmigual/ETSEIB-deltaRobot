@@ -131,10 +131,10 @@ public class Editor : MonoBehaviour {
 					toLastMouseR=MouseRay.origin+t*MouseRay.direction-draggingRotator.transform.position;
 				}
 				else{
-					if (selectedExists) selected.GetComponent<Renderer>().material.color = lastColor;
+					if (selectedExists) selected.GetComponentInChildren<Renderer>().material.color = lastColor;
 					selected = floorHit.collider.gameObject;
-					lastColor = selected.GetComponent<Renderer>().material.color;
-					selected.GetComponent<Renderer>().material.color = selectedColor;
+					lastColor = selected.GetComponentInChildren<Renderer>().material.color;
+					selected.GetComponentInChildren<Renderer>().material.color = selectedColor;
 					selectedExists = true;
 				}
 			}

@@ -36,7 +36,7 @@ public class CameraController : MonoBehaviour {
 	}
 
 	void Update () {
-		Debug.Log (centered);
+		//Debug.Log (centered);
 		update_objective ();
 		update_angles ();
 		update_transform();
