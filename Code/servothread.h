@@ -86,6 +86,14 @@ public:
         _mutex.unlock();
     }
     
+    inline QString getServoPort()
+    {
+        _mutex.lock();
+        QString res(_sPort);
+        _mutex.unlock();
+        return res;
+    }
+    
     /// Adds the loaded data
     void setData(QVector< float > &aV, QVector<bool> &buts);
     
@@ -129,11 +137,11 @@ private:
     /// Pauses the execution of the thread
     bool _pause;
     
-    /// Contains the servos information
-    QVector< Servo > _servos;
-    
     /// Contains the used baud rate to comunicate with the servos
     int _sBaud;
+    
+    /// Contains the servos information
+    QVector< Servo > _servos;
     
     /// Contains the selected com port used in the comunication with servos
     QString _sPort;

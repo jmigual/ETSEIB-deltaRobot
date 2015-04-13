@@ -123,3 +123,23 @@ void AX12::setMinMax(double min, double max)
     dxl.write_word(_ID, ROM::CCWAngleLimit, int (max));
 }
 
+void AX12::setSpeed(double speed)
+{
+    if (_ID < 0) return;
+    if (speed > 100.0) speed = 100.0;
+    if (_mode) {
+        if (speed < 0.0) speed = 0.0;
+        
+        int byte = int((speed/100.0) * 1024.0);
+        if (speed == 100.0) byte = 0;
+        dxl.write_byte(_ID, RAM::MovingSpeed, byte);        
+    }
+    else {
+        if (speed < -100.0) speed = -100.0;   
+        
+        int byte = int(((speed + 100)/100.0) * 1024);
+        dxl.write_byte(_ID, RAM::MovingSpeed, byte);
+    }
+
+}
+

@@ -38,6 +38,9 @@ public slots:
     /// To handle the change of a joystick
     void joystickChanged();
 
+private slots:
+    void on_servoRefresh_clicked();
+    
 private:
     
     /// Contains the Joystick to handle options

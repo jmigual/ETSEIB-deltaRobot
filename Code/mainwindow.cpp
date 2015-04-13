@@ -44,6 +44,10 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->joyButs->hide();
     ui->line->hide();
     // TODO: Create dataPath
+    
+    _dataP = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+    QDir dir(_dataP);
+    if (!dir.exists()) dir.mkpath(_dataP);
 }
 
 MainWindow::~MainWindow()
@@ -86,7 +90,7 @@ void MainWindow::joyChanged()
 
 void MainWindow::on_actionOptions_triggered()
 {
-    OptionsWindow o(_joy, this);
+    OptionsWindow o(_joy, &_sT, this);
     o.exec();
     
     connect(this, SIGNAL(joystickChanged()), &o, SLOT(joystickChanged()));

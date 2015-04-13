@@ -112,10 +112,6 @@ private:
     int gbCommStatus = COMM_RXSUCCESS;
     int giBusUsing = 0; 
     
-    PingData		gPingData[MAX_ID + 1];
-    SyncBulkData gSyncData[MAX_ID + 1];
-    SyncBulkData gBulkData[MAX_ID + 1];
-    
 public:
     
     dynamixel();

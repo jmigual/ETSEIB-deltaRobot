@@ -22,35 +22,11 @@ dynamixel::dynamixel(QString port_num, int baud_rate)
 
 int dynamixel::initialize( QString port_num, int baud_rate )
 {
-	unsigned int idx = 0;
+	if( baud_rate < 1900 ) return 0;
 
-	if( baud_rate < 1900 )
-		return 0;
-
-	if( dH.open(port_num, baud_rate) == 0 )
-		return 0;
+	if( dH.open(port_num, baud_rate) == 0 ) return 0;
 
 	gdByteTransTime = 1000.0 / (double)baud_rate * 10.0; // 1000/baudrate(bit per msec) * 10(start bit + data bit + stop bit)
-
-
-	for(idx = 1; idx <= MAX_ID; idx++)
-	{
-		gSyncData[idx].iID		  = idx;
-		gSyncData[idx].iStartAddr = 1;
-		gSyncData[idx].iLength	  = 1;
-		gSyncData[idx].iError	  = 0;
-		gSyncData[idx].pucTable	  = 0;
-
-		gBulkData[idx].iID		  = idx;
-		gBulkData[idx].iStartAddr = 1;
-		gBulkData[idx].iLength	  = 1;
-		gBulkData[idx].iError	  = 0;
-		gBulkData[idx].pucTable	  = 0;
-
-		gPingData[idx].iID = idx;
-		gPingData[idx].iFirmVer = -1;
-		gPingData[idx].iModelNo = -1;
-	}
 
 	gbCommStatus = COMM_RXSUCCESS;
 	giBusUsing = 0;
@@ -72,15 +48,6 @@ int dynamixel::change_baudrate(int baud_rate )
 
 int dynamixel::terminate(void)
 {
-	int id = 0;
-	for(id = 0; id <= MAX_ID; id++)
-	{
-		if(gBulkData[id].pucTable != 0)
-			free((gBulkData[id].pucTable));
-
-		if(gSyncData[id].pucTable != 0)
-			free((gBulkData[id].pucTable));
-	}
 	dH.close();
 	return 0;
 }
@@ -835,7 +802,7 @@ void dynamixel2::txrx_packet(void)
 				if(gBulkData[id].pucTable != 0)
 					free((gBulkData[id].pucTable));
 
-				gBulkData[id].pucTable = (unsigned char *)calloc(gBulkData[id].iLength, sizeof(unsigned char));
+				gBulkData[id].pucTable = (unsigned char*) calloc(gBulkData[id].iLength, sizeof(unsigned char));
 				wait_length += gBulkData[id].iLength + 11;
 			}
 
@@ -877,7 +844,7 @@ void dynamixel2::txrx_packet(void)
 				if(gSyncData[id].pucTable != 0)
 					free((gSyncData[id].pucTable));
 
-				gSyncData[id].pucTable = (unsigned char*)calloc(data_length, sizeof(unsigned char));
+				gSyncData[id].pucTable = (unsigned char *) calloc(data_length, sizeof(unsigned char));
 			}
 
 
