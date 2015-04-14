@@ -74,6 +74,7 @@ void OptionsWindow::events()
         
         QString portC(ui->portC->currentData().toString());
         QString portS(ui->portS->currentData().toString());
+        
         int selC = 0, selS = 0;
         
         ui->portC->clear();
@@ -88,10 +89,10 @@ void OptionsWindow::events()
             ui->portC->addItem(text, ports[i].portName());
             ui->portS->addItem(text, ports[i].portName());
             
-            if (ports[i].portName() == portC) selC = i;
-            if (ports[i].portName() == portS) selS = i;
+            if (ports[i].portName() == portC) selC = i + 1;
+            if (ports[i].portName() == portS) selS = i + 1;
         }
-        
+
         ui->portC->setCurrentIndex(selC);
         ui->portS->setCurrentIndex(selS);
     }

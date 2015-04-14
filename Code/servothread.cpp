@@ -109,3 +109,39 @@ void ServoThread::run()
     exit(0);
 }
 
+void ServoThread::setAngles(double x0, double y0, double z0, double &theta1, double &theta2, double &theta3)
+{    
+    
+    double x1, y1, z1;
+    x1 = x0 + L2 - L1;
+    y1 = y0;
+    z1 = z0;
+    theta1 = singleAngle(x1,y1,z1);
+    
+    double x2, y2, z2;
+    x2 = z0*sin60 - x0*cos60 + L2 - L1;
+    y2 = y0;
+    z2 = -z0*cos60 - x0*sin60;
+    theta2 = singleAngle(x2,y2,z2);
+    
+    double x3, y3, z3;
+    x3 = -z0*sin60 - x0*cos60 + L2 - L1;
+    y3 = y0;
+    z3 = -z0*cos60 + x0*sin60;
+    theta3 = singleAngle(x3,y3,z3);
+}
+
+double ServoThread::singleAngle(double x0, double y0, double z0)
+{
+    double n = b * b - a * a - z0 * z0 - x0 * x0 - y0 * y0;
+    double raiz = sqrt (n*n*y0*y0 - 4*(x0*x0 + y0*y0)*(-x0*x0*a*a + n*n/4));
+    
+    if (x0 < 0) raiz *= -1;
+    double y = (-n*y0 + raiz ) / (2*(x0*x0 + y0*y0));
+    
+    int signe = 1;
+    if ((b*b - (y0 + a)*(y0 + a)) < (x0*x0 + z0*z0) && x0 < 0) signe *= -1;
+    double x = sqrt(a*a - y*y)*signe;
+    return atan2 (y,x);
+}
+

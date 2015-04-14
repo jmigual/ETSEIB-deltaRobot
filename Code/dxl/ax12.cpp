@@ -2,21 +2,21 @@
 /// Contains the AX12 class implementation
 #include "ax12.h"
 
-AX12::AX12(dynamixel &dxl, int ID, QObject *parent) : 
-    QObject(parent),
+AX12::AX12(dynamixel &dxl, int ID) : 
     dxl(dxl),
     _ID(ID),
-   _mode(true) 
+   _mode(true),
+   _rads(true)
 {
     if (_ID < 0) return;
     dxl.write_byte(_ID, RAM::TorqueEnable, true);
 }
 
 AX12::AX12(const AX12 &a) :
-    QObject(a.parent()),
     dxl(a.dxl),
     _ID(a._ID),
-    _mode(true)
+    _mode(a._mode),
+    _rads(a._rads)
 {
     
 }
@@ -51,7 +51,8 @@ double AX12::getCurrentPos()
     if (_ID < 0) return 0;
     int pos = dxl.read_word(_ID, RAM::PresentPosition);
     if (dxl.get_comm_result() != COMM_RXSUCCESS) return -1;
-    return double((pos/1023.0)*300);  
+    
+    if (_rads) return double((pos/1023.0)*5*M_PI/3.0);  
 }
 
 int AX12::getCurrentTemp()

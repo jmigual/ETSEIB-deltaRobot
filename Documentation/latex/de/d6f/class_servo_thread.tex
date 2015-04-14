@@ -54,10 +54,22 @@ void \hyperlink{class_servo_thread_ae88d0a9c84099ca607c7cf929500fb26}{load} (Q\+
 \begin{DoxyCompactList}\small\item\em Loads the data from the selected file. \end{DoxyCompactList}\item 
 void \hyperlink{class_servo_thread_ae0d4a59954aafbe8cd85f9326e4fcdd0}{pause} ()
 \begin{DoxyCompactList}\small\item\em Pauses the execution. \end{DoxyCompactList}\item 
+int \hyperlink{class_servo_thread_af2c9e71c33e15937e72703d859cd7147}{get\+Servo\+Baud} ()
+\begin{DoxyCompactList}\small\item\em Returns the current servo Baud rate. \end{DoxyCompactList}\item 
 Q\+String \hyperlink{class_servo_thread_a3fae25aeac390640192ceb38e32dae40}{get\+Servo\+Port} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the current servo Port. \end{DoxyCompactList}\item 
+void \hyperlink{class_servo_thread_afcf834d93f1ac9663d6ebaab820e5f74}{get\+Servo\+Port\+Info} (Q\+String \&port, int \&baud)
+\begin{DoxyCompactList}\small\item\em Returns both servo Port and baud Rate. \end{DoxyCompactList}\item 
+void \hyperlink{class_servo_thread_a5fd8ef13314428f5ba7646730cc58f1c}{get\+Servos\+Info} (Q\+Vector$<$ \hyperlink{struct_servo_thread_1_1_servo}{Servo} $>$ \&V)
+\begin{DoxyCompactList}\small\item\em Returns the servos info, with all its load and current position. \end{DoxyCompactList}\item 
+Q\+Vector$<$ \hyperlink{struct_servo_thread_1_1_servo}{Servo} $>$ \hyperlink{class_servo_thread_a3d58189cdeddfb828856f192607f68d2}{get\+Servos\+Info} ()
+\begin{DoxyCompactList}\small\item\em Overloaded function to get the servo info. \end{DoxyCompactList}\item 
 void \hyperlink{class_servo_thread_a8497ea56991b620981ce1fbf53d9ebdb}{set\+Data} (Q\+Vector$<$ float $>$ \&a\+V, Q\+Vector$<$ bool $>$ \&buts)
 \begin{DoxyCompactList}\small\item\em Adds the loaded data. \end{DoxyCompactList}\item 
+void \hyperlink{class_servo_thread_a009d3d1b99007b14fadb49996fac49d6}{set\+Servo\+Baud} (unsigned int baud)
+\begin{DoxyCompactList}\small\item\em Sets the servos port baud rate. \end{DoxyCompactList}\item 
+void \hyperlink{class_servo_thread_a144e31105019d833f59ca2eba012e638}{set\+Servo\+Port} (Q\+String \&port)
+\begin{DoxyCompactList}\small\item\em Sets the servos port. \end{DoxyCompactList}\item 
 void \hyperlink{class_servo_thread_ac3471e5020f5d9babd3f2ff7b3b82aca}{set\+S\+I\+D} (Q\+Vector$<$ int $>$ \&V)
 \begin{DoxyCompactList}\small\item\em Sets the servos I\+D. \end{DoxyCompactList}\item 
 void \hyperlink{class_servo_thread_ae5753b8c12768d2115ff900f0ab8e13c}{write} (Q\+String \&file)
@@ -67,7 +79,7 @@ void \hyperlink{class_servo_thread_ae5753b8c12768d2115ff900f0ab8e13c}{write} (Q\
 \item 
 enum \hyperlink{class_servo_thread_aeccce0ac6a969e2ee7cbe91687e2d085}{Version} \{ \hyperlink{class_servo_thread_aeccce0ac6a969e2ee7cbe91687e2d085a319b6bf2cb120faeefbd0a5118ece7e3}{v\+\_\+1\+\_\+0}
  \}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Enum containing all the save file versions. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -130,14 +142,18 @@ Contains the working mode.
 \end{Desc}
 
 \begin{DoxyCode}
-00049     \{
-00050         \hyperlink{class_servo_thread_a8d581034e60792a9995d44065f6140a5a6776147f492a4e0b0bb5ee4fdbc8d086}{controlled},
-00051         \hyperlink{class_servo_thread_a8d581034e60792a9995d44065f6140a5ae260aa6159d95b94851c96df939b51b3}{manual}
-00052     \};
+00050     \{
+00051         \hyperlink{class_servo_thread_a8d581034e60792a9995d44065f6140a5a6776147f492a4e0b0bb5ee4fdbc8d086}{controlled},
+00052         \hyperlink{class_servo_thread_a8d581034e60792a9995d44065f6140a5ae260aa6159d95b94851c96df939b51b3}{manual}
+00053     \};
 \end{DoxyCode}
 \hypertarget{class_servo_thread_aeccce0ac6a969e2ee7cbe91687e2d085}{}\index{Servo\+Thread@{Servo\+Thread}!Version@{Version}}
 \index{Version@{Version}!Servo\+Thread@{Servo\+Thread}}
 \subsubsection[{Version}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Servo\+Thread\+::\+Version}\hspace{0.3cm}{\ttfamily [private]}}\label{class_servo_thread_aeccce0ac6a969e2ee7cbe91687e2d085}
+
+
+Enum containing all the save file versions. 
+
 \begin{Desc}
 \item[Enumerator]\par
 \begin{description}
@@ -147,9 +163,9 @@ Contains the working mode.
 \end{Desc}
 
 \begin{DoxyCode}
-00026     \{
-00027         \hyperlink{class_servo_thread_aeccce0ac6a969e2ee7cbe91687e2d085a319b6bf2cb120faeefbd0a5118ece7e3}{v\_1\_0}
-00028     \};
+00027     \{
+00028         \hyperlink{class_servo_thread_aeccce0ac6a969e2ee7cbe91687e2d085a319b6bf2cb120faeefbd0a5118ece7e3}{v\_1\_0}
+00029     \};
 \end{DoxyCode}
 
 
@@ -222,12 +238,12 @@ Continues program\textquotesingle{}s execution.
 
 
 \begin{DoxyCode}
-00062     \{
-00063         \hyperlink{class_servo_thread_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.lock();
-00064         \hyperlink{class_servo_thread_aaf2ef80e8e43518b75d20a5102970d2e}{\_pause} = \textcolor{keyword}{false};
-00065         \hyperlink{class_servo_thread_afcb93c09acd7fecf47d92996a297365c}{\_cond}.wakeOne();
-00066         \hyperlink{class_servo_thread_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.unlock();
-00067     \}
+00063     \{
+00064         \hyperlink{class_servo_thread_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.lock();
+00065         \hyperlink{class_servo_thread_aaf2ef80e8e43518b75d20a5102970d2e}{\_pause} = \textcolor{keyword}{false};
+00066         \hyperlink{class_servo_thread_afcb93c09acd7fecf47d92996a297365c}{\_cond}.wakeOne();
+00067         \hyperlink{class_servo_thread_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.unlock();
+00068     \}
 \end{DoxyCode}
 \hypertarget{class_servo_thread_aaa273318ffee5ba270cdaacba3f263f8}{}\index{Servo\+Thread@{Servo\+Thread}!end@{end}}
 \index{end@{end}!Servo\+Thread@{Servo\+Thread}}
@@ -242,14 +258,32 @@ Ends the execution.
 
 
 \begin{DoxyCode}
-00071     \{
-00072         \hyperlink{class_servo_thread_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.lock();
-00073         \hyperlink{class_servo_thread_acca9896d1a2d1ef68527e6834f81c76c}{\_end} = \textcolor{keyword}{true};
-00074         \hyperlink{class_servo_thread_afcb93c09acd7fecf47d92996a297365c}{\_cond}.wakeOne();
-00075         \hyperlink{class_servo_thread_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.unlock();
-00076         
-00077         wait();
-00078     \}
+00072     \{
+00073         \hyperlink{class_servo_thread_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.lock();
+00074         \hyperlink{class_servo_thread_acca9896d1a2d1ef68527e6834f81c76c}{\_end} = \textcolor{keyword}{true};
+00075         \hyperlink{class_servo_thread_afcb93c09acd7fecf47d92996a297365c}{\_cond}.wakeOne();
+00076         \hyperlink{class_servo_thread_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.unlock();
+00077         
+00078         wait();
+00079     \}
+\end{DoxyCode}
+\hypertarget{class_servo_thread_af2c9e71c33e15937e72703d859cd7147}{}\index{Servo\+Thread@{Servo\+Thread}!get\+Servo\+Baud@{get\+Servo\+Baud}}
+\index{get\+Servo\+Baud@{get\+Servo\+Baud}!Servo\+Thread@{Servo\+Thread}}
+\subsubsection[{get\+Servo\+Baud}]{\setlength{\rightskip}{0pt plus 5cm}int Servo\+Thread\+::get\+Servo\+Baud (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_servo_thread_af2c9e71c33e15937e72703d859cd7147}
+
+
+Returns the current servo Baud rate. 
+
+
+\begin{DoxyCode}
+00094     \{
+00095         QMutexLocker mL(&\hyperlink{class_servo_thread_a6327eafc0dac189ec1b202d63ef32457}{\_mutex});
+00096         \textcolor{keywordflow}{return} \hyperlink{class_servo_thread_a5b9a41b9e271275b914affb0a845a2ee}{\_sBaud};
+00097     \}
 \end{DoxyCode}
 \hypertarget{class_servo_thread_a3fae25aeac390640192ceb38e32dae40}{}\index{Servo\+Thread@{Servo\+Thread}!get\+Servo\+Port@{get\+Servo\+Port}}
 \index{get\+Servo\+Port@{get\+Servo\+Port}!Servo\+Thread@{Servo\+Thread}}
@@ -259,13 +293,78 @@ Ends the execution.
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}\label{class_servo_thread_a3fae25aeac390640192ceb38e32dae40}
 
+
+Returns the current servo Port. 
+
+
 \begin{DoxyCode}
-00092     \{
-00093         \hyperlink{class_servo_thread_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.lock();
-00094         QString res(\hyperlink{class_servo_thread_ac9a614aa1518efb49b0a06636bd1bdbf}{\_sPort});
-00095         \hyperlink{class_servo_thread_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.unlock();
-00096         \textcolor{keywordflow}{return} res;
-00097     \}
+00101     \{
+00102         QMutexLocker mL(&\hyperlink{class_servo_thread_a6327eafc0dac189ec1b202d63ef32457}{\_mutex});
+00103         \textcolor{keywordflow}{return} \hyperlink{class_servo_thread_ac9a614aa1518efb49b0a06636bd1bdbf}{\_sPort};
+00104     \}
+\end{DoxyCode}
+\hypertarget{class_servo_thread_afcf834d93f1ac9663d6ebaab820e5f74}{}\index{Servo\+Thread@{Servo\+Thread}!get\+Servo\+Port\+Info@{get\+Servo\+Port\+Info}}
+\index{get\+Servo\+Port\+Info@{get\+Servo\+Port\+Info}!Servo\+Thread@{Servo\+Thread}}
+\subsubsection[{get\+Servo\+Port\+Info}]{\setlength{\rightskip}{0pt plus 5cm}void Servo\+Thread\+::get\+Servo\+Port\+Info (
+\begin{DoxyParamCaption}
+\item[{Q\+String \&}]{port, }
+\item[{int \&}]{baud}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_servo_thread_afcf834d93f1ac9663d6ebaab820e5f74}
+
+
+Returns both servo Port and baud Rate. 
+
+
+\begin{DoxyCode}
+00108     \{
+00109         \hyperlink{class_servo_thread_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.lock();
+00110         baud = \hyperlink{class_servo_thread_a5b9a41b9e271275b914affb0a845a2ee}{\_sBaud};
+00111         port = \hyperlink{class_servo_thread_ac9a614aa1518efb49b0a06636bd1bdbf}{\_sPort};
+00112         \hyperlink{class_servo_thread_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.unlock();
+00113     \}
+\end{DoxyCode}
+\hypertarget{class_servo_thread_a5fd8ef13314428f5ba7646730cc58f1c}{}\index{Servo\+Thread@{Servo\+Thread}!get\+Servos\+Info@{get\+Servos\+Info}}
+\index{get\+Servos\+Info@{get\+Servos\+Info}!Servo\+Thread@{Servo\+Thread}}
+\subsubsection[{get\+Servos\+Info}]{\setlength{\rightskip}{0pt plus 5cm}void Servo\+Thread\+::get\+Servos\+Info (
+\begin{DoxyParamCaption}
+\item[{Q\+Vector$<$ {\bf Servo} $>$ \&}]{V}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_servo_thread_a5fd8ef13314428f5ba7646730cc58f1c}
+
+
+Returns the servos info, with all its load and current position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em V} & \hyperlink{struct_servo_thread_1_1_servo}{Servo} vector to store information \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+00119     \{
+00120         \hyperlink{class_servo_thread_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.lock();
+00121         V = \hyperlink{class_servo_thread_a1ac6662fe6d198b5971ae0ffa7ddfcfd}{\_servos};
+00122         \hyperlink{class_servo_thread_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.unlock();
+00123     \}
+\end{DoxyCode}
+\hypertarget{class_servo_thread_a3d58189cdeddfb828856f192607f68d2}{}\index{Servo\+Thread@{Servo\+Thread}!get\+Servos\+Info@{get\+Servos\+Info}}
+\index{get\+Servos\+Info@{get\+Servos\+Info}!Servo\+Thread@{Servo\+Thread}}
+\subsubsection[{get\+Servos\+Info}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Vector$<${\bf Servo}$>$ Servo\+Thread\+::get\+Servos\+Info (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_servo_thread_a3d58189cdeddfb828856f192607f68d2}
+
+
+Overloaded function to get the servo info. 
+
+
+\begin{DoxyCode}
+00127     \{
+00128         QMutexLocker mL(&\hyperlink{class_servo_thread_a6327eafc0dac189ec1b202d63ef32457}{\_mutex});
+00129         \textcolor{keywordflow}{return} \hyperlink{class_servo_thread_a1ac6662fe6d198b5971ae0ffa7ddfcfd}{\_servos};
+00130     \}
 \end{DoxyCode}
 \hypertarget{class_servo_thread_ae88d0a9c84099ca607c7cf929500fb26}{}\index{Servo\+Thread@{Servo\+Thread}!load@{load}}
 \index{load@{load}!Servo\+Thread@{Servo\+Thread}}
@@ -313,11 +412,11 @@ Pauses the execution.
 
 
 \begin{DoxyCode}
-00085     \{
-00086         \hyperlink{class_servo_thread_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.lock();
-00087         \hyperlink{class_servo_thread_aaf2ef80e8e43518b75d20a5102970d2e}{\_pause} = \textcolor{keyword}{true};
-00088         \hyperlink{class_servo_thread_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.unlock();
-00089     \}
+00086     \{
+00087         \hyperlink{class_servo_thread_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.lock();
+00088         \hyperlink{class_servo_thread_aaf2ef80e8e43518b75d20a5102970d2e}{\_pause} = \textcolor{keyword}{true};
+00089         \hyperlink{class_servo_thread_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.unlock();
+00090     \}
 \end{DoxyCode}
 \hypertarget{class_servo_thread_aeeb31b85abf7eb5c701853a6d25e51e0}{}\index{Servo\+Thread@{Servo\+Thread}!run@{run}}
 \index{run@{run}!Servo\+Thread@{Servo\+Thread}}
@@ -397,6 +496,54 @@ Adds the loaded data.
 00060     \hyperlink{class_servo_thread_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.unlock();
 00061 \}
 \end{DoxyCode}
+\hypertarget{class_servo_thread_a009d3d1b99007b14fadb49996fac49d6}{}\index{Servo\+Thread@{Servo\+Thread}!set\+Servo\+Baud@{set\+Servo\+Baud}}
+\index{set\+Servo\+Baud@{set\+Servo\+Baud}!Servo\+Thread@{Servo\+Thread}}
+\subsubsection[{set\+Servo\+Baud}]{\setlength{\rightskip}{0pt plus 5cm}void Servo\+Thread\+::set\+Servo\+Baud (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{baud}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_servo_thread_a009d3d1b99007b14fadb49996fac49d6}
+
+
+Sets the servos port baud rate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em baud} & Positive number containing the baud rate \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+00140     \{
+00141         \hyperlink{class_servo_thread_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.lock();
+00142         \hyperlink{class_servo_thread_a5b9a41b9e271275b914affb0a845a2ee}{\_sBaud} = baud;
+00143         \hyperlink{class_servo_thread_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.unlock();
+00144     \}
+\end{DoxyCode}
+\hypertarget{class_servo_thread_a144e31105019d833f59ca2eba012e638}{}\index{Servo\+Thread@{Servo\+Thread}!set\+Servo\+Port@{set\+Servo\+Port}}
+\index{set\+Servo\+Port@{set\+Servo\+Port}!Servo\+Thread@{Servo\+Thread}}
+\subsubsection[{set\+Servo\+Port}]{\setlength{\rightskip}{0pt plus 5cm}void Servo\+Thread\+::set\+Servo\+Port (
+\begin{DoxyParamCaption}
+\item[{Q\+String \&}]{port}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_servo_thread_a144e31105019d833f59ca2eba012e638}
+
+
+Sets the servos port. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & String containing the port name \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+00149     \{
+00150         \hyperlink{class_servo_thread_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.lock();
+00151         \hyperlink{class_servo_thread_ac9a614aa1518efb49b0a06636bd1bdbf}{\_sPort} = port;
+00152         \hyperlink{class_servo_thread_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.unlock();
+00153     \}
+\end{DoxyCode}
 \hypertarget{class_servo_thread_ac3471e5020f5d9babd3f2ff7b3b82aca}{}\index{Servo\+Thread@{Servo\+Thread}!set\+S\+I\+D@{set\+S\+I\+D}}
 \index{set\+S\+I\+D@{set\+S\+I\+D}!Servo\+Thread@{Servo\+Thread}}
 \subsubsection[{set\+S\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}void Servo\+Thread\+::set\+S\+I\+D (
@@ -409,15 +556,20 @@ Adds the loaded data.
 Sets the servos I\+D. 
 
 
+\begin{DoxyParams}{Parameters}
+{\em V} & Vector containing all the servos I\+D \\
+\hline
+\end{DoxyParams}
+
 \begin{DoxyCode}
-00106     \{
-00107         \hyperlink{class_servo_thread_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.lock();
-00108         \textcolor{keywordflow}{if} (V.size() != \hyperlink{class_servo_thread_a1ac6662fe6d198b5971ae0ffa7ddfcfd}{\_servos}.size()) \hyperlink{class_servo_thread_a1ac6662fe6d198b5971ae0ffa7ddfcfd}{\_servos}.resize(V.size());
-00109         
-00110         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < V.size(); ++i) \hyperlink{class_servo_thread_a1ac6662fe6d198b5971ae0ffa7ddfcfd}{\_servos}[i].ID = V[i];
-00111         \hyperlink{class_servo_thread_a2b6ccfeacbb3cc9ac5c34549b9aa3f11}{\_dChanged} = \textcolor{keyword}{true};
-00112         \hyperlink{class_servo_thread_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.unlock();
-00113     \}
+00158     \{
+00159         \hyperlink{class_servo_thread_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.lock();
+00160         \textcolor{keywordflow}{if} (V.size() != \hyperlink{class_servo_thread_a1ac6662fe6d198b5971ae0ffa7ddfcfd}{\_servos}.size()) \hyperlink{class_servo_thread_a1ac6662fe6d198b5971ae0ffa7ddfcfd}{\_servos}.resize(V.size());
+00161         
+00162         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < V.size(); ++i) \hyperlink{class_servo_thread_a1ac6662fe6d198b5971ae0ffa7ddfcfd}{\_servos}[i].ID = V[i];
+00163         \hyperlink{class_servo_thread_a2b6ccfeacbb3cc9ac5c34549b9aa3f11}{\_dChanged} = \textcolor{keyword}{true};
+00164         \hyperlink{class_servo_thread_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.unlock();
+00165     \}
 \end{DoxyCode}
 \hypertarget{class_servo_thread_ae5753b8c12768d2115ff900f0ab8e13c}{}\index{Servo\+Thread@{Servo\+Thread}!write@{write}}
 \index{write@{write}!Servo\+Thread@{Servo\+Thread}}

@@ -14,7 +14,7 @@ Struct for the \hyperlink{class_a_x12}{A\+X12} servos.
 \item 
 \hyperlink{struct_servo_thread_1_1_servo_a031c8e78df1e5eddf80bd2b2e2998658}{Servo} (int \hyperlink{struct_servo_thread_1_1_servo_a06b514c42113aa85fd1703fc88fca7ce}{I\+D}=-\/1, double \hyperlink{struct_servo_thread_1_1_servo_ae378d77acf16b306649c87fdb8df677e}{load}=-\/1, double \hyperlink{struct_servo_thread_1_1_servo_a9fa0aa56944b9b0bb9d66303d5bd4b59}{pos}=-\/1)
 \begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
-\hyperlink{struct_servo_thread_1_1_servo_ad5caa6903df672ae7a5ac0f3fb301e23}{Servo} (\hyperlink{struct_servo_thread_1_1_servo}{Servo} \&s)
+\hyperlink{struct_servo_thread_1_1_servo_acb657f09a5d04424d134791ca501cb54}{Servo} (const \hyperlink{struct_servo_thread_1_1_servo}{Servo} \&s)
 \begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
@@ -46,22 +46,22 @@ Default constructor.
 
 
 \begin{DoxyCode}
-00041             : \hyperlink{struct_servo_thread_1_1_servo_a06b514c42113aa85fd1703fc88fca7ce}{ID}(\hyperlink{struct_servo_thread_1_1_servo_a06b514c42113aa85fd1703fc88fca7ce}{ID}), \hyperlink{struct_servo_thread_1_1_servo_ae378d77acf16b306649c87fdb8df677e}{load}(\hyperlink{struct_servo_thread_1_1_servo_ae378d77acf16b306649c87fdb8df677e}{load}), \hyperlink{struct_servo_thread_1_1_servo_a9fa0aa56944b9b0bb9d66303d5bd4b59}{pos}(\hyperlink{struct_servo_thread_1_1_servo_a9fa0aa56944b9b0bb9d66303d5bd4b59}{pos}) \{\}
+00042             : \hyperlink{struct_servo_thread_1_1_servo_a06b514c42113aa85fd1703fc88fca7ce}{ID}(\hyperlink{struct_servo_thread_1_1_servo_a06b514c42113aa85fd1703fc88fca7ce}{ID}), \hyperlink{struct_servo_thread_1_1_servo_ae378d77acf16b306649c87fdb8df677e}{load}(\hyperlink{struct_servo_thread_1_1_servo_ae378d77acf16b306649c87fdb8df677e}{load}), \hyperlink{struct_servo_thread_1_1_servo_a9fa0aa56944b9b0bb9d66303d5bd4b59}{pos}(\hyperlink{struct_servo_thread_1_1_servo_a9fa0aa56944b9b0bb9d66303d5bd4b59}{pos}) \{\}
 \end{DoxyCode}
-\hypertarget{struct_servo_thread_1_1_servo_ad5caa6903df672ae7a5ac0f3fb301e23}{}\index{Servo\+Thread\+::\+Servo@{Servo\+Thread\+::\+Servo}!Servo@{Servo}}
+\hypertarget{struct_servo_thread_1_1_servo_acb657f09a5d04424d134791ca501cb54}{}\index{Servo\+Thread\+::\+Servo@{Servo\+Thread\+::\+Servo}!Servo@{Servo}}
 \index{Servo@{Servo}!Servo\+Thread\+::\+Servo@{Servo\+Thread\+::\+Servo}}
 \subsubsection[{Servo}]{\setlength{\rightskip}{0pt plus 5cm}Servo\+Thread\+::\+Servo\+::\+Servo (
 \begin{DoxyParamCaption}
-\item[{{\bf Servo} \&}]{s}
+\item[{const {\bf Servo} \&}]{s}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}\label{struct_servo_thread_1_1_servo_ad5caa6903df672ae7a5ac0f3fb301e23}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{struct_servo_thread_1_1_servo_acb657f09a5d04424d134791ca501cb54}
 
 
 Copy constructor. 
 
 
 \begin{DoxyCode}
-00044 : \hyperlink{struct_servo_thread_1_1_servo_a06b514c42113aa85fd1703fc88fca7ce}{ID}(s.ID), \hyperlink{struct_servo_thread_1_1_servo_ae378d77acf16b306649c87fdb8df677e}{load}(s.load), \hyperlink{struct_servo_thread_1_1_servo_a9fa0aa56944b9b0bb9d66303d5bd4b59}{pos}(s.pos) \{\}
+00045 : \hyperlink{struct_servo_thread_1_1_servo_a06b514c42113aa85fd1703fc88fca7ce}{ID}(s.ID), \hyperlink{struct_servo_thread_1_1_servo_ae378d77acf16b306649c87fdb8df677e}{load}(s.load), \hyperlink{struct_servo_thread_1_1_servo_a9fa0aa56944b9b0bb9d66303d5bd4b59}{pos}(s.pos) \{\}
 \end{DoxyCode}
 
 

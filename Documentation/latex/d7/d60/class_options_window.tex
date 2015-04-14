@@ -47,7 +47,7 @@ void \hyperlink{class_options_window_ab0a56ad7347c20046602a7a2a1c83397}{store\+D
 void \hyperlink{class_options_window_a18763ff318688083c7ee5a21f22e8e98}{events} ()
 \begin{DoxyCompactList}\small\item\em Handles events that need to be updated continously. \end{DoxyCompactList}\item 
 void \hyperlink{class_options_window_ad5365d452e8bcd86cbb64b9ec42c3b7e}{on\+\_\+servo\+Refresh\+\_\+clicked} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Refreshes all the servos connected to the port. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -153,28 +153,30 @@ Handles events that need to be updated continously.
 00074         
 00075         QString portC(\hyperlink{class_options_window_a8347442d5b3b670e8fff0c4102db1f88}{ui}->portC->currentData().toString());
 00076         QString portS(\hyperlink{class_options_window_a8347442d5b3b670e8fff0c4102db1f88}{ui}->portS->currentData().toString());
-00077         \textcolor{keywordtype}{int} selC = 0, selS = 0;
-00078         
-00079         \hyperlink{class_options_window_a8347442d5b3b670e8fff0c4102db1f88}{ui}->portC->clear();
-00080         \hyperlink{class_options_window_a8347442d5b3b670e8fff0c4102db1f88}{ui}->portS->clear();
-00081         
-00082         \hyperlink{class_options_window_a8347442d5b3b670e8fff0c4102db1f88}{ui}->portC->addItem(\textcolor{stringliteral}{"None"}, \textcolor{stringliteral}{""});
-00083         \hyperlink{class_options_window_a8347442d5b3b670e8fff0c4102db1f88}{ui}->portS->addItem(\textcolor{stringliteral}{"None"}, \textcolor{stringliteral}{""});
-00084         
-00085         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < ports.size(); ++i) \{
-00086             QString text(ports[i].portName());
-00087             text += \textcolor{stringliteral}{": "} + ports[i].description();
-00088             \hyperlink{class_options_window_a8347442d5b3b670e8fff0c4102db1f88}{ui}->portC->addItem(text, ports[i].portName());
-00089             \hyperlink{class_options_window_a8347442d5b3b670e8fff0c4102db1f88}{ui}->portS->addItem(text, ports[i].portName());
-00090             
-00091             \textcolor{keywordflow}{if} (ports[i].portName() == portC) selC = i;
-00092             \textcolor{keywordflow}{if} (ports[i].portName() == portS) selS = i;
-00093         \}
-00094         
-00095         \hyperlink{class_options_window_a8347442d5b3b670e8fff0c4102db1f88}{ui}->portC->setCurrentIndex(selC);
-00096         \hyperlink{class_options_window_a8347442d5b3b670e8fff0c4102db1f88}{ui}->portS->setCurrentIndex(selS);
-00097     \}
-00098 \}
+00077         qDebug() << portC << portS;
+00078         \textcolor{keywordtype}{int} selC = 0, selS = 0;
+00079         
+00080         \hyperlink{class_options_window_a8347442d5b3b670e8fff0c4102db1f88}{ui}->portC->clear();
+00081         \hyperlink{class_options_window_a8347442d5b3b670e8fff0c4102db1f88}{ui}->portS->clear();
+00082         
+00083         \hyperlink{class_options_window_a8347442d5b3b670e8fff0c4102db1f88}{ui}->portC->addItem(\textcolor{stringliteral}{"None"}, \textcolor{stringliteral}{""});
+00084         \hyperlink{class_options_window_a8347442d5b3b670e8fff0c4102db1f88}{ui}->portS->addItem(\textcolor{stringliteral}{"None"}, \textcolor{stringliteral}{""});
+00085         
+00086         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < ports.size(); ++i) \{
+00087             QString text(ports[i].portName());
+00088             text += \textcolor{stringliteral}{": "} + ports[i].description();
+00089             \hyperlink{class_options_window_a8347442d5b3b670e8fff0c4102db1f88}{ui}->portC->addItem(text, ports[i].portName());
+00090             \hyperlink{class_options_window_a8347442d5b3b670e8fff0c4102db1f88}{ui}->portS->addItem(text, ports[i].portName());
+00091             
+00092             \textcolor{keywordflow}{if} (ports[i].portName() == portC) selC = i + 1;
+00093             \textcolor{keywordflow}{if} (ports[i].portName() == portS) selS = i + 1;
+00094         \}
+00095         qDebug() << selC << selS;
+00096         
+00097         \hyperlink{class_options_window_a8347442d5b3b670e8fff0c4102db1f88}{ui}->portC->setCurrentIndex(selC);
+00098         \hyperlink{class_options_window_a8347442d5b3b670e8fff0c4102db1f88}{ui}->portS->setCurrentIndex(selS);
+00099     \}
+00100 \}
 \end{DoxyCode}
 \hypertarget{class_options_window_ae8c0373be58da710194f8d14f1c3c4dc}{}\index{Options\+Window@{Options\+Window}!joystick\+Changed@{joystick\+Changed}}
 \index{joystick\+Changed@{joystick\+Changed}!Options\+Window@{Options\+Window}}
@@ -216,10 +218,20 @@ To handle the change of a joystick.
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{class_options_window_ad5365d452e8bcd86cbb64b9ec42c3b7e}
 
+
+Refreshes all the servos connected to the port. 
+
+
 \begin{DoxyCode}
-00101 \{
-00102     \hyperlink{classdynamixel}{dynamixel} dxl;
-00103 \}
+00103 \{
+00104     \hyperlink{classdynamixel}{dynamixel} dxl;
+00105     QString port;
+00106     \textcolor{keywordtype}{int} baud;
+00107     \hyperlink{class_options_window_acba1566fea3f831000d5e1c1edc3e776}{\_servo}->\hyperlink{class_servo_thread_afcf834d93f1ac9663d6ebaab820e5f74}{getServoPortInfo}(port, baud);
+00108     
+00109     dxl.\hyperlink{classdynamixel_a87960244d5846ae7583e37d2407eb61e}{initialize}(port, baud);
+00110     
+00111 \}
 \end{DoxyCode}
 \hypertarget{class_options_window_ab0a56ad7347c20046602a7a2a1c83397}{}\index{Options\+Window@{Options\+Window}!store\+Data@{store\+Data}}
 \index{store\+Data@{store\+Data}!Options\+Window@{Options\+Window}}

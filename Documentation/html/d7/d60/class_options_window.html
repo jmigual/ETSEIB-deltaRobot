@@ -137,6 +137,7 @@ Private Slots</h2></td></tr>
 <tr class="memdesc:a18763ff318688083c7ee5a21f22e8e98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles events that need to be updated continously.  <a href="#a18763ff318688083c7ee5a21f22e8e98">More...</a><br /></td></tr>
 <tr class="separator:a18763ff318688083c7ee5a21f22e8e98"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5365d452e8bcd86cbb64b9ec42c3b7e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d60/class_options_window.html#ad5365d452e8bcd86cbb64b9ec42c3b7e">on_servoRefresh_clicked</a> ()</td></tr>
+<tr class="memdesc:ad5365d452e8bcd86cbb64b9ec42c3b7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refreshes all the servos connected to the port.  <a href="#ad5365d452e8bcd86cbb64b9ec42c3b7e">More...</a><br /></td></tr>
 <tr class="separator:ad5365d452e8bcd86cbb64b9ec42c3b7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
@@ -228,12 +229,12 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    connect(&amp;<a class="code" href="../../d7/d60/class_options_window.html#af6320942b8558140989f552b3bbc1fbd">_timer</a>, SIGNAL(timeout()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d7/d60/class_options_window.html#a18763ff318688083c7ee5a21f22e8e98">events</a>()));</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    </div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
-<div class="ttc" id="class_options_window_html_af6320942b8558140989f552b3bbc1fbd"><div class="ttname"><a href="../../d7/d60/class_options_window.html#af6320942b8558140989f552b3bbc1fbd">OptionsWindow::_timer</a></div><div class="ttdeci">QTimer _timer</div><div class="ttdoc">Waits for a new COM port. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:63</div></div>
-<div class="ttc" id="class_options_window_html_acba1566fea3f831000d5e1c1edc3e776"><div class="ttname"><a href="../../d7/d60/class_options_window.html#acba1566fea3f831000d5e1c1edc3e776">OptionsWindow::_servo</a></div><div class="ttdeci">ServoThread * _servo</div><div class="ttdoc">Pointer to the servo thread class. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:60</div></div>
+<div class="ttc" id="class_options_window_html_af6320942b8558140989f552b3bbc1fbd"><div class="ttname"><a href="../../d7/d60/class_options_window.html#af6320942b8558140989f552b3bbc1fbd">OptionsWindow::_timer</a></div><div class="ttdeci">QTimer _timer</div><div class="ttdoc">Waits for a new COM port. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:64</div></div>
+<div class="ttc" id="class_options_window_html_acba1566fea3f831000d5e1c1edc3e776"><div class="ttname"><a href="../../d7/d60/class_options_window.html#acba1566fea3f831000d5e1c1edc3e776">OptionsWindow::_servo</a></div><div class="ttdeci">ServoThread * _servo</div><div class="ttdoc">Pointer to the servo thread class. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:61</div></div>
 <div class="ttc" id="class_options_window_html_a18763ff318688083c7ee5a21f22e8e98"><div class="ttname"><a href="../../d7/d60/class_options_window.html#a18763ff318688083c7ee5a21f22e8e98">OptionsWindow::events</a></div><div class="ttdeci">void events()</div><div class="ttdoc">Handles events that need to be updated continously. </div><div class="ttdef"><b>Definition:</b> optionswindow.cpp:68</div></div>
-<div class="ttc" id="class_options_window_html_a1bf846ab681ab245f70adac30999947c"><div class="ttname"><a href="../../d7/d60/class_options_window.html#a1bf846ab681ab245f70adac30999947c">OptionsWindow::_joy</a></div><div class="ttdeci">XJoystick &amp; _joy</div><div class="ttdoc">Contains the Joystick to handle options. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:54</div></div>
-<div class="ttc" id="class_options_window_html_a8347442d5b3b670e8fff0c4102db1f88"><div class="ttname"><a href="../../d7/d60/class_options_window.html#a8347442d5b3b670e8fff0c4102db1f88">OptionsWindow::ui</a></div><div class="ttdeci">Ui::OptionsWindow * ui</div><div class="ttdoc">Containsh the GUI. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:66</div></div>
-<div class="ttc" id="class_options_window_html_a9bd4dccc7a544b1db78dc8cf330b88f6"><div class="ttname"><a href="../../d7/d60/class_options_window.html#a9bd4dccc7a544b1db78dc8cf330b88f6">OptionsWindow::_portSize</a></div><div class="ttdeci">int _portSize</div><div class="ttdoc">Contains the size of the ports. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:57</div></div>
+<div class="ttc" id="class_options_window_html_a1bf846ab681ab245f70adac30999947c"><div class="ttname"><a href="../../d7/d60/class_options_window.html#a1bf846ab681ab245f70adac30999947c">OptionsWindow::_joy</a></div><div class="ttdeci">XJoystick &amp; _joy</div><div class="ttdoc">Contains the Joystick to handle options. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:55</div></div>
+<div class="ttc" id="class_options_window_html_a8347442d5b3b670e8fff0c4102db1f88"><div class="ttname"><a href="../../d7/d60/class_options_window.html#a8347442d5b3b670e8fff0c4102db1f88">OptionsWindow::ui</a></div><div class="ttdeci">Ui::OptionsWindow * ui</div><div class="ttdoc">Containsh the GUI. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:67</div></div>
+<div class="ttc" id="class_options_window_html_a9bd4dccc7a544b1db78dc8cf330b88f6"><div class="ttname"><a href="../../d7/d60/class_options_window.html#a9bd4dccc7a544b1db78dc8cf330b88f6">OptionsWindow::_portSize</a></div><div class="ttdeci">int _portSize</div><div class="ttdoc">Contains the size of the ports. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:58</div></div>
 <div class="ttc" id="class_options_window_html_ae8c0373be58da710194f8d14f1c3c4dc"><div class="ttname"><a href="../../d7/d60/class_options_window.html#ae8c0373be58da710194f8d14f1c3c4dc">OptionsWindow::joystickChanged</a></div><div class="ttdeci">void joystickChanged()</div><div class="ttdoc">To handle the change of a joystick. </div><div class="ttdef"><b>Definition:</b> optionswindow.cpp:48</div></div>
 </div><!-- fragment -->
 </div>
@@ -255,7 +256,7 @@ Private Attributes</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">delete</span> <a class="code" href="../../d7/d60/class_options_window.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
-<div class="ttc" id="class_options_window_html_a8347442d5b3b670e8fff0c4102db1f88"><div class="ttname"><a href="../../d7/d60/class_options_window.html#a8347442d5b3b670e8fff0c4102db1f88">OptionsWindow::ui</a></div><div class="ttdeci">Ui::OptionsWindow * ui</div><div class="ttdoc">Containsh the GUI. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:66</div></div>
+<div class="ttc" id="class_options_window_html_a8347442d5b3b670e8fff0c4102db1f88"><div class="ttname"><a href="../../d7/d60/class_options_window.html#a8347442d5b3b670e8fff0c4102db1f88">OptionsWindow::ui</a></div><div class="ttdeci">Ui::OptionsWindow * ui</div><div class="ttdoc">Containsh the GUI. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:67</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -290,30 +291,32 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        </div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        QString portC(<a class="code" href="../../d7/d60/class_options_window.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;portC-&gt;currentData().toString());</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        QString portS(<a class="code" href="../../d7/d60/class_options_window.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;portS-&gt;currentData().toString());</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordtype">int</span> selC = 0, selS = 0;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <a class="code" href="../../d7/d60/class_options_window.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;portC-&gt;clear();</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <a class="code" href="../../d7/d60/class_options_window.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;portS-&gt;clear();</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <a class="code" href="../../d7/d60/class_options_window.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;portC-&gt;addItem(<span class="stringliteral">&quot;None&quot;</span>, <span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <a class="code" href="../../d7/d60/class_options_window.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;portS-&gt;addItem(<span class="stringliteral">&quot;None&quot;</span>, <span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; ports.size(); ++i) {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            QString text(ports[i].portName());</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            text += <span class="stringliteral">&quot;: &quot;</span> + ports[i].description();</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            <a class="code" href="../../d7/d60/class_options_window.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;portC-&gt;addItem(text, ports[i].portName());</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <a class="code" href="../../d7/d60/class_options_window.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;portS-&gt;addItem(text, ports[i].portName());</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            <span class="keywordflow">if</span> (ports[i].portName() == portC) selC = i;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <span class="keywordflow">if</span> (ports[i].portName() == portS) selS = i;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        }</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <a class="code" href="../../d7/d60/class_options_window.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;portC-&gt;setCurrentIndex(selC);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <a class="code" href="../../d7/d60/class_options_window.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;portS-&gt;setCurrentIndex(selS);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    }</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}</div>
-<div class="ttc" id="class_options_window_html_a8347442d5b3b670e8fff0c4102db1f88"><div class="ttname"><a href="../../d7/d60/class_options_window.html#a8347442d5b3b670e8fff0c4102db1f88">OptionsWindow::ui</a></div><div class="ttdeci">Ui::OptionsWindow * ui</div><div class="ttdoc">Containsh the GUI. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:66</div></div>
-<div class="ttc" id="class_options_window_html_a9bd4dccc7a544b1db78dc8cf330b88f6"><div class="ttname"><a href="../../d7/d60/class_options_window.html#a9bd4dccc7a544b1db78dc8cf330b88f6">OptionsWindow::_portSize</a></div><div class="ttdeci">int _portSize</div><div class="ttdoc">Contains the size of the ports. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:57</div></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        qDebug() &lt;&lt; portC &lt;&lt; portS;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordtype">int</span> selC = 0, selS = 0;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <a class="code" href="../../d7/d60/class_options_window.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;portC-&gt;clear();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <a class="code" href="../../d7/d60/class_options_window.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;portS-&gt;clear();</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <a class="code" href="../../d7/d60/class_options_window.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;portC-&gt;addItem(<span class="stringliteral">&quot;None&quot;</span>, <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <a class="code" href="../../d7/d60/class_options_window.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;portS-&gt;addItem(<span class="stringliteral">&quot;None&quot;</span>, <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; ports.size(); ++i) {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            QString text(ports[i].portName());</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            text += <span class="stringliteral">&quot;: &quot;</span> + ports[i].description();</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <a class="code" href="../../d7/d60/class_options_window.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;portC-&gt;addItem(text, ports[i].portName());</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <a class="code" href="../../d7/d60/class_options_window.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;portS-&gt;addItem(text, ports[i].portName());</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <span class="keywordflow">if</span> (ports[i].portName() == portC) selC = i + 1;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="keywordflow">if</span> (ports[i].portName() == portS) selS = i + 1;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        }</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        qDebug() &lt;&lt; selC &lt;&lt; selS;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <a class="code" href="../../d7/d60/class_options_window.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;portC-&gt;setCurrentIndex(selC);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <a class="code" href="../../d7/d60/class_options_window.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;portS-&gt;setCurrentIndex(selS);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
+<div class="ttc" id="class_options_window_html_a8347442d5b3b670e8fff0c4102db1f88"><div class="ttname"><a href="../../d7/d60/class_options_window.html#a8347442d5b3b670e8fff0c4102db1f88">OptionsWindow::ui</a></div><div class="ttdeci">Ui::OptionsWindow * ui</div><div class="ttdoc">Containsh the GUI. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:67</div></div>
+<div class="ttc" id="class_options_window_html_a9bd4dccc7a544b1db78dc8cf330b88f6"><div class="ttname"><a href="../../d7/d60/class_options_window.html#a9bd4dccc7a544b1db78dc8cf330b88f6">OptionsWindow::_portSize</a></div><div class="ttdeci">int _portSize</div><div class="ttdoc">Contains the size of the ports. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:58</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -357,8 +360,8 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    </div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="../../d7/d60/class_options_window.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;joyN-&gt;setText(QString::number(V.size()));</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
-<div class="ttc" id="class_options_window_html_a1bf846ab681ab245f70adac30999947c"><div class="ttname"><a href="../../d7/d60/class_options_window.html#a1bf846ab681ab245f70adac30999947c">OptionsWindow::_joy</a></div><div class="ttdeci">XJoystick &amp; _joy</div><div class="ttdoc">Contains the Joystick to handle options. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:54</div></div>
-<div class="ttc" id="class_options_window_html_a8347442d5b3b670e8fff0c4102db1f88"><div class="ttname"><a href="../../d7/d60/class_options_window.html#a8347442d5b3b670e8fff0c4102db1f88">OptionsWindow::ui</a></div><div class="ttdeci">Ui::OptionsWindow * ui</div><div class="ttdoc">Containsh the GUI. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:66</div></div>
+<div class="ttc" id="class_options_window_html_a1bf846ab681ab245f70adac30999947c"><div class="ttname"><a href="../../d7/d60/class_options_window.html#a1bf846ab681ab245f70adac30999947c">OptionsWindow::_joy</a></div><div class="ttdeci">XJoystick &amp; _joy</div><div class="ttdoc">Contains the Joystick to handle options. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:55</div></div>
+<div class="ttc" id="class_options_window_html_a8347442d5b3b670e8fff0c4102db1f88"><div class="ttname"><a href="../../d7/d60/class_options_window.html#a8347442d5b3b670e8fff0c4102db1f88">OptionsWindow::ui</a></div><div class="ttdeci">Ui::OptionsWindow * ui</div><div class="ttdoc">Containsh the GUI. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:67</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -382,10 +385,21 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;{</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <a class="code" href="../../df/d7e/classdynamixel.html">dynamixel</a> dxl;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;}</div>
+
+<p>Refreshes all the servos connected to the port. </p>
+<div class="fragment"><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;{</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <a class="code" href="../../df/d7e/classdynamixel.html">dynamixel</a> dxl;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    QString port;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordtype">int</span> baud;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <a class="code" href="../../d7/d60/class_options_window.html#acba1566fea3f831000d5e1c1edc3e776">_servo</a>-&gt;<a class="code" href="../../de/d6f/class_servo_thread.html#afcf834d93f1ac9663d6ebaab820e5f74">getServoPortInfo</a>(port, baud);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    dxl.<a class="code" href="../../df/d7e/classdynamixel.html#a87960244d5846ae7583e37d2407eb61e">initialize</a>(port, baud);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;}</div>
 <div class="ttc" id="classdynamixel_html"><div class="ttname"><a href="../../df/d7e/classdynamixel.html">dynamixel</a></div><div class="ttdoc">Dynamixel 1.0 protocol class. </div><div class="ttdef"><b>Definition:</b> dynamixel.h:81</div></div>
+<div class="ttc" id="class_options_window_html_acba1566fea3f831000d5e1c1edc3e776"><div class="ttname"><a href="../../d7/d60/class_options_window.html#acba1566fea3f831000d5e1c1edc3e776">OptionsWindow::_servo</a></div><div class="ttdeci">ServoThread * _servo</div><div class="ttdoc">Pointer to the servo thread class. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:61</div></div>
+<div class="ttc" id="classdynamixel_html_a87960244d5846ae7583e37d2407eb61e"><div class="ttname"><a href="../../df/d7e/classdynamixel.html#a87960244d5846ae7583e37d2407eb61e">dynamixel::initialize</a></div><div class="ttdeci">int initialize(QString port_num, int baud_rate)</div><div class="ttdef"><b>Definition:</b> dynamixel.cpp:23</div></div>
+<div class="ttc" id="class_servo_thread_html_afcf834d93f1ac9663d6ebaab820e5f74"><div class="ttname"><a href="../../de/d6f/class_servo_thread.html#afcf834d93f1ac9663d6ebaab820e5f74">ServoThread::getServoPortInfo</a></div><div class="ttdeci">void getServoPortInfo(QString &amp;port, int &amp;baud)</div><div class="ttdoc">Returns both servo Port and baud Rate. </div><div class="ttdef"><b>Definition:</b> servothread.h:107</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -409,8 +423,8 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    </div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    </div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
-<div class="ttc" id="class_options_window_html_a1bf846ab681ab245f70adac30999947c"><div class="ttname"><a href="../../d7/d60/class_options_window.html#a1bf846ab681ab245f70adac30999947c">OptionsWindow::_joy</a></div><div class="ttdeci">XJoystick &amp; _joy</div><div class="ttdoc">Contains the Joystick to handle options. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:54</div></div>
-<div class="ttc" id="class_options_window_html_a8347442d5b3b670e8fff0c4102db1f88"><div class="ttname"><a href="../../d7/d60/class_options_window.html#a8347442d5b3b670e8fff0c4102db1f88">OptionsWindow::ui</a></div><div class="ttdeci">Ui::OptionsWindow * ui</div><div class="ttdoc">Containsh the GUI. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:66</div></div>
+<div class="ttc" id="class_options_window_html_a1bf846ab681ab245f70adac30999947c"><div class="ttname"><a href="../../d7/d60/class_options_window.html#a1bf846ab681ab245f70adac30999947c">OptionsWindow::_joy</a></div><div class="ttdeci">XJoystick &amp; _joy</div><div class="ttdoc">Contains the Joystick to handle options. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:55</div></div>
+<div class="ttc" id="class_options_window_html_a8347442d5b3b670e8fff0c4102db1f88"><div class="ttname"><a href="../../d7/d60/class_options_window.html#a8347442d5b3b670e8fff0c4102db1f88">OptionsWindow::ui</a></div><div class="ttdeci">Ui::OptionsWindow * ui</div><div class="ttdoc">Containsh the GUI. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:67</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -532,7 +546,7 @@ Private Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Apr 14 2015 17:58:06 for DeltaRobot by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Apr 14 2015 21:18:26 for DeltaRobot by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

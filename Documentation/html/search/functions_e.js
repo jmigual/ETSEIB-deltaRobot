@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['servo',['Servo',['../dc/d38/struct_servo_thread_1_1_servo.html#a031c8e78df1e5eddf80bd2b2e2998658',1,'ServoThread::Servo::Servo(int ID=-1, double load=-1, double pos=-1)'],['../dc/d38/struct_servo_thread_1_1_servo.html#ad5caa6903df672ae7a5ac0f3fb301e23',1,'ServoThread::Servo::Servo(Servo &amp;s)']]],
+  ['servo',['Servo',['../dc/d38/struct_servo_thread_1_1_servo.html#a031c8e78df1e5eddf80bd2b2e2998658',1,'ServoThread::Servo::Servo(int ID=-1, double load=-1, double pos=-1)'],['../dc/d38/struct_servo_thread_1_1_servo.html#acb657f09a5d04424d134791ca501cb54',1,'ServoThread::Servo::Servo(const Servo &amp;s)']]],
   ['servothread',['ServoThread',['../de/d6f/class_servo_thread.html#af021de9817b11968dd627186e9e05a71',1,'ServoThread']]],
   ['set_5fpacket_5ftimeout',['set_packet_timeout',['../df/d7e/classdynamixel.html#a067f82c21ed176e18fa224d16f3d1c5b',1,'dynamixel::set_packet_timeout()'],['../d9/deb/classdynamixel2.html#a132d723a321ba225f75f2c79e5d4d27b',1,'dynamixel2::set_packet_timeout()']]],
   ['set_5fpacket_5ftimeout_5fms',['set_packet_timeout_ms',['../df/d7e/classdynamixel.html#a125b42f776c4aac520f274074f68b591',1,'dynamixel::set_packet_timeout_ms()'],['../d9/deb/classdynamixel2.html#a7d85d44aa6c1fe51f952f395a79296d5',1,'dynamixel2::set_packet_timeout_ms()']]],
@@ -13,6 +13,8 @@ var searchData=
   ['setid',['setID',['../d1/daa/class_a_x12.html#ab9fe5d0e2286985977985de6d84b1103',1,'AX12']]],
   ['setjointmode',['setJointMode',['../d1/daa/class_a_x12.html#ac48405a5f4aa73c1f2d56f633dfbec50',1,'AX12']]],
   ['setminmax',['setMinMax',['../d1/daa/class_a_x12.html#a914864d133f8cbaf95594747aaff55f2',1,'AX12']]],
+  ['setservobaud',['setServoBaud',['../de/d6f/class_servo_thread.html#a009d3d1b99007b14fadb49996fac49d6',1,'ServoThread']]],
+  ['setservoport',['setServoPort',['../de/d6f/class_servo_thread.html#a144e31105019d833f59ca2eba012e638',1,'ServoThread']]],
   ['setsid',['setSID',['../de/d6f/class_servo_thread.html#ac3471e5020f5d9babd3f2ff7b3b82aca',1,'ServoThread']]],
   ['setspeed',['setSpeed',['../d1/daa/class_a_x12.html#a95428eea4d5165b81d80e4ab38e33b7b',1,'AX12']]],
   ['storedata',['storeData',['../d7/d60/class_options_window.html#ab0a56ad7347c20046602a7a2a1c83397',1,'OptionsWindow']]]

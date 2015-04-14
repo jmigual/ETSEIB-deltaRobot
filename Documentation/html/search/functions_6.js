@@ -20,5 +20,8 @@ var searchData=
   ['getcurrenttemp',['getCurrentTemp',['../d1/daa/class_a_x12.html#ab16fad4c8c034d56acce15fc9102f34d',1,'AX12']]],
   ['getcurrentvoltage',['getCurrentVoltage',['../d1/daa/class_a_x12.html#a9ef946bfc1ad4dce5fed4101ed321efe',1,'AX12']]],
   ['getid',['getID',['../d1/daa/class_a_x12.html#a745ab1f31fa2cd8c7a5797aeb605cd0b',1,'AX12']]],
-  ['getservoport',['getServoPort',['../de/d6f/class_servo_thread.html#a3fae25aeac390640192ceb38e32dae40',1,'ServoThread']]]
+  ['getservobaud',['getServoBaud',['../de/d6f/class_servo_thread.html#af2c9e71c33e15937e72703d859cd7147',1,'ServoThread']]],
+  ['getservoport',['getServoPort',['../de/d6f/class_servo_thread.html#a3fae25aeac390640192ceb38e32dae40',1,'ServoThread']]],
+  ['getservoportinfo',['getServoPortInfo',['../de/d6f/class_servo_thread.html#afcf834d93f1ac9663d6ebaab820e5f74',1,'ServoThread']]],
+  ['getservosinfo',['getServosInfo',['../de/d6f/class_servo_thread.html#a5fd8ef13314428f5ba7646730cc58f1c',1,'ServoThread::getServosInfo(QVector&lt; Servo &gt; &amp;V)'],['../de/d6f/class_servo_thread.html#a3d58189cdeddfb828856f192607f68d2',1,'ServoThread::getServosInfo()']]]
 ];

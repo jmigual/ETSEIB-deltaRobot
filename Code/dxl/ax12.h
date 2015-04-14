@@ -4,8 +4,11 @@
 #define AX12_H
 
 // Qt libraries
-#include <QObject>
 #include <QVector>
+
+// Standard libraries
+#define _USE_MATH_DEFINES
+#include <cmath>
 
 // User librarires
 #include "dynamixel.h"
@@ -13,9 +16,9 @@
 
 
 /// @brief The AX12 class is used to control AX-12 motors from Dynamixel
-class AX12 : public QObject
+class AX12
 {
-    Q_OBJECT
+    
 private:
     
     /// Contains all the EEPROM directions enumeration
@@ -70,11 +73,14 @@ private:
     /// True if we use the joint mode
     bool _mode;
     
+    /// True if the angle is returned in radians
+    bool _rads;
+    
 public:
     
     /// Default constructor must pass an initialized dynamixel object
     /// if ID == -1 no action is done
-    AX12(dynamixel &dxl, int ID = -1, QObject *parent = 0);
+    AX12(dynamixel &dxl, int ID = -1);
     
     /// Copy constructor
     AX12(const AX12 &a);
@@ -121,10 +127,6 @@ public:
     /// to 100% if wheel mode
     void setSpeed(double speed);
     
-    
-signals:
-    
-public slots:
 };
 
 #endif // AX12_H

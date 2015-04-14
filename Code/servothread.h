@@ -22,6 +22,7 @@ class ServoThread : public QThread
 {
     Q_OBJECT
     
+    /// Enum containing all the save file versions
     enum Version 
     {
         v_1_0
@@ -41,7 +42,7 @@ public:
             : ID(ID), load(load), pos(pos) {}
         
         /// Copy constructor
-        Servo(Servo &s) : ID(s.ID), load(s.load), pos(s.pos) {}
+        Servo(const Servo &s) : ID(s.ID), load(s.load), pos(s.pos) {}
     };
     
     /// Contains the working mode
@@ -111,12 +112,59 @@ public:
         _mutex.unlock();
     }
     
+    
+    /// Returns the servos info, with all its load and current position
+    /// @param V Servo vector to store information
+    inline void getServosInfo(QVector<Servo> &V)
+    {
+        _mutex.lock();
+        V = _servos;
+        _mutex.unlock();
+    }
+    
+    /// Overloaded function to get the servo info
+    inline QVector<Servo> getServosInfo()
+    {
+        QMutexLocker mL(&_mutex);
+        return _servos;
+    }
+    
     /// Adds the loaded data
     /// @param aV Contains the axis values
     /// @param buts Contains the buttons values
     void setData(QVector< float > &aV, QVector<bool> &buts);
     
+    /// Sets the servos port baud rate
+    /// @param baud Positive number containing the baud rate
+    void setServoBaud(unsigned int baud)
+    {
+        _mutex.lock();
+        _sBaud = baud;
+        _mutex.unlock();
+    }
+    
+    /// Sets the servos port
+    /// @param port String containing the port name
+    void setServoPort(QString &port)
+    {
+        _mutex.lock();
+        _sPort = port;
+        _mutex.unlock();
+    }
+    
+    /// Sets the servos port info, data and selected port
+    /// @param port String containing the selected port
+    /// @param baud Contains the selected baud rate
+    void setServoPortInfo(QString &port, unsigned int baud)
+    {
+        _mutex.lock();
+        _sPort = port;
+        _sBaud = baud;
+        _mutex.unlock();
+    }
+    
     /// Sets the servos ID
+    /// @param V Vector containing all the servos ID
     inline void setSID (QVector< int > &V) 
     {
         _mutex.lock();
@@ -132,6 +180,9 @@ public:
     void write(QString &file); 
     
 private:
+    
+    double cos60 = 0.5;         ///< Contains the cosinus of 60
+    double sin60 = sqrt(3)/2;   ///< Contains the sinus of 60
     
     /// Contains the axis value
     QVector < float > _axis;
@@ -177,6 +228,13 @@ private:
     
     /// Used to create another thread
     void run();
+    
+    /// Used to calculate the servos angles
+    void setAngles(double x0, double y0, double z0, 
+                   double &theta1, double &theta2, double &theta3);
+    
+    /// Calculates the angle of one servo in the selected position
+    double singleAngle(double x0, double y0, double z0);
     
 };
 
