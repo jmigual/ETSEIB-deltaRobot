@@ -1,6 +1,3 @@
 <map id="MainWindow" name="MainWindow">
-<area shape="rect" id="node3" href="$df/d7e/classdynamixel.html" title="dynamixel" alt="" coords="137,109,218,136"/>
-<area shape="rect" id="node4" href="$d5/dae/classdxl__hal.html" title="dxl_hal" alt="" coords="51,5,114,32"/>
-<area shape="rect" id="node5" href="$d5/dab/structping__data.html" title="ping_data" alt="" coords="138,5,217,32"/>
-<area shape="rect" id="node6" href="$df/dea/structdata.html" title="data" alt="" coords="250,5,297,32"/>
+<area shape="rect" id="node3" href="$de/d6f/class_servo_thread.html" title="The ServoThread&#39;s class handles the comunication between the delta robot servos and the PC..." alt="" coords="136,81,229,108"/>
 </map>

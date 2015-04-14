@@ -7,9 +7,6 @@
 #include <QObject>
 #include <QVector>
 
-// Standard libraries
-#include <algorithm>
-
 // User librarires
 #include "dynamixel.h"
 

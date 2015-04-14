@@ -1,0 +1,94 @@
+\hypertarget{struct_servo_thread_1_1_servo}{}\section{Servo\+Thread\+:\+:Servo Struct Reference}
+\label{struct_servo_thread_1_1_servo}\index{Servo\+Thread\+::\+Servo@{Servo\+Thread\+::\+Servo}}
+
+
+Struct for the \hyperlink{class_a_x12}{A\+X12} servos.  
+
+
+
+
+{\ttfamily \#include $<$servothread.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_servo_thread_1_1_servo_a031c8e78df1e5eddf80bd2b2e2998658}{Servo} (int \hyperlink{struct_servo_thread_1_1_servo_a06b514c42113aa85fd1703fc88fca7ce}{I\+D}=-\/1, double \hyperlink{struct_servo_thread_1_1_servo_ae378d77acf16b306649c87fdb8df677e}{load}=-\/1, double \hyperlink{struct_servo_thread_1_1_servo_a9fa0aa56944b9b0bb9d66303d5bd4b59}{pos}=-\/1)
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{struct_servo_thread_1_1_servo_ad5caa6903df672ae7a5ac0f3fb301e23}{Servo} (\hyperlink{struct_servo_thread_1_1_servo}{Servo} \&s)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{struct_servo_thread_1_1_servo_a06b514c42113aa85fd1703fc88fca7ce}{I\+D}
+\begin{DoxyCompactList}\small\item\em Contains the servo I\+D. \end{DoxyCompactList}\item 
+double \hyperlink{struct_servo_thread_1_1_servo_ae378d77acf16b306649c87fdb8df677e}{load}
+\begin{DoxyCompactList}\small\item\em Contains the servo load. \end{DoxyCompactList}\item 
+double \hyperlink{struct_servo_thread_1_1_servo_a9fa0aa56944b9b0bb9d66303d5bd4b59}{pos}
+\begin{DoxyCompactList}\small\item\em Contains the servo position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Struct for the \hyperlink{class_a_x12}{A\+X12} servos. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{struct_servo_thread_1_1_servo_a031c8e78df1e5eddf80bd2b2e2998658}{}\index{Servo\+Thread\+::\+Servo@{Servo\+Thread\+::\+Servo}!Servo@{Servo}}
+\index{Servo@{Servo}!Servo\+Thread\+::\+Servo@{Servo\+Thread\+::\+Servo}}
+\subsubsection[{Servo}]{\setlength{\rightskip}{0pt plus 5cm}Servo\+Thread\+::\+Servo\+::\+Servo (
+\begin{DoxyParamCaption}
+\item[{int}]{I\+D = {\ttfamily -\/1}, }
+\item[{double}]{load = {\ttfamily -\/1}, }
+\item[{double}]{pos = {\ttfamily -\/1}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{struct_servo_thread_1_1_servo_a031c8e78df1e5eddf80bd2b2e2998658}
+
+
+Default constructor. 
+
+
+\begin{DoxyCode}
+00041             : \hyperlink{struct_servo_thread_1_1_servo_a06b514c42113aa85fd1703fc88fca7ce}{ID}(\hyperlink{struct_servo_thread_1_1_servo_a06b514c42113aa85fd1703fc88fca7ce}{ID}), \hyperlink{struct_servo_thread_1_1_servo_ae378d77acf16b306649c87fdb8df677e}{load}(\hyperlink{struct_servo_thread_1_1_servo_ae378d77acf16b306649c87fdb8df677e}{load}), \hyperlink{struct_servo_thread_1_1_servo_a9fa0aa56944b9b0bb9d66303d5bd4b59}{pos}(\hyperlink{struct_servo_thread_1_1_servo_a9fa0aa56944b9b0bb9d66303d5bd4b59}{pos}) \{\}
+\end{DoxyCode}
+\hypertarget{struct_servo_thread_1_1_servo_ad5caa6903df672ae7a5ac0f3fb301e23}{}\index{Servo\+Thread\+::\+Servo@{Servo\+Thread\+::\+Servo}!Servo@{Servo}}
+\index{Servo@{Servo}!Servo\+Thread\+::\+Servo@{Servo\+Thread\+::\+Servo}}
+\subsubsection[{Servo}]{\setlength{\rightskip}{0pt plus 5cm}Servo\+Thread\+::\+Servo\+::\+Servo (
+\begin{DoxyParamCaption}
+\item[{{\bf Servo} \&}]{s}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{struct_servo_thread_1_1_servo_ad5caa6903df672ae7a5ac0f3fb301e23}
+
+
+Copy constructor. 
+
+
+\begin{DoxyCode}
+00044 : \hyperlink{struct_servo_thread_1_1_servo_a06b514c42113aa85fd1703fc88fca7ce}{ID}(s.ID), \hyperlink{struct_servo_thread_1_1_servo_ae378d77acf16b306649c87fdb8df677e}{load}(s.load), \hyperlink{struct_servo_thread_1_1_servo_a9fa0aa56944b9b0bb9d66303d5bd4b59}{pos}(s.pos) \{\}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{struct_servo_thread_1_1_servo_a06b514c42113aa85fd1703fc88fca7ce}{}\index{Servo\+Thread\+::\+Servo@{Servo\+Thread\+::\+Servo}!I\+D@{I\+D}}
+\index{I\+D@{I\+D}!Servo\+Thread\+::\+Servo@{Servo\+Thread\+::\+Servo}}
+\subsubsection[{I\+D}]{\setlength{\rightskip}{0pt plus 5cm}int Servo\+Thread\+::\+Servo\+::\+I\+D}\label{struct_servo_thread_1_1_servo_a06b514c42113aa85fd1703fc88fca7ce}
+
+
+Contains the servo I\+D. 
+
+\hypertarget{struct_servo_thread_1_1_servo_ae378d77acf16b306649c87fdb8df677e}{}\index{Servo\+Thread\+::\+Servo@{Servo\+Thread\+::\+Servo}!load@{load}}
+\index{load@{load}!Servo\+Thread\+::\+Servo@{Servo\+Thread\+::\+Servo}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}double Servo\+Thread\+::\+Servo\+::load}\label{struct_servo_thread_1_1_servo_ae378d77acf16b306649c87fdb8df677e}
+
+
+Contains the servo load. 
+
+\hypertarget{struct_servo_thread_1_1_servo_a9fa0aa56944b9b0bb9d66303d5bd4b59}{}\index{Servo\+Thread\+::\+Servo@{Servo\+Thread\+::\+Servo}!pos@{pos}}
+\index{pos@{pos}!Servo\+Thread\+::\+Servo@{Servo\+Thread\+::\+Servo}}
+\subsubsection[{pos}]{\setlength{\rightskip}{0pt plus 5cm}double Servo\+Thread\+::\+Servo\+::pos}\label{struct_servo_thread_1_1_servo_a9fa0aa56944b9b0bb9d66303d5bd4b59}
+
+
+Contains the servo position. 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{servothread_8h}{servothread.\+h}\end{DoxyCompactItemize}

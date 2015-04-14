@@ -38,7 +38,7 @@
      <item>
       <widget class="QStackedWidget" name="stack">
        <property name="currentIndex">
-        <number>0</number>
+        <number>2</number>
        </property>
        <widget class="QWidget" name="joystick">
         <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -306,20 +306,6 @@
             </size>
            </property>
           </spacer>
-         </item>
-         <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_7">
-           <item>
-            <widget class="QLabel" name="label_6">
-             <property name="text">
-              <string>Com Port</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QComboBox" name="com"/>
-           </item>
-          </layout>
          </item>
         </layout>
        </widget>

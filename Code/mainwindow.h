@@ -1,8 +1,6 @@
+/// @file mainwindow.h Contains the MainWindow class declaration
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-
-// Standard libraries
-#include <utility>
 
 // Qt Libraries
 #include <QDebug>
@@ -20,11 +18,14 @@
 #include "optionswindow.h"
 #include "servothread.h"
 
+/// Namespace to work with a User Interface Qt Form
 namespace Ui {
 class MainWindow;
 }
 
 using namespace std;
+
+/// Contains all the windows and other classes
 class MainWindow : public QMainWindow
 {
     Q_OBJECT

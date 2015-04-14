@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['factory_5freset',['factory_reset',['../d9/deb/classdynamixel2.html#ab10d0f6f3c77e02dc028ba19ac55c609',1,'dynamixel2']]],
-  ['filter',['filter',['../dc/dc5/class_x_joystick.html#a49901d35007803e1d88cf3eb382e4473',1,'XJoystick']]]
+  ['dynamixel',['dynamixel',['../df/d7e/classdynamixel.html#a7aa668a213db6a41bede8e08a6fec830',1,'dynamixel::dynamixel()'],['../df/d7e/classdynamixel.html#a5d4fed957a4b2d1690c0fa72127f5cbf',1,'dynamixel::dynamixel(QString port_num, int baud_rate=1000000)']]]
 ];

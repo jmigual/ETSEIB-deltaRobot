@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['xjoystick_2ecpp',['xjoystick.cpp',['../d8/d01/xjoystick_8cpp.html',1,'']]],
-  ['xjoystick_2eh',['xjoystick.h',['../da/de2/xjoystick_8h.html',1,'']]]
+  ['servothread_2ecpp',['servothread.cpp',['../d7/dfc/servothread_8cpp.html',1,'']]],
+  ['servothread_2eh',['servothread.h',['../da/d77/servothread_8h.html',1,'']]]
 ];

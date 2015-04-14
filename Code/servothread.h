@@ -1,3 +1,4 @@
+/// @file servothread.h Contains the ServoThread class declaration
 #ifndef SERVOTHREAD_H
 #define SERVOTHREAD_H
 
@@ -5,8 +6,6 @@
 #include <QDebug>
 #include <QDir>
 #include <QMutex>
-#include <QObject>
-#include <QStandardPaths>
 #include <QThread>
 #include <QVector>
 #include <QWaitCondition>
@@ -23,28 +22,31 @@ class ServoThread : public QThread
 {
     Q_OBJECT
     
-    enum Version {
+    enum Version 
+    {
         v_1_0
     };
     
 public:
     
     /// Struct for the AX12 servos
-    struct Servo {
+    struct Servo 
+    {
         int ID;         ///< Contains the servo ID
         double load;    ///< Contains the servo load
         double pos;     ///< Contains the servo position
         
         /// Default constructor
-        Servo(int ID = -1, double load = -1, double pos = -1) :
-            ID(ID), load(load), pos(pos) {}
+        Servo(int ID = -1, double load = -1, double pos = -1) 
+            : ID(ID), load(load), pos(pos) {}
         
         /// Copy constructor
         Servo(Servo &s) : ID(s.ID), load(s.load), pos(s.pos) {}
     };
     
     /// Contains the working mode
-    enum Mode {
+    enum Mode 
+    {
         controlled,
         manual
     };
@@ -86,15 +88,32 @@ public:
         _mutex.unlock();
     }
     
+    /// Returns the current servo Baud rate
+    inline int getServoBaud()
+    {
+        QMutexLocker mL(&_mutex);
+        return _sBaud;
+    }
+    
+    /// Returns the current servo Port
     inline QString getServoPort()
     {
+        QMutexLocker mL(&_mutex);
+        return _sPort;
+    }
+    
+    /// Returns both servo Port and baud Rate
+    inline void getServoPortInfo(QString &port, int &baud)
+    {
         _mutex.lock();
-        QString res(_sPort);
+        baud = _sBaud;
+        port = _sPort;
         _mutex.unlock();
-        return res;
     }
     
     /// Adds the loaded data
+    /// @param aV Contains the axis values
+    /// @param buts Contains the buttons values
     void setData(QVector< float > &aV, QVector<bool> &buts);
     
     /// Sets the servos ID
@@ -109,6 +128,7 @@ public:
     }
     
     /// Writes data to the selected directory
+    /// @param file Path to the file
     void write(QString &file); 
     
 private:
@@ -119,8 +139,14 @@ private:
     /// Contains the buttons value
     QVector < bool > _buts;
     
+    /// Contains the baud rate used to comunicate with the clamp
+    int _cBaud;
+    
     /// To start and pause the thread
     QWaitCondition _cond;
+        
+    /// Contains the selected com port used to comunitate with the clamp
+    QString _cPort;
     
     /// True if the data changes
     bool _dChanged;

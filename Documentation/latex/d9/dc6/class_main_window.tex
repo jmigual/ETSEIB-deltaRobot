@@ -2,6 +2,11 @@
 \label{class_main_window}\index{Main\+Window@{Main\+Window}}
 
 
+Contains all the windows and other classes.  
+
+
+
+
 {\ttfamily \#include $<$mainwindow.\+h$>$}
 
 
@@ -19,9 +24,14 @@ Collaboration diagram for Main\+Window\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=324pt]{d0/db8/class_main_window__coll__graph}
+\includegraphics[width=248pt]{d0/db8/class_main_window__coll__graph}
 \end{center}
 \end{figure}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_main_window_ac85ba5aec3be2a51a348ff669b9dc842}{joystick\+Changed} ()
+\begin{DoxyCompactList}\small\item\em Emmitted when a joystick changes. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -32,16 +42,50 @@ Collaboration diagram for Main\+Window\+:\nopagebreak
 \subsection*{Private Slots}
 \begin{DoxyCompactItemize}
 \item 
+void \hyperlink{class_main_window_abb4c2d8a79c9f80010ea031366bf8226}{joy\+Changed} ()
+\begin{DoxyCompactList}\small\item\em Handles a joystick update. \end{DoxyCompactList}\item 
 void \hyperlink{class_main_window_a1dd57ccb62bc6f5a361aba6e088dd2e1}{on\+\_\+action\+Options\+\_\+triggered} ()
-\begin{DoxyCompactList}\small\item\em To select the options. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em To select the options. \end{DoxyCompactList}\item 
+void \hyperlink{class_main_window_a128f71880d4b9683149023fc46fcc9f8}{update} ()
+\begin{DoxyCompactList}\small\item\em Updates all data to the servo thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classdynamixel}{dynamixel} \hyperlink{class_main_window_a07b4b97f6d4dfa77704b70d7dbbbebee}{\+\_\+dxl}
-\begin{DoxyCompactList}\small\item\em Contains the comunication with the motors. \end{DoxyCompactList}\item 
+Q\+Vector$<$ Q\+Label $\ast$ $>$ \hyperlink{class_main_window_a30c99d7a544f74b0650758e5cc7ead5a}{\+\_\+axis}
+\begin{DoxyCompactList}\small\item\em Handles all the axis labels. \end{DoxyCompactList}\item 
+Q\+Vector$<$ float $>$ \hyperlink{class_main_window_a20f66f574ed4c96d8dfc0013e1095f15}{\+\_\+axis\+V}
+\begin{DoxyCompactList}\small\item\em Contains the axis value;. \end{DoxyCompactList}\item 
+Q\+Vector$<$ Q\+Label $\ast$ $>$ \hyperlink{class_main_window_a8eaf474e1b8672f32873ed009e28ce8a}{\+\_\+buts}
+\begin{DoxyCompactList}\small\item\em Handles all the button labels. \end{DoxyCompactList}\item 
+Q\+Vector$<$ bool $>$ \hyperlink{class_main_window_a519ae4630572cb63fbd04bce12fe8e77}{\+\_\+buts\+V}
+\begin{DoxyCompactList}\small\item\em Handles all buttons values. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{class_main_window_aaccbe653019df03668429890e325ac21}{\+\_\+data\+P}
+\begin{DoxyCompactList}\small\item\em Contains the path to the data location. \end{DoxyCompactList}\item 
+int \hyperlink{class_main_window_a282d4090e96c676578c4336391b1af08}{\+\_\+j\+Axis\+X} = -\/1
+\begin{DoxyCompactList}\small\item\em Axis for the X value. \end{DoxyCompactList}\item 
+int \hyperlink{class_main_window_aaaced09ce813bbcac92047f5ef39f182}{\+\_\+j\+Axis\+Y} = -\/1
+\begin{DoxyCompactList}\small\item\em Axis for the Y value. \end{DoxyCompactList}\item 
+int \hyperlink{class_main_window_a18cc17eff4ff04ee0aae07c609e82d33}{\+\_\+j\+Axis\+Z} = -\/1
+\begin{DoxyCompactList}\small\item\em A\+Xis for the Z value. \end{DoxyCompactList}\item 
+X\+Joystick \hyperlink{class_main_window_a671f35800890e518713e1946671d8730}{\+\_\+joy}
+\begin{DoxyCompactList}\small\item\em To handle the joystick. \end{DoxyCompactList}\item 
+\hyperlink{class_servo_thread}{Servo\+Thread} \hyperlink{class_main_window_a97f8ecc7ecb930b796178cef7b975013}{\+\_\+s\+T}
+\begin{DoxyCompactList}\small\item\em Contains the thread controlling all the servos and external hardware. \end{DoxyCompactList}\item 
+Q\+Timer \hyperlink{class_main_window_a254b03b878cfda75c1c411a2f8568d33}{\+\_\+timer}
+\begin{DoxyCompactList}\small\item\em To update the joystick value. \end{DoxyCompactList}\item 
 Ui\+::\+Main\+Window $\ast$ \hyperlink{class_main_window_a35466a70ed47252a0191168126a352a5}{ui}
 \begin{DoxyCompactList}\small\item\em Contains the user interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int \hyperlink{class_main_window_a646727b1c45c72638325adfd460649c0}{s\+Count} = 3
+\begin{DoxyCompactList}\small\item\em Contains the number of minimun servos to work. \end{DoxyCompactList}\item 
+static const int \hyperlink{class_main_window_a42c44af9c0eebc33f4e81f02e15b0461}{a\+S\+Count} = 0
+\begin{DoxyCompactList}\small\item\em Contains the number of additional servos used. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+Contains all the windows and other classes. 
 
 \subsection{Constructor \& Destructor Documentation}
 \hypertarget{class_main_window_a8b244be8b7b7db1b08de2a2acb9409db}{}\index{Main\+Window@{Main\+Window}!Main\+Window@{Main\+Window}}
@@ -57,14 +101,54 @@ Default constructor.
 
 
 \begin{DoxyCode}
-4                                       :
-5     QMainWindow(parent),
-6     \hyperlink{class_main_window_a35466a70ed47252a0191168126a352a5}{ui}(\textcolor{keyword}{new} Ui::MainWindow)
-7 \{
-8     \hyperlink{class_main_window_a35466a70ed47252a0191168126a352a5}{ui}->setupUi(\textcolor{keyword}{this});
-9     this->setWindowTitle(\textcolor{stringliteral}{"DeltaRobot Control"});
-10     \hyperlink{class_main_window_a07b4b97f6d4dfa77704b70d7dbbbebee}{\_dxl}.\hyperlink{classdynamixel_a87960244d5846ae7583e37d2407eb61e}{initialize}(\textcolor{stringliteral}{"COM3"}, 1000000);
-11 \}
+00005                                       :
+00006     QMainWindow(parent),
+00007     \hyperlink{class_main_window_a30c99d7a544f74b0650758e5cc7ead5a}{\_axis}(XJoystick::AxisCount),
+00008     \hyperlink{class_main_window_a20f66f574ed4c96d8dfc0013e1095f15}{\_axisV}(XJoystick::AxisCount),
+00009     \hyperlink{class_main_window_a8eaf474e1b8672f32873ed009e28ce8a}{\_buts}(XJoystick::ButtonCount),
+00010     \hyperlink{class_main_window_a519ae4630572cb63fbd04bce12fe8e77}{\_butsV}(XJoystick::ButtonCount),
+00011     \hyperlink{class_main_window_a35466a70ed47252a0191168126a352a5}{ui}(\textcolor{keyword}{new} Ui::MainWindow)
+00012 \{
+00013     \hyperlink{class_main_window_a35466a70ed47252a0191168126a352a5}{ui}->setupUi(\textcolor{keyword}{this});
+00014     \hyperlink{class_main_window_a97f8ecc7ecb930b796178cef7b975013}{\_sT}.start();
+00015     \hyperlink{class_main_window_a254b03b878cfda75c1c411a2f8568d33}{\_timer}.setInterval(10);
+00016     \hyperlink{class_main_window_a254b03b878cfda75c1c411a2f8568d33}{\_timer}.start();
+00017     
+00018     connect(&\hyperlink{class_main_window_a671f35800890e518713e1946671d8730}{\_joy}, SIGNAL(changed()), \textcolor{keyword}{this}, SLOT(\hyperlink{class_main_window_abb4c2d8a79c9f80010ea031366bf8226}{joyChanged}()));
+00019     connect(&\hyperlink{class_main_window_a254b03b878cfda75c1c411a2f8568d33}{\_timer}, SIGNAL(timeout()), \textcolor{keyword}{this}, SLOT(\hyperlink{class_main_window_a128f71880d4b9683149023fc46fcc9f8}{update}()));
+00020     
+00021     \textcolor{comment}{// JOYSTICK}
+00022     QVector< QString > V(\hyperlink{class_main_window_a671f35800890e518713e1946671d8730}{\_joy}.getAllAxis());
+00023     \textcolor{comment}{// Adding axis}
+00024     QGridLayout *wL = \textcolor{keyword}{new} QGridLayout;
+00025     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < XJoystick::AxisCount; ++i) \{
+00026         QHBoxLayout *L = \textcolor{keyword}{new} QHBoxLayout;
+00027         L->addWidget(\textcolor{keyword}{new} QLabel(V[i].append(\textcolor{stringliteral}{":"}), \textcolor{keyword}{this}));
+00028         \hyperlink{class_main_window_a30c99d7a544f74b0650758e5cc7ead5a}{\_axis}[i] = \textcolor{keyword}{new} QLabel(\textcolor{stringliteral}{"#"});
+00029         L->addWidget(\hyperlink{class_main_window_a30c99d7a544f74b0650758e5cc7ead5a}{\_axis}[i]);
+00030         L->addStretch();
+00031         wL->addLayout(L, i%3, i/3); 
+00032     \}
+00033     \hyperlink{class_main_window_a35466a70ed47252a0191168126a352a5}{ui}->joyAxis->setLayout(wL);
+00034     
+00035     \textcolor{comment}{// Adding buttons}
+00036     wL = \textcolor{keyword}{new} QGridLayout;
+00037     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < XJoystick::ButtonCount; ++i) \{
+00038         \hyperlink{class_main_window_a8eaf474e1b8672f32873ed009e28ce8a}{\_buts}[i] = \textcolor{keyword}{new} QLabel(QString::number(i + 1));
+00039         wL->addWidget(\hyperlink{class_main_window_a8eaf474e1b8672f32873ed009e28ce8a}{\_buts}[i], i/8, i%8);
+00040         \hyperlink{class_main_window_a8eaf474e1b8672f32873ed009e28ce8a}{\_buts}[i]->setEnabled(\textcolor{keyword}{false});
+00041         \hyperlink{class_main_window_a8eaf474e1b8672f32873ed009e28ce8a}{\_buts}[i]->hide();
+00042     \}
+00043     \hyperlink{class_main_window_a35466a70ed47252a0191168126a352a5}{ui}->joyButs->setLayout(wL);
+00044     \hyperlink{class_main_window_a35466a70ed47252a0191168126a352a5}{ui}->joyAxis->hide();
+00045     \hyperlink{class_main_window_a35466a70ed47252a0191168126a352a5}{ui}->joyButs->hide();
+00046     \hyperlink{class_main_window_a35466a70ed47252a0191168126a352a5}{ui}->line->hide();
+00047     \textcolor{comment}{// TODO: Create dataPath}
+00048     
+00049     \hyperlink{class_main_window_aaccbe653019df03668429890e325ac21}{\_dataP} = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+00050     QDir dir(\hyperlink{class_main_window_aaccbe653019df03668429890e325ac21}{\_dataP});
+00051     \textcolor{keywordflow}{if} (!dir.exists()) dir.mkpath(\hyperlink{class_main_window_aaccbe653019df03668429890e325ac21}{\_dataP});
+00052 \}
 \end{DoxyCode}
 \hypertarget{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}{}\index{Main\+Window@{Main\+Window}!````~Main\+Window@{$\sim$\+Main\+Window}}
 \index{````~Main\+Window@{$\sim$\+Main\+Window}!Main\+Window@{Main\+Window}}
@@ -79,13 +163,68 @@ Default destructor.
 
 
 \begin{DoxyCode}
-14 \{
-15     \textcolor{keyword}{delete} \hyperlink{class_main_window_a35466a70ed47252a0191168126a352a5}{ui};
-16 \}
+00055 \{
+00056     \textcolor{keyword}{delete} \hyperlink{class_main_window_a35466a70ed47252a0191168126a352a5}{ui};
+00057 \}
 \end{DoxyCode}
 
 
 \subsection{Member Function Documentation}
+\hypertarget{class_main_window_abb4c2d8a79c9f80010ea031366bf8226}{}\index{Main\+Window@{Main\+Window}!joy\+Changed@{joy\+Changed}}
+\index{joy\+Changed@{joy\+Changed}!Main\+Window@{Main\+Window}}
+\subsubsection[{joy\+Changed}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::joy\+Changed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{class_main_window_abb4c2d8a79c9f80010ea031366bf8226}
+
+
+Handles a joystick update. 
+
+
+\begin{DoxyCode}
+00060 \{
+00061     \textcolor{keywordtype}{int} sel = \hyperlink{class_main_window_a671f35800890e518713e1946671d8730}{\_joy}.current();
+00062     
+00063     QVector< XJoystick::Info > V(\hyperlink{class_main_window_a671f35800890e518713e1946671d8730}{\_joy}.available());
+00064     \textcolor{keywordtype}{bool} found = \textcolor{keyword}{false};
+00065     \textcolor{keywordtype}{int} i = 0;
+00066     \textcolor{keywordflow}{while} (i < V.size() and not found) \{ found = V[i].ID == sel; ++i; \}
+00067     \textcolor{keywordflow}{if} (not found) \{
+00068         \textcolor{keywordflow}{if} (V.size() > 0) \{
+00069             \hyperlink{class_main_window_a671f35800890e518713e1946671d8730}{\_joy}.select(V[0].ID);
+00070             \hyperlink{class_main_window_a35466a70ed47252a0191168126a352a5}{ui}->line->hide();
+00071             
+00072             \textcolor{comment}{// Showing axis}
+00073             \hyperlink{class_main_window_a35466a70ed47252a0191168126a352a5}{ui}->joyAxis->show();
+00074             
+00075             \textcolor{comment}{// Showing buttons}
+00076             \textcolor{keywordflow}{for} (QLabel *l : \hyperlink{class_main_window_a8eaf474e1b8672f32873ed009e28ce8a}{\_buts}) l->hide();
+00077             \hyperlink{class_main_window_a35466a70ed47252a0191168126a352a5}{ui}->joyButs->show();
+00078             \textcolor{keywordtype}{int} n = \hyperlink{class_main_window_a671f35800890e518713e1946671d8730}{\_joy}.buttonCount();
+00079             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < n; ++i) \_buts[i]->show();
+00080         \}
+00081         \textcolor{keywordflow}{else} \{
+00082             \hyperlink{class_main_window_a671f35800890e518713e1946671d8730}{\_joy}.select(-1);
+00083             \hyperlink{class_main_window_a35466a70ed47252a0191168126a352a5}{ui}->joyAxis->hide();
+00084             \hyperlink{class_main_window_a35466a70ed47252a0191168126a352a5}{ui}->joyButs->hide();
+00085             \hyperlink{class_main_window_a35466a70ed47252a0191168126a352a5}{ui}->line->hide();
+00086         \}
+00087     \}
+00088     emit \hyperlink{class_main_window_ac85ba5aec3be2a51a348ff669b9dc842}{joystickChanged}();
+00089 \}
+\end{DoxyCode}
+\hypertarget{class_main_window_ac85ba5aec3be2a51a348ff669b9dc842}{}\index{Main\+Window@{Main\+Window}!joystick\+Changed@{joystick\+Changed}}
+\index{joystick\+Changed@{joystick\+Changed}!Main\+Window@{Main\+Window}}
+\subsubsection[{joystick\+Changed}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::joystick\+Changed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{class_main_window_ac85ba5aec3be2a51a348ff669b9dc842}
+
+
+Emmitted when a joystick changes. 
+
 \hypertarget{class_main_window_a1dd57ccb62bc6f5a361aba6e088dd2e1}{}\index{Main\+Window@{Main\+Window}!on\+\_\+action\+Options\+\_\+triggered@{on\+\_\+action\+Options\+\_\+triggered}}
 \index{on\+\_\+action\+Options\+\_\+triggered@{on\+\_\+action\+Options\+\_\+triggered}!Main\+Window@{Main\+Window}}
 \subsubsection[{on\+\_\+action\+Options\+\_\+triggered}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::on\+\_\+action\+Options\+\_\+triggered (
@@ -99,23 +238,132 @@ To select the options.
 
 
 \begin{DoxyCode}
-19 \{
-20     \hyperlink{class_options_window}{OptionsWindow} o;
-21     o.exec();
-22     
-23     \textcolor{keywordflow}{if} (o.result()) qDebug() << \textcolor{stringliteral}{"Acceptat"};
-24     \textcolor{keywordflow}{else} qDebug() << \textcolor{stringliteral}{"Rebutjat"};
-25 \}
+00093 \{
+00094     \hyperlink{class_options_window}{OptionsWindow} o(\hyperlink{class_main_window_a671f35800890e518713e1946671d8730}{\_joy}, &\hyperlink{class_main_window_a97f8ecc7ecb930b796178cef7b975013}{\_sT}, \textcolor{keyword}{this});
+00095     o.exec();
+00096     
+00097     connect(\textcolor{keyword}{this}, SIGNAL(\hyperlink{class_main_window_ac85ba5aec3be2a51a348ff669b9dc842}{joystickChanged}()), &o, SLOT(
+      \hyperlink{class_main_window_ac85ba5aec3be2a51a348ff669b9dc842}{joystickChanged}()));
+00098     
+00099     \textcolor{keywordflow}{if} (o.result()) o.storeData();
+00100 \}
+\end{DoxyCode}
+\hypertarget{class_main_window_a128f71880d4b9683149023fc46fcc9f8}{}\index{Main\+Window@{Main\+Window}!update@{update}}
+\index{update@{update}!Main\+Window@{Main\+Window}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::update (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{class_main_window_a128f71880d4b9683149023fc46fcc9f8}
+
+
+Updates all data to the servo thread. 
+
+
+\begin{DoxyCode}
+00103 \{
+00104     \hyperlink{class_main_window_a671f35800890e518713e1946671d8730}{\_joy}.update();
+00105     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < XJoystick::AxisCount; ++i) \hyperlink{class_main_window_a20f66f574ed4c96d8dfc0013e1095f15}{\_axisV}[i] = \hyperlink{class_main_window_a671f35800890e518713e1946671d8730}{\_joy}[i];
+00106     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < XJoystick::ButtonCount; ++i) \hyperlink{class_main_window_a519ae4630572cb63fbd04bce12fe8e77}{\_butsV}[i] = \hyperlink{class_main_window_a671f35800890e518713e1946671d8730}{\_joy}.button(i);
+00107     
+00108     \hyperlink{class_main_window_a97f8ecc7ecb930b796178cef7b975013}{\_sT}.\hyperlink{class_servo_thread_a8497ea56991b620981ce1fbf53d9ebdb}{setData}(\hyperlink{class_main_window_a20f66f574ed4c96d8dfc0013e1095f15}{\_axisV}, \hyperlink{class_main_window_a519ae4630572cb63fbd04bce12fe8e77}{\_butsV});
+00109     
+00110     \textcolor{comment}{// TODO: Finish update function}
+00111 \}
 \end{DoxyCode}
 
 
 \subsection{Member Data Documentation}
-\hypertarget{class_main_window_a07b4b97f6d4dfa77704b70d7dbbbebee}{}\index{Main\+Window@{Main\+Window}!\+\_\+dxl@{\+\_\+dxl}}
-\index{\+\_\+dxl@{\+\_\+dxl}!Main\+Window@{Main\+Window}}
-\subsubsection[{\+\_\+dxl}]{\setlength{\rightskip}{0pt plus 5cm}{\bf dynamixel} Main\+Window\+::\+\_\+dxl\hspace{0.3cm}{\ttfamily [private]}}\label{class_main_window_a07b4b97f6d4dfa77704b70d7dbbbebee}
+\hypertarget{class_main_window_a30c99d7a544f74b0650758e5cc7ead5a}{}\index{Main\+Window@{Main\+Window}!\+\_\+axis@{\+\_\+axis}}
+\index{\+\_\+axis@{\+\_\+axis}!Main\+Window@{Main\+Window}}
+\subsubsection[{\+\_\+axis}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Vector$<$ Q\+Label $\ast$$>$ Main\+Window\+::\+\_\+axis\hspace{0.3cm}{\ttfamily [private]}}\label{class_main_window_a30c99d7a544f74b0650758e5cc7ead5a}
 
 
-Contains the comunication with the motors. 
+Handles all the axis labels. 
+
+\hypertarget{class_main_window_a20f66f574ed4c96d8dfc0013e1095f15}{}\index{Main\+Window@{Main\+Window}!\+\_\+axis\+V@{\+\_\+axis\+V}}
+\index{\+\_\+axis\+V@{\+\_\+axis\+V}!Main\+Window@{Main\+Window}}
+\subsubsection[{\+\_\+axis\+V}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Vector$<$ float $>$ Main\+Window\+::\+\_\+axis\+V\hspace{0.3cm}{\ttfamily [private]}}\label{class_main_window_a20f66f574ed4c96d8dfc0013e1095f15}
+
+
+Contains the axis value;. 
+
+\hypertarget{class_main_window_a8eaf474e1b8672f32873ed009e28ce8a}{}\index{Main\+Window@{Main\+Window}!\+\_\+buts@{\+\_\+buts}}
+\index{\+\_\+buts@{\+\_\+buts}!Main\+Window@{Main\+Window}}
+\subsubsection[{\+\_\+buts}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Vector$<$ Q\+Label $\ast$$>$ Main\+Window\+::\+\_\+buts\hspace{0.3cm}{\ttfamily [private]}}\label{class_main_window_a8eaf474e1b8672f32873ed009e28ce8a}
+
+
+Handles all the button labels. 
+
+\hypertarget{class_main_window_a519ae4630572cb63fbd04bce12fe8e77}{}\index{Main\+Window@{Main\+Window}!\+\_\+buts\+V@{\+\_\+buts\+V}}
+\index{\+\_\+buts\+V@{\+\_\+buts\+V}!Main\+Window@{Main\+Window}}
+\subsubsection[{\+\_\+buts\+V}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Vector$<$ bool $>$ Main\+Window\+::\+\_\+buts\+V\hspace{0.3cm}{\ttfamily [private]}}\label{class_main_window_a519ae4630572cb63fbd04bce12fe8e77}
+
+
+Handles all buttons values. 
+
+\hypertarget{class_main_window_aaccbe653019df03668429890e325ac21}{}\index{Main\+Window@{Main\+Window}!\+\_\+data\+P@{\+\_\+data\+P}}
+\index{\+\_\+data\+P@{\+\_\+data\+P}!Main\+Window@{Main\+Window}}
+\subsubsection[{\+\_\+data\+P}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Main\+Window\+::\+\_\+data\+P\hspace{0.3cm}{\ttfamily [private]}}\label{class_main_window_aaccbe653019df03668429890e325ac21}
+
+
+Contains the path to the data location. 
+
+\hypertarget{class_main_window_a282d4090e96c676578c4336391b1af08}{}\index{Main\+Window@{Main\+Window}!\+\_\+j\+Axis\+X@{\+\_\+j\+Axis\+X}}
+\index{\+\_\+j\+Axis\+X@{\+\_\+j\+Axis\+X}!Main\+Window@{Main\+Window}}
+\subsubsection[{\+\_\+j\+Axis\+X}]{\setlength{\rightskip}{0pt plus 5cm}int Main\+Window\+::\+\_\+j\+Axis\+X = -\/1\hspace{0.3cm}{\ttfamily [private]}}\label{class_main_window_a282d4090e96c676578c4336391b1af08}
+
+
+Axis for the X value. 
+
+\hypertarget{class_main_window_aaaced09ce813bbcac92047f5ef39f182}{}\index{Main\+Window@{Main\+Window}!\+\_\+j\+Axis\+Y@{\+\_\+j\+Axis\+Y}}
+\index{\+\_\+j\+Axis\+Y@{\+\_\+j\+Axis\+Y}!Main\+Window@{Main\+Window}}
+\subsubsection[{\+\_\+j\+Axis\+Y}]{\setlength{\rightskip}{0pt plus 5cm}int Main\+Window\+::\+\_\+j\+Axis\+Y = -\/1\hspace{0.3cm}{\ttfamily [private]}}\label{class_main_window_aaaced09ce813bbcac92047f5ef39f182}
+
+
+Axis for the Y value. 
+
+\hypertarget{class_main_window_a18cc17eff4ff04ee0aae07c609e82d33}{}\index{Main\+Window@{Main\+Window}!\+\_\+j\+Axis\+Z@{\+\_\+j\+Axis\+Z}}
+\index{\+\_\+j\+Axis\+Z@{\+\_\+j\+Axis\+Z}!Main\+Window@{Main\+Window}}
+\subsubsection[{\+\_\+j\+Axis\+Z}]{\setlength{\rightskip}{0pt plus 5cm}int Main\+Window\+::\+\_\+j\+Axis\+Z = -\/1\hspace{0.3cm}{\ttfamily [private]}}\label{class_main_window_a18cc17eff4ff04ee0aae07c609e82d33}
+
+
+A\+Xis for the Z value. 
+
+\hypertarget{class_main_window_a671f35800890e518713e1946671d8730}{}\index{Main\+Window@{Main\+Window}!\+\_\+joy@{\+\_\+joy}}
+\index{\+\_\+joy@{\+\_\+joy}!Main\+Window@{Main\+Window}}
+\subsubsection[{\+\_\+joy}]{\setlength{\rightskip}{0pt plus 5cm}X\+Joystick Main\+Window\+::\+\_\+joy\hspace{0.3cm}{\ttfamily [private]}}\label{class_main_window_a671f35800890e518713e1946671d8730}
+
+
+To handle the joystick. 
+
+\hypertarget{class_main_window_a97f8ecc7ecb930b796178cef7b975013}{}\index{Main\+Window@{Main\+Window}!\+\_\+s\+T@{\+\_\+s\+T}}
+\index{\+\_\+s\+T@{\+\_\+s\+T}!Main\+Window@{Main\+Window}}
+\subsubsection[{\+\_\+s\+T}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Servo\+Thread} Main\+Window\+::\+\_\+s\+T\hspace{0.3cm}{\ttfamily [private]}}\label{class_main_window_a97f8ecc7ecb930b796178cef7b975013}
+
+
+Contains the thread controlling all the servos and external hardware. 
+
+\hypertarget{class_main_window_a254b03b878cfda75c1c411a2f8568d33}{}\index{Main\+Window@{Main\+Window}!\+\_\+timer@{\+\_\+timer}}
+\index{\+\_\+timer@{\+\_\+timer}!Main\+Window@{Main\+Window}}
+\subsubsection[{\+\_\+timer}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Timer Main\+Window\+::\+\_\+timer\hspace{0.3cm}{\ttfamily [private]}}\label{class_main_window_a254b03b878cfda75c1c411a2f8568d33}
+
+
+To update the joystick value. 
+
+\hypertarget{class_main_window_a42c44af9c0eebc33f4e81f02e15b0461}{}\index{Main\+Window@{Main\+Window}!a\+S\+Count@{a\+S\+Count}}
+\index{a\+S\+Count@{a\+S\+Count}!Main\+Window@{Main\+Window}}
+\subsubsection[{a\+S\+Count}]{\setlength{\rightskip}{0pt plus 5cm}const int Main\+Window\+::a\+S\+Count = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\label{class_main_window_a42c44af9c0eebc33f4e81f02e15b0461}
+
+
+Contains the number of additional servos used. 
+
+\hypertarget{class_main_window_a646727b1c45c72638325adfd460649c0}{}\index{Main\+Window@{Main\+Window}!s\+Count@{s\+Count}}
+\index{s\+Count@{s\+Count}!Main\+Window@{Main\+Window}}
+\subsubsection[{s\+Count}]{\setlength{\rightskip}{0pt plus 5cm}const int Main\+Window\+::s\+Count = 3\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\label{class_main_window_a646727b1c45c72638325adfd460649c0}
+
+
+Contains the number of minimun servos to work. 
 
 \hypertarget{class_main_window_a35466a70ed47252a0191168126a352a5}{}\index{Main\+Window@{Main\+Window}!ui@{ui}}
 \index{ui@{ui}!Main\+Window@{Main\+Window}}

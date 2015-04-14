@@ -1,11 +1,13 @@
+/// @file optionswindow.h Contains the OptionsWindow class declaration
 #ifndef OPTIONSWINDOW_H
 #define OPTIONSWINDOW_H
 
 // Qt libraries
-#include <QDialog>
-#include <QListWidgetItem>
 #include <QDebug>
-#include <QStackedWidget>
+#include <QDialog>
+#include <QSerialPort>
+#include <QSerialPortInfo>
+#include <QTimer>
 
 // Other libraries
 #include <xjoystick.h>
@@ -17,6 +19,7 @@ namespace Ui {
 class OptionsWindow;
 }
 
+/// Class used to handle a Window to set the options
 class OptionsWindow : public QDialog
 {
     Q_OBJECT
@@ -39,6 +42,11 @@ public slots:
     void joystickChanged();
 
 private slots:
+    
+    /// Handles events that need to be updated continously
+    void events();
+    
+    /// Refreshes all the servos connected to the port
     void on_servoRefresh_clicked();
     
 private:
@@ -46,8 +54,14 @@ private:
     /// Contains the Joystick to handle options
     XJoystick &_joy;
     
+    /// Contains the size of the ports
+    int _portSize;
+    
     /// Pointer to the servo thread class
     ServoThread *_servo;
+    
+    /// Waits for a new COM port
+    QTimer _timer;
     
     /// Containsh the GUI
     Ui::OptionsWindow *ui;

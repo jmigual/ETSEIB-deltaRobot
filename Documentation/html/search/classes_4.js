@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['optionsservos',['OptionsServos',['../da/dec/class_options_servos.html',1,'']]],
-  ['optionswindow',['OptionsWindow',['../d7/d60/class_options_window.html',1,'']]]
+  ['ping_5fdata',['ping_data',['../df/d41/structdynamixel2_1_1ping__data.html',1,'dynamixel2']]]
 ];

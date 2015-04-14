@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../favicon.ico"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">DeltaRobot
-   &#160;<span id="projectnumber">v0.1.1</span>
+   &#160;<span id="projectnumber">v0.4</span>
    </div>
   </td>
  </tr>
@@ -40,6 +40,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="../../index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="../../namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="../../annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="../../files.html"><span>Files</span></a></li>
       <li>
@@ -89,24 +90,29 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="title">optionswindow.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;QDialog&gt;</code><br />
-<code>#include &lt;QListWidgetItem&gt;</code><br />
-<code>#include &lt;QDebug&gt;</code><br />
-<code>#include &lt;QStackedWidget&gt;</code><br />
-<code>#include &quot;<a class="el" href="../../d8/df4/optionsservos_8h_source.html">optionsservos.h</a>&quot;</code><br />
+
+<p>Contains the <a class="el" href="../../d7/d60/class_options_window.html" title="Class used to handle a Window to set the options. ">OptionsWindow</a> class declaration.  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &lt;QDebug&gt;</code><br />
+<code>#include &lt;QDialog&gt;</code><br />
+<code>#include &lt;QSerialPort&gt;</code><br />
+<code>#include &lt;QSerialPortInfo&gt;</code><br />
+<code>#include &lt;QTimer&gt;</code><br />
+<code>#include &lt;xjoystick.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="../../da/d77/servothread_8h_source.html">servothread.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for optionswindow.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d9/d41/optionswindow_8h__incl.png" border="0" usemap="#optionswindow_8h" alt=""/></div>
 <map name="optionswindow_8h" id="optionswindow_8h">
-<area shape="rect" id="node6" href="../../d8/df4/optionsservos_8h.html" title="optionsservos.h" alt="" coords="481,80,593,107"/></map>
+<area shape="rect" id="node8" href="../../da/d77/servothread_8h.html" title="Contains the ServoThread class implementation. " alt="" coords="373,80,472,107"/><area shape="rect" id="node14" href="../../de/d72/ax12_8h.html" title="Contains the AX12 class declaration. " alt="" coords="259,155,341,181"/><area shape="rect" id="node16" href="../../dd/d04/dynamixel_8h.html" title="Contains the dynamixel and dynamixel2 classes declaration. " alt="" coords="281,229,373,256"/><area shape="rect" id="node17" href="../../d3/d67/dxl__hal_8h.html" title="Contains the Dynamixel SDK platform dependent header declaration. " alt="" coords="377,304,452,331"/></map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d9/d4a/optionswindow_8h__dep__incl.png" border="0" usemap="#optionswindow_8hdep" alt=""/></div>
 <map name="optionswindow_8hdep" id="optionswindow_8hdep">
-<area shape="rect" id="node2" href="../../d9/d53/mainwindow_8h.html" title="mainwindow.h" alt="" coords="51,80,154,107"/><area shape="rect" id="node5" href="../../df/d6e/optionswindow_8cpp.html" title="optionswindow.cpp" alt="" coords="179,80,309,107"/><area shape="rect" id="node3" href="../../df/d0a/main_8cpp.html" title="main.cpp" alt="" coords="5,155,80,181"/><area shape="rect" id="node4" href="../../d8/dd9/mainwindow_8cpp.html" title="mainwindow.cpp" alt="" coords="104,155,221,181"/></map>
+<area shape="rect" id="node2" href="../../d9/d53/mainwindow_8h.html" title="Contains the MainWindow class declaration. " alt="" coords="51,80,154,107"/><area shape="rect" id="node5" href="../../df/d6e/optionswindow_8cpp.html" title="Contains the OptionsWindow class implementation. " alt="" coords="179,80,309,107"/><area shape="rect" id="node3" href="../../df/d0a/main_8cpp.html" title="Contains the Main of the program. " alt="" coords="5,155,80,181"/><area shape="rect" id="node4" href="../../d8/dd9/mainwindow_8cpp.html" title="Contains the MainWindow class implementation. " alt="" coords="104,155,221,181"/></map>
 </div>
 </div>
 <p><a href="../../d6/d2a/optionswindow_8h_source.html">Go to the source code of this file.</a></p>
@@ -114,17 +120,21 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d60/class_options_window.html">OptionsWindow</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class used to handle a Window to set the options.  <a href="../../d7/d60/class_options_window.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:dc/df0/namespace_ui"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/df0/namespace_ui.html">Ui</a></td></tr>
+<tr class="memdesc:dc/df0/namespace_ui"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace to work with a User Interface Qt Form. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Contains the <a class="el" href="../../d7/d60/class_options_window.html" title="Class used to handle a Window to set the options. ">OptionsWindow</a> class declaration. </p>
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Mar 9 2015 21:19:25 for DeltaRobot by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Apr 14 2015 17:58:06 for DeltaRobot by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

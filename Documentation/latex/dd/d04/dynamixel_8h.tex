@@ -1,6 +1,10 @@
-\hypertarget{dynamixel_8h}{}\section{dynamixel.\+h File Reference}
-\label{dynamixel_8h}\index{dynamixel.\+h@{dynamixel.\+h}}
-{\ttfamily \#include $<$Q\+String$>$}\\*
+\hypertarget{dynamixel_8h}{}\section{dxl/dynamixel.h File Reference}
+\label{dynamixel_8h}\index{dxl/dynamixel.\+h@{dxl/dynamixel.\+h}}
+
+
+Contains the dynamixel and \hyperlink{classdynamixel2}{dynamixel2} classes declaration.  
+
+
 {\ttfamily \#include \char`\"{}dxl\+\_\+hal.\+h\char`\"{}}\\*
 Include dependency graph for dynamixel.\+h\+:\nopagebreak
 \begin{figure}[H]
@@ -13,20 +17,20 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=301pt]{d2/d0a/dynamixel_8h__dep__incl}
+\includegraphics[width=350pt]{d2/d0a/dynamixel_8h__dep__incl}
 \end{center}
 \end{figure}
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-struct \hyperlink{structdata}{data}
-\item 
-struct \hyperlink{structping__data}{ping\+\_\+data}
-\item 
 class \hyperlink{classdynamixel}{dynamixel}
-\item 
+\begin{DoxyCompactList}\small\item\em Dynamixel 1.\+0 protocol class. \end{DoxyCompactList}\item 
 class \hyperlink{classdynamixel2}{dynamixel2}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Dynamixel 2.\+0 protocol class. \end{DoxyCompactList}\item 
+struct \hyperlink{structdynamixel2_1_1ping__data}{dynamixel2\+::ping\+\_\+data}
+\begin{DoxyCompactList}\small\item\em Struct used to do a ping. \end{DoxyCompactList}\item 
+struct \hyperlink{structdynamixel2_1_1data}{dynamixel2\+::data}
+\begin{DoxyCompactList}\small\item\em Struct used to handle dynamixel data. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
@@ -138,13 +142,11 @@ class \hyperlink{classdynamixel2}{dynamixel2}
 \item 
 \#define \hyperlink{dynamixel_8h_a75c5b5f21e837e80c0feb4da9a421f87}{H\+I\+B\+Y\+T\+E}(w)~((unsigned char)((((unsigned long)(w)) $>$$>$ 8) \& 0xff))
 \end{DoxyCompactItemize}
-\subsection*{Typedefs}
-\begin{DoxyCompactItemize}
-\item 
-typedef struct \hyperlink{structdata}{data} \hyperlink{dynamixel_8h_a8add985a0a86464eeca56e82ecda62d7}{Sync\+Bulk\+Data}
-\item 
-typedef struct \hyperlink{structping__data}{ping\+\_\+data} \hyperlink{dynamixel_8h_ac9fd59581222be7f70502a24c1f2260d}{Ping\+Data}
-\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains the dynamixel and \hyperlink{classdynamixel2}{dynamixel2} classes declaration. 
+
 
 
 \subsection{Macro Definition Documentation}
@@ -336,12 +338,3 @@ typedef struct \hyperlink{structping__data}{ping\+\_\+data} \hyperlink{dynamixel
 \hypertarget{dynamixel_8h_a7c79167a35ad785b57c7c8de66c59e5c}{}\index{dynamixel.\+h@{dynamixel.\+h}!P\+R\+T2\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+P\+K\+T\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R0@{P\+R\+T2\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+P\+K\+T\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R0}}
 \index{P\+R\+T2\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+P\+K\+T\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R0@{P\+R\+T2\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+P\+K\+T\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R0}!dynamixel.\+h@{dynamixel.\+h}}
 \subsubsection[{P\+R\+T2\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+P\+K\+T\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R0}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+R\+T2\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+P\+K\+T\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R0~(9)}\label{dynamixel_8h_a7c79167a35ad785b57c7c8de66c59e5c}
-
-
-\subsection{Typedef Documentation}
-\hypertarget{dynamixel_8h_ac9fd59581222be7f70502a24c1f2260d}{}\index{dynamixel.\+h@{dynamixel.\+h}!Ping\+Data@{Ping\+Data}}
-\index{Ping\+Data@{Ping\+Data}!dynamixel.\+h@{dynamixel.\+h}}
-\subsubsection[{Ping\+Data}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf ping\+\_\+data}  {\bf Ping\+Data}}\label{dynamixel_8h_ac9fd59581222be7f70502a24c1f2260d}
-\hypertarget{dynamixel_8h_a8add985a0a86464eeca56e82ecda62d7}{}\index{dynamixel.\+h@{dynamixel.\+h}!Sync\+Bulk\+Data@{Sync\+Bulk\+Data}}
-\index{Sync\+Bulk\+Data@{Sync\+Bulk\+Data}!dynamixel.\+h@{dynamixel.\+h}}
-\subsubsection[{Sync\+Bulk\+Data}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf data}  {\bf Sync\+Bulk\+Data}}\label{dynamixel_8h_a8add985a0a86464eeca56e82ecda62d7}

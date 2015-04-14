@@ -2,6 +2,11 @@
 \label{classdynamixel}\index{dynamixel@{dynamixel}}
 
 
+Dynamixel 1.\+0 protocol class.  
+
+
+
+
 {\ttfamily \#include $<$dynamixel.\+h$>$}
 
 
@@ -10,11 +15,15 @@ Collaboration diagram for dynamixel\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=290pt]{df/d4c/classdynamixel__coll__graph}
+\includegraphics[width=141pt]{df/d4c/classdynamixel__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
+\item 
+\hyperlink{classdynamixel_a7aa668a213db6a41bede8e08a6fec830}{dynamixel} ()
+\item 
+\hyperlink{classdynamixel_a5d4fed957a4b2d1690c0fa72127f5cbf}{dynamixel} (Q\+String port\+\_\+num, int baud\+\_\+rate=1000000)
 \item 
 bool \hyperlink{classdynamixel_a5ae4b2c6eb4c91f404f973ee8e6a1914}{is\+Open} ()
 \item 
@@ -24,7 +33,7 @@ int \hyperlink{classdynamixel_a7554c7889896e29e11a62027d89f3fdf}{change\+\_\+bau
 \item 
 int \hyperlink{classdynamixel_a92ea074ed1c1a9cf29e039f8c425f01a}{terminate} (void)
 \item 
-int \hyperlink{classdynamixel_a80155fe1814322c679abef987e349939}{get\+\_\+comm\+\_\+result} (void)
+int \hyperlink{classdynamixel_ac8440d5d34ae3c4618b28fdbbd748edc}{get\+\_\+comm\+\_\+result} ()
 \item 
 void \hyperlink{classdynamixel_a479187cd8940c16dd4374eb5be22b888}{tx\+\_\+packet} (void)
 \item 
@@ -88,13 +97,40 @@ double \hyperlink{classdynamixel_a9f47887864517d74955a2bc787ae4456}{gd\+Rcv\+Wai
 int \hyperlink{classdynamixel_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{gb\+Comm\+Status} = \hyperlink{dynamixel_8h_a171328d9f298535c18d079f65e631434}{C\+O\+M\+M\+\_\+\+R\+X\+S\+U\+C\+C\+E\+S\+S}
 \item 
 int \hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{gi\+Bus\+Using} = 0
-\item 
-\hyperlink{dynamixel_8h_ac9fd59581222be7f70502a24c1f2260d}{Ping\+Data} \hyperlink{classdynamixel_a383bdc8f02ec1b5999f6eee94fff9ab0}{g\+Ping\+Data} \mbox{[}\hyperlink{dynamixel_8h_a1cdef4472847c938fc165b7d2737c4e4}{M\+A\+X\+\_\+\+I\+D}+1\mbox{]}
-\item 
-\hyperlink{dynamixel_8h_a8add985a0a86464eeca56e82ecda62d7}{Sync\+Bulk\+Data} \hyperlink{classdynamixel_ae3f2d0b8c800b9e89271189acb4d484c}{g\+Sync\+Data} \mbox{[}\hyperlink{dynamixel_8h_a1cdef4472847c938fc165b7d2737c4e4}{M\+A\+X\+\_\+\+I\+D}+1\mbox{]}
-\item 
-\hyperlink{dynamixel_8h_a8add985a0a86464eeca56e82ecda62d7}{Sync\+Bulk\+Data} \hyperlink{classdynamixel_a953aee387e1b1a919be73017a368c777}{g\+Bulk\+Data} \mbox{[}\hyperlink{dynamixel_8h_a1cdef4472847c938fc165b7d2737c4e4}{M\+A\+X\+\_\+\+I\+D}+1\mbox{]}
 \end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Dynamixel 1.\+0 protocol class. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classdynamixel_a7aa668a213db6a41bede8e08a6fec830}{}\index{dynamixel@{dynamixel}!dynamixel@{dynamixel}}
+\index{dynamixel@{dynamixel}!dynamixel@{dynamixel}}
+\subsubsection[{dynamixel}]{\setlength{\rightskip}{0pt plus 5cm}dynamixel\+::dynamixel (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdynamixel_a7aa668a213db6a41bede8e08a6fec830}
+
+\begin{DoxyCode}
+00014 \{
+00015     
+00016 \}
+\end{DoxyCode}
+\hypertarget{classdynamixel_a5d4fed957a4b2d1690c0fa72127f5cbf}{}\index{dynamixel@{dynamixel}!dynamixel@{dynamixel}}
+\index{dynamixel@{dynamixel}!dynamixel@{dynamixel}}
+\subsubsection[{dynamixel}]{\setlength{\rightskip}{0pt plus 5cm}dynamixel\+::dynamixel (
+\begin{DoxyParamCaption}
+\item[{Q\+String}]{port\+\_\+num, }
+\item[{int}]{baud\+\_\+rate = {\ttfamily 1000000}}
+\end{DoxyParamCaption}
+)}\label{classdynamixel_a5d4fed957a4b2d1690c0fa72127f5cbf}
+
+\begin{DoxyCode}
+00019 \{
+00020     \hyperlink{classdynamixel_a87960244d5846ae7583e37d2407eb61e}{initialize}(port\_num, baud\_rate);
+00021 \}
+\end{DoxyCode}
 
 
 \subsection{Member Function Documentation}
@@ -107,30 +143,28 @@ int \hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{gi\+Bus\+Using}
 )}\label{classdynamixel_a7554c7889896e29e11a62027d89f3fdf}
 
 \begin{DoxyCode}
-49 \{
-50     \textcolor{keywordtype}{int} result = 0;
-51     \textcolor{keywordtype}{float} baudrate = (float)baud\_rate;
-52     
-53     result = \hyperlink{classdynamixel_ae003cc90ada6d7b70eaa4ea9d42d4deb}{dH}.\hyperlink{classdxl__hal_a0eaaa5340bc9dce73cc920dc8befe5b0}{change\_baudrate}(baudrate);
-54     \textcolor{keywordflow}{if}(result == 1)
-55         \hyperlink{classdynamixel_a2173f25c6299da7ddb37ba3d2bf1f738}{gdByteTransTime} = 1000.0f / baudrate * 10.0; \textcolor{comment}{// 1000/baudrate(bit per msec) *
+00039 \{
+00040     \textcolor{keywordtype}{int} result = 0;
+00041     \textcolor{keywordtype}{float} baudrate = (float)baud\_rate;
+00042     
+00043     result = \hyperlink{classdynamixel_ae003cc90ada6d7b70eaa4ea9d42d4deb}{dH}.\hyperlink{classdxl__hal_a0eaaa5340bc9dce73cc920dc8befe5b0}{change\_baudrate}(baudrate);
+00044     \textcolor{keywordflow}{if}(result == 1)
+00045         \hyperlink{classdynamixel_a2173f25c6299da7ddb37ba3d2bf1f738}{gdByteTransTime} = 1000.0f / baudrate * 10.0; \textcolor{comment}{// 1000/baudrate(bit per msec) *
        10(start bit + data bit + stop bit)}
-56 
-57     \textcolor{keywordflow}{return} result;
-58 \}
+00046 
+00047     \textcolor{keywordflow}{return} result;
+00048 \}
 \end{DoxyCode}
-\hypertarget{classdynamixel_a80155fe1814322c679abef987e349939}{}\index{dynamixel@{dynamixel}!get\+\_\+comm\+\_\+result@{get\+\_\+comm\+\_\+result}}
+\hypertarget{classdynamixel_ac8440d5d34ae3c4618b28fdbbd748edc}{}\index{dynamixel@{dynamixel}!get\+\_\+comm\+\_\+result@{get\+\_\+comm\+\_\+result}}
 \index{get\+\_\+comm\+\_\+result@{get\+\_\+comm\+\_\+result}!dynamixel@{dynamixel}}
 \subsubsection[{get\+\_\+comm\+\_\+result}]{\setlength{\rightskip}{0pt plus 5cm}int dynamixel\+::get\+\_\+comm\+\_\+result (
 \begin{DoxyParamCaption}
-\item[{void}]{}
+{}
 \end{DoxyParamCaption}
-)}\label{classdynamixel_a80155fe1814322c679abef987e349939}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdynamixel_ac8440d5d34ae3c4618b28fdbbd748edc}
 
 \begin{DoxyCode}
-110 \{
-111     \textcolor{keywordflow}{return} \hyperlink{classdynamixel_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{gbCommStatus};
-112 \}
+00112 \{ \textcolor{keywordflow}{return} \hyperlink{classdynamixel_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{gbCommStatus}; \}
 \end{DoxyCode}
 \hypertarget{classdynamixel_a2fa5375537184c279a9ebfcfc0425071}{}\index{dynamixel@{dynamixel}!get\+\_\+packet\+\_\+time@{get\+\_\+packet\+\_\+time}}
 \index{get\+\_\+packet\+\_\+time@{get\+\_\+packet\+\_\+time}!dynamixel@{dynamixel}}
@@ -141,18 +175,17 @@ int \hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{gi\+Bus\+Using}
 )}\label{classdynamixel_a2fa5375537184c279a9ebfcfc0425071}
 
 \begin{DoxyCode}
-77 \{
-78     \textcolor{keywordtype}{double} elapsed\_time;
-79 
-80     elapsed\_time = (double)(\hyperlink{classdynamixel_ae003cc90ada6d7b70eaa4ea9d42d4deb}{dH}.\hyperlink{classdxl__hal_a6b6b7381c45308662fc3df6e7f74bc61}{get\_curr\_time}() - 
+00058 \{
+00059     \textcolor{keywordtype}{double} elapsed\_time;
+00060 
+00061     elapsed\_time = (double)(\hyperlink{classdynamixel_ae003cc90ada6d7b70eaa4ea9d42d4deb}{dH}.\hyperlink{classdxl__hal_a6b6b7381c45308662fc3df6e7f74bc61}{get\_curr\_time}() - 
       \hyperlink{classdynamixel_a6c6314fb7070e6fd361e57c5de17e0ec}{gdPacketStartTime});
-81 
-82     \textcolor{comment}{// Overflow}
-83     \textcolor{keywordflow}{if}(elapsed\_time < 0)
-84         \hyperlink{classdynamixel_a6c6314fb7070e6fd361e57c5de17e0ec}{gdPacketStartTime} = \hyperlink{classdynamixel_ae003cc90ada6d7b70eaa4ea9d42d4deb}{dH}.\hyperlink{classdxl__hal_a6b6b7381c45308662fc3df6e7f74bc61}{get\_curr\_time}();
-85     
-86     \textcolor{keywordflow}{return} elapsed\_time;
-87 \}
+00062 
+00063     \textcolor{comment}{// Overflow}
+00064     \textcolor{keywordflow}{if}(elapsed\_time < 0) \hyperlink{classdynamixel_a6c6314fb7070e6fd361e57c5de17e0ec}{gdPacketStartTime} = \hyperlink{classdynamixel_ae003cc90ada6d7b70eaa4ea9d42d4deb}{dH}.\hyperlink{classdxl__hal_a6b6b7381c45308662fc3df6e7f74bc61}{get\_curr\_time}();
+00065     
+00066     \textcolor{keywordflow}{return} elapsed\_time;
+00067 \}
 \end{DoxyCode}
 \hypertarget{classdynamixel_a1bbabb82d7a2764cc4b0b351dd0019e5}{}\index{dynamixel@{dynamixel}!get\+\_\+rxpacket\+\_\+error@{get\+\_\+rxpacket\+\_\+error}}
 \index{get\+\_\+rxpacket\+\_\+error@{get\+\_\+rxpacket\+\_\+error}!dynamixel@{dynamixel}}
@@ -163,12 +196,12 @@ int \hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{gi\+Bus\+Using}
 )}\label{classdynamixel_a1bbabb82d7a2764cc4b0b351dd0019e5}
 
 \begin{DoxyCode}
-305 \{
-306     \textcolor{keywordflow}{if}( \hyperlink{classdynamixel_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gbStatusPacket}[\hyperlink{dynamixel_8h_a582837a5f6ad93ee1dbb82ba51691edf}{PRT1\_PKT\_ERRBIT}] & (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char})error )
-307         \textcolor{keywordflow}{return} 1;
-308 
-309     \textcolor{keywordflow}{return} 0;
-310 \}
+00279 \{
+00280     \textcolor{keywordflow}{if}( \hyperlink{classdynamixel_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gbStatusPacket}[\hyperlink{dynamixel_8h_a582837a5f6ad93ee1dbb82ba51691edf}{PRT1\_PKT\_ERRBIT}] & (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char})error )
+00281         \textcolor{keywordflow}{return} 1;
+00282 
+00283     \textcolor{keywordflow}{return} 0;
+00284 \}
 \end{DoxyCode}
 \hypertarget{classdynamixel_a6e62341ef9f51b6e152e769bd7be9d75}{}\index{dynamixel@{dynamixel}!get\+\_\+rxpacket\+\_\+error\+\_\+byte@{get\+\_\+rxpacket\+\_\+error\+\_\+byte}}
 \index{get\+\_\+rxpacket\+\_\+error\+\_\+byte@{get\+\_\+rxpacket\+\_\+error\+\_\+byte}!dynamixel@{dynamixel}}
@@ -179,9 +212,9 @@ int \hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{gi\+Bus\+Using}
 )}\label{classdynamixel_a6e62341ef9f51b6e152e769bd7be9d75}
 
 \begin{DoxyCode}
-313 \{
-314     \textcolor{keywordflow}{return} \hyperlink{classdynamixel_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gbStatusPacket}[\hyperlink{dynamixel_8h_a582837a5f6ad93ee1dbb82ba51691edf}{PRT1\_PKT\_ERRBIT}];
-315 \}
+00287 \{
+00288     \textcolor{keywordflow}{return} \hyperlink{classdynamixel_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gbStatusPacket}[\hyperlink{dynamixel_8h_a582837a5f6ad93ee1dbb82ba51691edf}{PRT1\_PKT\_ERRBIT}];
+00289 \}
 \end{DoxyCode}
 \hypertarget{classdynamixel_ae9cc18fdeda8329f68fa0f2f0a7a9aba}{}\index{dynamixel@{dynamixel}!get\+\_\+rxpacket\+\_\+length@{get\+\_\+rxpacket\+\_\+length}}
 \index{get\+\_\+rxpacket\+\_\+length@{get\+\_\+rxpacket\+\_\+length}!dynamixel@{dynamixel}}
@@ -192,9 +225,9 @@ int \hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{gi\+Bus\+Using}
 )}\label{classdynamixel_ae9cc18fdeda8329f68fa0f2f0a7a9aba}
 
 \begin{DoxyCode}
-323 \{
-324     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{int})\hyperlink{classdynamixel_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gbStatusPacket}[\hyperlink{dynamixel_8h_ab24601f91d0364e4b62edad3c2a0a5c4}{PRT1\_PKT\_LENGTH}];
-325 \}
+00297 \{
+00298     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{int})\hyperlink{classdynamixel_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gbStatusPacket}[\hyperlink{dynamixel_8h_ab24601f91d0364e4b62edad3c2a0a5c4}{PRT1\_PKT\_LENGTH}];
+00299 \}
 \end{DoxyCode}
 \hypertarget{classdynamixel_a68b5fa99719a9aec0734ecfb0635503b}{}\index{dynamixel@{dynamixel}!get\+\_\+rxpacket\+\_\+parameter@{get\+\_\+rxpacket\+\_\+parameter}}
 \index{get\+\_\+rxpacket\+\_\+parameter@{get\+\_\+rxpacket\+\_\+parameter}!dynamixel@{dynamixel}}
@@ -205,9 +238,9 @@ int \hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{gi\+Bus\+Using}
 )}\label{classdynamixel_a68b5fa99719a9aec0734ecfb0635503b}
 
 \begin{DoxyCode}
-318 \{
-319     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{int})\hyperlink{classdynamixel_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gbStatusPacket}[\hyperlink{dynamixel_8h_a939ef836d0605d2f4f9372df3ea0855f}{PRT1\_PKT\_PARAMETER0}+index];
-320 \}
+00292 \{
+00293     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{int})\hyperlink{classdynamixel_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gbStatusPacket}[\hyperlink{dynamixel_8h_a939ef836d0605d2f4f9372df3ea0855f}{PRT1\_PKT\_PARAMETER0}+index];
+00294 \}
 \end{DoxyCode}
 \hypertarget{classdynamixel_a87960244d5846ae7583e37d2407eb61e}{}\index{dynamixel@{dynamixel}!initialize@{initialize}}
 \index{initialize@{initialize}!dynamixel@{dynamixel}}
@@ -219,43 +252,19 @@ int \hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{gi\+Bus\+Using}
 )}\label{classdynamixel_a87960244d5846ae7583e37d2407eb61e}
 
 \begin{DoxyCode}
-11 \{
-12     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} idx = 0;
-13 
-14     \textcolor{keywordflow}{if}( baud\_rate < 1900 )
-15         \textcolor{keywordflow}{return} 0;
-16 
-17     \textcolor{keywordflow}{if}( \hyperlink{classdynamixel_ae003cc90ada6d7b70eaa4ea9d42d4deb}{dH}.\hyperlink{classdxl__hal_a5b91f0f0b4a61fa113f9919e07e5a329}{open}(port\_num, baud\_rate) == 0 )
-18         \textcolor{keywordflow}{return} 0;
-19 
-20     \hyperlink{classdynamixel_a2173f25c6299da7ddb37ba3d2bf1f738}{gdByteTransTime} = 1000.0 / (double)baud\_rate * 10.0; \textcolor{comment}{// 1000/baudrate(bit per msec) *
-       10(start bit + data bit + stop bit)}
-21 
-22 
-23     \textcolor{keywordflow}{for}(idx = 1; idx <= \hyperlink{dynamixel_8h_a1cdef4472847c938fc165b7d2737c4e4}{MAX\_ID}; idx++)
-24     \{
-25         \hyperlink{classdynamixel_ae3f2d0b8c800b9e89271189acb4d484c}{gSyncData}[idx].\hyperlink{structdata_a5a553f5c59b2c973d161ea3352c32d07}{iID}        = idx;
-26         \hyperlink{classdynamixel_ae3f2d0b8c800b9e89271189acb4d484c}{gSyncData}[idx].\hyperlink{structdata_a849125c9807b08e525118cdca5a255fe}{iStartAddr} = 1;
-27         \hyperlink{classdynamixel_ae3f2d0b8c800b9e89271189acb4d484c}{gSyncData}[idx].\hyperlink{structdata_a836daaa4328239851986211241acbcca}{iLength}    = 1;
-28         \hyperlink{classdynamixel_ae3f2d0b8c800b9e89271189acb4d484c}{gSyncData}[idx].\hyperlink{structdata_a907d6311fb7b92b5960df0bef3b32c43}{iError}      = 0;
-29         \hyperlink{classdynamixel_ae3f2d0b8c800b9e89271189acb4d484c}{gSyncData}[idx].\hyperlink{structdata_a03c940df871cecb40e4f5ca39f14cc49}{pucTable}      = 0;
-30 
-31         \hyperlink{classdynamixel_a953aee387e1b1a919be73017a368c777}{gBulkData}[idx].\hyperlink{structdata_a5a553f5c59b2c973d161ea3352c32d07}{iID}        = idx;
-32         \hyperlink{classdynamixel_a953aee387e1b1a919be73017a368c777}{gBulkData}[idx].\hyperlink{structdata_a849125c9807b08e525118cdca5a255fe}{iStartAddr} = 1;
-33         \hyperlink{classdynamixel_a953aee387e1b1a919be73017a368c777}{gBulkData}[idx].\hyperlink{structdata_a836daaa4328239851986211241acbcca}{iLength}    = 1;
-34         \hyperlink{classdynamixel_a953aee387e1b1a919be73017a368c777}{gBulkData}[idx].\hyperlink{structdata_a907d6311fb7b92b5960df0bef3b32c43}{iError}      = 0;
-35         \hyperlink{classdynamixel_a953aee387e1b1a919be73017a368c777}{gBulkData}[idx].\hyperlink{structdata_a03c940df871cecb40e4f5ca39f14cc49}{pucTable}      = 0;
-36 
-37         \hyperlink{classdynamixel_a383bdc8f02ec1b5999f6eee94fff9ab0}{gPingData}[idx].\hyperlink{structping__data_afa48124c46271b97615e464bfb0b31bc}{iID} = idx;
-38         \hyperlink{classdynamixel_a383bdc8f02ec1b5999f6eee94fff9ab0}{gPingData}[idx].\hyperlink{structping__data_a4a340fb47423b484b48237ceb5b39ef4}{iFirmVer} = -1;
-39         \hyperlink{classdynamixel_a383bdc8f02ec1b5999f6eee94fff9ab0}{gPingData}[idx].\hyperlink{structping__data_a21475c3d8b2629e66cd2c1227c648489}{iModelNo} = -1;
-40     \}
-41 
-42     \hyperlink{classdynamixel_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{gbCommStatus} = \hyperlink{dynamixel_8h_a171328d9f298535c18d079f65e631434}{COMM\_RXSUCCESS};
-43     \hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{giBusUsing} = 0;
-44 
-45     \textcolor{keywordflow}{return} 1;
-46 \}
+00024 \{
+00025     \textcolor{keywordflow}{if}( baud\_rate < 1900 ) \textcolor{keywordflow}{return} 0;
+00026 
+00027     \textcolor{keywordflow}{if}( not \hyperlink{classdynamixel_ae003cc90ada6d7b70eaa4ea9d42d4deb}{dH}.\hyperlink{classdxl__hal_ab631c2a5533125f14db9a8ec1c33aa7c}{open}(port\_num, baud\_rate) ) \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00028 
+00029     \textcolor{comment}{// 1000/baudrate(bit per msec) * 10(start bit + data bit + stop bit)}
+00030     \hyperlink{classdynamixel_a2173f25c6299da7ddb37ba3d2bf1f738}{gdByteTransTime} = 1000.0 / (double)baud\_rate * 10.0; 
+00031 
+00032     \hyperlink{classdynamixel_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{gbCommStatus} = \hyperlink{dynamixel_8h_a171328d9f298535c18d079f65e631434}{COMM\_RXSUCCESS};
+00033     \hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{giBusUsing} = 0;
+00034 
+00035     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+00036 \}
 \end{DoxyCode}
 \hypertarget{classdynamixel_afddd976dbc486cd08b92e0e6e4117519}{}\index{dynamixel@{dynamixel}!is\+\_\+packet\+\_\+timeout@{is\+\_\+packet\+\_\+timeout}}
 \index{is\+\_\+packet\+\_\+timeout@{is\+\_\+packet\+\_\+timeout}!dynamixel@{dynamixel}}
@@ -266,11 +275,11 @@ int \hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{gi\+Bus\+Using}
 )}\label{classdynamixel_afddd976dbc486cd08b92e0e6e4117519}
 
 \begin{DoxyCode}
-102 \{
-103     \textcolor{keywordflow}{if}(this->\hyperlink{classdynamixel_a2fa5375537184c279a9ebfcfc0425071}{get\_packet\_time}() > \hyperlink{classdynamixel_a9f47887864517d74955a2bc787ae4456}{gdRcvWaitTime})
-104         \textcolor{keywordflow}{return} 1;
-105     \textcolor{keywordflow}{return} 0;
-106 \}
+00082 \{
+00083     \textcolor{keywordflow}{if}(this->\hyperlink{classdynamixel_a2fa5375537184c279a9ebfcfc0425071}{get\_packet\_time}() > \hyperlink{classdynamixel_a9f47887864517d74955a2bc787ae4456}{gdRcvWaitTime})
+00084         \textcolor{keywordflow}{return} 1;
+00085     \textcolor{keywordflow}{return} 0;
+00086 \}
 \end{DoxyCode}
 \hypertarget{classdynamixel_a5ae4b2c6eb4c91f404f973ee8e6a1914}{}\index{dynamixel@{dynamixel}!is\+Open@{is\+Open}}
 \index{is\+Open@{is\+Open}!dynamixel@{dynamixel}}
@@ -281,7 +290,7 @@ int \hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{gi\+Bus\+Using}
 )\hspace{0.3cm}{\ttfamily [inline]}}\label{classdynamixel_a5ae4b2c6eb4c91f404f973ee8e6a1914}
 
 \begin{DoxyCode}
-116 \{ \textcolor{keywordflow}{return} \hyperlink{classdynamixel_ae003cc90ada6d7b70eaa4ea9d42d4deb}{dH}.\hyperlink{classdxl__hal_a88bba601b5c9f285fcdc14e18a1f3398}{isOpen}(); \}
+00103 \{ \textcolor{keywordflow}{return} \hyperlink{classdynamixel_ae003cc90ada6d7b70eaa4ea9d42d4deb}{dH}.\hyperlink{classdxl__hal_a88bba601b5c9f285fcdc14e18a1f3398}{isOpen}(); \}
 \end{DoxyCode}
 \hypertarget{classdynamixel_af2bd714423e7c4fc089762805c0c71f3}{}\index{dynamixel@{dynamixel}!ping@{ping}}
 \index{ping@{ping}!dynamixel@{dynamixel}}
@@ -292,16 +301,16 @@ int \hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{gi\+Bus\+Using}
 )}\label{classdynamixel_af2bd714423e7c4fc089762805c0c71f3}
 
 \begin{DoxyCode}
-328 \{
-329     \textcolor{keywordflow}{while}(\hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{giBusUsing});
-330 
-331     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a3c2bb339c587abadd977eb2f14daeff9}{PRT1\_PKT\_ID}] = (\textcolor{keywordtype}{unsigned} char)\textcolor{keywordtype}{id};
-332     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a3da1d083c018994fb0c859f4e06e1f78}{PRT1\_PKT\_INSTRUCTION}] = 
+00302 \{
+00303     \textcolor{keywordflow}{while}(\hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{giBusUsing});
+00304 
+00305     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a3c2bb339c587abadd977eb2f14daeff9}{PRT1\_PKT\_ID}] = (\textcolor{keywordtype}{unsigned} char)\textcolor{keywordtype}{id};
+00306     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a3da1d083c018994fb0c859f4e06e1f78}{PRT1\_PKT\_INSTRUCTION}] = 
       \hyperlink{dynamixel_8h_acb92e93ddd4b53533b14dc3403346bbf}{INST\_PING};
-333     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_ab24601f91d0364e4b62edad3c2a0a5c4}{PRT1\_PKT\_LENGTH}] = 2;
-334     
-335     \hyperlink{classdynamixel_aebfc569c6b1eb0b98f8c385f0f921fc0}{txrx\_packet}();
-336 \}
+00307     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_ab24601f91d0364e4b62edad3c2a0a5c4}{PRT1\_PKT\_LENGTH}] = 2;
+00308     
+00309     \hyperlink{classdynamixel_aebfc569c6b1eb0b98f8c385f0f921fc0}{txrx\_packet}();
+00310 \}
 \end{DoxyCode}
 \hypertarget{classdynamixel_a888404b41c4c4395a0b745c77ff2cea9}{}\index{dynamixel@{dynamixel}!read\+\_\+byte@{read\+\_\+byte}}
 \index{read\+\_\+byte@{read\+\_\+byte}!dynamixel@{dynamixel}}
@@ -313,21 +322,21 @@ int \hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{gi\+Bus\+Using}
 )}\label{classdynamixel_a888404b41c4c4395a0b745c77ff2cea9}
 
 \begin{DoxyCode}
-339 \{
-340     \textcolor{keywordflow}{while}(\hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{giBusUsing});
-341 
-342     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a3c2bb339c587abadd977eb2f14daeff9}{PRT1\_PKT\_ID}] = (\textcolor{keywordtype}{unsigned} char)\textcolor{keywordtype}{id};
-343     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a3da1d083c018994fb0c859f4e06e1f78}{PRT1\_PKT\_INSTRUCTION}] = 
+00313 \{
+00314     \textcolor{keywordflow}{while}(\hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{giBusUsing});
+00315 
+00316     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a3c2bb339c587abadd977eb2f14daeff9}{PRT1\_PKT\_ID}] = (\textcolor{keywordtype}{unsigned} char)\textcolor{keywordtype}{id};
+00317     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a3da1d083c018994fb0c859f4e06e1f78}{PRT1\_PKT\_INSTRUCTION}] = 
       \hyperlink{dynamixel_8h_a60599b6587736bb05efb8ea3c5e5f87f}{INST\_READ};
-344     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a939ef836d0605d2f4f9372df3ea0855f}{PRT1\_PKT\_PARAMETER0}+0] = (\textcolor{keywordtype}{unsigned} char)
+00318     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a939ef836d0605d2f4f9372df3ea0855f}{PRT1\_PKT\_PARAMETER0}+0] = (\textcolor{keywordtype}{unsigned} char)
       address;
-345     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a939ef836d0605d2f4f9372df3ea0855f}{PRT1\_PKT\_PARAMETER0}+1] = 1;
-346     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_ab24601f91d0364e4b62edad3c2a0a5c4}{PRT1\_PKT\_LENGTH}] = 4;
-347     
-348     \hyperlink{classdynamixel_aebfc569c6b1eb0b98f8c385f0f921fc0}{txrx\_packet}();
-349 
-350     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{int})\hyperlink{classdynamixel_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gbStatusPacket}[\hyperlink{dynamixel_8h_a939ef836d0605d2f4f9372df3ea0855f}{PRT1\_PKT\_PARAMETER0}];
-351 \}
+00319     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a939ef836d0605d2f4f9372df3ea0855f}{PRT1\_PKT\_PARAMETER0}+1] = 1;
+00320     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_ab24601f91d0364e4b62edad3c2a0a5c4}{PRT1\_PKT\_LENGTH}] = 4;
+00321     
+00322     \hyperlink{classdynamixel_aebfc569c6b1eb0b98f8c385f0f921fc0}{txrx\_packet}();
+00323 
+00324     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{int})\hyperlink{classdynamixel_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gbStatusPacket}[\hyperlink{dynamixel_8h_a939ef836d0605d2f4f9372df3ea0855f}{PRT1\_PKT\_PARAMETER0}];
+00325 \}
 \end{DoxyCode}
 \hypertarget{classdynamixel_a45e99341e82c5114f6e829c9141bf96f}{}\index{dynamixel@{dynamixel}!read\+\_\+word@{read\+\_\+word}}
 \index{read\+\_\+word@{read\+\_\+word}!dynamixel@{dynamixel}}
@@ -339,23 +348,23 @@ int \hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{gi\+Bus\+Using}
 )}\label{classdynamixel_a45e99341e82c5114f6e829c9141bf96f}
 
 \begin{DoxyCode}
-367 \{
-368     \textcolor{keywordflow}{while}(\hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{giBusUsing});
-369 
-370     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a3c2bb339c587abadd977eb2f14daeff9}{PRT1\_PKT\_ID}] = (\textcolor{keywordtype}{unsigned} char)\textcolor{keywordtype}{id};
-371     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a3da1d083c018994fb0c859f4e06e1f78}{PRT1\_PKT\_INSTRUCTION}] = 
+00341 \{
+00342     \textcolor{keywordflow}{while}(\hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{giBusUsing});
+00343 
+00344     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a3c2bb339c587abadd977eb2f14daeff9}{PRT1\_PKT\_ID}] = (\textcolor{keywordtype}{unsigned} char)\textcolor{keywordtype}{id};
+00345     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a3da1d083c018994fb0c859f4e06e1f78}{PRT1\_PKT\_INSTRUCTION}] = 
       \hyperlink{dynamixel_8h_a60599b6587736bb05efb8ea3c5e5f87f}{INST\_READ};
-372     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a939ef836d0605d2f4f9372df3ea0855f}{PRT1\_PKT\_PARAMETER0}+0] = (\textcolor{keywordtype}{unsigned} char)
+00346     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a939ef836d0605d2f4f9372df3ea0855f}{PRT1\_PKT\_PARAMETER0}+0] = (\textcolor{keywordtype}{unsigned} char)
       address;
-373     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a939ef836d0605d2f4f9372df3ea0855f}{PRT1\_PKT\_PARAMETER0}+1] = 2;
-374     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_ab24601f91d0364e4b62edad3c2a0a5c4}{PRT1\_PKT\_LENGTH}] = 4;
-375     
-376     \hyperlink{classdynamixel_aebfc569c6b1eb0b98f8c385f0f921fc0}{txrx\_packet}();
-377 
-378     \textcolor{keywordflow}{return} \hyperlink{dynamixel_8h_a6b98c16b8e3e7733dd4063d0b0fac24c}{MAKEWORD}((\textcolor{keywordtype}{int})\hyperlink{classdynamixel_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gbStatusPacket}[
+00347     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a939ef836d0605d2f4f9372df3ea0855f}{PRT1\_PKT\_PARAMETER0}+1] = 2;
+00348     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_ab24601f91d0364e4b62edad3c2a0a5c4}{PRT1\_PKT\_LENGTH}] = 4;
+00349     
+00350     \hyperlink{classdynamixel_aebfc569c6b1eb0b98f8c385f0f921fc0}{txrx\_packet}();
+00351 
+00352     \textcolor{keywordflow}{return} \hyperlink{dynamixel_8h_a6b98c16b8e3e7733dd4063d0b0fac24c}{MAKEWORD}((\textcolor{keywordtype}{int})\hyperlink{classdynamixel_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gbStatusPacket}[
       \hyperlink{dynamixel_8h_a939ef836d0605d2f4f9372df3ea0855f}{PRT1\_PKT\_PARAMETER0}+0], (\textcolor{keywordtype}{int})\hyperlink{classdynamixel_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gbStatusPacket}[
       \hyperlink{dynamixel_8h_a939ef836d0605d2f4f9372df3ea0855f}{PRT1\_PKT\_PARAMETER0}+1]);
-379 \}
+00353 \}
 \end{DoxyCode}
 \hypertarget{classdynamixel_aa26d2d2dff768563a1cb1480aa061608}{}\index{dynamixel@{dynamixel}!rx\+\_\+packet@{rx\+\_\+packet}}
 \index{rx\+\_\+packet@{rx\+\_\+packet}!dynamixel@{dynamixel}}
@@ -366,103 +375,103 @@ int \hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{gi\+Bus\+Using}
 )}\label{classdynamixel_aa26d2d2dff768563a1cb1480aa061608}
 
 \begin{DoxyCode}
-178 \{
-179     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} i = 0, j = 0, nRead = 0;
-180     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} checksum = 0;
-181 
-182     \textcolor{keywordflow}{if}( \hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{giBusUsing} == 0 )
-183         \textcolor{keywordflow}{return};
-184 
-185     \textcolor{keywordflow}{if}( \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a3c2bb339c587abadd977eb2f14daeff9}{PRT1\_PKT\_ID}] == 
+00152 \{
+00153     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} i = 0, j = 0, nRead = 0;
+00154     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} checksum = 0;
+00155 
+00156     \textcolor{keywordflow}{if}( \hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{giBusUsing} == 0 )
+00157         \textcolor{keywordflow}{return};
+00158 
+00159     \textcolor{keywordflow}{if}( \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a3c2bb339c587abadd977eb2f14daeff9}{PRT1\_PKT\_ID}] == 
       \hyperlink{dynamixel_8h_ab9fe47395310b34fa1ceb112c9ca10e2}{BROADCAST\_ID} )
-186     \{
-187         \hyperlink{classdynamixel_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{gbCommStatus} = \hyperlink{dynamixel_8h_a171328d9f298535c18d079f65e631434}{COMM\_RXSUCCESS};
-188         \hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{giBusUsing} = 0;
-189         \textcolor{keywordflow}{return};
-190     \}
-191     
-192     \textcolor{keywordflow}{if}( \hyperlink{classdynamixel_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{gbCommStatus} == \hyperlink{dynamixel_8h_aac6d30f996256b24d311de81eb0f0c1e}{COMM\_TXSUCCESS} )
-193     \{
-194         \hyperlink{classdynamixel_a9d590ce24791d111c2db9b66be1e046d}{gbRxGetLength} = 0;
-195         \textcolor{comment}{//gbRxPacketLength = 6; //minimum wait length}
-196     \}
-197     
-198     \textcolor{keywordflow}{while}(1)
-199     \{
-200         nRead = \hyperlink{classdynamixel_ae003cc90ada6d7b70eaa4ea9d42d4deb}{dH}.\hyperlink{classdxl__hal_ac36331febb2eaa66303af3483795742a}{read}( &\hyperlink{classdynamixel_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gbStatusPacket}[\hyperlink{classdynamixel_a9d590ce24791d111c2db9b66be1e046d}{gbRxGetLength}], 
+00160     \{
+00161         \hyperlink{classdynamixel_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{gbCommStatus} = \hyperlink{dynamixel_8h_a171328d9f298535c18d079f65e631434}{COMM\_RXSUCCESS};
+00162         \hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{giBusUsing} = 0;
+00163         \textcolor{keywordflow}{return};
+00164     \}
+00165     
+00166     \textcolor{keywordflow}{if}( \hyperlink{classdynamixel_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{gbCommStatus} == \hyperlink{dynamixel_8h_aac6d30f996256b24d311de81eb0f0c1e}{COMM\_TXSUCCESS} )
+00167     \{
+00168         \hyperlink{classdynamixel_a9d590ce24791d111c2db9b66be1e046d}{gbRxGetLength} = 0;
+00169         \textcolor{comment}{//gbRxPacketLength = 6; //minimum wait length}
+00170     \}
+00171     
+00172     \textcolor{keywordflow}{while}(1)
+00173     \{
+00174         nRead = \hyperlink{classdynamixel_ae003cc90ada6d7b70eaa4ea9d42d4deb}{dH}.\hyperlink{classdxl__hal_ac36331febb2eaa66303af3483795742a}{read}( &\hyperlink{classdynamixel_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gbStatusPacket}[\hyperlink{classdynamixel_a9d590ce24791d111c2db9b66be1e046d}{gbRxGetLength}], 
       \hyperlink{classdynamixel_a333686e1b5903d16c41df8172b6bd5a8}{gbRxPacketLength} - gbRxGetLength );
-201         gbRxGetLength += nRead;
-202 
-203         \textcolor{keywordflow}{if}(gbRxGetLength > 4)
-204             \hyperlink{classdynamixel_a333686e1b5903d16c41df8172b6bd5a8}{gbRxPacketLength} = \hyperlink{classdynamixel_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gbStatusPacket}[
+00175         gbRxGetLength += nRead;
+00176 
+00177         \textcolor{keywordflow}{if}(gbRxGetLength > 4)
+00178             \hyperlink{classdynamixel_a333686e1b5903d16c41df8172b6bd5a8}{gbRxPacketLength} = \hyperlink{classdynamixel_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gbStatusPacket}[
       \hyperlink{dynamixel_8h_ab24601f91d0364e4b62edad3c2a0a5c4}{PRT1\_PKT\_LENGTH}] + 4;
-205 
-206         \textcolor{keywordflow}{if}( gbRxGetLength < \hyperlink{classdynamixel_a333686e1b5903d16c41df8172b6bd5a8}{gbRxPacketLength} )
-207         \{
-208             \textcolor{keywordflow}{if}( \hyperlink{classdynamixel_afddd976dbc486cd08b92e0e6e4117519}{is\_packet\_timeout}() == 1 )
-209             \{
-210                 \textcolor{keywordflow}{if}(gbRxGetLength == 0)
-211                     \hyperlink{classdynamixel_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{gbCommStatus} = \hyperlink{dynamixel_8h_af9976398353d104bb8a78b1f02f9fceb}{COMM\_RXTIMEOUT};
-212                 \textcolor{keywordflow}{else}
-213                     \hyperlink{classdynamixel_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{gbCommStatus} = \hyperlink{dynamixel_8h_a93c30bd345d8077112f0a3524d26278b}{COMM\_RXCORRUPT};
-214                 \hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{giBusUsing} = 0;
-215                 \textcolor{keywordflow}{return};
-216             \}
-217             \hyperlink{classdynamixel_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{gbCommStatus} = \hyperlink{dynamixel_8h_ae4b5e71a685506956bf151e3117f3487}{COMM\_RXWAITING};
-218             \textcolor{comment}{//return;           }
-219         \}
-220         \textcolor{keywordflow}{else}
-221         \{
-222             \textcolor{keywordflow}{break};
-223         \}
-224     \}
-225 
-226     \textcolor{comment}{// Find packet header}
-227     \textcolor{keywordflow}{for}( i=0; i<(gbRxGetLength-1); i++ )
-228     \{
-229         \textcolor{keywordflow}{if}( \hyperlink{classdynamixel_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gbStatusPacket}[i] == 0xff && \hyperlink{classdynamixel_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gbStatusPacket}[i+1] == 0xff )
-230             \textcolor{keywordflow}{break};
-231         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( i == gbRxGetLength-2 && \hyperlink{classdynamixel_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gbStatusPacket}[gbRxGetLength-1] == 0xff )
-232             \textcolor{keywordflow}{break};
-233         \textcolor{keywordflow}{else} \{
-234             \hyperlink{classdynamixel_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{gbCommStatus} = \hyperlink{dynamixel_8h_a93c30bd345d8077112f0a3524d26278b}{COMM\_RXCORRUPT};
-235             \textcolor{keywordflow}{return};
-236         \}
-237     \}
-238 
-239     \textcolor{keywordflow}{if}( i > 0 )
-240     \{
-241         \textcolor{keywordflow}{for}( j=0; j<(gbRxGetLength-i); j++ )
-242             \hyperlink{classdynamixel_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gbStatusPacket}[j] = \hyperlink{classdynamixel_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gbStatusPacket}[j + i];
-243             
-244         gbRxGetLength -= i;     
-245     \}
-246 
-247     \textcolor{comment}{// Check id pairing}
-248     \textcolor{keywordflow}{if}( \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a3c2bb339c587abadd977eb2f14daeff9}{PRT1\_PKT\_ID}] != 
+00179 
+00180         \textcolor{keywordflow}{if}( gbRxGetLength < \hyperlink{classdynamixel_a333686e1b5903d16c41df8172b6bd5a8}{gbRxPacketLength} )
+00181         \{
+00182             \textcolor{keywordflow}{if}( \hyperlink{classdynamixel_afddd976dbc486cd08b92e0e6e4117519}{is\_packet\_timeout}() == 1 )
+00183             \{
+00184                 \textcolor{keywordflow}{if}(gbRxGetLength == 0)
+00185                     \hyperlink{classdynamixel_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{gbCommStatus} = \hyperlink{dynamixel_8h_af9976398353d104bb8a78b1f02f9fceb}{COMM\_RXTIMEOUT};
+00186                 \textcolor{keywordflow}{else}
+00187                     \hyperlink{classdynamixel_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{gbCommStatus} = \hyperlink{dynamixel_8h_a93c30bd345d8077112f0a3524d26278b}{COMM\_RXCORRUPT};
+00188                 \hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{giBusUsing} = 0;
+00189                 \textcolor{keywordflow}{return};
+00190             \}
+00191             \hyperlink{classdynamixel_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{gbCommStatus} = \hyperlink{dynamixel_8h_ae4b5e71a685506956bf151e3117f3487}{COMM\_RXWAITING};
+00192             \textcolor{comment}{//return;           }
+00193         \}
+00194         \textcolor{keywordflow}{else}
+00195         \{
+00196             \textcolor{keywordflow}{break};
+00197         \}
+00198     \}
+00199 
+00200     \textcolor{comment}{// Find packet header}
+00201     \textcolor{keywordflow}{for}( i=0; i<(gbRxGetLength-1); i++ )
+00202     \{
+00203         \textcolor{keywordflow}{if}( \hyperlink{classdynamixel_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gbStatusPacket}[i] == 0xff && \hyperlink{classdynamixel_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gbStatusPacket}[i+1] == 0xff )
+00204             \textcolor{keywordflow}{break};
+00205         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( i == gbRxGetLength-2 && \hyperlink{classdynamixel_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gbStatusPacket}[gbRxGetLength-1] == 0xff )
+00206             \textcolor{keywordflow}{break};
+00207         \textcolor{keywordflow}{else} \{
+00208             \hyperlink{classdynamixel_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{gbCommStatus} = \hyperlink{dynamixel_8h_a93c30bd345d8077112f0a3524d26278b}{COMM\_RXCORRUPT};
+00209             \textcolor{keywordflow}{return};
+00210         \}
+00211     \}
+00212 
+00213     \textcolor{keywordflow}{if}( i > 0 )
+00214     \{
+00215         \textcolor{keywordflow}{for}( j=0; j<(gbRxGetLength-i); j++ )
+00216             \hyperlink{classdynamixel_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gbStatusPacket}[j] = \hyperlink{classdynamixel_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gbStatusPacket}[j + i];
+00217             
+00218         gbRxGetLength -= i;     
+00219     \}
+00220 
+00221     \textcolor{comment}{// Check id pairing}
+00222     \textcolor{keywordflow}{if}( \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a3c2bb339c587abadd977eb2f14daeff9}{PRT1\_PKT\_ID}] != 
       \hyperlink{classdynamixel_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gbStatusPacket}[\hyperlink{dynamixel_8h_a3c2bb339c587abadd977eb2f14daeff9}{PRT1\_PKT\_ID}])
-249     \{
-250         \hyperlink{classdynamixel_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{gbCommStatus} = \hyperlink{dynamixel_8h_a93c30bd345d8077112f0a3524d26278b}{COMM\_RXCORRUPT};
-251         \hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{giBusUsing} = 0;
-252         \textcolor{keywordflow}{return};
-253     \}
-254     
-255     \textcolor{comment}{// Check checksum}
-256     \textcolor{keywordflow}{for}( i=0; i<(\hyperlink{classdynamixel_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gbStatusPacket}[\hyperlink{dynamixel_8h_ab24601f91d0364e4b62edad3c2a0a5c4}{PRT1\_PKT\_LENGTH}]+1); i++ )
-257         checksum += \hyperlink{classdynamixel_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gbStatusPacket}[i+2];
-258     checksum = ~checksum;
-259 
-260     \textcolor{keywordflow}{if}( \hyperlink{classdynamixel_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gbStatusPacket}[\hyperlink{classdynamixel_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gbStatusPacket}[
+00223     \{
+00224         \hyperlink{classdynamixel_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{gbCommStatus} = \hyperlink{dynamixel_8h_a93c30bd345d8077112f0a3524d26278b}{COMM\_RXCORRUPT};
+00225         \hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{giBusUsing} = 0;
+00226         \textcolor{keywordflow}{return};
+00227     \}
+00228     
+00229     \textcolor{comment}{// Check checksum}
+00230     \textcolor{keywordflow}{for}( i=0; i<(\hyperlink{classdynamixel_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gbStatusPacket}[\hyperlink{dynamixel_8h_ab24601f91d0364e4b62edad3c2a0a5c4}{PRT1\_PKT\_LENGTH}]+1); i++ )
+00231         checksum += \hyperlink{classdynamixel_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gbStatusPacket}[i+2];
+00232     checksum = ~checksum;
+00233 
+00234     \textcolor{keywordflow}{if}( \hyperlink{classdynamixel_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gbStatusPacket}[\hyperlink{classdynamixel_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gbStatusPacket}[
       \hyperlink{dynamixel_8h_ab24601f91d0364e4b62edad3c2a0a5c4}{PRT1\_PKT\_LENGTH}]+3] != checksum )
-261     \{
-262         \hyperlink{classdynamixel_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{gbCommStatus} = \hyperlink{dynamixel_8h_a93c30bd345d8077112f0a3524d26278b}{COMM\_RXCORRUPT};
-263         \hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{giBusUsing} = 0;
-264         \textcolor{keywordflow}{return};
-265     \}
-266     
-267     \hyperlink{classdynamixel_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{gbCommStatus} = \hyperlink{dynamixel_8h_a171328d9f298535c18d079f65e631434}{COMM\_RXSUCCESS};
-268     \hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{giBusUsing} = 0;
-269 \}
+00235     \{
+00236         \hyperlink{classdynamixel_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{gbCommStatus} = \hyperlink{dynamixel_8h_a93c30bd345d8077112f0a3524d26278b}{COMM\_RXCORRUPT};
+00237         \hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{giBusUsing} = 0;
+00238         \textcolor{keywordflow}{return};
+00239     \}
+00240     
+00241     \hyperlink{classdynamixel_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{gbCommStatus} = \hyperlink{dynamixel_8h_a171328d9f298535c18d079f65e631434}{COMM\_RXSUCCESS};
+00242     \hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{giBusUsing} = 0;
+00243 \}
 \end{DoxyCode}
 \hypertarget{classdynamixel_a067f82c21ed176e18fa224d16f3d1c5b}{}\index{dynamixel@{dynamixel}!set\+\_\+packet\+\_\+timeout@{set\+\_\+packet\+\_\+timeout}}
 \index{set\+\_\+packet\+\_\+timeout@{set\+\_\+packet\+\_\+timeout}!dynamixel@{dynamixel}}
@@ -473,11 +482,11 @@ int \hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{gi\+Bus\+Using}
 )}\label{classdynamixel_a067f82c21ed176e18fa224d16f3d1c5b}
 
 \begin{DoxyCode}
-90 \{
-91     \hyperlink{classdynamixel_a6c6314fb7070e6fd361e57c5de17e0ec}{gdPacketStartTime} = \hyperlink{classdynamixel_ae003cc90ada6d7b70eaa4ea9d42d4deb}{dH}.\hyperlink{classdxl__hal_a6b6b7381c45308662fc3df6e7f74bc61}{get\_curr\_time}();
-92     \hyperlink{classdynamixel_a9f47887864517d74955a2bc787ae4456}{gdRcvWaitTime} = (\hyperlink{classdynamixel_a2173f25c6299da7ddb37ba3d2bf1f738}{gdByteTransTime}*(double)NumRcvByte + 2.0*
+00070 \{
+00071     \hyperlink{classdynamixel_a6c6314fb7070e6fd361e57c5de17e0ec}{gdPacketStartTime} = \hyperlink{classdynamixel_ae003cc90ada6d7b70eaa4ea9d42d4deb}{dH}.\hyperlink{classdxl__hal_a6b6b7381c45308662fc3df6e7f74bc61}{get\_curr\_time}();
+00072     \hyperlink{classdynamixel_a9f47887864517d74955a2bc787ae4456}{gdRcvWaitTime} = (\hyperlink{classdynamixel_a2173f25c6299da7ddb37ba3d2bf1f738}{gdByteTransTime}*(double)NumRcvByte + 2.0*
       \hyperlink{dynamixel_8cpp_a2e9c6f904bb36a29afe5172bad1edc42}{LATENCY\_TIME} + 2.0);
-93 \}
+00073 \}
 \end{DoxyCode}
 \hypertarget{classdynamixel_a125b42f776c4aac520f274074f68b591}{}\index{dynamixel@{dynamixel}!set\+\_\+packet\+\_\+timeout\+\_\+ms@{set\+\_\+packet\+\_\+timeout\+\_\+ms}}
 \index{set\+\_\+packet\+\_\+timeout\+\_\+ms@{set\+\_\+packet\+\_\+timeout\+\_\+ms}!dynamixel@{dynamixel}}
@@ -488,10 +497,10 @@ int \hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{gi\+Bus\+Using}
 )}\label{classdynamixel_a125b42f776c4aac520f274074f68b591}
 
 \begin{DoxyCode}
-96 \{
-97     \hyperlink{classdynamixel_a6c6314fb7070e6fd361e57c5de17e0ec}{gdPacketStartTime} = \hyperlink{classdynamixel_ae003cc90ada6d7b70eaa4ea9d42d4deb}{dH}.\hyperlink{classdxl__hal_a6b6b7381c45308662fc3df6e7f74bc61}{get\_curr\_time}();
-98     \hyperlink{classdynamixel_a9f47887864517d74955a2bc787ae4456}{gdRcvWaitTime} = (double)msec;
-99 \}
+00076 \{
+00077     \hyperlink{classdynamixel_a6c6314fb7070e6fd361e57c5de17e0ec}{gdPacketStartTime} = \hyperlink{classdynamixel_ae003cc90ada6d7b70eaa4ea9d42d4deb}{dH}.\hyperlink{classdxl__hal_a6b6b7381c45308662fc3df6e7f74bc61}{get\_curr\_time}();
+00078     \hyperlink{classdynamixel_a9f47887864517d74955a2bc787ae4456}{gdRcvWaitTime} = (double)msec;
+00079 \}
 \end{DoxyCode}
 \hypertarget{classdynamixel_a84e24c72c3e5be866f8b28c2e5bd1d95}{}\index{dynamixel@{dynamixel}!set\+\_\+txpacket\+\_\+id@{set\+\_\+txpacket\+\_\+id}}
 \index{set\+\_\+txpacket\+\_\+id@{set\+\_\+txpacket\+\_\+id}!dynamixel@{dynamixel}}
@@ -502,9 +511,9 @@ int \hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{gi\+Bus\+Using}
 )}\label{classdynamixel_a84e24c72c3e5be866f8b28c2e5bd1d95}
 
 \begin{DoxyCode}
-284 \{
-285     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a3c2bb339c587abadd977eb2f14daeff9}{PRT1\_PKT\_ID}] = (\textcolor{keywordtype}{unsigned} char)\textcolor{keywordtype}{id};
-286 \}
+00258 \{
+00259     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a3c2bb339c587abadd977eb2f14daeff9}{PRT1\_PKT\_ID}] = (\textcolor{keywordtype}{unsigned} char)\textcolor{keywordtype}{id};
+00260 \}
 \end{DoxyCode}
 \hypertarget{classdynamixel_a209a43f983f214323b6f0a627d5e8c13}{}\index{dynamixel@{dynamixel}!set\+\_\+txpacket\+\_\+instruction@{set\+\_\+txpacket\+\_\+instruction}}
 \index{set\+\_\+txpacket\+\_\+instruction@{set\+\_\+txpacket\+\_\+instruction}!dynamixel@{dynamixel}}
@@ -515,10 +524,10 @@ int \hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{gi\+Bus\+Using}
 )}\label{classdynamixel_a209a43f983f214323b6f0a627d5e8c13}
 
 \begin{DoxyCode}
-289 \{
-290     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a3da1d083c018994fb0c859f4e06e1f78}{PRT1\_PKT\_INSTRUCTION}] = (\textcolor{keywordtype}{unsigned} char)
+00263 \{
+00264     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a3da1d083c018994fb0c859f4e06e1f78}{PRT1\_PKT\_INSTRUCTION}] = (\textcolor{keywordtype}{unsigned} char)
       instruction;
-291 \}
+00265 \}
 \end{DoxyCode}
 \hypertarget{classdynamixel_a829278f48e21c810b172eb8cab3b86de}{}\index{dynamixel@{dynamixel}!set\+\_\+txpacket\+\_\+length@{set\+\_\+txpacket\+\_\+length}}
 \index{set\+\_\+txpacket\+\_\+length@{set\+\_\+txpacket\+\_\+length}!dynamixel@{dynamixel}}
@@ -529,9 +538,9 @@ int \hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{gi\+Bus\+Using}
 )}\label{classdynamixel_a829278f48e21c810b172eb8cab3b86de}
 
 \begin{DoxyCode}
-300 \{
-301     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_ab24601f91d0364e4b62edad3c2a0a5c4}{PRT1\_PKT\_LENGTH}] = (\textcolor{keywordtype}{unsigned} char)length;
-302 \}
+00274 \{
+00275     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_ab24601f91d0364e4b62edad3c2a0a5c4}{PRT1\_PKT\_LENGTH}] = (\textcolor{keywordtype}{unsigned} char)length;
+00276 \}
 \end{DoxyCode}
 \hypertarget{classdynamixel_a2c3d31bbbed70a69918e9972a620384b}{}\index{dynamixel@{dynamixel}!set\+\_\+txpacket\+\_\+parameter@{set\+\_\+txpacket\+\_\+parameter}}
 \index{set\+\_\+txpacket\+\_\+parameter@{set\+\_\+txpacket\+\_\+parameter}!dynamixel@{dynamixel}}
@@ -543,11 +552,11 @@ int \hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{gi\+Bus\+Using}
 )}\label{classdynamixel_a2c3d31bbbed70a69918e9972a620384b}
 
 \begin{DoxyCode}
-294 \{
-295     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a939ef836d0605d2f4f9372df3ea0855f}{PRT1\_PKT\_PARAMETER0}+index] = (\textcolor{keywordtype}{unsigned} char)
+00268 \{
+00269     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a939ef836d0605d2f4f9372df3ea0855f}{PRT1\_PKT\_PARAMETER0}+index] = (\textcolor{keywordtype}{unsigned} char)
       value;
-296 
-297 \}
+00270 
+00271 \}
 \end{DoxyCode}
 \hypertarget{classdynamixel_a92ea074ed1c1a9cf29e039f8c425f01a}{}\index{dynamixel@{dynamixel}!terminate@{terminate}}
 \index{terminate@{terminate}!dynamixel@{dynamixel}}
@@ -558,19 +567,10 @@ int \hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{gi\+Bus\+Using}
 )}\label{classdynamixel_a92ea074ed1c1a9cf29e039f8c425f01a}
 
 \begin{DoxyCode}
-61 \{
-62     \textcolor{keywordtype}{int} \textcolor{keywordtype}{id} = 0;
-63     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{id} = 0; \textcolor{keywordtype}{id} <= \hyperlink{dynamixel_8h_a1cdef4472847c938fc165b7d2737c4e4}{MAX\_ID}; \textcolor{keywordtype}{id}++)
-64     \{
-65         \textcolor{keywordflow}{if}(\hyperlink{classdynamixel_a953aee387e1b1a919be73017a368c777}{gBulkData}[\textcolor{keywordtype}{id}].pucTable != 0)
-66             free((\hyperlink{classdynamixel_a953aee387e1b1a919be73017a368c777}{gBulkData}[\textcolor{keywordtype}{id}].pucTable));
-67 
-68         \textcolor{keywordflow}{if}(\hyperlink{classdynamixel_ae3f2d0b8c800b9e89271189acb4d484c}{gSyncData}[\textcolor{keywordtype}{id}].pucTable != 0)
-69             free((\hyperlink{classdynamixel_a953aee387e1b1a919be73017a368c777}{gBulkData}[\textcolor{keywordtype}{id}].pucTable));
-70     \}
-71     \hyperlink{classdynamixel_ae003cc90ada6d7b70eaa4ea9d42d4deb}{dH}.\hyperlink{classdxl__hal_a250fd7e4acabf54d0733551a13e89a2d}{close}();
-72     \textcolor{keywordflow}{return} 0;
-73 \}
+00051 \{
+00052     \hyperlink{classdynamixel_ae003cc90ada6d7b70eaa4ea9d42d4deb}{dH}.\hyperlink{classdxl__hal_a250fd7e4acabf54d0733551a13e89a2d}{close}();
+00053     \textcolor{keywordflow}{return} 0;
+00054 \}
 \end{DoxyCode}
 \hypertarget{classdynamixel_a479187cd8940c16dd4374eb5be22b888}{}\index{dynamixel@{dynamixel}!tx\+\_\+packet@{tx\+\_\+packet}}
 \index{tx\+\_\+packet@{tx\+\_\+packet}!dynamixel@{dynamixel}}
@@ -581,78 +581,78 @@ int \hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{gi\+Bus\+Using}
 )}\label{classdynamixel_a479187cd8940c16dd4374eb5be22b888}
 
 \begin{DoxyCode}
-116 \{
-117     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} pkt\_idx = 0;
-118     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} TxNumByte, RealTxNumByte;
-119     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} checksum = 0;
-120 
-121     \textcolor{keywordflow}{if}( \hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{giBusUsing} == 1 )
-122     \{
-123         \hyperlink{classdynamixel_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{gbCommStatus} = \hyperlink{dynamixel_8h_af88390c8be18c4079e65fd07b8d553be}{COMM\_TXFAIL};
-124         \textcolor{keywordflow}{return};
-125     \}
-126     
-127     \hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{giBusUsing} = 1;
-128     
-129     \textcolor{keywordflow}{if}( \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a3da1d083c018994fb0c859f4e06e1f78}{PRT1\_PKT\_INSTRUCTION}] != 
+00090 \{
+00091     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} pkt\_idx = 0;
+00092     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} TxNumByte, RealTxNumByte;
+00093     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} checksum = 0;
+00094 
+00095     \textcolor{keywordflow}{if}( \hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{giBusUsing} == 1 )
+00096     \{
+00097         \hyperlink{classdynamixel_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{gbCommStatus} = \hyperlink{dynamixel_8h_af88390c8be18c4079e65fd07b8d553be}{COMM\_TXFAIL};
+00098         \textcolor{keywordflow}{return};
+00099     \}
+00100     
+00101     \hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{giBusUsing} = 1;
+00102     
+00103     \textcolor{keywordflow}{if}( \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a3da1d083c018994fb0c859f4e06e1f78}{PRT1\_PKT\_INSTRUCTION}] != 
       \hyperlink{dynamixel_8h_acb92e93ddd4b53533b14dc3403346bbf}{INST\_PING}
-130         && \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a3da1d083c018994fb0c859f4e06e1f78}{PRT1\_PKT\_INSTRUCTION}] != 
+00104         && \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a3da1d083c018994fb0c859f4e06e1f78}{PRT1\_PKT\_INSTRUCTION}] != 
       \hyperlink{dynamixel_8h_a60599b6587736bb05efb8ea3c5e5f87f}{INST\_READ}
-131         && \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a3da1d083c018994fb0c859f4e06e1f78}{PRT1\_PKT\_INSTRUCTION}] != 
+00105         && \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a3da1d083c018994fb0c859f4e06e1f78}{PRT1\_PKT\_INSTRUCTION}] != 
       \hyperlink{dynamixel_8h_a1c304d06170982719fd605a87c9101f0}{INST\_WRITE}
-132         && \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a3da1d083c018994fb0c859f4e06e1f78}{PRT1\_PKT\_INSTRUCTION}] != 
+00106         && \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a3da1d083c018994fb0c859f4e06e1f78}{PRT1\_PKT\_INSTRUCTION}] != 
       \hyperlink{dynamixel_8h_ae2afd415cd9007f4688bf77507f0383e}{INST\_REG\_WRITE}
-133         && \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a3da1d083c018994fb0c859f4e06e1f78}{PRT1\_PKT\_INSTRUCTION}] != 
+00107         && \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a3da1d083c018994fb0c859f4e06e1f78}{PRT1\_PKT\_INSTRUCTION}] != 
       \hyperlink{dynamixel_8h_adea21b73305aa7a5b3317e299c616853}{INST\_ACTION}
-134         && \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a3da1d083c018994fb0c859f4e06e1f78}{PRT1\_PKT\_INSTRUCTION}] != 
+00108         && \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a3da1d083c018994fb0c859f4e06e1f78}{PRT1\_PKT\_INSTRUCTION}] != 
       \hyperlink{dynamixel_8h_ad670526ca941302efb4a0d00e7dd43c0}{INST\_RESET}
-135         && \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a3da1d083c018994fb0c859f4e06e1f78}{PRT1\_PKT\_INSTRUCTION}] != 
+00109         && \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a3da1d083c018994fb0c859f4e06e1f78}{PRT1\_PKT\_INSTRUCTION}] != 
       \hyperlink{dynamixel_8h_aeaa4b61ee11d45bd1a0cb932d7abaf77}{INST\_SYNC\_WRITE} )
-136     \{
-137         \hyperlink{classdynamixel_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{gbCommStatus} = \hyperlink{dynamixel_8h_a1bd7c7b30db4f56dc80cef65ad38afff}{COMM\_TXERROR};
-138         \hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{giBusUsing} = 0;
-139         \textcolor{keywordflow}{return};
-140     \}
-141     
-142     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[0] = 0xff;
-143     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[1] = 0xff;
-144     \textcolor{keywordflow}{for}( pkt\_idx = 0; pkt\_idx < (\hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[
+00110     \{
+00111         \hyperlink{classdynamixel_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{gbCommStatus} = \hyperlink{dynamixel_8h_a1bd7c7b30db4f56dc80cef65ad38afff}{COMM\_TXERROR};
+00112         \hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{giBusUsing} = 0;
+00113         \textcolor{keywordflow}{return};
+00114     \}
+00115     
+00116     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[0] = 0xff;
+00117     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[1] = 0xff;
+00118     \textcolor{keywordflow}{for}( pkt\_idx = 0; pkt\_idx < (\hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[
       \hyperlink{dynamixel_8h_ab24601f91d0364e4b62edad3c2a0a5c4}{PRT1\_PKT\_LENGTH}]+1); pkt\_idx++ )
-145         checksum += \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[pkt\_idx+2];
-146     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[
+00119         checksum += \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[pkt\_idx+2];
+00120     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[
       \hyperlink{dynamixel_8h_ab24601f91d0364e4b62edad3c2a0a5c4}{PRT1\_PKT\_LENGTH}]+3] = ~checksum;
-147     
-148     \textcolor{comment}{//if( gbCommStatus == COMM\_RXTIMEOUT || gbCommStatus == COMM\_RXCORRUPT )}
-149     \textcolor{comment}{//  dH.clear();}
-150 
-151     \hyperlink{classdynamixel_ae003cc90ada6d7b70eaa4ea9d42d4deb}{dH}.\hyperlink{classdxl__hal_a004eedde5af69219d7288ec8ea97c89f}{clear}();
-152 
-153     TxNumByte = gbInstructionPacket[\hyperlink{dynamixel_8h_ab24601f91d0364e4b62edad3c2a0a5c4}{PRT1\_PKT\_LENGTH}] + 4;
-154     RealTxNumByte = \hyperlink{classdynamixel_ae003cc90ada6d7b70eaa4ea9d42d4deb}{dH}.\hyperlink{classdxl__hal_a90106970438fb0ab65852730a1c0776a}{write}( gbInstructionPacket, TxNumByte );
-155 
-156     \textcolor{keywordflow}{if}( TxNumByte != RealTxNumByte )
-157     \{
-158         \hyperlink{classdynamixel_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{gbCommStatus} = \hyperlink{dynamixel_8h_af88390c8be18c4079e65fd07b8d553be}{COMM\_TXFAIL};
-159         \hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{giBusUsing} = 0;
-160         \textcolor{keywordflow}{return};
-161     \}
-162 
-163     \textcolor{keywordflow}{if}( gbInstructionPacket[\hyperlink{dynamixel_8h_a3da1d083c018994fb0c859f4e06e1f78}{PRT1\_PKT\_INSTRUCTION}] == 
+00121     
+00122     \textcolor{comment}{//if( gbCommStatus == COMM\_RXTIMEOUT || gbCommStatus == COMM\_RXCORRUPT )}
+00123     \textcolor{comment}{//  dH.clear();}
+00124 
+00125     \hyperlink{classdynamixel_ae003cc90ada6d7b70eaa4ea9d42d4deb}{dH}.\hyperlink{classdxl__hal_a004eedde5af69219d7288ec8ea97c89f}{clear}();
+00126 
+00127     TxNumByte = gbInstructionPacket[\hyperlink{dynamixel_8h_ab24601f91d0364e4b62edad3c2a0a5c4}{PRT1\_PKT\_LENGTH}] + 4;
+00128     RealTxNumByte = \hyperlink{classdynamixel_ae003cc90ada6d7b70eaa4ea9d42d4deb}{dH}.\hyperlink{classdxl__hal_a90106970438fb0ab65852730a1c0776a}{write}( gbInstructionPacket, TxNumByte );
+00129 
+00130     \textcolor{keywordflow}{if}( TxNumByte != RealTxNumByte )
+00131     \{
+00132         \hyperlink{classdynamixel_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{gbCommStatus} = \hyperlink{dynamixel_8h_af88390c8be18c4079e65fd07b8d553be}{COMM\_TXFAIL};
+00133         \hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{giBusUsing} = 0;
+00134         \textcolor{keywordflow}{return};
+00135     \}
+00136 
+00137     \textcolor{keywordflow}{if}( gbInstructionPacket[\hyperlink{dynamixel_8h_a3da1d083c018994fb0c859f4e06e1f78}{PRT1\_PKT\_INSTRUCTION}] == 
       \hyperlink{dynamixel_8h_a60599b6587736bb05efb8ea3c5e5f87f}{INST\_READ} )
-164     \{
-165         \hyperlink{classdynamixel_a333686e1b5903d16c41df8172b6bd5a8}{gbRxPacketLength} =  gbInstructionPacket[
+00138     \{
+00139         \hyperlink{classdynamixel_a333686e1b5903d16c41df8172b6bd5a8}{gbRxPacketLength} =  gbInstructionPacket[
       \hyperlink{dynamixel_8h_a939ef836d0605d2f4f9372df3ea0855f}{PRT1\_PKT\_PARAMETER0}+1] + 6;
-166         \hyperlink{classdynamixel_a067f82c21ed176e18fa224d16f3d1c5b}{set\_packet\_timeout}( gbInstructionPacket[
+00140         \hyperlink{classdynamixel_a067f82c21ed176e18fa224d16f3d1c5b}{set\_packet\_timeout}( gbInstructionPacket[
       \hyperlink{dynamixel_8h_a939ef836d0605d2f4f9372df3ea0855f}{PRT1\_PKT\_PARAMETER0}+1] + 6 );
-167     \}
-168     \textcolor{keywordflow}{else}
-169     \{
-170         \hyperlink{classdynamixel_a333686e1b5903d16c41df8172b6bd5a8}{gbRxPacketLength} = 6;
-171         \hyperlink{classdynamixel_a067f82c21ed176e18fa224d16f3d1c5b}{set\_packet\_timeout}( 6 );
-172     \}
-173 
-174     \hyperlink{classdynamixel_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{gbCommStatus} = \hyperlink{dynamixel_8h_aac6d30f996256b24d311de81eb0f0c1e}{COMM\_TXSUCCESS};
-175 \}
+00141     \}
+00142     \textcolor{keywordflow}{else}
+00143     \{
+00144         \hyperlink{classdynamixel_a333686e1b5903d16c41df8172b6bd5a8}{gbRxPacketLength} = 6;
+00145         \hyperlink{classdynamixel_a067f82c21ed176e18fa224d16f3d1c5b}{set\_packet\_timeout}( 6 );
+00146     \}
+00147 
+00148     \hyperlink{classdynamixel_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{gbCommStatus} = \hyperlink{dynamixel_8h_aac6d30f996256b24d311de81eb0f0c1e}{COMM\_TXSUCCESS};
+00149 \}
 \end{DoxyCode}
 \hypertarget{classdynamixel_aebfc569c6b1eb0b98f8c385f0f921fc0}{}\index{dynamixel@{dynamixel}!txrx\+\_\+packet@{txrx\+\_\+packet}}
 \index{txrx\+\_\+packet@{txrx\+\_\+packet}!dynamixel@{dynamixel}}
@@ -663,15 +663,15 @@ int \hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{gi\+Bus\+Using}
 )}\label{classdynamixel_aebfc569c6b1eb0b98f8c385f0f921fc0}
 
 \begin{DoxyCode}
-272 \{
-273     \hyperlink{classdynamixel_a479187cd8940c16dd4374eb5be22b888}{tx\_packet}();
-274 
-275     \textcolor{keywordflow}{if}( \hyperlink{classdynamixel_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{gbCommStatus} != \hyperlink{dynamixel_8h_aac6d30f996256b24d311de81eb0f0c1e}{COMM\_TXSUCCESS} )
-276         \textcolor{keywordflow}{return}; 
-277     
-278     
-279     \hyperlink{classdynamixel_aa26d2d2dff768563a1cb1480aa061608}{rx\_packet}();
-280 \}
+00246 \{
+00247     \hyperlink{classdynamixel_a479187cd8940c16dd4374eb5be22b888}{tx\_packet}();
+00248 
+00249     \textcolor{keywordflow}{if}( \hyperlink{classdynamixel_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{gbCommStatus} != \hyperlink{dynamixel_8h_aac6d30f996256b24d311de81eb0f0c1e}{COMM\_TXSUCCESS} )
+00250         \textcolor{keywordflow}{return}; 
+00251     
+00252     
+00253     \hyperlink{classdynamixel_aa26d2d2dff768563a1cb1480aa061608}{rx\_packet}();
+00254 \}
 \end{DoxyCode}
 \hypertarget{classdynamixel_a66c1e32cc45dd46d329f1fc212e46a3d}{}\index{dynamixel@{dynamixel}!write\+\_\+byte@{write\+\_\+byte}}
 \index{write\+\_\+byte@{write\+\_\+byte}!dynamixel@{dynamixel}}
@@ -684,20 +684,20 @@ int \hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{gi\+Bus\+Using}
 )}\label{classdynamixel_a66c1e32cc45dd46d329f1fc212e46a3d}
 
 \begin{DoxyCode}
-354 \{
-355     \textcolor{keywordflow}{while}(\hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{giBusUsing});
-356 
-357     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a3c2bb339c587abadd977eb2f14daeff9}{PRT1\_PKT\_ID}] = (\textcolor{keywordtype}{unsigned} char)\textcolor{keywordtype}{id};
-358     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a3da1d083c018994fb0c859f4e06e1f78}{PRT1\_PKT\_INSTRUCTION}] = 
+00328 \{
+00329     \textcolor{keywordflow}{while}(\hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{giBusUsing});
+00330 
+00331     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a3c2bb339c587abadd977eb2f14daeff9}{PRT1\_PKT\_ID}] = (\textcolor{keywordtype}{unsigned} char)\textcolor{keywordtype}{id};
+00332     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a3da1d083c018994fb0c859f4e06e1f78}{PRT1\_PKT\_INSTRUCTION}] = 
       \hyperlink{dynamixel_8h_a1c304d06170982719fd605a87c9101f0}{INST\_WRITE};
-359     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a939ef836d0605d2f4f9372df3ea0855f}{PRT1\_PKT\_PARAMETER0}+0] = (\textcolor{keywordtype}{unsigned} char)
+00333     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a939ef836d0605d2f4f9372df3ea0855f}{PRT1\_PKT\_PARAMETER0}+0] = (\textcolor{keywordtype}{unsigned} char)
       address;
-360     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a939ef836d0605d2f4f9372df3ea0855f}{PRT1\_PKT\_PARAMETER0}+1] = (\textcolor{keywordtype}{unsigned} char)value
+00334     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a939ef836d0605d2f4f9372df3ea0855f}{PRT1\_PKT\_PARAMETER0}+1] = (\textcolor{keywordtype}{unsigned} char)value
       ;
-361     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_ab24601f91d0364e4b62edad3c2a0a5c4}{PRT1\_PKT\_LENGTH}] = 4;
-362     
-363     \hyperlink{classdynamixel_aebfc569c6b1eb0b98f8c385f0f921fc0}{txrx\_packet}();
-364 \}
+00335     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_ab24601f91d0364e4b62edad3c2a0a5c4}{PRT1\_PKT\_LENGTH}] = 4;
+00336     
+00337     \hyperlink{classdynamixel_aebfc569c6b1eb0b98f8c385f0f921fc0}{txrx\_packet}();
+00338 \}
 \end{DoxyCode}
 \hypertarget{classdynamixel_a925f62ce5e261e5ef4fe6dc46bdc7c63}{}\index{dynamixel@{dynamixel}!write\+\_\+word@{write\+\_\+word}}
 \index{write\+\_\+word@{write\+\_\+word}!dynamixel@{dynamixel}}
@@ -710,22 +710,22 @@ int \hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{gi\+Bus\+Using}
 )}\label{classdynamixel_a925f62ce5e261e5ef4fe6dc46bdc7c63}
 
 \begin{DoxyCode}
-382 \{
-383     \textcolor{keywordflow}{while}(\hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{giBusUsing});
-384 
-385     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a3c2bb339c587abadd977eb2f14daeff9}{PRT1\_PKT\_ID}] = (\textcolor{keywordtype}{unsigned} char)\textcolor{keywordtype}{id};
-386     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a3da1d083c018994fb0c859f4e06e1f78}{PRT1\_PKT\_INSTRUCTION}] = 
+00356 \{
+00357     \textcolor{keywordflow}{while}(\hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{giBusUsing});
+00358 
+00359     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a3c2bb339c587abadd977eb2f14daeff9}{PRT1\_PKT\_ID}] = (\textcolor{keywordtype}{unsigned} char)\textcolor{keywordtype}{id};
+00360     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a3da1d083c018994fb0c859f4e06e1f78}{PRT1\_PKT\_INSTRUCTION}] = 
       \hyperlink{dynamixel_8h_a1c304d06170982719fd605a87c9101f0}{INST\_WRITE};
-387     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a939ef836d0605d2f4f9372df3ea0855f}{PRT1\_PKT\_PARAMETER0}+0] = (\textcolor{keywordtype}{unsigned} char)
+00361     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a939ef836d0605d2f4f9372df3ea0855f}{PRT1\_PKT\_PARAMETER0}+0] = (\textcolor{keywordtype}{unsigned} char)
       address;
-388     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a939ef836d0605d2f4f9372df3ea0855f}{PRT1\_PKT\_PARAMETER0}+1] = (\textcolor{keywordtype}{unsigned} char)
+00362     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a939ef836d0605d2f4f9372df3ea0855f}{PRT1\_PKT\_PARAMETER0}+1] = (\textcolor{keywordtype}{unsigned} char)
       \hyperlink{dynamixel_8h_a04c0416272e5c07bdf955d803a21688e}{LOBYTE}(value);
-389     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a939ef836d0605d2f4f9372df3ea0855f}{PRT1\_PKT\_PARAMETER0}+2] = (\textcolor{keywordtype}{unsigned} char)
+00363     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a939ef836d0605d2f4f9372df3ea0855f}{PRT1\_PKT\_PARAMETER0}+2] = (\textcolor{keywordtype}{unsigned} char)
       \hyperlink{dynamixel_8h_a75c5b5f21e837e80c0feb4da9a421f87}{HIBYTE}(value);
-390     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_ab24601f91d0364e4b62edad3c2a0a5c4}{PRT1\_PKT\_LENGTH}] = 5;
-391     
-392     \hyperlink{classdynamixel_aebfc569c6b1eb0b98f8c385f0f921fc0}{txrx\_packet}();
-393 \}
+00364     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_ab24601f91d0364e4b62edad3c2a0a5c4}{PRT1\_PKT\_LENGTH}] = 5;
+00365     
+00366     \hyperlink{classdynamixel_aebfc569c6b1eb0b98f8c385f0f921fc0}{txrx\_packet}();
+00367 \}
 \end{DoxyCode}
 
 
@@ -748,9 +748,6 @@ int \hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{gi\+Bus\+Using}
 \hypertarget{classdynamixel_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{}\index{dynamixel@{dynamixel}!gb\+Status\+Packet@{gb\+Status\+Packet}}
 \index{gb\+Status\+Packet@{gb\+Status\+Packet}!dynamixel@{dynamixel}}
 \subsubsection[{gb\+Status\+Packet}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char dynamixel\+::gb\+Status\+Packet\mbox{[}{\bf M\+A\+X\+N\+U\+M\+\_\+\+R\+X\+P\+A\+C\+K\+E\+T}\mbox{]} = \{0\}\hspace{0.3cm}{\ttfamily [private]}}\label{classdynamixel_aa57c86d3bbbeaf5c9d4f6bd00376b04f}
-\hypertarget{classdynamixel_a953aee387e1b1a919be73017a368c777}{}\index{dynamixel@{dynamixel}!g\+Bulk\+Data@{g\+Bulk\+Data}}
-\index{g\+Bulk\+Data@{g\+Bulk\+Data}!dynamixel@{dynamixel}}
-\subsubsection[{g\+Bulk\+Data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sync\+Bulk\+Data} dynamixel\+::g\+Bulk\+Data\mbox{[}{\bf M\+A\+X\+\_\+\+I\+D}+1\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}\label{classdynamixel_a953aee387e1b1a919be73017a368c777}
 \hypertarget{classdynamixel_a2173f25c6299da7ddb37ba3d2bf1f738}{}\index{dynamixel@{dynamixel}!gd\+Byte\+Trans\+Time@{gd\+Byte\+Trans\+Time}}
 \index{gd\+Byte\+Trans\+Time@{gd\+Byte\+Trans\+Time}!dynamixel@{dynamixel}}
 \subsubsection[{gd\+Byte\+Trans\+Time}]{\setlength{\rightskip}{0pt plus 5cm}double dynamixel\+::gd\+Byte\+Trans\+Time = 0.\+0\hspace{0.3cm}{\ttfamily [private]}}\label{classdynamixel_a2173f25c6299da7ddb37ba3d2bf1f738}
@@ -763,15 +760,9 @@ int \hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{gi\+Bus\+Using}
 \hypertarget{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{}\index{dynamixel@{dynamixel}!gi\+Bus\+Using@{gi\+Bus\+Using}}
 \index{gi\+Bus\+Using@{gi\+Bus\+Using}!dynamixel@{dynamixel}}
 \subsubsection[{gi\+Bus\+Using}]{\setlength{\rightskip}{0pt plus 5cm}int dynamixel\+::gi\+Bus\+Using = 0\hspace{0.3cm}{\ttfamily [private]}}\label{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}
-\hypertarget{classdynamixel_a383bdc8f02ec1b5999f6eee94fff9ab0}{}\index{dynamixel@{dynamixel}!g\+Ping\+Data@{g\+Ping\+Data}}
-\index{g\+Ping\+Data@{g\+Ping\+Data}!dynamixel@{dynamixel}}
-\subsubsection[{g\+Ping\+Data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ping\+Data} dynamixel\+::g\+Ping\+Data\mbox{[}{\bf M\+A\+X\+\_\+\+I\+D}+1\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}\label{classdynamixel_a383bdc8f02ec1b5999f6eee94fff9ab0}
-\hypertarget{classdynamixel_ae3f2d0b8c800b9e89271189acb4d484c}{}\index{dynamixel@{dynamixel}!g\+Sync\+Data@{g\+Sync\+Data}}
-\index{g\+Sync\+Data@{g\+Sync\+Data}!dynamixel@{dynamixel}}
-\subsubsection[{g\+Sync\+Data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sync\+Bulk\+Data} dynamixel\+::g\+Sync\+Data\mbox{[}{\bf M\+A\+X\+\_\+\+I\+D}+1\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}\label{classdynamixel_ae3f2d0b8c800b9e89271189acb4d484c}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-\hyperlink{dynamixel_8h}{dynamixel.\+h}\item 
-\hyperlink{dynamixel_8cpp}{dynamixel.\+cpp}\end{DoxyCompactItemize}
+dxl/\hyperlink{dynamixel_8h}{dynamixel.\+h}\item 
+dxl/\hyperlink{dynamixel_8cpp}{dynamixel.\+cpp}\end{DoxyCompactItemize}

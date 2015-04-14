@@ -1,4 +1,3 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node2" href="$d1/daa/class_a_x12.html" title="The AX12 class is used to control AX&#45;12 motors from Dynamixel. " alt="" coords="137,5,189,32"/>
-<area shape="rect" id="node3" href="$dc/dc5/class_x_joystick.html" title="The XJoystick&#39;s class is used to control the SFML Joystick&#39;s class with signals and slots ..." alt="" coords="124,56,201,83"/>
+<area shape="rect" id="node2" href="$d1/daa/class_a_x12.html" title="The AX12 class is used to control AX&#45;12 motors from Dynamixel. " alt="" coords="124,5,176,32"/>
 </map>

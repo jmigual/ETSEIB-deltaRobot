@@ -1,5 +1,5 @@
 <map id="dynamixel2" name="dynamixel2">
-<area shape="rect" id="node2" href="$d5/dae/classdxl__hal.html" title="dxl_hal" alt="" coords="5,5,68,32"/>
-<area shape="rect" id="node3" href="$d5/dab/structping__data.html" title="ping_data" alt="" coords="92,5,171,32"/>
-<area shape="rect" id="node4" href="$df/dea/structdata.html" title="data" alt="" coords="204,5,251,32"/>
+<area shape="rect" id="node2" href="$d5/dae/classdxl__hal.html" title="Dynamixel SDK platform dependent. " alt="" coords="5,5,68,32"/>
+<area shape="rect" id="node3" href="$de/d6f/structdynamixel2_1_1data.html" title="Struct used to handle dynamixel data. " alt="" coords="92,5,213,32"/>
+<area shape="rect" id="node4" href="$df/d41/structdynamixel2_1_1ping__data.html" title="Struct used to do a ping. " alt="" coords="238,5,390,32"/>
 </map>

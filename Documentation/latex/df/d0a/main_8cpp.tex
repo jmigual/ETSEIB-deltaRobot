@@ -1,7 +1,11 @@
 \hypertarget{main_8cpp}{}\section{main.\+cpp File Reference}
 \label{main_8cpp}\index{main.\+cpp@{main.\+cpp}}
+
+
+Contains the Main of the program.  
+
+
 {\ttfamily \#include $<$Q\+Application$>$}\\*
-{\ttfamily \#include $<$Q\+Debug$>$}\\*
 {\ttfamily \#include \char`\"{}mainwindow.\+h\char`\"{}}\\*
 Include dependency graph for main.\+cpp\+:\nopagebreak
 \begin{figure}[H]
@@ -18,7 +22,9 @@ int \hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, cha
 
 
 \subsection{Detailed Description}
-Contains the Main of the program 
+Contains the Main of the program. 
+
+
 
 \subsection{Function Documentation}
 \hypertarget{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{}\index{main.\+cpp@{main.\+cpp}!main@{main}}
@@ -31,12 +37,10 @@ Contains the Main of the program
 )}\label{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}
 
 \begin{DoxyCode}
-8 \{
-9     QApplication a(argc, argv);
-10     
-11     \hyperlink{class_main_window}{MainWindow} w;
-12     w.show();
-13     
-14     \textcolor{keywordflow}{return} a.exec();
-15 \}
+00009 \{
+00010     QApplication a(argc, argv);
+00011     \hyperlink{class_main_window}{MainWindow} w;
+00012     w.show();
+00013     \textcolor{keywordflow}{return} a.exec();
+00014 \}
 \end{DoxyCode}

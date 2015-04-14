@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['p_5fgoal_5fposition',['P_GOAL_POSITION',['../de/d72/ax12_8h.html#a262fb90b6c0853b6187e2743a7b37094',1,'ax12.h']]],
-  ['p_5fpresent_5fpos',['P_PRESENT_POS',['../de/d72/ax12_8h.html#ad7fd054fefc795ca1d3f437385900d6b',1,'ax12.h']]],
-  ['p_5ftorque_5fenable',['P_TORQUE_ENABLE',['../de/d72/ax12_8h.html#a73ebe5f1f41f614378aa2103cb4367d5',1,'ax12.h']]],
   ['ping_5finfo_5ffirm_5fver',['PING_INFO_FIRM_VER',['../dd/d04/dynamixel_8h.html#a2567de0a1d75cc4dfd4b0cf1abf425c9',1,'dynamixel.h']]],
   ['ping_5finfo_5fmodel_5fnum',['PING_INFO_MODEL_NUM',['../dd/d04/dynamixel_8h.html#addfe8da7a67888c0c7718cdd2f2ddfd4',1,'dynamixel.h']]],
   ['ping_5fstatus_5flength',['PING_STATUS_LENGTH',['../de/d95/dynamixel_8cpp.html#aedac6609b233fa877f86b3804204a2fe',1,'dynamixel.cpp']]],

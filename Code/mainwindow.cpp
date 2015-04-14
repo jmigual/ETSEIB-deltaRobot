@@ -1,3 +1,4 @@
+/// @file mainwindow.cpp Contains the MainWindow class implementation
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 

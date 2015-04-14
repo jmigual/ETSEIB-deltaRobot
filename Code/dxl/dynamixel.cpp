@@ -1,5 +1,5 @@
-/// @file dynamixel.cpp
-/// Contains the dynamixel and dynamixel2 classes implementation
+/// @file dynamixel.cpp Contains the dynamixel and dynamixel2 classes 
+/// implementation
 
 #include "dynamixel.h"
 
@@ -8,8 +8,8 @@
 
 
 
-/////////////////// Dynamixel Protocol 1.0 ///////////////////
-////////////// device control method //////////////
+/* Dynamixel Protocol 1.0 */
+/* device control method */
 dynamixel::dynamixel()
 {
     
@@ -24,14 +24,15 @@ int dynamixel::initialize( QString port_num, int baud_rate )
 {
 	if( baud_rate < 1900 ) return 0;
 
-	if( dH.open(port_num, baud_rate) == 0 ) return 0;
+	if( not dH.open(port_num, baud_rate) ) return false;
 
-	gdByteTransTime = 1000.0 / (double)baud_rate * 10.0; // 1000/baudrate(bit per msec) * 10(start bit + data bit + stop bit)
+    // 1000/baudrate(bit per msec) * 10(start bit + data bit + stop bit)
+	gdByteTransTime = 1000.0 / (double)baud_rate * 10.0; 
 
 	gbCommStatus = COMM_RXSUCCESS;
 	giBusUsing = 0;
 
-	return 1;
+	return true;
 }
 
 int dynamixel::change_baudrate(int baud_rate )

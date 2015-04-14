@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['name',['name',['../d2/d0a/struct_x_joystick_1_1_axis.html#af0b18b33da6b801b29ab95a1acc3c0c8',1,'XJoystick::Axis::name()'],['../dd/de5/struct_x_joystick_1_1_info.html#afd89ff5f20e52a31601e643229a337c9',1,'XJoystick::Info::name()']]]
+  ['load',['load',['../dc/d38/struct_servo_thread_1_1_servo.html#ae378d77acf16b306649c87fdb8df677e',1,'ServoThread::Servo']]]
 ];

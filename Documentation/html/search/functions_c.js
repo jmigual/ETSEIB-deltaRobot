@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['terminate',['terminate',['../df/d7e/classdynamixel.html#a92ea074ed1c1a9cf29e039f8c425f01a',1,'dynamixel::terminate()'],['../d9/deb/classdynamixel2.html#a84d998585aab4e92413220ca5b489a0a',1,'dynamixel2::terminate()']]],
-  ['tx_5fpacket',['tx_packet',['../df/d7e/classdynamixel.html#a479187cd8940c16dd4374eb5be22b888',1,'dynamixel::tx_packet()'],['../d9/deb/classdynamixel2.html#a526e395e15fbf50ffbc8ce0853b08233',1,'dynamixel2::tx_packet()']]],
-  ['txrx_5fpacket',['txrx_packet',['../df/d7e/classdynamixel.html#aebfc569c6b1eb0b98f8c385f0f921fc0',1,'dynamixel::txrx_packet()'],['../d9/deb/classdynamixel2.html#a2cccd455a52afe99a37b249aa834cdc7',1,'dynamixel2::txrx_packet()']]]
+  ['pause',['pause',['../de/d6f/class_servo_thread.html#ae0d4a59954aafbe8cd85f9326e4fcdd0',1,'ServoThread']]],
+  ['ping',['ping',['../df/d7e/classdynamixel.html#af2bd714423e7c4fc089762805c0c71f3',1,'dynamixel::ping()'],['../d9/deb/classdynamixel2.html#abf94a0932647959fff04aed5c6708f79',1,'dynamixel2::ping()']]]
 ];

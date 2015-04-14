@@ -1,16 +1,14 @@
-/// @file dynamixel.h
-/// Contains the dynamixel and dynamixel2 classes declaration
+/// @file dynamixel.h Contains the dynamixel and dynamixel2 classes declaration
 // Dynamixel SDK platform independent header
 #ifndef _DYNAMIXEL_HEADER
 #define _DYNAMIXEL_HEADER
 
-#include <QString>
 #include "dxl_hal.h"
 
 #define MAX_ID				(252)
 #define BROADCAST_ID		(254)  //BroadCast ID
 
-////////////// Communication Errorrobotis1	1 List //////////////
+/* Communication Errorrobotis1	1 List */
 #define	COMM_TXSUCCESS		(0)  //Succeed transmit instruction packet
 #define COMM_RXSUCCESS		(1)  //Succeed get status packet
 #define COMM_TXFAIL			(2)  //Failed transmit instruction packet
@@ -20,7 +18,7 @@
 #define COMM_RXTIMEOUT		(6)  //There is no status packet
 #define COMM_RXCORRUPT		(7)  //Incorrect status packet
 
-//////////////// Error Status List ////////////////
+/* Error Status List */
 #define ERRBIT_ALERT		(128)//When the device has a problem, it is et as 1. Check "Device Status Check" value.
 
 #define ERR_RESULT_FAIL		(1)  //Failed to process the instruction packet.
@@ -78,22 +76,6 @@
 #define HIWORD(l)           ((unsigned short)((((unsigned long)(l)) >> 16) & 0xffff))
 #define LOBYTE(w)           ((unsigned char)(((unsigned long)(w)) & 0xff))
 #define HIBYTE(w)           ((unsigned char)((((unsigned long)(w)) >> 8) & 0xff))
-
-/// Struct used to handle data
-typedef struct data {
-    unsigned char   iID;
-    unsigned int    iStartAddr;
-    unsigned short	iLength;
-    unsigned char   iError;
-    unsigned char*  pucTable;
-} SyncBulkData;
-
-/// Struct used to do a ping
-typedef struct ping_data {
-    int iID;
-    int iModelNo;
-    int iFirmVer;
-} PingData;
 
 /// Dynamixel 1.0 protocol class
 class dynamixel {
@@ -169,6 +151,21 @@ public:
 class dynamixel2 {
     
 private:
+    
+    /// Struct used to do a ping
+    typedef struct ping_data {
+        int iID;
+        int iModelNo;
+        int iFirmVer;
+    } PingData;    
+    /// Struct used to handle dynamixel data
+    typedef struct data {
+        unsigned char   iID;
+        unsigned int    iStartAddr;
+        unsigned short	iLength;
+        unsigned char   iError;
+        unsigned char*  pucTable;
+    } SyncBulkData;
     
     unsigned char gbInstructionPacket[MAXNUM_TXPACKET] = {0};
     unsigned char gbStatusPacket[MAXNUM_RXPACKET] = {0};

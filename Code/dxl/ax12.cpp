@@ -5,7 +5,8 @@
 AX12::AX12(dynamixel &dxl, int ID, QObject *parent) : 
     QObject(parent),
     dxl(dxl),
-    _ID(ID)
+    _ID(ID),
+   _mode(true) 
 {
     if (_ID < 0) return;
     dxl.write_byte(_ID, RAM::TorqueEnable, true);
@@ -14,7 +15,8 @@ AX12::AX12(dynamixel &dxl, int ID, QObject *parent) :
 AX12::AX12(const AX12 &a) :
     QObject(a.parent()),
     dxl(a.dxl),
-    _ID(a._ID)
+    _ID(a._ID),
+    _mode(true)
 {
     
 }
@@ -83,7 +85,7 @@ void AX12::setGoalPosition(double goal)
     if (_ID < 0) return;
     if (goal > 300.0) goal = 300.0;
     else if (goal < 0) goal = 0;
-    dxl.write_word(_ID, RAM::GoalPosition, int((goal/300.0)*1024));
+    dxl.write_word(_ID, RAM::GoalPosition, int((goal/300.0)*1023));
 }
 
 void AX12::setID(int ID)

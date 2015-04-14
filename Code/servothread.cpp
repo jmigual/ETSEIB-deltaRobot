@@ -1,15 +1,18 @@
+/// @file servothread.h Contains the ServoThread class implementation
 #include "servothread.h"
 
 ServoThread::ServoThread() :
     _axis(XJoystick::AxisCount),
     _buts(XJoystick::ButtonCount),
+    _cBaud(9600),
+    _cPort("COM3"),
     _dChanged(false),
     _end(false),
     _mod(Mode::manual),
     _pause(true),
     _sBaud(1000000),
     _servos(3),
-    _sPort("COM3"),
+    _sPort("COM9"),
     _sPortChanged(false)
 {
     
@@ -36,7 +39,7 @@ void ServoThread::load(QString &file)
     df >> ver;
     if (ver == Version::v_1_0) {
         int n;
-        df >> _sBaud >> _sPort >> n;
+        df >> _cBaud >> _cPort >> _sBaud >> _sPort >> n;
         
         _servos.resize(n);
         for (Servo &s : _servos) df >> s.ID;
@@ -64,7 +67,8 @@ void ServoThread::write(QString &file)
     f.open(QIODevice::WriteOnly);
     QDataStream df(&f);
     
-    df << int(Version::v_1_0) << _sBaud << _sPort << _servos.size();    
+    df << int(Version::v_1_0) << _cBaud << _cPort << _sBaud << _sPort
+       << _servos.size();    
     for (const Servo &s : _servos) df << s.ID;
     
     _mutex.unlock();
@@ -89,6 +93,14 @@ void ServoThread::run()
             _cond.wait(&_mutex);
             dxl.initialize(sPort, sBaud);
         }        
+        if (_dChanged) {
+            if (sPort != _sPort) {
+                sPort = _sPort;
+                sBaud = _sBaud;
+                dxl.terminate();
+                dxl.initialize(sPort, sBaud);
+            }   
+        }
         _dChanged = false;
         _mutex.unlock();
     }
