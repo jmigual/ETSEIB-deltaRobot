@@ -15,6 +15,7 @@ public class Editor : MonoBehaviour {
 	public bool relativeRotation = true;
 	public GameObject DominoPiece;
 	public GameObject Force;
+	public GameObject Stair;
 	public string path;
 	public static float timescale = 2f;
 
@@ -35,13 +36,14 @@ public class Editor : MonoBehaviour {
 		selected = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>().center;
 		selectedExists = true;
 		camRayLength = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>().camRayLength;
-		lastColor = selected.GetComponent<Renderer>().material.color;
-		selected.GetComponent<Renderer>().material.color = selectedColor;
+		lastColor = selected.GetComponentInChildren<Renderer>().material.color;
+		selected.GetComponentInChildren<Renderer>().material.color = selectedColor;
 		if (relativeRotation){
 			RXinitial=RX.transform.rotation;
 			RYinitial=RY.transform.rotation;
 			RZinitial=RZ.transform.rotation;
 		}
+		X.SetActive (true); Y.SetActive (true); Z.SetActive (true); RX.SetActive (true); RY.SetActive (true); RZ.SetActive (true);
 		X.GetComponentInChildren<Renderer>().material.color = Color.red;
 		Y.GetComponentInChildren<Renderer>().material.color = Color.green;
 		Z.GetComponentInChildren<Renderer>().material.color = Color.blue;
@@ -132,9 +134,12 @@ public class Editor : MonoBehaviour {
 				}
 				else{
 					if (selectedExists) selected.GetComponentInChildren<Renderer>().material.color = lastColor;
-					selected = floorHit.collider.gameObject;
+					if (floorHit.collider.gameObject.CompareTag("EditorOnly")) selected = floorHit.collider.transform.parent.gameObject;
+					else selected = floorHit.collider.gameObject;
+					//Debug.Log(selected.name);
 					lastColor = selected.GetComponentInChildren<Renderer>().material.color;
-					selected.GetComponentInChildren<Renderer>().material.color = selectedColor;
+					Renderer[] letsColor = selected.GetComponentsInChildren<Renderer>();
+					for (int i=0; i<letsColor.Length; ++i) letsColor[i].material.color = selectedColor;
 					selectedExists = true;
 				}
 			}
@@ -201,13 +206,21 @@ public class Editor : MonoBehaviour {
 				}
 	}
 
+	public void AddS (){
+		if (Time.timeScale == 0) {
+			GameObject piece = (GameObject)Instantiate (Stair, Stair.transform.position, Stair.transform.rotation);
+			piece.GetComponent<dominoPosition> ().adding = true;
+		}
+	}
+
 	public void saveState (){
 		string content = "";
 		GameObject[] pieces = GameObject.FindGameObjectsWithTag ("Player");
 		for (int i = 0; i<pieces.Length; ++i)
-						content = content + pieces [i].transform.position.x.ToString () +", " +
-								pieces [i].transform.position.y.ToString() + ", " +
-								pieces [i].transform.position.z.ToString() + Environment.NewLine;
+						content = content + pieces [i].transform.position.x.ToString("F2") +" " +
+								pieces [i].transform.position.y + " " +
+								pieces [i].transform.position.z + " " + 
+								pieces[i].transform.rotation.eulerAngles.y + Environment.NewLine;
 		System.IO.File.WriteAllText(path, content);
 	}
 }

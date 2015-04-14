@@ -83,7 +83,7 @@ MeshCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 116834}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2db14389c71d2b74080cabaf39b7b0ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  height: 1.5
+  height: 2
   forceApplyer: 1
   adding: 0
   speed: 10
