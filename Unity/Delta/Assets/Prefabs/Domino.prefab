@@ -982,7 +982,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2db14389c71d2b74080cabaf39b7b0ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  height: 0
+  height: 1.20000005
   forceApplyer: 0
   adding: 0
   speed: 10

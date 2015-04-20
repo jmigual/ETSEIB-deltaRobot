@@ -33,7 +33,7 @@ public class Editor : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		Time.timeScale=0f;
-		selected = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>().center;
+		selected = Camera.main.GetComponent<CameraController>().center;
 		selectedExists = true;
 		camRayLength = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>().camRayLength;
 		lastColor = selected.GetComponentInChildren<Renderer>().material.color;
@@ -213,14 +213,23 @@ public class Editor : MonoBehaviour {
 		}
 	}
 
+	public void LetsDraw (){
+		GetComponent<Draw> ().enabled = true;
+		CameraController.onlyZoom = true;
+		Camera.main.orthographic = true;
+		Camera.main.transform.position = new Vector3 (0,20,0);
+		Camera.main.transform.rotation = Quaternion.LookRotation (Vector3.down);
+		GetComponent<Editor> ().enabled = false;
+	}
+
 	public void saveState (){
 		string content = "";
 		GameObject[] pieces = GameObject.FindGameObjectsWithTag ("Player");
 		for (int i = 0; i<pieces.Length; ++i)
 						content = content + pieces [i].transform.position.x.ToString("F2") +" " +
-								pieces [i].transform.position.y + " " +
-								pieces [i].transform.position.z + " " + 
-								pieces[i].transform.rotation.eulerAngles.y + Environment.NewLine;
+								pieces [i].transform.position.y.ToString("F2") + " " +
+								pieces [i].transform.position.z.ToString("F2") + " " + 
+								pieces[i].transform.rotation.eulerAngles.y.ToString("F2") + Environment.NewLine;
 		System.IO.File.WriteAllText(path, content);
 	}
 }

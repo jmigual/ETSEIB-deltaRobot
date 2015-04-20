@@ -29,7 +29,7 @@ public class dominoPosition : MonoBehaviour {
 						adding = false;
 
 		if (forceApplyer && !shot && Time.timeScale==Editor.timescale) {
-			rigidbody.velocity = transform.forward * speed;
+			GetComponent<Rigidbody>().velocity = transform.forward * speed;
 		}
 	}
 

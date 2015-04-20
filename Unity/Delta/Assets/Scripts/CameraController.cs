@@ -18,6 +18,8 @@ public class CameraController : MonoBehaviour {
 	public float movementSpeed=20f;
 	public float size = 5f;
 
+	public static bool onlyZoom = false;
+
 	
 	private Transform ObjectiveInitial;
 	private Vector3 obj_pos;
@@ -37,9 +39,9 @@ public class CameraController : MonoBehaviour {
 
 	void Update () {
 		//Debug.Log (centered);
-		update_objective ();
+		if (!onlyZoom) update_objective ();
 		update_angles ();
-		update_transform();
+		if (!onlyZoom) update_transform();
 	}
 
 
@@ -109,18 +111,22 @@ public class CameraController : MonoBehaviour {
 		desiredDistance = Mathf.Clamp(desiredDistance - Input.GetAxis("Mouse ScrollWheel")*zoomspeed*Time.fixedDeltaTime, distanceMin, distanceMax);
 		distance=Mathf.Lerp (distance,desiredDistance,10*Time.fixedDeltaTime);
 		size -= zoomspeed*Time.fixedDeltaTime*Input.GetAxis("Mouse ScrollWheel");
-		size = Mathf.Clamp(size,2f,10f);
+		size = Mathf.Clamp(size,1f,100f);
 		Camera.main.orthographicSize=size;
-		if (Input.GetKeyDown (KeyCode.Mouse1)) LastMouse=Input.mousePosition;
-		if (Input.GetKey (KeyCode.Mouse1)){
-			Vector2 dist = Input.mousePosition;
-			dist-=LastMouse;
-			theta-=dist.x*dragSpeed;
-			phi+=dist.y*dragSpeed;
-			LastMouse=Input.mousePosition;
-		}
-		theta=theta%360;
-		phi=Mathf.Clamp (phi, 0.05f,179.95f);
+
+		if (!onlyZoom) {
+						if (Input.GetKeyDown (KeyCode.Mouse1))
+								LastMouse = Input.mousePosition;
+						if (Input.GetKey (KeyCode.Mouse1)) {
+								Vector2 dist = Input.mousePosition;
+								dist -= LastMouse;
+								theta -= dist.x * dragSpeed;
+								phi += dist.y * dragSpeed;
+								LastMouse = Input.mousePosition;
+						}
+						theta = theta % 360;
+						phi = Mathf.Clamp (phi, 0.05f, 179.95f);
+				}
 	}
 	void update_transform (){
 		Vector3 despl = new Vector3(Mathf.Sin(phi*rad)*Mathf.Cos(theta*rad), 
