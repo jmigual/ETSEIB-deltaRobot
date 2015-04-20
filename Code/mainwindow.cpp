@@ -11,12 +11,16 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    
+    _sT.setStatusBar(ui->statusbar);
     _sT.start();
-    _timer.setInterval(10);
-    _timer.start();
     
     connect(&_joy, SIGNAL(changed()), this, SLOT(joyChanged()));
     connect(&_timer, SIGNAL(timeout()), this, SLOT(update()));
+    
+    
+    _timer.setInterval(10);
+    _timer.start();
     
     // JOYSTICK
     QVector< QString > V(_joy.getAllAxis());
@@ -44,8 +48,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->joyAxis->hide();
     ui->joyButs->hide();
     ui->line->hide();
-    // TODO: Create dataPath
     
+    
+    // Creating data Path    
     _dataP = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
     QDir dir(_dataP);
     if (!dir.exists()) dir.mkpath(_dataP);
@@ -106,6 +111,21 @@ void MainWindow::update()
     for (int i = 0; i < XJoystick::ButtonCount; ++i) _butsV[i] = _joy.button(i);
     
     _sT.setData(_axisV, _butsV);
+    QVector<ServoThread::Servo> servo(_sT.getServosInfo());
     
     // TODO: Finish update function
+}
+
+void MainWindow::on_start_clicked()
+{
+    QString text = ui->start->text();
+    
+    if (text == "Start") {
+        _sT.wakeUp();
+        ui->start->setText("Stop");
+    }
+    else if (text == "Stop") {
+        _sT.pause();
+        ui->start->setText("Start");
+    }
 }

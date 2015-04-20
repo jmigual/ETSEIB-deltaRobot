@@ -93,6 +93,7 @@ private slots:
     
     /// Updates all data to the servo thread
     void update();
+    void on_start_clicked();
 };
 
 #endif // MAINWINDOW_H

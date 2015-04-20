@@ -6,6 +6,7 @@
 #include <QDebug>
 #include <QDir>
 #include <QMutex>
+#include <QStatusBar>
 #include <QThread>
 #include <QVector>
 #include <QWaitCondition>
@@ -57,15 +58,6 @@ public:
     
     /// Default destructor
     ~ServoThread();
-    
-    /// Continues program's execution
-    inline void cont()
-    {
-        _mutex.lock();
-        _pause = false;
-        _cond.wakeOne();
-        _mutex.unlock();
-    }
     
     /// Ends the execution
     inline void end()
@@ -129,6 +121,9 @@ public:
         return _servos;
     }
     
+    /// Returns the mutex used in the thread
+    inline QMutex* mutex() { return &_mutex; }
+    
     /// Adds the loaded data
     /// @param aV Contains the axis values
     /// @param buts Contains the buttons values
@@ -175,18 +170,34 @@ public:
         _mutex.unlock();
     }
     
+    /// Sets the status bar
+    /// @param status Pointer to the status bar
+    inline void setStatusBar(QStatusBar *status) 
+    {
+        _statusBar = status;
+    }
+    
+    /// Continues program's execution
+    inline void wakeUp()
+    {
+        _mutex.lock();
+        _pause = false;
+        _cond.wakeOne();
+        _mutex.unlock();
+    }
+    
     /// Writes data to the selected directory
     /// @param file Path to the file
     void write(QString &file); 
     
 private:
     
-    double cos60 = 0.5;         ///< Contains the cosinus of 60
-    double sin60 = sqrt(3)/2;   ///< Contains the sinus of 60
-    const double a = 17.233;    ///< The arm length
-    const double b = 22.648;    ///< The forearm length
-    const double L1;            ///< The base center lenght
-    const double L2;            ///< The platform center length
+    const double cos60 = 0.5;       ///< Contains the cosinus of 60
+    const double sin60 = sqrt(3)/2; ///< Contains the sinus of 60
+    const double a = 17.233;        ///< The arm length
+    const double b = 22.648;        ///< The forearm length
+    const double L1 = 5.000;        ///< The base center lenght
+    const double L2 = 6.000;        ///< The platform center length
     
     /// Contains the axis value
     QVector < float > _axis;
@@ -229,6 +240,9 @@ private:
     
     /// True if the servos port changes
     bool _sPortChanged;
+    
+    /// Pointer to the window status Bar
+    QStatusBar *_statusBar;
     
     /// Used to create another thread
     void run();

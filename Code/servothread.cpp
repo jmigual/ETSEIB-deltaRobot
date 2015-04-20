@@ -13,7 +13,8 @@ ServoThread::ServoThread() :
     _sBaud(1000000),
     _servos(3),
     _sPort("COM9"),
-    _sPortChanged(false)
+    _sPortChanged(false),
+    _statusBar(NULL)
 {
     
 }
