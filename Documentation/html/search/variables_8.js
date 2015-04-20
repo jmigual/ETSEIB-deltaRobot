@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['ui',['ui',['../d9/dc6/class_main_window.html#a35466a70ed47252a0191168126a352a5',1,'MainWindow::ui()'],['../d7/d60/class_options_window.html#a8347442d5b3b670e8fff0c4102db1f88',1,'OptionsWindow::ui()']]]
+  ['pos',['pos',['../dc/d38/struct_servo_thread_1_1_servo.html#a9fa0aa56944b9b0bb9d66303d5bd4b59',1,'ServoThread::Servo']]],
+  ['puctable',['pucTable',['../de/d6f/structdynamixel2_1_1data.html#ae06fa51258979434fbc9f0e128824950',1,'dynamixel2::data']]]
 ];

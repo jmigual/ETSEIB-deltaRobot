@@ -153,7 +153,7 @@ Handles events that need to be updated continously.
 00074         
 00075         QString portC(\hyperlink{class_options_window_a8347442d5b3b670e8fff0c4102db1f88}{ui}->portC->currentData().toString());
 00076         QString portS(\hyperlink{class_options_window_a8347442d5b3b670e8fff0c4102db1f88}{ui}->portS->currentData().toString());
-00077         qDebug() << portC << portS;
+00077         
 00078         \textcolor{keywordtype}{int} selC = 0, selS = 0;
 00079         
 00080         \hyperlink{class_options_window_a8347442d5b3b670e8fff0c4102db1f88}{ui}->portC->clear();
@@ -171,12 +171,11 @@ Handles events that need to be updated continously.
 00092             \textcolor{keywordflow}{if} (ports[i].portName() == portC) selC = i + 1;
 00093             \textcolor{keywordflow}{if} (ports[i].portName() == portS) selS = i + 1;
 00094         \}
-00095         qDebug() << selC << selS;
-00096         
-00097         \hyperlink{class_options_window_a8347442d5b3b670e8fff0c4102db1f88}{ui}->portC->setCurrentIndex(selC);
-00098         \hyperlink{class_options_window_a8347442d5b3b670e8fff0c4102db1f88}{ui}->portS->setCurrentIndex(selS);
-00099     \}
-00100 \}
+00095 
+00096         \hyperlink{class_options_window_a8347442d5b3b670e8fff0c4102db1f88}{ui}->portC->setCurrentIndex(selC);
+00097         \hyperlink{class_options_window_a8347442d5b3b670e8fff0c4102db1f88}{ui}->portS->setCurrentIndex(selS);
+00098     \}
+00099 \}
 \end{DoxyCode}
 \hypertarget{class_options_window_ae8c0373be58da710194f8d14f1c3c4dc}{}\index{Options\+Window@{Options\+Window}!joystick\+Changed@{joystick\+Changed}}
 \index{joystick\+Changed@{joystick\+Changed}!Options\+Window@{Options\+Window}}
@@ -223,15 +222,15 @@ Refreshes all the servos connected to the port.
 
 
 \begin{DoxyCode}
-00103 \{
-00104     \hyperlink{classdynamixel}{dynamixel} dxl;
-00105     QString port;
-00106     \textcolor{keywordtype}{int} baud;
-00107     \hyperlink{class_options_window_acba1566fea3f831000d5e1c1edc3e776}{\_servo}->\hyperlink{class_servo_thread_afcf834d93f1ac9663d6ebaab820e5f74}{getServoPortInfo}(port, baud);
-00108     
-00109     dxl.\hyperlink{classdynamixel_a87960244d5846ae7583e37d2407eb61e}{initialize}(port, baud);
-00110     
-00111 \}
+00102 \{
+00103     \hyperlink{classdynamixel}{dynamixel} dxl;
+00104     QString port;
+00105     \textcolor{keywordtype}{int} baud;
+00106     \hyperlink{class_options_window_acba1566fea3f831000d5e1c1edc3e776}{\_servo}->\hyperlink{class_servo_thread_afcf834d93f1ac9663d6ebaab820e5f74}{getServoPortInfo}(port, baud);
+00107     
+00108     dxl.\hyperlink{classdynamixel_a87960244d5846ae7583e37d2407eb61e}{initialize}(port, baud);
+00109     
+00110 \}
 \end{DoxyCode}
 \hypertarget{class_options_window_ab0a56ad7347c20046602a7a2a1c83397}{}\index{Options\+Window@{Options\+Window}!store\+Data@{store\+Data}}
 \index{store\+Data@{store\+Data}!Options\+Window@{Options\+Window}}

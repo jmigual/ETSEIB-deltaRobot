@@ -128,51 +128,71 @@
 00152         \hyperlink{class_servo_thread_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.unlock();
 00153     \}
 00154     
-\hypertarget{servothread_8h_source_l00157}{}\hyperlink{class_servo_thread_ac3471e5020f5d9babd3f2ff7b3b82aca}{00157}     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \hyperlink{class_servo_thread_ac3471e5020f5d9babd3f2ff7b3b82aca}{setSID} (QVector< int > &V) 
-00158     \{
-00159         \hyperlink{class_servo_thread_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.lock();
-00160         \textcolor{keywordflow}{if} (V.size() != \hyperlink{class_servo_thread_a1ac6662fe6d198b5971ae0ffa7ddfcfd}{\_servos}.size()) \hyperlink{class_servo_thread_a1ac6662fe6d198b5971ae0ffa7ddfcfd}{\_servos}.resize(V.size());
-00161         
-00162         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < V.size(); ++i) \hyperlink{class_servo_thread_a1ac6662fe6d198b5971ae0ffa7ddfcfd}{\_servos}[i].ID = V[i];
-00163         \hyperlink{class_servo_thread_a2b6ccfeacbb3cc9ac5c34549b9aa3f11}{\_dChanged} = \textcolor{keyword}{true};
-00164         \hyperlink{class_servo_thread_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.unlock();
-00165     \}
-00166     
-00169     \textcolor{keywordtype}{void} \hyperlink{class_servo_thread_ae5753b8c12768d2115ff900f0ab8e13c}{write}(QString &file); 
-00170     
-00171 \textcolor{keyword}{private}:
-00172     
-\hypertarget{servothread_8h_source_l00174}{}\hyperlink{class_servo_thread_aad24ef961ee39dd35766c725c13b11b7}{00174}     QVector < float > \hyperlink{class_servo_thread_aad24ef961ee39dd35766c725c13b11b7}{\_axis};
-00175     
-\hypertarget{servothread_8h_source_l00177}{}\hyperlink{class_servo_thread_a6f956f7e0f2953e213ff95fb64857ab0}{00177}     QVector < bool > \hyperlink{class_servo_thread_a6f956f7e0f2953e213ff95fb64857ab0}{\_buts};
-00178     
-\hypertarget{servothread_8h_source_l00180}{}\hyperlink{class_servo_thread_a9fccfd415e2e55c8abef7fcc6535af30}{00180}     \textcolor{keywordtype}{int} \hyperlink{class_servo_thread_a9fccfd415e2e55c8abef7fcc6535af30}{\_cBaud};
+\hypertarget{servothread_8h_source_l00158}{}\hyperlink{class_servo_thread_a76af3e89d1a8705426584bedb0624909}{00158}     \textcolor{keywordtype}{void} \hyperlink{class_servo_thread_a76af3e89d1a8705426584bedb0624909}{setServoPortInfo}(QString &port, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} baud)
+00159     \{
+00160         \hyperlink{class_servo_thread_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.lock();
+00161         \hyperlink{class_servo_thread_ac9a614aa1518efb49b0a06636bd1bdbf}{\_sPort} = port;
+00162         \hyperlink{class_servo_thread_a5b9a41b9e271275b914affb0a845a2ee}{\_sBaud} = baud;
+00163         \hyperlink{class_servo_thread_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.unlock();
+00164     \}
+00165     
+\hypertarget{servothread_8h_source_l00168}{}\hyperlink{class_servo_thread_ac3471e5020f5d9babd3f2ff7b3b82aca}{00168}     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \hyperlink{class_servo_thread_ac3471e5020f5d9babd3f2ff7b3b82aca}{setSID} (QVector< int > &V) 
+00169     \{
+00170         \hyperlink{class_servo_thread_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.lock();
+00171         \textcolor{keywordflow}{if} (V.size() != \hyperlink{class_servo_thread_a1ac6662fe6d198b5971ae0ffa7ddfcfd}{\_servos}.size()) \hyperlink{class_servo_thread_a1ac6662fe6d198b5971ae0ffa7ddfcfd}{\_servos}.resize(V.size());
+00172         
+00173         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < V.size(); ++i) \hyperlink{class_servo_thread_a1ac6662fe6d198b5971ae0ffa7ddfcfd}{\_servos}[i].ID = V[i];
+00174         \hyperlink{class_servo_thread_a2b6ccfeacbb3cc9ac5c34549b9aa3f11}{\_dChanged} = \textcolor{keyword}{true};
+00175         \hyperlink{class_servo_thread_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.unlock();
+00176     \}
+00177     
+00180     \textcolor{keywordtype}{void} \hyperlink{class_servo_thread_ae5753b8c12768d2115ff900f0ab8e13c}{write}(QString &file); 
 00181     
-\hypertarget{servothread_8h_source_l00183}{}\hyperlink{class_servo_thread_afcb93c09acd7fecf47d92996a297365c}{00183}     QWaitCondition \hyperlink{class_servo_thread_afcb93c09acd7fecf47d92996a297365c}{\_cond};
-00184         
-\hypertarget{servothread_8h_source_l00186}{}\hyperlink{class_servo_thread_ab52437b31a433c427a6c050f2b1cc959}{00186}     QString \hyperlink{class_servo_thread_ab52437b31a433c427a6c050f2b1cc959}{\_cPort};
-00187     
-\hypertarget{servothread_8h_source_l00189}{}\hyperlink{class_servo_thread_a2b6ccfeacbb3cc9ac5c34549b9aa3f11}{00189}     \textcolor{keywordtype}{bool} \hyperlink{class_servo_thread_a2b6ccfeacbb3cc9ac5c34549b9aa3f11}{\_dChanged};
+00182 \textcolor{keyword}{private}:
+00183     
+\hypertarget{servothread_8h_source_l00184}{}\hyperlink{class_servo_thread_a5254b08335f14de98d18aed01abc6f58}{00184}     \textcolor{keywordtype}{double} \hyperlink{class_servo_thread_a5254b08335f14de98d18aed01abc6f58}{cos60} = 0.5;         
+\hypertarget{servothread_8h_source_l00185}{}\hyperlink{class_servo_thread_addbe4545236e5ded8c4956f2e2d52a84}{00185}     \textcolor{keywordtype}{double} \hyperlink{class_servo_thread_addbe4545236e5ded8c4956f2e2d52a84}{sin60} = sqrt(3)/2;   
+\hypertarget{servothread_8h_source_l00186}{}\hyperlink{class_servo_thread_a7dc3998d380d61406fe4485f9872edff}{00186}     \textcolor{keyword}{const} \textcolor{keywordtype}{double} \hyperlink{class_servo_thread_a7dc3998d380d61406fe4485f9872edff}{a};             
+\hypertarget{servothread_8h_source_l00187}{}\hyperlink{class_servo_thread_a14f03febaa39a60b9bf7ff9b9151060c}{00187}     \textcolor{keyword}{const} \textcolor{keywordtype}{double} \hyperlink{class_servo_thread_a14f03febaa39a60b9bf7ff9b9151060c}{b};             
+\hypertarget{servothread_8h_source_l00188}{}\hyperlink{class_servo_thread_a6281142e50115dd8c914c14cfae6f90d}{00188}     \textcolor{keyword}{const} \textcolor{keywordtype}{double} \hyperlink{class_servo_thread_a6281142e50115dd8c914c14cfae6f90d}{L1};            
+\hypertarget{servothread_8h_source_l00189}{}\hyperlink{class_servo_thread_a3d51c16b1f498b48a6ecbfaadaba6ed2}{00189}     \textcolor{keyword}{const} \textcolor{keywordtype}{double} \hyperlink{class_servo_thread_a3d51c16b1f498b48a6ecbfaadaba6ed2}{L2};            
 00190     
-\hypertarget{servothread_8h_source_l00192}{}\hyperlink{class_servo_thread_acca9896d1a2d1ef68527e6834f81c76c}{00192}     \textcolor{keywordtype}{bool} \hyperlink{class_servo_thread_acca9896d1a2d1ef68527e6834f81c76c}{\_end};
+\hypertarget{servothread_8h_source_l00192}{}\hyperlink{class_servo_thread_aad24ef961ee39dd35766c725c13b11b7}{00192}     QVector < float > \hyperlink{class_servo_thread_aad24ef961ee39dd35766c725c13b11b7}{\_axis};
 00193     
-\hypertarget{servothread_8h_source_l00195}{}\hyperlink{class_servo_thread_acdecea1688594d3ab7386a6db97dd90d}{00195}     \hyperlink{class_servo_thread_a8d581034e60792a9995d44065f6140a5}{Mode} \hyperlink{class_servo_thread_acdecea1688594d3ab7386a6db97dd90d}{\_mod};
+\hypertarget{servothread_8h_source_l00195}{}\hyperlink{class_servo_thread_a6f956f7e0f2953e213ff95fb64857ab0}{00195}     QVector < bool > \hyperlink{class_servo_thread_a6f956f7e0f2953e213ff95fb64857ab0}{\_buts};
 00196     
-\hypertarget{servothread_8h_source_l00198}{}\hyperlink{class_servo_thread_a6327eafc0dac189ec1b202d63ef32457}{00198}     QMutex \hyperlink{class_servo_thread_a6327eafc0dac189ec1b202d63ef32457}{\_mutex};
+\hypertarget{servothread_8h_source_l00198}{}\hyperlink{class_servo_thread_a9fccfd415e2e55c8abef7fcc6535af30}{00198}     \textcolor{keywordtype}{int} \hyperlink{class_servo_thread_a9fccfd415e2e55c8abef7fcc6535af30}{\_cBaud};
 00199     
-\hypertarget{servothread_8h_source_l00201}{}\hyperlink{class_servo_thread_aaf2ef80e8e43518b75d20a5102970d2e}{00201}     \textcolor{keywordtype}{bool} \hyperlink{class_servo_thread_aaf2ef80e8e43518b75d20a5102970d2e}{\_pause};
-00202     
-\hypertarget{servothread_8h_source_l00204}{}\hyperlink{class_servo_thread_a5b9a41b9e271275b914affb0a845a2ee}{00204}     \textcolor{keywordtype}{int} \hyperlink{class_servo_thread_a5b9a41b9e271275b914affb0a845a2ee}{\_sBaud};
+\hypertarget{servothread_8h_source_l00201}{}\hyperlink{class_servo_thread_afcb93c09acd7fecf47d92996a297365c}{00201}     QWaitCondition \hyperlink{class_servo_thread_afcb93c09acd7fecf47d92996a297365c}{\_cond};
+00202         
+\hypertarget{servothread_8h_source_l00204}{}\hyperlink{class_servo_thread_ab52437b31a433c427a6c050f2b1cc959}{00204}     QString \hyperlink{class_servo_thread_ab52437b31a433c427a6c050f2b1cc959}{\_cPort};
 00205     
-\hypertarget{servothread_8h_source_l00207}{}\hyperlink{class_servo_thread_a1ac6662fe6d198b5971ae0ffa7ddfcfd}{00207}     QVector< Servo > \hyperlink{class_servo_thread_a1ac6662fe6d198b5971ae0ffa7ddfcfd}{\_servos};
+\hypertarget{servothread_8h_source_l00207}{}\hyperlink{class_servo_thread_a2b6ccfeacbb3cc9ac5c34549b9aa3f11}{00207}     \textcolor{keywordtype}{bool} \hyperlink{class_servo_thread_a2b6ccfeacbb3cc9ac5c34549b9aa3f11}{\_dChanged};
 00208     
-\hypertarget{servothread_8h_source_l00210}{}\hyperlink{class_servo_thread_ac9a614aa1518efb49b0a06636bd1bdbf}{00210}     QString \hyperlink{class_servo_thread_ac9a614aa1518efb49b0a06636bd1bdbf}{\_sPort};
+\hypertarget{servothread_8h_source_l00210}{}\hyperlink{class_servo_thread_acca9896d1a2d1ef68527e6834f81c76c}{00210}     \textcolor{keywordtype}{bool} \hyperlink{class_servo_thread_acca9896d1a2d1ef68527e6834f81c76c}{\_end};
 00211     
-\hypertarget{servothread_8h_source_l00213}{}\hyperlink{class_servo_thread_a6e803432db01b10ed975132315280fd3}{00213}     \textcolor{keywordtype}{bool} \hyperlink{class_servo_thread_a6e803432db01b10ed975132315280fd3}{\_sPortChanged};
+\hypertarget{servothread_8h_source_l00213}{}\hyperlink{class_servo_thread_acdecea1688594d3ab7386a6db97dd90d}{00213}     \hyperlink{class_servo_thread_a8d581034e60792a9995d44065f6140a5}{Mode} \hyperlink{class_servo_thread_acdecea1688594d3ab7386a6db97dd90d}{\_mod};
 00214     
-00216     \textcolor{keywordtype}{void} \hyperlink{class_servo_thread_aeeb31b85abf7eb5c701853a6d25e51e0}{run}();
+\hypertarget{servothread_8h_source_l00216}{}\hyperlink{class_servo_thread_a6327eafc0dac189ec1b202d63ef32457}{00216}     QMutex \hyperlink{class_servo_thread_a6327eafc0dac189ec1b202d63ef32457}{\_mutex};
 00217     
-00218 \};
-00219 
-00220 \textcolor{preprocessor}{#endif // SERVOTHREAD\_H}
+\hypertarget{servothread_8h_source_l00219}{}\hyperlink{class_servo_thread_aaf2ef80e8e43518b75d20a5102970d2e}{00219}     \textcolor{keywordtype}{bool} \hyperlink{class_servo_thread_aaf2ef80e8e43518b75d20a5102970d2e}{\_pause};
+00220     
+\hypertarget{servothread_8h_source_l00222}{}\hyperlink{class_servo_thread_a5b9a41b9e271275b914affb0a845a2ee}{00222}     \textcolor{keywordtype}{int} \hyperlink{class_servo_thread_a5b9a41b9e271275b914affb0a845a2ee}{\_sBaud};
+00223     
+\hypertarget{servothread_8h_source_l00225}{}\hyperlink{class_servo_thread_a1ac6662fe6d198b5971ae0ffa7ddfcfd}{00225}     QVector< Servo > \hyperlink{class_servo_thread_a1ac6662fe6d198b5971ae0ffa7ddfcfd}{\_servos};
+00226     
+\hypertarget{servothread_8h_source_l00228}{}\hyperlink{class_servo_thread_ac9a614aa1518efb49b0a06636bd1bdbf}{00228}     QString \hyperlink{class_servo_thread_ac9a614aa1518efb49b0a06636bd1bdbf}{\_sPort};
+00229     
+\hypertarget{servothread_8h_source_l00231}{}\hyperlink{class_servo_thread_a6e803432db01b10ed975132315280fd3}{00231}     \textcolor{keywordtype}{bool} \hyperlink{class_servo_thread_a6e803432db01b10ed975132315280fd3}{\_sPortChanged};
+00232     
+00234     \textcolor{keywordtype}{void} \hyperlink{class_servo_thread_aeeb31b85abf7eb5c701853a6d25e51e0}{run}();
+00235     
+00237     \textcolor{keywordtype}{void} \hyperlink{class_servo_thread_ae17f4b27cae8b171f48fd55d2dc72dbd}{setAngles}(\textcolor{keywordtype}{double} x0, \textcolor{keywordtype}{double} y0, \textcolor{keywordtype}{double} z0, 
+00238                    \textcolor{keywordtype}{double} &theta1, \textcolor{keywordtype}{double} &theta2, \textcolor{keywordtype}{double} &theta3);
+00239     
+00241     \textcolor{keywordtype}{double} \hyperlink{class_servo_thread_add4637d917a772c4c01a43b5b66da2be}{singleAngle}(\textcolor{keywordtype}{double} x0, \textcolor{keywordtype}{double} y0, \textcolor{keywordtype}{double} z0);
+00242     
+00243 \};
+00244 
+00245 \textcolor{preprocessor}{#endif // SERVOTHREAD\_H}
 \end{DoxyCode}

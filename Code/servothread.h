@@ -183,6 +183,10 @@ private:
     
     double cos60 = 0.5;         ///< Contains the cosinus of 60
     double sin60 = sqrt(3)/2;   ///< Contains the sinus of 60
+    const double a = 17.233;    ///< The arm length
+    const double b = 22.648;    ///< The forearm length
+    const double L1;            ///< The base center lenght
+    const double L2;            ///< The platform center length
     
     /// Contains the axis value
     QVector < float > _axis;

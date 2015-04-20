@@ -82,7 +82,7 @@ void ServoThread::run()
     
     _mutex.unlock();
     dynamixel dxl(sPort, sBaud);
-    QVector< AX12 > (_servos.size(), dxl);
+    QVector< AX12 > (_servos.size(), &dxl);
     
     while (not _end) {
         
@@ -109,25 +109,22 @@ void ServoThread::run()
     exit(0);
 }
 
-void ServoThread::setAngles(double x0, double y0, double z0, double &theta1, double &theta2, double &theta3)
+void ServoThread::setAngles(double x0, double y0, double z0, 
+                            double &theta1, double &theta2, double &theta3)
 {    
-    
-    double x1, y1, z1;
-    x1 = x0 + L2 - L1;
-    y1 = y0;
-    z1 = z0;
+    double x1 = x0 + L2 - L1;
+    double y1 = y0;
+    double z1 = z0;
     theta1 = singleAngle(x1,y1,z1);
     
-    double x2, y2, z2;
-    x2 = z0*sin60 - x0*cos60 + L2 - L1;
-    y2 = y0;
-    z2 = -z0*cos60 - x0*sin60;
+    double x2 = z0*sin60 - x0*cos60 + L2 - L1;
+    double y2 = y0;
+    double z2 = -z0*cos60 - x0*sin60;
     theta2 = singleAngle(x2,y2,z2);
     
-    double x3, y3, z3;
-    x3 = -z0*sin60 - x0*cos60 + L2 - L1;
-    y3 = y0;
-    z3 = -z0*cos60 + x0*sin60;
+    double x3 = -z0*sin60 - x0*cos60 + L2 - L1;
+    double y3 = y0;
+    double z3 = -z0*cos60 + x0*sin60;
     theta3 = singleAngle(x3,y3,z3);
 }
 

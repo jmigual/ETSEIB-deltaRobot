@@ -70,6 +70,8 @@ void \hyperlink{class_servo_thread_a009d3d1b99007b14fadb49996fac49d6}{set\+Servo
 \begin{DoxyCompactList}\small\item\em Sets the servos port baud rate. \end{DoxyCompactList}\item 
 void \hyperlink{class_servo_thread_a144e31105019d833f59ca2eba012e638}{set\+Servo\+Port} (Q\+String \&port)
 \begin{DoxyCompactList}\small\item\em Sets the servos port. \end{DoxyCompactList}\item 
+void \hyperlink{class_servo_thread_a76af3e89d1a8705426584bedb0624909}{set\+Servo\+Port\+Info} (Q\+String \&port, unsigned int baud)
+\begin{DoxyCompactList}\small\item\em Sets the servos port info, data and selected port. \end{DoxyCompactList}\item 
 void \hyperlink{class_servo_thread_ac3471e5020f5d9babd3f2ff7b3b82aca}{set\+S\+I\+D} (Q\+Vector$<$ int $>$ \&V)
 \begin{DoxyCompactList}\small\item\em Sets the servos I\+D. \end{DoxyCompactList}\item 
 void \hyperlink{class_servo_thread_ae5753b8c12768d2115ff900f0ab8e13c}{write} (Q\+String \&file)
@@ -84,10 +86,26 @@ enum \hyperlink{class_servo_thread_aeccce0ac6a969e2ee7cbe91687e2d085}{Version} \
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{class_servo_thread_aeeb31b85abf7eb5c701853a6d25e51e0}{run} ()
-\begin{DoxyCompactList}\small\item\em Used to create another thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Used to create another thread. \end{DoxyCompactList}\item 
+void \hyperlink{class_servo_thread_ae17f4b27cae8b171f48fd55d2dc72dbd}{set\+Angles} (double x0, double y0, double z0, double \&theta1, double \&theta2, double \&theta3)
+\begin{DoxyCompactList}\small\item\em Used to calculate the servos angles. \end{DoxyCompactList}\item 
+double \hyperlink{class_servo_thread_add4637d917a772c4c01a43b5b66da2be}{single\+Angle} (double x0, double y0, double z0)
+\begin{DoxyCompactList}\small\item\em Calculates the angle of one servo in the selected position. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
+double \hyperlink{class_servo_thread_a5254b08335f14de98d18aed01abc6f58}{cos60} = 0.\+5
+\begin{DoxyCompactList}\small\item\em Contains the cosinus of 60. \end{DoxyCompactList}\item 
+double \hyperlink{class_servo_thread_addbe4545236e5ded8c4956f2e2d52a84}{sin60} = sqrt(3)/2
+\begin{DoxyCompactList}\small\item\em Contains the sinus of 60. \end{DoxyCompactList}\item 
+const double \hyperlink{class_servo_thread_a7dc3998d380d61406fe4485f9872edff}{a}
+\begin{DoxyCompactList}\small\item\em The arm length. \end{DoxyCompactList}\item 
+const double \hyperlink{class_servo_thread_a14f03febaa39a60b9bf7ff9b9151060c}{b}
+\begin{DoxyCompactList}\small\item\em The forearm length. \end{DoxyCompactList}\item 
+const double \hyperlink{class_servo_thread_a6281142e50115dd8c914c14cfae6f90d}{L1}
+\begin{DoxyCompactList}\small\item\em The base center lenght. \end{DoxyCompactList}\item 
+const double \hyperlink{class_servo_thread_a3d51c16b1f498b48a6ecbfaadaba6ed2}{L2}
+\begin{DoxyCompactList}\small\item\em The platform center length. \end{DoxyCompactList}\item 
 Q\+Vector$<$ float $>$ \hyperlink{class_servo_thread_aad24ef961ee39dd35766c725c13b11b7}{\+\_\+axis}
 \begin{DoxyCompactList}\small\item\em Contains the axis value. \end{DoxyCompactList}\item 
 Q\+Vector$<$ bool $>$ \hyperlink{class_servo_thread_a6f956f7e0f2953e213ff95fb64857ab0}{\+\_\+buts}
@@ -438,7 +456,7 @@ Used to create another thread.
 00082     
 00083     \hyperlink{class_servo_thread_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.unlock();
 00084     \hyperlink{classdynamixel}{dynamixel} dxl(sPort, sBaud);
-00085     QVector< AX12 > (\hyperlink{class_servo_thread_a1ac6662fe6d198b5971ae0ffa7ddfcfd}{\_servos}.size(), dxl);
+00085     QVector< AX12 > (\hyperlink{class_servo_thread_a1ac6662fe6d198b5971ae0ffa7ddfcfd}{\_servos}.size(), &dxl);
 00086     
 00087     \textcolor{keywordflow}{while} (not \hyperlink{class_servo_thread_acca9896d1a2d1ef68527e6834f81c76c}{\_end}) \{
 00088         
@@ -464,6 +482,41 @@ Used to create another thread.
 00108     dxl.terminate();
 00109     exit(0);
 00110 \}
+\end{DoxyCode}
+\hypertarget{class_servo_thread_ae17f4b27cae8b171f48fd55d2dc72dbd}{}\index{Servo\+Thread@{Servo\+Thread}!set\+Angles@{set\+Angles}}
+\index{set\+Angles@{set\+Angles}!Servo\+Thread@{Servo\+Thread}}
+\subsubsection[{set\+Angles}]{\setlength{\rightskip}{0pt plus 5cm}void Servo\+Thread\+::set\+Angles (
+\begin{DoxyParamCaption}
+\item[{double}]{x0, }
+\item[{double}]{y0, }
+\item[{double}]{z0, }
+\item[{double \&}]{theta1, }
+\item[{double \&}]{theta2, }
+\item[{double \&}]{theta3}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_servo_thread_ae17f4b27cae8b171f48fd55d2dc72dbd}
+
+
+Used to calculate the servos angles. 
+
+
+\begin{DoxyCode}
+00114 \{    
+00115     \textcolor{keywordtype}{double} x1 = x0 + \hyperlink{class_servo_thread_a3d51c16b1f498b48a6ecbfaadaba6ed2}{L2} - \hyperlink{class_servo_thread_a6281142e50115dd8c914c14cfae6f90d}{L1};
+00116     \textcolor{keywordtype}{double} y1 = y0;
+00117     \textcolor{keywordtype}{double} z1 = z0;
+00118     theta1 = \hyperlink{class_servo_thread_add4637d917a772c4c01a43b5b66da2be}{singleAngle}(x1,y1,z1);
+00119     
+00120     \textcolor{keywordtype}{double} x2 = z0*\hyperlink{class_servo_thread_addbe4545236e5ded8c4956f2e2d52a84}{sin60} - x0*\hyperlink{class_servo_thread_a5254b08335f14de98d18aed01abc6f58}{cos60} + \hyperlink{class_servo_thread_a3d51c16b1f498b48a6ecbfaadaba6ed2}{L2} - \hyperlink{class_servo_thread_a6281142e50115dd8c914c14cfae6f90d}{L1};
+00121     \textcolor{keywordtype}{double} y2 = y0;
+00122     \textcolor{keywordtype}{double} z2 = -z0*\hyperlink{class_servo_thread_a5254b08335f14de98d18aed01abc6f58}{cos60} - x0*\hyperlink{class_servo_thread_addbe4545236e5ded8c4956f2e2d52a84}{sin60};
+00123     theta2 = \hyperlink{class_servo_thread_add4637d917a772c4c01a43b5b66da2be}{singleAngle}(x2,y2,z2);
+00124     
+00125     \textcolor{keywordtype}{double} x3 = -z0*sin60 - x0*\hyperlink{class_servo_thread_a5254b08335f14de98d18aed01abc6f58}{cos60} + \hyperlink{class_servo_thread_a3d51c16b1f498b48a6ecbfaadaba6ed2}{L2} - \hyperlink{class_servo_thread_a6281142e50115dd8c914c14cfae6f90d}{L1};
+00126     \textcolor{keywordtype}{double} y3 = y0;
+00127     \textcolor{keywordtype}{double} z3 = -z0*\hyperlink{class_servo_thread_a5254b08335f14de98d18aed01abc6f58}{cos60} + x0*\hyperlink{class_servo_thread_addbe4545236e5ded8c4956f2e2d52a84}{sin60};
+00128     theta3 = \hyperlink{class_servo_thread_add4637d917a772c4c01a43b5b66da2be}{singleAngle}(x3,y3,z3);
+00129 \}
 \end{DoxyCode}
 \hypertarget{class_servo_thread_a8497ea56991b620981ce1fbf53d9ebdb}{}\index{Servo\+Thread@{Servo\+Thread}!set\+Data@{set\+Data}}
 \index{set\+Data@{set\+Data}!Servo\+Thread@{Servo\+Thread}}
@@ -544,6 +597,34 @@ Sets the servos port.
 00152         \hyperlink{class_servo_thread_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.unlock();
 00153     \}
 \end{DoxyCode}
+\hypertarget{class_servo_thread_a76af3e89d1a8705426584bedb0624909}{}\index{Servo\+Thread@{Servo\+Thread}!set\+Servo\+Port\+Info@{set\+Servo\+Port\+Info}}
+\index{set\+Servo\+Port\+Info@{set\+Servo\+Port\+Info}!Servo\+Thread@{Servo\+Thread}}
+\subsubsection[{set\+Servo\+Port\+Info}]{\setlength{\rightskip}{0pt plus 5cm}void Servo\+Thread\+::set\+Servo\+Port\+Info (
+\begin{DoxyParamCaption}
+\item[{Q\+String \&}]{port, }
+\item[{unsigned int}]{baud}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_servo_thread_a76af3e89d1a8705426584bedb0624909}
+
+
+Sets the servos port info, data and selected port. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & String containing the selected port \\
+\hline
+{\em baud} & Contains the selected baud rate \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+00159     \{
+00160         \hyperlink{class_servo_thread_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.lock();
+00161         \hyperlink{class_servo_thread_ac9a614aa1518efb49b0a06636bd1bdbf}{\_sPort} = port;
+00162         \hyperlink{class_servo_thread_a5b9a41b9e271275b914affb0a845a2ee}{\_sBaud} = baud;
+00163         \hyperlink{class_servo_thread_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.unlock();
+00164     \}
+\end{DoxyCode}
 \hypertarget{class_servo_thread_ac3471e5020f5d9babd3f2ff7b3b82aca}{}\index{Servo\+Thread@{Servo\+Thread}!set\+S\+I\+D@{set\+S\+I\+D}}
 \index{set\+S\+I\+D@{set\+S\+I\+D}!Servo\+Thread@{Servo\+Thread}}
 \subsubsection[{set\+S\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}void Servo\+Thread\+::set\+S\+I\+D (
@@ -562,14 +643,42 @@ Sets the servos I\+D.
 \end{DoxyParams}
 
 \begin{DoxyCode}
-00158     \{
-00159         \hyperlink{class_servo_thread_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.lock();
-00160         \textcolor{keywordflow}{if} (V.size() != \hyperlink{class_servo_thread_a1ac6662fe6d198b5971ae0ffa7ddfcfd}{\_servos}.size()) \hyperlink{class_servo_thread_a1ac6662fe6d198b5971ae0ffa7ddfcfd}{\_servos}.resize(V.size());
-00161         
-00162         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < V.size(); ++i) \hyperlink{class_servo_thread_a1ac6662fe6d198b5971ae0ffa7ddfcfd}{\_servos}[i].ID = V[i];
-00163         \hyperlink{class_servo_thread_a2b6ccfeacbb3cc9ac5c34549b9aa3f11}{\_dChanged} = \textcolor{keyword}{true};
-00164         \hyperlink{class_servo_thread_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.unlock();
-00165     \}
+00169     \{
+00170         \hyperlink{class_servo_thread_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.lock();
+00171         \textcolor{keywordflow}{if} (V.size() != \hyperlink{class_servo_thread_a1ac6662fe6d198b5971ae0ffa7ddfcfd}{\_servos}.size()) \hyperlink{class_servo_thread_a1ac6662fe6d198b5971ae0ffa7ddfcfd}{\_servos}.resize(V.size());
+00172         
+00173         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < V.size(); ++i) \hyperlink{class_servo_thread_a1ac6662fe6d198b5971ae0ffa7ddfcfd}{\_servos}[i].ID = V[i];
+00174         \hyperlink{class_servo_thread_a2b6ccfeacbb3cc9ac5c34549b9aa3f11}{\_dChanged} = \textcolor{keyword}{true};
+00175         \hyperlink{class_servo_thread_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.unlock();
+00176     \}
+\end{DoxyCode}
+\hypertarget{class_servo_thread_add4637d917a772c4c01a43b5b66da2be}{}\index{Servo\+Thread@{Servo\+Thread}!single\+Angle@{single\+Angle}}
+\index{single\+Angle@{single\+Angle}!Servo\+Thread@{Servo\+Thread}}
+\subsubsection[{single\+Angle}]{\setlength{\rightskip}{0pt plus 5cm}double Servo\+Thread\+::single\+Angle (
+\begin{DoxyParamCaption}
+\item[{double}]{x0, }
+\item[{double}]{y0, }
+\item[{double}]{z0}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_servo_thread_add4637d917a772c4c01a43b5b66da2be}
+
+
+Calculates the angle of one servo in the selected position. 
+
+
+\begin{DoxyCode}
+00132 \{
+00133     \textcolor{keywordtype}{double} n = \hyperlink{class_servo_thread_a14f03febaa39a60b9bf7ff9b9151060c}{b} * \hyperlink{class_servo_thread_a14f03febaa39a60b9bf7ff9b9151060c}{b} - \hyperlink{class_servo_thread_a7dc3998d380d61406fe4485f9872edff}{a} * \hyperlink{class_servo_thread_a7dc3998d380d61406fe4485f9872edff}{a} - z0 * z0 - x0 * x0 - y0 * y0;
+00134     \textcolor{keywordtype}{double} raiz = sqrt (n*n*y0*y0 - 4*(x0*x0 + y0*y0)*(-x0*x0*\hyperlink{class_servo_thread_a7dc3998d380d61406fe4485f9872edff}{a}*\hyperlink{class_servo_thread_a7dc3998d380d61406fe4485f9872edff}{a} + n*n/4));
+00135     
+00136     \textcolor{keywordflow}{if} (x0 < 0) raiz *= -1;
+00137     \textcolor{keywordtype}{double} y = (-n*y0 + raiz ) / (2*(x0*x0 + y0*y0));
+00138     
+00139     \textcolor{keywordtype}{int} signe = 1;
+00140     \textcolor{keywordflow}{if} ((\hyperlink{class_servo_thread_a14f03febaa39a60b9bf7ff9b9151060c}{b}*\hyperlink{class_servo_thread_a14f03febaa39a60b9bf7ff9b9151060c}{b} - (y0 + \hyperlink{class_servo_thread_a7dc3998d380d61406fe4485f9872edff}{a})*(y0 + \hyperlink{class_servo_thread_a7dc3998d380d61406fe4485f9872edff}{a})) < (x0*x0 + z0*z0) && x0 < 0) signe *= -1;
+00141     \textcolor{keywordtype}{double} x = sqrt(\hyperlink{class_servo_thread_a7dc3998d380d61406fe4485f9872edff}{a}*\hyperlink{class_servo_thread_a7dc3998d380d61406fe4485f9872edff}{a} - y*y)*signe;
+00142     \textcolor{keywordflow}{return} atan2 (y,x);
+00143 \}
 \end{DoxyCode}
 \hypertarget{class_servo_thread_ae5753b8c12768d2115ff900f0ab8e13c}{}\index{Servo\+Thread@{Servo\+Thread}!write@{write}}
 \index{write@{write}!Servo\+Thread@{Servo\+Thread}}
@@ -703,6 +812,48 @@ Contains the selected com port used in the comunication with servos.
 
 
 True if the servos port changes. 
+
+\hypertarget{class_servo_thread_a7dc3998d380d61406fe4485f9872edff}{}\index{Servo\+Thread@{Servo\+Thread}!a@{a}}
+\index{a@{a}!Servo\+Thread@{Servo\+Thread}}
+\subsubsection[{a}]{\setlength{\rightskip}{0pt plus 5cm}const double Servo\+Thread\+::a\hspace{0.3cm}{\ttfamily [private]}}\label{class_servo_thread_a7dc3998d380d61406fe4485f9872edff}
+
+
+The arm length. 
+
+\hypertarget{class_servo_thread_a14f03febaa39a60b9bf7ff9b9151060c}{}\index{Servo\+Thread@{Servo\+Thread}!b@{b}}
+\index{b@{b}!Servo\+Thread@{Servo\+Thread}}
+\subsubsection[{b}]{\setlength{\rightskip}{0pt plus 5cm}const double Servo\+Thread\+::b\hspace{0.3cm}{\ttfamily [private]}}\label{class_servo_thread_a14f03febaa39a60b9bf7ff9b9151060c}
+
+
+The forearm length. 
+
+\hypertarget{class_servo_thread_a5254b08335f14de98d18aed01abc6f58}{}\index{Servo\+Thread@{Servo\+Thread}!cos60@{cos60}}
+\index{cos60@{cos60}!Servo\+Thread@{Servo\+Thread}}
+\subsubsection[{cos60}]{\setlength{\rightskip}{0pt plus 5cm}double Servo\+Thread\+::cos60 = 0.\+5\hspace{0.3cm}{\ttfamily [private]}}\label{class_servo_thread_a5254b08335f14de98d18aed01abc6f58}
+
+
+Contains the cosinus of 60. 
+
+\hypertarget{class_servo_thread_a6281142e50115dd8c914c14cfae6f90d}{}\index{Servo\+Thread@{Servo\+Thread}!L1@{L1}}
+\index{L1@{L1}!Servo\+Thread@{Servo\+Thread}}
+\subsubsection[{L1}]{\setlength{\rightskip}{0pt plus 5cm}const double Servo\+Thread\+::\+L1\hspace{0.3cm}{\ttfamily [private]}}\label{class_servo_thread_a6281142e50115dd8c914c14cfae6f90d}
+
+
+The base center lenght. 
+
+\hypertarget{class_servo_thread_a3d51c16b1f498b48a6ecbfaadaba6ed2}{}\index{Servo\+Thread@{Servo\+Thread}!L2@{L2}}
+\index{L2@{L2}!Servo\+Thread@{Servo\+Thread}}
+\subsubsection[{L2}]{\setlength{\rightskip}{0pt plus 5cm}const double Servo\+Thread\+::\+L2\hspace{0.3cm}{\ttfamily [private]}}\label{class_servo_thread_a3d51c16b1f498b48a6ecbfaadaba6ed2}
+
+
+The platform center length. 
+
+\hypertarget{class_servo_thread_addbe4545236e5ded8c4956f2e2d52a84}{}\index{Servo\+Thread@{Servo\+Thread}!sin60@{sin60}}
+\index{sin60@{sin60}!Servo\+Thread@{Servo\+Thread}}
+\subsubsection[{sin60}]{\setlength{\rightskip}{0pt plus 5cm}double Servo\+Thread\+::sin60 = sqrt(3)/2\hspace{0.3cm}{\ttfamily [private]}}\label{class_servo_thread_addbe4545236e5ded8c4956f2e2d52a84}
+
+
+Contains the sinus of 60. 
 
 
 

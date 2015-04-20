@@ -21,6 +21,7 @@ var searchData=
   ['_5fopen',['_open',['../d5/dae/classdxl__hal.html#a04831154c43fe4f7499ea0950e0f0999',1,'dxl_hal']]],
   ['_5fpause',['_pause',['../de/d6f/class_servo_thread.html#aaf2ef80e8e43518b75d20a5102970d2e',1,'ServoThread']]],
   ['_5fportsize',['_portSize',['../d7/d60/class_options_window.html#a9bd4dccc7a544b1db78dc8cf330b88f6',1,'OptionsWindow']]],
+  ['_5frads',['_rads',['../d1/daa/class_a_x12.html#aba71492043d7a3226f0793db57372bec',1,'AX12']]],
   ['_5fsbaud',['_sBaud',['../de/d6f/class_servo_thread.html#a5b9a41b9e271275b914affb0a845a2ee',1,'ServoThread']]],
   ['_5fserial',['_serial',['../d5/dae/classdxl__hal.html#a785d0e35b81d779b54869cad668f9745',1,'dxl_hal']]],
   ['_5fservo',['_servo',['../d7/d60/class_options_window.html#acba1566fea3f831000d5e1c1edc3e776',1,'OptionsWindow']]],

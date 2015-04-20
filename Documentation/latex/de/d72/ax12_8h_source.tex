@@ -5,104 +5,104 @@
 00001 \textcolor{preprocessor}{#ifndef AX12\_H}
 00004 \textcolor{preprocessor}{#define AX12\_H}
 00005 
-00006 \textcolor{comment}{// Qt libraries}
-00007 \textcolor{preprocessor}{#include <QObject>}
-00008 \textcolor{preprocessor}{#include <QVector>}
-00009 
-00010 \textcolor{comment}{// User librarires}
-00011 \textcolor{preprocessor}{#include "\hyperlink{dynamixel_8h}{dynamixel.h}"}
-00012 
-00013 
+00006 \textcolor{comment}{// Standard variables}
+\hypertarget{ax12_8h_source_l00007}{}\hyperlink{ax12_8h_ae71449b1cc6e6250b91f539153a7a0d3}{00007} \textcolor{preprocessor}{#define M\_PI        3.14159265358979323846}
+00008 
+00009 \textcolor{comment}{// Qt libraries}
+00010 \textcolor{preprocessor}{#include <QVector>}
+00011 
+00012 \textcolor{comment}{// User librarires}
+00013 \textcolor{preprocessor}{#include "\hyperlink{dynamixel_8h}{dynamixel.h}"}
 00014 
-\hypertarget{ax12_8h_source_l00016}{}\hyperlink{class_a_x12}{00016} \textcolor{keyword}{class }\hyperlink{class_a_x12}{AX12} : \textcolor{keyword}{public} QObject
-00017 \{
-00018     Q\_OBJECT
-00019 \textcolor{keyword}{private}:
+00015 
+00016 
+\hypertarget{ax12_8h_source_l00018}{}\hyperlink{class_a_x12}{00018} \textcolor{keyword}{class }\hyperlink{class_a_x12}{AX12}
+00019 \{
 00020     
-\hypertarget{ax12_8h_source_l00022}{}\hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0}{00022}     \textcolor{keyword}{enum} \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0}{ROM} 
-00023     \{
-\hypertarget{ax12_8h_source_l00024}{}\hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0afaeddb6fc62aacc16e88f98a77efbcff}{00024}         \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0afaeddb6fc62aacc16e88f98a77efbcff}{ModelNumber}         = 0,
-\hypertarget{ax12_8h_source_l00025}{}\hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0a234de9d5194d6b6f4e45b854dbf1442d}{00025}         \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0a234de9d5194d6b6f4e45b854dbf1442d}{VersionFirmware}     = 2,
-\hypertarget{ax12_8h_source_l00026}{}\hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0ab2565d5698c9d943a8bcecf02b1389ad}{00026}         \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0ab2565d5698c9d943a8bcecf02b1389ad}{ID}                  = 3,
-\hypertarget{ax12_8h_source_l00027}{}\hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0afa8229ff24576bd10b061c259cc1146d}{00027}         \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0afa8229ff24576bd10b061c259cc1146d}{BaudRate}            = 4,
-\hypertarget{ax12_8h_source_l00028}{}\hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0a1e7fa07a9a5a28584a287668a95dbb4f}{00028}         \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0a1e7fa07a9a5a28584a287668a95dbb4f}{ReturnDelayTime}     = 5,
-\hypertarget{ax12_8h_source_l00029}{}\hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0aae428847c3648681e8aae8f0a12c6880}{00029}         \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0aae428847c3648681e8aae8f0a12c6880}{CWAngleLimit}        = 6,
-\hypertarget{ax12_8h_source_l00030}{}\hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0ac631a1a4dfb22cd02e863fa19f509523}{00030}         \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0ac631a1a4dfb22cd02e863fa19f509523}{CCWAngleLimit}       = 8,
-\hypertarget{ax12_8h_source_l00031}{}\hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0aa9f1a3f67a0bf70f6e6530cac9f55153}{00031}         \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0aa9f1a3f67a0bf70f6e6530cac9f55153}{HighestLimitTemp}    = 11,
-\hypertarget{ax12_8h_source_l00032}{}\hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0a75d2b929c12ad95dfe84b3214e5badd5}{00032}         \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0a75d2b929c12ad95dfe84b3214e5badd5}{LowestLimitVoltage}  = 12,
-\hypertarget{ax12_8h_source_l00033}{}\hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0a39bed5183cada3039894ec459e9cdba4}{00033}         \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0a39bed5183cada3039894ec459e9cdba4}{HighestLimitVoltage} = 13,
-\hypertarget{ax12_8h_source_l00034}{}\hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0aa45ee204b37e8a8657bbb0be1f3f2ee5}{00034}         \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0aa45ee204b37e8a8657bbb0be1f3f2ee5}{MaxTorque}           = 14,
-\hypertarget{ax12_8h_source_l00035}{}\hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0a1f50b233b75db417410a9ad75671c5f8}{00035}         \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0a1f50b233b75db417410a9ad75671c5f8}{StatusReturnLevel}   = 16,
-\hypertarget{ax12_8h_source_l00036}{}\hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0a69af7afba3f29c206407f802a6975dd1}{00036}         \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0a69af7afba3f29c206407f802a6975dd1}{AlarmLED}            = 17,
-\hypertarget{ax12_8h_source_l00037}{}\hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0a017096d92de6aa9fa691df824cd21757}{00037}         \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0a017096d92de6aa9fa691df824cd21757}{AlarmShutdown}       = 18
-00038     \};
-00039     
-\hypertarget{ax12_8h_source_l00041}{}\hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1}{00041}     \textcolor{keyword}{enum} \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1}{RAM} 
-00042     \{
-\hypertarget{ax12_8h_source_l00043}{}\hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1ac4597f1de691116b512ae043da6ae7a3}{00043}         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1ac4597f1de691116b512ae043da6ae7a3}{TorqueEnable}        = 24,
-\hypertarget{ax12_8h_source_l00044}{}\hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1af9d9ebff7bdb8cbb20edfac6f553f796}{00044}         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1af9d9ebff7bdb8cbb20edfac6f553f796}{LED}                 = 25,
-\hypertarget{ax12_8h_source_l00045}{}\hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1ac2410c95fb1bb2343adc3d3b621cb1d0}{00045}         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1ac2410c95fb1bb2343adc3d3b621cb1d0}{CWComplianceMargin}  = 26,
-\hypertarget{ax12_8h_source_l00046}{}\hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1aa9e82bf2f003910708111a4ade3ec42d}{00046}         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1aa9e82bf2f003910708111a4ade3ec42d}{CCWComplianceMargin} = 27,
-\hypertarget{ax12_8h_source_l00047}{}\hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1a1dffe196ada84077dfbfcd72d31be8c8}{00047}         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1a1dffe196ada84077dfbfcd72d31be8c8}{CWComplianceSlope}   = 28,
-\hypertarget{ax12_8h_source_l00048}{}\hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1a624015aab9c06310e1f96bafe8f934a7}{00048}         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1a624015aab9c06310e1f96bafe8f934a7}{CCWComplianceSlope}  = 29,
-\hypertarget{ax12_8h_source_l00049}{}\hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1ae3d6ac0b56a8ab2b188f14545473cbef}{00049}         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1ae3d6ac0b56a8ab2b188f14545473cbef}{GoalPosition}        = 30,
-\hypertarget{ax12_8h_source_l00050}{}\hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1a77389ef2d6dc4bfe760357bd375d5284}{00050}         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1a77389ef2d6dc4bfe760357bd375d5284}{MovingSpeed}         = 32,
-\hypertarget{ax12_8h_source_l00051}{}\hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1adc48ae20914d1771097b17c08be83bbc}{00051}         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1adc48ae20914d1771097b17c08be83bbc}{TorqueLimit}         = 34,
-\hypertarget{ax12_8h_source_l00052}{}\hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1ac3714d28e016c704ea8451c18700dea8}{00052}         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1ac3714d28e016c704ea8451c18700dea8}{PresentPosition}     = 36,
-\hypertarget{ax12_8h_source_l00053}{}\hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1a481b48fdf5e3609568bdbde19c32ef90}{00053}         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1a481b48fdf5e3609568bdbde19c32ef90}{PresentSpeed}        = 38,
-\hypertarget{ax12_8h_source_l00054}{}\hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1a4acb9c359962b60a1dfc900550f4b2b2}{00054}         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1a4acb9c359962b60a1dfc900550f4b2b2}{PresentLoad}         = 40,
-\hypertarget{ax12_8h_source_l00055}{}\hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1a908c1a7f566782c4c258c779b5ca54cd}{00055}         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1a908c1a7f566782c4c258c779b5ca54cd}{PresentVoltage}      = 42,
-\hypertarget{ax12_8h_source_l00056}{}\hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1ae00a92c23c2af2faf19eb051424cf271}{00056}         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1ae00a92c23c2af2faf19eb051424cf271}{PresentTemperature}  = 43,
-\hypertarget{ax12_8h_source_l00057}{}\hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1a426e2185243d7ae4213d048abbf56938}{00057}         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1a426e2185243d7ae4213d048abbf56938}{Registered}          = 44,
-\hypertarget{ax12_8h_source_l00058}{}\hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1a1649d49cd35bc3ebfdc8be06b61b7caf}{00058}         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1a1649d49cd35bc3ebfdc8be06b61b7caf}{Moving}              = 46,
-\hypertarget{ax12_8h_source_l00059}{}\hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1a67e9c5c73f91985138111a792458e5ad}{00059}         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1a67e9c5c73f91985138111a792458e5ad}{Lock}                = 47,
-\hypertarget{ax12_8h_source_l00060}{}\hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1a491959069a5cf99cf49bd2fd9ea5ec92}{00060}         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1a491959069a5cf99cf49bd2fd9ea5ec92}{Punch}               = 48
-00061         
-00062     \};    
-00063     
-\hypertarget{ax12_8h_source_l00065}{}\hyperlink{class_a_x12_a819a7760294ffa2022c5359155d6b51a}{00065}     \hyperlink{classdynamixel}{dynamixel} &\hyperlink{class_a_x12_a819a7760294ffa2022c5359155d6b51a}{dxl};
-00066     
-\hypertarget{ax12_8h_source_l00068}{}\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{00068}     \textcolor{keywordtype}{int} \hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID};
-00069     
-\hypertarget{ax12_8h_source_l00071}{}\hyperlink{class_a_x12_a2fd07e2e636003227a32d09d211bd6d4}{00071}     \textcolor{keywordtype}{bool} \hyperlink{class_a_x12_a2fd07e2e636003227a32d09d211bd6d4}{\_mode};
-00072     
-00073 \textcolor{keyword}{public}:
+00021 \textcolor{keyword}{private}:
+00022     
+\hypertarget{ax12_8h_source_l00024}{}\hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0}{00024}     \textcolor{keyword}{enum} \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0}{ROM} 
+00025     \{
+\hypertarget{ax12_8h_source_l00026}{}\hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0afaeddb6fc62aacc16e88f98a77efbcff}{00026}         \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0afaeddb6fc62aacc16e88f98a77efbcff}{ModelNumber}         = 0,
+\hypertarget{ax12_8h_source_l00027}{}\hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0a234de9d5194d6b6f4e45b854dbf1442d}{00027}         \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0a234de9d5194d6b6f4e45b854dbf1442d}{VersionFirmware}     = 2,
+\hypertarget{ax12_8h_source_l00028}{}\hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0ab2565d5698c9d943a8bcecf02b1389ad}{00028}         \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0ab2565d5698c9d943a8bcecf02b1389ad}{ID}                  = 3,
+\hypertarget{ax12_8h_source_l00029}{}\hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0afa8229ff24576bd10b061c259cc1146d}{00029}         \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0afa8229ff24576bd10b061c259cc1146d}{BaudRate}            = 4,
+\hypertarget{ax12_8h_source_l00030}{}\hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0a1e7fa07a9a5a28584a287668a95dbb4f}{00030}         \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0a1e7fa07a9a5a28584a287668a95dbb4f}{ReturnDelayTime}     = 5,
+\hypertarget{ax12_8h_source_l00031}{}\hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0aae428847c3648681e8aae8f0a12c6880}{00031}         \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0aae428847c3648681e8aae8f0a12c6880}{CWAngleLimit}        = 6,
+\hypertarget{ax12_8h_source_l00032}{}\hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0ac631a1a4dfb22cd02e863fa19f509523}{00032}         \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0ac631a1a4dfb22cd02e863fa19f509523}{CCWAngleLimit}       = 8,
+\hypertarget{ax12_8h_source_l00033}{}\hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0aa9f1a3f67a0bf70f6e6530cac9f55153}{00033}         \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0aa9f1a3f67a0bf70f6e6530cac9f55153}{HighestLimitTemp}    = 11,
+\hypertarget{ax12_8h_source_l00034}{}\hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0a75d2b929c12ad95dfe84b3214e5badd5}{00034}         \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0a75d2b929c12ad95dfe84b3214e5badd5}{LowestLimitVoltage}  = 12,
+\hypertarget{ax12_8h_source_l00035}{}\hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0a39bed5183cada3039894ec459e9cdba4}{00035}         \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0a39bed5183cada3039894ec459e9cdba4}{HighestLimitVoltage} = 13,
+\hypertarget{ax12_8h_source_l00036}{}\hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0aa45ee204b37e8a8657bbb0be1f3f2ee5}{00036}         \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0aa45ee204b37e8a8657bbb0be1f3f2ee5}{MaxTorque}           = 14,
+\hypertarget{ax12_8h_source_l00037}{}\hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0a1f50b233b75db417410a9ad75671c5f8}{00037}         \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0a1f50b233b75db417410a9ad75671c5f8}{StatusReturnLevel}   = 16,
+\hypertarget{ax12_8h_source_l00038}{}\hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0a69af7afba3f29c206407f802a6975dd1}{00038}         \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0a69af7afba3f29c206407f802a6975dd1}{AlarmLED}            = 17,
+\hypertarget{ax12_8h_source_l00039}{}\hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0a017096d92de6aa9fa691df824cd21757}{00039}         \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0a017096d92de6aa9fa691df824cd21757}{AlarmShutdown}       = 18
+00040     \};
+00041     
+\hypertarget{ax12_8h_source_l00043}{}\hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1}{00043}     \textcolor{keyword}{enum} \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1}{RAM} 
+00044     \{
+\hypertarget{ax12_8h_source_l00045}{}\hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1ac4597f1de691116b512ae043da6ae7a3}{00045}         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1ac4597f1de691116b512ae043da6ae7a3}{TorqueEnable}        = 24,
+\hypertarget{ax12_8h_source_l00046}{}\hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1af9d9ebff7bdb8cbb20edfac6f553f796}{00046}         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1af9d9ebff7bdb8cbb20edfac6f553f796}{LED}                 = 25,
+\hypertarget{ax12_8h_source_l00047}{}\hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1ac2410c95fb1bb2343adc3d3b621cb1d0}{00047}         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1ac2410c95fb1bb2343adc3d3b621cb1d0}{CWComplianceMargin}  = 26,
+\hypertarget{ax12_8h_source_l00048}{}\hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1aa9e82bf2f003910708111a4ade3ec42d}{00048}         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1aa9e82bf2f003910708111a4ade3ec42d}{CCWComplianceMargin} = 27,
+\hypertarget{ax12_8h_source_l00049}{}\hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1a1dffe196ada84077dfbfcd72d31be8c8}{00049}         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1a1dffe196ada84077dfbfcd72d31be8c8}{CWComplianceSlope}   = 28,
+\hypertarget{ax12_8h_source_l00050}{}\hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1a624015aab9c06310e1f96bafe8f934a7}{00050}         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1a624015aab9c06310e1f96bafe8f934a7}{CCWComplianceSlope}  = 29,
+\hypertarget{ax12_8h_source_l00051}{}\hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1ae3d6ac0b56a8ab2b188f14545473cbef}{00051}         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1ae3d6ac0b56a8ab2b188f14545473cbef}{GoalPosition}        = 30,
+\hypertarget{ax12_8h_source_l00052}{}\hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1a77389ef2d6dc4bfe760357bd375d5284}{00052}         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1a77389ef2d6dc4bfe760357bd375d5284}{MovingSpeed}         = 32,
+\hypertarget{ax12_8h_source_l00053}{}\hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1adc48ae20914d1771097b17c08be83bbc}{00053}         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1adc48ae20914d1771097b17c08be83bbc}{TorqueLimit}         = 34,
+\hypertarget{ax12_8h_source_l00054}{}\hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1ac3714d28e016c704ea8451c18700dea8}{00054}         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1ac3714d28e016c704ea8451c18700dea8}{PresentPosition}     = 36,
+\hypertarget{ax12_8h_source_l00055}{}\hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1a481b48fdf5e3609568bdbde19c32ef90}{00055}         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1a481b48fdf5e3609568bdbde19c32ef90}{PresentSpeed}        = 38,
+\hypertarget{ax12_8h_source_l00056}{}\hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1a4acb9c359962b60a1dfc900550f4b2b2}{00056}         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1a4acb9c359962b60a1dfc900550f4b2b2}{PresentLoad}         = 40,
+\hypertarget{ax12_8h_source_l00057}{}\hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1a908c1a7f566782c4c258c779b5ca54cd}{00057}         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1a908c1a7f566782c4c258c779b5ca54cd}{PresentVoltage}      = 42,
+\hypertarget{ax12_8h_source_l00058}{}\hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1ae00a92c23c2af2faf19eb051424cf271}{00058}         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1ae00a92c23c2af2faf19eb051424cf271}{PresentTemperature}  = 43,
+\hypertarget{ax12_8h_source_l00059}{}\hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1a426e2185243d7ae4213d048abbf56938}{00059}         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1a426e2185243d7ae4213d048abbf56938}{Registered}          = 44,
+\hypertarget{ax12_8h_source_l00060}{}\hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1a1649d49cd35bc3ebfdc8be06b61b7caf}{00060}         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1a1649d49cd35bc3ebfdc8be06b61b7caf}{Moving}              = 46,
+\hypertarget{ax12_8h_source_l00061}{}\hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1a67e9c5c73f91985138111a792458e5ad}{00061}         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1a67e9c5c73f91985138111a792458e5ad}{Lock}                = 47,
+\hypertarget{ax12_8h_source_l00062}{}\hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1a491959069a5cf99cf49bd2fd9ea5ec92}{00062}         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1a491959069a5cf99cf49bd2fd9ea5ec92}{Punch}               = 48
+00063         
+00064     \};    
+00065     
+\hypertarget{ax12_8h_source_l00067}{}\hyperlink{class_a_x12_af48e370f92f69214a27618d5b69bcfe8}{00067}     \hyperlink{classdynamixel}{dynamixel} *\hyperlink{class_a_x12_af48e370f92f69214a27618d5b69bcfe8}{dxl};
+00068     
+\hypertarget{ax12_8h_source_l00070}{}\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{00070}     \textcolor{keywordtype}{int} \hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID};
+00071     
+\hypertarget{ax12_8h_source_l00073}{}\hyperlink{class_a_x12_a2fd07e2e636003227a32d09d211bd6d4}{00073}     \textcolor{keywordtype}{bool} \hyperlink{class_a_x12_a2fd07e2e636003227a32d09d211bd6d4}{\_mode};
 00074     
-00077     \hyperlink{class_a_x12_a31da599935777b1d8f81b2e014664dbe}{AX12}(\hyperlink{classdynamixel}{dynamixel} &dxl, \textcolor{keywordtype}{int} \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0ab2565d5698c9d943a8bcecf02b1389ad}{ID} = -1, QObject *parent = 0);
-00078     
-00080     \hyperlink{class_a_x12_a31da599935777b1d8f81b2e014664dbe}{AX12}(\textcolor{keyword}{const} \hyperlink{class_a_x12}{AX12} &a);
-00081     
-00083     \hyperlink{class_a_x12_a5e9382e65479cdcb248f5303ac4c96d9}{~AX12}();
-00084     
-00086     QVector< int > \hyperlink{class_a_x12_a2fa05296aa57896a5cb0ef4ce0aa96f1}{connectedID}();
-00087     
-00090     \textcolor{keywordtype}{double} \hyperlink{class_a_x12_a0bd930c81b7a9c088ecab789b3a7e525}{getCurrentLoad}();
-00091     
-00093     \textcolor{keywordtype}{double} \hyperlink{class_a_x12_af9722b9c1f82fbfd97fe5e0a44369e8a}{getCurrentPos}();
-00094     
-00096     \textcolor{keywordtype}{int} \hyperlink{class_a_x12_ab16fad4c8c034d56acce15fc9102f34d}{getCurrentTemp}();
-00097     
-00100     \textcolor{keywordtype}{double} \hyperlink{class_a_x12_a23c7ed54716c4b144a68d801f324e3ef}{getCurrentSpeed}();
-00101     
-00103     \textcolor{keywordtype}{double} \hyperlink{class_a_x12_a9ef946bfc1ad4dce5fed4101ed321efe}{getCurrentVoltage}();
-00104     
-\hypertarget{ax12_8h_source_l00106}{}\hyperlink{class_a_x12_a745ab1f31fa2cd8c7a5797aeb605cd0b}{00106}     \textcolor{keyword}{inline} \textcolor{keywordtype}{int} \hyperlink{class_a_x12_a745ab1f31fa2cd8c7a5797aeb605cd0b}{getID}() \{ \textcolor{keywordflow}{return} \hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}; \}
-00107     
-00109     \textcolor{keywordtype}{void} \hyperlink{class_a_x12_a6b27a3c6314604b499d9fa47d180f5d3}{setGoalPosition}(\textcolor{keywordtype}{double} goal);
-00110     
-00112     \textcolor{keywordtype}{void} \hyperlink{class_a_x12_ab9fe5d0e2286985977985de6d84b1103}{setID}(\textcolor{keywordtype}{int} \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0ab2565d5698c9d943a8bcecf02b1389ad}{ID});
-00113     
-00115     \textcolor{keywordtype}{void} \hyperlink{class_a_x12_ac48405a5f4aa73c1f2d56f633dfbec50}{setJointMode}(\textcolor{keywordtype}{bool} mode);
-00116     
-00118     \textcolor{keywordtype}{void} \hyperlink{class_a_x12_a914864d133f8cbaf95594747aaff55f2}{setMinMax}(\textcolor{keywordtype}{double} min, \textcolor{keywordtype}{double} max);
-00119     
-00122     \textcolor{keywordtype}{void} \hyperlink{class_a_x12_a95428eea4d5165b81d80e4ab38e33b7b}{setSpeed}(\textcolor{keywordtype}{double} speed);
-00123     
+\hypertarget{ax12_8h_source_l00076}{}\hyperlink{class_a_x12_aba71492043d7a3226f0793db57372bec}{00076}     \textcolor{keywordtype}{bool} \hyperlink{class_a_x12_aba71492043d7a3226f0793db57372bec}{\_rads};
+00077     
+00078 \textcolor{keyword}{public}:
+00079     
+00082     \hyperlink{class_a_x12_a9f8ec441088dc76084de7811844407ce}{AX12}(\hyperlink{classdynamixel}{dynamixel} *dxl, \textcolor{keywordtype}{int} \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0ab2565d5698c9d943a8bcecf02b1389ad}{ID} = -1);
+00083     
+00085     \hyperlink{class_a_x12_a9f8ec441088dc76084de7811844407ce}{AX12}(\textcolor{keyword}{const} \hyperlink{class_a_x12}{AX12} &a);
+00086     
+00088     \hyperlink{class_a_x12_a5e9382e65479cdcb248f5303ac4c96d9}{~AX12}();
+00089     
+00091     QVector< int > \hyperlink{class_a_x12_a2fa05296aa57896a5cb0ef4ce0aa96f1}{connectedID}();
+00092     
+00095     \textcolor{keywordtype}{double} \hyperlink{class_a_x12_a0bd930c81b7a9c088ecab789b3a7e525}{getCurrentLoad}();
+00096     
+00098     \textcolor{keywordtype}{double} \hyperlink{class_a_x12_af9722b9c1f82fbfd97fe5e0a44369e8a}{getCurrentPos}();
+00099     
+00101     \textcolor{keywordtype}{int} \hyperlink{class_a_x12_ab16fad4c8c034d56acce15fc9102f34d}{getCurrentTemp}();
+00102     
+00105     \textcolor{keywordtype}{double} \hyperlink{class_a_x12_a23c7ed54716c4b144a68d801f324e3ef}{getCurrentSpeed}();
+00106     
+00108     \textcolor{keywordtype}{double} \hyperlink{class_a_x12_a9ef946bfc1ad4dce5fed4101ed321efe}{getCurrentVoltage}();
+00109     
+\hypertarget{ax12_8h_source_l00111}{}\hyperlink{class_a_x12_a745ab1f31fa2cd8c7a5797aeb605cd0b}{00111}     \textcolor{keyword}{inline} \textcolor{keywordtype}{int} \hyperlink{class_a_x12_a745ab1f31fa2cd8c7a5797aeb605cd0b}{getID}() \{ \textcolor{keywordflow}{return} \hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}; \}
+00112     
+00114     \textcolor{keywordtype}{void} \hyperlink{class_a_x12_a6b27a3c6314604b499d9fa47d180f5d3}{setGoalPosition}(\textcolor{keywordtype}{double} goal);
+00115     
+00117     \textcolor{keywordtype}{void} \hyperlink{class_a_x12_ab9fe5d0e2286985977985de6d84b1103}{setID}(\textcolor{keywordtype}{int} \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0ab2565d5698c9d943a8bcecf02b1389ad}{ID});
+00118     
+00120     \textcolor{keywordtype}{void} \hyperlink{class_a_x12_ac48405a5f4aa73c1f2d56f633dfbec50}{setJointMode}(\textcolor{keywordtype}{bool} mode);
+00121     
+00123     \textcolor{keywordtype}{void} \hyperlink{class_a_x12_a914864d133f8cbaf95594747aaff55f2}{setMinMax}(\textcolor{keywordtype}{double} min, \textcolor{keywordtype}{double} max);
 00124     
-00125 signals:
-00126     
-00127 \textcolor{keyword}{public} slots:
-00128 \};
-00129 
-00130 \textcolor{preprocessor}{#endif // AX12\_H}
+00127     \textcolor{keywordtype}{void} \hyperlink{class_a_x12_a95428eea4d5165b81d80e4ab38e33b7b}{setSpeed}(\textcolor{keywordtype}{double} speed);
+00128     
+00129 \};
+00130 
+00131 \textcolor{preprocessor}{#endif // AX12\_H}
 \end{DoxyCode}

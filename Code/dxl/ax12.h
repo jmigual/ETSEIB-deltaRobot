@@ -3,12 +3,11 @@
 #ifndef AX12_H
 #define AX12_H
 
+// Standard variables
+#define M_PI		3.14159265358979323846
+
 // Qt libraries
 #include <QVector>
-
-// Standard libraries
-#define _USE_MATH_DEFINES
-#include <cmath>
 
 // User librarires
 #include "dynamixel.h"
@@ -65,7 +64,7 @@ private:
     };    
     
     /// Contains the dynamixel comunication
-    dynamixel &dxl;
+    dynamixel *dxl;
     
     /// Stores the current ID
     int _ID;
@@ -80,7 +79,7 @@ public:
     
     /// Default constructor must pass an initialized dynamixel object
     /// if ID == -1 no action is done
-    AX12(dynamixel &dxl, int ID = -1);
+    AX12(dynamixel *dxl, int ID = -1);
     
     /// Copy constructor
     AX12(const AX12 &a);

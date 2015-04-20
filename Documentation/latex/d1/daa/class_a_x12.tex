@@ -11,26 +11,18 @@ The \hyperlink{class_a_x12}{A\+X12} class is used to control A\+X-\/12 motors fr
 
 
 
-Inheritance diagram for A\+X12\+:\nopagebreak
+Collaboration diagram for A\+X12\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=133pt]{db/dc9/class_a_x12__inherit__graph}
-\end{center}
-\end{figure}
-
-
-Collaboration diagram for A\+X12\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=212pt]{d4/dc1/class_a_x12__coll__graph}
+\includegraphics[width=141pt]{d4/dc1/class_a_x12__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_a_x12_a31da599935777b1d8f81b2e014664dbe}{A\+X12} (\hyperlink{classdynamixel}{dynamixel} \&\hyperlink{class_a_x12_a819a7760294ffa2022c5359155d6b51a}{dxl}, int \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0ab2565d5698c9d943a8bcecf02b1389ad}{I\+D}=-\/1, Q\+Object $\ast$parent=0)
+\hyperlink{class_a_x12_a9f8ec441088dc76084de7811844407ce}{A\+X12} (\hyperlink{classdynamixel}{dynamixel} $\ast$\hyperlink{class_a_x12_af48e370f92f69214a27618d5b69bcfe8}{dxl}, int \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0ab2565d5698c9d943a8bcecf02b1389ad}{I\+D}=-\/1)
 \begin{DoxyCompactList}\small\item\em Default constructor must pass an initialized dynamixel object if I\+D == -\/1 no action is done. \end{DoxyCompactList}\item 
 \hyperlink{class_a_x12_a37b76666533323ec317f5156dbef2a89}{A\+X12} (const \hyperlink{class_a_x12}{A\+X12} \&a)
 \begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
@@ -111,12 +103,14 @@ enum \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1}{R\+A\+M} \{ \\*
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classdynamixel}{dynamixel} \& \hyperlink{class_a_x12_a819a7760294ffa2022c5359155d6b51a}{dxl}
+\hyperlink{classdynamixel}{dynamixel} $\ast$ \hyperlink{class_a_x12_af48e370f92f69214a27618d5b69bcfe8}{dxl}
 \begin{DoxyCompactList}\small\item\em Contains the dynamixel comunication. \end{DoxyCompactList}\item 
 int \hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\+\_\+\+I\+D}
 \begin{DoxyCompactList}\small\item\em Stores the current I\+D. \end{DoxyCompactList}\item 
 bool \hyperlink{class_a_x12_a2fd07e2e636003227a32d09d211bd6d4}{\+\_\+mode}
-\begin{DoxyCompactList}\small\item\em True if we use the joint mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em True if we use the joint mode. \end{DoxyCompactList}\item 
+bool \hyperlink{class_a_x12_aba71492043d7a3226f0793db57372bec}{\+\_\+rads}
+\begin{DoxyCompactList}\small\item\em True if the angle is returned in radians. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -173,27 +167,27 @@ Contains all the R\+A\+M directions enumerations.
 \end{Desc}
 
 \begin{DoxyCode}
-00042     \{
-00043         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1ac4597f1de691116b512ae043da6ae7a3}{TorqueEnable}        = 24,
-00044         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1af9d9ebff7bdb8cbb20edfac6f553f796}{LED}                 = 25,
-00045         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1ac2410c95fb1bb2343adc3d3b621cb1d0}{CWComplianceMargin}  = 26,
-00046         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1aa9e82bf2f003910708111a4ade3ec42d}{CCWComplianceMargin} = 27,
-00047         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1a1dffe196ada84077dfbfcd72d31be8c8}{CWComplianceSlope}   = 28,
-00048         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1a624015aab9c06310e1f96bafe8f934a7}{CCWComplianceSlope}  = 29,
-00049         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1ae3d6ac0b56a8ab2b188f14545473cbef}{GoalPosition}        = 30,
-00050         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1a77389ef2d6dc4bfe760357bd375d5284}{MovingSpeed}         = 32,
-00051         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1adc48ae20914d1771097b17c08be83bbc}{TorqueLimit}         = 34,
-00052         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1ac3714d28e016c704ea8451c18700dea8}{PresentPosition}     = 36,
-00053         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1a481b48fdf5e3609568bdbde19c32ef90}{PresentSpeed}        = 38,
-00054         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1a4acb9c359962b60a1dfc900550f4b2b2}{PresentLoad}         = 40,
-00055         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1a908c1a7f566782c4c258c779b5ca54cd}{PresentVoltage}      = 42,
-00056         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1ae00a92c23c2af2faf19eb051424cf271}{PresentTemperature}  = 43,
-00057         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1a426e2185243d7ae4213d048abbf56938}{Registered}          = 44,
-00058         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1a1649d49cd35bc3ebfdc8be06b61b7caf}{Moving}              = 46,
-00059         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1a67e9c5c73f91985138111a792458e5ad}{Lock}                = 47,
-00060         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1a491959069a5cf99cf49bd2fd9ea5ec92}{Punch}               = 48
-00061         
-00062     \};    
+00044     \{
+00045         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1ac4597f1de691116b512ae043da6ae7a3}{TorqueEnable}        = 24,
+00046         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1af9d9ebff7bdb8cbb20edfac6f553f796}{LED}                 = 25,
+00047         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1ac2410c95fb1bb2343adc3d3b621cb1d0}{CWComplianceMargin}  = 26,
+00048         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1aa9e82bf2f003910708111a4ade3ec42d}{CCWComplianceMargin} = 27,
+00049         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1a1dffe196ada84077dfbfcd72d31be8c8}{CWComplianceSlope}   = 28,
+00050         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1a624015aab9c06310e1f96bafe8f934a7}{CCWComplianceSlope}  = 29,
+00051         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1ae3d6ac0b56a8ab2b188f14545473cbef}{GoalPosition}        = 30,
+00052         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1a77389ef2d6dc4bfe760357bd375d5284}{MovingSpeed}         = 32,
+00053         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1adc48ae20914d1771097b17c08be83bbc}{TorqueLimit}         = 34,
+00054         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1ac3714d28e016c704ea8451c18700dea8}{PresentPosition}     = 36,
+00055         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1a481b48fdf5e3609568bdbde19c32ef90}{PresentSpeed}        = 38,
+00056         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1a4acb9c359962b60a1dfc900550f4b2b2}{PresentLoad}         = 40,
+00057         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1a908c1a7f566782c4c258c779b5ca54cd}{PresentVoltage}      = 42,
+00058         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1ae00a92c23c2af2faf19eb051424cf271}{PresentTemperature}  = 43,
+00059         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1a426e2185243d7ae4213d048abbf56938}{Registered}          = 44,
+00060         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1a1649d49cd35bc3ebfdc8be06b61b7caf}{Moving}              = 46,
+00061         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1a67e9c5c73f91985138111a792458e5ad}{Lock}                = 47,
+00062         \hyperlink{class_a_x12_a672068c48bbee921e5856cc44b1c81c1a491959069a5cf99cf49bd2fd9ea5ec92}{Punch}               = 48
+00063         
+00064     \};    
 \end{DoxyCode}
 \hypertarget{class_a_x12_a08d272b502d65464202a3aa97825aec0}{}\index{A\+X12@{A\+X12}!R\+O\+M@{R\+O\+M}}
 \index{R\+O\+M@{R\+O\+M}!A\+X12@{A\+X12}}
@@ -237,49 +231,48 @@ Contains all the E\+E\+P\+R\+O\+M directions enumeration.
 \end{Desc}
 
 \begin{DoxyCode}
-00023     \{
-00024         \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0afaeddb6fc62aacc16e88f98a77efbcff}{ModelNumber}         = 0,
-00025         \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0a234de9d5194d6b6f4e45b854dbf1442d}{VersionFirmware}     = 2,
-00026         \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0ab2565d5698c9d943a8bcecf02b1389ad}{ID}                  = 3,
-00027         \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0afa8229ff24576bd10b061c259cc1146d}{BaudRate}            = 4,
-00028         \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0a1e7fa07a9a5a28584a287668a95dbb4f}{ReturnDelayTime}     = 5,
-00029         \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0aae428847c3648681e8aae8f0a12c6880}{CWAngleLimit}        = 6,
-00030         \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0ac631a1a4dfb22cd02e863fa19f509523}{CCWAngleLimit}       = 8,
-00031         \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0aa9f1a3f67a0bf70f6e6530cac9f55153}{HighestLimitTemp}    = 11,
-00032         \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0a75d2b929c12ad95dfe84b3214e5badd5}{LowestLimitVoltage}  = 12,
-00033         \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0a39bed5183cada3039894ec459e9cdba4}{HighestLimitVoltage} = 13,
-00034         \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0aa45ee204b37e8a8657bbb0be1f3f2ee5}{MaxTorque}           = 14,
-00035         \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0a1f50b233b75db417410a9ad75671c5f8}{StatusReturnLevel}   = 16,
-00036         \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0a69af7afba3f29c206407f802a6975dd1}{AlarmLED}            = 17,
-00037         \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0a017096d92de6aa9fa691df824cd21757}{AlarmShutdown}       = 18
-00038     \};
+00025     \{
+00026         \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0afaeddb6fc62aacc16e88f98a77efbcff}{ModelNumber}         = 0,
+00027         \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0a234de9d5194d6b6f4e45b854dbf1442d}{VersionFirmware}     = 2,
+00028         \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0ab2565d5698c9d943a8bcecf02b1389ad}{ID}                  = 3,
+00029         \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0afa8229ff24576bd10b061c259cc1146d}{BaudRate}            = 4,
+00030         \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0a1e7fa07a9a5a28584a287668a95dbb4f}{ReturnDelayTime}     = 5,
+00031         \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0aae428847c3648681e8aae8f0a12c6880}{CWAngleLimit}        = 6,
+00032         \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0ac631a1a4dfb22cd02e863fa19f509523}{CCWAngleLimit}       = 8,
+00033         \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0aa9f1a3f67a0bf70f6e6530cac9f55153}{HighestLimitTemp}    = 11,
+00034         \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0a75d2b929c12ad95dfe84b3214e5badd5}{LowestLimitVoltage}  = 12,
+00035         \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0a39bed5183cada3039894ec459e9cdba4}{HighestLimitVoltage} = 13,
+00036         \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0aa45ee204b37e8a8657bbb0be1f3f2ee5}{MaxTorque}           = 14,
+00037         \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0a1f50b233b75db417410a9ad75671c5f8}{StatusReturnLevel}   = 16,
+00038         \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0a69af7afba3f29c206407f802a6975dd1}{AlarmLED}            = 17,
+00039         \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0a017096d92de6aa9fa691df824cd21757}{AlarmShutdown}       = 18
+00040     \};
 \end{DoxyCode}
 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{class_a_x12_a31da599935777b1d8f81b2e014664dbe}{}\index{A\+X12@{A\+X12}!A\+X12@{A\+X12}}
+\hypertarget{class_a_x12_a9f8ec441088dc76084de7811844407ce}{}\index{A\+X12@{A\+X12}!A\+X12@{A\+X12}}
 \index{A\+X12@{A\+X12}!A\+X12@{A\+X12}}
 \subsubsection[{A\+X12}]{\setlength{\rightskip}{0pt plus 5cm}A\+X12\+::\+A\+X12 (
 \begin{DoxyParamCaption}
-\item[{{\bf dynamixel} \&}]{dxl, }
-\item[{int}]{I\+D = {\ttfamily -\/1}, }
-\item[{Q\+Object $\ast$}]{parent = {\ttfamily 0}}
+\item[{{\bf dynamixel} $\ast$}]{dxl, }
+\item[{int}]{I\+D = {\ttfamily -\/1}}
 \end{DoxyParamCaption}
-)}\label{class_a_x12_a31da599935777b1d8f81b2e014664dbe}
+)}\label{class_a_x12_a9f8ec441088dc76084de7811844407ce}
 
 
 Default constructor must pass an initialized dynamixel object if I\+D == -\/1 no action is done. 
 
 
 \begin{DoxyCode}
-00005                                                   : 
-00006     QObject(parent),
-00007     \hyperlink{class_a_x12_a819a7760294ffa2022c5359155d6b51a}{dxl}(dxl),
-00008     \hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}(\hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0ab2565d5698c9d943a8bcecf02b1389ad}{ID}),
-00009    \hyperlink{class_a_x12_a2fd07e2e636003227a32d09d211bd6d4}{\_mode}(\textcolor{keyword}{true}) 
+00005                                  : 
+00006     \hyperlink{class_a_x12_af48e370f92f69214a27618d5b69bcfe8}{dxl}(dxl),
+00007     \hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}(\hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0ab2565d5698c9d943a8bcecf02b1389ad}{ID}),
+00008    \hyperlink{class_a_x12_a2fd07e2e636003227a32d09d211bd6d4}{\_mode}(\textcolor{keyword}{true}),
+00009    \hyperlink{class_a_x12_aba71492043d7a3226f0793db57372bec}{\_rads}(\textcolor{keyword}{false})
 00010 \{
 00011     \textcolor{keywordflow}{if} (\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID} < 0) \textcolor{keywordflow}{return};
-00012     dxl.\hyperlink{classdynamixel_a66c1e32cc45dd46d329f1fc212e46a3d}{write\_byte}(\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, RAM::TorqueEnable, \textcolor{keyword}{true});
+00012     dxl->\hyperlink{classdynamixel_a66c1e32cc45dd46d329f1fc212e46a3d}{write\_byte}(\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, RAM::TorqueEnable, \textcolor{keyword}{true});
 00013 \}
 \end{DoxyCode}
 \hypertarget{class_a_x12_a37b76666533323ec317f5156dbef2a89}{}\index{A\+X12@{A\+X12}!A\+X12@{A\+X12}}
@@ -296,10 +289,10 @@ Copy constructor.
 
 \begin{DoxyCode}
 00015                         :
-00016     QObject(a.parent()),
-00017     \hyperlink{class_a_x12_a819a7760294ffa2022c5359155d6b51a}{dxl}(a.\hyperlink{class_a_x12_a819a7760294ffa2022c5359155d6b51a}{dxl}),
-00018     \hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}(a.\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}),
-00019     \hyperlink{class_a_x12_a2fd07e2e636003227a32d09d211bd6d4}{\_mode}(\textcolor{keyword}{true})
+00016     \hyperlink{class_a_x12_af48e370f92f69214a27618d5b69bcfe8}{dxl}(a.\hyperlink{class_a_x12_af48e370f92f69214a27618d5b69bcfe8}{dxl}),
+00017     \hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}(a.\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}),
+00018     \hyperlink{class_a_x12_a2fd07e2e636003227a32d09d211bd6d4}{\_mode}(a.\hyperlink{class_a_x12_a2fd07e2e636003227a32d09d211bd6d4}{\_mode}),
+00019     \hyperlink{class_a_x12_aba71492043d7a3226f0793db57372bec}{\_rads}(a.\hyperlink{class_a_x12_aba71492043d7a3226f0793db57372bec}{\_rads})
 00020 \{
 00021     
 00022 \}
@@ -340,8 +333,8 @@ Returns all active servos;.
 00030 \{
 00031     QVector <int> res;
 00032     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 256; ++i) \{
-00033         \hyperlink{class_a_x12_a819a7760294ffa2022c5359155d6b51a}{dxl}.\hyperlink{classdynamixel_af2bd714423e7c4fc089762805c0c71f3}{ping}(i);
-00034         \textcolor{keywordflow}{if} (\hyperlink{class_a_x12_a819a7760294ffa2022c5359155d6b51a}{dxl}.\hyperlink{classdynamixel_ac8440d5d34ae3c4618b28fdbbd748edc}{get\_comm\_result}() == \hyperlink{dynamixel_8h_a171328d9f298535c18d079f65e631434}{COMM\_RXSUCCESS}) res.push\_back(i);
+00033         \hyperlink{class_a_x12_af48e370f92f69214a27618d5b69bcfe8}{dxl}->\hyperlink{classdynamixel_af2bd714423e7c4fc089762805c0c71f3}{ping}(i);
+00034         \textcolor{keywordflow}{if} (\hyperlink{class_a_x12_af48e370f92f69214a27618d5b69bcfe8}{dxl}->\hyperlink{classdynamixel_ac8440d5d34ae3c4618b28fdbbd748edc}{get\_comm\_result}() == \hyperlink{dynamixel_8h_a171328d9f298535c18d079f65e631434}{COMM\_RXSUCCESS}) res.push\_back(i);
 00035     \}
 00036     
 00037     \textcolor{keywordflow}{return} res;
@@ -362,7 +355,7 @@ Returns the current load from -\/100\% to 100\%, 100\% is Clock\+Wise and -\/100
 \begin{DoxyCode}
 00041 \{
 00042     \textcolor{keywordflow}{if} (\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID} < 0) \textcolor{keywordflow}{return} 0;
-00043     \textcolor{keywordtype}{int} load = \hyperlink{class_a_x12_a819a7760294ffa2022c5359155d6b51a}{dxl}.\hyperlink{classdynamixel_a45e99341e82c5114f6e829c9141bf96f}{read\_word}(\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, RAM::PresentLoad);
+00043     \textcolor{keywordtype}{int} load = \hyperlink{class_a_x12_af48e370f92f69214a27618d5b69bcfe8}{dxl}->\hyperlink{classdynamixel_a45e99341e82c5114f6e829c9141bf96f}{read\_word}(\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, RAM::PresentLoad);
 00044     load -= 1024;
 00045     \textcolor{keywordflow}{if} (load == -1024) load = 0;
 00046     \textcolor{keywordflow}{return} double((load/1023)*100);
@@ -383,10 +376,12 @@ Returns the current position from 0º to 300º
 \begin{DoxyCode}
 00050 \{
 00051     \textcolor{keywordflow}{if} (\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID} < 0) \textcolor{keywordflow}{return} 0;
-00052     \textcolor{keywordtype}{int} pos = \hyperlink{class_a_x12_a819a7760294ffa2022c5359155d6b51a}{dxl}.\hyperlink{classdynamixel_a45e99341e82c5114f6e829c9141bf96f}{read\_word}(\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, RAM::PresentPosition);
-00053     \textcolor{keywordflow}{if} (\hyperlink{class_a_x12_a819a7760294ffa2022c5359155d6b51a}{dxl}.\hyperlink{classdynamixel_ac8440d5d34ae3c4618b28fdbbd748edc}{get\_comm\_result}() != \hyperlink{dynamixel_8h_a171328d9f298535c18d079f65e631434}{COMM\_RXSUCCESS}) \textcolor{keywordflow}{return} -1;
-00054     \textcolor{keywordflow}{return} double((pos/1023.0)*300);  
-00055 \}
+00052     \textcolor{keywordtype}{int} pos = \hyperlink{class_a_x12_af48e370f92f69214a27618d5b69bcfe8}{dxl}->\hyperlink{classdynamixel_a45e99341e82c5114f6e829c9141bf96f}{read\_word}(\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, RAM::PresentPosition);
+00053     \textcolor{keywordflow}{if} (\hyperlink{class_a_x12_af48e370f92f69214a27618d5b69bcfe8}{dxl}->\hyperlink{classdynamixel_ac8440d5d34ae3c4618b28fdbbd748edc}{get\_comm\_result}() != \hyperlink{dynamixel_8h_a171328d9f298535c18d079f65e631434}{COMM\_RXSUCCESS}) \textcolor{keywordflow}{return} -1;
+00054     
+00055     \textcolor{keywordflow}{if} (\hyperlink{class_a_x12_aba71492043d7a3226f0793db57372bec}{\_rads}) \textcolor{keywordflow}{return} double((pos/1023.0)*5*\hyperlink{ax12_8h_ae71449b1cc6e6250b91f539153a7a0d3}{M\_PI}/3);
+00056     \textcolor{keywordflow}{return} double((pos/1023.0)*300);
+00057 \}
 \end{DoxyCode}
 \hypertarget{class_a_x12_a23c7ed54716c4b144a68d801f324e3ef}{}\index{A\+X12@{A\+X12}!get\+Current\+Speed@{get\+Current\+Speed}}
 \index{get\+Current\+Speed@{get\+Current\+Speed}!A\+X12@{A\+X12}}
@@ -401,14 +396,14 @@ Returns the current speed from -\/100\% to 100\%, 100\% is Clock\+Wise and -\/10
 
 
 \begin{DoxyCode}
-00066 \{
-00067     \textcolor{keywordflow}{if} (\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID} < 0) \textcolor{keywordflow}{return} 0;
-00068     \textcolor{keywordtype}{int} speed = \hyperlink{class_a_x12_a819a7760294ffa2022c5359155d6b51a}{dxl}.\hyperlink{classdynamixel_a45e99341e82c5114f6e829c9141bf96f}{read\_word}(\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, RAM::PresentSpeed);
-00069     \textcolor{keywordflow}{if} (\hyperlink{class_a_x12_a819a7760294ffa2022c5359155d6b51a}{dxl}.\hyperlink{classdynamixel_ac8440d5d34ae3c4618b28fdbbd748edc}{get\_comm\_result}() != \hyperlink{dynamixel_8h_a171328d9f298535c18d079f65e631434}{COMM\_RXSUCCESS}) \textcolor{keywordflow}{return} -1;
-00070     speed -= 1024;
-00071     \textcolor{keywordflow}{if} (speed == -1024) speed = 0;
-00072     \textcolor{keywordflow}{return} double((speed/1023.0)*100);
-00073 \}
+00068 \{
+00069     \textcolor{keywordflow}{if} (\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID} < 0) \textcolor{keywordflow}{return} 0;
+00070     \textcolor{keywordtype}{int} speed = \hyperlink{class_a_x12_af48e370f92f69214a27618d5b69bcfe8}{dxl}->\hyperlink{classdynamixel_a45e99341e82c5114f6e829c9141bf96f}{read\_word}(\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, RAM::PresentSpeed);
+00071     \textcolor{keywordflow}{if} (\hyperlink{class_a_x12_af48e370f92f69214a27618d5b69bcfe8}{dxl}->\hyperlink{classdynamixel_ac8440d5d34ae3c4618b28fdbbd748edc}{get\_comm\_result}() != \hyperlink{dynamixel_8h_a171328d9f298535c18d079f65e631434}{COMM\_RXSUCCESS}) \textcolor{keywordflow}{return} -1;
+00072     speed -= 1024;
+00073     \textcolor{keywordflow}{if} (speed == -1024) speed = 0;
+00074     \textcolor{keywordflow}{return} double((speed/1023.0)*100);
+00075 \}
 \end{DoxyCode}
 \hypertarget{class_a_x12_ab16fad4c8c034d56acce15fc9102f34d}{}\index{A\+X12@{A\+X12}!get\+Current\+Temp@{get\+Current\+Temp}}
 \index{get\+Current\+Temp@{get\+Current\+Temp}!A\+X12@{A\+X12}}
@@ -423,12 +418,12 @@ Returns the current Temperature in Celsius.
 
 
 \begin{DoxyCode}
-00058 \{
-00059     \textcolor{keywordflow}{if} (\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID} < 0) \textcolor{keywordflow}{return} 0;
-00060     \textcolor{keywordtype}{int} temp = \hyperlink{class_a_x12_a819a7760294ffa2022c5359155d6b51a}{dxl}.\hyperlink{classdynamixel_a888404b41c4c4395a0b745c77ff2cea9}{read\_byte}(\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, RAM::PresentTemperature);
-00061     \textcolor{keywordflow}{if} (\hyperlink{class_a_x12_a819a7760294ffa2022c5359155d6b51a}{dxl}.\hyperlink{classdynamixel_ac8440d5d34ae3c4618b28fdbbd748edc}{get\_comm\_result}() != \hyperlink{dynamixel_8h_a171328d9f298535c18d079f65e631434}{COMM\_RXSUCCESS}) \textcolor{keywordflow}{return} -1;
-00062     \textcolor{keywordflow}{return} temp;
-00063 \}
+00060 \{
+00061     \textcolor{keywordflow}{if} (\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID} < 0) \textcolor{keywordflow}{return} 0;
+00062     \textcolor{keywordtype}{int} temp = \hyperlink{class_a_x12_af48e370f92f69214a27618d5b69bcfe8}{dxl}->\hyperlink{classdynamixel_a888404b41c4c4395a0b745c77ff2cea9}{read\_byte}(\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, RAM::PresentTemperature);
+00063     \textcolor{keywordflow}{if} (\hyperlink{class_a_x12_af48e370f92f69214a27618d5b69bcfe8}{dxl}->\hyperlink{classdynamixel_ac8440d5d34ae3c4618b28fdbbd748edc}{get\_comm\_result}() != \hyperlink{dynamixel_8h_a171328d9f298535c18d079f65e631434}{COMM\_RXSUCCESS}) \textcolor{keywordflow}{return} -1;
+00064     \textcolor{keywordflow}{return} temp;
+00065 \}
 \end{DoxyCode}
 \hypertarget{class_a_x12_a9ef946bfc1ad4dce5fed4101ed321efe}{}\index{A\+X12@{A\+X12}!get\+Current\+Voltage@{get\+Current\+Voltage}}
 \index{get\+Current\+Voltage@{get\+Current\+Voltage}!A\+X12@{A\+X12}}
@@ -443,12 +438,12 @@ Returns the current voltage in Volts.
 
 
 \begin{DoxyCode}
-00076 \{
-00077     \textcolor{keywordflow}{if} (\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID} < 0) \textcolor{keywordflow}{return} 0;
-00078     \textcolor{keywordtype}{char} voltage = \hyperlink{class_a_x12_a819a7760294ffa2022c5359155d6b51a}{dxl}.\hyperlink{classdynamixel_a888404b41c4c4395a0b745c77ff2cea9}{read\_byte}(\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, RAM::PresentVoltage);
-00079     \textcolor{keywordflow}{if} (\hyperlink{class_a_x12_a819a7760294ffa2022c5359155d6b51a}{dxl}.\hyperlink{classdynamixel_ac8440d5d34ae3c4618b28fdbbd748edc}{get\_comm\_result}() != \hyperlink{dynamixel_8h_a171328d9f298535c18d079f65e631434}{COMM\_RXSUCCESS}) \textcolor{keywordflow}{return} -1;
-00080     \textcolor{keywordflow}{return} double(voltage/10.0);
-00081 \}
+00078 \{
+00079     \textcolor{keywordflow}{if} (\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID} < 0) \textcolor{keywordflow}{return} 0;
+00080     \textcolor{keywordtype}{char} voltage = \hyperlink{class_a_x12_af48e370f92f69214a27618d5b69bcfe8}{dxl}->\hyperlink{classdynamixel_a888404b41c4c4395a0b745c77ff2cea9}{read\_byte}(\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, RAM::PresentVoltage);
+00081     \textcolor{keywordflow}{if} (\hyperlink{class_a_x12_af48e370f92f69214a27618d5b69bcfe8}{dxl}->\hyperlink{classdynamixel_ac8440d5d34ae3c4618b28fdbbd748edc}{get\_comm\_result}() != \hyperlink{dynamixel_8h_a171328d9f298535c18d079f65e631434}{COMM\_RXSUCCESS}) \textcolor{keywordflow}{return} -1;
+00082     \textcolor{keywordflow}{return} double(voltage/10.0);
+00083 \}
 \end{DoxyCode}
 \hypertarget{class_a_x12_a745ab1f31fa2cd8c7a5797aeb605cd0b}{}\index{A\+X12@{A\+X12}!get\+I\+D@{get\+I\+D}}
 \index{get\+I\+D@{get\+I\+D}!A\+X12@{A\+X12}}
@@ -463,7 +458,7 @@ To get the current I\+D.
 
 
 \begin{DoxyCode}
-00106 \{ \textcolor{keywordflow}{return} \hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}; \}
+00111 \{ \textcolor{keywordflow}{return} \hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}; \}
 \end{DoxyCode}
 \hypertarget{class_a_x12_a6b27a3c6314604b499d9fa47d180f5d3}{}\index{A\+X12@{A\+X12}!set\+Goal\+Position@{set\+Goal\+Position}}
 \index{set\+Goal\+Position@{set\+Goal\+Position}!A\+X12@{A\+X12}}
@@ -478,12 +473,12 @@ Sets the Goal\textquotesingle{}s position (in degrees) or speed depending on the
 
 
 \begin{DoxyCode}
-00084 \{
-00085     \textcolor{keywordflow}{if} (\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID} < 0) \textcolor{keywordflow}{return};
-00086     \textcolor{keywordflow}{if} (goal > 300.0) goal = 300.0;
-00087     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (goal < 0) goal = 0;
-00088     \hyperlink{class_a_x12_a819a7760294ffa2022c5359155d6b51a}{dxl}.\hyperlink{classdynamixel_a925f62ce5e261e5ef4fe6dc46bdc7c63}{write\_word}(\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, RAM::GoalPosition, \textcolor{keywordtype}{int}((goal/300.0)*1023));
-00089 \}
+00086 \{
+00087     \textcolor{keywordflow}{if} (\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID} < 0) \textcolor{keywordflow}{return};
+00088     \textcolor{keywordflow}{if} (goal > 300.0) goal = 300.0;
+00089     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (goal < 0) goal = 0;
+00090     \hyperlink{class_a_x12_af48e370f92f69214a27618d5b69bcfe8}{dxl}->\hyperlink{classdynamixel_a925f62ce5e261e5ef4fe6dc46bdc7c63}{write\_word}(\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, RAM::GoalPosition, \textcolor{keywordtype}{int}((goal/300.0)*1023));
+00091 \}
 \end{DoxyCode}
 \hypertarget{class_a_x12_ab9fe5d0e2286985977985de6d84b1103}{}\index{A\+X12@{A\+X12}!set\+I\+D@{set\+I\+D}}
 \index{set\+I\+D@{set\+I\+D}!A\+X12@{A\+X12}}
@@ -498,11 +493,11 @@ To set a new I\+D.
 
 
 \begin{DoxyCode}
-00092 \{
-00093     \hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID} = \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0ab2565d5698c9d943a8bcecf02b1389ad}{ID};
-00094     \textcolor{keywordflow}{if} (\hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0ab2565d5698c9d943a8bcecf02b1389ad}{ID} < 0) \textcolor{keywordflow}{return};
-00095     \hyperlink{class_a_x12_a819a7760294ffa2022c5359155d6b51a}{dxl}.\hyperlink{classdynamixel_a66c1e32cc45dd46d329f1fc212e46a3d}{write\_byte}(\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, RAM::TorqueEnable, \textcolor{keyword}{true});
-00096 \}
+00094 \{
+00095     \hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID} = \hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0ab2565d5698c9d943a8bcecf02b1389ad}{ID};
+00096     \textcolor{keywordflow}{if} (\hyperlink{class_a_x12_a08d272b502d65464202a3aa97825aec0ab2565d5698c9d943a8bcecf02b1389ad}{ID} < 0) \textcolor{keywordflow}{return};
+00097     \hyperlink{class_a_x12_af48e370f92f69214a27618d5b69bcfe8}{dxl}->\hyperlink{classdynamixel_a66c1e32cc45dd46d329f1fc212e46a3d}{write\_byte}(\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, RAM::TorqueEnable, \textcolor{keyword}{true});
+00098 \}
 \end{DoxyCode}
 \hypertarget{class_a_x12_ac48405a5f4aa73c1f2d56f633dfbec50}{}\index{A\+X12@{A\+X12}!set\+Joint\+Mode@{set\+Joint\+Mode}}
 \index{set\+Joint\+Mode@{set\+Joint\+Mode}!A\+X12@{A\+X12}}
@@ -517,18 +512,18 @@ To set Joint/\+Wheel mode, true if Joint.
 
 
 \begin{DoxyCode}
-00099 \{
-00100     \textcolor{keywordflow}{if} (\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID} < 0) \textcolor{keywordflow}{return};
-00101     \hyperlink{class_a_x12_a2fd07e2e636003227a32d09d211bd6d4}{\_mode} = mode;
-00102     \textcolor{keywordflow}{if} (\hyperlink{class_a_x12_a2fd07e2e636003227a32d09d211bd6d4}{\_mode}) \{
-00103         \hyperlink{class_a_x12_a819a7760294ffa2022c5359155d6b51a}{dxl}.\hyperlink{classdynamixel_a925f62ce5e261e5ef4fe6dc46bdc7c63}{write\_word}(\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, ROM::CWAngleLimit, 0);
-00104         \hyperlink{class_a_x12_a819a7760294ffa2022c5359155d6b51a}{dxl}.\hyperlink{classdynamixel_a925f62ce5e261e5ef4fe6dc46bdc7c63}{write\_word}(\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, ROM::CCWAngleLimit, 1023);
-00105     \}
-00106     \textcolor{keywordflow}{else} \{
-00107         \hyperlink{class_a_x12_a819a7760294ffa2022c5359155d6b51a}{dxl}.\hyperlink{classdynamixel_a925f62ce5e261e5ef4fe6dc46bdc7c63}{write\_word}(\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, ROM::CWAngleLimit, 0);
-00108         \hyperlink{class_a_x12_a819a7760294ffa2022c5359155d6b51a}{dxl}.\hyperlink{classdynamixel_a925f62ce5e261e5ef4fe6dc46bdc7c63}{write\_word}(\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, ROM::CCWAngleLimit, 0);
-00109     \}
-00110 \}
+00101 \{
+00102     \textcolor{keywordflow}{if} (\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID} < 0) \textcolor{keywordflow}{return};
+00103     \hyperlink{class_a_x12_a2fd07e2e636003227a32d09d211bd6d4}{\_mode} = mode;
+00104     \textcolor{keywordflow}{if} (\hyperlink{class_a_x12_a2fd07e2e636003227a32d09d211bd6d4}{\_mode}) \{
+00105         \hyperlink{class_a_x12_af48e370f92f69214a27618d5b69bcfe8}{dxl}->\hyperlink{classdynamixel_a925f62ce5e261e5ef4fe6dc46bdc7c63}{write\_word}(\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, ROM::CWAngleLimit, 0);
+00106         \hyperlink{class_a_x12_af48e370f92f69214a27618d5b69bcfe8}{dxl}->\hyperlink{classdynamixel_a925f62ce5e261e5ef4fe6dc46bdc7c63}{write\_word}(\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, ROM::CCWAngleLimit, 1023);
+00107     \}
+00108     \textcolor{keywordflow}{else} \{
+00109         \hyperlink{class_a_x12_af48e370f92f69214a27618d5b69bcfe8}{dxl}->\hyperlink{classdynamixel_a925f62ce5e261e5ef4fe6dc46bdc7c63}{write\_word}(\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, ROM::CWAngleLimit, 0);
+00110         \hyperlink{class_a_x12_af48e370f92f69214a27618d5b69bcfe8}{dxl}->\hyperlink{classdynamixel_a925f62ce5e261e5ef4fe6dc46bdc7c63}{write\_word}(\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, ROM::CCWAngleLimit, 0);
+00111     \}
+00112 \}
 \end{DoxyCode}
 \hypertarget{class_a_x12_a914864d133f8cbaf95594747aaff55f2}{}\index{A\+X12@{A\+X12}!set\+Min\+Max@{set\+Min\+Max}}
 \index{set\+Min\+Max@{set\+Min\+Max}!A\+X12@{A\+X12}}
@@ -544,20 +539,20 @@ To set the minimum and maximum angle from 0 to 300º
 
 
 \begin{DoxyCode}
-00113 \{
-00114     \textcolor{keywordflow}{if} (\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID} < 0) \textcolor{keywordflow}{return};
-00115     
-00116     \textcolor{keywordflow}{if} (min > max) std::swap(min, max);
+00115 \{
+00116     \textcolor{keywordflow}{if} (\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID} < 0) \textcolor{keywordflow}{return};
 00117     
-00118     \textcolor{keywordflow}{if} (min < 0.0) min = 0;
-00119     \textcolor{keywordflow}{if} (max > 300.0) max = 300;
-00120     
-00121     min = (min/300)*1023;
-00122     max = (max/300)*1023;
-00123     
-00124     \hyperlink{class_a_x12_a819a7760294ffa2022c5359155d6b51a}{dxl}.\hyperlink{classdynamixel_a925f62ce5e261e5ef4fe6dc46bdc7c63}{write\_word}(\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, ROM::CWAngleLimit, \textcolor{keywordtype}{int} (min));
-00125     \hyperlink{class_a_x12_a819a7760294ffa2022c5359155d6b51a}{dxl}.\hyperlink{classdynamixel_a925f62ce5e261e5ef4fe6dc46bdc7c63}{write\_word}(\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, ROM::CCWAngleLimit, \textcolor{keywordtype}{int} (max));
-00126 \}
+00118     \textcolor{keywordflow}{if} (min > max) std::swap(min, max);
+00119     
+00120     \textcolor{keywordflow}{if} (min < 0.0) min = 0;
+00121     \textcolor{keywordflow}{if} (max > 300.0) max = 300;
+00122     
+00123     min = (min/300)*1023;
+00124     max = (max/300)*1023;
+00125     
+00126     \hyperlink{class_a_x12_af48e370f92f69214a27618d5b69bcfe8}{dxl}->\hyperlink{classdynamixel_a925f62ce5e261e5ef4fe6dc46bdc7c63}{write\_word}(\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, ROM::CWAngleLimit, \textcolor{keywordtype}{int} (min));
+00127     \hyperlink{class_a_x12_af48e370f92f69214a27618d5b69bcfe8}{dxl}->\hyperlink{classdynamixel_a925f62ce5e261e5ef4fe6dc46bdc7c63}{write\_word}(\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, ROM::CCWAngleLimit, \textcolor{keywordtype}{int} (max));
+00128 \}
 \end{DoxyCode}
 \hypertarget{class_a_x12_a95428eea4d5165b81d80e4ab38e33b7b}{}\index{A\+X12@{A\+X12}!set\+Speed@{set\+Speed}}
 \index{set\+Speed@{set\+Speed}!A\+X12@{A\+X12}}
@@ -572,24 +567,24 @@ To set the maximum speed from 0\% to 100\% if joint mode or from -\/100\% to 100
 
 
 \begin{DoxyCode}
-00129 \{
-00130     \textcolor{keywordflow}{if} (\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID} < 0) \textcolor{keywordflow}{return};
-00131     \textcolor{keywordflow}{if} (speed > 100.0) speed = 100.0;
-00132     \textcolor{keywordflow}{if} (\hyperlink{class_a_x12_a2fd07e2e636003227a32d09d211bd6d4}{\_mode}) \{
-00133         \textcolor{keywordflow}{if} (speed < 0.0) speed = 0.0;
-00134         
-00135         \textcolor{keywordtype}{int} byte = int((speed/100.0) * 1024.0);
-00136         \textcolor{keywordflow}{if} (speed == 100.0) byte = 0;
-00137         \hyperlink{class_a_x12_a819a7760294ffa2022c5359155d6b51a}{dxl}.\hyperlink{classdynamixel_a66c1e32cc45dd46d329f1fc212e46a3d}{write\_byte}(\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, RAM::MovingSpeed, byte);        
-00138     \}
-00139     \textcolor{keywordflow}{else} \{
-00140         \textcolor{keywordflow}{if} (speed < -100.0) speed = -100.0;   
-00141         
-00142         \textcolor{keywordtype}{int} byte = int(((speed + 100)/100.0) * 1024);
-00143         \hyperlink{class_a_x12_a819a7760294ffa2022c5359155d6b51a}{dxl}.\hyperlink{classdynamixel_a66c1e32cc45dd46d329f1fc212e46a3d}{write\_byte}(\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, RAM::MovingSpeed, byte);
-00144     \}
-00145 
-00146 \}
+00131 \{
+00132     \textcolor{keywordflow}{if} (\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID} < 0) \textcolor{keywordflow}{return};
+00133     \textcolor{keywordflow}{if} (speed > 100.0) speed = 100.0;
+00134     \textcolor{keywordflow}{if} (\hyperlink{class_a_x12_a2fd07e2e636003227a32d09d211bd6d4}{\_mode}) \{
+00135         \textcolor{keywordflow}{if} (speed < 0.0) speed = 0.0;
+00136         
+00137         \textcolor{keywordtype}{int} byte = int((speed/100.0) * 1024.0);
+00138         \textcolor{keywordflow}{if} (speed == 100.0) byte = 0;
+00139         \hyperlink{class_a_x12_af48e370f92f69214a27618d5b69bcfe8}{dxl}->\hyperlink{classdynamixel_a66c1e32cc45dd46d329f1fc212e46a3d}{write\_byte}(\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, RAM::MovingSpeed, byte);        
+00140     \}
+00141     \textcolor{keywordflow}{else} \{
+00142         \textcolor{keywordflow}{if} (speed < -100.0) speed = -100.0;   
+00143         
+00144         \textcolor{keywordtype}{int} byte = int(((speed + 100)/100.0) * 1024);
+00145         \hyperlink{class_a_x12_af48e370f92f69214a27618d5b69bcfe8}{dxl}->\hyperlink{classdynamixel_a66c1e32cc45dd46d329f1fc212e46a3d}{write\_byte}(\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, RAM::MovingSpeed, byte);
+00146     \}
+00147 
+00148 \}
 \end{DoxyCode}
 
 
@@ -608,9 +603,16 @@ Stores the current I\+D.
 
 True if we use the joint mode. 
 
-\hypertarget{class_a_x12_a819a7760294ffa2022c5359155d6b51a}{}\index{A\+X12@{A\+X12}!dxl@{dxl}}
+\hypertarget{class_a_x12_aba71492043d7a3226f0793db57372bec}{}\index{A\+X12@{A\+X12}!\+\_\+rads@{\+\_\+rads}}
+\index{\+\_\+rads@{\+\_\+rads}!A\+X12@{A\+X12}}
+\subsubsection[{\+\_\+rads}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+X12\+::\+\_\+rads\hspace{0.3cm}{\ttfamily [private]}}\label{class_a_x12_aba71492043d7a3226f0793db57372bec}
+
+
+True if the angle is returned in radians. 
+
+\hypertarget{class_a_x12_af48e370f92f69214a27618d5b69bcfe8}{}\index{A\+X12@{A\+X12}!dxl@{dxl}}
 \index{dxl@{dxl}!A\+X12@{A\+X12}}
-\subsubsection[{dxl}]{\setlength{\rightskip}{0pt plus 5cm}{\bf dynamixel}\& A\+X12\+::dxl\hspace{0.3cm}{\ttfamily [private]}}\label{class_a_x12_a819a7760294ffa2022c5359155d6b51a}
+\subsubsection[{dxl}]{\setlength{\rightskip}{0pt plus 5cm}{\bf dynamixel}$\ast$ A\+X12\+::dxl\hspace{0.3cm}{\ttfamily [private]}}\label{class_a_x12_af48e370f92f69214a27618d5b69bcfe8}
 
 
 Contains the dynamixel comunication. 
