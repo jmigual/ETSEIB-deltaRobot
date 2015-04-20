@@ -27714,7 +27714,7 @@ Light:
   serializedVersion: 3
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: .439999998
+  m_Intensity: .50999999
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -39532,16 +39532,16 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
+  m_BackGroundColor: {r: .00800173823, g: .0163278691, b: .0294117928, a: .0196078438}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
     y: 0
     width: 1
     height: 1
-  near clip plane: .300000012
+  near clip plane: .00999999978
   far clip plane: 1000
-  field of view: 60
+  field of view: 84
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -43890,7 +43890,7 @@ Light:
   serializedVersion: 3
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: .0399999991
+  m_Intensity: 0
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -45969,15 +45969,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 451428, guid: b93f374cb2d27fd43b2b8bbbdd2083ce, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -.133291125
+      value: -.209999993
       objectReference: {fileID: 0}
     - target: {fileID: 451428, guid: b93f374cb2d27fd43b2b8bbbdd2083ce, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.20000005
+      value: 1.14999998
       objectReference: {fileID: 0}
     - target: {fileID: 451428, guid: b93f374cb2d27fd43b2b8bbbdd2083ce, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -4.14788961
+      value: -4.11999989
       objectReference: {fileID: 0}
     - target: {fileID: 451428, guid: b93f374cb2d27fd43b2b8bbbdd2083ce, type: 2}
       propertyPath: m_LocalRotation.x
@@ -104924,6 +104924,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 938092348}
+  dominoPiece: {fileID: 151428, guid: b93f374cb2d27fd43b2b8bbbdd2083ce, type: 2}
+  distance: 1.5
 --- !u!1 &1899751569
 GameObject:
   m_ObjectHideFlags: 0
@@ -118210,7 +118212,7 @@ Transform:
   m_PrefabInternal: {fileID: 798320622}
   m_GameObject: {fileID: 2143549256}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.133291125, y: 1.20000005, z: -4.14788961}
+  m_LocalPosition: {x: -.209999993, y: 1.14999998, z: -4.11999989}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 866476790}

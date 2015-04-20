@@ -34,10 +34,10 @@ public class Editor : MonoBehaviour {
 	void Start () {
 		Time.timeScale=0f;
 		selected = Camera.main.GetComponent<CameraController>().center;
-		selectedExists = true;
+		selectedExists = false;
 		camRayLength = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>().camRayLength;
-		lastColor = selected.GetComponentInChildren<Renderer>().material.color;
-		selected.GetComponentInChildren<Renderer>().material.color = selectedColor;
+		//lastColor = selected.GetComponentInChildren<Renderer>().material.color;
+		//selected.GetComponentInChildren<Renderer>().material.color = selectedColor;
 		if (relativeRotation){
 			RXinitial=RX.transform.rotation;
 			RYinitial=RY.transform.rotation;
@@ -214,10 +214,13 @@ public class Editor : MonoBehaviour {
 	}
 
 	public void LetsDraw (){
+		if (selectedExists) selected.GetComponentInChildren<Renderer>().material.color = lastColor;
+		selectedExists = false;
+		mode = "-";
 		GetComponent<Draw> ().enabled = true;
 		CameraController.onlyZoom = true;
 		Camera.main.orthographic = true;
-		Camera.main.transform.position = new Vector3 (0,20,0);
+		Camera.main.transform.position = new Vector3 (0,50,0);
 		Camera.main.transform.rotation = Quaternion.LookRotation (Vector3.down);
 		GetComponent<Editor> ().enabled = false;
 	}
