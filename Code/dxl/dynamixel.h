@@ -30,27 +30,13 @@
 #define ERR_ACCESS			(7)  //Access error
 
 
-////////// for Protocol 1.0
 #define PRT1_PKT_ID					(2)
 #define PRT1_PKT_LENGTH				(3)
 #define PRT1_PKT_INSTRUCTION		(4)
 #define PRT1_PKT_ERRBIT				(4)
 #define PRT1_PKT_PARAMETER0			(5)
 
-////////// for Protocol 2.0
-#define PRT2_PKT_HEADER0				(0)
-#define PRT2_PKT_HEADER1				(1)
-#define PRT2_PKT_HEADER2				(2)
-#define PRT2_PKT_RESERVED				(3)
-#define PRT2_PKT_ID						(4)
-#define PRT2_PKT_LENGTH_L				(5)
-#define PRT2_PKT_LENGTH_H				(6)
-#define PRT2_PKT_INSTRUCTION			(7)
-#define PRT2_INSTRUCTION_PKT_PARAMETER0	(8)
-#define PRT2_PKT_ERRBIT					(8)
-#define PRT2_STATUS_PKT_PARAMETER0		(9)
-//////// Instruction for Dynamixel Protocol ////////
-/////// Common Instruction for 1.0 and 2.0
+
 #define INST_PING			(1)
 #define INST_READ			(2)
 #define INST_WRITE			(3)
@@ -59,12 +45,6 @@
 #define INST_RESET			(6)
 #define INST_SYNC_WRITE		(131)
 #define	INST_BULK_READ      (146)  // 0x92
-/////// Added Instruction for 2.0
-#define INST_REBOOT         (8)
-#define INST_STATUS         (85)   // 0x55
-#define INST_SYNC_READ      (130)  // 0x82
-#define INST_BULK_WRITE     (147)  // 0x93
-
 
 #define PING_INFO_MODEL_NUM   (1)
 #define PING_INFO_FIRM_VER	  (2)
@@ -80,30 +60,47 @@
 /// Dynamixel 1.0 protocol class
 class dynamixel {
 private:
+    
+    /// Conains the serial port comunication
     dxl_hal dH;
     
+    /// Contains all the instructions
     unsigned char gbInstructionPacket[MAXNUM_TXPACKET] = {0};
+    
+    /// Contains the status
     unsigned char gbStatusPacket[MAXNUM_RXPACKET] = {0};
+    
+    /// Received packet length
     unsigned int gbRxPacketLength = 0;
+    
+    /// Temporal length from the received packet
     unsigned int gbRxGetLength = 0;
     
+    /// Packet start time
     double gdPacketStartTime = 0.0;
+    
+    /// Byte transmission time
     double gdByteTransTime = 0.0;
+    
+    /// Receive wait time
     double gdRcvWaitTime = 0.0;
     
+    /// Current communication status
     int gbCommStatus = COMM_RXSUCCESS;
+    
+    /// True if the bus if being used
     int giBusUsing = 0; 
     
 public:
     
+    /// Default constructor
     dynamixel();
     
+    /// Initialization constructor
     dynamixel(QString port_num, int baud_rate = 1000000);
     
+    /// True if the port is open
     inline bool isOpen() { return dH.isOpen(); }
-    
-    /*///////////////// Common Method for 1.0 & 2.0 /////////////////*/	
-    /*//////////// device control method ////////////*/
 
     /// Initializates the port
     int initialize(QString port_num, int baud_rate);
