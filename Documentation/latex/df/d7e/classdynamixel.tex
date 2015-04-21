@@ -22,82 +22,82 @@ Collaboration diagram for dynamixel\+:\nopagebreak
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classdynamixel_a7aa668a213db6a41bede8e08a6fec830}{dynamixel} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
 \hyperlink{classdynamixel_a5d4fed957a4b2d1690c0fa72127f5cbf}{dynamixel} (Q\+String port\+\_\+num, int baud\+\_\+rate=1000000)
-\item 
+\begin{DoxyCompactList}\small\item\em Initialization constructor. \end{DoxyCompactList}\item 
 bool \hyperlink{classdynamixel_a5ae4b2c6eb4c91f404f973ee8e6a1914}{is\+Open} ()
-\item 
+\begin{DoxyCompactList}\small\item\em True if the port is open. \end{DoxyCompactList}\item 
 int \hyperlink{classdynamixel_a87960244d5846ae7583e37d2407eb61e}{initialize} (Q\+String port\+\_\+num, int baud\+\_\+rate)
-\item 
+\begin{DoxyCompactList}\small\item\em Initializates the port. \end{DoxyCompactList}\item 
 int \hyperlink{classdynamixel_a7554c7889896e29e11a62027d89f3fdf}{change\+\_\+baudrate} (int baud\+\_\+rate)
-\item 
+\begin{DoxyCompactList}\small\item\em Changes the current baud rate. \end{DoxyCompactList}\item 
 int \hyperlink{classdynamixel_a92ea074ed1c1a9cf29e039f8c425f01a}{terminate} (void)
-\item 
+\begin{DoxyCompactList}\small\item\em Closes the comunication. \end{DoxyCompactList}\item 
 int \hyperlink{classdynamixel_ac8440d5d34ae3c4618b28fdbbd748edc}{get\+\_\+comm\+\_\+result} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the current com status. \end{DoxyCompactList}\item 
 void \hyperlink{classdynamixel_a479187cd8940c16dd4374eb5be22b888}{tx\+\_\+packet} (void)
-\item 
+\begin{DoxyCompactList}\small\item\em Sends a packet. \end{DoxyCompactList}\item 
 void \hyperlink{classdynamixel_aa26d2d2dff768563a1cb1480aa061608}{rx\+\_\+packet} (void)
-\item 
+\begin{DoxyCompactList}\small\item\em Receives a packet. \end{DoxyCompactList}\item 
 void \hyperlink{classdynamixel_aebfc569c6b1eb0b98f8c385f0f921fc0}{txrx\+\_\+packet} (void)
-\item 
+\begin{DoxyCompactList}\small\item\em Sends and receives a packet. \end{DoxyCompactList}\item 
 void \hyperlink{classdynamixel_a84e24c72c3e5be866f8b28c2e5bd1d95}{set\+\_\+txpacket\+\_\+id} (int id)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the sending packet I\+D. \end{DoxyCompactList}\item 
 void \hyperlink{classdynamixel_a209a43f983f214323b6f0a627d5e8c13}{set\+\_\+txpacket\+\_\+instruction} (int instruction)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the sending packet instruction. \end{DoxyCompactList}\item 
 void \hyperlink{classdynamixel_a2c3d31bbbed70a69918e9972a620384b}{set\+\_\+txpacket\+\_\+parameter} (int index, int value)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the sending packet parameter. \end{DoxyCompactList}\item 
 void \hyperlink{classdynamixel_a829278f48e21c810b172eb8cab3b86de}{set\+\_\+txpacket\+\_\+length} (int length)
-\item 
-int \hyperlink{classdynamixel_a1bbabb82d7a2764cc4b0b351dd0019e5}{get\+\_\+rxpacket\+\_\+error} (int error)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the sending packet length. \end{DoxyCompactList}\item 
+bool \hyperlink{classdynamixel_a843b0aac721e4264e7e3097f80980243}{get\+\_\+rxpacket\+\_\+error} (int error)
+\begin{DoxyCompactList}\small\item\em Returns false if no receive error and true if there\textquotesingle{}s an error. \end{DoxyCompactList}\item 
 int \hyperlink{classdynamixel_a6e62341ef9f51b6e152e769bd7be9d75}{get\+\_\+rxpacket\+\_\+error\+\_\+byte} (void)
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the error byte. \end{DoxyCompactList}\item 
 int \hyperlink{classdynamixel_a68b5fa99719a9aec0734ecfb0635503b}{get\+\_\+rxpacket\+\_\+parameter} (int index)
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the received parameter. \end{DoxyCompactList}\item 
 int \hyperlink{classdynamixel_ae9cc18fdeda8329f68fa0f2f0a7a9aba}{get\+\_\+rxpacket\+\_\+length} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the received packet length. \end{DoxyCompactList}\item 
 void \hyperlink{classdynamixel_af2bd714423e7c4fc089762805c0c71f3}{ping} (int id)
-\item 
+\begin{DoxyCompactList}\small\item\em Ping to the selected id, check com status for the ping result. \end{DoxyCompactList}\item 
 int \hyperlink{classdynamixel_a888404b41c4c4395a0b745c77ff2cea9}{read\+\_\+byte} (int id, int address)
-\item 
+\begin{DoxyCompactList}\small\item\em Reads a byte from the selected I\+D at the selected address. \end{DoxyCompactList}\item 
 void \hyperlink{classdynamixel_a66c1e32cc45dd46d329f1fc212e46a3d}{write\+\_\+byte} (int id, int address, int value)
-\item 
+\begin{DoxyCompactList}\small\item\em Writes a byte to the selected I\+D at the selected address. \end{DoxyCompactList}\item 
 int \hyperlink{classdynamixel_a45e99341e82c5114f6e829c9141bf96f}{read\+\_\+word} (int id, int address)
-\item 
+\begin{DoxyCompactList}\small\item\em Reads a word to the selected I\+D at the selected address. \end{DoxyCompactList}\item 
 void \hyperlink{classdynamixel_a925f62ce5e261e5ef4fe6dc46bdc7c63}{write\+\_\+word} (int id, int address, int value)
-\item 
+\begin{DoxyCompactList}\small\item\em Writes a word to the selected I\+D at the selected address. \end{DoxyCompactList}\item 
 double \hyperlink{classdynamixel_a2fa5375537184c279a9ebfcfc0425071}{get\+\_\+packet\+\_\+time} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the packet time. \end{DoxyCompactList}\item 
 void \hyperlink{classdynamixel_a067f82c21ed176e18fa224d16f3d1c5b}{set\+\_\+packet\+\_\+timeout} (int Num\+Rcv\+Byte)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the timeout in number of received bytes. \end{DoxyCompactList}\item 
 void \hyperlink{classdynamixel_a125b42f776c4aac520f274074f68b591}{set\+\_\+packet\+\_\+timeout\+\_\+ms} (int msec)
-\item 
-int \hyperlink{classdynamixel_afddd976dbc486cd08b92e0e6e4117519}{is\+\_\+packet\+\_\+timeout} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Sets the timeout in ms. \end{DoxyCompactList}\item 
+bool \hyperlink{classdynamixel_a00d08481ebc4dee19debecf43f888522}{is\+\_\+packet\+\_\+timeout} ()
+\begin{DoxyCompactList}\small\item\em Returns true if the packet is timeout. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classdxl__hal}{dxl\+\_\+hal} \hyperlink{classdynamixel_ae003cc90ada6d7b70eaa4ea9d42d4deb}{d\+H}
-\item 
+\begin{DoxyCompactList}\small\item\em Conains the serial port comunication. \end{DoxyCompactList}\item 
 unsigned char \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gb\+Instruction\+Packet} \mbox{[}\hyperlink{dxl__hal_8h_ad753363487043da5d9fdd3fd1071f59e}{M\+A\+X\+N\+U\+M\+\_\+\+T\+X\+P\+A\+C\+K\+E\+T}\mbox{]} = \{0\}
-\item 
+\begin{DoxyCompactList}\small\item\em Contains all the instructions. \end{DoxyCompactList}\item 
 unsigned char \hyperlink{classdynamixel_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gb\+Status\+Packet} \mbox{[}\hyperlink{dxl__hal_8h_a37d5ce8f0a9ee058fa9674502c6a8b3a}{M\+A\+X\+N\+U\+M\+\_\+\+R\+X\+P\+A\+C\+K\+E\+T}\mbox{]} = \{0\}
-\item 
+\begin{DoxyCompactList}\small\item\em Contains the status. \end{DoxyCompactList}\item 
 unsigned int \hyperlink{classdynamixel_a333686e1b5903d16c41df8172b6bd5a8}{gb\+Rx\+Packet\+Length} = 0
-\item 
+\begin{DoxyCompactList}\small\item\em Received packet length. \end{DoxyCompactList}\item 
 unsigned int \hyperlink{classdynamixel_a9d590ce24791d111c2db9b66be1e046d}{gb\+Rx\+Get\+Length} = 0
-\item 
+\begin{DoxyCompactList}\small\item\em Temporal length from the received packet. \end{DoxyCompactList}\item 
 double \hyperlink{classdynamixel_a6c6314fb7070e6fd361e57c5de17e0ec}{gd\+Packet\+Start\+Time} = 0.\+0
-\item 
+\begin{DoxyCompactList}\small\item\em Packet start time. \end{DoxyCompactList}\item 
 double \hyperlink{classdynamixel_a2173f25c6299da7ddb37ba3d2bf1f738}{gd\+Byte\+Trans\+Time} = 0.\+0
-\item 
+\begin{DoxyCompactList}\small\item\em Byte transmission time. \end{DoxyCompactList}\item 
 double \hyperlink{classdynamixel_a9f47887864517d74955a2bc787ae4456}{gd\+Rcv\+Wait\+Time} = 0.\+0
-\item 
+\begin{DoxyCompactList}\small\item\em Receive wait time. \end{DoxyCompactList}\item 
 int \hyperlink{classdynamixel_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{gb\+Comm\+Status} = \hyperlink{dynamixel_8h_a171328d9f298535c18d079f65e631434}{C\+O\+M\+M\+\_\+\+R\+X\+S\+U\+C\+C\+E\+S\+S}
-\item 
+\begin{DoxyCompactList}\small\item\em Current communication status. \end{DoxyCompactList}\item 
 int \hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{gi\+Bus\+Using} = 0
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em True if the bus if being used. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -112,6 +112,10 @@ Dynamixel 1.\+0 protocol class.
 \end{DoxyParamCaption}
 )}\label{classdynamixel_a7aa668a213db6a41bede8e08a6fec830}
 
+
+Default constructor. 
+
+
 \begin{DoxyCode}
 00014 \{
 00015     
@@ -125,6 +129,10 @@ Dynamixel 1.\+0 protocol class.
 \item[{int}]{baud\+\_\+rate = {\ttfamily 1000000}}
 \end{DoxyParamCaption}
 )}\label{classdynamixel_a5d4fed957a4b2d1690c0fa72127f5cbf}
+
+
+Initialization constructor. 
+
 
 \begin{DoxyCode}
 00019 \{
@@ -141,6 +149,10 @@ Dynamixel 1.\+0 protocol class.
 \item[{int}]{baud\+\_\+rate}
 \end{DoxyParamCaption}
 )}\label{classdynamixel_a7554c7889896e29e11a62027d89f3fdf}
+
+
+Changes the current baud rate. 
+
 
 \begin{DoxyCode}
 00039 \{
@@ -163,8 +175,12 @@ Dynamixel 1.\+0 protocol class.
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}\label{classdynamixel_ac8440d5d34ae3c4618b28fdbbd748edc}
 
+
+Returns the current com status. 
+
+
 \begin{DoxyCode}
-00112 \{ \textcolor{keywordflow}{return} \hyperlink{classdynamixel_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{gbCommStatus}; \}
+00115 \{ \textcolor{keywordflow}{return} \hyperlink{classdynamixel_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{gbCommStatus}; \}
 \end{DoxyCode}
 \hypertarget{classdynamixel_a2fa5375537184c279a9ebfcfc0425071}{}\index{dynamixel@{dynamixel}!get\+\_\+packet\+\_\+time@{get\+\_\+packet\+\_\+time}}
 \index{get\+\_\+packet\+\_\+time@{get\+\_\+packet\+\_\+time}!dynamixel@{dynamixel}}
@@ -173,6 +189,10 @@ Dynamixel 1.\+0 protocol class.
 \item[{void}]{}
 \end{DoxyParamCaption}
 )}\label{classdynamixel_a2fa5375537184c279a9ebfcfc0425071}
+
+
+Returns the packet time. 
+
 
 \begin{DoxyCode}
 00058 \{
@@ -187,20 +207,29 @@ Dynamixel 1.\+0 protocol class.
 00066     \textcolor{keywordflow}{return} elapsed\_time;
 00067 \}
 \end{DoxyCode}
-\hypertarget{classdynamixel_a1bbabb82d7a2764cc4b0b351dd0019e5}{}\index{dynamixel@{dynamixel}!get\+\_\+rxpacket\+\_\+error@{get\+\_\+rxpacket\+\_\+error}}
+\hypertarget{classdynamixel_a843b0aac721e4264e7e3097f80980243}{}\index{dynamixel@{dynamixel}!get\+\_\+rxpacket\+\_\+error@{get\+\_\+rxpacket\+\_\+error}}
 \index{get\+\_\+rxpacket\+\_\+error@{get\+\_\+rxpacket\+\_\+error}!dynamixel@{dynamixel}}
-\subsubsection[{get\+\_\+rxpacket\+\_\+error}]{\setlength{\rightskip}{0pt plus 5cm}int dynamixel\+::get\+\_\+rxpacket\+\_\+error (
+\subsubsection[{get\+\_\+rxpacket\+\_\+error}]{\setlength{\rightskip}{0pt plus 5cm}bool dynamixel\+::get\+\_\+rxpacket\+\_\+error (
 \begin{DoxyParamCaption}
 \item[{int}]{error}
 \end{DoxyParamCaption}
-)}\label{classdynamixel_a1bbabb82d7a2764cc4b0b351dd0019e5}
+)}\label{classdynamixel_a843b0aac721e4264e7e3097f80980243}
+
+
+Returns false if no receive error and true if there\textquotesingle{}s an error. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em error} & Selects the error to check \\
+\hline
+\end{DoxyParams}
 
 \begin{DoxyCode}
 00279 \{
 00280     \textcolor{keywordflow}{if}( \hyperlink{classdynamixel_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gbStatusPacket}[\hyperlink{dynamixel_8h_a582837a5f6ad93ee1dbb82ba51691edf}{PRT1\_PKT\_ERRBIT}] & (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char})error )
-00281         \textcolor{keywordflow}{return} 1;
+00281         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
 00282 
-00283     \textcolor{keywordflow}{return} 0;
+00283     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
 00284 \}
 \end{DoxyCode}
 \hypertarget{classdynamixel_a6e62341ef9f51b6e152e769bd7be9d75}{}\index{dynamixel@{dynamixel}!get\+\_\+rxpacket\+\_\+error\+\_\+byte@{get\+\_\+rxpacket\+\_\+error\+\_\+byte}}
@@ -210,6 +239,10 @@ Dynamixel 1.\+0 protocol class.
 \item[{void}]{}
 \end{DoxyParamCaption}
 )}\label{classdynamixel_a6e62341ef9f51b6e152e769bd7be9d75}
+
+
+Returns the error byte. 
+
 
 \begin{DoxyCode}
 00287 \{
@@ -224,6 +257,10 @@ Dynamixel 1.\+0 protocol class.
 \end{DoxyParamCaption}
 )}\label{classdynamixel_ae9cc18fdeda8329f68fa0f2f0a7a9aba}
 
+
+Returns the received packet length. 
+
+
 \begin{DoxyCode}
 00297 \{
 00298     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{int})\hyperlink{classdynamixel_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gbStatusPacket}[\hyperlink{dynamixel_8h_ab24601f91d0364e4b62edad3c2a0a5c4}{PRT1\_PKT\_LENGTH}];
@@ -236,6 +273,10 @@ Dynamixel 1.\+0 protocol class.
 \item[{int}]{index}
 \end{DoxyParamCaption}
 )}\label{classdynamixel_a68b5fa99719a9aec0734ecfb0635503b}
+
+
+Returns the received parameter. 
+
 
 \begin{DoxyCode}
 00292 \{
@@ -250,6 +291,10 @@ Dynamixel 1.\+0 protocol class.
 \item[{int}]{baud\+\_\+rate}
 \end{DoxyParamCaption}
 )}\label{classdynamixel_a87960244d5846ae7583e37d2407eb61e}
+
+
+Initializates the port. 
+
 
 \begin{DoxyCode}
 00024 \{
@@ -266,19 +311,26 @@ Dynamixel 1.\+0 protocol class.
 00035     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
 00036 \}
 \end{DoxyCode}
-\hypertarget{classdynamixel_afddd976dbc486cd08b92e0e6e4117519}{}\index{dynamixel@{dynamixel}!is\+\_\+packet\+\_\+timeout@{is\+\_\+packet\+\_\+timeout}}
+\hypertarget{classdynamixel_a00d08481ebc4dee19debecf43f888522}{}\index{dynamixel@{dynamixel}!is\+\_\+packet\+\_\+timeout@{is\+\_\+packet\+\_\+timeout}}
 \index{is\+\_\+packet\+\_\+timeout@{is\+\_\+packet\+\_\+timeout}!dynamixel@{dynamixel}}
-\subsubsection[{is\+\_\+packet\+\_\+timeout}]{\setlength{\rightskip}{0pt plus 5cm}int dynamixel\+::is\+\_\+packet\+\_\+timeout (
+\subsubsection[{is\+\_\+packet\+\_\+timeout}]{\setlength{\rightskip}{0pt plus 5cm}bool dynamixel\+::is\+\_\+packet\+\_\+timeout (
 \begin{DoxyParamCaption}
 \item[{void}]{}
 \end{DoxyParamCaption}
-)}\label{classdynamixel_afddd976dbc486cd08b92e0e6e4117519}
+)}\label{classdynamixel_a00d08481ebc4dee19debecf43f888522}
+
+
+Returns true if the packet is timeout. 
+
+\begin{DoxyReturn}{Returns}
+True if the packet is timeout 
+\end{DoxyReturn}
 
 \begin{DoxyCode}
 00082 \{
 00083     \textcolor{keywordflow}{if}(this->\hyperlink{classdynamixel_a2fa5375537184c279a9ebfcfc0425071}{get\_packet\_time}() > \hyperlink{classdynamixel_a9f47887864517d74955a2bc787ae4456}{gdRcvWaitTime})
-00084         \textcolor{keywordflow}{return} 1;
-00085     \textcolor{keywordflow}{return} 0;
+00084         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+00085     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
 00086 \}
 \end{DoxyCode}
 \hypertarget{classdynamixel_a5ae4b2c6eb4c91f404f973ee8e6a1914}{}\index{dynamixel@{dynamixel}!is\+Open@{is\+Open}}
@@ -288,6 +340,10 @@ Dynamixel 1.\+0 protocol class.
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}\label{classdynamixel_a5ae4b2c6eb4c91f404f973ee8e6a1914}
+
+
+True if the port is open. 
+
 
 \begin{DoxyCode}
 00103 \{ \textcolor{keywordflow}{return} \hyperlink{classdynamixel_ae003cc90ada6d7b70eaa4ea9d42d4deb}{dH}.\hyperlink{classdxl__hal_a88bba601b5c9f285fcdc14e18a1f3398}{isOpen}(); \}
@@ -299,6 +355,15 @@ Dynamixel 1.\+0 protocol class.
 \item[{int}]{id}
 \end{DoxyParamCaption}
 )}\label{classdynamixel_af2bd714423e7c4fc089762805c0c71f3}
+
+
+Ping to the selected id, check com status for the ping result. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & I\+D where the ping is done \\
+\hline
+\end{DoxyParams}
 
 \begin{DoxyCode}
 00302 \{
@@ -320,6 +385,17 @@ Dynamixel 1.\+0 protocol class.
 \item[{int}]{address}
 \end{DoxyParamCaption}
 )}\label{classdynamixel_a888404b41c4c4395a0b745c77ff2cea9}
+
+
+Reads a byte from the selected I\+D at the selected address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Selects the I\+D to read the byte \\
+\hline
+{\em address} & Selects the address to read the byte \\
+\hline
+\end{DoxyParams}
 
 \begin{DoxyCode}
 00313 \{
@@ -347,6 +423,17 @@ Dynamixel 1.\+0 protocol class.
 \end{DoxyParamCaption}
 )}\label{classdynamixel_a45e99341e82c5114f6e829c9141bf96f}
 
+
+Reads a word to the selected I\+D at the selected address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Selects the I\+D to read the word \\
+\hline
+{\em address} & Selects the address to read the word \\
+\hline
+\end{DoxyParams}
+
 \begin{DoxyCode}
 00341 \{
 00342     \textcolor{keywordflow}{while}(\hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{giBusUsing});
@@ -373,6 +460,10 @@ Dynamixel 1.\+0 protocol class.
 \item[{void}]{}
 \end{DoxyParamCaption}
 )}\label{classdynamixel_aa26d2d2dff768563a1cb1480aa061608}
+
+
+Receives a packet. 
+
 
 \begin{DoxyCode}
 00152 \{
@@ -408,7 +499,7 @@ Dynamixel 1.\+0 protocol class.
 00179 
 00180         \textcolor{keywordflow}{if}( gbRxGetLength < \hyperlink{classdynamixel_a333686e1b5903d16c41df8172b6bd5a8}{gbRxPacketLength} )
 00181         \{
-00182             \textcolor{keywordflow}{if}( \hyperlink{classdynamixel_afddd976dbc486cd08b92e0e6e4117519}{is\_packet\_timeout}() == 1 )
+00182             \textcolor{keywordflow}{if}( \hyperlink{classdynamixel_a00d08481ebc4dee19debecf43f888522}{is\_packet\_timeout}() == 1 )
 00183             \{
 00184                 \textcolor{keywordflow}{if}(gbRxGetLength == 0)
 00185                     \hyperlink{classdynamixel_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{gbCommStatus} = \hyperlink{dynamixel_8h_af9976398353d104bb8a78b1f02f9fceb}{COMM\_RXTIMEOUT};
@@ -481,6 +572,15 @@ Dynamixel 1.\+0 protocol class.
 \end{DoxyParamCaption}
 )}\label{classdynamixel_a067f82c21ed176e18fa224d16f3d1c5b}
 
+
+Sets the timeout in number of received bytes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Num\+Rcv\+Byte} & Number of received bytes to do a timeout \\
+\hline
+\end{DoxyParams}
+
 \begin{DoxyCode}
 00070 \{
 00071     \hyperlink{classdynamixel_a6c6314fb7070e6fd361e57c5de17e0ec}{gdPacketStartTime} = \hyperlink{classdynamixel_ae003cc90ada6d7b70eaa4ea9d42d4deb}{dH}.\hyperlink{classdxl__hal_a6b6b7381c45308662fc3df6e7f74bc61}{get\_curr\_time}();
@@ -496,6 +596,15 @@ Dynamixel 1.\+0 protocol class.
 \end{DoxyParamCaption}
 )}\label{classdynamixel_a125b42f776c4aac520f274074f68b591}
 
+
+Sets the timeout in ms. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msec} & Miliseconds for the timeout \\
+\hline
+\end{DoxyParams}
+
 \begin{DoxyCode}
 00076 \{
 00077     \hyperlink{classdynamixel_a6c6314fb7070e6fd361e57c5de17e0ec}{gdPacketStartTime} = \hyperlink{classdynamixel_ae003cc90ada6d7b70eaa4ea9d42d4deb}{dH}.\hyperlink{classdxl__hal_a6b6b7381c45308662fc3df6e7f74bc61}{get\_curr\_time}();
@@ -510,6 +619,10 @@ Dynamixel 1.\+0 protocol class.
 \end{DoxyParamCaption}
 )}\label{classdynamixel_a84e24c72c3e5be866f8b28c2e5bd1d95}
 
+
+Sets the sending packet I\+D. 
+
+
 \begin{DoxyCode}
 00258 \{
 00259     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_a3c2bb339c587abadd977eb2f14daeff9}{PRT1\_PKT\_ID}] = (\textcolor{keywordtype}{unsigned} char)\textcolor{keywordtype}{id};
@@ -522,6 +635,10 @@ Dynamixel 1.\+0 protocol class.
 \item[{int}]{instruction}
 \end{DoxyParamCaption}
 )}\label{classdynamixel_a209a43f983f214323b6f0a627d5e8c13}
+
+
+Sets the sending packet instruction. 
+
 
 \begin{DoxyCode}
 00263 \{
@@ -537,6 +654,10 @@ Dynamixel 1.\+0 protocol class.
 \end{DoxyParamCaption}
 )}\label{classdynamixel_a829278f48e21c810b172eb8cab3b86de}
 
+
+Sets the sending packet length. 
+
+
 \begin{DoxyCode}
 00274 \{
 00275     \hyperlink{classdynamixel_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{dynamixel_8h_ab24601f91d0364e4b62edad3c2a0a5c4}{PRT1\_PKT\_LENGTH}] = (\textcolor{keywordtype}{unsigned} char)length;
@@ -550,6 +671,10 @@ Dynamixel 1.\+0 protocol class.
 \item[{int}]{value}
 \end{DoxyParamCaption}
 )}\label{classdynamixel_a2c3d31bbbed70a69918e9972a620384b}
+
+
+Sets the sending packet parameter. 
+
 
 \begin{DoxyCode}
 00268 \{
@@ -566,6 +691,10 @@ Dynamixel 1.\+0 protocol class.
 \end{DoxyParamCaption}
 )}\label{classdynamixel_a92ea074ed1c1a9cf29e039f8c425f01a}
 
+
+Closes the comunication. 
+
+
 \begin{DoxyCode}
 00051 \{
 00052     \hyperlink{classdynamixel_ae003cc90ada6d7b70eaa4ea9d42d4deb}{dH}.\hyperlink{classdxl__hal_a250fd7e4acabf54d0733551a13e89a2d}{close}();
@@ -579,6 +708,10 @@ Dynamixel 1.\+0 protocol class.
 \item[{void}]{}
 \end{DoxyParamCaption}
 )}\label{classdynamixel_a479187cd8940c16dd4374eb5be22b888}
+
+
+Sends a packet. 
+
 
 \begin{DoxyCode}
 00090 \{
@@ -662,6 +795,10 @@ Dynamixel 1.\+0 protocol class.
 \end{DoxyParamCaption}
 )}\label{classdynamixel_aebfc569c6b1eb0b98f8c385f0f921fc0}
 
+
+Sends and receives a packet. 
+
+
 \begin{DoxyCode}
 00246 \{
 00247     \hyperlink{classdynamixel_a479187cd8940c16dd4374eb5be22b888}{tx\_packet}();
@@ -682,6 +819,19 @@ Dynamixel 1.\+0 protocol class.
 \item[{int}]{value}
 \end{DoxyParamCaption}
 )}\label{classdynamixel_a66c1e32cc45dd46d329f1fc212e46a3d}
+
+
+Writes a byte to the selected I\+D at the selected address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Selects the I\+D to write the byte \\
+\hline
+{\em address} & Selects the address to write the byte \\
+\hline
+{\em value} & Value to set at the selected location \\
+\hline
+\end{DoxyParams}
 
 \begin{DoxyCode}
 00328 \{
@@ -709,6 +859,19 @@ Dynamixel 1.\+0 protocol class.
 \end{DoxyParamCaption}
 )}\label{classdynamixel_a925f62ce5e261e5ef4fe6dc46bdc7c63}
 
+
+Writes a word to the selected I\+D at the selected address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Selects the I\+D to write the word \\
+\hline
+{\em address} & Selects the address to write the word \\
+\hline
+{\em value} & Value to set at the selected location \\
+\hline
+\end{DoxyParams}
+
 \begin{DoxyCode}
 00356 \{
 00357     \textcolor{keywordflow}{while}(\hyperlink{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{giBusUsing});
@@ -733,33 +896,73 @@ Dynamixel 1.\+0 protocol class.
 \hypertarget{classdynamixel_ae003cc90ada6d7b70eaa4ea9d42d4deb}{}\index{dynamixel@{dynamixel}!d\+H@{d\+H}}
 \index{d\+H@{d\+H}!dynamixel@{dynamixel}}
 \subsubsection[{d\+H}]{\setlength{\rightskip}{0pt plus 5cm}{\bf dxl\+\_\+hal} dynamixel\+::d\+H\hspace{0.3cm}{\ttfamily [private]}}\label{classdynamixel_ae003cc90ada6d7b70eaa4ea9d42d4deb}
+
+
+Conains the serial port comunication. 
+
 \hypertarget{classdynamixel_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{}\index{dynamixel@{dynamixel}!gb\+Comm\+Status@{gb\+Comm\+Status}}
 \index{gb\+Comm\+Status@{gb\+Comm\+Status}!dynamixel@{dynamixel}}
 \subsubsection[{gb\+Comm\+Status}]{\setlength{\rightskip}{0pt plus 5cm}int dynamixel\+::gb\+Comm\+Status = {\bf C\+O\+M\+M\+\_\+\+R\+X\+S\+U\+C\+C\+E\+S\+S}\hspace{0.3cm}{\ttfamily [private]}}\label{classdynamixel_a5b603f6bed7ccc595f1f50bd6a6ebbfc}
+
+
+Current communication status. 
+
 \hypertarget{classdynamixel_afd94dcf01b8e96298727776e222de722}{}\index{dynamixel@{dynamixel}!gb\+Instruction\+Packet@{gb\+Instruction\+Packet}}
 \index{gb\+Instruction\+Packet@{gb\+Instruction\+Packet}!dynamixel@{dynamixel}}
 \subsubsection[{gb\+Instruction\+Packet}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char dynamixel\+::gb\+Instruction\+Packet\mbox{[}{\bf M\+A\+X\+N\+U\+M\+\_\+\+T\+X\+P\+A\+C\+K\+E\+T}\mbox{]} = \{0\}\hspace{0.3cm}{\ttfamily [private]}}\label{classdynamixel_afd94dcf01b8e96298727776e222de722}
+
+
+Contains all the instructions. 
+
 \hypertarget{classdynamixel_a9d590ce24791d111c2db9b66be1e046d}{}\index{dynamixel@{dynamixel}!gb\+Rx\+Get\+Length@{gb\+Rx\+Get\+Length}}
 \index{gb\+Rx\+Get\+Length@{gb\+Rx\+Get\+Length}!dynamixel@{dynamixel}}
 \subsubsection[{gb\+Rx\+Get\+Length}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int dynamixel\+::gb\+Rx\+Get\+Length = 0\hspace{0.3cm}{\ttfamily [private]}}\label{classdynamixel_a9d590ce24791d111c2db9b66be1e046d}
+
+
+Temporal length from the received packet. 
+
 \hypertarget{classdynamixel_a333686e1b5903d16c41df8172b6bd5a8}{}\index{dynamixel@{dynamixel}!gb\+Rx\+Packet\+Length@{gb\+Rx\+Packet\+Length}}
 \index{gb\+Rx\+Packet\+Length@{gb\+Rx\+Packet\+Length}!dynamixel@{dynamixel}}
 \subsubsection[{gb\+Rx\+Packet\+Length}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int dynamixel\+::gb\+Rx\+Packet\+Length = 0\hspace{0.3cm}{\ttfamily [private]}}\label{classdynamixel_a333686e1b5903d16c41df8172b6bd5a8}
+
+
+Received packet length. 
+
 \hypertarget{classdynamixel_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{}\index{dynamixel@{dynamixel}!gb\+Status\+Packet@{gb\+Status\+Packet}}
 \index{gb\+Status\+Packet@{gb\+Status\+Packet}!dynamixel@{dynamixel}}
 \subsubsection[{gb\+Status\+Packet}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char dynamixel\+::gb\+Status\+Packet\mbox{[}{\bf M\+A\+X\+N\+U\+M\+\_\+\+R\+X\+P\+A\+C\+K\+E\+T}\mbox{]} = \{0\}\hspace{0.3cm}{\ttfamily [private]}}\label{classdynamixel_aa57c86d3bbbeaf5c9d4f6bd00376b04f}
+
+
+Contains the status. 
+
 \hypertarget{classdynamixel_a2173f25c6299da7ddb37ba3d2bf1f738}{}\index{dynamixel@{dynamixel}!gd\+Byte\+Trans\+Time@{gd\+Byte\+Trans\+Time}}
 \index{gd\+Byte\+Trans\+Time@{gd\+Byte\+Trans\+Time}!dynamixel@{dynamixel}}
 \subsubsection[{gd\+Byte\+Trans\+Time}]{\setlength{\rightskip}{0pt plus 5cm}double dynamixel\+::gd\+Byte\+Trans\+Time = 0.\+0\hspace{0.3cm}{\ttfamily [private]}}\label{classdynamixel_a2173f25c6299da7ddb37ba3d2bf1f738}
+
+
+Byte transmission time. 
+
 \hypertarget{classdynamixel_a6c6314fb7070e6fd361e57c5de17e0ec}{}\index{dynamixel@{dynamixel}!gd\+Packet\+Start\+Time@{gd\+Packet\+Start\+Time}}
 \index{gd\+Packet\+Start\+Time@{gd\+Packet\+Start\+Time}!dynamixel@{dynamixel}}
 \subsubsection[{gd\+Packet\+Start\+Time}]{\setlength{\rightskip}{0pt plus 5cm}double dynamixel\+::gd\+Packet\+Start\+Time = 0.\+0\hspace{0.3cm}{\ttfamily [private]}}\label{classdynamixel_a6c6314fb7070e6fd361e57c5de17e0ec}
+
+
+Packet start time. 
+
 \hypertarget{classdynamixel_a9f47887864517d74955a2bc787ae4456}{}\index{dynamixel@{dynamixel}!gd\+Rcv\+Wait\+Time@{gd\+Rcv\+Wait\+Time}}
 \index{gd\+Rcv\+Wait\+Time@{gd\+Rcv\+Wait\+Time}!dynamixel@{dynamixel}}
 \subsubsection[{gd\+Rcv\+Wait\+Time}]{\setlength{\rightskip}{0pt plus 5cm}double dynamixel\+::gd\+Rcv\+Wait\+Time = 0.\+0\hspace{0.3cm}{\ttfamily [private]}}\label{classdynamixel_a9f47887864517d74955a2bc787ae4456}
+
+
+Receive wait time. 
+
 \hypertarget{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}{}\index{dynamixel@{dynamixel}!gi\+Bus\+Using@{gi\+Bus\+Using}}
 \index{gi\+Bus\+Using@{gi\+Bus\+Using}!dynamixel@{dynamixel}}
 \subsubsection[{gi\+Bus\+Using}]{\setlength{\rightskip}{0pt plus 5cm}int dynamixel\+::gi\+Bus\+Using = 0\hspace{0.3cm}{\ttfamily [private]}}\label{classdynamixel_ad10e0e49f5fef04bf789a89c14cc470a}
+
+
+True if the bus if being used. 
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

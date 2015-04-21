@@ -6,7 +6,6 @@
 #include <QDebug>
 #include <QDir>
 #include <QMutex>
-#include <QStatusBar>
 #include <QThread>
 #include <QVector>
 #include <QWaitCondition>
@@ -170,13 +169,6 @@ public:
         _mutex.unlock();
     }
     
-    /// Sets the status bar
-    /// @param status Pointer to the status bar
-    inline void setStatusBar(QStatusBar *status) 
-    {
-        _statusBar = status;
-    }
-    
     /// Continues program's execution
     inline void wakeUp()
     {
@@ -189,6 +181,11 @@ public:
     /// Writes data to the selected directory
     /// @param file Path to the file
     void write(QString &file); 
+    
+signals:
+    
+    /// Emmitted when the status bar must be changed
+    void statusBar(QString);
     
 private:
     
@@ -240,9 +237,6 @@ private:
     
     /// True if the servos port changes
     bool _sPortChanged;
-    
-    /// Pointer to the window status Bar
-    QStatusBar *_statusBar;
     
     /// Used to create another thread
     void run();

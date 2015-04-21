@@ -12,11 +12,12 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     
-    _sT.setStatusBar(ui->statusbar);
     _sT.start();
     
     connect(&_joy, SIGNAL(changed()), this, SLOT(joyChanged()));
     connect(&_timer, SIGNAL(timeout()), this, SLOT(update()));
+    connect(&_sT, SIGNAL(statusBar(QString)), 
+            ui->statusbar, SLOT(showMessage(QString)));
     
     
     _timer.setInterval(10);

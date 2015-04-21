@@ -1,25 +1,5 @@
 var searchData=
 [
-  ['id',['ID',['../d1/daa/class_a_x12.html#a08d272b502d65464202a3aa97825aec0ab2565d5698c9d943a8bcecf02b1389ad',1,'AX12::ID()'],['../dc/d38/struct_servo_thread_1_1_servo.html#a06b514c42113aa85fd1703fc88fca7ce',1,'ServoThread::Servo::ID()']]],
-  ['ierror',['iError',['../de/d6f/structdynamixel2_1_1data.html#a1c974bc78558d2a55f9a7c647cbb36f5',1,'dynamixel2::data']]],
-  ['ifirmver',['iFirmVer',['../df/d41/structdynamixel2_1_1ping__data.html#a869956077eab76548aaffde67817b2bf',1,'dynamixel2::ping_data']]],
-  ['iid',['iID',['../df/d41/structdynamixel2_1_1ping__data.html#a7c8829a586a920b2abe49719957abd37',1,'dynamixel2::ping_data::iID()'],['../de/d6f/structdynamixel2_1_1data.html#ab60c037af9dfe1f3c62f15d0581a5837',1,'dynamixel2::data::iID()']]],
-  ['ilength',['iLength',['../de/d6f/structdynamixel2_1_1data.html#a7d8d57614c387663f0658bbf4b7a69eb',1,'dynamixel2::data']]],
-  ['imodelno',['iModelNo',['../df/d41/structdynamixel2_1_1ping__data.html#a1786b3e1400d2ff8b8361b367b52fbb7',1,'dynamixel2::ping_data']]],
-  ['initialize',['initialize',['../df/d7e/classdynamixel.html#a87960244d5846ae7583e37d2407eb61e',1,'dynamixel::initialize()'],['../d9/deb/classdynamixel2.html#aa2c59aef6a9f1adf7df3bf43c8b255a2',1,'dynamixel2::initialize()']]],
-  ['inst_5faction',['INST_ACTION',['../dd/d04/dynamixel_8h.html#adea21b73305aa7a5b3317e299c616853',1,'dynamixel.h']]],
-  ['inst_5fbulk_5fread',['INST_BULK_READ',['../dd/d04/dynamixel_8h.html#a7967a17d10e9100ffb48ca542ba7587f',1,'dynamixel.h']]],
-  ['inst_5fbulk_5fwrite',['INST_BULK_WRITE',['../dd/d04/dynamixel_8h.html#a54f0a35d92b5238ca86cf770198cc1bf',1,'dynamixel.h']]],
-  ['inst_5fping',['INST_PING',['../dd/d04/dynamixel_8h.html#acb92e93ddd4b53533b14dc3403346bbf',1,'dynamixel.h']]],
-  ['inst_5fread',['INST_READ',['../dd/d04/dynamixel_8h.html#a60599b6587736bb05efb8ea3c5e5f87f',1,'dynamixel.h']]],
-  ['inst_5freboot',['INST_REBOOT',['../dd/d04/dynamixel_8h.html#aad0d63532602a783c0e4d6248496c555',1,'dynamixel.h']]],
-  ['inst_5freg_5fwrite',['INST_REG_WRITE',['../dd/d04/dynamixel_8h.html#ae2afd415cd9007f4688bf77507f0383e',1,'dynamixel.h']]],
-  ['inst_5freset',['INST_RESET',['../dd/d04/dynamixel_8h.html#ad670526ca941302efb4a0d00e7dd43c0',1,'dynamixel.h']]],
-  ['inst_5fstatus',['INST_STATUS',['../dd/d04/dynamixel_8h.html#ad64f9506dd447c94c75405ecae867b87',1,'dynamixel.h']]],
-  ['inst_5fsync_5fread',['INST_SYNC_READ',['../dd/d04/dynamixel_8h.html#a2c0994e6f77bcf585d7dfde88c10441f',1,'dynamixel.h']]],
-  ['inst_5fsync_5fwrite',['INST_SYNC_WRITE',['../dd/d04/dynamixel_8h.html#aeaa4b61ee11d45bd1a0cb932d7abaf77',1,'dynamixel.h']]],
-  ['inst_5fwrite',['INST_WRITE',['../dd/d04/dynamixel_8h.html#a1c304d06170982719fd605a87c9101f0',1,'dynamixel.h']]],
-  ['is_5fpacket_5ftimeout',['is_packet_timeout',['../df/d7e/classdynamixel.html#afddd976dbc486cd08b92e0e6e4117519',1,'dynamixel::is_packet_timeout()'],['../d9/deb/classdynamixel2.html#a4c996c0d9edcfd320906674512837a9e',1,'dynamixel2::is_packet_timeout()']]],
-  ['isopen',['isOpen',['../d5/dae/classdxl__hal.html#a88bba601b5c9f285fcdc14e18a1f3398',1,'dxl_hal::isOpen()'],['../df/d7e/classdynamixel.html#a5ae4b2c6eb4c91f404f973ee8e6a1914',1,'dynamixel::isOpen()'],['../d9/deb/classdynamixel2.html#a3a93b1220d71166f282ef5f2d8307dbe',1,'dynamixel2::isOpen()']]],
-  ['istartaddr',['iStartAddr',['../de/d6f/structdynamixel2_1_1data.html#adfeca69c1b405b26a9381d53e3954156',1,'dynamixel2::data']]]
+  ['joychanged',['joyChanged',['../d9/dc6/class_main_window.html#abb4c2d8a79c9f80010ea031366bf8226',1,'MainWindow']]],
+  ['joystickchanged',['joystickChanged',['../d9/dc6/class_main_window.html#ac85ba5aec3be2a51a348ff669b9dc842',1,'MainWindow::joystickChanged()'],['../d7/d60/class_options_window.html#ae8c0373be58da710194f8d14f1c3c4dc',1,'OptionsWindow::joystickChanged()']]]
 ];

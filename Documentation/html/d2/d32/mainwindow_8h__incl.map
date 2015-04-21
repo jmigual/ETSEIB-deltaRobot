@@ -1,7 +1,7 @@
 <map id="mainwindow.h" name="mainwindow.h">
-<area shape="rect" id="node8" href="$de/d72/ax12_8h.html" title="Contains the AX12 class declaration. " alt="" coords="218,229,300,256"/>
-<area shape="rect" id="node9" href="$dd/d04/dynamixel_8h.html" title="Contains the dynamixel and dynamixel2 classes declaration. " alt="" coords="200,304,292,331"/>
-<area shape="rect" id="node14" href="$d6/d2a/optionswindow_8h.html" title="Contains the OptionsWindow class declaration. " alt="" coords="748,80,866,107"/>
-<area shape="rect" id="node18" href="$da/d77/servothread_8h.html" title="Contains the ServoThread class implementation. " alt="" coords="483,155,582,181"/>
-<area shape="rect" id="node10" href="$d3/d67/dxl__hal_8h.html" title="Contains the Dynamixel SDK platform dependent header declaration. " alt="" coords="406,379,480,405"/>
+<area shape="rect" id="node8" href="$de/d72/ax12_8h.html" title="Contains the AX12 class declaration. " alt="" coords="23,229,106,256"/>
+<area shape="rect" id="node9" href="$dd/d04/dynamixel_8h.html" title="Contains the dynamixel and dynamixel2 classes declaration. " alt="" coords="5,304,97,331"/>
+<area shape="rect" id="node14" href="$d6/d2a/optionswindow_8h.html" title="Contains the OptionsWindow class declaration. " alt="" coords="817,80,934,107"/>
+<area shape="rect" id="node18" href="$da/d77/servothread_8h.html" title="Contains the ServoThread class implementation. " alt="" coords="498,155,597,181"/>
+<area shape="rect" id="node10" href="$d3/d67/dxl__hal_8h.html" title="Contains the Dynamixel SDK platform dependent header declaration. " alt="" coords="217,379,291,405"/>
 </map>

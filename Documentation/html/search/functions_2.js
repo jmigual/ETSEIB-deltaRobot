@@ -1,8 +1,4 @@
 var searchData=
 [
-  ['change_5fbaudrate',['change_baudrate',['../d5/dae/classdxl__hal.html#a0eaaa5340bc9dce73cc920dc8befe5b0',1,'dxl_hal::change_baudrate()'],['../df/d7e/classdynamixel.html#a7554c7889896e29e11a62027d89f3fdf',1,'dynamixel::change_baudrate()'],['../d9/deb/classdynamixel2.html#ad0cef34ebfdd57ba0110e7c3623d7aa6',1,'dynamixel2::change_baudrate()']]],
-  ['clear',['clear',['../d5/dae/classdxl__hal.html#a004eedde5af69219d7288ec8ea97c89f',1,'dxl_hal']]],
-  ['close',['close',['../d5/dae/classdxl__hal.html#a250fd7e4acabf54d0733551a13e89a2d',1,'dxl_hal']]],
-  ['connectedid',['connectedID',['../d1/daa/class_a_x12.html#a2fa05296aa57896a5cb0ef4ce0aa96f1',1,'AX12']]],
-  ['cont',['cont',['../de/d6f/class_servo_thread.html#a01c61d9505a2aeaa1a4fa4c05474738c',1,'ServoThread']]]
+  ['dynamixel',['dynamixel',['../df/d7e/classdynamixel.html#a7aa668a213db6a41bede8e08a6fec830',1,'dynamixel::dynamixel()'],['../df/d7e/classdynamixel.html#a5d4fed957a4b2d1690c0fa72127f5cbf',1,'dynamixel::dynamixel(QString port_num, int baud_rate=1000000)']]]
 ];

@@ -140,6 +140,8 @@ Private Slots</h2></td></tr>
 <tr class="memitem:a128f71880d4b9683149023fc46fcc9f8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dc6/class_main_window.html#a128f71880d4b9683149023fc46fcc9f8">update</a> ()</td></tr>
 <tr class="memdesc:a128f71880d4b9683149023fc46fcc9f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates all data to the servo thread.  <a href="#a128f71880d4b9683149023fc46fcc9f8">More...</a><br /></td></tr>
 <tr class="separator:a128f71880d4b9683149023fc46fcc9f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae66e9ab15f911b93fce0f161d2fde880"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dc6/class_main_window.html#ae66e9ab15f911b93fce0f161d2fde880">on_start_clicked</a> ()</td></tr>
+<tr class="separator:ae66e9ab15f911b93fce0f161d2fde880"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -224,53 +226,59 @@ Static Private Attributes</h2></td></tr>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="../../d9/dc6/class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>(<span class="keyword">new</span> Ui::MainWindow)</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="../../d9/dc6/class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;setupUi(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="../../d9/dc6/class_main_window.html#a97f8ecc7ecb930b796178cef7b975013">_sT</a>.start();</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="../../d9/dc6/class_main_window.html#a254b03b878cfda75c1c411a2f8568d33">_timer</a>.setInterval(10);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="../../d9/dc6/class_main_window.html#a254b03b878cfda75c1c411a2f8568d33">_timer</a>.start();</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="../../d9/dc6/class_main_window.html#a97f8ecc7ecb930b796178cef7b975013">_sT</a>.<a class="code" href="../../de/d6f/class_servo_thread.html#a2d05e011577cf2783978a9837114e29e">setStatusBar</a>(<a class="code" href="../../d9/dc6/class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;statusbar);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="../../d9/dc6/class_main_window.html#a97f8ecc7ecb930b796178cef7b975013">_sT</a>.start();</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    </div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    connect(&amp;<a class="code" href="../../d9/dc6/class_main_window.html#a671f35800890e518713e1946671d8730">_joy</a>, SIGNAL(changed()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d9/dc6/class_main_window.html#abb4c2d8a79c9f80010ea031366bf8226">joyChanged</a>()));</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    connect(&amp;<a class="code" href="../../d9/dc6/class_main_window.html#a254b03b878cfda75c1c411a2f8568d33">_timer</a>, SIGNAL(timeout()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d9/dc6/class_main_window.html#a128f71880d4b9683149023fc46fcc9f8">update</a>()));</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="comment">// JOYSTICK</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    QVector&lt; QString &gt; V(<a class="code" href="../../d9/dc6/class_main_window.html#a671f35800890e518713e1946671d8730">_joy</a>.getAllAxis());</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="comment">// Adding axis</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    QGridLayout *wL = <span class="keyword">new</span> QGridLayout;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; XJoystick::AxisCount; ++i) {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        QHBoxLayout *L = <span class="keyword">new</span> QHBoxLayout;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        L-&gt;addWidget(<span class="keyword">new</span> QLabel(V[i].append(<span class="stringliteral">&quot;:&quot;</span>), <span class="keyword">this</span>));</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <a class="code" href="../../d9/dc6/class_main_window.html#a30c99d7a544f74b0650758e5cc7ead5a">_axis</a>[i] = <span class="keyword">new</span> QLabel(<span class="stringliteral">&quot;#&quot;</span>);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        L-&gt;addWidget(<a class="code" href="../../d9/dc6/class_main_window.html#a30c99d7a544f74b0650758e5cc7ead5a">_axis</a>[i]);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        L-&gt;addStretch();</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        wL-&gt;addLayout(L, i%3, i/3); </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="../../d9/dc6/class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;joyAxis-&gt;setLayout(wL);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">// Adding buttons</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    wL = <span class="keyword">new</span> QGridLayout;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; XJoystick::ButtonCount; ++i) {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <a class="code" href="../../d9/dc6/class_main_window.html#a8eaf474e1b8672f32873ed009e28ce8a">_buts</a>[i] = <span class="keyword">new</span> QLabel(QString::number(i + 1));</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        wL-&gt;addWidget(<a class="code" href="../../d9/dc6/class_main_window.html#a8eaf474e1b8672f32873ed009e28ce8a">_buts</a>[i], i/8, i%8);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="../../d9/dc6/class_main_window.html#a8eaf474e1b8672f32873ed009e28ce8a">_buts</a>[i]-&gt;setEnabled(<span class="keyword">false</span>);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="../../d9/dc6/class_main_window.html#a8eaf474e1b8672f32873ed009e28ce8a">_buts</a>[i]-&gt;hide();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="../../d9/dc6/class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;joyButs-&gt;setLayout(wL);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="../../d9/dc6/class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;joyAxis-&gt;hide();</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="../../d9/dc6/class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;joyButs-&gt;hide();</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="../../d9/dc6/class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;line-&gt;hide();</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">// TODO: Create dataPath</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="../../d9/dc6/class_main_window.html#aaccbe653019df03668429890e325ac21">_dataP</a> = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    QDir dir(<a class="code" href="../../d9/dc6/class_main_window.html#aaccbe653019df03668429890e325ac21">_dataP</a>);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">if</span> (!dir.exists()) dir.mkpath(<a class="code" href="../../d9/dc6/class_main_window.html#aaccbe653019df03668429890e325ac21">_dataP</a>);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="../../d9/dc6/class_main_window.html#a254b03b878cfda75c1c411a2f8568d33">_timer</a>.setInterval(10);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="../../d9/dc6/class_main_window.html#a254b03b878cfda75c1c411a2f8568d33">_timer</a>.start();</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">// JOYSTICK</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    QVector&lt; QString &gt; V(<a class="code" href="../../d9/dc6/class_main_window.html#a671f35800890e518713e1946671d8730">_joy</a>.getAllAxis());</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="comment">// Adding axis</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    QGridLayout *wL = <span class="keyword">new</span> QGridLayout;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; XJoystick::AxisCount; ++i) {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        QHBoxLayout *L = <span class="keyword">new</span> QHBoxLayout;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        L-&gt;addWidget(<span class="keyword">new</span> QLabel(V[i].append(<span class="stringliteral">&quot;:&quot;</span>), <span class="keyword">this</span>));</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <a class="code" href="../../d9/dc6/class_main_window.html#a30c99d7a544f74b0650758e5cc7ead5a">_axis</a>[i] = <span class="keyword">new</span> QLabel(<span class="stringliteral">&quot;#&quot;</span>);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        L-&gt;addWidget(<a class="code" href="../../d9/dc6/class_main_window.html#a30c99d7a544f74b0650758e5cc7ead5a">_axis</a>[i]);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        L-&gt;addStretch();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        wL-&gt;addLayout(L, i%3, i/3); </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="../../d9/dc6/class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;joyAxis-&gt;setLayout(wL);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="comment">// Adding buttons</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    wL = <span class="keyword">new</span> QGridLayout;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; XJoystick::ButtonCount; ++i) {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <a class="code" href="../../d9/dc6/class_main_window.html#a8eaf474e1b8672f32873ed009e28ce8a">_buts</a>[i] = <span class="keyword">new</span> QLabel(QString::number(i + 1));</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        wL-&gt;addWidget(<a class="code" href="../../d9/dc6/class_main_window.html#a8eaf474e1b8672f32873ed009e28ce8a">_buts</a>[i], i/8, i%8);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <a class="code" href="../../d9/dc6/class_main_window.html#a8eaf474e1b8672f32873ed009e28ce8a">_buts</a>[i]-&gt;setEnabled(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <a class="code" href="../../d9/dc6/class_main_window.html#a8eaf474e1b8672f32873ed009e28ce8a">_buts</a>[i]-&gt;hide();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="../../d9/dc6/class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;joyButs-&gt;setLayout(wL);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="../../d9/dc6/class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;joyAxis-&gt;hide();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="../../d9/dc6/class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;joyButs-&gt;hide();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="../../d9/dc6/class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;line-&gt;hide();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">// Creating data Path    </span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <a class="code" href="../../d9/dc6/class_main_window.html#aaccbe653019df03668429890e325ac21">_dataP</a> = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    QDir dir(<a class="code" href="../../d9/dc6/class_main_window.html#aaccbe653019df03668429890e325ac21">_dataP</a>);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">if</span> (!dir.exists()) dir.mkpath(<a class="code" href="../../d9/dc6/class_main_window.html#aaccbe653019df03668429890e325ac21">_dataP</a>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
+<div class="ttc" id="class_servo_thread_html_a2d05e011577cf2783978a9837114e29e"><div class="ttname"><a href="../../de/d6f/class_servo_thread.html#a2d05e011577cf2783978a9837114e29e">ServoThread::setStatusBar</a></div><div class="ttdeci">void setStatusBar(QStatusBar *status)</div><div class="ttdoc">Sets the status bar. </div><div class="ttdef"><b>Definition:</b> servothread.h:175</div></div>
 <div class="ttc" id="class_main_window_html_a97f8ecc7ecb930b796178cef7b975013"><div class="ttname"><a href="../../d9/dc6/class_main_window.html#a97f8ecc7ecb930b796178cef7b975013">MainWindow::_sT</a></div><div class="ttdeci">ServoThread _sT</div><div class="ttdoc">Contains the thread controlling all the servos and external hardware. </div><div class="ttdef"><b>Definition:</b> mainwindow.h:77</div></div>
 <div class="ttc" id="class_main_window_html_a8eaf474e1b8672f32873ed009e28ce8a"><div class="ttname"><a href="../../d9/dc6/class_main_window.html#a8eaf474e1b8672f32873ed009e28ce8a">MainWindow::_buts</a></div><div class="ttdeci">QVector&lt; QLabel * &gt; _buts</div><div class="ttdoc">Handles all the button labels. </div><div class="ttdef"><b>Definition:</b> mainwindow.h:61</div></div>
 <div class="ttc" id="class_main_window_html_a254b03b878cfda75c1c411a2f8568d33"><div class="ttname"><a href="../../d9/dc6/class_main_window.html#a254b03b878cfda75c1c411a2f8568d33">MainWindow::_timer</a></div><div class="ttdeci">QTimer _timer</div><div class="ttdoc">To update the joystick value. </div><div class="ttdef"><b>Definition:</b> mainwindow.h:80</div></div>
 <div class="ttc" id="class_main_window_html_a20f66f574ed4c96d8dfc0013e1095f15"><div class="ttname"><a href="../../d9/dc6/class_main_window.html#a20f66f574ed4c96d8dfc0013e1095f15">MainWindow::_axisV</a></div><div class="ttdeci">QVector&lt; float &gt; _axisV</div><div class="ttdoc">Contains the axis value;. </div><div class="ttdef"><b>Definition:</b> mainwindow.h:58</div></div>
-<div class="ttc" id="class_main_window_html_a128f71880d4b9683149023fc46fcc9f8"><div class="ttname"><a href="../../d9/dc6/class_main_window.html#a128f71880d4b9683149023fc46fcc9f8">MainWindow::update</a></div><div class="ttdeci">void update()</div><div class="ttdoc">Updates all data to the servo thread. </div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:102</div></div>
+<div class="ttc" id="class_main_window_html_a128f71880d4b9683149023fc46fcc9f8"><div class="ttname"><a href="../../d9/dc6/class_main_window.html#a128f71880d4b9683149023fc46fcc9f8">MainWindow::update</a></div><div class="ttdeci">void update()</div><div class="ttdoc">Updates all data to the servo thread. </div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:107</div></div>
 <div class="ttc" id="class_main_window_html_a35466a70ed47252a0191168126a352a5"><div class="ttname"><a href="../../d9/dc6/class_main_window.html#a35466a70ed47252a0191168126a352a5">MainWindow::ui</a></div><div class="ttdeci">Ui::MainWindow * ui</div><div class="ttdoc">Contains the user interface. </div><div class="ttdef"><b>Definition:</b> mainwindow.h:83</div></div>
 <div class="ttc" id="class_main_window_html_aaccbe653019df03668429890e325ac21"><div class="ttname"><a href="../../d9/dc6/class_main_window.html#aaccbe653019df03668429890e325ac21">MainWindow::_dataP</a></div><div class="ttdeci">QString _dataP</div><div class="ttdoc">Contains the path to the data location. </div><div class="ttdef"><b>Definition:</b> mainwindow.h:67</div></div>
-<div class="ttc" id="class_main_window_html_abb4c2d8a79c9f80010ea031366bf8226"><div class="ttname"><a href="../../d9/dc6/class_main_window.html#abb4c2d8a79c9f80010ea031366bf8226">MainWindow::joyChanged</a></div><div class="ttdeci">void joyChanged()</div><div class="ttdoc">Handles a joystick update. </div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:59</div></div>
+<div class="ttc" id="class_main_window_html_abb4c2d8a79c9f80010ea031366bf8226"><div class="ttname"><a href="../../d9/dc6/class_main_window.html#abb4c2d8a79c9f80010ea031366bf8226">MainWindow::joyChanged</a></div><div class="ttdeci">void joyChanged()</div><div class="ttdoc">Handles a joystick update. </div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:64</div></div>
 <div class="ttc" id="class_main_window_html_a519ae4630572cb63fbd04bce12fe8e77"><div class="ttname"><a href="../../d9/dc6/class_main_window.html#a519ae4630572cb63fbd04bce12fe8e77">MainWindow::_butsV</a></div><div class="ttdeci">QVector&lt; bool &gt; _butsV</div><div class="ttdoc">Handles all buttons values. </div><div class="ttdef"><b>Definition:</b> mainwindow.h:64</div></div>
 <div class="ttc" id="class_main_window_html_a30c99d7a544f74b0650758e5cc7ead5a"><div class="ttname"><a href="../../d9/dc6/class_main_window.html#a30c99d7a544f74b0650758e5cc7ead5a">MainWindow::_axis</a></div><div class="ttdeci">QVector&lt; QLabel * &gt; _axis</div><div class="ttdoc">Handles all the axis labels. </div><div class="ttdef"><b>Definition:</b> mainwindow.h:55</div></div>
 <div class="ttc" id="class_main_window_html_a671f35800890e518713e1946671d8730"><div class="ttname"><a href="../../d9/dc6/class_main_window.html#a671f35800890e518713e1946671d8730">MainWindow::_joy</a></div><div class="ttdeci">XJoystick _joy</div><div class="ttdoc">To handle the joystick. </div><div class="ttdef"><b>Definition:</b> mainwindow.h:74</div></div>
@@ -291,9 +299,9 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Default destructor. </p>
-<div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;{</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">delete</span> <a class="code" href="../../d9/dc6/class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;{</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keyword">delete</span> <a class="code" href="../../d9/dc6/class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
 <div class="ttc" id="class_main_window_html_a35466a70ed47252a0191168126a352a5"><div class="ttname"><a href="../../d9/dc6/class_main_window.html#a35466a70ed47252a0191168126a352a5">MainWindow::ui</a></div><div class="ttdeci">Ui::MainWindow * ui</div><div class="ttdoc">Contains the user interface. </div><div class="ttdef"><b>Definition:</b> mainwindow.h:83</div></div>
 </div><!-- fragment -->
 </div>
@@ -321,36 +329,36 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Handles a joystick update. </p>
-<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;{</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">int</span> sel = <a class="code" href="../../d9/dc6/class_main_window.html#a671f35800890e518713e1946671d8730">_joy</a>.current();</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    QVector&lt; XJoystick::Info &gt; V(<a class="code" href="../../d9/dc6/class_main_window.html#a671f35800890e518713e1946671d8730">_joy</a>.available());</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">bool</span> found = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">int</span> i = 0;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">while</span> (i &lt; V.size() and not found) { found = V[i].ID == sel; ++i; }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">if</span> (not found) {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">if</span> (V.size() &gt; 0) {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <a class="code" href="../../d9/dc6/class_main_window.html#a671f35800890e518713e1946671d8730">_joy</a>.select(V[0].ID);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <a class="code" href="../../d9/dc6/class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;line-&gt;hide();</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <span class="comment">// Showing axis</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <a class="code" href="../../d9/dc6/class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;joyAxis-&gt;show();</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <span class="comment">// Showing buttons</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <span class="keywordflow">for</span> (QLabel *l : <a class="code" href="../../d9/dc6/class_main_window.html#a8eaf474e1b8672f32873ed009e28ce8a">_buts</a>) l-&gt;hide();</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <a class="code" href="../../d9/dc6/class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;joyButs-&gt;show();</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <span class="keywordtype">int</span> n = <a class="code" href="../../d9/dc6/class_main_window.html#a671f35800890e518713e1946671d8730">_joy</a>.buttonCount();</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; n; ++i) _buts[i]-&gt;show();</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        }</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <a class="code" href="../../d9/dc6/class_main_window.html#a671f35800890e518713e1946671d8730">_joy</a>.select(-1);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <a class="code" href="../../d9/dc6/class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;joyAxis-&gt;hide();</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <a class="code" href="../../d9/dc6/class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;joyButs-&gt;hide();</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <a class="code" href="../../d9/dc6/class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;line-&gt;hide();</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        }</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    emit <a class="code" href="../../d9/dc6/class_main_window.html#ac85ba5aec3be2a51a348ff669b9dc842">joystickChanged</a>();</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;{</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">int</span> sel = <a class="code" href="../../d9/dc6/class_main_window.html#a671f35800890e518713e1946671d8730">_joy</a>.current();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    QVector&lt; XJoystick::Info &gt; V(<a class="code" href="../../d9/dc6/class_main_window.html#a671f35800890e518713e1946671d8730">_joy</a>.available());</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">bool</span> found = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">int</span> i = 0;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">while</span> (i &lt; V.size() and not found) { found = V[i].ID == sel; ++i; }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">if</span> (not found) {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">if</span> (V.size() &gt; 0) {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <a class="code" href="../../d9/dc6/class_main_window.html#a671f35800890e518713e1946671d8730">_joy</a>.select(V[0].ID);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <a class="code" href="../../d9/dc6/class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;line-&gt;hide();</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="comment">// Showing axis</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <a class="code" href="../../d9/dc6/class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;joyAxis-&gt;show();</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <span class="comment">// Showing buttons</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <span class="keywordflow">for</span> (QLabel *l : <a class="code" href="../../d9/dc6/class_main_window.html#a8eaf474e1b8672f32873ed009e28ce8a">_buts</a>) l-&gt;hide();</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <a class="code" href="../../d9/dc6/class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;joyButs-&gt;show();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <span class="keywordtype">int</span> n = <a class="code" href="../../d9/dc6/class_main_window.html#a671f35800890e518713e1946671d8730">_joy</a>.buttonCount();</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; n; ++i) _buts[i]-&gt;show();</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <a class="code" href="../../d9/dc6/class_main_window.html#a671f35800890e518713e1946671d8730">_joy</a>.select(-1);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            <a class="code" href="../../d9/dc6/class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;joyAxis-&gt;hide();</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <a class="code" href="../../d9/dc6/class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;joyButs-&gt;hide();</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <a class="code" href="../../d9/dc6/class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;line-&gt;hide();</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    emit <a class="code" href="../../d9/dc6/class_main_window.html#ac85ba5aec3be2a51a348ff669b9dc842">joystickChanged</a>();</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
 <div class="ttc" id="class_main_window_html_a8eaf474e1b8672f32873ed009e28ce8a"><div class="ttname"><a href="../../d9/dc6/class_main_window.html#a8eaf474e1b8672f32873ed009e28ce8a">MainWindow::_buts</a></div><div class="ttdeci">QVector&lt; QLabel * &gt; _buts</div><div class="ttdoc">Handles all the button labels. </div><div class="ttdef"><b>Definition:</b> mainwindow.h:61</div></div>
 <div class="ttc" id="class_main_window_html_a35466a70ed47252a0191168126a352a5"><div class="ttname"><a href="../../d9/dc6/class_main_window.html#a35466a70ed47252a0191168126a352a5">MainWindow::ui</a></div><div class="ttdeci">Ui::MainWindow * ui</div><div class="ttdoc">Contains the user interface. </div><div class="ttdef"><b>Definition:</b> mainwindow.h:83</div></div>
 <div class="ttc" id="class_main_window_html_a671f35800890e518713e1946671d8730"><div class="ttname"><a href="../../d9/dc6/class_main_window.html#a671f35800890e518713e1946671d8730">MainWindow::_joy</a></div><div class="ttdeci">XJoystick _joy</div><div class="ttdoc">To handle the joystick. </div><div class="ttdef"><b>Definition:</b> mainwindow.h:74</div></div>
@@ -405,18 +413,57 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>To select the options. </p>
-<div class="fragment"><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;{</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <a class="code" href="../../d7/d60/class_options_window.html">OptionsWindow</a> o(<a class="code" href="../../d9/dc6/class_main_window.html#a671f35800890e518713e1946671d8730">_joy</a>, &amp;<a class="code" href="../../d9/dc6/class_main_window.html#a97f8ecc7ecb930b796178cef7b975013">_sT</a>, <span class="keyword">this</span>);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    o.exec();</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    connect(<span class="keyword">this</span>, SIGNAL(<a class="code" href="../../d9/dc6/class_main_window.html#ac85ba5aec3be2a51a348ff669b9dc842">joystickChanged</a>()), &amp;o, SLOT(<a class="code" href="../../d9/dc6/class_main_window.html#ac85ba5aec3be2a51a348ff669b9dc842">joystickChanged</a>()));</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">if</span> (o.result()) o.storeData();</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;{</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <a class="code" href="../../d7/d60/class_options_window.html">OptionsWindow</a> o(<a class="code" href="../../d9/dc6/class_main_window.html#a671f35800890e518713e1946671d8730">_joy</a>, &amp;<a class="code" href="../../d9/dc6/class_main_window.html#a97f8ecc7ecb930b796178cef7b975013">_sT</a>, <span class="keyword">this</span>);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    o.exec();</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    connect(<span class="keyword">this</span>, SIGNAL(<a class="code" href="../../d9/dc6/class_main_window.html#ac85ba5aec3be2a51a348ff669b9dc842">joystickChanged</a>()), &amp;o, SLOT(<a class="code" href="../../d9/dc6/class_main_window.html#ac85ba5aec3be2a51a348ff669b9dc842">joystickChanged</a>()));</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordflow">if</span> (o.result()) o.storeData();</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}</div>
 <div class="ttc" id="class_main_window_html_a97f8ecc7ecb930b796178cef7b975013"><div class="ttname"><a href="../../d9/dc6/class_main_window.html#a97f8ecc7ecb930b796178cef7b975013">MainWindow::_sT</a></div><div class="ttdeci">ServoThread _sT</div><div class="ttdoc">Contains the thread controlling all the servos and external hardware. </div><div class="ttdef"><b>Definition:</b> mainwindow.h:77</div></div>
 <div class="ttc" id="class_main_window_html_a671f35800890e518713e1946671d8730"><div class="ttname"><a href="../../d9/dc6/class_main_window.html#a671f35800890e518713e1946671d8730">MainWindow::_joy</a></div><div class="ttdeci">XJoystick _joy</div><div class="ttdoc">To handle the joystick. </div><div class="ttdef"><b>Definition:</b> mainwindow.h:74</div></div>
 <div class="ttc" id="class_options_window_html"><div class="ttname"><a href="../../d7/d60/class_options_window.html">OptionsWindow</a></div><div class="ttdoc">Class used to handle a Window to set the options. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:23</div></div>
 <div class="ttc" id="class_main_window_html_ac85ba5aec3be2a51a348ff669b9dc842"><div class="ttname"><a href="../../d9/dc6/class_main_window.html#ac85ba5aec3be2a51a348ff669b9dc842">MainWindow::joystickChanged</a></div><div class="ttdeci">void joystickChanged()</div><div class="ttdoc">Emmitted when a joystick changes. </div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ae66e9ab15f911b93fce0f161d2fde880"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::on_start_clicked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;{</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    QString text = <a class="code" href="../../d9/dc6/class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;start-&gt;text();</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordflow">if</span> (text == <span class="stringliteral">&quot;Start&quot;</span>) {</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <a class="code" href="../../d9/dc6/class_main_window.html#a97f8ecc7ecb930b796178cef7b975013">_sT</a>.<a class="code" href="../../de/d6f/class_servo_thread.html#a5f32574f843d76deffec45995028389b">wakeUp</a>();</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <a class="code" href="../../d9/dc6/class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;start-&gt;setText(<span class="stringliteral">&quot;Stop&quot;</span>);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    }</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (text == <span class="stringliteral">&quot;Stop&quot;</span>) {</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <a class="code" href="../../d9/dc6/class_main_window.html#a97f8ecc7ecb930b796178cef7b975013">_sT</a>.<a class="code" href="../../de/d6f/class_servo_thread.html#ae0d4a59954aafbe8cd85f9326e4fcdd0">pause</a>();</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <a class="code" href="../../d9/dc6/class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;start-&gt;setText(<span class="stringliteral">&quot;Start&quot;</span>);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    }</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;}</div>
+<div class="ttc" id="class_main_window_html_a97f8ecc7ecb930b796178cef7b975013"><div class="ttname"><a href="../../d9/dc6/class_main_window.html#a97f8ecc7ecb930b796178cef7b975013">MainWindow::_sT</a></div><div class="ttdeci">ServoThread _sT</div><div class="ttdoc">Contains the thread controlling all the servos and external hardware. </div><div class="ttdef"><b>Definition:</b> mainwindow.h:77</div></div>
+<div class="ttc" id="class_main_window_html_a35466a70ed47252a0191168126a352a5"><div class="ttname"><a href="../../d9/dc6/class_main_window.html#a35466a70ed47252a0191168126a352a5">MainWindow::ui</a></div><div class="ttdeci">Ui::MainWindow * ui</div><div class="ttdoc">Contains the user interface. </div><div class="ttdef"><b>Definition:</b> mainwindow.h:83</div></div>
+<div class="ttc" id="class_servo_thread_html_ae0d4a59954aafbe8cd85f9326e4fcdd0"><div class="ttname"><a href="../../de/d6f/class_servo_thread.html#ae0d4a59954aafbe8cd85f9326e4fcdd0">ServoThread::pause</a></div><div class="ttdeci">void pause()</div><div class="ttdoc">Pauses the execution. </div><div class="ttdef"><b>Definition:</b> servothread.h:77</div></div>
+<div class="ttc" id="class_servo_thread_html_a5f32574f843d76deffec45995028389b"><div class="ttname"><a href="../../de/d6f/class_servo_thread.html#a5f32574f843d76deffec45995028389b">ServoThread::wakeUp</a></div><div class="ttdeci">void wakeUp()</div><div class="ttdoc">Continues program&#39;s execution. </div><div class="ttdef"><b>Definition:</b> servothread.h:181</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -442,18 +489,20 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Updates all data to the servo thread. </p>
-<div class="fragment"><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;{</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <a class="code" href="../../d9/dc6/class_main_window.html#a671f35800890e518713e1946671d8730">_joy</a>.update();</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; XJoystick::AxisCount; ++i) <a class="code" href="../../d9/dc6/class_main_window.html#a20f66f574ed4c96d8dfc0013e1095f15">_axisV</a>[i] = <a class="code" href="../../d9/dc6/class_main_window.html#a671f35800890e518713e1946671d8730">_joy</a>[i];</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; XJoystick::ButtonCount; ++i) <a class="code" href="../../d9/dc6/class_main_window.html#a519ae4630572cb63fbd04bce12fe8e77">_butsV</a>[i] = <a class="code" href="../../d9/dc6/class_main_window.html#a671f35800890e518713e1946671d8730">_joy</a>.button(i);</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <a class="code" href="../../d9/dc6/class_main_window.html#a97f8ecc7ecb930b796178cef7b975013">_sT</a>.<a class="code" href="../../de/d6f/class_servo_thread.html#a8497ea56991b620981ce1fbf53d9ebdb">setData</a>(<a class="code" href="../../d9/dc6/class_main_window.html#a20f66f574ed4c96d8dfc0013e1095f15">_axisV</a>, <a class="code" href="../../d9/dc6/class_main_window.html#a519ae4630572cb63fbd04bce12fe8e77">_butsV</a>);</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="comment">// TODO: Finish update function</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;{</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <a class="code" href="../../d9/dc6/class_main_window.html#a671f35800890e518713e1946671d8730">_joy</a>.update();</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; XJoystick::AxisCount; ++i) <a class="code" href="../../d9/dc6/class_main_window.html#a20f66f574ed4c96d8dfc0013e1095f15">_axisV</a>[i] = <a class="code" href="../../d9/dc6/class_main_window.html#a671f35800890e518713e1946671d8730">_joy</a>[i];</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; XJoystick::ButtonCount; ++i) <a class="code" href="../../d9/dc6/class_main_window.html#a519ae4630572cb63fbd04bce12fe8e77">_butsV</a>[i] = <a class="code" href="../../d9/dc6/class_main_window.html#a671f35800890e518713e1946671d8730">_joy</a>.button(i);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <a class="code" href="../../d9/dc6/class_main_window.html#a97f8ecc7ecb930b796178cef7b975013">_sT</a>.<a class="code" href="../../de/d6f/class_servo_thread.html#a8497ea56991b620981ce1fbf53d9ebdb">setData</a>(<a class="code" href="../../d9/dc6/class_main_window.html#a20f66f574ed4c96d8dfc0013e1095f15">_axisV</a>, <a class="code" href="../../d9/dc6/class_main_window.html#a519ae4630572cb63fbd04bce12fe8e77">_butsV</a>);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    QVector&lt;ServoThread::Servo&gt; servo(<a class="code" href="../../d9/dc6/class_main_window.html#a97f8ecc7ecb930b796178cef7b975013">_sT</a>.<a class="code" href="../../de/d6f/class_servo_thread.html#a5fd8ef13314428f5ba7646730cc58f1c">getServosInfo</a>());</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="comment">// TODO: Finish update function</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;}</div>
 <div class="ttc" id="class_main_window_html_a97f8ecc7ecb930b796178cef7b975013"><div class="ttname"><a href="../../d9/dc6/class_main_window.html#a97f8ecc7ecb930b796178cef7b975013">MainWindow::_sT</a></div><div class="ttdeci">ServoThread _sT</div><div class="ttdoc">Contains the thread controlling all the servos and external hardware. </div><div class="ttdef"><b>Definition:</b> mainwindow.h:77</div></div>
 <div class="ttc" id="class_main_window_html_a20f66f574ed4c96d8dfc0013e1095f15"><div class="ttname"><a href="../../d9/dc6/class_main_window.html#a20f66f574ed4c96d8dfc0013e1095f15">MainWindow::_axisV</a></div><div class="ttdeci">QVector&lt; float &gt; _axisV</div><div class="ttdoc">Contains the axis value;. </div><div class="ttdef"><b>Definition:</b> mainwindow.h:58</div></div>
-<div class="ttc" id="class_servo_thread_html_a8497ea56991b620981ce1fbf53d9ebdb"><div class="ttname"><a href="../../de/d6f/class_servo_thread.html#a8497ea56991b620981ce1fbf53d9ebdb">ServoThread::setData</a></div><div class="ttdeci">void setData(QVector&lt; float &gt; &amp;aV, QVector&lt; bool &gt; &amp;buts)</div><div class="ttdoc">Adds the loaded data. </div><div class="ttdef"><b>Definition:</b> servothread.cpp:52</div></div>
+<div class="ttc" id="class_servo_thread_html_a8497ea56991b620981ce1fbf53d9ebdb"><div class="ttname"><a href="../../de/d6f/class_servo_thread.html#a8497ea56991b620981ce1fbf53d9ebdb">ServoThread::setData</a></div><div class="ttdeci">void setData(QVector&lt; float &gt; &amp;aV, QVector&lt; bool &gt; &amp;buts)</div><div class="ttdoc">Adds the loaded data. </div><div class="ttdef"><b>Definition:</b> servothread.cpp:53</div></div>
+<div class="ttc" id="class_servo_thread_html_a5fd8ef13314428f5ba7646730cc58f1c"><div class="ttname"><a href="../../de/d6f/class_servo_thread.html#a5fd8ef13314428f5ba7646730cc58f1c">ServoThread::getServosInfo</a></div><div class="ttdeci">void getServosInfo(QVector&lt; Servo &gt; &amp;V)</div><div class="ttdoc">Returns the servos info, with all its load and current position. </div><div class="ttdef"><b>Definition:</b> servothread.h:110</div></div>
 <div class="ttc" id="class_main_window_html_a519ae4630572cb63fbd04bce12fe8e77"><div class="ttname"><a href="../../d9/dc6/class_main_window.html#a519ae4630572cb63fbd04bce12fe8e77">MainWindow::_butsV</a></div><div class="ttdeci">QVector&lt; bool &gt; _butsV</div><div class="ttdoc">Handles all buttons values. </div><div class="ttdef"><b>Definition:</b> mainwindow.h:64</div></div>
 <div class="ttc" id="class_main_window_html_a671f35800890e518713e1946671d8730"><div class="ttname"><a href="../../d9/dc6/class_main_window.html#a671f35800890e518713e1946671d8730">MainWindow::_joy</a></div><div class="ttdeci">XJoystick _joy</div><div class="ttdoc">To handle the joystick. </div><div class="ttdef"><b>Definition:</b> mainwindow.h:74</div></div>
 </div><!-- fragment -->
@@ -775,7 +824,7 @@ Static Private Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Apr 20 2015 13:36:38 for DeltaRobot by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Apr 21 2015 21:16:00 for DeltaRobot by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

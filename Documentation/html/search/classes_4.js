@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['ping_5fdata',['ping_data',['../df/d41/structdynamixel2_1_1ping__data.html',1,'dynamixel2']]]
+  ['servo',['Servo',['../dc/d38/struct_servo_thread_1_1_servo.html',1,'ServoThread']]],
+  ['servothread',['ServoThread',['../de/d6f/class_servo_thread.html',1,'']]]
 ];

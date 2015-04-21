@@ -2,7 +2,7 @@
 \label{dynamixel_8cpp}\index{dxl/dynamixel.\+cpp@{dxl/dynamixel.\+cpp}}
 
 
-Contains the dynamixel and \hyperlink{classdynamixel2}{dynamixel2} classes implementation.  
+Contains the dynamixel and dynamixel2 classes implementation.  
 
 
 {\ttfamily \#include \char`\"{}dynamixel.\+h\char`\"{}}\\*
@@ -20,15 +20,10 @@ Include dependency graph for dynamixel.\+cpp\+:\nopagebreak
 \item 
 \#define \hyperlink{dynamixel_8cpp_aedac6609b233fa877f86b3804204a2fe}{P\+I\+N\+G\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+L\+E\+N\+G\+T\+H}~(14)
 \end{DoxyCompactItemize}
-\subsection*{Functions}
-\begin{DoxyCompactItemize}
-\item 
-unsigned short \hyperlink{dynamixel_8cpp_a7f337b20cce27fe165340db4ede5e404}{update\+\_\+crc} (unsigned short crc\+\_\+accum, unsigned char $\ast$data\+\_\+blk\+\_\+ptr, unsigned short data\+\_\+blk\+\_\+size)
-\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Contains the dynamixel and \hyperlink{classdynamixel2}{dynamixel2} classes implementation. 
+Contains the dynamixel and dynamixel2 classes implementation. 
 
 
 
@@ -39,67 +34,3 @@ Contains the dynamixel and \hyperlink{classdynamixel2}{dynamixel2} classes imple
 \hypertarget{dynamixel_8cpp_aedac6609b233fa877f86b3804204a2fe}{}\index{dynamixel.\+cpp@{dynamixel.\+cpp}!P\+I\+N\+G\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+L\+E\+N\+G\+T\+H@{P\+I\+N\+G\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+L\+E\+N\+G\+T\+H}}
 \index{P\+I\+N\+G\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+L\+E\+N\+G\+T\+H@{P\+I\+N\+G\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+L\+E\+N\+G\+T\+H}!dynamixel.\+cpp@{dynamixel.\+cpp}}
 \subsubsection[{P\+I\+N\+G\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+L\+E\+N\+G\+T\+H}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+I\+N\+G\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+L\+E\+N\+G\+T\+H~(14)}\label{dynamixel_8cpp_aedac6609b233fa877f86b3804204a2fe}
-
-
-\subsection{Function Documentation}
-\hypertarget{dynamixel_8cpp_a7f337b20cce27fe165340db4ede5e404}{}\index{dynamixel.\+cpp@{dynamixel.\+cpp}!update\+\_\+crc@{update\+\_\+crc}}
-\index{update\+\_\+crc@{update\+\_\+crc}!dynamixel.\+cpp@{dynamixel.\+cpp}}
-\subsubsection[{update\+\_\+crc}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short update\+\_\+crc (
-\begin{DoxyParamCaption}
-\item[{unsigned short}]{crc\+\_\+accum, }
-\item[{unsigned char $\ast$}]{data\+\_\+blk\+\_\+ptr, }
-\item[{unsigned short}]{data\+\_\+blk\+\_\+size}
-\end{DoxyParamCaption}
-)}\label{dynamixel_8cpp_a7f337b20cce27fe165340db4ede5e404}
-
-\begin{DoxyCode}
-00473 \{
-00474     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} i, j;
-00475     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} crc\_table[256] = \{0x0000,
-00476                                     0x8005, 0x800F, 0x000A, 0x801B, 0x001E, 0x0014, 0x8011,
-00477                                     0x8033, 0x0036, 0x003C, 0x8039, 0x0028, 0x802D, 0x8027,
-00478                                     0x0022, 0x8063, 0x0066, 0x006C, 0x8069, 0x0078, 0x807D,
-00479                                     0x8077, 0x0072, 0x0050, 0x8055, 0x805F, 0x005A, 0x804B,
-00480                                     0x004E, 0x0044, 0x8041, 0x80C3, 0x00C6, 0x00CC, 0x80C9,
-00481                                     0x00D8, 0x80DD, 0x80D7, 0x00D2, 0x00F0, 0x80F5, 0x80FF,
-00482                                     0x00FA, 0x80EB, 0x00EE, 0x00E4, 0x80E1, 0x00A0, 0x80A5,
-00483                                     0x80AF, 0x00AA, 0x80BB, 0x00BE, 0x00B4, 0x80B1, 0x8093,
-00484                                     0x0096, 0x009C, 0x8099, 0x0088, 0x808D, 0x8087, 0x0082,
-00485                                     0x8183, 0x0186, 0x018C, 0x8189, 0x0198, 0x819D, 0x8197,
-00486                                     0x0192, 0x01B0, 0x81B5, 0x81BF, 0x01BA, 0x81AB, 0x01AE,
-00487                                     0x01A4, 0x81A1, 0x01E0, 0x81E5, 0x81EF, 0x01EA, 0x81FB,
-00488                                     0x01FE, 0x01F4, 0x81F1, 0x81D3, 0x01D6, 0x01DC, 0x81D9,
-00489                                     0x01C8, 0x81CD, 0x81C7, 0x01C2, 0x0140, 0x8145, 0x814F,
-00490                                     0x014A, 0x815B, 0x015E, 0x0154, 0x8151, 0x8173, 0x0176,
-00491                                     0x017C, 0x8179, 0x0168, 0x816D, 0x8167, 0x0162, 0x8123,
-00492                                     0x0126, 0x012C, 0x8129, 0x0138, 0x813D, 0x8137, 0x0132,
-00493                                     0x0110, 0x8115, 0x811F, 0x011A, 0x810B, 0x010E, 0x0104,
-00494                                     0x8101, 0x8303, 0x0306, 0x030C, 0x8309, 0x0318, 0x831D,
-00495                                     0x8317, 0x0312, 0x0330, 0x8335, 0x833F, 0x033A, 0x832B,
-00496                                     0x032E, 0x0324, 0x8321, 0x0360, 0x8365, 0x836F, 0x036A,
-00497                                     0x837B, 0x037E, 0x0374, 0x8371, 0x8353, 0x0356, 0x035C,
-00498                                     0x8359, 0x0348, 0x834D, 0x8347, 0x0342, 0x03C0, 0x83C5,
-00499                                     0x83CF, 0x03CA, 0x83DB, 0x03DE, 0x03D4, 0x83D1, 0x83F3,
-00500                                     0x03F6, 0x03FC, 0x83F9, 0x03E8, 0x83ED, 0x83E7, 0x03E2,
-00501                                     0x83A3, 0x03A6, 0x03AC, 0x83A9, 0x03B8, 0x83BD, 0x83B7,
-00502                                     0x03B2, 0x0390, 0x8395, 0x839F, 0x039A, 0x838B, 0x038E,
-00503                                     0x0384, 0x8381, 0x0280, 0x8285, 0x828F, 0x028A, 0x829B,
-00504                                     0x029E, 0x0294, 0x8291, 0x82B3, 0x02B6, 0x02BC, 0x82B9,
-00505                                     0x02A8, 0x82AD, 0x82A7, 0x02A2, 0x82E3, 0x02E6, 0x02EC,
-00506                                     0x82E9, 0x02F8, 0x82FD, 0x82F7, 0x02F2, 0x02D0, 0x82D5,
-00507                                     0x82DF, 0x02DA, 0x82CB, 0x02CE, 0x02C4, 0x82C1, 0x8243,
-00508                                     0x0246, 0x024C, 0x8249, 0x0258, 0x825D, 0x8257, 0x0252,
-00509                                     0x0270, 0x8275, 0x827F, 0x027A, 0x826B, 0x026E, 0x0264,
-00510                                     0x8261, 0x0220, 0x8225, 0x822F, 0x022A, 0x823B, 0x023E,
-00511                                     0x0234, 0x8231, 0x8213, 0x0216, 0x021C, 0x8219, 0x0208,
-00512                                     0x820D, 0x8207, 0x0202 \};
-00513 
-00514     \textcolor{keywordflow}{for}(j = 0; j < data\_blk\_size; j++)
-00515     \{
-00516         i = ((\textcolor{keywordtype}{unsigned} short)(crc\_accum >> 8) ^ *data\_blk\_ptr++) & 0xFF;
-00517         crc\_accum = (crc\_accum << 8) ^ crc\_table[i];
-00518     \}
-00519 
-00520     \textcolor{keywordflow}{return} crc\_accum;
-00521 \}
-\end{DoxyCode}

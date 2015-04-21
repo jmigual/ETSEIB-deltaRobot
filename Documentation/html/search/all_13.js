@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['v_5f1_5f0',['v_1_0',['../de/d6f/class_servo_thread.html#aeccce0ac6a969e2ee7cbe91687e2d085a319b6bf2cb120faeefbd0a5118ece7e3',1,'ServoThread']]],
-  ['version',['Version',['../de/d6f/class_servo_thread.html#aeccce0ac6a969e2ee7cbe91687e2d085',1,'ServoThread']]],
-  ['versionfirmware',['VersionFirmware',['../d1/daa/class_a_x12.html#a08d272b502d65464202a3aa97825aec0a234de9d5194d6b6f4e45b854dbf1442d',1,'AX12']]]
+  ['wakeup',['wakeUp',['../de/d6f/class_servo_thread.html#a5f32574f843d76deffec45995028389b',1,'ServoThread']]],
+  ['write',['write',['../d5/dae/classdxl__hal.html#a90106970438fb0ab65852730a1c0776a',1,'dxl_hal::write()'],['../de/d6f/class_servo_thread.html#ae5753b8c12768d2115ff900f0ab8e13c',1,'ServoThread::write()']]],
+  ['write_5fbyte',['write_byte',['../df/d7e/classdynamixel.html#a66c1e32cc45dd46d329f1fc212e46a3d',1,'dynamixel']]],
+  ['write_5fword',['write_word',['../df/d7e/classdynamixel.html#a925f62ce5e261e5ef4fe6dc46bdc7c63',1,'dynamixel']]]
 ];

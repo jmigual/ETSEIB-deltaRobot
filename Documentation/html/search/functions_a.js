@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['main',['main',['../df/d0a/main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.cpp']]],
-  ['mainwindow',['MainWindow',['../d9/dc6/class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db',1,'MainWindow']]]
+  ['pause',['pause',['../de/d6f/class_servo_thread.html#ae0d4a59954aafbe8cd85f9326e4fcdd0',1,'ServoThread']]],
+  ['ping',['ping',['../df/d7e/classdynamixel.html#af2bd714423e7c4fc089762805c0c71f3',1,'dynamixel']]]
 ];

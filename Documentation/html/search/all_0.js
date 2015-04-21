@@ -29,6 +29,7 @@ var searchData=
   ['_5fsport',['_sPort',['../de/d6f/class_servo_thread.html#ac9a614aa1518efb49b0a06636bd1bdbf',1,'ServoThread']]],
   ['_5fsportchanged',['_sPortChanged',['../de/d6f/class_servo_thread.html#a6e803432db01b10ed975132315280fd3',1,'ServoThread']]],
   ['_5fst',['_sT',['../d9/dc6/class_main_window.html#a97f8ecc7ecb930b796178cef7b975013',1,'MainWindow']]],
+  ['_5fstatusbar',['_statusBar',['../de/d6f/class_servo_thread.html#ab03428f82ff9343dbbca155a91908c0a',1,'ServoThread']]],
   ['_5ftime',['_time',['../d5/dae/classdxl__hal.html#ae3d8733b5ca778b070218765ca0746ac',1,'dxl_hal']]],
   ['_5ftimed',['_timed',['../d5/dae/classdxl__hal.html#a10d474daa3ca42b5c5ceb6558a955ca1',1,'dxl_hal']]],
   ['_5ftimer',['_timer',['../d9/dc6/class_main_window.html#a254b03b878cfda75c1c411a2f8568d33',1,'MainWindow::_timer()'],['../d7/d60/class_options_window.html#af6320942b8558140989f552b3bbc1fbd',1,'OptionsWindow::_timer()']]]

@@ -13,8 +13,7 @@ ServoThread::ServoThread() :
     _sBaud(1000000),
     _servos(3),
     _sPort("COM9"),
-    _sPortChanged(false),
-    _statusBar(NULL)
+    _sPortChanged(false)
 {
     
 }
@@ -92,6 +91,7 @@ void ServoThread::run()
         if (not _end and _pause) {
             dxl.terminate();
             _cond.wait(&_mutex);
+            emit statusBar("Changed");
             dxl.initialize(sPort, sBaud);
         }        
         if (_dChanged) {

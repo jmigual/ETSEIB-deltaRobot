@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['terminate',['terminate',['../df/d7e/classdynamixel.html#a92ea074ed1c1a9cf29e039f8c425f01a',1,'dynamixel::terminate()'],['../d9/deb/classdynamixel2.html#a84d998585aab4e92413220ca5b489a0a',1,'dynamixel2::terminate()']]],
-  ['tx_5fpacket',['tx_packet',['../df/d7e/classdynamixel.html#a479187cd8940c16dd4374eb5be22b888',1,'dynamixel::tx_packet()'],['../d9/deb/classdynamixel2.html#a526e395e15fbf50ffbc8ce0853b08233',1,'dynamixel2::tx_packet()']]],
-  ['txrx_5fpacket',['txrx_packet',['../df/d7e/classdynamixel.html#aebfc569c6b1eb0b98f8c385f0f921fc0',1,'dynamixel::txrx_packet()'],['../d9/deb/classdynamixel2.html#a2cccd455a52afe99a37b249aa834cdc7',1,'dynamixel2::txrx_packet()']]]
+  ['wakeup',['wakeUp',['../de/d6f/class_servo_thread.html#a5f32574f843d76deffec45995028389b',1,'ServoThread']]],
+  ['write',['write',['../d5/dae/classdxl__hal.html#a90106970438fb0ab65852730a1c0776a',1,'dxl_hal::write()'],['../de/d6f/class_servo_thread.html#ae5753b8c12768d2115ff900f0ab8e13c',1,'ServoThread::write()']]],
+  ['write_5fbyte',['write_byte',['../df/d7e/classdynamixel.html#a66c1e32cc45dd46d329f1fc212e46a3d',1,'dynamixel']]],
+  ['write_5fword',['write_word',['../df/d7e/classdynamixel.html#a925f62ce5e261e5ef4fe6dc46bdc7c63',1,'dynamixel']]]
 ];
