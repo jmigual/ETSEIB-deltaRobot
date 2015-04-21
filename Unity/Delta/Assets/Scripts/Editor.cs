@@ -17,7 +17,8 @@ public class Editor : MonoBehaviour {
 	public GameObject Force;
 	public GameObject Stair;
 	public string path;
-	public static float timescale = 2f;
+	public Slider slider;
+	static public float timescale = 2f;
 
 	private GameObject selected;
 	private bool selectedExists;
@@ -32,6 +33,7 @@ public class Editor : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+	 	Physics.gravity = 19.6f * Vector3.down;
 		Time.timeScale=0f;
 		selected = Camera.main.GetComponent<CameraController>().center;
 		selectedExists = false;
@@ -220,9 +222,14 @@ public class Editor : MonoBehaviour {
 		GetComponent<Draw> ().enabled = true;
 		CameraController.onlyZoom = true;
 		Camera.main.orthographic = true;
-		Camera.main.transform.position = new Vector3 (0,50,0);
+		Camera.main.transform.position = new Vector3 (0, 100, 0);
 		Camera.main.transform.rotation = Quaternion.LookRotation (Vector3.down);
 		GetComponent<Editor> ().enabled = false;
+	}
+
+	public void TimeScale (){
+		timescale = slider.value;
+		Time.timeScale = slider.value;
 	}
 
 	public void saveState (){

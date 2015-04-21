@@ -51,11 +51,9 @@ public class Draw : MonoBehaviour {
 			{
 				if (Vector3.Distance(floorHit.point, lastPosition)>= distance)
 				{
-					
-					float realDistance=Vector3.Distance(floorHit.point,lastPosition);
 					if (!first) {
-						Instantiate (dominoPiece, lastPosition+(floorHit.point-lastPosition)*distance/realDistance + 1.2f*Vector3.up, Quaternion.LookRotation(floorHit.point - lastPosition));
-						lastPosition = lastPosition+(floorHit.point-lastPosition)*distance/realDistance;
+						Instantiate (dominoPiece, lastPosition+(floorHit.point-lastPosition).normalized*distance + 1.2f*Vector3.up, Quaternion.LookRotation(floorHit.point - lastPosition));
+						lastPosition = lastPosition+(floorHit.point-lastPosition).normalized*distance;
 					}
 					else {
 						first = false;
