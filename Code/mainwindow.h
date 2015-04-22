@@ -2,15 +2,8 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-// Qt Libraries
-#include <QDebug>
-#include <QLabel>
-#include <QMainWindow>
-#include <QVector>
-#include <QStandardPaths>
-
-// Other libraries
-#include <xjoystick.h>
+// Adding precompiled header
+#include "stable.h"
 
 // User libraries
 #include "dxl/ax12.h"

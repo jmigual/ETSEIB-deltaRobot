@@ -19,7 +19,7 @@ var searchData=
   ['setservoportinfo',['setServoPortInfo',['../de/d6f/class_servo_thread.html#a76af3e89d1a8705426584bedb0624909',1,'ServoThread']]],
   ['setsid',['setSID',['../de/d6f/class_servo_thread.html#ac3471e5020f5d9babd3f2ff7b3b82aca',1,'ServoThread']]],
   ['setspeed',['setSpeed',['../d1/daa/class_a_x12.html#a95428eea4d5165b81d80e4ab38e33b7b',1,'AX12']]],
-  ['setstatusbar',['setStatusBar',['../de/d6f/class_servo_thread.html#a2d05e011577cf2783978a9837114e29e',1,'ServoThread']]],
   ['singleangle',['singleAngle',['../de/d6f/class_servo_thread.html#add4637d917a772c4c01a43b5b66da2be',1,'ServoThread']]],
+  ['statusbar',['statusBar',['../de/d6f/class_servo_thread.html#a3c84cf179d1746091795c60f3a68ce06',1,'ServoThread']]],
   ['storedata',['storeData',['../d7/d60/class_options_window.html#ab0a56ad7347c20046602a7a2a1c83397',1,'OptionsWindow']]]
 ];

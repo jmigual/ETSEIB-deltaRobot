@@ -3,7 +3,10 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = DeltaRobot
 TEMPLATE = app
-CONFIG += c++14
+CONFIG += c++14 precompile_header
+
+# Precompiled headers
+PRECOMPILED_HEADER = stable.h
 
 #--------------
 # SFML include
@@ -43,7 +46,8 @@ HEADERS += \
     mainwindow.h \
     optionswindow.h \
     servothread.h \
-    dxl/ax12.h
+    dxl/ax12.h \
+    stable.h
 
 FORMS += \
     mainwindow.ui \

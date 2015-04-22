@@ -2,16 +2,8 @@
 #ifndef SERVOTHREAD_H
 #define SERVOTHREAD_H
 
-// Qt Libraries
-#include <QDebug>
-#include <QDir>
-#include <QMutex>
-#include <QThread>
-#include <QVector>
-#include <QWaitCondition>
-
-// Other libraries
-#include <xjoystick.h>
+// Adding precompiled header
+#include "stable.h"
 
 // User libraries
 #include "dxl/ax12.h"

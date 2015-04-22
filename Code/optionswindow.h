@@ -2,15 +2,7 @@
 #ifndef OPTIONSWINDOW_H
 #define OPTIONSWINDOW_H
 
-// Qt libraries
-#include <QDebug>
-#include <QDialog>
-#include <QSerialPort>
-#include <QSerialPortInfo>
-#include <QTimer>
-
-// Other libraries
-#include <xjoystick.h>
+#include "stable.h"
 
 // User libraries
 #include "servothread.h"

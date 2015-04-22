@@ -1,5 +1,6 @@
 <map id="servothread.h" name="servothread.h">
-<area shape="rect" id="node10" href="$de/d72/ax12_8h.html" title="Contains the AX12 class declaration. " alt="" coords="773,80,856,107"/>
-<area shape="rect" id="node11" href="$dd/d04/dynamixel_8h.html" title="Contains the dynamixel and dynamixel2 classes declaration. " alt="" coords="769,155,861,181"/>
-<area shape="rect" id="node12" href="$d3/d67/dxl__hal_8h.html" title="Contains the Dynamixel SDK platform dependent header declaration. " alt="" coords="777,229,852,256"/>
+<area shape="rect" id="node2" href="$d3/dd7/stable_8h.html" title="Contains all includes in a precompiled header. " alt="" coords="929,80,997,107"/>
+<area shape="rect" id="node20" href="$de/d72/ax12_8h.html" title="Contains the AX12 class declaration. " alt="" coords="1614,80,1697,107"/>
+<area shape="rect" id="node21" href="$dd/d04/dynamixel_8h.html" title="Contains the dynamixel and dynamixel2 classes declaration. " alt="" coords="1715,155,1807,181"/>
+<area shape="rect" id="node22" href="$d3/d67/dxl__hal_8h.html" title="Contains the Dynamixel SDK platform dependent header declaration. " alt="" coords="1631,229,1706,256"/>
 </map>
