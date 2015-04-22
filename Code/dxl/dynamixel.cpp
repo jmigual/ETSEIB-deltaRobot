@@ -7,14 +7,6 @@
 #define PING_STATUS_LENGTH  (14)
 
 
-
-/* Dynamixel Protocol 1.0 */
-/* device control method */
-dynamixel::dynamixel()
-{
-    
-}
-
 dynamixel::dynamixel(QString port_num, int baud_rate)
 {
     initialize(port_num, baud_rate);
@@ -25,7 +17,7 @@ int dynamixel::initialize( QString port_num, int baud_rate )
 	if( baud_rate < 1900 ) return 0;
 
 	if( not dH.open(port_num, baud_rate) ) return false;
-
+    
     // 1000/baudrate(bit per msec) * 10(start bit + data bit + stop bit)
 	gdByteTransTime = 1000.0 / (double)baud_rate * 10.0; 
 

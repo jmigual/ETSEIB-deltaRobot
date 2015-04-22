@@ -333,7 +333,7 @@ Returns all active servos;.
 00031     QVector <int> res;
 00032     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 256; ++i) \{
 00033         \hyperlink{class_a_x12_af48e370f92f69214a27618d5b69bcfe8}{dxl}->\hyperlink{classdynamixel_af2bd714423e7c4fc089762805c0c71f3}{ping}(i);
-00034         \textcolor{keywordflow}{if} (\hyperlink{class_a_x12_af48e370f92f69214a27618d5b69bcfe8}{dxl}->\hyperlink{classdynamixel_ac8440d5d34ae3c4618b28fdbbd748edc}{get\_comm\_result}() == \hyperlink{dynamixel_8h_a171328d9f298535c18d079f65e631434}{COMM\_RXSUCCESS}) res.push\_back(i);
+00034         \textcolor{keywordflow}{if} (\hyperlink{class_a_x12_af48e370f92f69214a27618d5b69bcfe8}{dxl}->\hyperlink{classdynamixel_ac8440d5d34ae3c4618b28fdbbd748edc}{get\_comm\_result}() == COMM\_RXSUCCESS) res.push\_back(i);
 00035     \}
 00036     
 00037     \textcolor{keywordflow}{return} res;
@@ -376,9 +376,9 @@ Returns the current position from 0º to 300º
 00050 \{
 00051     \textcolor{keywordflow}{if} (\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID} < 0) \textcolor{keywordflow}{return} 0;
 00052     \textcolor{keywordtype}{int} pos = \hyperlink{class_a_x12_af48e370f92f69214a27618d5b69bcfe8}{dxl}->\hyperlink{classdynamixel_a45e99341e82c5114f6e829c9141bf96f}{read\_word}(\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, RAM::PresentPosition);
-00053     \textcolor{keywordflow}{if} (\hyperlink{class_a_x12_af48e370f92f69214a27618d5b69bcfe8}{dxl}->\hyperlink{classdynamixel_ac8440d5d34ae3c4618b28fdbbd748edc}{get\_comm\_result}() != \hyperlink{dynamixel_8h_a171328d9f298535c18d079f65e631434}{COMM\_RXSUCCESS}) \textcolor{keywordflow}{return} -1;
+00053     \textcolor{keywordflow}{if} (\hyperlink{class_a_x12_af48e370f92f69214a27618d5b69bcfe8}{dxl}->\hyperlink{classdynamixel_ac8440d5d34ae3c4618b28fdbbd748edc}{get\_comm\_result}() != COMM\_RXSUCCESS) \textcolor{keywordflow}{return} -1;
 00054     
-00055     \textcolor{keywordflow}{if} (\hyperlink{class_a_x12_aba71492043d7a3226f0793db57372bec}{\_rads}) \textcolor{keywordflow}{return} double((pos/1023.0)*5*\hyperlink{ax12_8h_ae71449b1cc6e6250b91f539153a7a0d3}{M\_PI}/3);
+00055     \textcolor{keywordflow}{if} (\hyperlink{class_a_x12_aba71492043d7a3226f0793db57372bec}{\_rads}) \textcolor{keywordflow}{return} double((pos/1023.0)*5*M\_PI/3);
 00056     \textcolor{keywordflow}{return} double((pos/1023.0)*300);
 00057 \}
 \end{DoxyCode}
@@ -398,7 +398,7 @@ Returns the current speed from -\/100\% to 100\%, 100\% is Clock\+Wise and -\/10
 00068 \{
 00069     \textcolor{keywordflow}{if} (\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID} < 0) \textcolor{keywordflow}{return} 0;
 00070     \textcolor{keywordtype}{int} speed = \hyperlink{class_a_x12_af48e370f92f69214a27618d5b69bcfe8}{dxl}->\hyperlink{classdynamixel_a45e99341e82c5114f6e829c9141bf96f}{read\_word}(\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, RAM::PresentSpeed);
-00071     \textcolor{keywordflow}{if} (\hyperlink{class_a_x12_af48e370f92f69214a27618d5b69bcfe8}{dxl}->\hyperlink{classdynamixel_ac8440d5d34ae3c4618b28fdbbd748edc}{get\_comm\_result}() != \hyperlink{dynamixel_8h_a171328d9f298535c18d079f65e631434}{COMM\_RXSUCCESS}) \textcolor{keywordflow}{return} -1;
+00071     \textcolor{keywordflow}{if} (\hyperlink{class_a_x12_af48e370f92f69214a27618d5b69bcfe8}{dxl}->\hyperlink{classdynamixel_ac8440d5d34ae3c4618b28fdbbd748edc}{get\_comm\_result}() != COMM\_RXSUCCESS) \textcolor{keywordflow}{return} -1;
 00072     speed -= 1024;
 00073     \textcolor{keywordflow}{if} (speed == -1024) speed = 0;
 00074     \textcolor{keywordflow}{return} double((speed/1023.0)*100);
@@ -420,7 +420,7 @@ Returns the current Temperature in Celsius.
 00060 \{
 00061     \textcolor{keywordflow}{if} (\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID} < 0) \textcolor{keywordflow}{return} 0;
 00062     \textcolor{keywordtype}{int} temp = \hyperlink{class_a_x12_af48e370f92f69214a27618d5b69bcfe8}{dxl}->\hyperlink{classdynamixel_a888404b41c4c4395a0b745c77ff2cea9}{read\_byte}(\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, RAM::PresentTemperature);
-00063     \textcolor{keywordflow}{if} (\hyperlink{class_a_x12_af48e370f92f69214a27618d5b69bcfe8}{dxl}->\hyperlink{classdynamixel_ac8440d5d34ae3c4618b28fdbbd748edc}{get\_comm\_result}() != \hyperlink{dynamixel_8h_a171328d9f298535c18d079f65e631434}{COMM\_RXSUCCESS}) \textcolor{keywordflow}{return} -1;
+00063     \textcolor{keywordflow}{if} (\hyperlink{class_a_x12_af48e370f92f69214a27618d5b69bcfe8}{dxl}->\hyperlink{classdynamixel_ac8440d5d34ae3c4618b28fdbbd748edc}{get\_comm\_result}() != COMM\_RXSUCCESS) \textcolor{keywordflow}{return} -1;
 00064     \textcolor{keywordflow}{return} temp;
 00065 \}
 \end{DoxyCode}
@@ -440,7 +440,7 @@ Returns the current voltage in Volts.
 00078 \{
 00079     \textcolor{keywordflow}{if} (\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID} < 0) \textcolor{keywordflow}{return} 0;
 00080     \textcolor{keywordtype}{char} voltage = \hyperlink{class_a_x12_af48e370f92f69214a27618d5b69bcfe8}{dxl}->\hyperlink{classdynamixel_a888404b41c4c4395a0b745c77ff2cea9}{read\_byte}(\hyperlink{class_a_x12_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, RAM::PresentVoltage);
-00081     \textcolor{keywordflow}{if} (\hyperlink{class_a_x12_af48e370f92f69214a27618d5b69bcfe8}{dxl}->\hyperlink{classdynamixel_ac8440d5d34ae3c4618b28fdbbd748edc}{get\_comm\_result}() != \hyperlink{dynamixel_8h_a171328d9f298535c18d079f65e631434}{COMM\_RXSUCCESS}) \textcolor{keywordflow}{return} -1;
+00081     \textcolor{keywordflow}{if} (\hyperlink{class_a_x12_af48e370f92f69214a27618d5b69bcfe8}{dxl}->\hyperlink{classdynamixel_ac8440d5d34ae3c4618b28fdbbd748edc}{get\_comm\_result}() != COMM\_RXSUCCESS) \textcolor{keywordflow}{return} -1;
 00082     \textcolor{keywordflow}{return} double(voltage/10.0);
 00083 \}
 \end{DoxyCode}

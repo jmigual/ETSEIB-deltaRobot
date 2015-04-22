@@ -1,6 +1,6 @@
 This is makeindex, version 2.15 [MiKTeX 2.9] (kpathsea + Thai support).
-Scanning input file refman.idx....done (484 entries accepted, 0 rejected).
-Sorting entries.......done (4883 comparisons).
-Generating output file refman.ind....done (769 lines written, 0 warnings).
+Scanning input file refman.idx....done (394 entries accepted, 0 rejected).
+Sorting entries......done (3836 comparisons).
+Generating output file refman.ind....done (611 lines written, 0 warnings).
 Output written in refman.ind.
 Transcript written in refman.ilg.

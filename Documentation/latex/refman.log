@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.2.25)  22 APR 2015 09:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.2.25)  22 APR 2015 10:32
 entering extended mode
 **refman
 (refman.tex
@@ -1032,13 +1032,9 @@ LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <7> not available
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 6.29996pt on input line 72.
 
-[4] [5] [6] [7] [8])
+[4] [5] [6] [7])
 \tf@toc=\write5
-
-Underfull \vbox (badness 1968) has occurred while \output is active []
-
- [9]
-[10]
+ [8]
 Package hyperref Info: Option `pageanchor' set `true' on input line 138.
 
 Chapter 1.
@@ -1082,7 +1078,7 @@ LaTeX Font Info:    Try loading font information for T1+pcr on input line 10.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\t1pcr.fd"
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-<d4/dc1/class_a_x12__coll__graph.pdf, id=1407, 141.52875pt x 234.8775pt>
+<d4/dc1/class_a_x12__coll__graph.pdf, id=1160, 141.52875pt x 234.8775pt>
 File: d4/dc1/class_a_x12__coll__graph.pdf Graphic file (type pdf)
 
 <use d4/dc1/class_a_x12__coll__graph.pdf>
@@ -1166,7 +1162,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 [8] [9] [10]) (d5/dae/classdxl__hal.tex [11] [12] [13])
 (df/d7e/classdynamixel.tex
-<df/d4c/classdynamixel__coll__graph.pdf, id=1774, 141.52875pt x 167.62625pt>
+<df/d4c/classdynamixel__coll__graph.pdf, id=1520, 141.52875pt x 167.62625pt>
 File: df/d4c/classdynamixel__coll__graph.pdf Graphic file (type pdf)
 
 <use df/d4c/classdynamixel__coll__graph.pdf>
@@ -1175,16 +1171,16 @@ ine 18.
 (pdftex.def)             Requested size: 141.0pt x 167.01451pt.
  [14 <./df/d4c/classdynamixel__coll__graph.pdf>] [15] [16]
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 223.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 204.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 8.99994pt on input line 223.
+(Font)              scaled to size 8.99994pt on input line 204.
  [17]
-Underfull \hbox (badness 10000) detected at line 325
+Underfull \hbox (badness 10000) detected at line 306
 [][][]
  []
 
-[18] [19] [20] [21] [22] [23]) (d9/dc6/class_main_window.tex [24]
-<de/d4b/class_main_window__inherit__graph.pdf, id=2168, 160.6pt x 156.585pt>
+[18] [19] [20] [21] [22] [23] [24]) (d9/dc6/class_main_window.tex
+<de/d4b/class_main_window__inherit__graph.pdf, id=1794, 160.6pt x 156.585pt>
 File: de/d4b/class_main_window__inherit__graph.pdf Graphic file (type pdf)
 
 <use de/d4b/class_main_window__inherit__graph.pdf>
@@ -1192,19 +1188,18 @@ Package pdftex.def Info: de/d4b/class_main_window__inherit__graph.pdf used on i
 nput line 18.
 (pdftex.def)             Requested size: 160.0pt x 156.004pt.
 
-<d0/db8/class_main_window__coll__graph.pdf, id=2169, 248.93pt x 224.84pt>
+<d0/db8/class_main_window__coll__graph.pdf, id=1795, 248.93pt x 224.84pt>
 File: d0/db8/class_main_window__coll__graph.pdf Graphic file (type pdf)
 
 <use d0/db8/class_main_window__coll__graph.pdf>
 Package pdftex.def Info: d0/db8/class_main_window__coll__graph.pdf used on inpu
 t line 27.
 (pdftex.def)             Requested size: 248.0pt x 224.00577pt.
- [25 <./de/d4b/class_main_window__inherit__graph.pdf> <./d0/db8/class_main_wind
-ow__coll__graph.pdf
 
-pdfTeX warning: pdflatex (file ./d0/db8/class_main_window__coll__graph.pdf): PD
-F inclusion: multiple pdfs with page group included in a single page
->] [26]
+Underfull \vbox (badness 2005) has occurred while \output is active []
+
+ [25 <./de/d4b/class_main_window__inherit__graph.pdf>] [26 <./d0/db8/class_main
+_window__coll__graph.pdf>] [27]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 167.
@@ -1217,8 +1212,8 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 167.
 
-[27] [28] [29]) (d7/d60/class_options_window.tex
-<d3/d77/class_options_window__inherit__graph.pdf, id=2331, 165.61874pt x 156.58
+[28] [29]) (d7/d60/class_options_window.tex [30]
+<d3/d77/class_options_window__inherit__graph.pdf, id=1967, 165.61874pt x 156.58
 5pt>
 File: d3/d77/class_options_window__inherit__graph.pdf Graphic file (type pdf)
  <use d3/d77/class_options_window__inherit__graph.pdf>
@@ -1226,18 +1221,19 @@ Package pdftex.def Info: d3/d77/class_options_window__inherit__graph.pdf used o
 n input line 18.
 (pdftex.def)             Requested size: 165.0pt x 156.0064pt.
 
-<dd/d04/class_options_window__coll__graph.pdf, id=2332, 220.825pt x 224.84pt>
+<dd/d04/class_options_window__coll__graph.pdf, id=1968, 220.825pt x 224.84pt>
 File: dd/d04/class_options_window__coll__graph.pdf Graphic file (type pdf)
 
 <use dd/d04/class_options_window__coll__graph.pdf>
 Package pdftex.def Info: dd/d04/class_options_window__coll__graph.pdf used on i
 nput line 27.
 (pdftex.def)             Requested size: 220.0pt x 224.00919pt.
+ [31 <./d3/d77/class_options_window__inherit__graph.pdf> <./dd/d04/class_option
+s_window__coll__graph.pdf
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [30 <./d3/d77/class_options_window__inherit__graph.pdf>] [31 <./dd/d04/class_o
-ptions_window__coll__graph.pdf>]
+pdfTeX warning: pdflatex (file ./dd/d04/class_options_window__coll__graph.pdf):
+ PDF inclusion: multiple pdfs with page group included in a single page
+>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 121.
@@ -1251,8 +1247,8 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 121.
 
 [32] [33]) (dc/d38/struct_servo_thread_1_1_servo.tex [34])
-(de/d6f/class_servo_thread.tex
-<d1/d76/class_servo_thread__inherit__graph.pdf, id=2482, 150.5625pt x 156.585pt
+(de/d6f/class_servo_thread.tex [35]
+<d1/d76/class_servo_thread__inherit__graph.pdf, id=2116, 150.5625pt x 156.585pt
 >
 File: d1/d76/class_servo_thread__inherit__graph.pdf Graphic file (type pdf)
  <use d1/d76/class_servo_thread__inherit__graph.pdf>
@@ -1260,10 +1256,7 @@ Package pdftex.def Info: d1/d76/class_servo_thread__inherit__graph.pdf used on
 input line 18.
 (pdftex.def)             Requested size: 150.0pt x 156.01357pt.
 
-Underfull \vbox (badness 2452) has occurred while \output is active []
-
- [35]
-<d9/d9e/class_servo_thread__coll__graph.pdf, id=2488, 150.5625pt x 156.585pt>
+<d9/d9e/class_servo_thread__coll__graph.pdf, id=2117, 150.5625pt x 156.585pt>
 File: d9/d9e/class_servo_thread__coll__graph.pdf Graphic file (type pdf)
 
 <use d9/d9e/class_servo_thread__coll__graph.pdf>
@@ -1299,220 +1292,27 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 [39] [40] [41] [42] [43] [44] [45]) [46]
 Chapter 4.
-(d5/d95/ax12_8cpp.tex
-<d9/d3f/ax12_8cpp__incl.pdf, id=2788, 280.04625pt x 325.215pt>
-File: d9/d3f/ax12_8cpp__incl.pdf Graphic file (type pdf)
+(d5/d95/ax12_8cpp.tex) (de/d72/ax12_8h.tex) (d6/d2a/dxl__hal_8cpp.tex)
+(d3/d67/dxl__hal_8h.tex [47
 
-<use d9/d3f/ax12_8cpp__incl.pdf>
-Package pdftex.def Info: d9/d3f/ax12_8cpp__incl.pdf used on input line 13.
-(pdftex.def)             Requested size: 279.0pt x 324.0133pt.
-) (de/d72/ax12_8h.tex [47
+]) (de/d95/dynamixel_8cpp.tex)
+(dd/d04/dynamixel_8h.tex) (df/d0a/main_8cpp.tex [48])
+(d8/dd9/mainwindow_8cpp.tex) (d9/d53/mainwindow_8h.tex)
+(df/d6e/optionswindow_8cpp.tex) (d6/d2a/optionswindow_8h.tex [49])
+(d7/dfc/servothread_8cpp.tex) (da/d77/servothread_8h.tex) (d3/dd7/stable_8h.tex
+[50]) [51] [52
 
- <./d9/d3f/ax12_8cpp__incl.pdf>] <d8/d9b/ax12_8h__incl.pdf, id=2804, 280.04625p
-t x 269.005pt>
-File: d8/d9b/ax12_8h__incl.pdf Graphic file (type pdf)
-
-<use d8/d9b/ax12_8h__incl.pdf>
-Package pdftex.def Info: d8/d9b/ax12_8h__incl.pdf used on input line 14.
-(pdftex.def)             Requested size: 279.0pt x 268.01099pt.
-
-<df/dc0/ax12_8h__dep__incl.pdf, id=2805, 439.6425pt x 325.215pt>
-File: df/dc0/ax12_8h__dep__incl.pdf Graphic file (type pdf)
-
-<use df/dc0/ax12_8h__dep__incl.pdf>
-Package pdftex.def Info: df/dc0/ax12_8h__dep__incl.pdf used on input line 21.
-(pdftex.def)             Requested size: 350.0pt x 258.91191pt.
- [48 <./d8/d9b/ax12_8h__incl.pdf> <./df/dc0/ax12_8h__dep__incl.pdf
-
-pdfTeX warning: pdflatex (file ./df/dc0/ax12_8h__dep__incl.pdf): PDF inclusion:
- multiple pdfs with page group included in a single page
->]) (d6/d2a/dxl__hal_8cpp.tex
-<d6/d6b/dxl__hal_8cpp__incl.pdf, id=2831, 280.04625pt x 212.795pt>
-File: d6/d6b/dxl__hal_8cpp__incl.pdf Graphic file (type pdf)
-
-<use d6/d6b/dxl__hal_8cpp__incl.pdf>
-Package pdftex.def Info: d6/d6b/dxl__hal_8cpp__incl.pdf used on input line 13.
-(pdftex.def)             Requested size: 279.0pt x 212.00868pt.
-) (d3/d67/dxl__hal_8h.tex
-<d0/d47/dxl__hal_8h__incl.pdf, id=2832, 280.04625pt x 156.585pt>
-File: d0/d47/dxl__hal_8h__incl.pdf Graphic file (type pdf)
-
-<use d0/d47/dxl__hal_8h__incl.pdf>
-Package pdftex.def Info: d0/d47/dxl__hal_8h__incl.pdf used on input line 15.
-(pdftex.def)             Requested size: 279.0pt x 156.0064pt.
- [49 <./d6/d6b/dxl__hal_8cpp__incl.pdf>]
-<d2/d9c/dxl__hal_8h__dep__incl.pdf, id=2848, 363.3575pt x 437.635pt>
-File: d2/d9c/dxl__hal_8h__dep__incl.pdf Graphic file (type pdf)
-
-<use d2/d9c/dxl__hal_8h__dep__incl.pdf>
-Package pdftex.def Info: d2/d9c/dxl__hal_8h__dep__incl.pdf used on input line 2
-2.
-(pdftex.def)             Requested size: 350.0pt x 421.56055pt.
- [50 <./d0/d47/dxl__hal_8h__incl.pdf> <./d2/d9c/dxl__hal_8h__dep__incl.pdf
-
-pdfTeX warning: pdflatex (file ./d2/d9c/dxl__hal_8h__dep__incl.pdf): PDF inclus
-ion: multiple pdfs with page group included in a single page
->]) (de/d95/dynamixel_8cpp.tex
-<d9/d4a/dynamixel_8cpp__incl.pdf, id=2873, 280.04625pt x 269.005pt>
-File: d9/d4a/dynamixel_8cpp__incl.pdf Graphic file (type pdf)
-
-<use d9/d4a/dynamixel_8cpp__incl.pdf>
-Package pdftex.def Info: d9/d4a/dynamixel_8cpp__incl.pdf used on input line 13.
-
-(pdftex.def)             Requested size: 279.0pt x 268.01099pt.
- [51 <./d9/d4a/dynamixel_8cpp__incl.pdf>]) (dd/d04/dynamixel_8h.tex
-<d7/dd6/dynamixel_8h__incl.pdf, id=2893, 280.04625pt x 212.795pt>
-File: d7/dd6/dynamixel_8h__incl.pdf Graphic file (type pdf)
-
-<use d7/dd6/dynamixel_8h__incl.pdf>
-Package pdftex.def Info: d7/dd6/dynamixel_8h__incl.pdf used on input line 13.
-(pdftex.def)             Requested size: 279.0pt x 212.00868pt.
-
-<d2/d0a/dynamixel_8h__dep__incl.pdf, id=2894, 363.3575pt x 381.425pt>
-File: d2/d0a/dynamixel_8h__dep__incl.pdf Graphic file (type pdf)
-
-<use d2/d0a/dynamixel_8h__dep__incl.pdf>
-Package pdftex.def Info: d2/d0a/dynamixel_8h__dep__incl.pdf used on input line 
-20.
-(pdftex.def)             Requested size: 350.0pt x 367.41515pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [52 <./d7/dd6/dynamixel_8h__incl.pdf>] [53 <./d2/d0a/dynamixel_8h__dep__incl.p
-df>]
-[54] [55]) (df/d0a/main_8cpp.tex
-<da/dce/main_8cpp__incl.pdf, id=2988, 353.32pt x 493.845pt>
-File: da/dce/main_8cpp__incl.pdf Graphic file (type pdf)
-
-<use da/dce/main_8cpp__incl.pdf>
-Package pdftex.def Info: da/dce/main_8cpp__incl.pdf used on input line 15.
-(pdftex.def)             Requested size: 350.0pt x 489.20947pt.
-
-Underfull \vbox (badness 6110) has occurred while \output is active []
-
- [56 <./da/dce/main_8cpp__incl.pdf>]) (d8/dd9/mainwindow_8cpp.tex
-<d1/dd5/mainwindow_8cpp__incl.pdf, id=3006, 412.54124pt x 493.845pt>
-File: d1/dd5/mainwindow_8cpp__incl.pdf Graphic file (type pdf)
-
-<use d1/dd5/mainwindow_8cpp__incl.pdf>
-Package pdftex.def Info: d1/dd5/mainwindow_8cpp__incl.pdf used on input line 15
-.
-(pdftex.def)             Requested size: 350.0pt x 418.98653pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [57])
-(d9/d53/mainwindow_8h.tex
-<d2/d32/mainwindow_8h__incl.pdf, id=3016, 353.32pt x 437.635pt>
-File: d2/d32/mainwindow_8h__incl.pdf Graphic file (type pdf)
-
-<use d2/d32/mainwindow_8h__incl.pdf>
-Package pdftex.def Info: d2/d32/mainwindow_8h__incl.pdf used on input line 18.
-(pdftex.def)             Requested size: 350.0pt x 433.5271pt.
-
-Underfull \vbox (badness 6944) has occurred while \output is active []
-
- [58 <./d1/dd5/mainwindow_8cpp__incl.pdf>]
-<dc/d59/mainwindow_8h__dep__incl.pdf, id=3030, 242.9075pt x 156.585pt>
-File: dc/d59/mainwindow_8h__dep__incl.pdf Graphic file (type pdf)
-
-<use dc/d59/mainwindow_8h__dep__incl.pdf>
-Package pdftex.def Info: dc/d59/mainwindow_8h__dep__incl.pdf used on input line
- 25.
-(pdftex.def)             Requested size: 242.0pt x 155.99922pt.
- [59 <./d2/d32/mainwindow_8h__incl.pdf> <./dc/d59/mainwindow_8h__dep__incl.pdf
-
-pdfTeX warning: pdflatex (file ./dc/d59/mainwindow_8h__dep__incl.pdf): PDF incl
-usion: multiple pdfs with page group included in a single page
->]) (df/d6e/optionswindow_8cpp.tex
-<da/d35/optionswindow_8cpp__incl.pdf, id=3056, 310.15875pt x 437.635pt>
-File: da/d35/optionswindow_8cpp__incl.pdf Graphic file (type pdf)
-
-<use da/d35/optionswindow_8cpp__incl.pdf>
-Package pdftex.def Info: da/d35/optionswindow_8cpp__incl.pdf used on input line
- 15.
-(pdftex.def)             Requested size: 309.0pt x 435.99786pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [60])
-(d6/d2a/optionswindow_8h.tex
-<d9/d41/optionswindow_8h__incl.pdf, id=3065, 310.15875pt x 381.425pt>
-File: d9/d41/optionswindow_8h__incl.pdf Graphic file (type pdf)
-
-<use d9/d41/optionswindow_8h__incl.pdf>
-Package pdftex.def Info: d9/d41/optionswindow_8h__incl.pdf used on input line 1
-5.
-(pdftex.def)             Requested size: 309.0pt x 379.99814pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [61 <./da/d35/optionswindow_8cpp__incl.pdf>]
-<d9/d4a/optionswindow_8h__dep__incl.pdf, id=3079, 309.155pt x 212.795pt>
-File: d9/d4a/optionswindow_8h__dep__incl.pdf Graphic file (type pdf)
-
-<use d9/d4a/optionswindow_8h__dep__incl.pdf>
-Package pdftex.def Info: d9/d4a/optionswindow_8h__dep__incl.pdf used on input l
-ine 22.
-(pdftex.def)             Requested size: 308.0pt x 212.01843pt.
- [62 <./d9/d41/optionswindow_8h__incl.pdf> <./d9/d4a/optionswindow_8h__dep__inc
-l.pdf
-
-pdfTeX warning: pdflatex (file ./d9/d4a/optionswindow_8h__dep__incl.pdf): PDF i
-nclusion: multiple pdfs with page group included in a single page
->]) (d7/dfc/servothread_8cpp.tex
-<df/d97/servothread_8cpp__incl.pdf, id=3104, 310.15875pt x 381.425pt>
-File: df/d97/servothread_8cpp__incl.pdf Graphic file (type pdf)
-
-<use df/d97/servothread_8cpp__incl.pdf>
-Package pdftex.def Info: df/d97/servothread_8cpp__incl.pdf used on input line 9
-.
-(pdftex.def)             Requested size: 309.0pt x 379.99814pt.
-) (da/d77/servothread_8h.tex [63 <./df/d97/servothread_8cpp__incl.pdf>]
-<d9/d15/servothread_8h__incl.pdf, id=3122, 310.15875pt x 325.215pt>
-File: d9/d15/servothread_8h__incl.pdf Graphic file (type pdf)
-
-<use d9/d15/servothread_8h__incl.pdf>
-Package pdftex.def Info: d9/d15/servothread_8h__incl.pdf used on input line 15.
-
-(pdftex.def)             Requested size: 309.0pt x 323.99841pt.
-
-<d1/dc7/servothread_8h__dep__incl.pdf, id=3123, 374.39874pt x 269.005pt>
-File: d1/dc7/servothread_8h__dep__incl.pdf Graphic file (type pdf)
-
-<use d1/dc7/servothread_8h__dep__incl.pdf>
-Package pdftex.def Info: d1/dc7/servothread_8h__dep__incl.pdf used on input lin
-e 22.
-(pdftex.def)             Requested size: 350.0pt x 251.48965pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [64 <./d9/d15/servothread_8h__incl.pdf>]) (d3/dd7/stable_8h.tex
-<d1/db2/stable_8h__dep__incl.pdf, id=3143, 379.4175pt x 325.215pt>
-File: d1/db2/stable_8h__dep__incl.pdf Graphic file (type pdf)
-
-<use d1/db2/stable_8h__dep__incl.pdf>
-Package pdftex.def Info: d1/db2/stable_8h__dep__incl.pdf used on input line 8.
-(pdftex.def)             Requested size: 350.0pt x 300.00533pt.
-)
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [65 <./d1/dc7/servothread_8h__dep__incl.pdf>] [66 <./d1/db2/stable_8h__dep__in
-cl.pdf>]
-(refman.ind [67
+] (refman.ind [53
 
 
-
-] [68] [69] [70] [71] [72] [73
-
-])
+] [54] [55] [56] [57])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 178.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 178.
  (refman.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 178.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 178.
 Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: 2BC3696569A26C3D11A2D1D505924C94;49508.
+(rerunfilecheck)             Checksum: 3A001858BA6EB9E32FC84F6FB732A57B;40358.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -1520,13 +1320,13 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 178.
  ) 
 Here is how much of TeX's memory you used:
- 14268 strings out of 493698
- 222623 string characters out of 3141997
- 330133 words of memory out of 3000000
- 16610 multiletter control sequences out of 15000+200000
+ 13943 strings out of 493698
+ 212606 string characters out of 3141997
+ 291731 words of memory out of 3000000
+ 16437 multiletter control sequences out of 15000+200000
  69635 words of font info for 73 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 48i,16n,43p,2525b,520s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 48i,16n,43p,832b,520s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Progra
 m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program 
 Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Fi
@@ -1537,9 +1337,9 @@ ts/type1/urw/helvetic/uhvbo8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type
 1/urw/helvetic/uhvbo8ac.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/
 helvetic/uhvr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/helvetic
 /uhvro8a.pfb>
-Output written on refman.pdf (83 pages, 1202425 bytes).
+Output written on refman.pdf (65 pages, 760986 bytes).
 PDF statistics:
- 3835 PDF objects out of 4296 (max. 8388607)
- 636 named destinations out of 1000 (max. 500000)
- 2293 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3026 PDF objects out of 3580 (max. 8388607)
+ 523 named destinations out of 1000 (max. 500000)
+ 1809 words of extra memory for PDF output out of 10000 (max. 10000000)
 

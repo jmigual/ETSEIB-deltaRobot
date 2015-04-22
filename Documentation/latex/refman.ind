@@ -21,17 +21,17 @@
   \item {\+\_\+d\+Changed}
     \subitem {Servo\+Thread}, \hyperpage{45}
   \item {\+\_\+data\+P}
-    \subitem {Main\+Window}, \hyperpage{29}
+    \subitem {Main\+Window}, \hyperpage{30}
   \item {\+\_\+end}
     \subitem {Servo\+Thread}, \hyperpage{45}
   \item {\+\_\+j\+Axis\+X}
-    \subitem {Main\+Window}, \hyperpage{29}
+    \subitem {Main\+Window}, \hyperpage{30}
   \item {\+\_\+j\+Axis\+Y}
-    \subitem {Main\+Window}, \hyperpage{29}
+    \subitem {Main\+Window}, \hyperpage{30}
   \item {\+\_\+j\+Axis\+Z}
-    \subitem {Main\+Window}, \hyperpage{29}
+    \subitem {Main\+Window}, \hyperpage{30}
   \item {\+\_\+joy}
-    \subitem {Main\+Window}, \hyperpage{29}
+    \subitem {Main\+Window}, \hyperpage{30}
     \subitem {Options\+Window}, \hyperpage{34}
   \item {\+\_\+mod}
     \subitem {Servo\+Thread}, \hyperpage{45}
@@ -54,7 +54,7 @@
   \item {\+\_\+s\+Port\+Changed}
     \subitem {Servo\+Thread}, \hyperpage{45}
   \item {\+\_\+s\+T}
-    \subitem {Main\+Window}, \hyperpage{29}
+    \subitem {Main\+Window}, \hyperpage{30}
   \item {\+\_\+serial}
     \subitem {dxl\+\_\+hal}, \hyperpage{14}
   \item {\+\_\+servo}
@@ -66,12 +66,12 @@
   \item {\+\_\+timed}
     \subitem {dxl\+\_\+hal}, \hyperpage{14}
   \item {\+\_\+timer}
-    \subitem {Main\+Window}, \hyperpage{29}
+    \subitem {Main\+Window}, \hyperpage{30}
     \subitem {Options\+Window}, \hyperpage{34}
   \item {$\sim$\+A\+X12}
     \subitem {A\+X12}, \hyperpage{8}
   \item {$\sim$\+Main\+Window}
-    \subitem {Main\+Window}, \hyperpage{27}
+    \subitem {Main\+Window}, \hyperpage{28}
   \item {$\sim$\+Options\+Window}
     \subitem {Options\+Window}, \hyperpage{32}
   \item {$\sim$\+Servo\+Thread}
@@ -140,15 +140,11 @@
     \subitem {A\+X12}, \hyperpage{8}
   \item {Alarm\+Shutdown}
     \subitem {A\+X12}, \hyperpage{8}
-  \item {ax12.\+h}
-    \subitem {M\+\_\+\+P\+I}, \hyperpage{49}
 
   \indexspace
 
   \item {b}
     \subitem {Servo\+Thread}, \hyperpage{45}
-  \item {B\+R\+O\+A\+D\+C\+A\+S\+T\+\_\+\+I\+D}
-    \subitem {dynamixel.\+h}, \hyperpage{54}
   \item {Baud\+Rate}
     \subitem {A\+X12}, \hyperpage{7}
 
@@ -160,22 +156,6 @@
     \subitem {A\+X12}, \hyperpage{7}
   \item {C\+C\+W\+Compliance\+Slope}
     \subitem {A\+X12}, \hyperpage{7}
-  \item {C\+O\+M\+M\+\_\+\+R\+X\+C\+O\+R\+R\+U\+P\+T}
-    \subitem {dynamixel.\+h}, \hyperpage{54}
-  \item {C\+O\+M\+M\+\_\+\+R\+X\+F\+A\+I\+L}
-    \subitem {dynamixel.\+h}, \hyperpage{54}
-  \item {C\+O\+M\+M\+\_\+\+R\+X\+S\+U\+C\+C\+E\+S\+S}
-    \subitem {dynamixel.\+h}, \hyperpage{54}
-  \item {C\+O\+M\+M\+\_\+\+R\+X\+T\+I\+M\+E\+O\+U\+T}
-    \subitem {dynamixel.\+h}, \hyperpage{54}
-  \item {C\+O\+M\+M\+\_\+\+R\+X\+W\+A\+I\+T\+I\+N\+G}
-    \subitem {dynamixel.\+h}, \hyperpage{54}
-  \item {C\+O\+M\+M\+\_\+\+T\+X\+E\+R\+R\+O\+R}
-    \subitem {dynamixel.\+h}, \hyperpage{54}
-  \item {C\+O\+M\+M\+\_\+\+T\+X\+F\+A\+I\+L}
-    \subitem {dynamixel.\+h}, \hyperpage{54}
-  \item {C\+O\+M\+M\+\_\+\+T\+X\+S\+U\+C\+C\+E\+S\+S}
-    \subitem {dynamixel.\+h}, \hyperpage{54}
   \item {C\+W\+Angle\+Limit}
     \subitem {A\+X12}, \hyperpage{8}
   \item {C\+W\+Compliance\+Margin}
@@ -203,11 +183,11 @@
   \item {dxl}
     \subitem {A\+X12}, \hyperpage{11}
   \item {dxl/ax12.\+cpp}, \hyperpage{47}
-  \item {dxl/ax12.\+h}, \hyperpage{48}
-  \item {dxl/dxl\+\_\+hal.\+cpp}, \hyperpage{49}
-  \item {dxl/dxl\+\_\+hal.\+h}, \hyperpage{49}
-  \item {dxl/dynamixel.\+cpp}, \hyperpage{51}
-  \item {dxl/dynamixel.\+h}, \hyperpage{52}
+  \item {dxl/ax12.\+h}, \hyperpage{47}
+  \item {dxl/dxl\+\_\+hal.\+cpp}, \hyperpage{47}
+  \item {dxl/dxl\+\_\+hal.\+h}, \hyperpage{47}
+  \item {dxl/dynamixel.\+cpp}, \hyperpage{48}
+  \item {dxl/dynamixel.\+h}, \hyperpage{48}
   \item {dxl\+\_\+hal}, \hyperpage{12}
     \subitem {\+\_\+open}, \hyperpage{13}
     \subitem {\+\_\+serial}, \hyperpage{14}
@@ -221,11 +201,6 @@
     \subitem {open}, \hyperpage{13}
     \subitem {read}, \hyperpage{13}
     \subitem {write}, \hyperpage{13}
-  \item {dxl\+\_\+hal.\+h}
-    \subitem {M\+A\+X\+N\+U\+M\+\_\+\+R\+X\+P\+A\+C\+K\+E\+T}, 
-		\hyperpage{51}
-    \subitem {M\+A\+X\+N\+U\+M\+\_\+\+T\+X\+P\+A\+C\+K\+E\+T}, 
-		\hyperpage{51}
   \item {dynamixel}, \hyperpage{14}
     \subitem {change\+\_\+baudrate}, \hyperpage{16}
     \subitem {d\+H}, \hyperpage{24}
@@ -235,16 +210,16 @@
     \subitem {gb\+Rx\+Get\+Length}, \hyperpage{24}
     \subitem {gb\+Rx\+Packet\+Length}, \hyperpage{24}
     \subitem {gb\+Status\+Packet}, \hyperpage{24}
-    \subitem {gd\+Byte\+Trans\+Time}, \hyperpage{24}
-    \subitem {gd\+Packet\+Start\+Time}, \hyperpage{24}
-    \subitem {gd\+Rcv\+Wait\+Time}, \hyperpage{24}
+    \subitem {gd\+Byte\+Trans\+Time}, \hyperpage{25}
+    \subitem {gd\+Packet\+Start\+Time}, \hyperpage{25}
+    \subitem {gd\+Rcv\+Wait\+Time}, \hyperpage{25}
     \subitem {get\+\_\+comm\+\_\+result}, \hyperpage{16}
-    \subitem {get\+\_\+packet\+\_\+time}, \hyperpage{17}
+    \subitem {get\+\_\+packet\+\_\+time}, \hyperpage{16}
     \subitem {get\+\_\+rxpacket\+\_\+error}, \hyperpage{17}
     \subitem {get\+\_\+rxpacket\+\_\+error\+\_\+byte}, \hyperpage{17}
     \subitem {get\+\_\+rxpacket\+\_\+length}, \hyperpage{17}
     \subitem {get\+\_\+rxpacket\+\_\+parameter}, \hyperpage{17}
-    \subitem {gi\+Bus\+Using}, \hyperpage{24}
+    \subitem {gi\+Bus\+Using}, \hyperpage{25}
     \subitem {initialize}, \hyperpage{17}
     \subitem {is\+\_\+packet\+\_\+timeout}, \hyperpage{18}
     \subitem {is\+Open}, \hyperpage{18}
@@ -253,102 +228,23 @@
     \subitem {read\+\_\+word}, \hyperpage{19}
     \subitem {rx\+\_\+packet}, \hyperpage{19}
     \subitem {set\+\_\+packet\+\_\+timeout}, \hyperpage{20}
-    \subitem {set\+\_\+packet\+\_\+timeout\+\_\+ms}, \hyperpage{21}
+    \subitem {set\+\_\+packet\+\_\+timeout\+\_\+ms}, \hyperpage{20}
     \subitem {set\+\_\+txpacket\+\_\+id}, \hyperpage{21}
     \subitem {set\+\_\+txpacket\+\_\+instruction}, \hyperpage{21}
     \subitem {set\+\_\+txpacket\+\_\+length}, \hyperpage{21}
     \subitem {set\+\_\+txpacket\+\_\+parameter}, \hyperpage{21}
     \subitem {terminate}, \hyperpage{21}
-    \subitem {tx\+\_\+packet}, \hyperpage{22}
-    \subitem {txrx\+\_\+packet}, \hyperpage{23}
-    \subitem {write\+\_\+byte}, \hyperpage{23}
-    \subitem {write\+\_\+word}, \hyperpage{23}
-  \item {dynamixel.\+cpp}
-    \subitem {L\+A\+T\+E\+N\+C\+Y\+\_\+\+T\+I\+M\+E}, \hyperpage{52}
-    \subitem {P\+I\+N\+G\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+L\+E\+N\+G\+T\+H}, 
-		\hyperpage{52}
-  \item {dynamixel.\+h}
-    \subitem {B\+R\+O\+A\+D\+C\+A\+S\+T\+\_\+\+I\+D}, \hyperpage{54}
-    \subitem {C\+O\+M\+M\+\_\+\+R\+X\+C\+O\+R\+R\+U\+P\+T}, 
-		\hyperpage{54}
-    \subitem {C\+O\+M\+M\+\_\+\+R\+X\+F\+A\+I\+L}, \hyperpage{54}
-    \subitem {C\+O\+M\+M\+\_\+\+R\+X\+S\+U\+C\+C\+E\+S\+S}, 
-		\hyperpage{54}
-    \subitem {C\+O\+M\+M\+\_\+\+R\+X\+T\+I\+M\+E\+O\+U\+T}, 
-		\hyperpage{54}
-    \subitem {C\+O\+M\+M\+\_\+\+R\+X\+W\+A\+I\+T\+I\+N\+G}, 
-		\hyperpage{54}
-    \subitem {C\+O\+M\+M\+\_\+\+T\+X\+E\+R\+R\+O\+R}, \hyperpage{54}
-    \subitem {C\+O\+M\+M\+\_\+\+T\+X\+F\+A\+I\+L}, \hyperpage{54}
-    \subitem {C\+O\+M\+M\+\_\+\+T\+X\+S\+U\+C\+C\+E\+S\+S}, 
-		\hyperpage{54}
-    \subitem {E\+R\+R\+\_\+\+A\+C\+C\+E\+S\+S}, \hyperpage{54}
-    \subitem {E\+R\+R\+\_\+\+C\+R\+C}, \hyperpage{54}
-    \subitem {E\+R\+R\+\_\+\+D\+A\+T\+A\+\_\+\+L\+E\+N\+G\+T\+H}, 
-		\hyperpage{55}
-    \subitem {E\+R\+R\+\_\+\+D\+A\+T\+A\+\_\+\+L\+I\+M\+I\+T}, 
-		\hyperpage{55}
-    \subitem {E\+R\+R\+\_\+\+D\+A\+T\+A\+\_\+\+R\+A\+N\+G\+E}, 
-		\hyperpage{55}
-    \subitem {E\+R\+R\+\_\+\+I\+N\+S\+T\+R\+U\+C\+T\+I\+O\+N}, 
-		\hyperpage{55}
-    \subitem {E\+R\+R\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+F\+A\+I\+L}, 
-		\hyperpage{55}
-    \subitem {E\+R\+R\+B\+I\+T\+\_\+\+A\+L\+E\+R\+T}, \hyperpage{55}
-    \subitem {H\+I\+B\+Y\+T\+E}, \hyperpage{55}
-    \subitem {H\+I\+W\+O\+R\+D}, \hyperpage{55}
-    \subitem {I\+N\+S\+T\+\_\+\+A\+C\+T\+I\+O\+N}, \hyperpage{55}
-    \subitem {I\+N\+S\+T\+\_\+\+B\+U\+L\+K\+\_\+\+R\+E\+A\+D}, 
-		\hyperpage{55}
-    \subitem {I\+N\+S\+T\+\_\+\+P\+I\+N\+G}, \hyperpage{55}
-    \subitem {I\+N\+S\+T\+\_\+\+R\+E\+A\+D}, \hyperpage{55}
-    \subitem {I\+N\+S\+T\+\_\+\+R\+E\+G\+\_\+\+W\+R\+I\+T\+E}, 
-		\hyperpage{55}
-    \subitem {I\+N\+S\+T\+\_\+\+R\+E\+S\+E\+T}, \hyperpage{55}
-    \subitem {I\+N\+S\+T\+\_\+\+S\+Y\+N\+C\+\_\+\+W\+R\+I\+T\+E}, 
-		\hyperpage{55}
-    \subitem {I\+N\+S\+T\+\_\+\+W\+R\+I\+T\+E}, \hyperpage{55}
-    \subitem {L\+O\+B\+Y\+T\+E}, \hyperpage{55}
-    \subitem {L\+O\+W\+O\+R\+D}, \hyperpage{55}
-    \subitem {M\+A\+K\+E\+D\+W\+O\+R\+D}, \hyperpage{55}
-    \subitem {M\+A\+K\+E\+W\+O\+R\+D}, \hyperpage{55}
-    \subitem {M\+A\+X\+\_\+\+I\+D}, \hyperpage{55}
-    \subitem {P\+I\+N\+G\+\_\+\+I\+N\+F\+O\+\_\+\+F\+I\+R\+M\+\_\+\+V\+E\+R}, 
-		\hyperpage{55}
-    \subitem {P\+I\+N\+G\+\_\+\+I\+N\+F\+O\+\_\+\+M\+O\+D\+E\+L\+\_\+\+N\+U\+M}, 
-		\hyperpage{55}
-    \subitem {P\+R\+T1\+\_\+\+P\+K\+T\+\_\+\+E\+R\+R\+B\+I\+T}, 
-		\hyperpage{55}
-    \subitem {P\+R\+T1\+\_\+\+P\+K\+T\+\_\+\+I\+D}, \hyperpage{55}
-    \subitem {P\+R\+T1\+\_\+\+P\+K\+T\+\_\+\+I\+N\+S\+T\+R\+U\+C\+T\+I\+O\+N}, 
-		\hyperpage{55}
-    \subitem {P\+R\+T1\+\_\+\+P\+K\+T\+\_\+\+L\+E\+N\+G\+T\+H}, 
-		\hyperpage{55}
-    \subitem {P\+R\+T1\+\_\+\+P\+K\+T\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R0}, 
-		\hyperpage{56}
+    \subitem {tx\+\_\+packet}, \hyperpage{21}
+    \subitem {txrx\+\_\+packet}, \hyperpage{22}
+    \subitem {write\+\_\+byte}, \hyperpage{22}
+    \subitem {write\+\_\+word}, \hyperpage{24}
 
   \indexspace
 
-  \item {E\+R\+R\+\_\+\+A\+C\+C\+E\+S\+S}
-    \subitem {dynamixel.\+h}, \hyperpage{54}
-  \item {E\+R\+R\+\_\+\+C\+R\+C}
-    \subitem {dynamixel.\+h}, \hyperpage{54}
-  \item {E\+R\+R\+\_\+\+D\+A\+T\+A\+\_\+\+L\+E\+N\+G\+T\+H}
-    \subitem {dynamixel.\+h}, \hyperpage{55}
-  \item {E\+R\+R\+\_\+\+D\+A\+T\+A\+\_\+\+L\+I\+M\+I\+T}
-    \subitem {dynamixel.\+h}, \hyperpage{55}
-  \item {E\+R\+R\+\_\+\+D\+A\+T\+A\+\_\+\+R\+A\+N\+G\+E}
-    \subitem {dynamixel.\+h}, \hyperpage{55}
-  \item {E\+R\+R\+\_\+\+I\+N\+S\+T\+R\+U\+C\+T\+I\+O\+N}
-    \subitem {dynamixel.\+h}, \hyperpage{55}
-  \item {E\+R\+R\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+F\+A\+I\+L}
-    \subitem {dynamixel.\+h}, \hyperpage{55}
-  \item {E\+R\+R\+B\+I\+T\+\_\+\+A\+L\+E\+R\+T}
-    \subitem {dynamixel.\+h}, \hyperpage{55}
   \item {end}
     \subitem {Servo\+Thread}, \hyperpage{40}
   \item {events}
-    \subitem {Options\+Window}, \hyperpage{32}
+    \subitem {Options\+Window}, \hyperpage{33}
 
   \indexspace
 
@@ -363,17 +259,17 @@
   \item {gb\+Status\+Packet}
     \subitem {dynamixel}, \hyperpage{24}
   \item {gd\+Byte\+Trans\+Time}
-    \subitem {dynamixel}, \hyperpage{24}
+    \subitem {dynamixel}, \hyperpage{25}
   \item {gd\+Packet\+Start\+Time}
-    \subitem {dynamixel}, \hyperpage{24}
+    \subitem {dynamixel}, \hyperpage{25}
   \item {gd\+Rcv\+Wait\+Time}
-    \subitem {dynamixel}, \hyperpage{24}
+    \subitem {dynamixel}, \hyperpage{25}
   \item {get\+\_\+comm\+\_\+result}
     \subitem {dynamixel}, \hyperpage{16}
   \item {get\+\_\+curr\+\_\+time}
     \subitem {dxl\+\_\+hal}, \hyperpage{12}
   \item {get\+\_\+packet\+\_\+time}
-    \subitem {dynamixel}, \hyperpage{17}
+    \subitem {dynamixel}, \hyperpage{16}
   \item {get\+\_\+rxpacket\+\_\+error}
     \subitem {dynamixel}, \hyperpage{17}
   \item {get\+\_\+rxpacket\+\_\+error\+\_\+byte}
@@ -403,16 +299,12 @@
   \item {get\+Servos\+Info}
     \subitem {Servo\+Thread}, \hyperpage{40}
   \item {gi\+Bus\+Using}
-    \subitem {dynamixel}, \hyperpage{24}
+    \subitem {dynamixel}, \hyperpage{25}
   \item {Goal\+Position}
     \subitem {A\+X12}, \hyperpage{7}
 
   \indexspace
 
-  \item {H\+I\+B\+Y\+T\+E}
-    \subitem {dynamixel.\+h}, \hyperpage{55}
-  \item {H\+I\+W\+O\+R\+D}
-    \subitem {dynamixel.\+h}, \hyperpage{55}
   \item {Highest\+Limit\+Temp}
     \subitem {A\+X12}, \hyperpage{8}
   \item {Highest\+Limit\+Voltage}
@@ -423,22 +315,6 @@
   \item {I\+D}
     \subitem {A\+X12}, \hyperpage{7}
     \subitem {Servo\+Thread\+::\+Servo}, \hyperpage{35}
-  \item {I\+N\+S\+T\+\_\+\+A\+C\+T\+I\+O\+N}
-    \subitem {dynamixel.\+h}, \hyperpage{55}
-  \item {I\+N\+S\+T\+\_\+\+B\+U\+L\+K\+\_\+\+R\+E\+A\+D}
-    \subitem {dynamixel.\+h}, \hyperpage{55}
-  \item {I\+N\+S\+T\+\_\+\+P\+I\+N\+G}
-    \subitem {dynamixel.\+h}, \hyperpage{55}
-  \item {I\+N\+S\+T\+\_\+\+R\+E\+A\+D}
-    \subitem {dynamixel.\+h}, \hyperpage{55}
-  \item {I\+N\+S\+T\+\_\+\+R\+E\+G\+\_\+\+W\+R\+I\+T\+E}
-    \subitem {dynamixel.\+h}, \hyperpage{55}
-  \item {I\+N\+S\+T\+\_\+\+R\+E\+S\+E\+T}
-    \subitem {dynamixel.\+h}, \hyperpage{55}
-  \item {I\+N\+S\+T\+\_\+\+S\+Y\+N\+C\+\_\+\+W\+R\+I\+T\+E}
-    \subitem {dynamixel.\+h}, \hyperpage{55}
-  \item {I\+N\+S\+T\+\_\+\+W\+R\+I\+T\+E}
-    \subitem {dynamixel.\+h}, \hyperpage{55}
   \item {initialize}
     \subitem {dynamixel}, \hyperpage{17}
   \item {is\+\_\+packet\+\_\+timeout}
@@ -450,7 +326,7 @@
   \indexspace
 
   \item {joy\+Changed}
-    \subitem {Main\+Window}, \hyperpage{27}
+    \subitem {Main\+Window}, \hyperpage{28}
   \item {joystick\+Changed}
     \subitem {Main\+Window}, \hyperpage{28}
     \subitem {Options\+Window}, \hyperpage{33}
@@ -461,14 +337,8 @@
     \subitem {Servo\+Thread}, \hyperpage{46}
   \item {L2}
     \subitem {Servo\+Thread}, \hyperpage{46}
-  \item {L\+A\+T\+E\+N\+C\+Y\+\_\+\+T\+I\+M\+E}
-    \subitem {dynamixel.\+cpp}, \hyperpage{52}
   \item {L\+E\+D}
     \subitem {A\+X12}, \hyperpage{7}
-  \item {L\+O\+B\+Y\+T\+E}
-    \subitem {dynamixel.\+h}, \hyperpage{55}
-  \item {L\+O\+W\+O\+R\+D}
-    \subitem {dynamixel.\+h}, \hyperpage{55}
   \item {load}
     \subitem {Servo\+Thread}, \hyperpage{41}
     \subitem {Servo\+Thread\+::\+Servo}, \hyperpage{35}
@@ -479,46 +349,34 @@
 
   \indexspace
 
-  \item {M\+\_\+\+P\+I}
-    \subitem {ax12.\+h}, \hyperpage{49}
-  \item {M\+A\+K\+E\+D\+W\+O\+R\+D}
-    \subitem {dynamixel.\+h}, \hyperpage{55}
-  \item {M\+A\+K\+E\+W\+O\+R\+D}
-    \subitem {dynamixel.\+h}, \hyperpage{55}
-  \item {M\+A\+X\+\_\+\+I\+D}
-    \subitem {dynamixel.\+h}, \hyperpage{55}
-  \item {M\+A\+X\+N\+U\+M\+\_\+\+R\+X\+P\+A\+C\+K\+E\+T}
-    \subitem {dxl\+\_\+hal.\+h}, \hyperpage{51}
-  \item {M\+A\+X\+N\+U\+M\+\_\+\+T\+X\+P\+A\+C\+K\+E\+T}
-    \subitem {dxl\+\_\+hal.\+h}, \hyperpage{51}
   \item {main}
-    \subitem {main.\+cpp}, \hyperpage{57}
-  \item {main.\+cpp}, \hyperpage{56}
-    \subitem {main}, \hyperpage{57}
+    \subitem {main.\+cpp}, \hyperpage{49}
+  \item {main.\+cpp}, \hyperpage{48}
+    \subitem {main}, \hyperpage{49}
   \item {Main\+Window}, \hyperpage{25}
     \subitem {\+\_\+axis}, \hyperpage{29}
     \subitem {\+\_\+axis\+V}, \hyperpage{29}
     \subitem {\+\_\+buts}, \hyperpage{29}
     \subitem {\+\_\+buts\+V}, \hyperpage{29}
-    \subitem {\+\_\+data\+P}, \hyperpage{29}
-    \subitem {\+\_\+j\+Axis\+X}, \hyperpage{29}
-    \subitem {\+\_\+j\+Axis\+Y}, \hyperpage{29}
-    \subitem {\+\_\+j\+Axis\+Z}, \hyperpage{29}
-    \subitem {\+\_\+joy}, \hyperpage{29}
-    \subitem {\+\_\+s\+T}, \hyperpage{29}
-    \subitem {\+\_\+timer}, \hyperpage{29}
-    \subitem {$\sim$\+Main\+Window}, \hyperpage{27}
+    \subitem {\+\_\+data\+P}, \hyperpage{30}
+    \subitem {\+\_\+j\+Axis\+X}, \hyperpage{30}
+    \subitem {\+\_\+j\+Axis\+Y}, \hyperpage{30}
+    \subitem {\+\_\+j\+Axis\+Z}, \hyperpage{30}
+    \subitem {\+\_\+joy}, \hyperpage{30}
+    \subitem {\+\_\+s\+T}, \hyperpage{30}
+    \subitem {\+\_\+timer}, \hyperpage{30}
+    \subitem {$\sim$\+Main\+Window}, \hyperpage{28}
     \subitem {a\+S\+Count}, \hyperpage{30}
-    \subitem {joy\+Changed}, \hyperpage{27}
+    \subitem {joy\+Changed}, \hyperpage{28}
     \subitem {joystick\+Changed}, \hyperpage{28}
     \subitem {Main\+Window}, \hyperpage{27}
-    \subitem {on\+\_\+action\+Options\+\_\+triggered}, \hyperpage{28}
-    \subitem {on\+\_\+start\+\_\+clicked}, \hyperpage{28}
+    \subitem {on\+\_\+action\+Options\+\_\+triggered}, \hyperpage{29}
+    \subitem {on\+\_\+start\+\_\+clicked}, \hyperpage{29}
     \subitem {s\+Count}, \hyperpage{30}
     \subitem {ui}, \hyperpage{30}
-    \subitem {update}, \hyperpage{28}
-  \item {mainwindow.\+cpp}, \hyperpage{57}
-  \item {mainwindow.\+h}, \hyperpage{58}
+    \subitem {update}, \hyperpage{29}
+  \item {mainwindow.\+cpp}, \hyperpage{49}
+  \item {mainwindow.\+h}, \hyperpage{49}
   \item {manual}
     \subitem {Servo\+Thread}, \hyperpage{39}
   \item {Max\+Torque}
@@ -537,46 +395,30 @@
   \indexspace
 
   \item {on\+\_\+action\+Options\+\_\+triggered}
-    \subitem {Main\+Window}, \hyperpage{28}
+    \subitem {Main\+Window}, \hyperpage{29}
   \item {on\+\_\+servo\+Refresh\+\_\+clicked}
     \subitem {Options\+Window}, \hyperpage{33}
   \item {on\+\_\+start\+\_\+clicked}
-    \subitem {Main\+Window}, \hyperpage{28}
+    \subitem {Main\+Window}, \hyperpage{29}
   \item {open}
     \subitem {dxl\+\_\+hal}, \hyperpage{13}
-  \item {Options\+Window}, \hyperpage{30}
+  \item {Options\+Window}, \hyperpage{31}
     \subitem {\+\_\+joy}, \hyperpage{34}
     \subitem {\+\_\+port\+Size}, \hyperpage{34}
     \subitem {\+\_\+servo}, \hyperpage{34}
     \subitem {\+\_\+timer}, \hyperpage{34}
     \subitem {$\sim$\+Options\+Window}, \hyperpage{32}
-    \subitem {events}, \hyperpage{32}
+    \subitem {events}, \hyperpage{33}
     \subitem {joystick\+Changed}, \hyperpage{33}
     \subitem {on\+\_\+servo\+Refresh\+\_\+clicked}, \hyperpage{33}
     \subitem {Options\+Window}, \hyperpage{32}
-    \subitem {store\+Data}, \hyperpage{33}
+    \subitem {store\+Data}, \hyperpage{34}
     \subitem {ui}, \hyperpage{34}
-  \item {optionswindow.\+cpp}, \hyperpage{60}
-  \item {optionswindow.\+h}, \hyperpage{61}
+  \item {optionswindow.\+cpp}, \hyperpage{49}
+  \item {optionswindow.\+h}, \hyperpage{49}
 
   \indexspace
 
-  \item {P\+I\+N\+G\+\_\+\+I\+N\+F\+O\+\_\+\+F\+I\+R\+M\+\_\+\+V\+E\+R}
-    \subitem {dynamixel.\+h}, \hyperpage{55}
-  \item {P\+I\+N\+G\+\_\+\+I\+N\+F\+O\+\_\+\+M\+O\+D\+E\+L\+\_\+\+N\+U\+M}
-    \subitem {dynamixel.\+h}, \hyperpage{55}
-  \item {P\+I\+N\+G\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+L\+E\+N\+G\+T\+H}
-    \subitem {dynamixel.\+cpp}, \hyperpage{52}
-  \item {P\+R\+T1\+\_\+\+P\+K\+T\+\_\+\+E\+R\+R\+B\+I\+T}
-    \subitem {dynamixel.\+h}, \hyperpage{55}
-  \item {P\+R\+T1\+\_\+\+P\+K\+T\+\_\+\+I\+D}
-    \subitem {dynamixel.\+h}, \hyperpage{55}
-  \item {P\+R\+T1\+\_\+\+P\+K\+T\+\_\+\+I\+N\+S\+T\+R\+U\+C\+T\+I\+O\+N}
-    \subitem {dynamixel.\+h}, \hyperpage{55}
-  \item {P\+R\+T1\+\_\+\+P\+K\+T\+\_\+\+L\+E\+N\+G\+T\+H}
-    \subitem {dynamixel.\+h}, \hyperpage{55}
-  \item {P\+R\+T1\+\_\+\+P\+K\+T\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R0}
-    \subitem {dynamixel.\+h}, \hyperpage{56}
   \item {pause}
     \subitem {Servo\+Thread}, \hyperpage{41}
   \item {ping}
@@ -623,7 +465,7 @@
     \subitem {Main\+Window}, \hyperpage{30}
   \item {Servo}
     \subitem {Servo\+Thread\+::\+Servo}, \hyperpage{35}
-  \item {Servo\+Thread}, \hyperpage{35}
+  \item {Servo\+Thread}, \hyperpage{36}
     \subitem {\+\_\+axis}, \hyperpage{44}
     \subitem {\+\_\+buts}, \hyperpage{44}
     \subitem {\+\_\+c\+Baud}, \hyperpage{44}
@@ -675,12 +517,12 @@
     \subitem {load}, \hyperpage{35}
     \subitem {pos}, \hyperpage{35}
     \subitem {Servo}, \hyperpage{35}
-  \item {servothread.\+cpp}, \hyperpage{63}
-  \item {servothread.\+h}, \hyperpage{64}
+  \item {servothread.\+cpp}, \hyperpage{50}
+  \item {servothread.\+h}, \hyperpage{50}
   \item {set\+\_\+packet\+\_\+timeout}
     \subitem {dynamixel}, \hyperpage{20}
   \item {set\+\_\+packet\+\_\+timeout\+\_\+ms}
-    \subitem {dynamixel}, \hyperpage{21}
+    \subitem {dynamixel}, \hyperpage{20}
   \item {set\+\_\+txpacket\+\_\+id}
     \subitem {dynamixel}, \hyperpage{21}
   \item {set\+\_\+txpacket\+\_\+instruction}
@@ -715,13 +557,13 @@
     \subitem {Servo\+Thread}, \hyperpage{46}
   \item {single\+Angle}
     \subitem {Servo\+Thread}, \hyperpage{43}
-  \item {stable.\+h}, \hyperpage{66}
+  \item {stable.\+h}, \hyperpage{50}
   \item {status\+Bar}
     \subitem {Servo\+Thread}, \hyperpage{44}
   \item {Status\+Return\+Level}
     \subitem {A\+X12}, \hyperpage{8}
   \item {store\+Data}
-    \subitem {Options\+Window}, \hyperpage{33}
+    \subitem {Options\+Window}, \hyperpage{34}
 
   \indexspace
 
@@ -732,9 +574,9 @@
   \item {Torque\+Limit}
     \subitem {A\+X12}, \hyperpage{7}
   \item {tx\+\_\+packet}
-    \subitem {dynamixel}, \hyperpage{22}
+    \subitem {dynamixel}, \hyperpage{21}
   \item {txrx\+\_\+packet}
-    \subitem {dynamixel}, \hyperpage{23}
+    \subitem {dynamixel}, \hyperpage{22}
 
   \indexspace
 
@@ -743,7 +585,7 @@
     \subitem {Main\+Window}, \hyperpage{30}
     \subitem {Options\+Window}, \hyperpage{34}
   \item {update}
-    \subitem {Main\+Window}, \hyperpage{28}
+    \subitem {Main\+Window}, \hyperpage{29}
 
   \indexspace
 
@@ -762,8 +604,8 @@
     \subitem {dxl\+\_\+hal}, \hyperpage{13}
     \subitem {Servo\+Thread}, \hyperpage{44}
   \item {write\+\_\+byte}
-    \subitem {dynamixel}, \hyperpage{23}
+    \subitem {dynamixel}, \hyperpage{22}
   \item {write\+\_\+word}
-    \subitem {dynamixel}, \hyperpage{23}
+    \subitem {dynamixel}, \hyperpage{24}
 
 \end{theindex}
