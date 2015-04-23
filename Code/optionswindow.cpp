@@ -11,7 +11,6 @@ OptionsWindow::OptionsWindow(XJoystick &J, ServoThread *servo, QWidget *parent) 
     ui(new Ui::OptionsWindow)
 {
     ui->setupUi(this);
-    this->setWindowTitle("Options");
     
     QVector< QString > A(_joy.getAllAxis());
     

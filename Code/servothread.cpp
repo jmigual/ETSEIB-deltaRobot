@@ -82,7 +82,12 @@ void ServoThread::run()
     
     _mutex.unlock();
     dynamixel dxl(sPort, sBaud);
-    QVector< AX12 > (_servos.size(), &dxl);
+    QVector< AX12 > S(_servos.size());    
+    
+    for (int i = 0; i < S.size(); ++i) {
+        S[i] = AX12(&dxl);  
+        S[i].setID(i);
+    }
     
     while (not _end) {
         

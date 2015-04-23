@@ -93,6 +93,9 @@ private:
     
 public:
     
+    /// Default constructor
+    dynamixel() {}
+    
     /// Initialization constructor
     dynamixel(QString port_num, int baud_rate = 1000000);
     

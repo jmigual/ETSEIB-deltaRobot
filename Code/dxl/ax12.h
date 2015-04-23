@@ -64,7 +64,7 @@ private:
     };    
     
     /// Contains the dynamixel comunication
-    dynamixel *dxl;
+    dynamixel *_dxl;
     
     /// Stores the current ID
     int _ID;
@@ -77,9 +77,12 @@ private:
     
 public:
     
-    /// Default constructor must pass an initialized dynamixel object
+    /// Default constructor
+    AX12();
+    
+    /// Initializator constructor
     /// if ID == -1 no action is done
-    AX12(dynamixel *dxl, int ID = -1);
+    AX12(dynamixel *_dxl, int ID = -1);
     
     /// Copy constructor
     AX12(const AX12 &a);
@@ -110,13 +113,21 @@ public:
     /// To get the current ID
     inline int getID() { return _ID; }
     
+    /// Sets the dynamixel interface
+    /// @param dxl Pointer to the dynamixel control class
+    inline void setDxl(dynamixel *dxl) { _dxl = dxl; }
+    
     /// Sets the Goal's position (in degrees) or speed depending on the mode
+    /// @param goal Position (in degrees if not radian mode) or % speed if 
+    /// used wheel mode
     void setGoalPosition(double goal);
     
     /// To set a new ID
+    /// @param ID the new ID
     void setID(int ID);
     
-    /// To set Joint/Wheel mode, true if Joint
+    /// To set Joint/Wheel mode
+    /// @param mode True if Joint and false if Wheel mode
     void setJointMode(bool mode);
     
     /// To set the minimum and maximum angle from 0 to 300º
