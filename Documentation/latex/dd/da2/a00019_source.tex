@@ -1,0 +1,154 @@
+\hypertarget{a00019_source}{}\section{servothread.\+cpp}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#include "\hyperlink{a00020}{servothread.h}"}
+00003 
+\hypertarget{a00019_source_l00004}{}\hyperlink{a00007_af021de9817b11968dd627186e9e05a71}{00004} \hyperlink{a00007_af021de9817b11968dd627186e9e05a71}{ServoThread::ServoThread}() :
+00005     \_axis(XJoystick::AxisCount),
+00006     \_buts(XJoystick::ButtonCount),
+00007     \_cBaud(9600),
+00008     \_cPort(\textcolor{stringliteral}{"COM3"}),
+00009     \_dChanged(false),
+00010     \_end(false),
+00011     \_mod(\hyperlink{a00007_a8d581034e60792a9995d44065f6140a5}{Mode}::manual),
+00012     \_pause(true),
+00013     \_sBaud(1000000),
+00014     \_servos(3),
+00015     \_sPort(\textcolor{stringliteral}{"COM9"}),
+00016     \_sPortChanged(false)
+00017 \{
+00018     
+00019 \}
+00020 
+\hypertarget{a00019_source_l00021}{}\hyperlink{a00007_a0c7ac1f603a247eac91d9780ad50f5fa}{00021} \hyperlink{a00007_a0c7ac1f603a247eac91d9780ad50f5fa}{ServoThread::~ServoThread}()
+00022 \{
+00023     \hyperlink{a00007_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.lock();
+00024     \hyperlink{a00007_acca9896d1a2d1ef68527e6834f81c76c}{\_end} = \textcolor{keyword}{true};
+00025     \hyperlink{a00007_afcb93c09acd7fecf47d92996a297365c}{\_cond}.wakeOne();
+00026     \hyperlink{a00007_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.unlock();
+00027     
+00028     wait();
+00029 \}
+00030 
+\hypertarget{a00019_source_l00031}{}\hyperlink{a00007_ae88d0a9c84099ca607c7cf929500fb26}{00031} \textcolor{keywordtype}{void} \hyperlink{a00007_ae88d0a9c84099ca607c7cf929500fb26}{ServoThread::load}(QString &file)
+00032 \{
+00033     \hyperlink{a00007_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.lock();
+00034     QFile f(file);
+00035     f.open(QIODevice::ReadOnly);
+00036     QDataStream df(&f);
+00037     
+00038     \textcolor{keywordtype}{int} ver;
+00039     df >> ver;
+00040     \textcolor{keywordflow}{if} (ver == Version::v\_1\_0) \{
+00041         \textcolor{keywordtype}{int} n;
+00042         df >> \hyperlink{a00007_a9fccfd415e2e55c8abef7fcc6535af30}{\_cBaud} >> \hyperlink{a00007_ab52437b31a433c427a6c050f2b1cc959}{\_cPort} >> \hyperlink{a00007_a5b9a41b9e271275b914affb0a845a2ee}{\_sBaud} >> \hyperlink{a00007_ac9a614aa1518efb49b0a06636bd1bdbf}{\_sPort} >> n;
+00043         
+00044         \hyperlink{a00007_a1ac6662fe6d198b5971ae0ffa7ddfcfd}{\_servos}.resize(n);
+00045         \textcolor{keywordflow}{for} (\hyperlink{a00006}{Servo} &s : \hyperlink{a00007_a1ac6662fe6d198b5971ae0ffa7ddfcfd}{\_servos}) df >> s.ID;
+00046         \hyperlink{a00007_a2b6ccfeacbb3cc9ac5c34549b9aa3f11}{\_dChanged} = \textcolor{keyword}{true};
+00047     \}
+00048     \textcolor{keywordflow}{else} qWarning() << \textcolor{stringliteral}{"Not a valid file"};    
+00049     \hyperlink{a00007_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.unlock();
+00050 \}
+00051 
+\hypertarget{a00019_source_l00052}{}\hyperlink{a00007_a8497ea56991b620981ce1fbf53d9ebdb}{00052} \textcolor{keywordtype}{void} \hyperlink{a00007_a8497ea56991b620981ce1fbf53d9ebdb}{ServoThread::setData}(QVector<float> &aV, QVector<bool> &buts)
+00053 \{
+00054     \hyperlink{a00007_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.lock();
+00055     \textcolor{comment}{// Copying the joystick values}
+00056     \hyperlink{a00007_aad24ef961ee39dd35766c725c13b11b7}{\_axis} = aV;
+00057     \hyperlink{a00007_a6f956f7e0f2953e213ff95fb64857ab0}{\_buts} = buts;
+00058     \hyperlink{a00007_a2b6ccfeacbb3cc9ac5c34549b9aa3f11}{\_dChanged} = \textcolor{keyword}{true};
+00059     
+00060     \hyperlink{a00007_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.unlock();
+00061 \}
+00062 
+\hypertarget{a00019_source_l00063}{}\hyperlink{a00007_ae5753b8c12768d2115ff900f0ab8e13c}{00063} \textcolor{keywordtype}{void} \hyperlink{a00007_ae5753b8c12768d2115ff900f0ab8e13c}{ServoThread::write}(QString &file)
+00064 \{
+00065     \hyperlink{a00007_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.lock();
+00066     QFile f(file);
+00067     f.open(QIODevice::WriteOnly);
+00068     QDataStream df(&f);
+00069     
+00070     df << int(Version::v\_1\_0) << \hyperlink{a00007_a9fccfd415e2e55c8abef7fcc6535af30}{\_cBaud} << \hyperlink{a00007_ab52437b31a433c427a6c050f2b1cc959}{\_cPort} << \hyperlink{a00007_a5b9a41b9e271275b914affb0a845a2ee}{\_sBaud} << 
+      \hyperlink{a00007_ac9a614aa1518efb49b0a06636bd1bdbf}{\_sPort}
+00071        << \hyperlink{a00007_a1ac6662fe6d198b5971ae0ffa7ddfcfd}{\_servos}.size();    
+00072     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \hyperlink{a00006}{Servo} &s : \hyperlink{a00007_a1ac6662fe6d198b5971ae0ffa7ddfcfd}{\_servos}) df << s.ID;
+00073     
+00074     \hyperlink{a00007_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.unlock();
+00075 \}
+00076 
+\hypertarget{a00019_source_l00077}{}\hyperlink{a00007_aeeb31b85abf7eb5c701853a6d25e51e0}{00077} \textcolor{keywordtype}{void} \hyperlink{a00007_aeeb31b85abf7eb5c701853a6d25e51e0}{ServoThread::run}()
+00078 \{
+00079     \hyperlink{a00007_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.lock();
+00080     \textcolor{keywordtype}{int} sBaud = \hyperlink{a00007_a5b9a41b9e271275b914affb0a845a2ee}{\_sBaud};
+00081     QString sPort = \hyperlink{a00007_ac9a614aa1518efb49b0a06636bd1bdbf}{\_sPort};
+00082     
+00083     \hyperlink{a00007_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.unlock();
+00084     \hyperlink{a00003}{dynamixel} dxl(sPort, sBaud);
+00085     QVector< AX12 > S(\hyperlink{a00007_a1ac6662fe6d198b5971ae0ffa7ddfcfd}{\_servos}.size());    
+00086     
+00087     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < S.size(); ++i) \{
+00088         S[i] = \hyperlink{a00001}{AX12}(&dxl);  
+00089         S[i].setID(i);
+00090     \}
+00091     
+00092     \textcolor{keywordflow}{while} (not \hyperlink{a00007_acca9896d1a2d1ef68527e6834f81c76c}{\_end}) \{
+00093         
+00094         msleep(10);
+00095         \hyperlink{a00007_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.lock();
+00096         \textcolor{keywordflow}{if} (not \_end and \hyperlink{a00007_aaf2ef80e8e43518b75d20a5102970d2e}{\_pause}) \{
+00097             dxl.\hyperlink{a00003_a92ea074ed1c1a9cf29e039f8c425f01a}{terminate}();
+00098             \hyperlink{a00007_afcb93c09acd7fecf47d92996a297365c}{\_cond}.wait(&\hyperlink{a00007_a6327eafc0dac189ec1b202d63ef32457}{\_mutex});
+00099             emit \hyperlink{a00007_a3c84cf179d1746091795c60f3a68ce06}{statusBar}(\textcolor{stringliteral}{"Changed"});
+00100             dxl.\hyperlink{a00003_a87960244d5846ae7583e37d2407eb61e}{initialize}(sPort, sBaud);
+00101         \}        
+00102         \textcolor{keywordflow}{if} (\hyperlink{a00007_a2b6ccfeacbb3cc9ac5c34549b9aa3f11}{\_dChanged}) \{
+00103             \textcolor{keywordflow}{if} (sPort != \hyperlink{a00007_ac9a614aa1518efb49b0a06636bd1bdbf}{\_sPort}) \{
+00104                 sPort = \hyperlink{a00007_ac9a614aa1518efb49b0a06636bd1bdbf}{\_sPort};
+00105                 sBaud = \hyperlink{a00007_a5b9a41b9e271275b914affb0a845a2ee}{\_sBaud};
+00106                 dxl.\hyperlink{a00003_a92ea074ed1c1a9cf29e039f8c425f01a}{terminate}();
+00107                 dxl.\hyperlink{a00003_a87960244d5846ae7583e37d2407eb61e}{initialize}(sPort, sBaud);
+00108             \}   
+00109         \}
+00110         \hyperlink{a00007_a2b6ccfeacbb3cc9ac5c34549b9aa3f11}{\_dChanged} = \textcolor{keyword}{false};
+00111         \hyperlink{a00007_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.unlock();
+00112     \}
+00113     
+00114     dxl.\hyperlink{a00003_a92ea074ed1c1a9cf29e039f8c425f01a}{terminate}();
+00115     exit(0);
+00116 \}
+00117 
+\hypertarget{a00019_source_l00118}{}\hyperlink{a00007_ae17f4b27cae8b171f48fd55d2dc72dbd}{00118} \textcolor{keywordtype}{void} \hyperlink{a00007_ae17f4b27cae8b171f48fd55d2dc72dbd}{ServoThread::setAngles}(\textcolor{keywordtype}{double} x0, \textcolor{keywordtype}{double} y0, \textcolor{keywordtype}{double} z0, 
+00119                             \textcolor{keywordtype}{double} &theta1, \textcolor{keywordtype}{double} &theta2, \textcolor{keywordtype}{double} &theta3)
+00120 \{    
+00121     \textcolor{keywordtype}{double} x1 = x0 + \hyperlink{a00007_a3d51c16b1f498b48a6ecbfaadaba6ed2}{L2} - \hyperlink{a00007_a6281142e50115dd8c914c14cfae6f90d}{L1};
+00122     \textcolor{keywordtype}{double} y1 = y0;
+00123     \textcolor{keywordtype}{double} z1 = z0;
+00124     theta1 = \hyperlink{a00007_add4637d917a772c4c01a43b5b66da2be}{singleAngle}(x1,y1,z1);
+00125     
+00126     \textcolor{keywordtype}{double} x2 = z0*\hyperlink{a00007_aaa3e2dd194949b12f8a41ebd0d62fde9}{sin60} - x0*\hyperlink{a00007_a86dc58ff23326f939cd6fb610ac90d53}{cos60} + \hyperlink{a00007_a3d51c16b1f498b48a6ecbfaadaba6ed2}{L2} - \hyperlink{a00007_a6281142e50115dd8c914c14cfae6f90d}{L1};
+00127     \textcolor{keywordtype}{double} y2 = y0;
+00128     \textcolor{keywordtype}{double} z2 = -z0*\hyperlink{a00007_a86dc58ff23326f939cd6fb610ac90d53}{cos60} - x0*\hyperlink{a00007_aaa3e2dd194949b12f8a41ebd0d62fde9}{sin60};
+00129     theta2 = \hyperlink{a00007_add4637d917a772c4c01a43b5b66da2be}{singleAngle}(x2,y2,z2);
+00130     
+00131     \textcolor{keywordtype}{double} x3 = -z0*sin60 - x0*\hyperlink{a00007_a86dc58ff23326f939cd6fb610ac90d53}{cos60} + \hyperlink{a00007_a3d51c16b1f498b48a6ecbfaadaba6ed2}{L2} - \hyperlink{a00007_a6281142e50115dd8c914c14cfae6f90d}{L1};
+00132     \textcolor{keywordtype}{double} y3 = y0;
+00133     \textcolor{keywordtype}{double} z3 = -z0*\hyperlink{a00007_a86dc58ff23326f939cd6fb610ac90d53}{cos60} + x0*\hyperlink{a00007_aaa3e2dd194949b12f8a41ebd0d62fde9}{sin60};
+00134     theta3 = \hyperlink{a00007_add4637d917a772c4c01a43b5b66da2be}{singleAngle}(x3,y3,z3);
+00135 \}
+00136 
+\hypertarget{a00019_source_l00137}{}\hyperlink{a00007_add4637d917a772c4c01a43b5b66da2be}{00137} \textcolor{keywordtype}{double} \hyperlink{a00007_add4637d917a772c4c01a43b5b66da2be}{ServoThread::singleAngle}(\textcolor{keywordtype}{double} x0, \textcolor{keywordtype}{double} y0, \textcolor{keywordtype}{double} z0)
+00138 \{
+00139     \textcolor{keywordtype}{double} n = \hyperlink{a00007_a14f03febaa39a60b9bf7ff9b9151060c}{b} * \hyperlink{a00007_a14f03febaa39a60b9bf7ff9b9151060c}{b} - \hyperlink{a00007_a7dc3998d380d61406fe4485f9872edff}{a} * \hyperlink{a00007_a7dc3998d380d61406fe4485f9872edff}{a} - z0 * z0 - x0 * x0 - y0 * y0;
+00140     \textcolor{keywordtype}{double} raiz = sqrt (n*n*y0*y0 - 4*(x0*x0 + y0*y0)*(-x0*x0*\hyperlink{a00007_a7dc3998d380d61406fe4485f9872edff}{a}*\hyperlink{a00007_a7dc3998d380d61406fe4485f9872edff}{a} + n*n/4));
+00141     
+00142     \textcolor{keywordflow}{if} (x0 < 0) raiz *= -1;
+00143     \textcolor{keywordtype}{double} y = (-n*y0 + raiz ) / (2*(x0*x0 + y0*y0));
+00144     
+00145     \textcolor{keywordtype}{int} signe = 1;
+00146     \textcolor{keywordflow}{if} ((\hyperlink{a00007_a14f03febaa39a60b9bf7ff9b9151060c}{b}*\hyperlink{a00007_a14f03febaa39a60b9bf7ff9b9151060c}{b} - (y0 + \hyperlink{a00007_a7dc3998d380d61406fe4485f9872edff}{a})*(y0 + \hyperlink{a00007_a7dc3998d380d61406fe4485f9872edff}{a})) < (x0*x0 + z0*z0) && x0 < 0) signe *= -1;
+00147     \textcolor{keywordtype}{double} x = sqrt(\hyperlink{a00007_a7dc3998d380d61406fe4485f9872edff}{a}*\hyperlink{a00007_a7dc3998d380d61406fe4485f9872edff}{a} - y*y)*signe;
+00148     \textcolor{keywordflow}{return} atan2 (y,x);
+00149 \}
+00150 
+\end{DoxyCode}

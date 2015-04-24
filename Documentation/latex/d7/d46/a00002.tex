@@ -1,0 +1,216 @@
+\hypertarget{a00002}{}\section{dxl\+\_\+hal Class Reference}
+\label{a00002}\index{dxl\+\_\+hal@{dxl\+\_\+hal}}
+
+
+Dynamixel S\+D\+K platform dependent.  
+
+
+
+
+{\ttfamily \#include $<$dxl\+\_\+hal.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{a00002_ab631c2a5533125f14db9a8ec1c33aa7c}{open} (Q\+String \&dev\+Name, int baudrate)
+\item 
+void \hyperlink{a00002_a250fd7e4acabf54d0733551a13e89a2d}{close} (void)
+\item 
+void \hyperlink{a00002_a004eedde5af69219d7288ec8ea97c89f}{clear} (void)
+\item 
+int \hyperlink{a00002_a0eaaa5340bc9dce73cc920dc8befe5b0}{change\+\_\+baudrate} (float baudrate)
+\item 
+int \hyperlink{a00002_a90106970438fb0ab65852730a1c0776a}{write} (unsigned char $\ast$p\+Packet, int num\+Packet)
+\item 
+int \hyperlink{a00002_ac36331febb2eaa66303af3483795742a}{read} (unsigned char $\ast$p\+Packet, int num\+Packet)
+\item 
+double \hyperlink{a00002_a6b6b7381c45308662fc3df6e7f74bc61}{get\+\_\+curr\+\_\+time} ()
+\item 
+bool \hyperlink{a00002_a88bba601b5c9f285fcdc14e18a1f3398}{is\+Open} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Serial\+Port \hyperlink{a00002_a785d0e35b81d779b54869cad668f9745}{\+\_\+serial}
+\item 
+int \hyperlink{a00002_ae3d8733b5ca778b070218765ca0746ac}{\+\_\+time} = 30
+\item 
+bool \hyperlink{a00002_a10d474daa3ca42b5c5ceb6558a955ca1}{\+\_\+timed} = false
+\item 
+bool \hyperlink{a00002_a04831154c43fe4f7499ea0950e0f0999}{\+\_\+open} = false
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Dynamixel S\+D\+K platform dependent. 
+
+\subsection{Member Function Documentation}
+\hypertarget{a00002_a0eaaa5340bc9dce73cc920dc8befe5b0}{}\index{dxl\+\_\+hal@{dxl\+\_\+hal}!change\+\_\+baudrate@{change\+\_\+baudrate}}
+\index{change\+\_\+baudrate@{change\+\_\+baudrate}!dxl\+\_\+hal@{dxl\+\_\+hal}}
+\subsubsection[{change\+\_\+baudrate}]{\setlength{\rightskip}{0pt plus 5cm}int dxl\+\_\+hal\+::change\+\_\+baudrate (
+\begin{DoxyParamCaption}
+\item[{float}]{baudrate}
+\end{DoxyParamCaption}
+)}\label{a00002_a0eaaa5340bc9dce73cc920dc8befe5b0}
+
+\begin{DoxyCode}
+00039 \{
+00040     \textcolor{keywordtype}{bool} res = \hyperlink{a00002_a785d0e35b81d779b54869cad668f9745}{\_serial}.setBaudRate(qint32(baudrate));
+00041     \textcolor{keywordflow}{return} int(res);
+00042     
+00043 \}
+\end{DoxyCode}
+\hypertarget{a00002_a004eedde5af69219d7288ec8ea97c89f}{}\index{dxl\+\_\+hal@{dxl\+\_\+hal}!clear@{clear}}
+\index{clear@{clear}!dxl\+\_\+hal@{dxl\+\_\+hal}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}void dxl\+\_\+hal\+::clear (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{a00002_a004eedde5af69219d7288ec8ea97c89f}
+
+\begin{DoxyCode}
+00032 \{
+00033     \textcolor{comment}{// Clear communication buffer}
+00034     \hyperlink{a00002_a785d0e35b81d779b54869cad668f9745}{\_serial}.clear();
+00035     
+00036 \}
+\end{DoxyCode}
+\hypertarget{a00002_a250fd7e4acabf54d0733551a13e89a2d}{}\index{dxl\+\_\+hal@{dxl\+\_\+hal}!close@{close}}
+\index{close@{close}!dxl\+\_\+hal@{dxl\+\_\+hal}}
+\subsubsection[{close}]{\setlength{\rightskip}{0pt plus 5cm}void dxl\+\_\+hal\+::close (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{a00002_a250fd7e4acabf54d0733551a13e89a2d}
+
+\begin{DoxyCode}
+00025 \{
+00026     \textcolor{comment}{// Closing device}
+00027     \hyperlink{a00002_a785d0e35b81d779b54869cad668f9745}{\_serial}.close();
+00028     \hyperlink{a00002_a04831154c43fe4f7499ea0950e0f0999}{\_open} = \textcolor{keyword}{false};
+00029 \}
+\end{DoxyCode}
+\hypertarget{a00002_a6b6b7381c45308662fc3df6e7f74bc61}{}\index{dxl\+\_\+hal@{dxl\+\_\+hal}!get\+\_\+curr\+\_\+time@{get\+\_\+curr\+\_\+time}}
+\index{get\+\_\+curr\+\_\+time@{get\+\_\+curr\+\_\+time}!dxl\+\_\+hal@{dxl\+\_\+hal}}
+\subsubsection[{get\+\_\+curr\+\_\+time}]{\setlength{\rightskip}{0pt plus 5cm}double dxl\+\_\+hal\+::get\+\_\+curr\+\_\+time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{a00002_a6b6b7381c45308662fc3df6e7f74bc61}
+
+\begin{DoxyCode}
+00080 \{
+00081     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{double})QTime::currentTime().msecsSinceStartOfDay();
+00082 \}
+\end{DoxyCode}
+\hypertarget{a00002_a88bba601b5c9f285fcdc14e18a1f3398}{}\index{dxl\+\_\+hal@{dxl\+\_\+hal}!is\+Open@{is\+Open}}
+\index{is\+Open@{is\+Open}!dxl\+\_\+hal@{dxl\+\_\+hal}}
+\subsubsection[{is\+Open}]{\setlength{\rightskip}{0pt plus 5cm}bool dxl\+\_\+hal\+::is\+Open (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00002_a88bba601b5c9f285fcdc14e18a1f3398}
+
+\begin{DoxyCode}
+00030 \{ \textcolor{keywordflow}{return} \hyperlink{a00002_a04831154c43fe4f7499ea0950e0f0999}{\_open}; \}
+\end{DoxyCode}
+\hypertarget{a00002_ab631c2a5533125f14db9a8ec1c33aa7c}{}\index{dxl\+\_\+hal@{dxl\+\_\+hal}!open@{open}}
+\index{open@{open}!dxl\+\_\+hal@{dxl\+\_\+hal}}
+\subsubsection[{open}]{\setlength{\rightskip}{0pt plus 5cm}bool dxl\+\_\+hal\+::open (
+\begin{DoxyParamCaption}
+\item[{Q\+String \&}]{dev\+Name, }
+\item[{int}]{baudrate}
+\end{DoxyParamCaption}
+)}\label{a00002_ab631c2a5533125f14db9a8ec1c33aa7c}
+
+\begin{DoxyCode}
+00007 \{
+00008     \textcolor{comment}{// Opening device}
+00009     \textcolor{comment}{// devIndex: Device index}
+00010     \textcolor{comment}{// baudrate: Real baudrate (ex> 115200, 57600, 38400...)}
+00011     \textcolor{comment}{// Return: 0(Failed), 1(Succeed)}
+00012     
+00013     \hyperlink{a00002_a785d0e35b81d779b54869cad668f9745}{\_serial}.setPortName(devName);
+00014     \hyperlink{a00002_a785d0e35b81d779b54869cad668f9745}{\_serial}.setBaudRate(qint32(baudrate));
+00015     \hyperlink{a00002_a785d0e35b81d779b54869cad668f9745}{\_serial}.setDataBits(QSerialPort::Data8);
+00016     \hyperlink{a00002_a785d0e35b81d779b54869cad668f9745}{\_serial}.setParity(QSerialPort::NoParity);
+00017     \hyperlink{a00002_a785d0e35b81d779b54869cad668f9745}{\_serial}.setStopBits(QSerialPort::OneStop);
+00018     \hyperlink{a00002_a785d0e35b81d779b54869cad668f9745}{\_serial}.setFlowControl(QSerialPort::NoFlowControl);
+00019     \textcolor{keywordflow}{if}(not \hyperlink{a00002_a785d0e35b81d779b54869cad668f9745}{\_serial}.open(QIODevice::ReadWrite)) \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00020     \hyperlink{a00002_a04831154c43fe4f7499ea0950e0f0999}{\_open} = \textcolor{keyword}{true};
+00021     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+00022 \}
+\end{DoxyCode}
+\hypertarget{a00002_ac36331febb2eaa66303af3483795742a}{}\index{dxl\+\_\+hal@{dxl\+\_\+hal}!read@{read}}
+\index{read@{read}!dxl\+\_\+hal@{dxl\+\_\+hal}}
+\subsubsection[{read}]{\setlength{\rightskip}{0pt plus 5cm}int dxl\+\_\+hal\+::read (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{p\+Packet, }
+\item[{int}]{num\+Packet}
+\end{DoxyParamCaption}
+)}\label{a00002_ac36331febb2eaa66303af3483795742a}
+
+\begin{DoxyCode}
+00063 \{
+00064     \textcolor{comment}{// Recieving date}
+00065     \textcolor{comment}{// *pPacket: data array pointer}
+00066     \textcolor{comment}{// numPacket: number of data array}
+00067     \textcolor{comment}{// Return: number of data recieved. -1 is error.}
+00068     \hyperlink{a00002_a10d474daa3ca42b5c5ceb6558a955ca1}{\_timed} = \textcolor{keyword}{false};
+00069     \textcolor{keywordflow}{if} (\hyperlink{a00002_a785d0e35b81d779b54869cad668f9745}{\_serial}.isOpen()) \{
+00070         \textcolor{keywordtype}{int} n = \hyperlink{a00002_a785d0e35b81d779b54869cad668f9745}{\_serial}.read((\textcolor{keywordtype}{char}*)pPacket, numPacket);
+00071         \hyperlink{a00002_a10d474daa3ca42b5c5ceb6558a955ca1}{\_timed} = \hyperlink{a00002_a785d0e35b81d779b54869cad668f9745}{\_serial}.waitForReadyRead(\hyperlink{a00002_ae3d8733b5ca778b070218765ca0746ac}{\_time});
+00072         \hyperlink{a00002_a10d474daa3ca42b5c5ceb6558a955ca1}{\_timed} = not \hyperlink{a00002_a10d474daa3ca42b5c5ceb6558a955ca1}{\_timed};
+00073         \textcolor{keywordflow}{return} n;
+00074     \}
+00075     \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} -1;
+00076     
+00077 \}
+\end{DoxyCode}
+\hypertarget{a00002_a90106970438fb0ab65852730a1c0776a}{}\index{dxl\+\_\+hal@{dxl\+\_\+hal}!write@{write}}
+\index{write@{write}!dxl\+\_\+hal@{dxl\+\_\+hal}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}int dxl\+\_\+hal\+::write (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{p\+Packet, }
+\item[{int}]{num\+Packet}
+\end{DoxyParamCaption}
+)}\label{a00002_a90106970438fb0ab65852730a1c0776a}
+
+\begin{DoxyCode}
+00046 \{
+00047     \textcolor{comment}{// Transmiting date}
+00048     \textcolor{comment}{// *pPacket: data array pointer}
+00049     \textcolor{comment}{// numPacket: number of data array}
+00050     \textcolor{comment}{// Return: number of data transmitted. -1 is error.}
+00051     \hyperlink{a00002_a10d474daa3ca42b5c5ceb6558a955ca1}{\_timed} = \textcolor{keyword}{false};
+00052     \textcolor{keywordflow}{if} (\hyperlink{a00002_a785d0e35b81d779b54869cad668f9745}{\_serial}.isOpen()) \{
+00053         \textcolor{keywordtype}{int} n = \hyperlink{a00002_a785d0e35b81d779b54869cad668f9745}{\_serial}.write((\textcolor{keywordtype}{char}*)pPacket, numPacket);
+00054         \hyperlink{a00002_a10d474daa3ca42b5c5ceb6558a955ca1}{\_timed} = \hyperlink{a00002_a785d0e35b81d779b54869cad668f9745}{\_serial}.waitForBytesWritten(\hyperlink{a00002_ae3d8733b5ca778b070218765ca0746ac}{\_time});
+00055         \hyperlink{a00002_a10d474daa3ca42b5c5ceb6558a955ca1}{\_timed} = not \hyperlink{a00002_a10d474daa3ca42b5c5ceb6558a955ca1}{\_timed};
+00056         \textcolor{keywordflow}{return} n;
+00057     \}
+00058     \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} -1;
+00059 
+00060 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{a00002_a04831154c43fe4f7499ea0950e0f0999}{}\index{dxl\+\_\+hal@{dxl\+\_\+hal}!\+\_\+open@{\+\_\+open}}
+\index{\+\_\+open@{\+\_\+open}!dxl\+\_\+hal@{dxl\+\_\+hal}}
+\subsubsection[{\+\_\+open}]{\setlength{\rightskip}{0pt plus 5cm}bool dxl\+\_\+hal\+::\+\_\+open = false\hspace{0.3cm}{\ttfamily [private]}}\label{a00002_a04831154c43fe4f7499ea0950e0f0999}
+\hypertarget{a00002_a785d0e35b81d779b54869cad668f9745}{}\index{dxl\+\_\+hal@{dxl\+\_\+hal}!\+\_\+serial@{\+\_\+serial}}
+\index{\+\_\+serial@{\+\_\+serial}!dxl\+\_\+hal@{dxl\+\_\+hal}}
+\subsubsection[{\+\_\+serial}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Serial\+Port dxl\+\_\+hal\+::\+\_\+serial\hspace{0.3cm}{\ttfamily [private]}}\label{a00002_a785d0e35b81d779b54869cad668f9745}
+\hypertarget{a00002_ae3d8733b5ca778b070218765ca0746ac}{}\index{dxl\+\_\+hal@{dxl\+\_\+hal}!\+\_\+time@{\+\_\+time}}
+\index{\+\_\+time@{\+\_\+time}!dxl\+\_\+hal@{dxl\+\_\+hal}}
+\subsubsection[{\+\_\+time}]{\setlength{\rightskip}{0pt plus 5cm}int dxl\+\_\+hal\+::\+\_\+time = 30\hspace{0.3cm}{\ttfamily [private]}}\label{a00002_ae3d8733b5ca778b070218765ca0746ac}
+\hypertarget{a00002_a10d474daa3ca42b5c5ceb6558a955ca1}{}\index{dxl\+\_\+hal@{dxl\+\_\+hal}!\+\_\+timed@{\+\_\+timed}}
+\index{\+\_\+timed@{\+\_\+timed}!dxl\+\_\+hal@{dxl\+\_\+hal}}
+\subsubsection[{\+\_\+timed}]{\setlength{\rightskip}{0pt plus 5cm}bool dxl\+\_\+hal\+::\+\_\+timed = false\hspace{0.3cm}{\ttfamily [private]}}\label{a00002_a10d474daa3ca42b5c5ceb6558a955ca1}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+dxl/\hyperlink{a00011}{dxl\+\_\+hal.\+h}\item 
+dxl/\hyperlink{a00010}{dxl\+\_\+hal.\+cpp}\end{DoxyCompactItemize}

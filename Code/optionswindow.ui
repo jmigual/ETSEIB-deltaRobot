@@ -44,7 +44,7 @@
      <item>
       <widget class="QStackedWidget" name="stack">
        <property name="currentIndex">
-        <number>2</number>
+        <number>1</number>
        </property>
        <widget class="QWidget" name="joystick">
         <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -148,34 +148,10 @@
            </property>
           </spacer>
          </item>
-         <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_18">
-           <item>
-            <spacer name="horizontalSpacer_3">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>40</width>
-               <height>20</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-           <item>
-            <widget class="QPushButton" name="servoRefresh">
-             <property name="text">
-              <string>Refresh</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </item>
         </layout>
        </widget>
        <widget class="QWidget" name="servos">
-        <layout class="QVBoxLayout" name="verticalLayout_2">
+        <layout class="QVBoxLayout" name="verticalLayout_7">
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout_5">
            <item>
@@ -259,27 +235,6 @@
           </spacer>
          </item>
          <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_2">
-           <item>
-            <widget class="QLabel" name="label_5">
-             <property name="text">
-              <string>Clamp</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QComboBox" name="servo3"/>
-           </item>
-           <item>
-            <widget class="QCheckBox" name="servo3A">
-             <property name="text">
-              <string>Activated</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </item>
-         <item>
           <layout class="QHBoxLayout" name="horizontalLayout_4">
            <item>
             <widget class="QLabel" name="label_4">
@@ -289,10 +244,10 @@
             </widget>
            </item>
            <item>
-            <widget class="QComboBox" name="servo4"/>
+            <widget class="QComboBox" name="servo3"/>
            </item>
            <item>
-            <widget class="QCheckBox" name="servo4A">
+            <widget class="QCheckBox" name="servo3A">
              <property name="text">
               <string>Activated</string>
              </property>
@@ -312,6 +267,30 @@
             </size>
            </property>
           </spacer>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_33">
+           <item>
+            <spacer name="horizontalSpacer_5">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QPushButton" name="servoRefresh">
+             <property name="text">
+              <string>Refresh</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
         </layout>
        </widget>

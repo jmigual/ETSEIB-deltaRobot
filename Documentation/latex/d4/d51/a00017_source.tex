@@ -1,0 +1,127 @@
+\hypertarget{a00017_source}{}\section{optionswindow.\+cpp}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#include "\hyperlink{a00018}{optionswindow.h}"}
+00003 \textcolor{preprocessor}{#include "ui\_optionswindow.h"}
+00004 
+\hypertarget{a00017_source_l00005}{}\hyperlink{a00005_a968da93eec85561ebdb3a464eff15611}{00005} \hyperlink{a00005_a968da93eec85561ebdb3a464eff15611}{OptionsWindow::OptionsWindow}(XJoystick &J, 
+      \hyperlink{a00007}{ServoThread} *servo, \textcolor{keywordtype}{int} &aX, 
+00006                              \textcolor{keywordtype}{int} &aY, \textcolor{keywordtype}{int} &aZ, QWidget *parent) :
+00007     QDialog(parent),
+00008     \_jAxisX(aX),
+00009     \_jAxisY(aY),
+00010     \_jAxisZ(aZ),
+00011     \_joy(J),
+00012     \_portSize(-1),
+00013     \_servo(servo),
+00014     \_timer(this),
+00015     ui(new \hyperlink{a00023}{Ui}::\hyperlink{a00005}{OptionsWindow})
+00016 \{
+00017     \hyperlink{a00005_a8347442d5b3b670e8fff0c4102db1f88}{ui}->setupUi(\textcolor{keyword}{this});
+00018     
+00019     QVector< QString > A(\hyperlink{a00005_a1bf846ab681ab245f70adac30999947c}{\_joy}.getAllAxis());
+00020     
+00021     \textcolor{comment}{// Adding joystick axis movement}
+00022     \hyperlink{a00005_a8347442d5b3b670e8fff0c4102db1f88}{ui}->joyMX->addItem(\textcolor{stringliteral}{"None"}, -1);
+00023     \hyperlink{a00005_a8347442d5b3b670e8fff0c4102db1f88}{ui}->joyMY->addItem(\textcolor{stringliteral}{"None"}, -1);
+00024     \hyperlink{a00005_a8347442d5b3b670e8fff0c4102db1f88}{ui}->joyMZ->addItem(\textcolor{stringliteral}{"None"}, -1);
+00025     
+00026     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < A.size(); ++i) \hyperlink{a00005_a8347442d5b3b670e8fff0c4102db1f88}{ui}->joyMX->addItem(A[i], i);
+00027     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < A.size(); ++i) \hyperlink{a00005_a8347442d5b3b670e8fff0c4102db1f88}{ui}->joyMY->addItem(A[i], i);
+00028     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < A.size(); ++i) \hyperlink{a00005_a8347442d5b3b670e8fff0c4102db1f88}{ui}->joyMZ->addItem(A[i], i);
+00029     
+00030     \hyperlink{a00005_a8347442d5b3b670e8fff0c4102db1f88}{ui}->joyMX->setCurrentIndex(\hyperlink{a00005_a01d6284355011203ee6e8856a0bdf557}{\_jAxisX} + 1);
+00031     \hyperlink{a00005_a8347442d5b3b670e8fff0c4102db1f88}{ui}->joyMY->setCurrentIndex(\hyperlink{a00005_a8921d1cc5bcb527466c28feb5dcc59b1}{\_jAxisY} + 1);
+00032     \hyperlink{a00005_a8347442d5b3b670e8fff0c4102db1f88}{ui}->joyMZ->setCurrentIndex(\hyperlink{a00005_a47409f50a87942706baaea3d025785e3}{\_jAxisZ} + 1);
+00033     
+00034     \textcolor{comment}{// Updating joystick data}
+00035     \hyperlink{a00005_ae8c0373be58da710194f8d14f1c3c4dc}{joystickChanged}();
+00036     
+00037     \textcolor{comment}{// Configuring event funcion}
+00038     \hyperlink{a00005_af6320942b8558140989f552b3bbc1fbd}{\_timer}.setInterval(500);
+00039     \hyperlink{a00005_af6320942b8558140989f552b3bbc1fbd}{\_timer}.setSingleShot(\textcolor{keyword}{false});
+00040     \hyperlink{a00005_af6320942b8558140989f552b3bbc1fbd}{\_timer}.start();
+00041     connect(&\hyperlink{a00005_af6320942b8558140989f552b3bbc1fbd}{\_timer}, SIGNAL(timeout()), \textcolor{keyword}{this}, SLOT(\hyperlink{a00005_a18763ff318688083c7ee5a21f22e8e98}{events}()));
+00042     
+00043 \}
+00044 
+\hypertarget{a00017_source_l00045}{}\hyperlink{a00005_a034c885fe8bb4416e732a9571d14a6b4}{00045} \hyperlink{a00005_a034c885fe8bb4416e732a9571d14a6b4}{OptionsWindow::~OptionsWindow}()
+00046 \{
+00047     \textcolor{keyword}{delete} \hyperlink{a00005_a8347442d5b3b670e8fff0c4102db1f88}{ui};
+00048 \}
+00049 
+\hypertarget{a00017_source_l00050}{}\hyperlink{a00005_ab0a56ad7347c20046602a7a2a1c83397}{00050} \textcolor{keywordtype}{void} \hyperlink{a00005_ab0a56ad7347c20046602a7a2a1c83397}{OptionsWindow::storeData}()
+00051 \{
+00052     \textcolor{comment}{// Storing joystick data}
+00053     \hyperlink{a00005_a1bf846ab681ab245f70adac30999947c}{\_joy}.select(\hyperlink{a00005_a8347442d5b3b670e8fff0c4102db1f88}{ui}->joySel->currentData().toInt());
+00054     
+00055     \textcolor{comment}{// Joystick movement axis}
+00056     \hyperlink{a00005_a01d6284355011203ee6e8856a0bdf557}{\_jAxisX} = \hyperlink{a00005_a8347442d5b3b670e8fff0c4102db1f88}{ui}->joyMX->currentData().toInt();
+00057     \hyperlink{a00005_a8921d1cc5bcb527466c28feb5dcc59b1}{\_jAxisY} = \hyperlink{a00005_a8347442d5b3b670e8fff0c4102db1f88}{ui}->joyMY->currentData().toInt();
+00058     \hyperlink{a00005_a47409f50a87942706baaea3d025785e3}{\_jAxisZ} = \hyperlink{a00005_a8347442d5b3b670e8fff0c4102db1f88}{ui}->joyMZ->currentData().toInt();
+00059 \}
+00060 
+\hypertarget{a00017_source_l00061}{}\hyperlink{a00005_ae8c0373be58da710194f8d14f1c3c4dc}{00061} \textcolor{keywordtype}{void} \hyperlink{a00005_ae8c0373be58da710194f8d14f1c3c4dc}{OptionsWindow::joystickChanged}()
+00062 \{
+00063     \textcolor{comment}{// Clear all the items and write the new items}
+00064     \hyperlink{a00005_a8347442d5b3b670e8fff0c4102db1f88}{ui}->joySel->clear();
+00065     \hyperlink{a00005_a8347442d5b3b670e8fff0c4102db1f88}{ui}->joySel->addItem(\textcolor{stringliteral}{"None"}, -1);
+00066     
+00067     \textcolor{comment}{// Adding items and searching the current}
+00068     \textcolor{keywordtype}{int} pos = 0;
+00069     QVector<XJoystick::Info> V(\hyperlink{a00005_a1bf846ab681ab245f70adac30999947c}{\_joy}.available());
+00070     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < V.size(); ++i) \{
+00071         QString text(V[i].name);
+00072         text += \textcolor{stringliteral}{": "} + QString::number(V[i].ID);
+00073         \textcolor{keywordflow}{if} (V[i].ID == \hyperlink{a00005_a1bf846ab681ab245f70adac30999947c}{\_joy}.current()) pos = i;
+00074         \hyperlink{a00005_a8347442d5b3b670e8fff0c4102db1f88}{ui}->joySel->addItem(text, V[i].ID);
+00075     \}
+00076     \hyperlink{a00005_a8347442d5b3b670e8fff0c4102db1f88}{ui}->joySel->setCurrentIndex(pos);
+00077     
+00078     \hyperlink{a00005_a8347442d5b3b670e8fff0c4102db1f88}{ui}->joyN->setText(QString::number(V.size()));
+00079 \}
+00080 
+\hypertarget{a00017_source_l00081}{}\hyperlink{a00005_a18763ff318688083c7ee5a21f22e8e98}{00081} \textcolor{keywordtype}{void} \hyperlink{a00005_a18763ff318688083c7ee5a21f22e8e98}{OptionsWindow::events}()
+00082 \{
+00083     \textcolor{keyword}{auto} ports = QSerialPortInfo::availablePorts();
+00084     
+00085     \textcolor{keywordflow}{if} (ports.size() != \hyperlink{a00005_a9bd4dccc7a544b1db78dc8cf330b88f6}{\_portSize}) \{
+00086         \hyperlink{a00005_a9bd4dccc7a544b1db78dc8cf330b88f6}{\_portSize} = ports.size();
+00087         
+00088         QString portC(\hyperlink{a00005_a8347442d5b3b670e8fff0c4102db1f88}{ui}->portC->currentData().toString());
+00089         QString portS(\hyperlink{a00005_a8347442d5b3b670e8fff0c4102db1f88}{ui}->portS->currentData().toString());
+00090         
+00091         \textcolor{keywordtype}{int} selC = 0, selS = 0;
+00092         
+00093         \hyperlink{a00005_a8347442d5b3b670e8fff0c4102db1f88}{ui}->portC->clear();
+00094         \hyperlink{a00005_a8347442d5b3b670e8fff0c4102db1f88}{ui}->portS->clear();
+00095         
+00096         \hyperlink{a00005_a8347442d5b3b670e8fff0c4102db1f88}{ui}->portC->addItem(\textcolor{stringliteral}{"None"}, \textcolor{stringliteral}{""});
+00097         \hyperlink{a00005_a8347442d5b3b670e8fff0c4102db1f88}{ui}->portS->addItem(\textcolor{stringliteral}{"None"}, \textcolor{stringliteral}{""});
+00098         
+00099         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < ports.size(); ++i) \{
+00100             QString text(ports[i].portName());
+00101             text += \textcolor{stringliteral}{": "} + ports[i].description();
+00102             \hyperlink{a00005_a8347442d5b3b670e8fff0c4102db1f88}{ui}->portC->addItem(text, ports[i].portName());
+00103             \hyperlink{a00005_a8347442d5b3b670e8fff0c4102db1f88}{ui}->portS->addItem(text, ports[i].portName());
+00104             
+00105             \textcolor{keywordflow}{if} (ports[i].portName() == portC) selC = i + 1;
+00106             \textcolor{keywordflow}{if} (ports[i].portName() == portS) selS = i + 1;
+00107         \}
+00108 
+00109         \hyperlink{a00005_a8347442d5b3b670e8fff0c4102db1f88}{ui}->portC->setCurrentIndex(selC);
+00110         \hyperlink{a00005_a8347442d5b3b670e8fff0c4102db1f88}{ui}->portS->setCurrentIndex(selS);
+00111     \}
+00112 \}
+00113 
+\hypertarget{a00017_source_l00114}{}\hyperlink{a00005_ad5365d452e8bcd86cbb64b9ec42c3b7e}{00114} \textcolor{keywordtype}{void} \hyperlink{a00005_ad5365d452e8bcd86cbb64b9ec42c3b7e}{OptionsWindow::on\_servoRefresh\_clicked}()
+00115 \{
+00116     \hyperlink{a00003}{dynamixel} dxl;
+00117     QString port;
+00118     \textcolor{keywordtype}{int} baud;
+00119     \hyperlink{a00005_acba1566fea3f831000d5e1c1edc3e776}{\_servo}->\hyperlink{a00007_afcf834d93f1ac9663d6ebaab820e5f74}{getServoPortInfo}(port, baud);
+00120     
+00121     dxl.\hyperlink{a00003_a87960244d5846ae7583e37d2407eb61e}{initialize}(port, baud);
+00122     
+00123 \}
+\end{DoxyCode}

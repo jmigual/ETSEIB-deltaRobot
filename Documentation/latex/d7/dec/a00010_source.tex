@@ -1,0 +1,85 @@
+\hypertarget{a00010_source}{}\section{dxl\+\_\+hal.\+cpp}
+\label{a00010_source}\index{dxl/dxl\+\_\+hal.\+cpp@{dxl/dxl\+\_\+hal.\+cpp}}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#include "\hyperlink{a00011}{dxl\_hal.h}"}
+00004 
+00005 
+\hypertarget{a00010_source_l00006}{}\hyperlink{a00002_ab631c2a5533125f14db9a8ec1c33aa7c}{00006} \textcolor{keywordtype}{bool} \hyperlink{a00002_ab631c2a5533125f14db9a8ec1c33aa7c}{dxl\_hal::open}(QString &devName, \textcolor{keywordtype}{int} baudrate )
+00007 \{
+00008     \textcolor{comment}{// Opening device}
+00009     \textcolor{comment}{// devIndex: Device index}
+00010     \textcolor{comment}{// baudrate: Real baudrate (ex> 115200, 57600, 38400...)}
+00011     \textcolor{comment}{// Return: 0(Failed), 1(Succeed)}
+00012     
+00013     \hyperlink{a00002_a785d0e35b81d779b54869cad668f9745}{\_serial}.setPortName(devName);
+00014     \hyperlink{a00002_a785d0e35b81d779b54869cad668f9745}{\_serial}.setBaudRate(qint32(baudrate));
+00015     \hyperlink{a00002_a785d0e35b81d779b54869cad668f9745}{\_serial}.setDataBits(QSerialPort::Data8);
+00016     \hyperlink{a00002_a785d0e35b81d779b54869cad668f9745}{\_serial}.setParity(QSerialPort::NoParity);
+00017     \hyperlink{a00002_a785d0e35b81d779b54869cad668f9745}{\_serial}.setStopBits(QSerialPort::OneStop);
+00018     \hyperlink{a00002_a785d0e35b81d779b54869cad668f9745}{\_serial}.setFlowControl(QSerialPort::NoFlowControl);
+00019     \textcolor{keywordflow}{if}(not \hyperlink{a00002_a785d0e35b81d779b54869cad668f9745}{\_serial}.open(QIODevice::ReadWrite)) \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00020     \hyperlink{a00002_a04831154c43fe4f7499ea0950e0f0999}{\_open} = \textcolor{keyword}{true};
+00021     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+00022 \}
+00023 
+\hypertarget{a00010_source_l00024}{}\hyperlink{a00002_a250fd7e4acabf54d0733551a13e89a2d}{00024} \textcolor{keywordtype}{void} \hyperlink{a00002_a250fd7e4acabf54d0733551a13e89a2d}{dxl\_hal::close}()
+00025 \{
+00026     \textcolor{comment}{// Closing device}
+00027     \hyperlink{a00002_a785d0e35b81d779b54869cad668f9745}{\_serial}.close();
+00028     \hyperlink{a00002_a04831154c43fe4f7499ea0950e0f0999}{\_open} = \textcolor{keyword}{false};
+00029 \}
+00030 
+\hypertarget{a00010_source_l00031}{}\hyperlink{a00002_a004eedde5af69219d7288ec8ea97c89f}{00031} \textcolor{keywordtype}{void} \hyperlink{a00002_a004eedde5af69219d7288ec8ea97c89f}{dxl\_hal::clear}(\textcolor{keywordtype}{void})
+00032 \{
+00033     \textcolor{comment}{// Clear communication buffer}
+00034     \hyperlink{a00002_a785d0e35b81d779b54869cad668f9745}{\_serial}.clear();
+00035     
+00036 \}
+00037 
+\hypertarget{a00010_source_l00038}{}\hyperlink{a00002_a0eaaa5340bc9dce73cc920dc8befe5b0}{00038} \textcolor{keywordtype}{int} \hyperlink{a00002_a0eaaa5340bc9dce73cc920dc8befe5b0}{dxl\_hal::change\_baudrate}(\textcolor{keywordtype}{float} baudrate)
+00039 \{
+00040     \textcolor{keywordtype}{bool} res = \hyperlink{a00002_a785d0e35b81d779b54869cad668f9745}{\_serial}.setBaudRate(qint32(baudrate));
+00041     \textcolor{keywordflow}{return} int(res);
+00042     
+00043 \}
+00044 
+\hypertarget{a00010_source_l00045}{}\hyperlink{a00002_a90106970438fb0ab65852730a1c0776a}{00045} \textcolor{keywordtype}{int} \hyperlink{a00002_a90106970438fb0ab65852730a1c0776a}{dxl\_hal::write}( \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *pPacket, \textcolor{keywordtype}{int} numPacket )
+00046 \{
+00047     \textcolor{comment}{// Transmiting date}
+00048     \textcolor{comment}{// *pPacket: data array pointer}
+00049     \textcolor{comment}{// numPacket: number of data array}
+00050     \textcolor{comment}{// Return: number of data transmitted. -1 is error.}
+00051     \hyperlink{a00002_a10d474daa3ca42b5c5ceb6558a955ca1}{\_timed} = \textcolor{keyword}{false};
+00052     \textcolor{keywordflow}{if} (\hyperlink{a00002_a785d0e35b81d779b54869cad668f9745}{\_serial}.isOpen()) \{
+00053         \textcolor{keywordtype}{int} n = \hyperlink{a00002_a785d0e35b81d779b54869cad668f9745}{\_serial}.write((\textcolor{keywordtype}{char}*)pPacket, numPacket);
+00054         \hyperlink{a00002_a10d474daa3ca42b5c5ceb6558a955ca1}{\_timed} = \hyperlink{a00002_a785d0e35b81d779b54869cad668f9745}{\_serial}.waitForBytesWritten(\hyperlink{a00002_ae3d8733b5ca778b070218765ca0746ac}{\_time});
+00055         \hyperlink{a00002_a10d474daa3ca42b5c5ceb6558a955ca1}{\_timed} = not \hyperlink{a00002_a10d474daa3ca42b5c5ceb6558a955ca1}{\_timed};
+00056         \textcolor{keywordflow}{return} n;
+00057     \}
+00058     \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} -1;
+00059 
+00060 \}
+00061 
+\hypertarget{a00010_source_l00062}{}\hyperlink{a00002_ac36331febb2eaa66303af3483795742a}{00062} \textcolor{keywordtype}{int} \hyperlink{a00002_ac36331febb2eaa66303af3483795742a}{dxl\_hal::read}( \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *pPacket, \textcolor{keywordtype}{int} numPacket )
+00063 \{
+00064     \textcolor{comment}{// Recieving date}
+00065     \textcolor{comment}{// *pPacket: data array pointer}
+00066     \textcolor{comment}{// numPacket: number of data array}
+00067     \textcolor{comment}{// Return: number of data recieved. -1 is error.}
+00068     \hyperlink{a00002_a10d474daa3ca42b5c5ceb6558a955ca1}{\_timed} = \textcolor{keyword}{false};
+00069     \textcolor{keywordflow}{if} (\hyperlink{a00002_a785d0e35b81d779b54869cad668f9745}{\_serial}.isOpen()) \{
+00070         \textcolor{keywordtype}{int} n = \hyperlink{a00002_a785d0e35b81d779b54869cad668f9745}{\_serial}.read((\textcolor{keywordtype}{char}*)pPacket, numPacket);
+00071         \hyperlink{a00002_a10d474daa3ca42b5c5ceb6558a955ca1}{\_timed} = \hyperlink{a00002_a785d0e35b81d779b54869cad668f9745}{\_serial}.waitForReadyRead(\hyperlink{a00002_ae3d8733b5ca778b070218765ca0746ac}{\_time});
+00072         \hyperlink{a00002_a10d474daa3ca42b5c5ceb6558a955ca1}{\_timed} = not \hyperlink{a00002_a10d474daa3ca42b5c5ceb6558a955ca1}{\_timed};
+00073         \textcolor{keywordflow}{return} n;
+00074     \}
+00075     \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} -1;
+00076     
+00077 \}
+00078 
+\hypertarget{a00010_source_l00079}{}\hyperlink{a00002_a6b6b7381c45308662fc3df6e7f74bc61}{00079} \textcolor{keywordtype}{double} \hyperlink{a00002_a6b6b7381c45308662fc3df6e7f74bc61}{dxl\_hal::get\_curr\_time}()
+00080 \{
+00081     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{double})QTime::currentTime().msecsSinceStartOfDay();
+00082 \}
+\end{DoxyCode}

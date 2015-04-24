@@ -1,4 +1,4 @@
-/// @file servothread.h Contains the ServoThread class implementation
+/// @file servothread.cpp Contains the ServoThread class implementation
 #include "servothread.h"
 
 ServoThread::ServoThread() :

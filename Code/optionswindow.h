@@ -18,9 +18,14 @@ class OptionsWindow : public QDialog
     
 public:
     
-    /// Default constructor
-    explicit OptionsWindow(XJoystick &J, ServoThread *servo, 
-                           QWidget *parent = 0);
+    /// Default constructor must be intialized with a few values
+    /// @param J Refernce to the Joystick handler
+    /// @param servo Pointer to the ServoThread
+    /// @param aX Axis for the X value
+    /// @param aY Axis for the Y value
+    /// @param aZ Axis for the Z value
+    explicit OptionsWindow(XJoystick &J, ServoThread *servo, int &aX, int &aY, 
+                           int &aZ, QWidget *parent = 0);
     
     /// Destructor
     ~OptionsWindow();
@@ -43,6 +48,10 @@ private slots:
     
 private:
     
+    int &_jAxisX;   ///< Reference to axis for the X value
+    int &_jAxisY;   ///< Reference to axis for the Y value
+    int &_jAxisZ;   ///< Reference to axis for the Z value
+    
     /// Contains the Joystick to handle options
     XJoystick &_joy;
     
@@ -60,5 +69,3 @@ private:
 };
 
 #endif // OPTIONSWINDOW_H
-
-// TODO: Finish options window

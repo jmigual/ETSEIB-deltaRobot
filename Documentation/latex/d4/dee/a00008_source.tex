@@ -1,0 +1,167 @@
+\hypertarget{a00008_source}{}\section{ax12.\+cpp}
+\label{a00008_source}\index{dxl/ax12.\+cpp@{dxl/ax12.\+cpp}}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#include "\hyperlink{a00009}{ax12.h}"}
+00004 
+\hypertarget{a00008_source_l00005}{}\hyperlink{a00001_ab7c557985e755d6119e5e2d979f928ae}{00005} \hyperlink{a00001_ab7c557985e755d6119e5e2d979f928ae}{AX12::AX12}() :
+00006     \_dxl(NULL),
+00007     \_ID(-1),
+00008     \_mode(true),
+00009     \_rads(false)
+00010 \{
+00011     
+00012 \}
+00013 
+\hypertarget{a00008_source_l00014}{}\hyperlink{a00001_a205be9b4dde785bd40b88f575a64f4d8}{00014} \hyperlink{a00001_ab7c557985e755d6119e5e2d979f928ae}{AX12::AX12}(\hyperlink{a00003}{dynamixel} *dxl, \textcolor{keywordtype}{int} ID) : 
+00015     \_dxl(dxl),
+00016     \_ID(ID),
+00017    \_mode(true),
+00018    \_rads(false)
+00019 \{
+00020     \textcolor{keywordflow}{if} (\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID} < 0 or \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl} == NULL) \textcolor{keywordflow}{return};
+00021     dxl->\hyperlink{a00003_a66c1e32cc45dd46d329f1fc212e46a3d}{write\_byte}(\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, RAM::TorqueEnable, \textcolor{keyword}{true});
+00022 \}
+00023 
+\hypertarget{a00008_source_l00024}{}\hyperlink{a00001_a37b76666533323ec317f5156dbef2a89}{00024} \hyperlink{a00001_ab7c557985e755d6119e5e2d979f928ae}{AX12::AX12}(\textcolor{keyword}{const} \hyperlink{a00001}{AX12} &a) :
+00025     \_dxl(a.\_dxl),
+00026     \_ID(a.\_ID),
+00027     \_mode(a.\_mode),
+00028     \_rads(a.\_rads)
+00029 \{
+00030     
+00031 \}
+00032 
+\hypertarget{a00008_source_l00033}{}\hyperlink{a00001_a5e9382e65479cdcb248f5303ac4c96d9}{00033} \hyperlink{a00001_a5e9382e65479cdcb248f5303ac4c96d9}{AX12::~AX12}()
+00034 \{
+00035     
+00036 \}
+00037 
+\hypertarget{a00008_source_l00038}{}\hyperlink{a00001_a2fa05296aa57896a5cb0ef4ce0aa96f1}{00038} QVector<int> \hyperlink{a00001_a2fa05296aa57896a5cb0ef4ce0aa96f1}{AX12::connectedID}()
+00039 \{
+00040     \textcolor{keywordflow}{if} (\hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl} == NULL) \textcolor{keywordflow}{return} QVector<int> (0);
+00041     
+00042     QVector <int> res;
+00043     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 256; ++i) \{
+00044         \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl}->\hyperlink{a00003_af2bd714423e7c4fc089762805c0c71f3}{ping}(i);
+00045         \textcolor{keywordflow}{if} (\hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl}->\hyperlink{a00003_ac8440d5d34ae3c4618b28fdbbd748edc}{get\_comm\_result}() == COMM\_RXSUCCESS) res.push\_back(i);
+00046     \}
+00047     
+00048     \textcolor{keywordflow}{return} res;
+00049 \}
+00050 
+\hypertarget{a00008_source_l00051}{}\hyperlink{a00001_a0bd930c81b7a9c088ecab789b3a7e525}{00051} \textcolor{keywordtype}{double} \hyperlink{a00001_a0bd930c81b7a9c088ecab789b3a7e525}{AX12::getCurrentLoad}()
+00052 \{
+00053     \textcolor{keywordflow}{if} (\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID} < 0 or \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl} == NULL) \textcolor{keywordflow}{return} 0;
+00054     \textcolor{keywordtype}{int} load = \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl}->\hyperlink{a00003_a45e99341e82c5114f6e829c9141bf96f}{read\_word}(\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, RAM::PresentLoad);
+00055     load -= 1024;
+00056     \textcolor{keywordflow}{if} (load == -1024) load = 0;
+00057     \textcolor{keywordflow}{return} double((load/1023)*100);
+00058 \}
+00059 
+\hypertarget{a00008_source_l00060}{}\hyperlink{a00001_af9722b9c1f82fbfd97fe5e0a44369e8a}{00060} \textcolor{keywordtype}{double} \hyperlink{a00001_af9722b9c1f82fbfd97fe5e0a44369e8a}{AX12::getCurrentPos}()
+00061 \{
+00062     \textcolor{keywordflow}{if} (\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID} < 0 or \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl} == NULL) \textcolor{keywordflow}{return} 0;
+00063     \textcolor{keywordtype}{int} pos = \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl}->\hyperlink{a00003_a45e99341e82c5114f6e829c9141bf96f}{read\_word}(\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, RAM::PresentPosition);
+00064     \textcolor{keywordflow}{if} (\hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl}->\hyperlink{a00003_ac8440d5d34ae3c4618b28fdbbd748edc}{get\_comm\_result}() != COMM\_RXSUCCESS) \textcolor{keywordflow}{return} -1;
+00065     
+00066     \textcolor{keywordflow}{if} (\hyperlink{a00001_aba71492043d7a3226f0793db57372bec}{\_rads}) \textcolor{keywordflow}{return} double((pos/1023.0)*5*M\_PI/3);
+00067     \textcolor{keywordflow}{return} double((pos/1023.0)*300);
+00068 \}
+00069 
+\hypertarget{a00008_source_l00070}{}\hyperlink{a00001_ab16fad4c8c034d56acce15fc9102f34d}{00070} \textcolor{keywordtype}{int} \hyperlink{a00001_ab16fad4c8c034d56acce15fc9102f34d}{AX12::getCurrentTemp}()
+00071 \{
+00072     \textcolor{keywordflow}{if} (\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID} < 0 or \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl} == NULL) \textcolor{keywordflow}{return} 0;
+00073     \textcolor{keywordtype}{int} temp = \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl}->\hyperlink{a00003_a888404b41c4c4395a0b745c77ff2cea9}{read\_byte}(\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, RAM::PresentTemperature);
+00074     \textcolor{keywordflow}{if} (\hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl}->\hyperlink{a00003_ac8440d5d34ae3c4618b28fdbbd748edc}{get\_comm\_result}() != COMM\_RXSUCCESS) \textcolor{keywordflow}{return} -1;
+00075     \textcolor{keywordflow}{return} temp;
+00076 \}
+00077 
+\hypertarget{a00008_source_l00078}{}\hyperlink{a00001_a23c7ed54716c4b144a68d801f324e3ef}{00078} \textcolor{keywordtype}{double} \hyperlink{a00001_a23c7ed54716c4b144a68d801f324e3ef}{AX12::getCurrentSpeed}()
+00079 \{
+00080     \textcolor{keywordflow}{if} (\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID} < 0 or \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl} == NULL) \textcolor{keywordflow}{return} 0;
+00081     \textcolor{keywordtype}{int} speed = \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl}->\hyperlink{a00003_a45e99341e82c5114f6e829c9141bf96f}{read\_word}(\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, RAM::PresentSpeed);
+00082     \textcolor{keywordflow}{if} (\hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl}->\hyperlink{a00003_ac8440d5d34ae3c4618b28fdbbd748edc}{get\_comm\_result}() != COMM\_RXSUCCESS) \textcolor{keywordflow}{return} -1;
+00083     speed -= 1024;
+00084     \textcolor{keywordflow}{if} (speed == -1024) speed = 0;
+00085     \textcolor{keywordflow}{return} double((speed/1023.0)*100);
+00086 \}
+00087 
+\hypertarget{a00008_source_l00088}{}\hyperlink{a00001_a9ef946bfc1ad4dce5fed4101ed321efe}{00088} \textcolor{keywordtype}{double} \hyperlink{a00001_a9ef946bfc1ad4dce5fed4101ed321efe}{AX12::getCurrentVoltage}()
+00089 \{
+00090     \textcolor{keywordflow}{if} (\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID} < 0 or \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl} == NULL) \textcolor{keywordflow}{return} 0;
+00091     \textcolor{keywordtype}{char} voltage = \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl}->\hyperlink{a00003_a888404b41c4c4395a0b745c77ff2cea9}{read\_byte}(\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, RAM::PresentVoltage);
+00092     \textcolor{keywordflow}{if} (\hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl}->\hyperlink{a00003_ac8440d5d34ae3c4618b28fdbbd748edc}{get\_comm\_result}() != COMM\_RXSUCCESS) \textcolor{keywordflow}{return} -1;
+00093     \textcolor{keywordflow}{return} double(voltage/10.0);
+00094 \}
+00095 
+\hypertarget{a00008_source_l00096}{}\hyperlink{a00001_a6b27a3c6314604b499d9fa47d180f5d3}{00096} \textcolor{keywordtype}{void} \hyperlink{a00001_a6b27a3c6314604b499d9fa47d180f5d3}{AX12::setGoalPosition}(\textcolor{keywordtype}{double} goal)
+00097 \{
+00098     \textcolor{keywordflow}{if} (\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID} < 0 or \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl} == NULL) \textcolor{keywordflow}{return};
+00099     \textcolor{keywordflow}{if} (goal > 300.0) goal = 300.0;
+00100     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (goal < 0) goal = 0;
+00101     \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl}->\hyperlink{a00003_a925f62ce5e261e5ef4fe6dc46bdc7c63}{write\_word}(\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, RAM::GoalPosition, \textcolor{keywordtype}{int}((goal/300.0)*1023));
+00102 \}
+00103 
+\hypertarget{a00008_source_l00104}{}\hyperlink{a00001_ab9fe5d0e2286985977985de6d84b1103}{00104} \textcolor{keywordtype}{void} \hyperlink{a00001_ab9fe5d0e2286985977985de6d84b1103}{AX12::setID}(\textcolor{keywordtype}{int} ID)
+00105 \{
+00106     \hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID} = \hyperlink{a00001_a08d272b502d65464202a3aa97825aec0ab2565d5698c9d943a8bcecf02b1389ad}{ID};
+00107     \textcolor{keywordflow}{if} (\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID} < 0 or \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl} == NULL) \textcolor{keywordflow}{return};
+00108     \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl}->\hyperlink{a00003_a66c1e32cc45dd46d329f1fc212e46a3d}{write\_byte}(\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, RAM::TorqueEnable, \textcolor{keyword}{true});
+00109 \}
+00110 
+\hypertarget{a00008_source_l00111}{}\hyperlink{a00001_ac48405a5f4aa73c1f2d56f633dfbec50}{00111} \textcolor{keywordtype}{void} \hyperlink{a00001_ac48405a5f4aa73c1f2d56f633dfbec50}{AX12::setJointMode}(\textcolor{keywordtype}{bool} mode)
+00112 \{
+00113     \textcolor{keywordflow}{if} (\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID} < 0 or \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl} == NULL) \textcolor{keywordflow}{return};
+00114     \hyperlink{a00001_a2fd07e2e636003227a32d09d211bd6d4}{\_mode} = mode;
+00115     \textcolor{keywordflow}{if} (\hyperlink{a00001_a2fd07e2e636003227a32d09d211bd6d4}{\_mode}) \{
+00116         \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl}->\hyperlink{a00003_a925f62ce5e261e5ef4fe6dc46bdc7c63}{write\_word}(\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, ROM::CWAngleLimit, 0);
+00117         \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl}->\hyperlink{a00003_a925f62ce5e261e5ef4fe6dc46bdc7c63}{write\_word}(\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, ROM::CCWAngleLimit, 1023);
+00118     \}
+00119     \textcolor{keywordflow}{else} \{
+00120         \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl}->\hyperlink{a00003_a925f62ce5e261e5ef4fe6dc46bdc7c63}{write\_word}(\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, ROM::CWAngleLimit, 0);
+00121         \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl}->\hyperlink{a00003_a925f62ce5e261e5ef4fe6dc46bdc7c63}{write\_word}(\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, ROM::CCWAngleLimit, 0);
+00122     \}
+00123 \}
+00124 
+\hypertarget{a00008_source_l00125}{}\hyperlink{a00001_a914864d133f8cbaf95594747aaff55f2}{00125} \textcolor{keywordtype}{void} \hyperlink{a00001_a914864d133f8cbaf95594747aaff55f2}{AX12::setMinMax}(\textcolor{keywordtype}{double} min, \textcolor{keywordtype}{double} max)
+00126 \{
+00127     \textcolor{keywordflow}{if} (\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID} < 0 or \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl} == NULL) \textcolor{keywordflow}{return};
+00128     
+00129     \textcolor{keywordflow}{if} (min > max)  \{
+00130         \textcolor{keywordtype}{double} aux = min;
+00131         min = max;
+00132         max = aux;
+00133     \}
+00134     
+00135     \textcolor{keywordflow}{if} (min < 0.0) min = 0;
+00136     \textcolor{keywordflow}{if} (max > 300.0) max = 300;
+00137     
+00138     min = (min/300)*1023;
+00139     max = (max/300)*1023;
+00140     
+00141     \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl}->\hyperlink{a00003_a925f62ce5e261e5ef4fe6dc46bdc7c63}{write\_word}(\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, ROM::CWAngleLimit, \textcolor{keywordtype}{int} (min));
+00142     \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl}->\hyperlink{a00003_a925f62ce5e261e5ef4fe6dc46bdc7c63}{write\_word}(\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, ROM::CCWAngleLimit, \textcolor{keywordtype}{int} (max));
+00143 \}
+00144 
+\hypertarget{a00008_source_l00145}{}\hyperlink{a00001_a95428eea4d5165b81d80e4ab38e33b7b}{00145} \textcolor{keywordtype}{void} \hyperlink{a00001_a95428eea4d5165b81d80e4ab38e33b7b}{AX12::setSpeed}(\textcolor{keywordtype}{double} speed)
+00146 \{
+00147     \textcolor{keywordflow}{if} (\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID} < 0 or \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl} == NULL) \textcolor{keywordflow}{return};
+00148     \textcolor{keywordflow}{if} (speed > 100.0) speed = 100.0;
+00149     \textcolor{keywordflow}{if} (\hyperlink{a00001_a2fd07e2e636003227a32d09d211bd6d4}{\_mode}) \{
+00150         \textcolor{keywordflow}{if} (speed < 0.0) speed = 0.0;
+00151         
+00152         \textcolor{keywordtype}{int} byte = int((speed/100.0) * 1024.0);
+00153         \textcolor{keywordflow}{if} (speed == 100.0) byte = 0;
+00154         \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl}->\hyperlink{a00003_a66c1e32cc45dd46d329f1fc212e46a3d}{write\_byte}(\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, RAM::MovingSpeed, byte);        
+00155     \}
+00156     \textcolor{keywordflow}{else} \{
+00157         \textcolor{keywordflow}{if} (speed < -100.0) speed = -100.0;   
+00158         
+00159         \textcolor{keywordtype}{int} byte = int(((speed + 100)/100.0) * 1024);
+00160         \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl}->\hyperlink{a00003_a66c1e32cc45dd46d329f1fc212e46a3d}{write\_byte}(\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, RAM::MovingSpeed, byte);
+00161     \}
+00162 
+00163 \}
+00164 
+\end{DoxyCode}

@@ -97,7 +97,7 @@ void MainWindow::joyChanged()
 
 void MainWindow::on_actionOptions_triggered()
 {
-    OptionsWindow o(_joy, &_sT, this);
+    OptionsWindow o(_joy, &_sT, _jAxisX, _jAxisY, _jAxisZ, this);
     o.exec();
     
     connect(this, SIGNAL(joystickChanged()), &o, SLOT(joystickChanged()));
@@ -107,14 +107,37 @@ void MainWindow::on_actionOptions_triggered()
 
 void MainWindow::update()
 {
+    // Joystick values
     _joy.update();
-    for (int i = 0; i < XJoystick::AxisCount; ++i) _axisV[i] = _joy[i];
-    for (int i = 0; i < XJoystick::ButtonCount; ++i) _butsV[i] = _joy.button(i);
+    for (int i = 0; i < XJoystick::AxisCount; ++i) {
+        float temp = _joy[i];
+        _axisV[i] = temp;
+        _axis[i]->setText(QString::number(temp));
+    }
+    for (int i = 0; i < XJoystick::ButtonCount; ++i) {
+        bool temp = _joy.button(i);
+        _butsV[i] = temp;
+        _buts[i]->setEnabled(temp);
+    }
     
     _sT.setData(_axisV, _butsV);
     QVector<ServoThread::Servo> servo(_sT.getServosInfo());
     
-    // TODO: Finish update function
+    // Updating position sliders
+    ui->servo0S->setValue(servo[0].pos);
+    ui->servo1S->setValue(servo[1].pos);
+    ui->servo2S->setValue(servo[2].pos);
+    
+    // Updating position labels
+    ui->servo0->setText(QString::number(servo[0].pos));
+    ui->servo1->setText(QString::number(servo[1].pos));
+    ui->servo2->setText(QString::number(servo[2].pos));
+    
+    // Updating load labels
+    ui->servo0L->setText(QString::number(servo[0].load));
+    ui->servo1L->setText(QString::number(servo[1].load));
+    ui->servo2L->setText(QString::number(servo[2].load));
+    
 }
 
 void MainWindow::on_start_clicked()
