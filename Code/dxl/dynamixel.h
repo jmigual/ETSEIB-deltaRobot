@@ -1,4 +1,4 @@
-/// @file dynamixel.h Contains the dynamixel and dynamixel2 classes declaration
+/// @file dynamixel.h Contains the dynamixel class declaration
 // Dynamixel SDK platform independent header
 #ifndef _DYNAMIXEL_HEADER
 #define _DYNAMIXEL_HEADER

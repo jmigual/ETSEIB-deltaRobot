@@ -231,7 +231,6 @@
      <string>File</string>
     </property>
     <addaction name="actionImport"/>
-    <addaction name="actionExport"/>
     <addaction name="actionExit"/>
    </widget>
    <widget class="QMenu" name="menuEdit">
@@ -247,11 +246,6 @@
   <action name="actionImport">
    <property name="text">
     <string>Import</string>
-   </property>
-  </action>
-  <action name="actionExport">
-   <property name="text">
-    <string>Export</string>
    </property>
   </action>
   <action name="actionOptions">

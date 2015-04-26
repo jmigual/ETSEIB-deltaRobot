@@ -28,6 +28,7 @@
 #include <QDebug>
 #include <QDir>
 #include <QDialog>
+#include <QFileDialog>
 #include <QLabel>
 #include <QMainWindow>
 #include <QMutex>

@@ -20,6 +20,14 @@ class ServoThread : public QThread
         v_1_0
     };
     
+    /// Struct to handle the dominoe pieces
+    struct Dominoe
+    {
+        double X;   ///< X position
+        double Y;   ///< Y position
+        double ori; ///< Orientation from X = 0 in degrees
+    };
+    
 public:
     
     /// Struct for the AX12 servos
@@ -115,6 +123,14 @@ public:
     /// Returns the mutex used in the thread
     inline QMutex* mutex() { return &_mutex; }
     
+    /// Reads and loads the data from the selected file
+    /// @param file Path to the selected file
+    void read(QString file);
+    
+    /// Reads the path where to put the selected pieces
+    /// @param file Path to the file where to read the pieces
+    void readPath(QString file);
+    
     /// Adds the loaded data
     /// @param aV Contains the axis values
     /// @param buts Contains the buttons values
@@ -153,11 +169,27 @@ public:
     /// @param V Vector containing all the servos ID
     inline void setSID (QVector< int > &V) 
     {
-        _mutex.lock();
-        if (V.size() != _servos.size()) _servos.resize(V.size());
+        if (V.size() != _sNum) {
+            qDebug() << "Error setting servos";
+            return;
+        }
         
+        
+        _mutex.lock();        
         for (int i = 0; i < V.size(); ++i) _servos[i].ID = V[i];
         _dChanged = true;
+        _mutex.unlock();
+    }
+    
+    /// Sets the servos speed
+    /// @param speed Integer from 0 to 100 containing the % of speed
+    inline void setSpeed(int speed)
+    {
+        if (speed < 0) speed = 0;
+        else if (speed > 100) speed = 100;
+        
+        _mutex.lock();
+        _sSpeed = speed;
         _mutex.unlock();
     }
     
@@ -172,7 +204,7 @@ public:
     
     /// Writes data to the selected directory
     /// @param file Path to the file
-    void write(QString &file); 
+    void write(QString file);
     
 signals:
     
@@ -185,8 +217,8 @@ private:
     const double sin60 = sqrt(3)/2; ///< Contains the sinus of 60
     const double a = 17.233;        ///< The arm length
     const double b = 22.648;        ///< The forearm length
-    const double L1 = 5.000;        ///< The base center lenght
-    const double L2 = 6.000;        ///< The platform center length
+    const double L1 = 6.000;        ///< The clamp center lenght
+    const double L2 = 6.374;        ///< The support center length
     
     /// Contains the axis value
     QVector < float > _axis;
@@ -206,13 +238,16 @@ private:
     /// True if the data changes
     bool _dChanged;
     
+    /// Contains all the dominoes information
+    QVector< Dominoe > _dominoe;
+    
     /// True when we must end executino
     bool _end;
     
     /// Contains the working mode
     Mode _mod;
     
-    /// To prevent memory errors
+    /// To prevent memory errors between threads
     QMutex _mutex;
     
     /// Pauses the execution of the thread
@@ -224,11 +259,17 @@ private:
     /// Contains the servos information
     QVector< Servo > _servos;
     
+    /// Number of servos to manage
+    const int _sNum = 4;
+    
     /// Contains the selected com port used in the comunication with servos
     QString _sPort;
     
     /// True if the servos port changes
     bool _sPortChanged;
+    
+    /// Speed of the robot
+    int _sSpeed;
     
     /// Used to create another thread
     void run();

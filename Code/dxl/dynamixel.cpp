@@ -1,4 +1,4 @@
-/// @file dynamixel.cpp Contains the dynamixel and dynamixel2 classes 
+/// @file dynamixel.cpp Contains the dynamixel class
 /// implementation
 
 #include "dynamixel.h"

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.9.1"/>
-<title>DeltaRobot: optionswindow.cpp Source File</title>
+<title>DeltaRobot: mainwindow.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -45,156 +45,113 @@
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">optionswindow.cpp</div>  </div>
+<div class="title">mainwindow.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="../../d4/d51/a00017.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d1/d2b/a00018.html">optionswindow.h</a>&quot;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;ui_optionswindow.h&quot;</span></div>
+<a href="../../d4/d51/a00017.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef MAINWINDOW_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#define MAINWINDOW_H</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
-<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="../../dd/dad/a00005.html#a968da93eec85561ebdb3a464eff15611">    5</a></span>&#160;<a class="code" href="../../dd/dad/a00005.html#a968da93eec85561ebdb3a464eff15611">OptionsWindow::OptionsWindow</a>(XJoystick &amp;J, <a class="code" href="../../de/d5e/a00007.html">ServoThread</a> *servo, <span class="keywordtype">int</span> &amp;aX, </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;                             <span class="keywordtype">int</span> &amp;aY, <span class="keywordtype">int</span> &amp;aZ, QWidget *parent) :</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    QDialog(parent),</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    _jAxisX(aX),</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    _jAxisY(aY),</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    _jAxisZ(aZ),</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    _joy(J),</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    _portSize(-1),</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    _servo(servo),</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    _timer(this),</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    ui(new <a class="code" href="../../d3/d52/a00023.html">Ui</a>::<a class="code" href="../../dd/dad/a00005.html">OptionsWindow</a>)</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="../../dd/dad/a00005.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;setupUi(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    QVector&lt; QString &gt; A(<a class="code" href="../../dd/dad/a00005.html#a1bf846ab681ab245f70adac30999947c">_joy</a>.getAllAxis());</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="comment">// Adding joystick axis movement</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="../../dd/dad/a00005.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;joyMX-&gt;addItem(<span class="stringliteral">&quot;None&quot;</span>, -1);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="../../dd/dad/a00005.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;joyMY-&gt;addItem(<span class="stringliteral">&quot;None&quot;</span>, -1);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="../../dd/dad/a00005.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;joyMZ-&gt;addItem(<span class="stringliteral">&quot;None&quot;</span>, -1);</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">// Adding precompiled header</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d7/de0/a00022.html">stable.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// User libraries</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d7/dec/a00010.html">dxl/ax12.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d2/de7/a00014.html">dxl/dynamixel.h</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../dd/da2/a00019.html">optionswindow.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../de/d11/a00021.html">servothread.h</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="../../dc/de2/a00024.html">   15</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="../../dc/de2/a00024.html">Ui</a> {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">class </span><a class="code" href="../../dd/dad/a00005.html">MainWindow</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">using namespace </span><a class="code" href="../../d3/d52/a00023.html">std</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="../../dd/dad/a00005.html">   22</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../dd/dad/a00005.html">MainWindow</a> : <span class="keyword">public</span> QMainWindow</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    Q_OBJECT</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; A.size(); ++i) <a class="code" href="../../dd/dad/a00005.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;joyMX-&gt;addItem(A[i], i);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; A.size(); ++i) <a class="code" href="../../dd/dad/a00005.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;joyMY-&gt;addItem(A[i], i);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; A.size(); ++i) <a class="code" href="../../dd/dad/a00005.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;joyMZ-&gt;addItem(A[i], i);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="../../dd/dad/a00005.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;joyMX-&gt;setCurrentIndex(<a class="code" href="../../dd/dad/a00005.html#a01d6284355011203ee6e8856a0bdf557">_jAxisX</a> + 1);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="../../dd/dad/a00005.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;joyMY-&gt;setCurrentIndex(<a class="code" href="../../dd/dad/a00005.html#a8921d1cc5bcb527466c28feb5dcc59b1">_jAxisY</a> + 1);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="../../dd/dad/a00005.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;joyMZ-&gt;setCurrentIndex(<a class="code" href="../../dd/dad/a00005.html#a47409f50a87942706baaea3d025785e3">_jAxisZ</a> + 1);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">// Updating joystick data</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="../../dd/dad/a00005.html#ae8c0373be58da710194f8d14f1c3c4dc">joystickChanged</a>();</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">// Configuring event funcion</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="../../dd/dad/a00005.html#af6320942b8558140989f552b3bbc1fbd">_timer</a>.setInterval(500);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="../../dd/dad/a00005.html#af6320942b8558140989f552b3bbc1fbd">_timer</a>.setSingleShot(<span class="keyword">false</span>);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="../../dd/dad/a00005.html#af6320942b8558140989f552b3bbc1fbd">_timer</a>.start();</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    connect(&amp;<a class="code" href="../../dd/dad/a00005.html#af6320942b8558140989f552b3bbc1fbd">_timer</a>, SIGNAL(timeout()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../dd/dad/a00005.html#a18763ff318688083c7ee5a21f22e8e98">events</a>()));</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="../../dd/dad/a00005.html#a034c885fe8bb4416e732a9571d14a6b4">   45</a></span>&#160;<a class="code" href="../../dd/dad/a00005.html#a034c885fe8bb4416e732a9571d14a6b4">OptionsWindow::~OptionsWindow</a>()</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">delete</span> <a class="code" href="../../dd/dad/a00005.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="../../dd/dad/a00005.html#ab0a56ad7347c20046602a7a2a1c83397">   50</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dd/dad/a00005.html#ab0a56ad7347c20046602a7a2a1c83397">OptionsWindow::storeData</a>()</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">// Storing joystick data</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="../../dd/dad/a00005.html#a1bf846ab681ab245f70adac30999947c">_joy</a>.select(<a class="code" href="../../dd/dad/a00005.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;joySel-&gt;currentData().toInt());</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">// Joystick movement axis</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="../../dd/dad/a00005.html#a01d6284355011203ee6e8856a0bdf557">_jAxisX</a> = <a class="code" href="../../dd/dad/a00005.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;joyMX-&gt;currentData().toInt();</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <a class="code" href="../../dd/dad/a00005.html#a8921d1cc5bcb527466c28feb5dcc59b1">_jAxisY</a> = <a class="code" href="../../dd/dad/a00005.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;joyMY-&gt;currentData().toInt();</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="../../dd/dad/a00005.html#a47409f50a87942706baaea3d025785e3">_jAxisZ</a> = <a class="code" href="../../dd/dad/a00005.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;joyMZ-&gt;currentData().toInt();</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="../../dd/dad/a00005.html#ae8c0373be58da710194f8d14f1c3c4dc">   61</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dd/dad/a00005.html#ae8c0373be58da710194f8d14f1c3c4dc">OptionsWindow::joystickChanged</a>()</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;{</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">// Clear all the items and write the new items</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="../../dd/dad/a00005.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;joySel-&gt;clear();</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="../../dd/dad/a00005.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;joySel-&gt;addItem(<span class="stringliteral">&quot;None&quot;</span>, -1);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="comment">// Adding items and searching the current</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">int</span> pos = 0;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    QVector&lt;XJoystick::Info&gt; V(<a class="code" href="../../dd/dad/a00005.html#a1bf846ab681ab245f70adac30999947c">_joy</a>.available());</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; V.size(); ++i) {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        QString text(V[i].name);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        text += <span class="stringliteral">&quot;: &quot;</span> + QString::number(V[i].ID);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">if</span> (V[i].ID == <a class="code" href="../../dd/dad/a00005.html#a1bf846ab681ab245f70adac30999947c">_joy</a>.current()) pos = i;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <a class="code" href="../../dd/dad/a00005.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;joySel-&gt;addItem(text, V[i].ID);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    }</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="../../dd/dad/a00005.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;joySel-&gt;setCurrentIndex(pos);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <a class="code" href="../../dd/dad/a00005.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;joyN-&gt;setText(QString::number(V.size()));</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
-<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="../../dd/dad/a00005.html#a18763ff318688083c7ee5a21f22e8e98">   81</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dd/dad/a00005.html#a18763ff318688083c7ee5a21f22e8e98">OptionsWindow::events</a>()</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;{</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keyword">auto</span> ports = QSerialPortInfo::availablePorts();</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="../../dd/dad/a00005.html#a646727b1c45c72638325adfd460649c0">   27</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> sCount = 3;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="../../dd/dad/a00005.html#a42c44af9c0eebc33f4e81f02e15b0461">   30</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> aSCount = 0;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="../../dd/dad/a00005.html#a355d9f17965e5105226409313743cb9d">   32</a></span>&#160;    <span class="keyword">enum</span> <a class="code" href="../../dd/dad/a00005.html#a355d9f17965e5105226409313743cb9d">Version</a> {</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="../../dd/dad/a00005.html#a355d9f17965e5105226409313743cb9daac0c8ddcec40274ec60fb95f59ba7aba">   33</a></span>&#160;        v_1_0</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    };</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="../../dd/dad/a00005.html">MainWindow</a>(QWidget *parent = 0);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    ~<a class="code" href="../../dd/dad/a00005.html">MainWindow</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;signals:</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">void</span> joystickChanged();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">private</span>:  </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    </div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="../../dd/dad/a00005.html#a30c99d7a544f74b0650758e5cc7ead5a">   52</a></span>&#160;    QVector&lt; QLabel *&gt; <a class="code" href="../../dd/dad/a00005.html#a30c99d7a544f74b0650758e5cc7ead5a">_axis</a>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    </div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="../../dd/dad/a00005.html#a20f66f574ed4c96d8dfc0013e1095f15">   55</a></span>&#160;    QVector &lt; float &gt; <a class="code" href="../../dd/dad/a00005.html#a20f66f574ed4c96d8dfc0013e1095f15">_axisV</a>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    </div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="../../dd/dad/a00005.html#a8eaf474e1b8672f32873ed009e28ce8a">   58</a></span>&#160;    QVector&lt; QLabel *&gt; <a class="code" href="../../dd/dad/a00005.html#a8eaf474e1b8672f32873ed009e28ce8a">_buts</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    </div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="../../dd/dad/a00005.html#a519ae4630572cb63fbd04bce12fe8e77">   61</a></span>&#160;    QVector &lt; bool &gt; <a class="code" href="../../dd/dad/a00005.html#a519ae4630572cb63fbd04bce12fe8e77">_butsV</a>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    </div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="../../dd/dad/a00005.html#aaccbe653019df03668429890e325ac21">   64</a></span>&#160;    QString <a class="code" href="../../dd/dad/a00005.html#aaccbe653019df03668429890e325ac21">_dataP</a>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    </div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="../../dd/dad/a00005.html#a282d4090e96c676578c4336391b1af08">   66</a></span>&#160;    <span class="keywordtype">int</span> _jAxisX = -1;   </div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="../../dd/dad/a00005.html#aaaced09ce813bbcac92047f5ef39f182">   67</a></span>&#160;    <span class="keywordtype">int</span> _jAxisY = -1;   </div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="../../dd/dad/a00005.html#a18cc17eff4ff04ee0aae07c609e82d33">   68</a></span>&#160;    <span class="keywordtype">int</span> _jAxisZ = -1;   </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    </div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="../../dd/dad/a00005.html#a671f35800890e518713e1946671d8730">   71</a></span>&#160;    XJoystick <a class="code" href="../../dd/dad/a00005.html#a671f35800890e518713e1946671d8730">_joy</a>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    </div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="../../dd/dad/a00005.html#a97f8ecc7ecb930b796178cef7b975013">   74</a></span>&#160;    <a class="code" href="../../d4/dee/a00008.html">ServoThread</a> <a class="code" href="../../dd/dad/a00005.html#a97f8ecc7ecb930b796178cef7b975013">_sT</a>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    </div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="../../dd/dad/a00005.html#a254b03b878cfda75c1c411a2f8568d33">   77</a></span>&#160;    QTimer <a class="code" href="../../dd/dad/a00005.html#a254b03b878cfda75c1c411a2f8568d33">_timer</a>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    </div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="../../dd/dad/a00005.html#a35466a70ed47252a0191168126a352a5">   80</a></span>&#160;    Ui::MainWindow *<a class="code" href="../../dd/dad/a00005.html#a35466a70ed47252a0191168126a352a5">ui</a>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    </div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="../../dd/dad/a00005.html#a6fd62e117414acda4fe6a93c453dfb93">   83</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="../../dd/dad/a00005.html#a6fd62e117414acda4fe6a93c453dfb93">write</a>() { <a class="code" href="../../dd/dad/a00005.html#a6fd62e117414acda4fe6a93c453dfb93">write</a>(_dataP); }</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">if</span> (ports.size() != <a class="code" href="../../dd/dad/a00005.html#a9bd4dccc7a544b1db78dc8cf330b88f6">_portSize</a>) {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <a class="code" href="../../dd/dad/a00005.html#a9bd4dccc7a544b1db78dc8cf330b88f6">_portSize</a> = ports.size();</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        QString portC(<a class="code" href="../../dd/dad/a00005.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;portC-&gt;currentData().toString());</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        QString portS(<a class="code" href="../../dd/dad/a00005.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;portS-&gt;currentData().toString());</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordtype">int</span> selC = 0, selS = 0;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <a class="code" href="../../dd/dad/a00005.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;portC-&gt;clear();</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <a class="code" href="../../dd/dad/a00005.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;portS-&gt;clear();</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <a class="code" href="../../dd/dad/a00005.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;portC-&gt;addItem(<span class="stringliteral">&quot;None&quot;</span>, <span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <a class="code" href="../../dd/dad/a00005.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;portS-&gt;addItem(<span class="stringliteral">&quot;None&quot;</span>, <span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; ports.size(); ++i) {</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            QString text(ports[i].portName());</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            text += <span class="stringliteral">&quot;: &quot;</span> + ports[i].description();</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <a class="code" href="../../dd/dad/a00005.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;portC-&gt;addItem(text, ports[i].portName());</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <a class="code" href="../../dd/dad/a00005.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;portS-&gt;addItem(text, ports[i].portName());</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <span class="keywordflow">if</span> (ports[i].portName() == portC) selC = i + 1;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            <span class="keywordflow">if</span> (ports[i].portName() == portS) selS = i + 1;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        }</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <a class="code" href="../../dd/dad/a00005.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;portC-&gt;setCurrentIndex(selC);</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <a class="code" href="../../dd/dad/a00005.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;portS-&gt;setCurrentIndex(selS);</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    }</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;}</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
-<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="../../dd/dad/a00005.html#ad5365d452e8bcd86cbb64b9ec42c3b7e">  114</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dd/dad/a00005.html#ad5365d452e8bcd86cbb64b9ec42c3b7e">OptionsWindow::on_servoRefresh_clicked</a>()</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;{</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <a class="code" href="../../d1/d7c/a00003.html">dynamixel</a> dxl;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    QString port;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordtype">int</span> baud;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <a class="code" href="../../dd/dad/a00005.html#acba1566fea3f831000d5e1c1edc3e776">_servo</a>-&gt;<a class="code" href="../../de/d5e/a00007.html#afcf834d93f1ac9663d6ebaab820e5f74">getServoPortInfo</a>(port, baud);</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    </div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    dxl.<a class="code" href="../../d1/d7c/a00003.html#a87960244d5846ae7583e37d2407eb61e">initialize</a>(port, baud);</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    </div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;}</div>
-<div class="ttc" id="a00005_html_ab0a56ad7347c20046602a7a2a1c83397"><div class="ttname"><a href="../../dd/dad/a00005.html#ab0a56ad7347c20046602a7a2a1c83397">OptionsWindow::storeData</a></div><div class="ttdeci">void storeData()</div><div class="ttdoc">Stores all data. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d51/a00017_source.html#l00050">optionswindow.cpp:50</a></div></div>
-<div class="ttc" id="a00003_html"><div class="ttname"><a href="../../d1/d7c/a00003.html">dynamixel</a></div><div class="ttdoc">Dynamixel 1.0 protocol class. </div><div class="ttdef"><b>Definition:</b> <a href="../../d7/dd4/a00013_source.html#l00061">dynamixel.h:61</a></div></div>
-<div class="ttc" id="a00005_html_ae8c0373be58da710194f8d14f1c3c4dc"><div class="ttname"><a href="../../dd/dad/a00005.html#ae8c0373be58da710194f8d14f1c3c4dc">OptionsWindow::joystickChanged</a></div><div class="ttdeci">void joystickChanged()</div><div class="ttdoc">To handle the change of a joystick. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d51/a00017_source.html#l00061">optionswindow.cpp:61</a></div></div>
-<div class="ttc" id="a00005_html_a1bf846ab681ab245f70adac30999947c"><div class="ttname"><a href="../../dd/dad/a00005.html#a1bf846ab681ab245f70adac30999947c">OptionsWindow::_joy</a></div><div class="ttdeci">XJoystick &amp; _joy</div><div class="ttdoc">Contains the Joystick to handle options. </div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d2b/a00018_source.html#l00056">optionswindow.h:56</a></div></div>
-<div class="ttc" id="a00023_html"><div class="ttname"><a href="../../d3/d52/a00023.html">Ui</a></div><div class="ttdoc">Namespace to work with a User Interface Qt Form. </div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d7a/a00016_source.html#l00015">mainwindow.h:15</a></div></div>
-<div class="ttc" id="a00005_html_a01d6284355011203ee6e8856a0bdf557"><div class="ttname"><a href="../../dd/dad/a00005.html#a01d6284355011203ee6e8856a0bdf557">OptionsWindow::_jAxisX</a></div><div class="ttdeci">int &amp; _jAxisX</div><div class="ttdoc">Reference to axis for the X value. </div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d2b/a00018_source.html#l00051">optionswindow.h:51</a></div></div>
-<div class="ttc" id="a00003_html_a87960244d5846ae7583e37d2407eb61e"><div class="ttname"><a href="../../d1/d7c/a00003.html#a87960244d5846ae7583e37d2407eb61e">dynamixel::initialize</a></div><div class="ttdeci">int initialize(QString port_num, int baud_rate)</div><div class="ttdoc">Initializates the port. </div><div class="ttdef"><b>Definition:</b> <a href="../../df/d86/a00012_source.html#l00015">dynamixel.cpp:15</a></div></div>
-<div class="ttc" id="a00018_html"><div class="ttname"><a href="../../d1/d2b/a00018.html">optionswindow.h</a></div><div class="ttdoc">Contains the OptionsWindow class declaration. </div></div>
-<div class="ttc" id="a00005_html"><div class="ttname"><a href="../../dd/dad/a00005.html">OptionsWindow</a></div><div class="ttdoc">Class used to handle a Window to set the options. </div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d2b/a00018_source.html#l00015">optionswindow.h:15</a></div></div>
-<div class="ttc" id="a00005_html_a8921d1cc5bcb527466c28feb5dcc59b1"><div class="ttname"><a href="../../dd/dad/a00005.html#a8921d1cc5bcb527466c28feb5dcc59b1">OptionsWindow::_jAxisY</a></div><div class="ttdeci">int &amp; _jAxisY</div><div class="ttdoc">Reference to axis for the Y value. </div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d2b/a00018_source.html#l00052">optionswindow.h:52</a></div></div>
-<div class="ttc" id="a00005_html_a9bd4dccc7a544b1db78dc8cf330b88f6"><div class="ttname"><a href="../../dd/dad/a00005.html#a9bd4dccc7a544b1db78dc8cf330b88f6">OptionsWindow::_portSize</a></div><div class="ttdeci">int _portSize</div><div class="ttdoc">Contains the size of the ports. </div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d2b/a00018_source.html#l00059">optionswindow.h:59</a></div></div>
-<div class="ttc" id="a00005_html_af6320942b8558140989f552b3bbc1fbd"><div class="ttname"><a href="../../dd/dad/a00005.html#af6320942b8558140989f552b3bbc1fbd">OptionsWindow::_timer</a></div><div class="ttdeci">QTimer _timer</div><div class="ttdoc">Waits for a new COM port. </div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d2b/a00018_source.html#l00065">optionswindow.h:65</a></div></div>
-<div class="ttc" id="a00005_html_a18763ff318688083c7ee5a21f22e8e98"><div class="ttname"><a href="../../dd/dad/a00005.html#a18763ff318688083c7ee5a21f22e8e98">OptionsWindow::events</a></div><div class="ttdeci">void events()</div><div class="ttdoc">Handles events that need to be updated continously. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d51/a00017_source.html#l00081">optionswindow.cpp:81</a></div></div>
-<div class="ttc" id="a00005_html_ad5365d452e8bcd86cbb64b9ec42c3b7e"><div class="ttname"><a href="../../dd/dad/a00005.html#ad5365d452e8bcd86cbb64b9ec42c3b7e">OptionsWindow::on_servoRefresh_clicked</a></div><div class="ttdeci">void on_servoRefresh_clicked()</div><div class="ttdoc">Refreshes all the servos connected to the port. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d51/a00017_source.html#l00114">optionswindow.cpp:114</a></div></div>
-<div class="ttc" id="a00005_html_acba1566fea3f831000d5e1c1edc3e776"><div class="ttname"><a href="../../dd/dad/a00005.html#acba1566fea3f831000d5e1c1edc3e776">OptionsWindow::_servo</a></div><div class="ttdeci">ServoThread * _servo</div><div class="ttdoc">Pointer to the servo thread class. </div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d2b/a00018_source.html#l00062">optionswindow.h:62</a></div></div>
-<div class="ttc" id="a00005_html_a034c885fe8bb4416e732a9571d14a6b4"><div class="ttname"><a href="../../dd/dad/a00005.html#a034c885fe8bb4416e732a9571d14a6b4">OptionsWindow::~OptionsWindow</a></div><div class="ttdeci">~OptionsWindow()</div><div class="ttdoc">Destructor. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d51/a00017_source.html#l00045">optionswindow.cpp:45</a></div></div>
-<div class="ttc" id="a00005_html_a8347442d5b3b670e8fff0c4102db1f88"><div class="ttname"><a href="../../dd/dad/a00005.html#a8347442d5b3b670e8fff0c4102db1f88">OptionsWindow::ui</a></div><div class="ttdeci">Ui::OptionsWindow * ui</div><div class="ttdoc">Containsh the GUI. </div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d2b/a00018_source.html#l00068">optionswindow.h:68</a></div></div>
-<div class="ttc" id="a00007_html_afcf834d93f1ac9663d6ebaab820e5f74"><div class="ttname"><a href="../../de/d5e/a00007.html#afcf834d93f1ac9663d6ebaab820e5f74">ServoThread::getServoPortInfo</a></div><div class="ttdeci">void getServoPortInfo(QString &amp;port, int &amp;baud)</div><div class="ttdoc">Returns both servo Port and baud Rate. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/db2/a00020_source.html#l00090">servothread.h:90</a></div></div>
-<div class="ttc" id="a00005_html_a47409f50a87942706baaea3d025785e3"><div class="ttname"><a href="../../dd/dad/a00005.html#a47409f50a87942706baaea3d025785e3">OptionsWindow::_jAxisZ</a></div><div class="ttdeci">int &amp; _jAxisZ</div><div class="ttdoc">Reference to axis for the Z value. </div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d2b/a00018_source.html#l00053">optionswindow.h:53</a></div></div>
-<div class="ttc" id="a00005_html_a968da93eec85561ebdb3a464eff15611"><div class="ttname"><a href="../../dd/dad/a00005.html#a968da93eec85561ebdb3a464eff15611">OptionsWindow::OptionsWindow</a></div><div class="ttdeci">OptionsWindow(XJoystick &amp;J, ServoThread *servo, int &amp;aX, int &amp;aY, int &amp;aZ, QWidget *parent=0)</div><div class="ttdoc">Default constructor must be intialized with a few values. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d51/a00017_source.html#l00005">optionswindow.cpp:5</a></div></div>
-<div class="ttc" id="a00007_html"><div class="ttname"><a href="../../de/d5e/a00007.html">ServoThread</a></div><div class="ttdoc">The ServoThread&#39;s class handles the comunication between the delta robot servos and the PC...</div><div class="ttdef"><b>Definition:</b> <a href="../../db/db2/a00020_source.html#l00013">servothread.h:13</a></div></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">void</span> write(QString path);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="keyword">private</span> slots:</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">void</span> joyChanged();</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordtype">void</span> on_actionOptions_triggered();</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordtype">void</span> update();</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordtype">void</span> on_start_clicked();</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;};</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="preprocessor">#endif // MAINWINDOW_H</span></div>
+<div class="ttc" id="a00024_html"><div class="ttname"><a href="../../dc/de2/a00024.html">Ui</a></div><div class="ttdoc">Namespace to work with a User Interface Qt Form. </div><div class="ttdef"><b>Definition:</b> mainwindow.h:15</div></div>
+<div class="ttc" id="a00022_html"><div class="ttname"><a href="../../d7/de0/a00022.html">stable.h</a></div><div class="ttdoc">Contains all includes in a precompiled header. </div></div>
+<div class="ttc" id="a00005_html_a30c99d7a544f74b0650758e5cc7ead5a"><div class="ttname"><a href="../../dd/dad/a00005.html#a30c99d7a544f74b0650758e5cc7ead5a">MainWindow::_axis</a></div><div class="ttdeci">QVector&lt; QLabel * &gt; _axis</div><div class="ttdoc">Handles all the axis labels. </div><div class="ttdef"><b>Definition:</b> mainwindow.h:52</div></div>
+<div class="ttc" id="a00010_html"><div class="ttname"><a href="../../d7/dec/a00010.html">ax12.h</a></div><div class="ttdoc">Contains the AX12 class declaration. </div></div>
+<div class="ttc" id="a00005_html_a519ae4630572cb63fbd04bce12fe8e77"><div class="ttname"><a href="../../dd/dad/a00005.html#a519ae4630572cb63fbd04bce12fe8e77">MainWindow::_butsV</a></div><div class="ttdeci">QVector&lt; bool &gt; _butsV</div><div class="ttdoc">Handles all buttons values. </div><div class="ttdef"><b>Definition:</b> mainwindow.h:61</div></div>
+<div class="ttc" id="a00005_html_a254b03b878cfda75c1c411a2f8568d33"><div class="ttname"><a href="../../dd/dad/a00005.html#a254b03b878cfda75c1c411a2f8568d33">MainWindow::_timer</a></div><div class="ttdeci">QTimer _timer</div><div class="ttdoc">To update the joystick value. </div><div class="ttdef"><b>Definition:</b> mainwindow.h:77</div></div>
+<div class="ttc" id="a00023_html"><div class="ttname"><a href="../../d3/d52/a00023.html">std</a></div></div>
+<div class="ttc" id="a00021_html"><div class="ttname"><a href="../../de/d11/a00021.html">servothread.h</a></div><div class="ttdoc">Contains the ServoThread class declaration. </div></div>
+<div class="ttc" id="a00005_html_a8eaf474e1b8672f32873ed009e28ce8a"><div class="ttname"><a href="../../dd/dad/a00005.html#a8eaf474e1b8672f32873ed009e28ce8a">MainWindow::_buts</a></div><div class="ttdeci">QVector&lt; QLabel * &gt; _buts</div><div class="ttdoc">Handles all the button labels. </div><div class="ttdef"><b>Definition:</b> mainwindow.h:58</div></div>
+<div class="ttc" id="a00005_html_a20f66f574ed4c96d8dfc0013e1095f15"><div class="ttname"><a href="../../dd/dad/a00005.html#a20f66f574ed4c96d8dfc0013e1095f15">MainWindow::_axisV</a></div><div class="ttdeci">QVector&lt; float &gt; _axisV</div><div class="ttdoc">Contains the axis value;. </div><div class="ttdef"><b>Definition:</b> mainwindow.h:55</div></div>
+<div class="ttc" id="a00014_html"><div class="ttname"><a href="../../d2/de7/a00014.html">dynamixel.h</a></div><div class="ttdoc">Contains the dynamixel class declaration. </div></div>
+<div class="ttc" id="a00005_html"><div class="ttname"><a href="../../dd/dad/a00005.html">MainWindow</a></div><div class="ttdoc">Contains all the windows and other classes. </div><div class="ttdef"><b>Definition:</b> mainwindow.h:22</div></div>
+<div class="ttc" id="a00005_html_a97f8ecc7ecb930b796178cef7b975013"><div class="ttname"><a href="../../dd/dad/a00005.html#a97f8ecc7ecb930b796178cef7b975013">MainWindow::_sT</a></div><div class="ttdeci">ServoThread _sT</div><div class="ttdoc">Contains the thread controlling all the servos and external hardware. </div><div class="ttdef"><b>Definition:</b> mainwindow.h:74</div></div>
+<div class="ttc" id="a00005_html_a35466a70ed47252a0191168126a352a5"><div class="ttname"><a href="../../dd/dad/a00005.html#a35466a70ed47252a0191168126a352a5">MainWindow::ui</a></div><div class="ttdeci">Ui::MainWindow * ui</div><div class="ttdoc">Contains the user interface. </div><div class="ttdef"><b>Definition:</b> mainwindow.h:80</div></div>
+<div class="ttc" id="a00008_html"><div class="ttname"><a href="../../d4/dee/a00008.html">ServoThread</a></div><div class="ttdoc">The ServoThread&#39;s class handles the comunication between the delta robot servos and the PC...</div><div class="ttdef"><b>Definition:</b> servothread.h:13</div></div>
+<div class="ttc" id="a00005_html_a6fd62e117414acda4fe6a93c453dfb93"><div class="ttname"><a href="../../dd/dad/a00005.html#a6fd62e117414acda4fe6a93c453dfb93">MainWindow::write</a></div><div class="ttdeci">void write()</div><div class="ttdoc">Writes the data to the default location. </div><div class="ttdef"><b>Definition:</b> mainwindow.h:83</div></div>
+<div class="ttc" id="a00005_html_a355d9f17965e5105226409313743cb9d"><div class="ttname"><a href="../../dd/dad/a00005.html#a355d9f17965e5105226409313743cb9d">MainWindow::Version</a></div><div class="ttdeci">Version</div><div class="ttdef"><b>Definition:</b> mainwindow.h:32</div></div>
+<div class="ttc" id="a00005_html_aaccbe653019df03668429890e325ac21"><div class="ttname"><a href="../../dd/dad/a00005.html#aaccbe653019df03668429890e325ac21">MainWindow::_dataP</a></div><div class="ttdeci">QString _dataP</div><div class="ttdoc">Contains the path to the data location. </div><div class="ttdef"><b>Definition:</b> mainwindow.h:64</div></div>
+<div class="ttc" id="a00019_html"><div class="ttname"><a href="../../dd/da2/a00019.html">optionswindow.h</a></div><div class="ttdoc">Contains the OptionsWindow class declaration. </div></div>
+<div class="ttc" id="a00005_html_a671f35800890e518713e1946671d8730"><div class="ttname"><a href="../../dd/dad/a00005.html#a671f35800890e518713e1946671d8730">MainWindow::_joy</a></div><div class="ttdeci">XJoystick _joy</div><div class="ttdoc">To handle the joystick. </div><div class="ttdef"><b>Definition:</b> mainwindow.h:71</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 24 2015 20:03:15 for DeltaRobot by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Apr 26 2015 20:14:01 for DeltaRobot by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

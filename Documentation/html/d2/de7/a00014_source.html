@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.9.1"/>
-<title>DeltaRobot: main.cpp Source File</title>
+<title>DeltaRobot: dxl/dynamixel.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -42,29 +42,200 @@
       <li><a href="../../globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_1444fdbcf95e85f2cd6e79a712f20b67.html">dxl</a></li>  </ul>
+</div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">main.cpp</div>  </div>
+<div class="title">dynamixel.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="../../d2/de7/a00014.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;QApplication&gt;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d7/d7a/a00016.html">mainwindow.h</a>&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="../../d2/de7/a00014.html#a0ddf1224851353fc92bfbff6f499fa97">    8</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d2/de7/a00014.html#a0ddf1224851353fc92bfbff6f499fa97">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[])</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    QApplication a(argc, argv);</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="../../d0/d0b/a00004.html">MainWindow</a> w;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    w.show();</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordflow">return</span> a.exec();</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;}</div>
-<div class="ttc" id="a00014_html_a0ddf1224851353fc92bfbff6f499fa97"><div class="ttname"><a href="../../d2/de7/a00014.html#a0ddf1224851353fc92bfbff6f499fa97">main</a></div><div class="ttdeci">int main(int argc, char *argv[])</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/de7/a00014_source.html#l00008">main.cpp:8</a></div></div>
-<div class="ttc" id="a00016_html"><div class="ttname"><a href="../../d7/d7a/a00016.html">mainwindow.h</a></div><div class="ttdoc">Contains the MainWindow class declaration. </div></div>
-<div class="ttc" id="a00004_html"><div class="ttname"><a href="../../d0/d0b/a00004.html">MainWindow</a></div><div class="ttdoc">Contains all the windows and other classes. </div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d7a/a00016_source.html#l00022">mainwindow.h:22</a></div></div>
+<a href="../../d2/de7/a00014.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// Dynamixel SDK platform independent header</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#ifndef _DYNAMIXEL_HEADER</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#define _DYNAMIXEL_HEADER</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../df/d86/a00012.html">dxl_hal.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#define MAX_ID              (252)</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define BROADCAST_ID        (254)  //BroadCast ID</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">/* Communication Errorrobotis1  1 List */</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#define COMM_TXSUCCESS      (0)  //Succeed transmit instruction packet</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define COMM_RXSUCCESS      (1)  //Succeed get status packet</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#define COMM_TXFAIL         (2)  //Failed transmit instruction packet</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#define COMM_RXFAIL         (3)  //Failed get status packet</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#define COMM_TXERROR        (4)  //Incorrect instruction packet</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#define COMM_RXWAITING      (5)  //Now recieving status packet</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#define COMM_RXTIMEOUT      (6)  //There is no status packet</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#define COMM_RXCORRUPT      (7)  //Incorrect status packet</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">/* Error Status List */</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#define ERRBIT_ALERT        (128)//When the device has a problem, it is et as 1. Check &quot;Device Status Check&quot; value.</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#define ERR_RESULT_FAIL     (1)  //Failed to process the instruction packet.</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#define ERR_INSTRUCTION     (2)  //Instruction error</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#define ERR_CRC             (3)  //CRC check error</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#define ERR_DATA_RANGE      (4)  //Data range error</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#define ERR_DATA_LENGTH     (5)  //Data length error</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#define ERR_DATA_LIMIT      (6)  //Data limit error</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#define ERR_ACCESS          (7)  //Access error</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#define PRT1_PKT_ID                 (2)</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#define PRT1_PKT_LENGTH             (3)</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#define PRT1_PKT_INSTRUCTION        (4)</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#define PRT1_PKT_ERRBIT             (4)</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#define PRT1_PKT_PARAMETER0         (5)</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#define INST_PING           (1)</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#define INST_READ           (2)</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#define INST_WRITE          (3)</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#define INST_REG_WRITE      (4)</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#define INST_ACTION         (5)</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#define INST_RESET          (6)</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#define INST_SYNC_WRITE     (131)</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#define INST_BULK_READ      (146)  // 0x92</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#define PING_INFO_MODEL_NUM   (1)</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#define PING_INFO_FIRM_VER    (2)</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#define MAKEWORD(a, b)      ((unsigned short)(((unsigned char)(((unsigned long)(a)) &amp; 0xff)) | ((unsigned short)((unsigned char)(((unsigned long)(b)) &amp; 0xff))) &lt;&lt; 8))</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#define MAKEDWORD(a, b)     ((unsigned int)(((unsigned short)(((unsigned long)(a)) &amp; 0xffff)) | ((unsigned int)((unsigned short)(((unsigned long)(b)) &amp; 0xffff))) &lt;&lt; 16))</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#define LOWORD(l)           ((unsigned short)(((unsigned long)(l)) &amp; 0xffff))</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#define HIWORD(l)           ((unsigned short)((((unsigned long)(l)) &gt;&gt; 16) &amp; 0xffff))</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#define LOBYTE(w)           ((unsigned char)(((unsigned long)(w)) &amp; 0xff))</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#define HIBYTE(w)           ((unsigned char)((((unsigned long)(w)) &gt;&gt; 8) &amp; 0xff))</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="../../d0/d0b/a00004.html">   61</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d0/d0b/a00004.html">dynamixel</a> {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    </div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="../../d0/d0b/a00004.html#ae003cc90ada6d7b70eaa4ea9d42d4deb">   65</a></span>&#160;    <a class="code" href="../../d1/d7c/a00003.html">dxl_hal</a> <a class="code" href="../../d0/d0b/a00004.html#ae003cc90ada6d7b70eaa4ea9d42d4deb">dH</a>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    </div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="../../d0/d0b/a00004.html#afd94dcf01b8e96298727776e222de722">   68</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="../../d0/d0b/a00004.html#afd94dcf01b8e96298727776e222de722">gbInstructionPacket</a>[MAXNUM_TXPACKET] = {0};</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    </div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="../../d0/d0b/a00004.html#aa57c86d3bbbeaf5c9d4f6bd00376b04f">   71</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="../../d0/d0b/a00004.html#aa57c86d3bbbeaf5c9d4f6bd00376b04f">gbStatusPacket</a>[MAXNUM_RXPACKET] = {0};</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    </div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="../../d0/d0b/a00004.html#a333686e1b5903d16c41df8172b6bd5a8">   74</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="../../d0/d0b/a00004.html#a333686e1b5903d16c41df8172b6bd5a8">gbRxPacketLength</a> = 0;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    </div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="../../d0/d0b/a00004.html#a9d590ce24791d111c2db9b66be1e046d">   77</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="../../d0/d0b/a00004.html#a9d590ce24791d111c2db9b66be1e046d">gbRxGetLength</a> = 0;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    </div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="../../d0/d0b/a00004.html#a6c6314fb7070e6fd361e57c5de17e0ec">   80</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="../../d0/d0b/a00004.html#a6c6314fb7070e6fd361e57c5de17e0ec">gdPacketStartTime</a> = 0.0;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    </div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="../../d0/d0b/a00004.html#a2173f25c6299da7ddb37ba3d2bf1f738">   83</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="../../d0/d0b/a00004.html#a2173f25c6299da7ddb37ba3d2bf1f738">gdByteTransTime</a> = 0.0;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    </div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="../../d0/d0b/a00004.html#a9f47887864517d74955a2bc787ae4456">   86</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="../../d0/d0b/a00004.html#a9f47887864517d74955a2bc787ae4456">gdRcvWaitTime</a> = 0.0;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    </div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="../../d0/d0b/a00004.html#a5b603f6bed7ccc595f1f50bd6a6ebbfc">   89</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../d0/d0b/a00004.html#a5b603f6bed7ccc595f1f50bd6a6ebbfc">gbCommStatus</a> = COMM_RXSUCCESS;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    </div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="../../d0/d0b/a00004.html#ad10e0e49f5fef04bf789a89c14cc470a">   92</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../d0/d0b/a00004.html#ad10e0e49f5fef04bf789a89c14cc470a">giBusUsing</a> = 0; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    </div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="../../d0/d0b/a00004.html#a7aa668a213db6a41bede8e08a6fec830">   97</a></span>&#160;    <a class="code" href="../../d0/d0b/a00004.html#a7aa668a213db6a41bede8e08a6fec830">dynamixel</a>() {}</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <a class="code" href="../../d0/d0b/a00004.html#a7aa668a213db6a41bede8e08a6fec830">dynamixel</a>(QString port_num, <span class="keywordtype">int</span> baud_rate = 1000000);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    </div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="../../d0/d0b/a00004.html#a5ae4b2c6eb4c91f404f973ee8e6a1914">  103</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="../../d0/d0b/a00004.html#a5ae4b2c6eb4c91f404f973ee8e6a1914">isOpen</a>() { <span class="keywordflow">return</span> dH.<a class="code" href="../../d1/d7c/a00003.html#a88bba601b5c9f285fcdc14e18a1f3398">isOpen</a>(); }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../d0/d0b/a00004.html#a87960244d5846ae7583e37d2407eb61e">initialize</a>(QString port_num, <span class="keywordtype">int</span> baud_rate);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../d0/d0b/a00004.html#a7554c7889896e29e11a62027d89f3fdf">change_baudrate</a>(<span class="keywordtype">int</span> baud_rate);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../d0/d0b/a00004.html#a92ea074ed1c1a9cf29e039f8c425f01a">terminate</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    </div>
+<div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="../../d0/d0b/a00004.html#ac8440d5d34ae3c4618b28fdbbd748edc">  115</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="../../d0/d0b/a00004.html#ac8440d5d34ae3c4618b28fdbbd748edc">get_comm_result</a>() { <span class="keywordflow">return</span> <a class="code" href="../../d0/d0b/a00004.html#a5b603f6bed7ccc595f1f50bd6a6ebbfc">gbCommStatus</a>; }</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d0/d0b/a00004.html#a479187cd8940c16dd4374eb5be22b888">tx_packet</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d0/d0b/a00004.html#aa26d2d2dff768563a1cb1480aa061608">rx_packet</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d0/d0b/a00004.html#aebfc569c6b1eb0b98f8c385f0f921fc0">txrx_packet</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d0/d0b/a00004.html#a84e24c72c3e5be866f8b28c2e5bd1d95">set_txpacket_id</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d0/d0b/a00004.html#a209a43f983f214323b6f0a627d5e8c13">set_txpacket_instruction</a>(<span class="keywordtype">int</span> instruction);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    </div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d0/d0b/a00004.html#a2c3d31bbbed70a69918e9972a620384b">set_txpacket_parameter</a>(<span class="keywordtype">int</span> index, <span class="keywordtype">int</span> value);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    </div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d0/d0b/a00004.html#a829278f48e21c810b172eb8cab3b86de">set_txpacket_length</a>(<span class="keywordtype">int</span> length);</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    </div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../d0/d0b/a00004.html#a843b0aac721e4264e7e3097f80980243">get_rxpacket_error</a>(<span class="keywordtype">int</span> error);</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    </div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keywordtype">int</span>  <a class="code" href="../../d0/d0b/a00004.html#a6e62341ef9f51b6e152e769bd7be9d75">get_rxpacket_error_byte</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    </div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keywordtype">int</span>  <a class="code" href="../../d0/d0b/a00004.html#a68b5fa99719a9aec0734ecfb0635503b">get_rxpacket_parameter</a>( <span class="keywordtype">int</span> index );</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    </div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordtype">int</span>  <a class="code" href="../../d0/d0b/a00004.html#ae9cc18fdeda8329f68fa0f2f0a7a9aba">get_rxpacket_length</a>();</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    </div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d0/d0b/a00004.html#af2bd714423e7c4fc089762805c0c71f3">ping</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    </div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keywordtype">int</span>  <a class="code" href="../../d0/d0b/a00004.html#a888404b41c4c4395a0b745c77ff2cea9">read_byte</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>, <span class="keywordtype">int</span> address);</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    </div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d0/d0b/a00004.html#a66c1e32cc45dd46d329f1fc212e46a3d">write_byte</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>, <span class="keywordtype">int</span> address, <span class="keywordtype">int</span> value);</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    </div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="keywordtype">int</span>  <a class="code" href="../../d0/d0b/a00004.html#a45e99341e82c5114f6e829c9141bf96f">read_word</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>, <span class="keywordtype">int</span> address);</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    </div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d0/d0b/a00004.html#a925f62ce5e261e5ef4fe6dc46bdc7c63">write_word</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>, <span class="keywordtype">int</span> address, <span class="keywordtype">int</span> value);    </div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    </div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="../../d0/d0b/a00004.html#a2fa5375537184c279a9ebfcfc0425071">get_packet_time</a>();</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    </div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d0/d0b/a00004.html#a067f82c21ed176e18fa224d16f3d1c5b">set_packet_timeout</a>(<span class="keywordtype">int</span> NumRcvByte);</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    </div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d0/d0b/a00004.html#a125b42f776c4aac520f274074f68b591">set_packet_timeout_ms</a>(<span class="keywordtype">int</span> msec);</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    </div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../d0/d0b/a00004.html#a00d08481ebc4dee19debecf43f888522">is_packet_timeout</a>();</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;};</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a00003_html_a88bba601b5c9f285fcdc14e18a1f3398"><div class="ttname"><a href="../../d1/d7c/a00003.html#a88bba601b5c9f285fcdc14e18a1f3398">dxl_hal::isOpen</a></div><div class="ttdeci">bool isOpen()</div><div class="ttdef"><b>Definition:</b> dxl_hal.h:30</div></div>
+<div class="ttc" id="a00004_html_a9d590ce24791d111c2db9b66be1e046d"><div class="ttname"><a href="../../d0/d0b/a00004.html#a9d590ce24791d111c2db9b66be1e046d">dynamixel::gbRxGetLength</a></div><div class="ttdeci">unsigned int gbRxGetLength</div><div class="ttdoc">Temporal length from the received packet. </div><div class="ttdef"><b>Definition:</b> dynamixel.h:77</div></div>
+<div class="ttc" id="a00004_html_a6c6314fb7070e6fd361e57c5de17e0ec"><div class="ttname"><a href="../../d0/d0b/a00004.html#a6c6314fb7070e6fd361e57c5de17e0ec">dynamixel::gdPacketStartTime</a></div><div class="ttdeci">double gdPacketStartTime</div><div class="ttdoc">Packet start time. </div><div class="ttdef"><b>Definition:</b> dynamixel.h:80</div></div>
+<div class="ttc" id="a00004_html_a209a43f983f214323b6f0a627d5e8c13"><div class="ttname"><a href="../../d0/d0b/a00004.html#a209a43f983f214323b6f0a627d5e8c13">dynamixel::set_txpacket_instruction</a></div><div class="ttdeci">void set_txpacket_instruction(int instruction)</div><div class="ttdoc">Sets the sending packet instruction. </div><div class="ttdef"><b>Definition:</b> dynamixel.cpp:254</div></div>
+<div class="ttc" id="a00004_html_a7aa668a213db6a41bede8e08a6fec830"><div class="ttname"><a href="../../d0/d0b/a00004.html#a7aa668a213db6a41bede8e08a6fec830">dynamixel::dynamixel</a></div><div class="ttdeci">dynamixel()</div><div class="ttdoc">Default constructor. </div><div class="ttdef"><b>Definition:</b> dynamixel.h:97</div></div>
+<div class="ttc" id="a00003_html"><div class="ttname"><a href="../../d1/d7c/a00003.html">dxl_hal</a></div><div class="ttdoc">Dynamixel SDK platform dependent. </div><div class="ttdef"><b>Definition:</b> dxl_hal.h:14</div></div>
+<div class="ttc" id="a00004_html_ac8440d5d34ae3c4618b28fdbbd748edc"><div class="ttname"><a href="../../d0/d0b/a00004.html#ac8440d5d34ae3c4618b28fdbbd748edc">dynamixel::get_comm_result</a></div><div class="ttdeci">int get_comm_result()</div><div class="ttdoc">Returns the current com status. </div><div class="ttdef"><b>Definition:</b> dynamixel.h:115</div></div>
+<div class="ttc" id="a00004_html_a5b603f6bed7ccc595f1f50bd6a6ebbfc"><div class="ttname"><a href="../../d0/d0b/a00004.html#a5b603f6bed7ccc595f1f50bd6a6ebbfc">dynamixel::gbCommStatus</a></div><div class="ttdeci">int gbCommStatus</div><div class="ttdoc">Current communication status. </div><div class="ttdef"><b>Definition:</b> dynamixel.h:89</div></div>
+<div class="ttc" id="a00004_html_a829278f48e21c810b172eb8cab3b86de"><div class="ttname"><a href="../../d0/d0b/a00004.html#a829278f48e21c810b172eb8cab3b86de">dynamixel::set_txpacket_length</a></div><div class="ttdeci">void set_txpacket_length(int length)</div><div class="ttdoc">Sets the sending packet length. </div><div class="ttdef"><b>Definition:</b> dynamixel.cpp:265</div></div>
+<div class="ttc" id="a00004_html_a68b5fa99719a9aec0734ecfb0635503b"><div class="ttname"><a href="../../d0/d0b/a00004.html#a68b5fa99719a9aec0734ecfb0635503b">dynamixel::get_rxpacket_parameter</a></div><div class="ttdeci">int get_rxpacket_parameter(int index)</div><div class="ttdoc">Returns the received parameter. </div><div class="ttdef"><b>Definition:</b> dynamixel.cpp:283</div></div>
+<div class="ttc" id="a00004_html_a067f82c21ed176e18fa224d16f3d1c5b"><div class="ttname"><a href="../../d0/d0b/a00004.html#a067f82c21ed176e18fa224d16f3d1c5b">dynamixel::set_packet_timeout</a></div><div class="ttdeci">void set_packet_timeout(int NumRcvByte)</div><div class="ttdoc">Sets the timeout in number of received bytes. </div><div class="ttdef"><b>Definition:</b> dynamixel.cpp:61</div></div>
+<div class="ttc" id="a00004_html_a125b42f776c4aac520f274074f68b591"><div class="ttname"><a href="../../d0/d0b/a00004.html#a125b42f776c4aac520f274074f68b591">dynamixel::set_packet_timeout_ms</a></div><div class="ttdeci">void set_packet_timeout_ms(int msec)</div><div class="ttdoc">Sets the timeout in ms. </div><div class="ttdef"><b>Definition:</b> dynamixel.cpp:67</div></div>
+<div class="ttc" id="a00004_html_ae9cc18fdeda8329f68fa0f2f0a7a9aba"><div class="ttname"><a href="../../d0/d0b/a00004.html#ae9cc18fdeda8329f68fa0f2f0a7a9aba">dynamixel::get_rxpacket_length</a></div><div class="ttdeci">int get_rxpacket_length()</div><div class="ttdoc">Returns the received packet length. </div><div class="ttdef"><b>Definition:</b> dynamixel.cpp:288</div></div>
+<div class="ttc" id="a00004_html_a87960244d5846ae7583e37d2407eb61e"><div class="ttname"><a href="../../d0/d0b/a00004.html#a87960244d5846ae7583e37d2407eb61e">dynamixel::initialize</a></div><div class="ttdeci">int initialize(QString port_num, int baud_rate)</div><div class="ttdoc">Initializates the port. </div><div class="ttdef"><b>Definition:</b> dynamixel.cpp:15</div></div>
+<div class="ttc" id="a00004_html_a479187cd8940c16dd4374eb5be22b888"><div class="ttname"><a href="../../d0/d0b/a00004.html#a479187cd8940c16dd4374eb5be22b888">dynamixel::tx_packet</a></div><div class="ttdeci">void tx_packet(void)</div><div class="ttdoc">Sends a packet. </div><div class="ttdef"><b>Definition:</b> dynamixel.cpp:81</div></div>
+<div class="ttc" id="a00004_html_a92ea074ed1c1a9cf29e039f8c425f01a"><div class="ttname"><a href="../../d0/d0b/a00004.html#a92ea074ed1c1a9cf29e039f8c425f01a">dynamixel::terminate</a></div><div class="ttdeci">int terminate(void)</div><div class="ttdoc">Closes the comunication. </div><div class="ttdef"><b>Definition:</b> dynamixel.cpp:42</div></div>
+<div class="ttc" id="a00004_html_a843b0aac721e4264e7e3097f80980243"><div class="ttname"><a href="../../d0/d0b/a00004.html#a843b0aac721e4264e7e3097f80980243">dynamixel::get_rxpacket_error</a></div><div class="ttdeci">bool get_rxpacket_error(int error)</div><div class="ttdoc">Returns false if no receive error and true if there&#39;s an error. </div><div class="ttdef"><b>Definition:</b> dynamixel.cpp:270</div></div>
+<div class="ttc" id="a00004_html_aa57c86d3bbbeaf5c9d4f6bd00376b04f"><div class="ttname"><a href="../../d0/d0b/a00004.html#aa57c86d3bbbeaf5c9d4f6bd00376b04f">dynamixel::gbStatusPacket</a></div><div class="ttdeci">unsigned char gbStatusPacket[MAXNUM_RXPACKET]</div><div class="ttdoc">Contains the status. </div><div class="ttdef"><b>Definition:</b> dynamixel.h:71</div></div>
+<div class="ttc" id="a00004_html_a66c1e32cc45dd46d329f1fc212e46a3d"><div class="ttname"><a href="../../d0/d0b/a00004.html#a66c1e32cc45dd46d329f1fc212e46a3d">dynamixel::write_byte</a></div><div class="ttdeci">void write_byte(int id, int address, int value)</div><div class="ttdoc">Writes a byte to the selected ID at the selected address. </div><div class="ttdef"><b>Definition:</b> dynamixel.cpp:319</div></div>
+<div class="ttc" id="a00004_html_a7554c7889896e29e11a62027d89f3fdf"><div class="ttname"><a href="../../d0/d0b/a00004.html#a7554c7889896e29e11a62027d89f3fdf">dynamixel::change_baudrate</a></div><div class="ttdeci">int change_baudrate(int baud_rate)</div><div class="ttdoc">Changes the current baud rate. </div><div class="ttdef"><b>Definition:</b> dynamixel.cpp:30</div></div>
+<div class="ttc" id="a00004_html_aebfc569c6b1eb0b98f8c385f0f921fc0"><div class="ttname"><a href="../../d0/d0b/a00004.html#aebfc569c6b1eb0b98f8c385f0f921fc0">dynamixel::txrx_packet</a></div><div class="ttdeci">void txrx_packet(void)</div><div class="ttdoc">Sends and receives a packet. </div><div class="ttdef"><b>Definition:</b> dynamixel.cpp:237</div></div>
+<div class="ttc" id="a00004_html_afd94dcf01b8e96298727776e222de722"><div class="ttname"><a href="../../d0/d0b/a00004.html#afd94dcf01b8e96298727776e222de722">dynamixel::gbInstructionPacket</a></div><div class="ttdeci">unsigned char gbInstructionPacket[MAXNUM_TXPACKET]</div><div class="ttdoc">Contains all the instructions. </div><div class="ttdef"><b>Definition:</b> dynamixel.h:68</div></div>
+<div class="ttc" id="a00012_html"><div class="ttname"><a href="../../df/d86/a00012.html">dxl_hal.h</a></div><div class="ttdoc">Contains the Dynamixel SDK platform dependent header declaration. </div></div>
+<div class="ttc" id="a00004_html_aa26d2d2dff768563a1cb1480aa061608"><div class="ttname"><a href="../../d0/d0b/a00004.html#aa26d2d2dff768563a1cb1480aa061608">dynamixel::rx_packet</a></div><div class="ttdeci">void rx_packet(void)</div><div class="ttdoc">Receives a packet. </div><div class="ttdef"><b>Definition:</b> dynamixel.cpp:143</div></div>
+<div class="ttc" id="a00004_html_a6e62341ef9f51b6e152e769bd7be9d75"><div class="ttname"><a href="../../d0/d0b/a00004.html#a6e62341ef9f51b6e152e769bd7be9d75">dynamixel::get_rxpacket_error_byte</a></div><div class="ttdeci">int get_rxpacket_error_byte(void)</div><div class="ttdoc">Returns the error byte. </div><div class="ttdef"><b>Definition:</b> dynamixel.cpp:278</div></div>
+<div class="ttc" id="a00004_html_a888404b41c4c4395a0b745c77ff2cea9"><div class="ttname"><a href="../../d0/d0b/a00004.html#a888404b41c4c4395a0b745c77ff2cea9">dynamixel::read_byte</a></div><div class="ttdeci">int read_byte(int id, int address)</div><div class="ttdoc">Reads a byte from the selected ID at the selected address. </div><div class="ttdef"><b>Definition:</b> dynamixel.cpp:304</div></div>
+<div class="ttc" id="a00004_html_a2c3d31bbbed70a69918e9972a620384b"><div class="ttname"><a href="../../d0/d0b/a00004.html#a2c3d31bbbed70a69918e9972a620384b">dynamixel::set_txpacket_parameter</a></div><div class="ttdeci">void set_txpacket_parameter(int index, int value)</div><div class="ttdoc">Sets the sending packet parameter. </div><div class="ttdef"><b>Definition:</b> dynamixel.cpp:259</div></div>
+<div class="ttc" id="a00004_html_a925f62ce5e261e5ef4fe6dc46bdc7c63"><div class="ttname"><a href="../../d0/d0b/a00004.html#a925f62ce5e261e5ef4fe6dc46bdc7c63">dynamixel::write_word</a></div><div class="ttdeci">void write_word(int id, int address, int value)</div><div class="ttdoc">Writes a word to the selected ID at the selected address. </div><div class="ttdef"><b>Definition:</b> dynamixel.cpp:347</div></div>
+<div class="ttc" id="a00004_html_a5ae4b2c6eb4c91f404f973ee8e6a1914"><div class="ttname"><a href="../../d0/d0b/a00004.html#a5ae4b2c6eb4c91f404f973ee8e6a1914">dynamixel::isOpen</a></div><div class="ttdeci">bool isOpen()</div><div class="ttdoc">True if the port is open. </div><div class="ttdef"><b>Definition:</b> dynamixel.h:103</div></div>
+<div class="ttc" id="a00004_html_a333686e1b5903d16c41df8172b6bd5a8"><div class="ttname"><a href="../../d0/d0b/a00004.html#a333686e1b5903d16c41df8172b6bd5a8">dynamixel::gbRxPacketLength</a></div><div class="ttdeci">unsigned int gbRxPacketLength</div><div class="ttdoc">Received packet length. </div><div class="ttdef"><b>Definition:</b> dynamixel.h:74</div></div>
+<div class="ttc" id="a00004_html_af2bd714423e7c4fc089762805c0c71f3"><div class="ttname"><a href="../../d0/d0b/a00004.html#af2bd714423e7c4fc089762805c0c71f3">dynamixel::ping</a></div><div class="ttdeci">void ping(int id)</div><div class="ttdoc">Ping to the selected id, check com status for the ping result. </div><div class="ttdef"><b>Definition:</b> dynamixel.cpp:293</div></div>
+<div class="ttc" id="a00004_html_a9f47887864517d74955a2bc787ae4456"><div class="ttname"><a href="../../d0/d0b/a00004.html#a9f47887864517d74955a2bc787ae4456">dynamixel::gdRcvWaitTime</a></div><div class="ttdeci">double gdRcvWaitTime</div><div class="ttdoc">Receive wait time. </div><div class="ttdef"><b>Definition:</b> dynamixel.h:86</div></div>
+<div class="ttc" id="a00004_html_a84e24c72c3e5be866f8b28c2e5bd1d95"><div class="ttname"><a href="../../d0/d0b/a00004.html#a84e24c72c3e5be866f8b28c2e5bd1d95">dynamixel::set_txpacket_id</a></div><div class="ttdeci">void set_txpacket_id(int id)</div><div class="ttdoc">Sets the sending packet ID. </div><div class="ttdef"><b>Definition:</b> dynamixel.cpp:249</div></div>
+<div class="ttc" id="a00004_html_ad10e0e49f5fef04bf789a89c14cc470a"><div class="ttname"><a href="../../d0/d0b/a00004.html#ad10e0e49f5fef04bf789a89c14cc470a">dynamixel::giBusUsing</a></div><div class="ttdeci">int giBusUsing</div><div class="ttdoc">True if the bus if being used. </div><div class="ttdef"><b>Definition:</b> dynamixel.h:92</div></div>
+<div class="ttc" id="a00004_html_ae003cc90ada6d7b70eaa4ea9d42d4deb"><div class="ttname"><a href="../../d0/d0b/a00004.html#ae003cc90ada6d7b70eaa4ea9d42d4deb">dynamixel::dH</a></div><div class="ttdeci">dxl_hal dH</div><div class="ttdoc">Conains the serial port comunication. </div><div class="ttdef"><b>Definition:</b> dynamixel.h:65</div></div>
+<div class="ttc" id="a00004_html_a2173f25c6299da7ddb37ba3d2bf1f738"><div class="ttname"><a href="../../d0/d0b/a00004.html#a2173f25c6299da7ddb37ba3d2bf1f738">dynamixel::gdByteTransTime</a></div><div class="ttdeci">double gdByteTransTime</div><div class="ttdoc">Byte transmission time. </div><div class="ttdef"><b>Definition:</b> dynamixel.h:83</div></div>
+<div class="ttc" id="a00004_html_a45e99341e82c5114f6e829c9141bf96f"><div class="ttname"><a href="../../d0/d0b/a00004.html#a45e99341e82c5114f6e829c9141bf96f">dynamixel::read_word</a></div><div class="ttdeci">int read_word(int id, int address)</div><div class="ttdoc">Reads a word to the selected ID at the selected address. </div><div class="ttdef"><b>Definition:</b> dynamixel.cpp:332</div></div>
+<div class="ttc" id="a00004_html_a00d08481ebc4dee19debecf43f888522"><div class="ttname"><a href="../../d0/d0b/a00004.html#a00d08481ebc4dee19debecf43f888522">dynamixel::is_packet_timeout</a></div><div class="ttdeci">bool is_packet_timeout()</div><div class="ttdoc">Returns true if the packet is timeout. </div><div class="ttdef"><b>Definition:</b> dynamixel.cpp:73</div></div>
+<div class="ttc" id="a00004_html"><div class="ttname"><a href="../../d0/d0b/a00004.html">dynamixel</a></div><div class="ttdoc">Dynamixel 1.0 protocol class. </div><div class="ttdef"><b>Definition:</b> dynamixel.h:61</div></div>
+<div class="ttc" id="a00004_html_a2fa5375537184c279a9ebfcfc0425071"><div class="ttname"><a href="../../d0/d0b/a00004.html#a2fa5375537184c279a9ebfcfc0425071">dynamixel::get_packet_time</a></div><div class="ttdeci">double get_packet_time()</div><div class="ttdoc">Returns the packet time. </div><div class="ttdef"><b>Definition:</b> dynamixel.cpp:49</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 24 2015 20:03:15 for DeltaRobot by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Apr 26 2015 20:14:01 for DeltaRobot by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

@@ -73,8 +73,6 @@ void OptionsWindow::storeData()
     if (ui->servo1->count()) sID.push_back(ui->servo1->currentData().toInt());
     if (ui->servo2->count()) sID.push_back(ui->servo2->currentData().toInt());
     if (ui->servo3->count()) sID.push_back(ui->servo3->currentData().toInt());
-    
-    // TODO: Write data to disk here
 }
 
 void OptionsWindow::joystickChanged()
@@ -150,12 +148,11 @@ void OptionsWindow::on_servoRefresh_clicked()
     ui->servo3->clear();
     
     int index = 0;
-    int p0 = 0; p1 = 0, p2 = 0, p3 = 0;
+    int p0 = 0, p1 = 0, p2 = 0, p3 = 0;
     
     for (int i = 0; i <= MAX_ID; ++i) {
         dxl.ping(i);
         if (dxl.get_comm_result() == COMM_RXSUCCESS) {
-            servo.push_back(i);
             if (i == s0) p0 = index;
             if (i == s1) p1 = index;
             if (i == s2) p2 = index;

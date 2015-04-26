@@ -29,6 +29,10 @@ class MainWindow : public QMainWindow
     /// Contains the number of additional servos used
     static const int aSCount = 0;
     
+    enum Version {
+        v_1_0
+    };
+    
 public:
     
     /// Default constructor
@@ -74,6 +78,12 @@ private:
     
     /// Contains the user interface
     Ui::MainWindow *ui;
+    
+    /// Writes the data to the default location
+    inline void write() { write(_dataP); }
+    
+    /// Writes the data to disk overloaded function
+    void write(QString path);
 
         
 private slots:
@@ -87,6 +97,7 @@ private slots:
     /// Updates all data to the servo thread
     void update();
     void on_start_clicked();
+    void on_actionImport_triggered();
 };
 
 #endif // MAINWINDOW_H

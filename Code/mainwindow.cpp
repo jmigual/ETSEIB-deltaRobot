@@ -62,6 +62,21 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::write(QString path)
+{
+    QDir dir(path);
+    QFile file(dir.filePath("main.opts"));
+    if(not file.open(QIODevice::WriteOnly)) {
+        ui->statusbar->showMessage("Error saving file", 1000);
+        return;
+    }
+    
+    QDataStream f(&file);
+    f << int(Version::v_1_0) << _jAxisX << _jAxisY << _jAxisZ;
+    
+    _sT.write(dir.filePath("servo.opts"));
+}
+
 void MainWindow::joyChanged()
 {
     int sel = _joy.current();
@@ -152,4 +167,22 @@ void MainWindow::on_start_clicked()
         _sT.pause();
         ui->start->setText("Start");
     }
+}
+
+void MainWindow::on_actionImport_triggered()
+{
+    QFileDialog fD(this);
+    fD.setFileMode(QFileDialog::ExistingFile);
+    fD.setViewMode(QFileDialog::Detail);
+    fD.setAcceptMode(QFileDialog::AcceptOpen);
+    fD.setNameFilter(tr("Dominoes file (*df)"));
+    fD.setDirectory(QDir::home());
+    
+    if (fD.exec()) {
+        QString file;
+        fD.fileSelected(file);
+        
+        qDebug() << "Accepted" << file;
+    }
+    else qDebug() << "Rejected";
 }

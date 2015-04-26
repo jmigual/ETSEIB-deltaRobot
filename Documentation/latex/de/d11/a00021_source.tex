@@ -1,33 +1,227 @@
-\hypertarget{a00021_source}{}\section{stable.\+h}
+\hypertarget{a00021_source}{}\section{servothread.\+h}
 
 \begin{DoxyCode}
-00001 
-00022 \textcolor{preprocessor}{#ifndef STABLE\_H}
-00023 \textcolor{preprocessor}{#define STABLE\_H}
-00024 
-00025 \textcolor{preprocessor}{#ifdef \_\_cplusplus}
-00026 
-00027 \textcolor{preprocessor}{#include <QApplication>}
-00028 \textcolor{preprocessor}{#include <QDebug>}
-00029 \textcolor{preprocessor}{#include <QDir>}
-00030 \textcolor{preprocessor}{#include <QDialog>}
-00031 \textcolor{preprocessor}{#include <QLabel>}
-00032 \textcolor{preprocessor}{#include <QMainWindow>}
-00033 \textcolor{preprocessor}{#include <QMutex>}
-00034 \textcolor{preprocessor}{#include <QSerialPortInfo>}
-00035 \textcolor{preprocessor}{#include <QStandardPaths>}
-00036 \textcolor{preprocessor}{#include <QStatusBar>}
-00037 \textcolor{preprocessor}{#include <QString>}
-00038 \textcolor{preprocessor}{#include <QThread>}
-00039 \textcolor{preprocessor}{#include <QTime>}
-00040 \textcolor{preprocessor}{#include <QTimer>}
-00041 \textcolor{preprocessor}{#include <QVector>}
-00042 \textcolor{preprocessor}{#include <QWaitCondition>}
-00043 
-00044 \textcolor{preprocessor}{#include <xjoystick.h>}
-00045 
-00046 \textcolor{preprocessor}{#endif}
-00047 
-00048 \textcolor{preprocessor}{#endif // STABLE\_H}
-00049 
+00001 \textcolor{preprocessor}{#ifndef SERVOTHREAD\_H}
+00003 \textcolor{preprocessor}{#define SERVOTHREAD\_H}
+00004 
+00005 \textcolor{comment}{// Adding precompiled header}
+00006 \textcolor{preprocessor}{#include "\hyperlink{a00022}{stable.h}"}
+00007 
+00008 \textcolor{comment}{// User libraries}
+00009 \textcolor{preprocessor}{#include "\hyperlink{a00010}{dxl/ax12.h}"}
+00010 
+\hypertarget{a00021_source_l00013}{}\hyperlink{a00008}{00013} \textcolor{keyword}{class }\hyperlink{a00008}{ServoThread} : \textcolor{keyword}{public} QThread
+00014 \{
+00015     Q\_OBJECT
+00016     
+\hypertarget{a00021_source_l00018}{}\hyperlink{a00008_aeccce0ac6a969e2ee7cbe91687e2d085}{00018}     \textcolor{keyword}{enum} \hyperlink{a00008_aeccce0ac6a969e2ee7cbe91687e2d085}{Version} 
+00019     \{
+\hypertarget{a00021_source_l00020}{}\hyperlink{a00008_aeccce0ac6a969e2ee7cbe91687e2d085a319b6bf2cb120faeefbd0a5118ece7e3}{00020}         \hyperlink{a00008_aeccce0ac6a969e2ee7cbe91687e2d085a319b6bf2cb120faeefbd0a5118ece7e3}{v\_1\_0}
+00021     \};
+00022     
+\hypertarget{a00021_source_l00024}{}\hyperlink{a00002}{00024}     \textcolor{keyword}{struct }\hyperlink{a00002}{Dominoe}
+00025     \{
+\hypertarget{a00021_source_l00026}{}\hyperlink{a00002_a8caa44969c79e0e46576da349957975b}{00026}         \textcolor{keywordtype}{double} \hyperlink{a00002_a8caa44969c79e0e46576da349957975b}{X};   
+\hypertarget{a00021_source_l00027}{}\hyperlink{a00002_ae7711996c8204586b6d8a5e657c4b06a}{00027}         \textcolor{keywordtype}{double} \hyperlink{a00002_ae7711996c8204586b6d8a5e657c4b06a}{Y};   
+\hypertarget{a00021_source_l00028}{}\hyperlink{a00002_a451efc4d2eb2f1dd10006c6c49846e8d}{00028}         \textcolor{keywordtype}{double} \hyperlink{a00002_a451efc4d2eb2f1dd10006c6c49846e8d}{ori}; 
+00029     \};
+00030     
+00031 \textcolor{keyword}{public}:
+00032     
+\hypertarget{a00021_source_l00034}{}\hyperlink{a00007}{00034}     \textcolor{keyword}{struct }\hyperlink{a00007}{Servo} 
+00035     \{
+\hypertarget{a00021_source_l00036}{}\hyperlink{a00007_a06b514c42113aa85fd1703fc88fca7ce}{00036}         \textcolor{keywordtype}{int} \hyperlink{a00007_a06b514c42113aa85fd1703fc88fca7ce}{ID};         
+\hypertarget{a00021_source_l00037}{}\hyperlink{a00007_ae378d77acf16b306649c87fdb8df677e}{00037}         \textcolor{keywordtype}{double} \hyperlink{a00007_ae378d77acf16b306649c87fdb8df677e}{load};    
+\hypertarget{a00021_source_l00038}{}\hyperlink{a00007_a9fa0aa56944b9b0bb9d66303d5bd4b59}{00038}         \textcolor{keywordtype}{double} \hyperlink{a00007_a9fa0aa56944b9b0bb9d66303d5bd4b59}{pos};     
+00039         
+\hypertarget{a00021_source_l00041}{}\hyperlink{a00007_a031c8e78df1e5eddf80bd2b2e2998658}{00041}         \hyperlink{a00007_a031c8e78df1e5eddf80bd2b2e2998658}{Servo}(\textcolor{keywordtype}{int} ID = -1, \textcolor{keywordtype}{double} load = -1, \textcolor{keywordtype}{double} pos = -1) 
+00042             : ID(ID), load(load), pos(pos) \{\}
+00043         
+\hypertarget{a00021_source_l00045}{}\hyperlink{a00007_acb657f09a5d04424d134791ca501cb54}{00045}         \hyperlink{a00007_acb657f09a5d04424d134791ca501cb54}{Servo}(\textcolor{keyword}{const} \hyperlink{a00007}{Servo} &s) : ID(s.ID), load(s.load), pos(s.pos) \{\}
+00046     \};
+00047     
+\hypertarget{a00021_source_l00049}{}\hyperlink{a00008_a8d581034e60792a9995d44065f6140a5}{00049}     \textcolor{keyword}{enum} \hyperlink{a00008_a8d581034e60792a9995d44065f6140a5}{Mode} 
+00050     \{
+\hypertarget{a00021_source_l00051}{}\hyperlink{a00008_a8d581034e60792a9995d44065f6140a5a6776147f492a4e0b0bb5ee4fdbc8d086}{00051}         \hyperlink{a00008_a8d581034e60792a9995d44065f6140a5a6776147f492a4e0b0bb5ee4fdbc8d086}{controlled},
+\hypertarget{a00021_source_l00052}{}\hyperlink{a00008_a8d581034e60792a9995d44065f6140a5ae260aa6159d95b94851c96df939b51b3}{00052}         \hyperlink{a00008_a8d581034e60792a9995d44065f6140a5ae260aa6159d95b94851c96df939b51b3}{manual}
+00053     \};
+00054     
+00056     \hyperlink{a00008_af021de9817b11968dd627186e9e05a71}{ServoThread}();
+00057     
+00059     \hyperlink{a00008_a0c7ac1f603a247eac91d9780ad50f5fa}{~ServoThread}();
+00060     
+\hypertarget{a00021_source_l00062}{}\hyperlink{a00008_aaa273318ffee5ba270cdaacba3f263f8}{00062}     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \hyperlink{a00008_aaa273318ffee5ba270cdaacba3f263f8}{end}()
+00063     \{
+00064         \hyperlink{a00008_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.lock();
+00065         \hyperlink{a00008_acca9896d1a2d1ef68527e6834f81c76c}{\_end} = \textcolor{keyword}{true};
+00066         \hyperlink{a00008_afcb93c09acd7fecf47d92996a297365c}{\_cond}.wakeOne();
+00067         \hyperlink{a00008_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.unlock();
+00068         
+00069         wait();
+00070     \}
+00071     
+00073     \textcolor{keywordtype}{void} \hyperlink{a00008_ae88d0a9c84099ca607c7cf929500fb26}{load}(QString &file);
+00074     
+\hypertarget{a00021_source_l00076}{}\hyperlink{a00008_ae0d4a59954aafbe8cd85f9326e4fcdd0}{00076}     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \hyperlink{a00008_ae0d4a59954aafbe8cd85f9326e4fcdd0}{pause}()
+00077     \{
+00078         \hyperlink{a00008_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.lock();
+00079         \hyperlink{a00008_aaf2ef80e8e43518b75d20a5102970d2e}{\_pause} = \textcolor{keyword}{true};
+00080         \hyperlink{a00008_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.unlock();
+00081     \}
+00082     
+\hypertarget{a00021_source_l00084}{}\hyperlink{a00008_af2c9e71c33e15937e72703d859cd7147}{00084}     \textcolor{keyword}{inline} \textcolor{keywordtype}{int} \hyperlink{a00008_af2c9e71c33e15937e72703d859cd7147}{getServoBaud}()
+00085     \{
+00086         QMutexLocker mL(&\hyperlink{a00008_a6327eafc0dac189ec1b202d63ef32457}{\_mutex});
+00087         \textcolor{keywordflow}{return} \hyperlink{a00008_a5b9a41b9e271275b914affb0a845a2ee}{\_sBaud};
+00088     \}
+00089     
+\hypertarget{a00021_source_l00091}{}\hyperlink{a00008_a3fae25aeac390640192ceb38e32dae40}{00091}     \textcolor{keyword}{inline} QString \hyperlink{a00008_a3fae25aeac390640192ceb38e32dae40}{getServoPort}()
+00092     \{
+00093         QMutexLocker mL(&\hyperlink{a00008_a6327eafc0dac189ec1b202d63ef32457}{\_mutex});
+00094         \textcolor{keywordflow}{return} \hyperlink{a00008_ac9a614aa1518efb49b0a06636bd1bdbf}{\_sPort};
+00095     \}
+00096     
+\hypertarget{a00021_source_l00098}{}\hyperlink{a00008_afcf834d93f1ac9663d6ebaab820e5f74}{00098}     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \hyperlink{a00008_afcf834d93f1ac9663d6ebaab820e5f74}{getServoPortInfo}(QString &port, \textcolor{keywordtype}{int} &baud)
+00099     \{
+00100         \hyperlink{a00008_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.lock();
+00101         baud = \hyperlink{a00008_a5b9a41b9e271275b914affb0a845a2ee}{\_sBaud};
+00102         port = \hyperlink{a00008_ac9a614aa1518efb49b0a06636bd1bdbf}{\_sPort};
+00103         \hyperlink{a00008_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.unlock();
+00104     \}
+00105     
+00106     
+\hypertarget{a00021_source_l00109}{}\hyperlink{a00008_a5fd8ef13314428f5ba7646730cc58f1c}{00109}     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \hyperlink{a00008_a5fd8ef13314428f5ba7646730cc58f1c}{getServosInfo}(QVector<Servo> &V)
+00110     \{
+00111         \hyperlink{a00008_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.lock();
+00112         V = \hyperlink{a00008_a1ac6662fe6d198b5971ae0ffa7ddfcfd}{\_servos};
+00113         \hyperlink{a00008_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.unlock();
+00114     \}
+00115     
+\hypertarget{a00021_source_l00117}{}\hyperlink{a00008_a3d58189cdeddfb828856f192607f68d2}{00117}     \textcolor{keyword}{inline} QVector<Servo> \hyperlink{a00008_a3d58189cdeddfb828856f192607f68d2}{getServosInfo}()
+00118     \{
+00119         QMutexLocker mL(&\hyperlink{a00008_a6327eafc0dac189ec1b202d63ef32457}{\_mutex});
+00120         \textcolor{keywordflow}{return} \hyperlink{a00008_a1ac6662fe6d198b5971ae0ffa7ddfcfd}{\_servos};
+00121     \}
+00122     
+\hypertarget{a00021_source_l00124}{}\hyperlink{a00008_a82d074ab2c445470a6f49e2935bf6a8e}{00124}     \textcolor{keyword}{inline} QMutex* \hyperlink{a00008_a82d074ab2c445470a6f49e2935bf6a8e}{mutex}() \{ \textcolor{keywordflow}{return} &\hyperlink{a00008_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}; \}
+00125     
+00128     \textcolor{keywordtype}{void} \hyperlink{a00008_aaa60ec35320c1c3de691f3a00cd638cb}{read}(QString file);
+00129     
+00132     \textcolor{keywordtype}{void} \hyperlink{a00008_ae236c55f7d673653d329e1655df349a2}{readPath}(QString file);
+00133     
+00137     \textcolor{keywordtype}{void} \hyperlink{a00008_a8497ea56991b620981ce1fbf53d9ebdb}{setData}(QVector< float > &aV, QVector<bool> &buts);
+00138     
+\hypertarget{a00021_source_l00141}{}\hyperlink{a00008_a009d3d1b99007b14fadb49996fac49d6}{00141}     \textcolor{keywordtype}{void} \hyperlink{a00008_a009d3d1b99007b14fadb49996fac49d6}{setServoBaud}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} baud)
+00142     \{
+00143         \hyperlink{a00008_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.lock();
+00144         \hyperlink{a00008_a5b9a41b9e271275b914affb0a845a2ee}{\_sBaud} = baud;
+00145         \hyperlink{a00008_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.unlock();
+00146     \}
+00147     
+\hypertarget{a00021_source_l00150}{}\hyperlink{a00008_a144e31105019d833f59ca2eba012e638}{00150}     \textcolor{keywordtype}{void} \hyperlink{a00008_a144e31105019d833f59ca2eba012e638}{setServoPort}(QString &port)
+00151     \{
+00152         \hyperlink{a00008_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.lock();
+00153         \hyperlink{a00008_ac9a614aa1518efb49b0a06636bd1bdbf}{\_sPort} = port;
+00154         \hyperlink{a00008_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.unlock();
+00155     \}
+00156     
+\hypertarget{a00021_source_l00160}{}\hyperlink{a00008_a76af3e89d1a8705426584bedb0624909}{00160}     \textcolor{keywordtype}{void} \hyperlink{a00008_a76af3e89d1a8705426584bedb0624909}{setServoPortInfo}(QString &port, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} baud)
+00161     \{
+00162         \hyperlink{a00008_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.lock();
+00163         \hyperlink{a00008_ac9a614aa1518efb49b0a06636bd1bdbf}{\_sPort} = port;
+00164         \hyperlink{a00008_a5b9a41b9e271275b914affb0a845a2ee}{\_sBaud} = baud;
+00165         \hyperlink{a00008_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.unlock();
+00166     \}
+00167     
+\hypertarget{a00021_source_l00170}{}\hyperlink{a00008_ac3471e5020f5d9babd3f2ff7b3b82aca}{00170}     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \hyperlink{a00008_ac3471e5020f5d9babd3f2ff7b3b82aca}{setSID} (QVector< int > &V) 
+00171     \{
+00172         \textcolor{keywordflow}{if} (V.size() != \hyperlink{a00008_a334e0c5bca9ccb2585cb82bce60ea42f}{\_sNum}) \{
+00173             qDebug() << \textcolor{stringliteral}{"Error setting servos"};
+00174             \textcolor{keywordflow}{return};
+00175         \}
+00176         
+00177         
+00178         \hyperlink{a00008_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.lock();        
+00179         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < V.size(); ++i) \hyperlink{a00008_a1ac6662fe6d198b5971ae0ffa7ddfcfd}{\_servos}[i].ID = V[i];
+00180         \hyperlink{a00008_a2b6ccfeacbb3cc9ac5c34549b9aa3f11}{\_dChanged} = \textcolor{keyword}{true};
+00181         \hyperlink{a00008_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.unlock();
+00182     \}
+00183     
+\hypertarget{a00021_source_l00186}{}\hyperlink{a00008_ad187f5aec23e1a7e5bd5f4d316d80cbe}{00186}     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \hyperlink{a00008_ad187f5aec23e1a7e5bd5f4d316d80cbe}{setSpeed}(\textcolor{keywordtype}{int} speed)
+00187     \{
+00188         \textcolor{keywordflow}{if} (speed < 0) speed = 0;
+00189         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (speed > 100) speed = 100;
+00190         
+00191         \hyperlink{a00008_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.lock();
+00192         \hyperlink{a00008_acbcc5de85714af781eef3abb08087cf7}{\_sSpeed} = speed;
+00193         \hyperlink{a00008_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.unlock();
+00194     \}
+00195     
+\hypertarget{a00021_source_l00197}{}\hyperlink{a00008_a5f32574f843d76deffec45995028389b}{00197}     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \hyperlink{a00008_a5f32574f843d76deffec45995028389b}{wakeUp}()
+00198     \{
+00199         \hyperlink{a00008_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.lock();
+00200         \hyperlink{a00008_aaf2ef80e8e43518b75d20a5102970d2e}{\_pause} = \textcolor{keyword}{false};
+00201         \hyperlink{a00008_afcb93c09acd7fecf47d92996a297365c}{\_cond}.wakeOne();
+00202         \hyperlink{a00008_a6327eafc0dac189ec1b202d63ef32457}{\_mutex}.unlock();
+00203     \}
+00204     
+00207     \textcolor{keywordtype}{void} \hyperlink{a00008_aca68fe85a100a052c4d41f0fa88cc152}{write}(QString file);
+00208     
+00209 signals:
+00210     
+00212     \textcolor{keywordtype}{void} \hyperlink{a00008_a3c84cf179d1746091795c60f3a68ce06}{statusBar}(QString);
+00213     
+00214 \textcolor{keyword}{private}:
+00215     
+\hypertarget{a00021_source_l00216}{}\hyperlink{a00008_a86dc58ff23326f939cd6fb610ac90d53}{00216}     \textcolor{keyword}{const} \textcolor{keywordtype}{double} \hyperlink{a00008_a86dc58ff23326f939cd6fb610ac90d53}{cos60} = 0.5;       
+\hypertarget{a00021_source_l00217}{}\hyperlink{a00008_aaa3e2dd194949b12f8a41ebd0d62fde9}{00217}     \textcolor{keyword}{const} \textcolor{keywordtype}{double} \hyperlink{a00008_aaa3e2dd194949b12f8a41ebd0d62fde9}{sin60} = sqrt(3)/2; 
+\hypertarget{a00021_source_l00218}{}\hyperlink{a00008_a7dc3998d380d61406fe4485f9872edff}{00218}     \textcolor{keyword}{const} \textcolor{keywordtype}{double} \hyperlink{a00008_a7dc3998d380d61406fe4485f9872edff}{a} = 17.233;        
+\hypertarget{a00021_source_l00219}{}\hyperlink{a00008_a14f03febaa39a60b9bf7ff9b9151060c}{00219}     \textcolor{keyword}{const} \textcolor{keywordtype}{double} \hyperlink{a00008_a14f03febaa39a60b9bf7ff9b9151060c}{b} = 22.648;        
+\hypertarget{a00021_source_l00220}{}\hyperlink{a00008_a6281142e50115dd8c914c14cfae6f90d}{00220}     \textcolor{keyword}{const} \textcolor{keywordtype}{double} \hyperlink{a00008_a6281142e50115dd8c914c14cfae6f90d}{L1} = 6.000;        
+\hypertarget{a00021_source_l00221}{}\hyperlink{a00008_a3d51c16b1f498b48a6ecbfaadaba6ed2}{00221}     \textcolor{keyword}{const} \textcolor{keywordtype}{double} \hyperlink{a00008_a3d51c16b1f498b48a6ecbfaadaba6ed2}{L2} = 6.374;        
+00222     
+\hypertarget{a00021_source_l00224}{}\hyperlink{a00008_aad24ef961ee39dd35766c725c13b11b7}{00224}     QVector < float > \hyperlink{a00008_aad24ef961ee39dd35766c725c13b11b7}{\_axis};
+00225     
+\hypertarget{a00021_source_l00227}{}\hyperlink{a00008_a6f956f7e0f2953e213ff95fb64857ab0}{00227}     QVector < bool > \hyperlink{a00008_a6f956f7e0f2953e213ff95fb64857ab0}{\_buts};
+00228     
+\hypertarget{a00021_source_l00230}{}\hyperlink{a00008_a9fccfd415e2e55c8abef7fcc6535af30}{00230}     \textcolor{keywordtype}{int} \hyperlink{a00008_a9fccfd415e2e55c8abef7fcc6535af30}{\_cBaud};
+00231     
+\hypertarget{a00021_source_l00233}{}\hyperlink{a00008_afcb93c09acd7fecf47d92996a297365c}{00233}     QWaitCondition \hyperlink{a00008_afcb93c09acd7fecf47d92996a297365c}{\_cond};
+00234         
+\hypertarget{a00021_source_l00236}{}\hyperlink{a00008_ab52437b31a433c427a6c050f2b1cc959}{00236}     QString \hyperlink{a00008_ab52437b31a433c427a6c050f2b1cc959}{\_cPort};
+00237     
+\hypertarget{a00021_source_l00239}{}\hyperlink{a00008_a2b6ccfeacbb3cc9ac5c34549b9aa3f11}{00239}     \textcolor{keywordtype}{bool} \hyperlink{a00008_a2b6ccfeacbb3cc9ac5c34549b9aa3f11}{\_dChanged};
+00240     
+\hypertarget{a00021_source_l00242}{}\hyperlink{a00008_aeeb7452b80b36d66b59add7f55061a99}{00242}     QVector< Dominoe > \hyperlink{a00008_aeeb7452b80b36d66b59add7f55061a99}{\_dominoe};
+00243     
+\hypertarget{a00021_source_l00245}{}\hyperlink{a00008_acca9896d1a2d1ef68527e6834f81c76c}{00245}     \textcolor{keywordtype}{bool} \hyperlink{a00008_acca9896d1a2d1ef68527e6834f81c76c}{\_end};
+00246     
+\hypertarget{a00021_source_l00248}{}\hyperlink{a00008_acdecea1688594d3ab7386a6db97dd90d}{00248}     \hyperlink{a00008_a8d581034e60792a9995d44065f6140a5}{Mode} \hyperlink{a00008_acdecea1688594d3ab7386a6db97dd90d}{\_mod};
+00249     
+\hypertarget{a00021_source_l00251}{}\hyperlink{a00008_a6327eafc0dac189ec1b202d63ef32457}{00251}     QMutex \hyperlink{a00008_a6327eafc0dac189ec1b202d63ef32457}{\_mutex};
+00252     
+\hypertarget{a00021_source_l00254}{}\hyperlink{a00008_aaf2ef80e8e43518b75d20a5102970d2e}{00254}     \textcolor{keywordtype}{bool} \hyperlink{a00008_aaf2ef80e8e43518b75d20a5102970d2e}{\_pause};
+00255     
+\hypertarget{a00021_source_l00257}{}\hyperlink{a00008_a5b9a41b9e271275b914affb0a845a2ee}{00257}     \textcolor{keywordtype}{int} \hyperlink{a00008_a5b9a41b9e271275b914affb0a845a2ee}{\_sBaud};
+00258     
+\hypertarget{a00021_source_l00260}{}\hyperlink{a00008_a1ac6662fe6d198b5971ae0ffa7ddfcfd}{00260}     QVector< Servo > \hyperlink{a00008_a1ac6662fe6d198b5971ae0ffa7ddfcfd}{\_servos};
+00261     
+\hypertarget{a00021_source_l00263}{}\hyperlink{a00008_a334e0c5bca9ccb2585cb82bce60ea42f}{00263}     \textcolor{keyword}{const} \textcolor{keywordtype}{int} \hyperlink{a00008_a334e0c5bca9ccb2585cb82bce60ea42f}{\_sNum} = 4;
+00264     
+\hypertarget{a00021_source_l00266}{}\hyperlink{a00008_ac9a614aa1518efb49b0a06636bd1bdbf}{00266}     QString \hyperlink{a00008_ac9a614aa1518efb49b0a06636bd1bdbf}{\_sPort};
+00267     
+\hypertarget{a00021_source_l00269}{}\hyperlink{a00008_a6e803432db01b10ed975132315280fd3}{00269}     \textcolor{keywordtype}{bool} \hyperlink{a00008_a6e803432db01b10ed975132315280fd3}{\_sPortChanged};
+00270     
+\hypertarget{a00021_source_l00272}{}\hyperlink{a00008_acbcc5de85714af781eef3abb08087cf7}{00272}     \textcolor{keywordtype}{int} \hyperlink{a00008_acbcc5de85714af781eef3abb08087cf7}{\_sSpeed};
+00273     
+00275     \textcolor{keywordtype}{void} \hyperlink{a00008_aeeb31b85abf7eb5c701853a6d25e51e0}{run}();
+00276     
+00278     \textcolor{keywordtype}{void} \hyperlink{a00008_ae17f4b27cae8b171f48fd55d2dc72dbd}{setAngles}(\textcolor{keywordtype}{double} x0, \textcolor{keywordtype}{double} y0, \textcolor{keywordtype}{double} z0, 
+00279                    \textcolor{keywordtype}{double} &theta1, \textcolor{keywordtype}{double} &theta2, \textcolor{keywordtype}{double} &theta3);
+00280     
+00282     \textcolor{keywordtype}{double} \hyperlink{a00008_add4637d917a772c4c01a43b5b66da2be}{singleAngle}(\textcolor{keywordtype}{double} x0, \textcolor{keywordtype}{double} y0, \textcolor{keywordtype}{double} z0);
+00283     
+00284 \};
+00285 
+00286 \textcolor{preprocessor}{#endif // SERVOTHREAD\_H}
 \end{DoxyCode}

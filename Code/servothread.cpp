@@ -11,9 +11,10 @@ ServoThread::ServoThread() :
     _mod(Mode::manual),
     _pause(true),
     _sBaud(1000000),
-    _servos(3),
+    _servos(_sNum),
     _sPort("COM9"),
-    _sPortChanged(false)
+    _sPortChanged(false),
+    _sSpeed(60)
 {
     
 }
@@ -49,6 +50,51 @@ void ServoThread::load(QString &file)
     _mutex.unlock();
 }
 
+void ServoThread::read(QString file)
+{
+    // Opening file for reading
+    QFile f(file);
+    f.open(QIODevice::ReadOnly);
+    QDataStream df(&f);
+    
+    QMutexLocker mL(&_mutex);
+    
+    int version;
+    df >> version;
+    if (version != Version::v_1_0) {
+        emit statusBar("Error opening file");
+        return;
+    }
+    
+    df >> _cBaud >> _cPort >> _sBaud >> _sPort;
+    int size;
+    df >> size;
+    _servos.resize(size);
+    for (Servo &s : _servos) df >> s.ID;
+    
+}
+
+void ServoThread::readPath(QString file)
+{
+    // Opening file for reading
+    QFile f(file);
+    if (!f.open(QIODevice::ReadOnly)) {
+        emit statusBar("Error opening file");
+        return;
+    }
+    
+    QTextStream pF(&f);
+    
+    int size;
+    pF >> size;
+    _mutex.lock();
+    _dominoe.resize(size);
+    for (Dominoe &d : _dominoe) pF >> d.X >> d.Y >> d.ori;
+    _mutex.unlock();
+    
+    emit statusBar("File loaded succesfully");
+}
+
 void ServoThread::setData(QVector<float> &aV, QVector<bool> &buts)
 {
     _mutex.lock();
@@ -60,13 +106,16 @@ void ServoThread::setData(QVector<float> &aV, QVector<bool> &buts)
     _mutex.unlock();
 }
 
-void ServoThread::write(QString &file)
+void ServoThread::write(QString file)
 {
-    _mutex.lock();
+    // Opening file for writing
     QFile f(file);
     f.open(QIODevice::WriteOnly);
     QDataStream df(&f);
     
+    _mutex.lock();
+    
+    // Clamp and servos baud rate and port must be writen
     df << int(Version::v_1_0) << _cBaud << _cPort << _sBaud << _sPort
        << _servos.size();    
     for (const Servo &s : _servos) df << s.ID;

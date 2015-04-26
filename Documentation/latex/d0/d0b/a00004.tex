@@ -1,412 +1,939 @@
-\hypertarget{a00004}{}\section{Main\+Window Class Reference}
-\label{a00004}\index{Main\+Window@{Main\+Window}}
+\hypertarget{a00004}{}\section{dynamixel Class Reference}
+\label{a00004}\index{dynamixel@{dynamixel}}
 
 
-Contains all the windows and other classes.  
-
-
-
-
-{\ttfamily \#include $<$mainwindow.\+h$>$}
+Dynamixel 1.\+0 protocol class.  
 
 
 
-Inheritance diagram for Main\+Window\+:\nopagebreak
+
+{\ttfamily \#include $<$dynamixel.\+h$>$}
+
+
+
+Collaboration diagram for dynamixel\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=160pt]{d5/d79/a00030}
+\includegraphics[width=141pt]{d5/d16/a00029}
 \end{center}
 \end{figure}
-
-
-Collaboration diagram for Main\+Window\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=248pt]{df/d61/a00031}
-\end{center}
-\end{figure}
-\subsection*{Signals}
-\begin{DoxyCompactItemize}
-\item 
-void \hyperlink{a00004_ac85ba5aec3be2a51a348ff669b9dc842}{joystick\+Changed} ()
-\begin{DoxyCompactList}\small\item\em Emmitted when a joystick changes. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{a00004_a8b244be8b7b7db1b08de2a2acb9409db}{Main\+Window} (Q\+Widget $\ast$parent=0)
+\hyperlink{a00004_a7aa668a213db6a41bede8e08a6fec830}{dynamixel} ()
 \begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
-\hyperlink{a00004_ae98d00a93bc118200eeef9f9bba1dba7}{$\sim$\+Main\+Window} ()
-\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Private Slots}
-\begin{DoxyCompactItemize}
-\item 
-void \hyperlink{a00004_abb4c2d8a79c9f80010ea031366bf8226}{joy\+Changed} ()
-\begin{DoxyCompactList}\small\item\em Handles a joystick update. \end{DoxyCompactList}\item 
-void \hyperlink{a00004_a1dd57ccb62bc6f5a361aba6e088dd2e1}{on\+\_\+action\+Options\+\_\+triggered} ()
-\begin{DoxyCompactList}\small\item\em To select the options. \end{DoxyCompactList}\item 
-void \hyperlink{a00004_a128f71880d4b9683149023fc46fcc9f8}{update} ()
-\begin{DoxyCompactList}\small\item\em Updates all data to the servo thread. \end{DoxyCompactList}\item 
-void \hyperlink{a00004_ae66e9ab15f911b93fce0f161d2fde880}{on\+\_\+start\+\_\+clicked} ()
-\end{DoxyCompactItemize}
+\hyperlink{a00004_a5d4fed957a4b2d1690c0fa72127f5cbf}{dynamixel} (Q\+String port\+\_\+num, int baud\+\_\+rate=1000000)
+\begin{DoxyCompactList}\small\item\em Initialization constructor. \end{DoxyCompactList}\item 
+bool \hyperlink{a00004_a5ae4b2c6eb4c91f404f973ee8e6a1914}{is\+Open} ()
+\begin{DoxyCompactList}\small\item\em True if the port is open. \end{DoxyCompactList}\item 
+int \hyperlink{a00004_a87960244d5846ae7583e37d2407eb61e}{initialize} (Q\+String port\+\_\+num, int baud\+\_\+rate)
+\begin{DoxyCompactList}\small\item\em Initializates the port. \end{DoxyCompactList}\item 
+int \hyperlink{a00004_a7554c7889896e29e11a62027d89f3fdf}{change\+\_\+baudrate} (int baud\+\_\+rate)
+\begin{DoxyCompactList}\small\item\em Changes the current baud rate. \end{DoxyCompactList}\item 
+int \hyperlink{a00004_a92ea074ed1c1a9cf29e039f8c425f01a}{terminate} (void)
+\begin{DoxyCompactList}\small\item\em Closes the comunication. \end{DoxyCompactList}\item 
+int \hyperlink{a00004_ac8440d5d34ae3c4618b28fdbbd748edc}{get\+\_\+comm\+\_\+result} ()
+\begin{DoxyCompactList}\small\item\em Returns the current com status. \end{DoxyCompactList}\item 
+void \hyperlink{a00004_a479187cd8940c16dd4374eb5be22b888}{tx\+\_\+packet} (void)
+\begin{DoxyCompactList}\small\item\em Sends a packet. \end{DoxyCompactList}\item 
+void \hyperlink{a00004_aa26d2d2dff768563a1cb1480aa061608}{rx\+\_\+packet} (void)
+\begin{DoxyCompactList}\small\item\em Receives a packet. \end{DoxyCompactList}\item 
+void \hyperlink{a00004_aebfc569c6b1eb0b98f8c385f0f921fc0}{txrx\+\_\+packet} (void)
+\begin{DoxyCompactList}\small\item\em Sends and receives a packet. \end{DoxyCompactList}\item 
+void \hyperlink{a00004_a84e24c72c3e5be866f8b28c2e5bd1d95}{set\+\_\+txpacket\+\_\+id} (int id)
+\begin{DoxyCompactList}\small\item\em Sets the sending packet I\+D. \end{DoxyCompactList}\item 
+void \hyperlink{a00004_a209a43f983f214323b6f0a627d5e8c13}{set\+\_\+txpacket\+\_\+instruction} (int instruction)
+\begin{DoxyCompactList}\small\item\em Sets the sending packet instruction. \end{DoxyCompactList}\item 
+void \hyperlink{a00004_a2c3d31bbbed70a69918e9972a620384b}{set\+\_\+txpacket\+\_\+parameter} (int index, int value)
+\begin{DoxyCompactList}\small\item\em Sets the sending packet parameter. \end{DoxyCompactList}\item 
+void \hyperlink{a00004_a829278f48e21c810b172eb8cab3b86de}{set\+\_\+txpacket\+\_\+length} (int length)
+\begin{DoxyCompactList}\small\item\em Sets the sending packet length. \end{DoxyCompactList}\item 
+bool \hyperlink{a00004_a843b0aac721e4264e7e3097f80980243}{get\+\_\+rxpacket\+\_\+error} (int error)
+\begin{DoxyCompactList}\small\item\em Returns false if no receive error and true if there\textquotesingle{}s an error. \end{DoxyCompactList}\item 
+int \hyperlink{a00004_a6e62341ef9f51b6e152e769bd7be9d75}{get\+\_\+rxpacket\+\_\+error\+\_\+byte} (void)
+\begin{DoxyCompactList}\small\item\em Returns the error byte. \end{DoxyCompactList}\item 
+int \hyperlink{a00004_a68b5fa99719a9aec0734ecfb0635503b}{get\+\_\+rxpacket\+\_\+parameter} (int index)
+\begin{DoxyCompactList}\small\item\em Returns the received parameter. \end{DoxyCompactList}\item 
+int \hyperlink{a00004_ae9cc18fdeda8329f68fa0f2f0a7a9aba}{get\+\_\+rxpacket\+\_\+length} ()
+\begin{DoxyCompactList}\small\item\em Returns the received packet length. \end{DoxyCompactList}\item 
+void \hyperlink{a00004_af2bd714423e7c4fc089762805c0c71f3}{ping} (int id)
+\begin{DoxyCompactList}\small\item\em Ping to the selected id, check com status for the ping result. \end{DoxyCompactList}\item 
+int \hyperlink{a00004_a888404b41c4c4395a0b745c77ff2cea9}{read\+\_\+byte} (int id, int address)
+\begin{DoxyCompactList}\small\item\em Reads a byte from the selected I\+D at the selected address. \end{DoxyCompactList}\item 
+void \hyperlink{a00004_a66c1e32cc45dd46d329f1fc212e46a3d}{write\+\_\+byte} (int id, int address, int value)
+\begin{DoxyCompactList}\small\item\em Writes a byte to the selected I\+D at the selected address. \end{DoxyCompactList}\item 
+int \hyperlink{a00004_a45e99341e82c5114f6e829c9141bf96f}{read\+\_\+word} (int id, int address)
+\begin{DoxyCompactList}\small\item\em Reads a word to the selected I\+D at the selected address. \end{DoxyCompactList}\item 
+void \hyperlink{a00004_a925f62ce5e261e5ef4fe6dc46bdc7c63}{write\+\_\+word} (int id, int address, int value)
+\begin{DoxyCompactList}\small\item\em Writes a word to the selected I\+D at the selected address. \end{DoxyCompactList}\item 
+double \hyperlink{a00004_a2fa5375537184c279a9ebfcfc0425071}{get\+\_\+packet\+\_\+time} ()
+\begin{DoxyCompactList}\small\item\em Returns the packet time. \end{DoxyCompactList}\item 
+void \hyperlink{a00004_a067f82c21ed176e18fa224d16f3d1c5b}{set\+\_\+packet\+\_\+timeout} (int Num\+Rcv\+Byte)
+\begin{DoxyCompactList}\small\item\em Sets the timeout in number of received bytes. \end{DoxyCompactList}\item 
+void \hyperlink{a00004_a125b42f776c4aac520f274074f68b591}{set\+\_\+packet\+\_\+timeout\+\_\+ms} (int msec)
+\begin{DoxyCompactList}\small\item\em Sets the timeout in ms. \end{DoxyCompactList}\item 
+bool \hyperlink{a00004_a00d08481ebc4dee19debecf43f888522}{is\+\_\+packet\+\_\+timeout} ()
+\begin{DoxyCompactList}\small\item\em Returns true if the packet is timeout. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-Q\+Vector$<$ Q\+Label $\ast$ $>$ \hyperlink{a00004_a30c99d7a544f74b0650758e5cc7ead5a}{\+\_\+axis}
-\begin{DoxyCompactList}\small\item\em Handles all the axis labels. \end{DoxyCompactList}\item 
-Q\+Vector$<$ float $>$ \hyperlink{a00004_a20f66f574ed4c96d8dfc0013e1095f15}{\+\_\+axis\+V}
-\begin{DoxyCompactList}\small\item\em Contains the axis value;. \end{DoxyCompactList}\item 
-Q\+Vector$<$ Q\+Label $\ast$ $>$ \hyperlink{a00004_a8eaf474e1b8672f32873ed009e28ce8a}{\+\_\+buts}
-\begin{DoxyCompactList}\small\item\em Handles all the button labels. \end{DoxyCompactList}\item 
-Q\+Vector$<$ bool $>$ \hyperlink{a00004_a519ae4630572cb63fbd04bce12fe8e77}{\+\_\+buts\+V}
-\begin{DoxyCompactList}\small\item\em Handles all buttons values. \end{DoxyCompactList}\item 
-Q\+String \hyperlink{a00004_aaccbe653019df03668429890e325ac21}{\+\_\+data\+P}
-\begin{DoxyCompactList}\small\item\em Contains the path to the data location. \end{DoxyCompactList}\item 
-int \hyperlink{a00004_a282d4090e96c676578c4336391b1af08}{\+\_\+j\+Axis\+X} = -\/1
-\begin{DoxyCompactList}\small\item\em Axis for the X value. \end{DoxyCompactList}\item 
-int \hyperlink{a00004_aaaced09ce813bbcac92047f5ef39f182}{\+\_\+j\+Axis\+Y} = -\/1
-\begin{DoxyCompactList}\small\item\em Axis for the Y value. \end{DoxyCompactList}\item 
-int \hyperlink{a00004_a18cc17eff4ff04ee0aae07c609e82d33}{\+\_\+j\+Axis\+Z} = -\/1
-\begin{DoxyCompactList}\small\item\em A\+Xis for the Z value. \end{DoxyCompactList}\item 
-X\+Joystick \hyperlink{a00004_a671f35800890e518713e1946671d8730}{\+\_\+joy}
-\begin{DoxyCompactList}\small\item\em To handle the joystick. \end{DoxyCompactList}\item 
-\hyperlink{a00007}{Servo\+Thread} \hyperlink{a00004_a97f8ecc7ecb930b796178cef7b975013}{\+\_\+s\+T}
-\begin{DoxyCompactList}\small\item\em Contains the thread controlling all the servos and external hardware. \end{DoxyCompactList}\item 
-Q\+Timer \hyperlink{a00004_a254b03b878cfda75c1c411a2f8568d33}{\+\_\+timer}
-\begin{DoxyCompactList}\small\item\em To update the joystick value. \end{DoxyCompactList}\item 
-Ui\+::\+Main\+Window $\ast$ \hyperlink{a00004_a35466a70ed47252a0191168126a352a5}{ui}
-\begin{DoxyCompactList}\small\item\em Contains the user interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Static Private Attributes}
-\begin{DoxyCompactItemize}
-\item 
-static const int \hyperlink{a00004_a646727b1c45c72638325adfd460649c0}{s\+Count} = 3
-\begin{DoxyCompactList}\small\item\em Contains the number of minimun servos to work. \end{DoxyCompactList}\item 
-static const int \hyperlink{a00004_a42c44af9c0eebc33f4e81f02e15b0461}{a\+S\+Count} = 0
-\begin{DoxyCompactList}\small\item\em Contains the number of additional servos used. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\hyperlink{a00003}{dxl\+\_\+hal} \hyperlink{a00004_ae003cc90ada6d7b70eaa4ea9d42d4deb}{d\+H}
+\begin{DoxyCompactList}\small\item\em Conains the serial port comunication. \end{DoxyCompactList}\item 
+unsigned char \hyperlink{a00004_afd94dcf01b8e96298727776e222de722}{gb\+Instruction\+Packet} \mbox{[}M\+A\+X\+N\+U\+M\+\_\+\+T\+X\+P\+A\+C\+K\+E\+T\mbox{]} = \{0\}
+\begin{DoxyCompactList}\small\item\em Contains all the instructions. \end{DoxyCompactList}\item 
+unsigned char \hyperlink{a00004_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gb\+Status\+Packet} \mbox{[}M\+A\+X\+N\+U\+M\+\_\+\+R\+X\+P\+A\+C\+K\+E\+T\mbox{]} = \{0\}
+\begin{DoxyCompactList}\small\item\em Contains the status. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{a00004_a333686e1b5903d16c41df8172b6bd5a8}{gb\+Rx\+Packet\+Length} = 0
+\begin{DoxyCompactList}\small\item\em Received packet length. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{a00004_a9d590ce24791d111c2db9b66be1e046d}{gb\+Rx\+Get\+Length} = 0
+\begin{DoxyCompactList}\small\item\em Temporal length from the received packet. \end{DoxyCompactList}\item 
+double \hyperlink{a00004_a6c6314fb7070e6fd361e57c5de17e0ec}{gd\+Packet\+Start\+Time} = 0.\+0
+\begin{DoxyCompactList}\small\item\em Packet start time. \end{DoxyCompactList}\item 
+double \hyperlink{a00004_a2173f25c6299da7ddb37ba3d2bf1f738}{gd\+Byte\+Trans\+Time} = 0.\+0
+\begin{DoxyCompactList}\small\item\em Byte transmission time. \end{DoxyCompactList}\item 
+double \hyperlink{a00004_a9f47887864517d74955a2bc787ae4456}{gd\+Rcv\+Wait\+Time} = 0.\+0
+\begin{DoxyCompactList}\small\item\em Receive wait time. \end{DoxyCompactList}\item 
+int \hyperlink{a00004_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{gb\+Comm\+Status} = C\+O\+M\+M\+\_\+\+R\+X\+S\+U\+C\+C\+E\+S\+S
+\begin{DoxyCompactList}\small\item\em Current communication status. \end{DoxyCompactList}\item 
+int \hyperlink{a00004_ad10e0e49f5fef04bf789a89c14cc470a}{gi\+Bus\+Using} = 0
+\begin{DoxyCompactList}\small\item\em True if the bus if being used. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Contains all the windows and other classes. 
+Dynamixel 1.\+0 protocol class. 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{a00004_a8b244be8b7b7db1b08de2a2acb9409db}{}\index{Main\+Window@{Main\+Window}!Main\+Window@{Main\+Window}}
-\index{Main\+Window@{Main\+Window}!Main\+Window@{Main\+Window}}
-\subsubsection[{Main\+Window}]{\setlength{\rightskip}{0pt plus 5cm}Main\+Window\+::\+Main\+Window (
+\hypertarget{a00004_a7aa668a213db6a41bede8e08a6fec830}{}\index{dynamixel@{dynamixel}!dynamixel@{dynamixel}}
+\index{dynamixel@{dynamixel}!dynamixel@{dynamixel}}
+\subsubsection[{dynamixel}]{\setlength{\rightskip}{0pt plus 5cm}dynamixel\+::dynamixel (
 \begin{DoxyParamCaption}
-\item[{Q\+Widget $\ast$}]{parent = {\ttfamily 0}}
+{}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [explicit]}}\label{a00004_a8b244be8b7b7db1b08de2a2acb9409db}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00004_a7aa668a213db6a41bede8e08a6fec830}
 
 
 Default constructor. 
 
 
 \begin{DoxyCode}
-00005                                       :
-00006     QMainWindow(parent),
-00007     \hyperlink{a00004_a30c99d7a544f74b0650758e5cc7ead5a}{\_axis}(XJoystick::AxisCount),
-00008     \hyperlink{a00004_a20f66f574ed4c96d8dfc0013e1095f15}{\_axisV}(XJoystick::AxisCount),
-00009     \hyperlink{a00004_a8eaf474e1b8672f32873ed009e28ce8a}{\_buts}(XJoystick::ButtonCount),
-00010     \hyperlink{a00004_a519ae4630572cb63fbd04bce12fe8e77}{\_butsV}(XJoystick::ButtonCount),
-00011     \hyperlink{a00004_a35466a70ed47252a0191168126a352a5}{ui}(\textcolor{keyword}{new} Ui::MainWindow)
-00012 \{
-00013     \hyperlink{a00004_a35466a70ed47252a0191168126a352a5}{ui}->setupUi(\textcolor{keyword}{this});
-00014     
-00015     \hyperlink{a00004_a97f8ecc7ecb930b796178cef7b975013}{\_sT}.start();
-00016     
-00017     connect(&\hyperlink{a00004_a671f35800890e518713e1946671d8730}{\_joy}, SIGNAL(changed()), \textcolor{keyword}{this}, SLOT(\hyperlink{a00004_abb4c2d8a79c9f80010ea031366bf8226}{joyChanged}()));
-00018     connect(&\hyperlink{a00004_a254b03b878cfda75c1c411a2f8568d33}{\_timer}, SIGNAL(timeout()), \textcolor{keyword}{this}, SLOT(\hyperlink{a00004_a128f71880d4b9683149023fc46fcc9f8}{update}()));
-00019     connect(&\hyperlink{a00004_a97f8ecc7ecb930b796178cef7b975013}{\_sT}, SIGNAL(statusBar(QString)), 
-00020             \hyperlink{a00004_a35466a70ed47252a0191168126a352a5}{ui}->statusbar, SLOT(showMessage(QString)));
-00021     
-00022     
-00023     \hyperlink{a00004_a254b03b878cfda75c1c411a2f8568d33}{\_timer}.setInterval(10);
-00024     \hyperlink{a00004_a254b03b878cfda75c1c411a2f8568d33}{\_timer}.start();
-00025     
-00026     \textcolor{comment}{// JOYSTICK}
-00027     QVector< QString > V(\hyperlink{a00004_a671f35800890e518713e1946671d8730}{\_joy}.getAllAxis());
-00028     \textcolor{comment}{// Adding axis}
-00029     QGridLayout *wL = \textcolor{keyword}{new} QGridLayout;
-00030     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < XJoystick::AxisCount; ++i) \{
-00031         QHBoxLayout *L = \textcolor{keyword}{new} QHBoxLayout;
-00032         L->addWidget(\textcolor{keyword}{new} QLabel(V[i].append(\textcolor{stringliteral}{":"}), \textcolor{keyword}{this}));
-00033         \hyperlink{a00004_a30c99d7a544f74b0650758e5cc7ead5a}{\_axis}[i] = \textcolor{keyword}{new} QLabel(\textcolor{stringliteral}{"#"});
-00034         L->addWidget(\hyperlink{a00004_a30c99d7a544f74b0650758e5cc7ead5a}{\_axis}[i]);
-00035         L->addStretch();
-00036         wL->addLayout(L, i%3, i/3); 
-00037     \}
-00038     \hyperlink{a00004_a35466a70ed47252a0191168126a352a5}{ui}->joyAxis->setLayout(wL);
-00039     
-00040     \textcolor{comment}{// Adding buttons}
-00041     wL = \textcolor{keyword}{new} QGridLayout;
-00042     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < XJoystick::ButtonCount; ++i) \{
-00043         \hyperlink{a00004_a8eaf474e1b8672f32873ed009e28ce8a}{\_buts}[i] = \textcolor{keyword}{new} QLabel(QString::number(i + 1));
-00044         wL->addWidget(\hyperlink{a00004_a8eaf474e1b8672f32873ed009e28ce8a}{\_buts}[i], i/8, i%8);
-00045         \hyperlink{a00004_a8eaf474e1b8672f32873ed009e28ce8a}{\_buts}[i]->setEnabled(\textcolor{keyword}{false});
-00046         \hyperlink{a00004_a8eaf474e1b8672f32873ed009e28ce8a}{\_buts}[i]->hide();
-00047     \}
-00048     \hyperlink{a00004_a35466a70ed47252a0191168126a352a5}{ui}->joyButs->setLayout(wL);
-00049     \hyperlink{a00004_a35466a70ed47252a0191168126a352a5}{ui}->joyAxis->hide();
-00050     \hyperlink{a00004_a35466a70ed47252a0191168126a352a5}{ui}->joyButs->hide();
-00051     \hyperlink{a00004_a35466a70ed47252a0191168126a352a5}{ui}->line->hide();
-00052     
-00053     
-00054     \textcolor{comment}{// Creating data Path    }
-00055     \hyperlink{a00004_aaccbe653019df03668429890e325ac21}{\_dataP} = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
-00056     QDir dir(\hyperlink{a00004_aaccbe653019df03668429890e325ac21}{\_dataP});
-00057     \textcolor{keywordflow}{if} (!dir.exists()) dir.mkpath(\hyperlink{a00004_aaccbe653019df03668429890e325ac21}{\_dataP});
-00058 \}
+00097 \{\}
 \end{DoxyCode}
-\hypertarget{a00004_ae98d00a93bc118200eeef9f9bba1dba7}{}\index{Main\+Window@{Main\+Window}!````~Main\+Window@{$\sim$\+Main\+Window}}
-\index{````~Main\+Window@{$\sim$\+Main\+Window}!Main\+Window@{Main\+Window}}
-\subsubsection[{$\sim$\+Main\+Window}]{\setlength{\rightskip}{0pt plus 5cm}Main\+Window\+::$\sim$\+Main\+Window (
+\hypertarget{a00004_a5d4fed957a4b2d1690c0fa72127f5cbf}{}\index{dynamixel@{dynamixel}!dynamixel@{dynamixel}}
+\index{dynamixel@{dynamixel}!dynamixel@{dynamixel}}
+\subsubsection[{dynamixel}]{\setlength{\rightskip}{0pt plus 5cm}dynamixel\+::dynamixel (
 \begin{DoxyParamCaption}
-{}
+\item[{Q\+String}]{port\+\_\+num, }
+\item[{int}]{baud\+\_\+rate = {\ttfamily 1000000}}
 \end{DoxyParamCaption}
-)}\label{a00004_ae98d00a93bc118200eeef9f9bba1dba7}
+)}\label{a00004_a5d4fed957a4b2d1690c0fa72127f5cbf}
 
 
-Default destructor. 
+Initialization constructor. 
 
 
 \begin{DoxyCode}
-00061 \{
-00062     \textcolor{keyword}{delete} \hyperlink{a00004_a35466a70ed47252a0191168126a352a5}{ui};
-00063 \}
+00011 \{
+00012     \hyperlink{a00004_a87960244d5846ae7583e37d2407eb61e}{initialize}(port\_num, baud\_rate);
+00013 \}
 \end{DoxyCode}
 
 
 \subsection{Member Function Documentation}
-\hypertarget{a00004_abb4c2d8a79c9f80010ea031366bf8226}{}\index{Main\+Window@{Main\+Window}!joy\+Changed@{joy\+Changed}}
-\index{joy\+Changed@{joy\+Changed}!Main\+Window@{Main\+Window}}
-\subsubsection[{joy\+Changed}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::joy\+Changed (
+\hypertarget{a00004_a7554c7889896e29e11a62027d89f3fdf}{}\index{dynamixel@{dynamixel}!change\+\_\+baudrate@{change\+\_\+baudrate}}
+\index{change\+\_\+baudrate@{change\+\_\+baudrate}!dynamixel@{dynamixel}}
+\subsubsection[{change\+\_\+baudrate}]{\setlength{\rightskip}{0pt plus 5cm}int dynamixel\+::change\+\_\+baudrate (
 \begin{DoxyParamCaption}
-{}
+\item[{int}]{baud\+\_\+rate}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{a00004_abb4c2d8a79c9f80010ea031366bf8226}
+)}\label{a00004_a7554c7889896e29e11a62027d89f3fdf}
 
 
-Handles a joystick update. 
+Changes the current baud rate. 
 
 
 \begin{DoxyCode}
-00066 \{
-00067     \textcolor{keywordtype}{int} sel = \hyperlink{a00004_a671f35800890e518713e1946671d8730}{\_joy}.current();
-00068     
-00069     QVector< XJoystick::Info > V(\hyperlink{a00004_a671f35800890e518713e1946671d8730}{\_joy}.available());
-00070     \textcolor{keywordtype}{bool} found = \textcolor{keyword}{false};
-00071     \textcolor{keywordtype}{int} i = 0;
-00072     \textcolor{keywordflow}{while} (i < V.size() and not found) \{ found = V[i].ID == sel; ++i; \}
-00073     \textcolor{keywordflow}{if} (not found) \{
-00074         \textcolor{keywordflow}{if} (V.size() > 0) \{
-00075             \hyperlink{a00004_a671f35800890e518713e1946671d8730}{\_joy}.select(V[0].ID);
-00076             \hyperlink{a00004_a35466a70ed47252a0191168126a352a5}{ui}->line->hide();
-00077             
-00078             \textcolor{comment}{// Showing axis}
-00079             \hyperlink{a00004_a35466a70ed47252a0191168126a352a5}{ui}->joyAxis->show();
-00080             
-00081             \textcolor{comment}{// Showing buttons}
-00082             \textcolor{keywordflow}{for} (QLabel *l : \hyperlink{a00004_a8eaf474e1b8672f32873ed009e28ce8a}{\_buts}) l->hide();
-00083             \hyperlink{a00004_a35466a70ed47252a0191168126a352a5}{ui}->joyButs->show();
-00084             \textcolor{keywordtype}{int} n = \hyperlink{a00004_a671f35800890e518713e1946671d8730}{\_joy}.buttonCount();
-00085             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < n; ++i) \_buts[i]->show();
-00086         \}
-00087         \textcolor{keywordflow}{else} \{
-00088             \hyperlink{a00004_a671f35800890e518713e1946671d8730}{\_joy}.select(-1);
-00089             \hyperlink{a00004_a35466a70ed47252a0191168126a352a5}{ui}->joyAxis->hide();
-00090             \hyperlink{a00004_a35466a70ed47252a0191168126a352a5}{ui}->joyButs->hide();
-00091             \hyperlink{a00004_a35466a70ed47252a0191168126a352a5}{ui}->line->hide();
-00092         \}
-00093     \}
-00094     emit \hyperlink{a00004_ac85ba5aec3be2a51a348ff669b9dc842}{joystickChanged}();
-00095 \}
+00031 \{
+00032     \textcolor{keywordtype}{int} result = 0;
+00033     \textcolor{keywordtype}{float} baudrate = (float)baud\_rate;
+00034     
+00035     result = \hyperlink{a00004_ae003cc90ada6d7b70eaa4ea9d42d4deb}{dH}.\hyperlink{a00003_a0eaaa5340bc9dce73cc920dc8befe5b0}{change\_baudrate}(baudrate);
+00036     \textcolor{keywordflow}{if}(result == 1)
+00037         \hyperlink{a00004_a2173f25c6299da7ddb37ba3d2bf1f738}{gdByteTransTime} = 1000.0f / baudrate * 10.0; \textcolor{comment}{// 1000/baudrate(bit per msec) *
+       10(start bit + data bit + stop bit)}
+00038 
+00039     \textcolor{keywordflow}{return} result;
+00040 \}
 \end{DoxyCode}
-\hypertarget{a00004_ac85ba5aec3be2a51a348ff669b9dc842}{}\index{Main\+Window@{Main\+Window}!joystick\+Changed@{joystick\+Changed}}
-\index{joystick\+Changed@{joystick\+Changed}!Main\+Window@{Main\+Window}}
-\subsubsection[{joystick\+Changed}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::joystick\+Changed (
+\hypertarget{a00004_ac8440d5d34ae3c4618b28fdbbd748edc}{}\index{dynamixel@{dynamixel}!get\+\_\+comm\+\_\+result@{get\+\_\+comm\+\_\+result}}
+\index{get\+\_\+comm\+\_\+result@{get\+\_\+comm\+\_\+result}!dynamixel@{dynamixel}}
+\subsubsection[{get\+\_\+comm\+\_\+result}]{\setlength{\rightskip}{0pt plus 5cm}int dynamixel\+::get\+\_\+comm\+\_\+result (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [signal]}}\label{a00004_ac85ba5aec3be2a51a348ff669b9dc842}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00004_ac8440d5d34ae3c4618b28fdbbd748edc}
 
 
-Emmitted when a joystick changes. 
-
-\hypertarget{a00004_a1dd57ccb62bc6f5a361aba6e088dd2e1}{}\index{Main\+Window@{Main\+Window}!on\+\_\+action\+Options\+\_\+triggered@{on\+\_\+action\+Options\+\_\+triggered}}
-\index{on\+\_\+action\+Options\+\_\+triggered@{on\+\_\+action\+Options\+\_\+triggered}!Main\+Window@{Main\+Window}}
-\subsubsection[{on\+\_\+action\+Options\+\_\+triggered}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::on\+\_\+action\+Options\+\_\+triggered (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{a00004_a1dd57ccb62bc6f5a361aba6e088dd2e1}
-
-
-To select the options. 
+Returns the current com status. 
 
 
 \begin{DoxyCode}
-00099 \{
-00100     \hyperlink{a00005}{OptionsWindow} o(\hyperlink{a00004_a671f35800890e518713e1946671d8730}{\_joy}, &\hyperlink{a00004_a97f8ecc7ecb930b796178cef7b975013}{\_sT}, \hyperlink{a00004_a282d4090e96c676578c4336391b1af08}{\_jAxisX}, \hyperlink{a00004_aaaced09ce813bbcac92047f5ef39f182}{\_jAxisY}, 
-      \hyperlink{a00004_a18cc17eff4ff04ee0aae07c609e82d33}{\_jAxisZ}, \textcolor{keyword}{this});
-00101     o.exec();
-00102     
-00103     connect(\textcolor{keyword}{this}, SIGNAL(\hyperlink{a00004_ac85ba5aec3be2a51a348ff669b9dc842}{joystickChanged}()), &o, SLOT(
-      \hyperlink{a00004_ac85ba5aec3be2a51a348ff669b9dc842}{joystickChanged}()));
-00104     
-00105     \textcolor{keywordflow}{if} (o.result()) o.storeData();
-00106 \}
+00115 \{ \textcolor{keywordflow}{return} \hyperlink{a00004_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{gbCommStatus}; \}
 \end{DoxyCode}
-\hypertarget{a00004_ae66e9ab15f911b93fce0f161d2fde880}{}\index{Main\+Window@{Main\+Window}!on\+\_\+start\+\_\+clicked@{on\+\_\+start\+\_\+clicked}}
-\index{on\+\_\+start\+\_\+clicked@{on\+\_\+start\+\_\+clicked}!Main\+Window@{Main\+Window}}
-\subsubsection[{on\+\_\+start\+\_\+clicked}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::on\+\_\+start\+\_\+clicked (
+\hypertarget{a00004_a2fa5375537184c279a9ebfcfc0425071}{}\index{dynamixel@{dynamixel}!get\+\_\+packet\+\_\+time@{get\+\_\+packet\+\_\+time}}
+\index{get\+\_\+packet\+\_\+time@{get\+\_\+packet\+\_\+time}!dynamixel@{dynamixel}}
+\subsubsection[{get\+\_\+packet\+\_\+time}]{\setlength{\rightskip}{0pt plus 5cm}double dynamixel\+::get\+\_\+packet\+\_\+time (
 \begin{DoxyParamCaption}
-{}
+\item[{void}]{}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{a00004_ae66e9ab15f911b93fce0f161d2fde880}
+)}\label{a00004_a2fa5375537184c279a9ebfcfc0425071}
+
+
+Returns the packet time. 
+
 
 \begin{DoxyCode}
-00121 \{
-00122     QString text = \hyperlink{a00004_a35466a70ed47252a0191168126a352a5}{ui}->start->text();
-00123     
-00124     \textcolor{keywordflow}{if} (text == \textcolor{stringliteral}{"Start"}) \{
-00125         \hyperlink{a00004_a97f8ecc7ecb930b796178cef7b975013}{\_sT}.\hyperlink{a00007_a5f32574f843d76deffec45995028389b}{wakeUp}();
-00126         \hyperlink{a00004_a35466a70ed47252a0191168126a352a5}{ui}->start->setText(\textcolor{stringliteral}{"Stop"});
-00127     \}
-00128     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (text == \textcolor{stringliteral}{"Stop"}) \{
-00129         \hyperlink{a00004_a97f8ecc7ecb930b796178cef7b975013}{\_sT}.\hyperlink{a00007_ae0d4a59954aafbe8cd85f9326e4fcdd0}{pause}();
-00130         \hyperlink{a00004_a35466a70ed47252a0191168126a352a5}{ui}->start->setText(\textcolor{stringliteral}{"Start"});
-00131     \}
-00132 \}
+00050 \{
+00051     \textcolor{keywordtype}{double} elapsed\_time;
+00052 
+00053     elapsed\_time = (double)(\hyperlink{a00004_ae003cc90ada6d7b70eaa4ea9d42d4deb}{dH}.\hyperlink{a00003_a6b6b7381c45308662fc3df6e7f74bc61}{get\_curr\_time}() - 
+      \hyperlink{a00004_a6c6314fb7070e6fd361e57c5de17e0ec}{gdPacketStartTime});
+00054 
+00055     \textcolor{comment}{// Overflow}
+00056     \textcolor{keywordflow}{if}(elapsed\_time < 0) \hyperlink{a00004_a6c6314fb7070e6fd361e57c5de17e0ec}{gdPacketStartTime} = \hyperlink{a00004_ae003cc90ada6d7b70eaa4ea9d42d4deb}{dH}.\hyperlink{a00003_a6b6b7381c45308662fc3df6e7f74bc61}{get\_curr\_time}();
+00057     
+00058     \textcolor{keywordflow}{return} elapsed\_time;
+00059 \}
 \end{DoxyCode}
-\hypertarget{a00004_a128f71880d4b9683149023fc46fcc9f8}{}\index{Main\+Window@{Main\+Window}!update@{update}}
-\index{update@{update}!Main\+Window@{Main\+Window}}
-\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::update (
+\hypertarget{a00004_a843b0aac721e4264e7e3097f80980243}{}\index{dynamixel@{dynamixel}!get\+\_\+rxpacket\+\_\+error@{get\+\_\+rxpacket\+\_\+error}}
+\index{get\+\_\+rxpacket\+\_\+error@{get\+\_\+rxpacket\+\_\+error}!dynamixel@{dynamixel}}
+\subsubsection[{get\+\_\+rxpacket\+\_\+error}]{\setlength{\rightskip}{0pt plus 5cm}bool dynamixel\+::get\+\_\+rxpacket\+\_\+error (
 \begin{DoxyParamCaption}
-{}
+\item[{int}]{error}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{a00004_a128f71880d4b9683149023fc46fcc9f8}
+)}\label{a00004_a843b0aac721e4264e7e3097f80980243}
 
 
-Updates all data to the servo thread. 
+Returns false if no receive error and true if there\textquotesingle{}s an error. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em error} & Selects the error to check \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+00271 \{
+00272     \textcolor{keywordflow}{if}( \hyperlink{a00004_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gbStatusPacket}[PRT1\_PKT\_ERRBIT] & (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char})error )
+00273         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+00274 
+00275     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00276 \}
+\end{DoxyCode}
+\hypertarget{a00004_a6e62341ef9f51b6e152e769bd7be9d75}{}\index{dynamixel@{dynamixel}!get\+\_\+rxpacket\+\_\+error\+\_\+byte@{get\+\_\+rxpacket\+\_\+error\+\_\+byte}}
+\index{get\+\_\+rxpacket\+\_\+error\+\_\+byte@{get\+\_\+rxpacket\+\_\+error\+\_\+byte}!dynamixel@{dynamixel}}
+\subsubsection[{get\+\_\+rxpacket\+\_\+error\+\_\+byte}]{\setlength{\rightskip}{0pt plus 5cm}int dynamixel\+::get\+\_\+rxpacket\+\_\+error\+\_\+byte (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{a00004_a6e62341ef9f51b6e152e769bd7be9d75}
+
+
+Returns the error byte. 
 
 
 \begin{DoxyCode}
-00109 \{
-00110     \hyperlink{a00004_a671f35800890e518713e1946671d8730}{\_joy}.update();
-00111     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < XJoystick::AxisCount; ++i) \hyperlink{a00004_a20f66f574ed4c96d8dfc0013e1095f15}{\_axisV}[i] = \hyperlink{a00004_a671f35800890e518713e1946671d8730}{\_joy}[i];
-00112     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < XJoystick::ButtonCount; ++i) \hyperlink{a00004_a519ae4630572cb63fbd04bce12fe8e77}{\_butsV}[i] = \hyperlink{a00004_a671f35800890e518713e1946671d8730}{\_joy}.button(i);
+00279 \{
+00280     \textcolor{keywordflow}{return} \hyperlink{a00004_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gbStatusPacket}[PRT1\_PKT\_ERRBIT];
+00281 \}
+\end{DoxyCode}
+\hypertarget{a00004_ae9cc18fdeda8329f68fa0f2f0a7a9aba}{}\index{dynamixel@{dynamixel}!get\+\_\+rxpacket\+\_\+length@{get\+\_\+rxpacket\+\_\+length}}
+\index{get\+\_\+rxpacket\+\_\+length@{get\+\_\+rxpacket\+\_\+length}!dynamixel@{dynamixel}}
+\subsubsection[{get\+\_\+rxpacket\+\_\+length}]{\setlength{\rightskip}{0pt plus 5cm}int dynamixel\+::get\+\_\+rxpacket\+\_\+length (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{a00004_ae9cc18fdeda8329f68fa0f2f0a7a9aba}
+
+
+Returns the received packet length. 
+
+
+\begin{DoxyCode}
+00289 \{
+00290     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{int})\hyperlink{a00004_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gbStatusPacket}[PRT1\_PKT\_LENGTH];
+00291 \}
+\end{DoxyCode}
+\hypertarget{a00004_a68b5fa99719a9aec0734ecfb0635503b}{}\index{dynamixel@{dynamixel}!get\+\_\+rxpacket\+\_\+parameter@{get\+\_\+rxpacket\+\_\+parameter}}
+\index{get\+\_\+rxpacket\+\_\+parameter@{get\+\_\+rxpacket\+\_\+parameter}!dynamixel@{dynamixel}}
+\subsubsection[{get\+\_\+rxpacket\+\_\+parameter}]{\setlength{\rightskip}{0pt plus 5cm}int dynamixel\+::get\+\_\+rxpacket\+\_\+parameter (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}\label{a00004_a68b5fa99719a9aec0734ecfb0635503b}
+
+
+Returns the received parameter. 
+
+
+\begin{DoxyCode}
+00284 \{
+00285     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{int})\hyperlink{a00004_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gbStatusPacket}[PRT1\_PKT\_PARAMETER0+index];
+00286 \}
+\end{DoxyCode}
+\hypertarget{a00004_a87960244d5846ae7583e37d2407eb61e}{}\index{dynamixel@{dynamixel}!initialize@{initialize}}
+\index{initialize@{initialize}!dynamixel@{dynamixel}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}int dynamixel\+::initialize (
+\begin{DoxyParamCaption}
+\item[{Q\+String}]{port\+\_\+num, }
+\item[{int}]{baud\+\_\+rate}
+\end{DoxyParamCaption}
+)}\label{a00004_a87960244d5846ae7583e37d2407eb61e}
+
+
+Initializates the port. 
+
+
+\begin{DoxyCode}
+00016 \{
+00017     \textcolor{keywordflow}{if}( baud\_rate < 1900 ) \textcolor{keywordflow}{return} 0;
+00018 
+00019     \textcolor{keywordflow}{if}( not \hyperlink{a00004_ae003cc90ada6d7b70eaa4ea9d42d4deb}{dH}.\hyperlink{a00003_ab631c2a5533125f14db9a8ec1c33aa7c}{open}(port\_num, baud\_rate) ) \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00020     
+00021     \textcolor{comment}{// 1000/baudrate(bit per msec) * 10(start bit + data bit + stop bit)}
+00022     \hyperlink{a00004_a2173f25c6299da7ddb37ba3d2bf1f738}{gdByteTransTime} = 1000.0 / (double)baud\_rate * 10.0; 
+00023 
+00024     \hyperlink{a00004_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{gbCommStatus} = COMM\_RXSUCCESS;
+00025     \hyperlink{a00004_ad10e0e49f5fef04bf789a89c14cc470a}{giBusUsing} = 0;
+00026 
+00027     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+00028 \}
+\end{DoxyCode}
+\hypertarget{a00004_a00d08481ebc4dee19debecf43f888522}{}\index{dynamixel@{dynamixel}!is\+\_\+packet\+\_\+timeout@{is\+\_\+packet\+\_\+timeout}}
+\index{is\+\_\+packet\+\_\+timeout@{is\+\_\+packet\+\_\+timeout}!dynamixel@{dynamixel}}
+\subsubsection[{is\+\_\+packet\+\_\+timeout}]{\setlength{\rightskip}{0pt plus 5cm}bool dynamixel\+::is\+\_\+packet\+\_\+timeout (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{a00004_a00d08481ebc4dee19debecf43f888522}
+
+
+Returns true if the packet is timeout. 
+
+\begin{DoxyReturn}{Returns}
+True if the packet is timeout 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+00074 \{
+00075     \textcolor{keywordflow}{if}(this->\hyperlink{a00004_a2fa5375537184c279a9ebfcfc0425071}{get\_packet\_time}() > \hyperlink{a00004_a9f47887864517d74955a2bc787ae4456}{gdRcvWaitTime})
+00076         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+00077     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00078 \}
+\end{DoxyCode}
+\hypertarget{a00004_a5ae4b2c6eb4c91f404f973ee8e6a1914}{}\index{dynamixel@{dynamixel}!is\+Open@{is\+Open}}
+\index{is\+Open@{is\+Open}!dynamixel@{dynamixel}}
+\subsubsection[{is\+Open}]{\setlength{\rightskip}{0pt plus 5cm}bool dynamixel\+::is\+Open (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00004_a5ae4b2c6eb4c91f404f973ee8e6a1914}
+
+
+True if the port is open. 
+
+
+\begin{DoxyCode}
+00103 \{ \textcolor{keywordflow}{return} \hyperlink{a00004_ae003cc90ada6d7b70eaa4ea9d42d4deb}{dH}.\hyperlink{a00003_a88bba601b5c9f285fcdc14e18a1f3398}{isOpen}(); \}
+\end{DoxyCode}
+\hypertarget{a00004_af2bd714423e7c4fc089762805c0c71f3}{}\index{dynamixel@{dynamixel}!ping@{ping}}
+\index{ping@{ping}!dynamixel@{dynamixel}}
+\subsubsection[{ping}]{\setlength{\rightskip}{0pt plus 5cm}void dynamixel\+::ping (
+\begin{DoxyParamCaption}
+\item[{int}]{id}
+\end{DoxyParamCaption}
+)}\label{a00004_af2bd714423e7c4fc089762805c0c71f3}
+
+
+Ping to the selected id, check com status for the ping result. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & I\+D where the ping is done \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+00294 \{
+00295     \textcolor{keywordflow}{while}(\hyperlink{a00004_ad10e0e49f5fef04bf789a89c14cc470a}{giBusUsing});
+00296 
+00297     \hyperlink{a00004_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[PRT1\_PKT\_ID] = (\textcolor{keywordtype}{unsigned} char)\textcolor{keywordtype}{id};
+00298     \hyperlink{a00004_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[PRT1\_PKT\_INSTRUCTION] = INST\_PING;
+00299     \hyperlink{a00004_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[PRT1\_PKT\_LENGTH] = 2;
+00300     
+00301     \hyperlink{a00004_aebfc569c6b1eb0b98f8c385f0f921fc0}{txrx\_packet}();
+00302 \}
+\end{DoxyCode}
+\hypertarget{a00004_a888404b41c4c4395a0b745c77ff2cea9}{}\index{dynamixel@{dynamixel}!read\+\_\+byte@{read\+\_\+byte}}
+\index{read\+\_\+byte@{read\+\_\+byte}!dynamixel@{dynamixel}}
+\subsubsection[{read\+\_\+byte}]{\setlength{\rightskip}{0pt plus 5cm}int dynamixel\+::read\+\_\+byte (
+\begin{DoxyParamCaption}
+\item[{int}]{id, }
+\item[{int}]{address}
+\end{DoxyParamCaption}
+)}\label{a00004_a888404b41c4c4395a0b745c77ff2cea9}
+
+
+Reads a byte from the selected I\+D at the selected address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Selects the I\+D to read the byte \\
+\hline
+{\em address} & Selects the address to read the byte \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+00305 \{
+00306     \textcolor{keywordflow}{while}(\hyperlink{a00004_ad10e0e49f5fef04bf789a89c14cc470a}{giBusUsing});
+00307 
+00308     \hyperlink{a00004_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[PRT1\_PKT\_ID] = (\textcolor{keywordtype}{unsigned} char)\textcolor{keywordtype}{id};
+00309     \hyperlink{a00004_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[PRT1\_PKT\_INSTRUCTION] = INST\_READ;
+00310     \hyperlink{a00004_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[PRT1\_PKT\_PARAMETER0+0] = (\textcolor{keywordtype}{unsigned} char)address;
+00311     \hyperlink{a00004_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[PRT1\_PKT\_PARAMETER0+1] = 1;
+00312     \hyperlink{a00004_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[PRT1\_PKT\_LENGTH] = 4;
+00313     
+00314     \hyperlink{a00004_aebfc569c6b1eb0b98f8c385f0f921fc0}{txrx\_packet}();
+00315 
+00316     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{int})\hyperlink{a00004_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gbStatusPacket}[PRT1\_PKT\_PARAMETER0];
+00317 \}
+\end{DoxyCode}
+\hypertarget{a00004_a45e99341e82c5114f6e829c9141bf96f}{}\index{dynamixel@{dynamixel}!read\+\_\+word@{read\+\_\+word}}
+\index{read\+\_\+word@{read\+\_\+word}!dynamixel@{dynamixel}}
+\subsubsection[{read\+\_\+word}]{\setlength{\rightskip}{0pt plus 5cm}int dynamixel\+::read\+\_\+word (
+\begin{DoxyParamCaption}
+\item[{int}]{id, }
+\item[{int}]{address}
+\end{DoxyParamCaption}
+)}\label{a00004_a45e99341e82c5114f6e829c9141bf96f}
+
+
+Reads a word to the selected I\+D at the selected address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Selects the I\+D to read the word \\
+\hline
+{\em address} & Selects the address to read the word \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+00333 \{
+00334     \textcolor{keywordflow}{while}(\hyperlink{a00004_ad10e0e49f5fef04bf789a89c14cc470a}{giBusUsing});
+00335 
+00336     \hyperlink{a00004_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[PRT1\_PKT\_ID] = (\textcolor{keywordtype}{unsigned} char)\textcolor{keywordtype}{id};
+00337     \hyperlink{a00004_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[PRT1\_PKT\_INSTRUCTION] = INST\_READ;
+00338     \hyperlink{a00004_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[PRT1\_PKT\_PARAMETER0+0] = (\textcolor{keywordtype}{unsigned} char)address;
+00339     \hyperlink{a00004_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[PRT1\_PKT\_PARAMETER0+1] = 2;
+00340     \hyperlink{a00004_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[PRT1\_PKT\_LENGTH] = 4;
+00341     
+00342     \hyperlink{a00004_aebfc569c6b1eb0b98f8c385f0f921fc0}{txrx\_packet}();
+00343 
+00344     \textcolor{keywordflow}{return} MAKEWORD((\textcolor{keywordtype}{int})\hyperlink{a00004_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gbStatusPacket}[PRT1\_PKT\_PARAMETER0+0], (\textcolor{keywordtype}{int})
+      \hyperlink{a00004_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gbStatusPacket}[PRT1\_PKT\_PARAMETER0+1]);
+00345 \}
+\end{DoxyCode}
+\hypertarget{a00004_aa26d2d2dff768563a1cb1480aa061608}{}\index{dynamixel@{dynamixel}!rx\+\_\+packet@{rx\+\_\+packet}}
+\index{rx\+\_\+packet@{rx\+\_\+packet}!dynamixel@{dynamixel}}
+\subsubsection[{rx\+\_\+packet}]{\setlength{\rightskip}{0pt plus 5cm}void dynamixel\+::rx\+\_\+packet (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{a00004_aa26d2d2dff768563a1cb1480aa061608}
+
+
+Receives a packet. 
+
+
+\begin{DoxyCode}
+00144 \{
+00145     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} i = 0, j = 0, nRead = 0;
+00146     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} checksum = 0;
+00147 
+00148     \textcolor{keywordflow}{if}( \hyperlink{a00004_ad10e0e49f5fef04bf789a89c14cc470a}{giBusUsing} == 0 )
+00149         \textcolor{keywordflow}{return};
+00150 
+00151     \textcolor{keywordflow}{if}( \hyperlink{a00004_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[PRT1\_PKT\_ID] == BROADCAST\_ID )
+00152     \{
+00153         \hyperlink{a00004_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{gbCommStatus} = COMM\_RXSUCCESS;
+00154         \hyperlink{a00004_ad10e0e49f5fef04bf789a89c14cc470a}{giBusUsing} = 0;
+00155         \textcolor{keywordflow}{return};
+00156     \}
+00157     
+00158     \textcolor{keywordflow}{if}( \hyperlink{a00004_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{gbCommStatus} == COMM\_TXSUCCESS )
+00159     \{
+00160         \hyperlink{a00004_a9d590ce24791d111c2db9b66be1e046d}{gbRxGetLength} = 0;
+00161         \textcolor{comment}{//gbRxPacketLength = 6; //minimum wait length}
+00162     \}
+00163     
+00164     \textcolor{keywordflow}{while}(1)
+00165     \{
+00166         nRead = \hyperlink{a00004_ae003cc90ada6d7b70eaa4ea9d42d4deb}{dH}.\hyperlink{a00003_ac36331febb2eaa66303af3483795742a}{read}( &\hyperlink{a00004_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gbStatusPacket}[\hyperlink{a00004_a9d590ce24791d111c2db9b66be1e046d}{gbRxGetLength}], 
+      \hyperlink{a00004_a333686e1b5903d16c41df8172b6bd5a8}{gbRxPacketLength} - gbRxGetLength );
+00167         gbRxGetLength += nRead;
+00168 
+00169         \textcolor{keywordflow}{if}(gbRxGetLength > 4)
+00170             \hyperlink{a00004_a333686e1b5903d16c41df8172b6bd5a8}{gbRxPacketLength} = \hyperlink{a00004_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gbStatusPacket}[PRT1\_PKT\_LENGTH] + 4;
+00171 
+00172         \textcolor{keywordflow}{if}( gbRxGetLength < \hyperlink{a00004_a333686e1b5903d16c41df8172b6bd5a8}{gbRxPacketLength} )
+00173         \{
+00174             \textcolor{keywordflow}{if}( \hyperlink{a00004_a00d08481ebc4dee19debecf43f888522}{is\_packet\_timeout}() == 1 )
+00175             \{
+00176                 \textcolor{keywordflow}{if}(gbRxGetLength == 0)
+00177                     \hyperlink{a00004_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{gbCommStatus} = COMM\_RXTIMEOUT;
+00178                 \textcolor{keywordflow}{else}
+00179                     \hyperlink{a00004_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{gbCommStatus} = COMM\_RXCORRUPT;
+00180                 \hyperlink{a00004_ad10e0e49f5fef04bf789a89c14cc470a}{giBusUsing} = 0;
+00181                 \textcolor{keywordflow}{return};
+00182             \}
+00183             \hyperlink{a00004_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{gbCommStatus} = COMM\_RXWAITING;
+00184             \textcolor{comment}{//return;           }
+00185         \}
+00186         \textcolor{keywordflow}{else}
+00187         \{
+00188             \textcolor{keywordflow}{break};
+00189         \}
+00190     \}
+00191 
+00192     \textcolor{comment}{// Find packet header}
+00193     \textcolor{keywordflow}{for}( i=0; i<(gbRxGetLength-1); i++ )
+00194     \{
+00195         \textcolor{keywordflow}{if}( \hyperlink{a00004_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gbStatusPacket}[i] == 0xff && \hyperlink{a00004_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gbStatusPacket}[i+1] == 0xff )
+00196             \textcolor{keywordflow}{break};
+00197         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( i == gbRxGetLength-2 && \hyperlink{a00004_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gbStatusPacket}[gbRxGetLength-1] == 0xff )
+00198             \textcolor{keywordflow}{break};
+00199         \textcolor{keywordflow}{else} \{
+00200             \hyperlink{a00004_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{gbCommStatus} = COMM\_RXCORRUPT;
+00201             \textcolor{keywordflow}{return};
+00202         \}
+00203     \}
+00204 
+00205     \textcolor{keywordflow}{if}( i > 0 )
+00206     \{
+00207         \textcolor{keywordflow}{for}( j=0; j<(gbRxGetLength-i); j++ )
+00208             \hyperlink{a00004_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gbStatusPacket}[j] = \hyperlink{a00004_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gbStatusPacket}[j + i];
+00209             
+00210         gbRxGetLength -= i;     
+00211     \}
+00212 
+00213     \textcolor{comment}{// Check id pairing}
+00214     \textcolor{keywordflow}{if}( \hyperlink{a00004_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[PRT1\_PKT\_ID] != \hyperlink{a00004_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gbStatusPacket}[PRT1\_PKT\_ID])
+00215     \{
+00216         \hyperlink{a00004_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{gbCommStatus} = COMM\_RXCORRUPT;
+00217         \hyperlink{a00004_ad10e0e49f5fef04bf789a89c14cc470a}{giBusUsing} = 0;
+00218         \textcolor{keywordflow}{return};
+00219     \}
+00220     
+00221     \textcolor{comment}{// Check checksum}
+00222     \textcolor{keywordflow}{for}( i=0; i<(\hyperlink{a00004_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gbStatusPacket}[PRT1\_PKT\_LENGTH]+1); i++ )
+00223         checksum += \hyperlink{a00004_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gbStatusPacket}[i+2];
+00224     checksum = ~checksum;
+00225 
+00226     \textcolor{keywordflow}{if}( \hyperlink{a00004_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gbStatusPacket}[\hyperlink{a00004_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gbStatusPacket}[PRT1\_PKT\_LENGTH]+3] != checksum )
+00227     \{
+00228         \hyperlink{a00004_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{gbCommStatus} = COMM\_RXCORRUPT;
+00229         \hyperlink{a00004_ad10e0e49f5fef04bf789a89c14cc470a}{giBusUsing} = 0;
+00230         \textcolor{keywordflow}{return};
+00231     \}
+00232     
+00233     \hyperlink{a00004_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{gbCommStatus} = COMM\_RXSUCCESS;
+00234     \hyperlink{a00004_ad10e0e49f5fef04bf789a89c14cc470a}{giBusUsing} = 0;
+00235 \}
+\end{DoxyCode}
+\hypertarget{a00004_a067f82c21ed176e18fa224d16f3d1c5b}{}\index{dynamixel@{dynamixel}!set\+\_\+packet\+\_\+timeout@{set\+\_\+packet\+\_\+timeout}}
+\index{set\+\_\+packet\+\_\+timeout@{set\+\_\+packet\+\_\+timeout}!dynamixel@{dynamixel}}
+\subsubsection[{set\+\_\+packet\+\_\+timeout}]{\setlength{\rightskip}{0pt plus 5cm}void dynamixel\+::set\+\_\+packet\+\_\+timeout (
+\begin{DoxyParamCaption}
+\item[{int}]{Num\+Rcv\+Byte}
+\end{DoxyParamCaption}
+)}\label{a00004_a067f82c21ed176e18fa224d16f3d1c5b}
+
+
+Sets the timeout in number of received bytes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Num\+Rcv\+Byte} & Number of received bytes to do a timeout \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+00062 \{
+00063     \hyperlink{a00004_a6c6314fb7070e6fd361e57c5de17e0ec}{gdPacketStartTime} = \hyperlink{a00004_ae003cc90ada6d7b70eaa4ea9d42d4deb}{dH}.\hyperlink{a00003_a6b6b7381c45308662fc3df6e7f74bc61}{get\_curr\_time}();
+00064     \hyperlink{a00004_a9f47887864517d74955a2bc787ae4456}{gdRcvWaitTime} = (\hyperlink{a00004_a2173f25c6299da7ddb37ba3d2bf1f738}{gdByteTransTime}*(double)NumRcvByte + 2.0*LATENCY\_TIME + 2.
+      0);
+00065 \}
+\end{DoxyCode}
+\hypertarget{a00004_a125b42f776c4aac520f274074f68b591}{}\index{dynamixel@{dynamixel}!set\+\_\+packet\+\_\+timeout\+\_\+ms@{set\+\_\+packet\+\_\+timeout\+\_\+ms}}
+\index{set\+\_\+packet\+\_\+timeout\+\_\+ms@{set\+\_\+packet\+\_\+timeout\+\_\+ms}!dynamixel@{dynamixel}}
+\subsubsection[{set\+\_\+packet\+\_\+timeout\+\_\+ms}]{\setlength{\rightskip}{0pt plus 5cm}void dynamixel\+::set\+\_\+packet\+\_\+timeout\+\_\+ms (
+\begin{DoxyParamCaption}
+\item[{int}]{msec}
+\end{DoxyParamCaption}
+)}\label{a00004_a125b42f776c4aac520f274074f68b591}
+
+
+Sets the timeout in ms. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msec} & Miliseconds for the timeout \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+00068 \{
+00069     \hyperlink{a00004_a6c6314fb7070e6fd361e57c5de17e0ec}{gdPacketStartTime} = \hyperlink{a00004_ae003cc90ada6d7b70eaa4ea9d42d4deb}{dH}.\hyperlink{a00003_a6b6b7381c45308662fc3df6e7f74bc61}{get\_curr\_time}();
+00070     \hyperlink{a00004_a9f47887864517d74955a2bc787ae4456}{gdRcvWaitTime} = (double)msec;
+00071 \}
+\end{DoxyCode}
+\hypertarget{a00004_a84e24c72c3e5be866f8b28c2e5bd1d95}{}\index{dynamixel@{dynamixel}!set\+\_\+txpacket\+\_\+id@{set\+\_\+txpacket\+\_\+id}}
+\index{set\+\_\+txpacket\+\_\+id@{set\+\_\+txpacket\+\_\+id}!dynamixel@{dynamixel}}
+\subsubsection[{set\+\_\+txpacket\+\_\+id}]{\setlength{\rightskip}{0pt plus 5cm}void dynamixel\+::set\+\_\+txpacket\+\_\+id (
+\begin{DoxyParamCaption}
+\item[{int}]{id}
+\end{DoxyParamCaption}
+)}\label{a00004_a84e24c72c3e5be866f8b28c2e5bd1d95}
+
+
+Sets the sending packet I\+D. 
+
+
+\begin{DoxyCode}
+00250 \{
+00251     \hyperlink{a00004_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[PRT1\_PKT\_ID] = (\textcolor{keywordtype}{unsigned} char)\textcolor{keywordtype}{id};
+00252 \}
+\end{DoxyCode}
+\hypertarget{a00004_a209a43f983f214323b6f0a627d5e8c13}{}\index{dynamixel@{dynamixel}!set\+\_\+txpacket\+\_\+instruction@{set\+\_\+txpacket\+\_\+instruction}}
+\index{set\+\_\+txpacket\+\_\+instruction@{set\+\_\+txpacket\+\_\+instruction}!dynamixel@{dynamixel}}
+\subsubsection[{set\+\_\+txpacket\+\_\+instruction}]{\setlength{\rightskip}{0pt plus 5cm}void dynamixel\+::set\+\_\+txpacket\+\_\+instruction (
+\begin{DoxyParamCaption}
+\item[{int}]{instruction}
+\end{DoxyParamCaption}
+)}\label{a00004_a209a43f983f214323b6f0a627d5e8c13}
+
+
+Sets the sending packet instruction. 
+
+
+\begin{DoxyCode}
+00255 \{
+00256     \hyperlink{a00004_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[PRT1\_PKT\_INSTRUCTION] = (\textcolor{keywordtype}{unsigned} char)instruction;
+00257 \}
+\end{DoxyCode}
+\hypertarget{a00004_a829278f48e21c810b172eb8cab3b86de}{}\index{dynamixel@{dynamixel}!set\+\_\+txpacket\+\_\+length@{set\+\_\+txpacket\+\_\+length}}
+\index{set\+\_\+txpacket\+\_\+length@{set\+\_\+txpacket\+\_\+length}!dynamixel@{dynamixel}}
+\subsubsection[{set\+\_\+txpacket\+\_\+length}]{\setlength{\rightskip}{0pt plus 5cm}void dynamixel\+::set\+\_\+txpacket\+\_\+length (
+\begin{DoxyParamCaption}
+\item[{int}]{length}
+\end{DoxyParamCaption}
+)}\label{a00004_a829278f48e21c810b172eb8cab3b86de}
+
+
+Sets the sending packet length. 
+
+
+\begin{DoxyCode}
+00266 \{
+00267     \hyperlink{a00004_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[PRT1\_PKT\_LENGTH] = (\textcolor{keywordtype}{unsigned} char)length;
+00268 \}
+\end{DoxyCode}
+\hypertarget{a00004_a2c3d31bbbed70a69918e9972a620384b}{}\index{dynamixel@{dynamixel}!set\+\_\+txpacket\+\_\+parameter@{set\+\_\+txpacket\+\_\+parameter}}
+\index{set\+\_\+txpacket\+\_\+parameter@{set\+\_\+txpacket\+\_\+parameter}!dynamixel@{dynamixel}}
+\subsubsection[{set\+\_\+txpacket\+\_\+parameter}]{\setlength{\rightskip}{0pt plus 5cm}void dynamixel\+::set\+\_\+txpacket\+\_\+parameter (
+\begin{DoxyParamCaption}
+\item[{int}]{index, }
+\item[{int}]{value}
+\end{DoxyParamCaption}
+)}\label{a00004_a2c3d31bbbed70a69918e9972a620384b}
+
+
+Sets the sending packet parameter. 
+
+
+\begin{DoxyCode}
+00260 \{
+00261     \hyperlink{a00004_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[PRT1\_PKT\_PARAMETER0+index] = (\textcolor{keywordtype}{unsigned} char)value;
+00262 
+00263 \}
+\end{DoxyCode}
+\hypertarget{a00004_a92ea074ed1c1a9cf29e039f8c425f01a}{}\index{dynamixel@{dynamixel}!terminate@{terminate}}
+\index{terminate@{terminate}!dynamixel@{dynamixel}}
+\subsubsection[{terminate}]{\setlength{\rightskip}{0pt plus 5cm}int dynamixel\+::terminate (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{a00004_a92ea074ed1c1a9cf29e039f8c425f01a}
+
+
+Closes the comunication. 
+
+
+\begin{DoxyCode}
+00043 \{
+00044     \hyperlink{a00004_ae003cc90ada6d7b70eaa4ea9d42d4deb}{dH}.\hyperlink{a00003_a250fd7e4acabf54d0733551a13e89a2d}{close}();
+00045     \textcolor{keywordflow}{return} 0;
+00046 \}
+\end{DoxyCode}
+\hypertarget{a00004_a479187cd8940c16dd4374eb5be22b888}{}\index{dynamixel@{dynamixel}!tx\+\_\+packet@{tx\+\_\+packet}}
+\index{tx\+\_\+packet@{tx\+\_\+packet}!dynamixel@{dynamixel}}
+\subsubsection[{tx\+\_\+packet}]{\setlength{\rightskip}{0pt plus 5cm}void dynamixel\+::tx\+\_\+packet (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{a00004_a479187cd8940c16dd4374eb5be22b888}
+
+
+Sends a packet. 
+
+
+\begin{DoxyCode}
+00082 \{
+00083     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} pkt\_idx = 0;
+00084     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} TxNumByte, RealTxNumByte;
+00085     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} checksum = 0;
+00086 
+00087     \textcolor{keywordflow}{if}( \hyperlink{a00004_ad10e0e49f5fef04bf789a89c14cc470a}{giBusUsing} == 1 )
+00088     \{
+00089         \hyperlink{a00004_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{gbCommStatus} = COMM\_TXFAIL;
+00090         \textcolor{keywordflow}{return};
+00091     \}
+00092     
+00093     \hyperlink{a00004_ad10e0e49f5fef04bf789a89c14cc470a}{giBusUsing} = 1;
+00094     
+00095     \textcolor{keywordflow}{if}( \hyperlink{a00004_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[PRT1\_PKT\_INSTRUCTION] != INST\_PING
+00096         && \hyperlink{a00004_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[PRT1\_PKT\_INSTRUCTION] != INST\_READ
+00097         && \hyperlink{a00004_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[PRT1\_PKT\_INSTRUCTION] != INST\_WRITE
+00098         && \hyperlink{a00004_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[PRT1\_PKT\_INSTRUCTION] != INST\_REG\_WRITE
+00099         && \hyperlink{a00004_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[PRT1\_PKT\_INSTRUCTION] != INST\_ACTION
+00100         && \hyperlink{a00004_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[PRT1\_PKT\_INSTRUCTION] != INST\_RESET
+00101         && \hyperlink{a00004_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[PRT1\_PKT\_INSTRUCTION] != INST\_SYNC\_WRITE )
+00102     \{
+00103         \hyperlink{a00004_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{gbCommStatus} = COMM\_TXERROR;
+00104         \hyperlink{a00004_ad10e0e49f5fef04bf789a89c14cc470a}{giBusUsing} = 0;
+00105         \textcolor{keywordflow}{return};
+00106     \}
+00107     
+00108     \hyperlink{a00004_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[0] = 0xff;
+00109     \hyperlink{a00004_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[1] = 0xff;
+00110     \textcolor{keywordflow}{for}( pkt\_idx = 0; pkt\_idx < (\hyperlink{a00004_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[PRT1\_PKT\_LENGTH]+1); pkt\_idx++ )
+00111         checksum += \hyperlink{a00004_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[pkt\_idx+2];
+00112     \hyperlink{a00004_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[\hyperlink{a00004_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[PRT1\_PKT\_LENGTH]+3] = ~
+      checksum;
 00113     
-00114     \hyperlink{a00004_a97f8ecc7ecb930b796178cef7b975013}{\_sT}.\hyperlink{a00007_a8497ea56991b620981ce1fbf53d9ebdb}{setData}(\hyperlink{a00004_a20f66f574ed4c96d8dfc0013e1095f15}{\_axisV}, \hyperlink{a00004_a519ae4630572cb63fbd04bce12fe8e77}{\_butsV});
-00115     QVector<ServoThread::Servo> servo(\hyperlink{a00004_a97f8ecc7ecb930b796178cef7b975013}{\_sT}.\hyperlink{a00007_a5fd8ef13314428f5ba7646730cc58f1c}{getServosInfo}());
-00116     
-00117     \textcolor{comment}{// TODO: Finish update function}
-00118 \}
+00114     \textcolor{comment}{//if( gbCommStatus == COMM\_RXTIMEOUT || gbCommStatus == COMM\_RXCORRUPT )}
+00115     \textcolor{comment}{//  dH.clear();}
+00116 
+00117     \hyperlink{a00004_ae003cc90ada6d7b70eaa4ea9d42d4deb}{dH}.\hyperlink{a00003_a004eedde5af69219d7288ec8ea97c89f}{clear}();
+00118 
+00119     TxNumByte = gbInstructionPacket[PRT1\_PKT\_LENGTH] + 4;
+00120     RealTxNumByte = \hyperlink{a00004_ae003cc90ada6d7b70eaa4ea9d42d4deb}{dH}.\hyperlink{a00003_a90106970438fb0ab65852730a1c0776a}{write}( gbInstructionPacket, TxNumByte );
+00121 
+00122     \textcolor{keywordflow}{if}( TxNumByte != RealTxNumByte )
+00123     \{
+00124         \hyperlink{a00004_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{gbCommStatus} = COMM\_TXFAIL;
+00125         \hyperlink{a00004_ad10e0e49f5fef04bf789a89c14cc470a}{giBusUsing} = 0;
+00126         \textcolor{keywordflow}{return};
+00127     \}
+00128 
+00129     \textcolor{keywordflow}{if}( gbInstructionPacket[PRT1\_PKT\_INSTRUCTION] == INST\_READ )
+00130     \{
+00131         \hyperlink{a00004_a333686e1b5903d16c41df8172b6bd5a8}{gbRxPacketLength} =  gbInstructionPacket[PRT1\_PKT\_PARAMETER0+1] + 6;
+00132         \hyperlink{a00004_a067f82c21ed176e18fa224d16f3d1c5b}{set\_packet\_timeout}( gbInstructionPacket[PRT1\_PKT\_PARAMETER0+1] + 6 );
+00133     \}
+00134     \textcolor{keywordflow}{else}
+00135     \{
+00136         \hyperlink{a00004_a333686e1b5903d16c41df8172b6bd5a8}{gbRxPacketLength} = 6;
+00137         \hyperlink{a00004_a067f82c21ed176e18fa224d16f3d1c5b}{set\_packet\_timeout}( 6 );
+00138     \}
+00139 
+00140     \hyperlink{a00004_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{gbCommStatus} = COMM\_TXSUCCESS;
+00141 \}
+\end{DoxyCode}
+\hypertarget{a00004_aebfc569c6b1eb0b98f8c385f0f921fc0}{}\index{dynamixel@{dynamixel}!txrx\+\_\+packet@{txrx\+\_\+packet}}
+\index{txrx\+\_\+packet@{txrx\+\_\+packet}!dynamixel@{dynamixel}}
+\subsubsection[{txrx\+\_\+packet}]{\setlength{\rightskip}{0pt plus 5cm}void dynamixel\+::txrx\+\_\+packet (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{a00004_aebfc569c6b1eb0b98f8c385f0f921fc0}
+
+
+Sends and receives a packet. 
+
+
+\begin{DoxyCode}
+00238 \{
+00239     \hyperlink{a00004_a479187cd8940c16dd4374eb5be22b888}{tx\_packet}();
+00240 
+00241     \textcolor{keywordflow}{if}( \hyperlink{a00004_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{gbCommStatus} != COMM\_TXSUCCESS )
+00242         \textcolor{keywordflow}{return}; 
+00243     
+00244     
+00245     \hyperlink{a00004_aa26d2d2dff768563a1cb1480aa061608}{rx\_packet}();
+00246 \}
+\end{DoxyCode}
+\hypertarget{a00004_a66c1e32cc45dd46d329f1fc212e46a3d}{}\index{dynamixel@{dynamixel}!write\+\_\+byte@{write\+\_\+byte}}
+\index{write\+\_\+byte@{write\+\_\+byte}!dynamixel@{dynamixel}}
+\subsubsection[{write\+\_\+byte}]{\setlength{\rightskip}{0pt plus 5cm}void dynamixel\+::write\+\_\+byte (
+\begin{DoxyParamCaption}
+\item[{int}]{id, }
+\item[{int}]{address, }
+\item[{int}]{value}
+\end{DoxyParamCaption}
+)}\label{a00004_a66c1e32cc45dd46d329f1fc212e46a3d}
+
+
+Writes a byte to the selected I\+D at the selected address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Selects the I\+D to write the byte \\
+\hline
+{\em address} & Selects the address to write the byte \\
+\hline
+{\em value} & Value to set at the selected location \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+00320 \{
+00321     \textcolor{keywordflow}{while}(\hyperlink{a00004_ad10e0e49f5fef04bf789a89c14cc470a}{giBusUsing});
+00322 
+00323     \hyperlink{a00004_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[PRT1\_PKT\_ID] = (\textcolor{keywordtype}{unsigned} char)\textcolor{keywordtype}{id};
+00324     \hyperlink{a00004_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[PRT1\_PKT\_INSTRUCTION] = INST\_WRITE;
+00325     \hyperlink{a00004_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[PRT1\_PKT\_PARAMETER0+0] = (\textcolor{keywordtype}{unsigned} char)address;
+00326     \hyperlink{a00004_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[PRT1\_PKT\_PARAMETER0+1] = (\textcolor{keywordtype}{unsigned} char)value;
+00327     \hyperlink{a00004_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[PRT1\_PKT\_LENGTH] = 4;
+00328     
+00329     \hyperlink{a00004_aebfc569c6b1eb0b98f8c385f0f921fc0}{txrx\_packet}();
+00330 \}
+\end{DoxyCode}
+\hypertarget{a00004_a925f62ce5e261e5ef4fe6dc46bdc7c63}{}\index{dynamixel@{dynamixel}!write\+\_\+word@{write\+\_\+word}}
+\index{write\+\_\+word@{write\+\_\+word}!dynamixel@{dynamixel}}
+\subsubsection[{write\+\_\+word}]{\setlength{\rightskip}{0pt plus 5cm}void dynamixel\+::write\+\_\+word (
+\begin{DoxyParamCaption}
+\item[{int}]{id, }
+\item[{int}]{address, }
+\item[{int}]{value}
+\end{DoxyParamCaption}
+)}\label{a00004_a925f62ce5e261e5ef4fe6dc46bdc7c63}
+
+
+Writes a word to the selected I\+D at the selected address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Selects the I\+D to write the word \\
+\hline
+{\em address} & Selects the address to write the word \\
+\hline
+{\em value} & Value to set at the selected location \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+00348 \{
+00349     \textcolor{keywordflow}{while}(\hyperlink{a00004_ad10e0e49f5fef04bf789a89c14cc470a}{giBusUsing});
+00350 
+00351     \hyperlink{a00004_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[PRT1\_PKT\_ID] = (\textcolor{keywordtype}{unsigned} char)\textcolor{keywordtype}{id};
+00352     \hyperlink{a00004_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[PRT1\_PKT\_INSTRUCTION] = INST\_WRITE;
+00353     \hyperlink{a00004_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[PRT1\_PKT\_PARAMETER0+0] = (\textcolor{keywordtype}{unsigned} char)address;
+00354     \hyperlink{a00004_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[PRT1\_PKT\_PARAMETER0+1] = (\textcolor{keywordtype}{unsigned} char)LOBYTE(value);
+00355     \hyperlink{a00004_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[PRT1\_PKT\_PARAMETER0+2] = (\textcolor{keywordtype}{unsigned} char)HIBYTE(value);
+00356     \hyperlink{a00004_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[PRT1\_PKT\_LENGTH] = 5;
+00357     
+00358     \hyperlink{a00004_aebfc569c6b1eb0b98f8c385f0f921fc0}{txrx\_packet}();
+00359 \}
 \end{DoxyCode}
 
 
 \subsection{Member Data Documentation}
-\hypertarget{a00004_a30c99d7a544f74b0650758e5cc7ead5a}{}\index{Main\+Window@{Main\+Window}!\+\_\+axis@{\+\_\+axis}}
-\index{\+\_\+axis@{\+\_\+axis}!Main\+Window@{Main\+Window}}
-\subsubsection[{\+\_\+axis}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Vector$<$ Q\+Label $\ast$$>$ Main\+Window\+::\+\_\+axis\hspace{0.3cm}{\ttfamily [private]}}\label{a00004_a30c99d7a544f74b0650758e5cc7ead5a}
+\hypertarget{a00004_ae003cc90ada6d7b70eaa4ea9d42d4deb}{}\index{dynamixel@{dynamixel}!d\+H@{d\+H}}
+\index{d\+H@{d\+H}!dynamixel@{dynamixel}}
+\subsubsection[{d\+H}]{\setlength{\rightskip}{0pt plus 5cm}{\bf dxl\+\_\+hal} dynamixel\+::d\+H\hspace{0.3cm}{\ttfamily [private]}}\label{a00004_ae003cc90ada6d7b70eaa4ea9d42d4deb}
 
 
-Handles all the axis labels. 
+Conains the serial port comunication. 
 
-\hypertarget{a00004_a20f66f574ed4c96d8dfc0013e1095f15}{}\index{Main\+Window@{Main\+Window}!\+\_\+axis\+V@{\+\_\+axis\+V}}
-\index{\+\_\+axis\+V@{\+\_\+axis\+V}!Main\+Window@{Main\+Window}}
-\subsubsection[{\+\_\+axis\+V}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Vector$<$ float $>$ Main\+Window\+::\+\_\+axis\+V\hspace{0.3cm}{\ttfamily [private]}}\label{a00004_a20f66f574ed4c96d8dfc0013e1095f15}
-
-
-Contains the axis value;. 
-
-\hypertarget{a00004_a8eaf474e1b8672f32873ed009e28ce8a}{}\index{Main\+Window@{Main\+Window}!\+\_\+buts@{\+\_\+buts}}
-\index{\+\_\+buts@{\+\_\+buts}!Main\+Window@{Main\+Window}}
-\subsubsection[{\+\_\+buts}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Vector$<$ Q\+Label $\ast$$>$ Main\+Window\+::\+\_\+buts\hspace{0.3cm}{\ttfamily [private]}}\label{a00004_a8eaf474e1b8672f32873ed009e28ce8a}
+\hypertarget{a00004_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{}\index{dynamixel@{dynamixel}!gb\+Comm\+Status@{gb\+Comm\+Status}}
+\index{gb\+Comm\+Status@{gb\+Comm\+Status}!dynamixel@{dynamixel}}
+\subsubsection[{gb\+Comm\+Status}]{\setlength{\rightskip}{0pt plus 5cm}int dynamixel\+::gb\+Comm\+Status = C\+O\+M\+M\+\_\+\+R\+X\+S\+U\+C\+C\+E\+S\+S\hspace{0.3cm}{\ttfamily [private]}}\label{a00004_a5b603f6bed7ccc595f1f50bd6a6ebbfc}
 
 
-Handles all the button labels. 
+Current communication status. 
 
-\hypertarget{a00004_a519ae4630572cb63fbd04bce12fe8e77}{}\index{Main\+Window@{Main\+Window}!\+\_\+buts\+V@{\+\_\+buts\+V}}
-\index{\+\_\+buts\+V@{\+\_\+buts\+V}!Main\+Window@{Main\+Window}}
-\subsubsection[{\+\_\+buts\+V}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Vector$<$ bool $>$ Main\+Window\+::\+\_\+buts\+V\hspace{0.3cm}{\ttfamily [private]}}\label{a00004_a519ae4630572cb63fbd04bce12fe8e77}
-
-
-Handles all buttons values. 
-
-\hypertarget{a00004_aaccbe653019df03668429890e325ac21}{}\index{Main\+Window@{Main\+Window}!\+\_\+data\+P@{\+\_\+data\+P}}
-\index{\+\_\+data\+P@{\+\_\+data\+P}!Main\+Window@{Main\+Window}}
-\subsubsection[{\+\_\+data\+P}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Main\+Window\+::\+\_\+data\+P\hspace{0.3cm}{\ttfamily [private]}}\label{a00004_aaccbe653019df03668429890e325ac21}
+\hypertarget{a00004_afd94dcf01b8e96298727776e222de722}{}\index{dynamixel@{dynamixel}!gb\+Instruction\+Packet@{gb\+Instruction\+Packet}}
+\index{gb\+Instruction\+Packet@{gb\+Instruction\+Packet}!dynamixel@{dynamixel}}
+\subsubsection[{gb\+Instruction\+Packet}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char dynamixel\+::gb\+Instruction\+Packet\mbox{[}M\+A\+X\+N\+U\+M\+\_\+\+T\+X\+P\+A\+C\+K\+E\+T\mbox{]} = \{0\}\hspace{0.3cm}{\ttfamily [private]}}\label{a00004_afd94dcf01b8e96298727776e222de722}
 
 
-Contains the path to the data location. 
+Contains all the instructions. 
 
-\hypertarget{a00004_a282d4090e96c676578c4336391b1af08}{}\index{Main\+Window@{Main\+Window}!\+\_\+j\+Axis\+X@{\+\_\+j\+Axis\+X}}
-\index{\+\_\+j\+Axis\+X@{\+\_\+j\+Axis\+X}!Main\+Window@{Main\+Window}}
-\subsubsection[{\+\_\+j\+Axis\+X}]{\setlength{\rightskip}{0pt plus 5cm}int Main\+Window\+::\+\_\+j\+Axis\+X = -\/1\hspace{0.3cm}{\ttfamily [private]}}\label{a00004_a282d4090e96c676578c4336391b1af08}
-
-
-Axis for the X value. 
-
-\hypertarget{a00004_aaaced09ce813bbcac92047f5ef39f182}{}\index{Main\+Window@{Main\+Window}!\+\_\+j\+Axis\+Y@{\+\_\+j\+Axis\+Y}}
-\index{\+\_\+j\+Axis\+Y@{\+\_\+j\+Axis\+Y}!Main\+Window@{Main\+Window}}
-\subsubsection[{\+\_\+j\+Axis\+Y}]{\setlength{\rightskip}{0pt plus 5cm}int Main\+Window\+::\+\_\+j\+Axis\+Y = -\/1\hspace{0.3cm}{\ttfamily [private]}}\label{a00004_aaaced09ce813bbcac92047f5ef39f182}
+\hypertarget{a00004_a9d590ce24791d111c2db9b66be1e046d}{}\index{dynamixel@{dynamixel}!gb\+Rx\+Get\+Length@{gb\+Rx\+Get\+Length}}
+\index{gb\+Rx\+Get\+Length@{gb\+Rx\+Get\+Length}!dynamixel@{dynamixel}}
+\subsubsection[{gb\+Rx\+Get\+Length}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int dynamixel\+::gb\+Rx\+Get\+Length = 0\hspace{0.3cm}{\ttfamily [private]}}\label{a00004_a9d590ce24791d111c2db9b66be1e046d}
 
 
-Axis for the Y value. 
+Temporal length from the received packet. 
 
-\hypertarget{a00004_a18cc17eff4ff04ee0aae07c609e82d33}{}\index{Main\+Window@{Main\+Window}!\+\_\+j\+Axis\+Z@{\+\_\+j\+Axis\+Z}}
-\index{\+\_\+j\+Axis\+Z@{\+\_\+j\+Axis\+Z}!Main\+Window@{Main\+Window}}
-\subsubsection[{\+\_\+j\+Axis\+Z}]{\setlength{\rightskip}{0pt plus 5cm}int Main\+Window\+::\+\_\+j\+Axis\+Z = -\/1\hspace{0.3cm}{\ttfamily [private]}}\label{a00004_a18cc17eff4ff04ee0aae07c609e82d33}
-
-
-A\+Xis for the Z value. 
-
-\hypertarget{a00004_a671f35800890e518713e1946671d8730}{}\index{Main\+Window@{Main\+Window}!\+\_\+joy@{\+\_\+joy}}
-\index{\+\_\+joy@{\+\_\+joy}!Main\+Window@{Main\+Window}}
-\subsubsection[{\+\_\+joy}]{\setlength{\rightskip}{0pt plus 5cm}X\+Joystick Main\+Window\+::\+\_\+joy\hspace{0.3cm}{\ttfamily [private]}}\label{a00004_a671f35800890e518713e1946671d8730}
+\hypertarget{a00004_a333686e1b5903d16c41df8172b6bd5a8}{}\index{dynamixel@{dynamixel}!gb\+Rx\+Packet\+Length@{gb\+Rx\+Packet\+Length}}
+\index{gb\+Rx\+Packet\+Length@{gb\+Rx\+Packet\+Length}!dynamixel@{dynamixel}}
+\subsubsection[{gb\+Rx\+Packet\+Length}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int dynamixel\+::gb\+Rx\+Packet\+Length = 0\hspace{0.3cm}{\ttfamily [private]}}\label{a00004_a333686e1b5903d16c41df8172b6bd5a8}
 
 
-To handle the joystick. 
+Received packet length. 
 
-\hypertarget{a00004_a97f8ecc7ecb930b796178cef7b975013}{}\index{Main\+Window@{Main\+Window}!\+\_\+s\+T@{\+\_\+s\+T}}
-\index{\+\_\+s\+T@{\+\_\+s\+T}!Main\+Window@{Main\+Window}}
-\subsubsection[{\+\_\+s\+T}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Servo\+Thread} Main\+Window\+::\+\_\+s\+T\hspace{0.3cm}{\ttfamily [private]}}\label{a00004_a97f8ecc7ecb930b796178cef7b975013}
-
-
-Contains the thread controlling all the servos and external hardware. 
-
-\hypertarget{a00004_a254b03b878cfda75c1c411a2f8568d33}{}\index{Main\+Window@{Main\+Window}!\+\_\+timer@{\+\_\+timer}}
-\index{\+\_\+timer@{\+\_\+timer}!Main\+Window@{Main\+Window}}
-\subsubsection[{\+\_\+timer}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Timer Main\+Window\+::\+\_\+timer\hspace{0.3cm}{\ttfamily [private]}}\label{a00004_a254b03b878cfda75c1c411a2f8568d33}
+\hypertarget{a00004_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{}\index{dynamixel@{dynamixel}!gb\+Status\+Packet@{gb\+Status\+Packet}}
+\index{gb\+Status\+Packet@{gb\+Status\+Packet}!dynamixel@{dynamixel}}
+\subsubsection[{gb\+Status\+Packet}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char dynamixel\+::gb\+Status\+Packet\mbox{[}M\+A\+X\+N\+U\+M\+\_\+\+R\+X\+P\+A\+C\+K\+E\+T\mbox{]} = \{0\}\hspace{0.3cm}{\ttfamily [private]}}\label{a00004_aa57c86d3bbbeaf5c9d4f6bd00376b04f}
 
 
-To update the joystick value. 
+Contains the status. 
 
-\hypertarget{a00004_a42c44af9c0eebc33f4e81f02e15b0461}{}\index{Main\+Window@{Main\+Window}!a\+S\+Count@{a\+S\+Count}}
-\index{a\+S\+Count@{a\+S\+Count}!Main\+Window@{Main\+Window}}
-\subsubsection[{a\+S\+Count}]{\setlength{\rightskip}{0pt plus 5cm}const int Main\+Window\+::a\+S\+Count = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\label{a00004_a42c44af9c0eebc33f4e81f02e15b0461}
-
-
-Contains the number of additional servos used. 
-
-\hypertarget{a00004_a646727b1c45c72638325adfd460649c0}{}\index{Main\+Window@{Main\+Window}!s\+Count@{s\+Count}}
-\index{s\+Count@{s\+Count}!Main\+Window@{Main\+Window}}
-\subsubsection[{s\+Count}]{\setlength{\rightskip}{0pt plus 5cm}const int Main\+Window\+::s\+Count = 3\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\label{a00004_a646727b1c45c72638325adfd460649c0}
+\hypertarget{a00004_a2173f25c6299da7ddb37ba3d2bf1f738}{}\index{dynamixel@{dynamixel}!gd\+Byte\+Trans\+Time@{gd\+Byte\+Trans\+Time}}
+\index{gd\+Byte\+Trans\+Time@{gd\+Byte\+Trans\+Time}!dynamixel@{dynamixel}}
+\subsubsection[{gd\+Byte\+Trans\+Time}]{\setlength{\rightskip}{0pt plus 5cm}double dynamixel\+::gd\+Byte\+Trans\+Time = 0.\+0\hspace{0.3cm}{\ttfamily [private]}}\label{a00004_a2173f25c6299da7ddb37ba3d2bf1f738}
 
 
-Contains the number of minimun servos to work. 
+Byte transmission time. 
 
-\hypertarget{a00004_a35466a70ed47252a0191168126a352a5}{}\index{Main\+Window@{Main\+Window}!ui@{ui}}
-\index{ui@{ui}!Main\+Window@{Main\+Window}}
-\subsubsection[{ui}]{\setlength{\rightskip}{0pt plus 5cm}Ui\+::\+Main\+Window$\ast$ Main\+Window\+::ui\hspace{0.3cm}{\ttfamily [private]}}\label{a00004_a35466a70ed47252a0191168126a352a5}
+\hypertarget{a00004_a6c6314fb7070e6fd361e57c5de17e0ec}{}\index{dynamixel@{dynamixel}!gd\+Packet\+Start\+Time@{gd\+Packet\+Start\+Time}}
+\index{gd\+Packet\+Start\+Time@{gd\+Packet\+Start\+Time}!dynamixel@{dynamixel}}
+\subsubsection[{gd\+Packet\+Start\+Time}]{\setlength{\rightskip}{0pt plus 5cm}double dynamixel\+::gd\+Packet\+Start\+Time = 0.\+0\hspace{0.3cm}{\ttfamily [private]}}\label{a00004_a6c6314fb7070e6fd361e57c5de17e0ec}
 
 
-Contains the user interface. 
+Packet start time. 
+
+\hypertarget{a00004_a9f47887864517d74955a2bc787ae4456}{}\index{dynamixel@{dynamixel}!gd\+Rcv\+Wait\+Time@{gd\+Rcv\+Wait\+Time}}
+\index{gd\+Rcv\+Wait\+Time@{gd\+Rcv\+Wait\+Time}!dynamixel@{dynamixel}}
+\subsubsection[{gd\+Rcv\+Wait\+Time}]{\setlength{\rightskip}{0pt plus 5cm}double dynamixel\+::gd\+Rcv\+Wait\+Time = 0.\+0\hspace{0.3cm}{\ttfamily [private]}}\label{a00004_a9f47887864517d74955a2bc787ae4456}
+
+
+Receive wait time. 
+
+\hypertarget{a00004_ad10e0e49f5fef04bf789a89c14cc470a}{}\index{dynamixel@{dynamixel}!gi\+Bus\+Using@{gi\+Bus\+Using}}
+\index{gi\+Bus\+Using@{gi\+Bus\+Using}!dynamixel@{dynamixel}}
+\subsubsection[{gi\+Bus\+Using}]{\setlength{\rightskip}{0pt plus 5cm}int dynamixel\+::gi\+Bus\+Using = 0\hspace{0.3cm}{\ttfamily [private]}}\label{a00004_ad10e0e49f5fef04bf789a89c14cc470a}
+
+
+True if the bus if being used. 
 
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-\hyperlink{a00016}{mainwindow.\+h}\item 
-\hyperlink{a00015}{mainwindow.\+cpp}\end{DoxyCompactItemize}
+dxl/\hyperlink{a00014}{dynamixel.\+h}\item 
+dxl/\hyperlink{a00013}{dynamixel.\+cpp}\end{DoxyCompactItemize}
