@@ -186,6 +186,8 @@ public class Editor : MonoBehaviour {
 						
 				}
 		else {
+						if (selectedExists) selected.GetComponentInChildren<Renderer>().material.color = lastColor;
+						selectedExists = false;
 						Time.timeScale = timescale;
 						GameObject.FindGameObjectWithTag("Pause").GetComponentInChildren <Text>().text = "Pause";
 						lastMode = mode;
