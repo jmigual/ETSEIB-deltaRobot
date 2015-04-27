@@ -99,6 +99,9 @@ public:
     /// Initialization constructor
     dynamixel(QString port_num, int baud_rate = 1000000);
     
+    /// Default destructor
+    ~dynamixel() { dH.close(); }
+    
     /// True if the port is open
     inline bool isOpen() { return dH.isOpen(); }
 

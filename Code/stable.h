@@ -25,6 +25,7 @@
 #ifdef __cplusplus
 
 #include <QApplication>
+#include <QElapsedTimer>
 #include <QDebug>
 #include <QDir>
 #include <QDialog>

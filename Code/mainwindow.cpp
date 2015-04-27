@@ -50,7 +50,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->joyButs->hide();
     ui->line->hide();
     
-    
     // Creating data Path    
     _dataP = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
     QDir dir(_dataP);
@@ -112,12 +111,16 @@ void MainWindow::joyChanged()
 
 void MainWindow::on_actionOptions_triggered()
 {
+    _sT.pause();
+    
     OptionsWindow o(_joy, &_sT, _jAxisX, _jAxisY, _jAxisZ, this);
-    o.exec();
     
     connect(this, SIGNAL(joystickChanged()), &o, SLOT(joystickChanged()));
     
-    if (o.result()) o.storeData();
+    if (o.exec()) {
+        o.storeData();
+        this->write();
+    }
 }
 
 void MainWindow::update()
@@ -136,6 +139,7 @@ void MainWindow::update()
     }
     
     _sT.setData(_axisV, _butsV);
+    
     QVector<ServoThread::Servo> servo(_sT.getServosInfo());
     
     // Updating position sliders

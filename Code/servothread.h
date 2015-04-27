@@ -69,9 +69,6 @@ public:
         wait();
     }
     
-    /// Loads the data from the selected file
-    void load(QString &file);
-    
     /// Pauses the execution
     inline void pause()
     {
@@ -217,8 +214,10 @@ private:
     const double sin60 = sqrt(3)/2; ///< Contains the sinus of 60
     const double a = 17.233;        ///< The arm length
     const double b = 22.648;        ///< The forearm length
-    const double L1 = 6.000;        ///< The clamp center lenght
-    const double L2 = 6.374;        ///< The support center length
+    const double L1 = 6.374;        ///< The base center length
+    const double L2 = 6.000;        ///< The clamp support center lenght
+    
+    const int _sNum = 4;            ///< Number of servos to manage
     
     /// Contains the axis value
     QVector < float > _axis;
@@ -258,9 +257,6 @@ private:
     
     /// Contains the servos information
     QVector< Servo > _servos;
-    
-    /// Number of servos to manage
-    const int _sNum = 4;
     
     /// Contains the selected com port used in the comunication with servos
     QString _sPort;

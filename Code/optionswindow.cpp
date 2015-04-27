@@ -46,12 +46,18 @@ OptionsWindow::OptionsWindow(XJoystick &J, ServoThread *servo, int &aX,
     ui->servo2->addItem("None", -1);
     ui->servo3->addItem("None", -1);
     
-    this->on_servoRefresh_clicked();
+    // Obtaining Servo Port information
+    QString port;
+    int baud;
+    _servo->getServoPortInfo(port, baud);
+    ui->baudRS->setValue(baud);
+    ui->portS->addItem("", port);
 }
 
 OptionsWindow::~OptionsWindow()
 {
     delete ui;
+    
 }
 
 void OptionsWindow::storeData()
@@ -73,6 +79,8 @@ void OptionsWindow::storeData()
     if (ui->servo1->count()) sID.push_back(ui->servo1->currentData().toInt());
     if (ui->servo2->count()) sID.push_back(ui->servo2->currentData().toInt());
     if (ui->servo3->count()) sID.push_back(ui->servo3->currentData().toInt());
+    
+    _servo->setSID(sID);
 }
 
 void OptionsWindow::joystickChanged()
@@ -147,11 +155,17 @@ void OptionsWindow::on_servoRefresh_clicked()
     ui->servo2->clear();
     ui->servo3->clear();
     
+    ui->servo0->addItem("None", -1);
+    ui->servo1->addItem("None", -1);
+    ui->servo2->addItem("None", -1);
+    ui->servo3->addItem("None", -1);
+    
     int index = 0;
     int p0 = 0, p1 = 0, p2 = 0, p3 = 0;
     
-    for (int i = 0; i <= MAX_ID; ++i) {
+    for (int i = 0; i <= MAX_ID/2; ++i) {
         dxl.ping(i);
+        ui->progressBar->setValue((i*100)/(MAX_ID/2));
         if (dxl.get_comm_result() == COMM_RXSUCCESS) {
             if (i == s0) p0 = index;
             if (i == s1) p1 = index;
@@ -166,7 +180,7 @@ void OptionsWindow::on_servoRefresh_clicked()
             ++index;
         }
     }
-    
+
     ui->servo0->setCurrentIndex(p0);
     ui->servo1->setCurrentIndex(p1);
     ui->servo2->setCurrentIndex(p2);

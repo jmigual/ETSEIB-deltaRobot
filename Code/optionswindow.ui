@@ -44,7 +44,7 @@
      <item>
       <widget class="QStackedWidget" name="stack">
        <property name="currentIndex">
-        <number>1</number>
+        <number>0</number>
        </property>
        <widget class="QWidget" name="joystick">
         <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -271,17 +271,14 @@
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout_33">
            <item>
-            <spacer name="horizontalSpacer_5">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
+            <widget class="QProgressBar" name="progressBar">
+             <property name="maximum">
+              <number>100</number>
              </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>40</width>
-               <height>20</height>
-              </size>
+             <property name="value">
+              <number>0</number>
              </property>
-            </spacer>
+            </widget>
            </item>
            <item>
             <widget class="QPushButton" name="servoRefresh">

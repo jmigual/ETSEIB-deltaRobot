@@ -16,7 +16,7 @@ ServoThread::ServoThread() :
     _sPortChanged(false),
     _sSpeed(60)
 {
-    
+    for (Servo &s : _servos) s.ID = -1;
 }
 
 ServoThread::~ServoThread()
@@ -27,27 +27,6 @@ ServoThread::~ServoThread()
     _mutex.unlock();
     
     wait();
-}
-
-void ServoThread::load(QString &file)
-{
-    _mutex.lock();
-    QFile f(file);
-    f.open(QIODevice::ReadOnly);
-    QDataStream df(&f);
-    
-    int ver;
-    df >> ver;
-    if (ver == Version::v_1_0) {
-        int n;
-        df >> _cBaud >> _cPort >> _sBaud >> _sPort >> n;
-        
-        _servos.resize(n);
-        for (Servo &s : _servos) df >> s.ID;
-        _dChanged = true;
-    }
-    else qWarning() << "Not a valid file";    
-    _mutex.unlock();
 }
 
 void ServoThread::read(QString file)
@@ -131,20 +110,30 @@ void ServoThread::run()
     
     _mutex.unlock();
     dynamixel dxl(sPort, sBaud);
-    QVector< AX12 > S(_servos.size());    
+    QVector< AX12 > A(_servos.size());    
     
     for (int i = 0; i < S.size(); ++i) {
         S[i] = AX12(&dxl);  
         S[i].setID(i);
     }
     
+    double pos0 = 0;
+    double pos = 200;
+    QVector< Servo > S;
+    
+    QElapsedTimer time;
+    int t = 0;
+    double x0 = pos0;
+    double speed = 10;
+    bool finished = false;
+    
     while (not _end) {
-        
         msleep(10);
         _mutex.lock();
         if (not _end and _pause) {
             dxl.terminate();
             _cond.wait(&_mutex);
+            time.restart();
             emit statusBar("Changed");
             dxl.initialize(sPort, sBaud);
         }        
@@ -154,10 +143,15 @@ void ServoThread::run()
                 sBaud = _sBaud;
                 dxl.terminate();
                 dxl.initialize(sPort, sBaud);
-            }   
+            }
+            for (int i = 0; i < S.size(); ++i) A[i].setID(_servos[i].ID);
         }
+        for (int i = 0; i < S.size(); ++i) 
+            _servos[i].pos = S[i].getCurrentPos();
         _dChanged = false;
         _mutex.unlock();
+        
+        setAngles();
     }
     
     dxl.terminate();
