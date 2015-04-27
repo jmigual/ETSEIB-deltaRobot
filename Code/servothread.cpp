@@ -110,22 +110,19 @@ void ServoThread::run()
     
     _mutex.unlock();
     dynamixel dxl(sPort, sBaud);
-    QVector< AX12 > A(_servos.size());    
+    QVector< AX12 > A(_sNum);    
     
-    for (int i = 0; i < S.size(); ++i) {
-        S[i] = AX12(&dxl);  
-        S[i].setID(i);
+    for (int i = 0; i < A.size(); ++i) {
+        A[i] = AX12(&dxl);  
+        A[i].setID(i);
     }
     
-    double pos0 = 0;
-    double pos = 200;
-    QVector< Servo > S;
+
+    QVector< Servo > S(_sNum);
+    double D[3];
     
     QElapsedTimer time;
-    int t = 0;
-    double x0 = pos0;
-    double speed = 10;
-    bool finished = false;
+    double x = 0;
     
     while (not _end) {
         msleep(10);
@@ -146,12 +143,19 @@ void ServoThread::run()
             }
             for (int i = 0; i < S.size(); ++i) A[i].setID(_servos[i].ID);
         }
-        for (int i = 0; i < S.size(); ++i) 
-            _servos[i].pos = S[i].getCurrentPos();
+        for (int i = 0; i < A.size(); ++i) {
+            _servos[i].pos = A[i].getCurrentPos();
+        }
         _dChanged = false;
         _mutex.unlock();
         
-        setAngles();
+        setAngles(0, x, 0, D[0], D[1], D[2]);
+        for (double &d : D) d *= 180/M_PI;
+        
+        if (x < 100) qDebug() << D[0] << D[1] << D[2];
+        
+        x += 1;
+        //for (int i = 0; i < A.size(); ++i) A[i].setGoalPosition(240 - D[i]*180/M_PI);
     }
     
     dxl.terminate();
@@ -179,7 +183,7 @@ void ServoThread::setAngles(double x0, double y0, double z0,
 
 double ServoThread::singleAngle(double x0, double y0, double z0)
 {
-    double n = b * b - a * a - z0 * z0 - x0 * x0 - y0 * y0;
+    double n = b*b - a*a - z0*z0 - x0*x0 - y0*y0;
     double raiz = sqrt (n*n*y0*y0 - 4*(x0*x0 + y0*y0)*(-x0*x0*a*a + n*n/4));
     
     if (x0 < 0) raiz *= -1;

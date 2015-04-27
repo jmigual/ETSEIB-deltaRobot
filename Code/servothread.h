@@ -8,6 +8,8 @@
 // User libraries
 #include "dxl/ax12.h"
 
+#define M_PI 3.14159265358979323846264338327d
+
 /// The ServoThread's class handles the comunication between the delta robot
 /// servos and the PC.
 class ServoThread : public QThread
