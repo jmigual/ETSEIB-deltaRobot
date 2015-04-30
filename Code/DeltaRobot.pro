@@ -38,7 +38,8 @@ SOURCES += main.cpp \
     mainwindow.cpp \
     optionswindow.cpp \
     servothread.cpp \
-    dxl/ax12.cpp
+    dxl/ax12.cpp \
+    servofind.cpp
 
 HEADERS += \
     dxl/dxl_hal.h \
@@ -47,7 +48,8 @@ HEADERS += \
     optionswindow.h \
     servothread.h \
     dxl/ax12.h \
-    stable.h
+    stable.h \
+    servofind.h
 
 FORMS += \
     mainwindow.ui \

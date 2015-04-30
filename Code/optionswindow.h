@@ -6,6 +6,7 @@
 
 // User libraries
 #include "servothread.h"
+#include "servofind.h"
 
 namespace Ui {
 class OptionsWindow;
@@ -15,6 +16,8 @@ class OptionsWindow;
 class OptionsWindow : public QDialog
 {
     Q_OBJECT
+    
+    typedef QDialogButtonBox QDB;
     
 public:
     
@@ -49,6 +52,9 @@ private slots:
     /// Refreshes all the servos connected to the port
     void on_servoRefresh_clicked();
     
+    /// Handles the endig of refresh function
+    void refreshFinish();
+    
 private:
     
     int &_jAxisX;   ///< Reference to axis for the X value
@@ -64,11 +70,22 @@ private:
     /// Pointer to the servo thread class
     ServoThread *_servo;
     
+    /// Contains all servo QComboBoxes
+    QVector< QComboBox *> _servoC;
+    
+    /// Thread to find the servos in a non blocking operation
+    ServoFind _sF;
+    
+    /// Status bar
+    QStatusBar *status;
+    
     /// Waits for a new COM port
     QTimer _timer;
     
     /// Containsh the GUI
     Ui::OptionsWindow *ui;
+    
+    void keyPressEvent(QKeyEvent *event);
 };
 
 #endif // OPTIONSWINDOW_H

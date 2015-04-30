@@ -3,10 +3,14 @@
 /// The includes are:
 /// - QAbstractButton
 /// - QApplication
+/// - QComboBox
 /// - QElapsedTimer
 /// - QDebug
-/// - QDir
 /// - QDialog
+/// - QDialogButtonBox
+/// - QDir
+/// - QFileDialog
+/// - QKeyEvent
 /// - QLabel
 /// - QMainWindow
 /// - QMutex
@@ -28,11 +32,14 @@
 
 #include <QAbstractButton>
 #include <QApplication>
+#include <QComboBox>
 #include <QElapsedTimer>
 #include <QDebug>
-#include <QDir>
 #include <QDialog>
+#include <QDialogButtonBox>
+#include <QDir>
 #include <QFileDialog>
+#include <QKeyEvent>
 #include <QLabel>
 #include <QMainWindow>
 #include <QMutex>

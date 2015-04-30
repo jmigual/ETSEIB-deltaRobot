@@ -19,6 +19,23 @@ OptionsWindow::OptionsWindow(XJoystick &J, ServoThread *servo, int &aX,
     connect(ui->buttonBox, SIGNAL(clicked(QAbstractButton*)), 
             this, SLOT(buttonClicked(QAbstractButton*)));
     
+    connect(&_sF, SIGNAL(completion(int)),
+            ui->progressBar, SLOT(setValue(int)));
+    
+    connect(&_sF, SIGNAL(finished()), this, SLOT(refreshFinish()));
+    
+    connect(&_timer, SIGNAL(timeout()), this, SLOT(events()));
+    
+    
+    // Configuring event funcion
+    _timer.setInterval(500);
+    _timer.setSingleShot(false);
+    _timer.start();
+    
+    status = new QStatusBar(this);
+    status->setContentsMargins(0, 0, 0, 0);
+    this->layout()->addWidget(status);    
+    
     QVector< QString > A(_joy.getAllAxis());
     
     // Adding joystick axis movement
@@ -37,24 +54,21 @@ OptionsWindow::OptionsWindow(XJoystick &J, ServoThread *servo, int &aX,
     // Updating joystick data
     joystickChanged();
     
-    // Configuring event funcion
-    _timer.setInterval(500);
-    _timer.setSingleShot(false);
-    _timer.start();
-    connect(&_timer, SIGNAL(timeout()), this, SLOT(events()));
-    
     // Adding servos
-    ui->servo0->addItem("None", -1);
-    ui->servo1->addItem("None", -1);
-    ui->servo2->addItem("None", -1);
-    ui->servo3->addItem("None", -1);
+    _servoC.push_back(ui->servo0);
+    _servoC.push_back(ui->servo1);
+    _servoC.push_back(ui->servo2);
+    _servoC.push_back(ui->servo3);
+    
+    for(QComboBox *s : _servoC) s->addItem("None", -1);
     
     QVector<ServoThread::Servo> S(_servo->getServosInfo());
     Q_ASSERT(S.size() == _servo->getServosNum());
-    if (S[0].ID >= 0) ui->servo0->addItem(QString::number(S[0].ID), S[0].ID);
-    if (S[1].ID >= 0) ui->servo1->addItem(QString::number(S[1].ID), S[1].ID);
-    if (S[2].ID >= 0) ui->servo2->addItem(QString::number(S[2].ID), S[2].ID);
-    if (S[3].ID >= 0) ui->servo3->addItem(QString::number(S[3].ID), S[3].ID);
+    
+    for (int i = 0; i < S.size(); ++i) {
+        int ID = S[i].ID;
+        if (ID >= 0) _servoC[i]->addItem(QString::number(ID), ID);
+    }
     
     // Obtaining Servo Port information
     QString port;
@@ -67,11 +81,13 @@ OptionsWindow::OptionsWindow(XJoystick &J, ServoThread *servo, int &aX,
 OptionsWindow::~OptionsWindow()
 {
     delete ui;
-    
+    if (_sF.isRunning()) _sF.exit();
 }
 
 void OptionsWindow::storeData()
 {
+    status->showMessage("Data Stored", 2000);
+    
     // Storing joystick data
     _joy.select(ui->joySel->currentData().toInt());
     
@@ -85,10 +101,7 @@ void OptionsWindow::storeData()
     _servo->setServoPortInfo(portS, baudS);
     
     QVector<int> sID;
-    if (ui->servo0->count()) sID.push_back(ui->servo0->currentData().toInt());
-    if (ui->servo1->count()) sID.push_back(ui->servo1->currentData().toInt());
-    if (ui->servo2->count()) sID.push_back(ui->servo2->currentData().toInt());
-    if (ui->servo3->count()) sID.push_back(ui->servo3->currentData().toInt());
+    for (QComboBox *s : _servoC) sID.push_back(s->currentData().toInt());
     
     _servo->setSID(sID);
 }
@@ -149,61 +162,36 @@ void OptionsWindow::events()
 
 void OptionsWindow::buttonClicked(QAbstractButton *but)
 {
-    QDialogButtonBox::ButtonRole role = ui->buttonBox->buttonRole(but);
+    QDB::ButtonRole role = ui->buttonBox->buttonRole(but);
     switch(role) {
-        case role::ApplyRole:
+    case QDB::ApplyRole:
         this->storeData();
+        break;
+        
+    default:
         break;
     }
 }
 
 void OptionsWindow::on_servoRefresh_clicked()
 {
-    
+    if (_sF.isRunning()) return;
     QString port;
     int baud;
     _servo->getServoPortInfo(port, baud);
-    dynamixel dxl(port, baud);
-    
-    int s0 = ui->servo0->currentData().toInt();
-    int s1 = ui->servo1->currentData().toInt();
-    int s2 = ui->servo2->currentData().toInt();
-    int s3 = ui->servo3->currentData().toInt();
-    
-    ui->servo0->clear();
-    ui->servo1->clear();
-    ui->servo2->clear();
-    ui->servo3->clear();
-    
-    ui->servo0->addItem("None", -1);
-    ui->servo1->addItem("None", -1);
-    ui->servo2->addItem("None", -1);
-    ui->servo3->addItem("None", -1);
-    
-    int index = 0;
-    int p0 = 0, p1 = 0, p2 = 0, p3 = 0;
-    
-    for (int i = 0; i <= MAX_ID/2; ++i) {
-        dxl.ping(i);
-        ui->progressBar->setValue((i*100)/(MAX_ID/2));
-        if (dxl.get_comm_result() == COMM_RXSUCCESS) {
-            if (i == s0) p0 = index;
-            if (i == s1) p1 = index;
-            if (i == s2) p2 = index;
-            if (i == s3) p3 = index;
-            
-            ui->servo0->addItem(QString::number(i), i);
-            ui->servo1->addItem(QString::number(i), i);
-            ui->servo2->addItem(QString::number(i), i);
-            ui->servo3->addItem(QString::number(i), i);
-            
-            ++index;
-        }
-    }
+    int min = ui->min->value();
+    int max = ui->max->value();
+    _sF.setData(_servoC, port, baud, min, max);
+    _sF.start();
+}
 
-    ui->servo0->setCurrentIndex(p0);
-    ui->servo1->setCurrentIndex(p1);
-    ui->servo2->setCurrentIndex(p2);
-    ui->servo3->setCurrentIndex(p3);
-        
+void OptionsWindow::refreshFinish()
+{
+    ui->progressBar->setValue(0);
+}
+
+void OptionsWindow::keyPressEvent(QKeyEvent *event)
+{
+    if (event->key() == Qt::Key_Enter || event->key() == Qt::Key_Return) return;
+    QDialog::keyPressEvent(event);
 }
