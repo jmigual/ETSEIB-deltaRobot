@@ -1,0 +1,59 @@
+\hypertarget{a00018_source}{}\section{optionswindow.\+h}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#ifndef OPTIONSWINDOW\_H}
+00003 \textcolor{preprocessor}{#define OPTIONSWINDOW\_H}
+00004 
+00005 \textcolor{preprocessor}{#include "\hyperlink{a00021}{stable.h}"}
+00006 
+00007 \textcolor{comment}{// User libraries}
+00008 \textcolor{preprocessor}{#include "\hyperlink{a00020}{servothread.h}"}
+00009 
+00010 \textcolor{keyword}{namespace }\hyperlink{a00023}{Ui} \{
+00011 \textcolor{keyword}{class }\hyperlink{a00005}{OptionsWindow};
+00012 \}
+00013 
+\hypertarget{a00018_source_l00015}{}\hyperlink{a00005}{00015} \textcolor{keyword}{class }\hyperlink{a00005}{OptionsWindow} : \textcolor{keyword}{public} QDialog
+00016 \{
+00017     Q\_OBJECT
+00018     
+00019 \textcolor{keyword}{public}:
+00020     
+00027     \textcolor{keyword}{explicit} \hyperlink{a00005_a968da93eec85561ebdb3a464eff15611}{OptionsWindow}(XJoystick &J, \hyperlink{a00007}{ServoThread} *servo, \textcolor{keywordtype}{int} &aX, \textcolor{keywordtype}{int} &aY, 
+00028                            \textcolor{keywordtype}{int} &aZ, QWidget *parent = 0);
+00029     
+00031     \hyperlink{a00005_a034c885fe8bb4416e732a9571d14a6b4}{~OptionsWindow}();
+00032     
+00034     \textcolor{keywordtype}{void} \hyperlink{a00005_ab0a56ad7347c20046602a7a2a1c83397}{storeData}();
+00035     
+00036 \textcolor{keyword}{public} slots:
+00037     
+00039     \textcolor{keywordtype}{void} \hyperlink{a00005_ae8c0373be58da710194f8d14f1c3c4dc}{joystickChanged}();
+00040 
+00041 \textcolor{keyword}{private} slots:
+00042     
+00044     \textcolor{keywordtype}{void} \hyperlink{a00005_a18763ff318688083c7ee5a21f22e8e98}{events}();
+00045     
+00047     \textcolor{keywordtype}{void} \hyperlink{a00005_ad5365d452e8bcd86cbb64b9ec42c3b7e}{on\_servoRefresh\_clicked}();
+00048     
+00049 \textcolor{keyword}{private}:
+00050     
+\hypertarget{a00018_source_l00051}{}\hyperlink{a00005_a01d6284355011203ee6e8856a0bdf557}{00051}     \textcolor{keywordtype}{int} &\hyperlink{a00005_a01d6284355011203ee6e8856a0bdf557}{\_jAxisX};   
+\hypertarget{a00018_source_l00052}{}\hyperlink{a00005_a8921d1cc5bcb527466c28feb5dcc59b1}{00052}     \textcolor{keywordtype}{int} &\hyperlink{a00005_a8921d1cc5bcb527466c28feb5dcc59b1}{\_jAxisY};   
+\hypertarget{a00018_source_l00053}{}\hyperlink{a00005_a47409f50a87942706baaea3d025785e3}{00053}     \textcolor{keywordtype}{int} &\hyperlink{a00005_a47409f50a87942706baaea3d025785e3}{\_jAxisZ};   
+00054     
+\hypertarget{a00018_source_l00056}{}\hyperlink{a00005_a1bf846ab681ab245f70adac30999947c}{00056}     XJoystick &\hyperlink{a00005_a1bf846ab681ab245f70adac30999947c}{\_joy};
+00057     
+\hypertarget{a00018_source_l00059}{}\hyperlink{a00005_a9bd4dccc7a544b1db78dc8cf330b88f6}{00059}     \textcolor{keywordtype}{int} \hyperlink{a00005_a9bd4dccc7a544b1db78dc8cf330b88f6}{\_portSize};
+00060     
+\hypertarget{a00018_source_l00062}{}\hyperlink{a00005_acba1566fea3f831000d5e1c1edc3e776}{00062}     \hyperlink{a00007}{ServoThread} *\hyperlink{a00005_acba1566fea3f831000d5e1c1edc3e776}{\_servo};
+00063     
+\hypertarget{a00018_source_l00065}{}\hyperlink{a00005_af6320942b8558140989f552b3bbc1fbd}{00065}     QTimer \hyperlink{a00005_af6320942b8558140989f552b3bbc1fbd}{\_timer};
+00066     
+\hypertarget{a00018_source_l00068}{}\hyperlink{a00005_a8347442d5b3b670e8fff0c4102db1f88}{00068}     Ui::OptionsWindow *\hyperlink{a00005_a8347442d5b3b670e8fff0c4102db1f88}{ui};
+00069 \};
+00070 
+00071 \textcolor{preprocessor}{#endif // OPTIONSWINDOW\_H}
+00072 
+00073 \textcolor{comment}{// TODO: Finish options window}
+\end{DoxyCode}

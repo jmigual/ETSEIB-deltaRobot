@@ -1,0 +1,148 @@
+\hypertarget{a00013_source}{}\section{dynamixel.\+h}
+\label{a00013_source}\index{dxl/dynamixel.\+h@{dxl/dynamixel.\+h}}
+
+\begin{DoxyCode}
+00001 \textcolor{comment}{// Dynamixel SDK platform independent header}
+00003 \textcolor{preprocessor}{#ifndef \_DYNAMIXEL\_HEADER}
+00004 \textcolor{preprocessor}{#define \_DYNAMIXEL\_HEADER}
+00005 
+00006 \textcolor{preprocessor}{#include "\hyperlink{a00011}{dxl\_hal.h}"}
+00007 
+00008 \textcolor{preprocessor}{#define MAX\_ID              (252)}
+00009 \textcolor{preprocessor}{#define BROADCAST\_ID        (254)  //BroadCast ID}
+00010 
+00011 \textcolor{comment}{/* Communication Errorrobotis1  1 List */}
+00012 \textcolor{preprocessor}{#define COMM\_TXSUCCESS      (0)  //Succeed transmit instruction packet}
+00013 \textcolor{preprocessor}{#define COMM\_RXSUCCESS      (1)  //Succeed get status packet}
+00014 \textcolor{preprocessor}{#define COMM\_TXFAIL         (2)  //Failed transmit instruction packet}
+00015 \textcolor{preprocessor}{#define COMM\_RXFAIL         (3)  //Failed get status packet}
+00016 \textcolor{preprocessor}{#define COMM\_TXERROR        (4)  //Incorrect instruction packet}
+00017 \textcolor{preprocessor}{#define COMM\_RXWAITING      (5)  //Now recieving status packet}
+00018 \textcolor{preprocessor}{#define COMM\_RXTIMEOUT      (6)  //There is no status packet}
+00019 \textcolor{preprocessor}{#define COMM\_RXCORRUPT      (7)  //Incorrect status packet}
+00020 
+00021 \textcolor{comment}{/* Error Status List */}
+00022 \textcolor{preprocessor}{#define ERRBIT\_ALERT        (128)//When the device has a problem, it is et as 1. Check "Device Status
+       Check" value.}
+00023 
+00024 \textcolor{preprocessor}{#define ERR\_RESULT\_FAIL     (1)  //Failed to process the instruction packet.}
+00025 \textcolor{preprocessor}{#define ERR\_INSTRUCTION     (2)  //Instruction error}
+00026 \textcolor{preprocessor}{#define ERR\_CRC             (3)  //CRC check error}
+00027 \textcolor{preprocessor}{#define ERR\_DATA\_RANGE      (4)  //Data range error}
+00028 \textcolor{preprocessor}{#define ERR\_DATA\_LENGTH     (5)  //Data length error}
+00029 \textcolor{preprocessor}{#define ERR\_DATA\_LIMIT      (6)  //Data limit error}
+00030 \textcolor{preprocessor}{#define ERR\_ACCESS          (7)  //Access error}
+00031 
+00032 
+00033 \textcolor{preprocessor}{#define PRT1\_PKT\_ID                 (2)}
+00034 \textcolor{preprocessor}{#define PRT1\_PKT\_LENGTH             (3)}
+00035 \textcolor{preprocessor}{#define PRT1\_PKT\_INSTRUCTION        (4)}
+00036 \textcolor{preprocessor}{#define PRT1\_PKT\_ERRBIT             (4)}
+00037 \textcolor{preprocessor}{#define PRT1\_PKT\_PARAMETER0         (5)}
+00038 
+00039 
+00040 \textcolor{preprocessor}{#define INST\_PING           (1)}
+00041 \textcolor{preprocessor}{#define INST\_READ           (2)}
+00042 \textcolor{preprocessor}{#define INST\_WRITE          (3)}
+00043 \textcolor{preprocessor}{#define INST\_REG\_WRITE      (4)}
+00044 \textcolor{preprocessor}{#define INST\_ACTION         (5)}
+00045 \textcolor{preprocessor}{#define INST\_RESET          (6)}
+00046 \textcolor{preprocessor}{#define INST\_SYNC\_WRITE     (131)}
+00047 \textcolor{preprocessor}{#define INST\_BULK\_READ      (146)  // 0x92}
+00048 
+00049 \textcolor{preprocessor}{#define PING\_INFO\_MODEL\_NUM   (1)}
+00050 \textcolor{preprocessor}{#define PING\_INFO\_FIRM\_VER    (2)}
+00051     
+00053 \textcolor{preprocessor}{#define MAKEWORD(a, b)      ((unsigned short)(((unsigned char)(((unsigned long)(a)) & 0xff)) | ((unsigned
+       short)((unsigned char)(((unsigned long)(b)) & 0xff))) << 8))}
+00054 \textcolor{preprocessor}{#define MAKEDWORD(a, b)     ((unsigned int)(((unsigned short)(((unsigned long)(a)) & 0xffff)) | ((unsigned
+       int)((unsigned short)(((unsigned long)(b)) & 0xffff))) << 16))}
+00055 \textcolor{preprocessor}{#define LOWORD(l)           ((unsigned short)(((unsigned long)(l)) & 0xffff))}
+00056 \textcolor{preprocessor}{#define HIWORD(l)           ((unsigned short)((((unsigned long)(l)) >> 16) & 0xffff))}
+00057 \textcolor{preprocessor}{#define LOBYTE(w)           ((unsigned char)(((unsigned long)(w)) & 0xff))}
+00058 \textcolor{preprocessor}{#define HIBYTE(w)           ((unsigned char)((((unsigned long)(w)) >> 8) & 0xff))}
+00059 
+\hypertarget{a00013_source_l00061}{}\hyperlink{a00003}{00061} \textcolor{keyword}{class }\hyperlink{a00003}{dynamixel} \{
+00062 \textcolor{keyword}{private}:
+00063     
+\hypertarget{a00013_source_l00065}{}\hyperlink{a00003_ae003cc90ada6d7b70eaa4ea9d42d4deb}{00065}     \hyperlink{a00002}{dxl\_hal} \hyperlink{a00003_ae003cc90ada6d7b70eaa4ea9d42d4deb}{dH};
+00066     
+\hypertarget{a00013_source_l00068}{}\hyperlink{a00003_afd94dcf01b8e96298727776e222de722}{00068}     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \hyperlink{a00003_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[MAXNUM\_TXPACKET] = \{0\};
+00069     
+\hypertarget{a00013_source_l00071}{}\hyperlink{a00003_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{00071}     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \hyperlink{a00003_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gbStatusPacket}[MAXNUM\_RXPACKET] = \{0\};
+00072     
+\hypertarget{a00013_source_l00074}{}\hyperlink{a00003_a333686e1b5903d16c41df8172b6bd5a8}{00074}     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \hyperlink{a00003_a333686e1b5903d16c41df8172b6bd5a8}{gbRxPacketLength} = 0;
+00075     
+\hypertarget{a00013_source_l00077}{}\hyperlink{a00003_a9d590ce24791d111c2db9b66be1e046d}{00077}     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \hyperlink{a00003_a9d590ce24791d111c2db9b66be1e046d}{gbRxGetLength} = 0;
+00078     
+\hypertarget{a00013_source_l00080}{}\hyperlink{a00003_a6c6314fb7070e6fd361e57c5de17e0ec}{00080}     \textcolor{keywordtype}{double} \hyperlink{a00003_a6c6314fb7070e6fd361e57c5de17e0ec}{gdPacketStartTime} = 0.0;
+00081     
+\hypertarget{a00013_source_l00083}{}\hyperlink{a00003_a2173f25c6299da7ddb37ba3d2bf1f738}{00083}     \textcolor{keywordtype}{double} \hyperlink{a00003_a2173f25c6299da7ddb37ba3d2bf1f738}{gdByteTransTime} = 0.0;
+00084     
+\hypertarget{a00013_source_l00086}{}\hyperlink{a00003_a9f47887864517d74955a2bc787ae4456}{00086}     \textcolor{keywordtype}{double} \hyperlink{a00003_a9f47887864517d74955a2bc787ae4456}{gdRcvWaitTime} = 0.0;
+00087     
+\hypertarget{a00013_source_l00089}{}\hyperlink{a00003_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{00089}     \textcolor{keywordtype}{int} \hyperlink{a00003_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{gbCommStatus} = COMM\_RXSUCCESS;
+00090     
+\hypertarget{a00013_source_l00092}{}\hyperlink{a00003_ad10e0e49f5fef04bf789a89c14cc470a}{00092}     \textcolor{keywordtype}{int} \hyperlink{a00003_ad10e0e49f5fef04bf789a89c14cc470a}{giBusUsing} = 0; 
+00093     
+00094 \textcolor{keyword}{public}:
+00095     
+\hypertarget{a00013_source_l00097}{}\hyperlink{a00003_a7aa668a213db6a41bede8e08a6fec830}{00097}     \hyperlink{a00003_a7aa668a213db6a41bede8e08a6fec830}{dynamixel}() \{\}
+00098     
+00100     \hyperlink{a00003_a7aa668a213db6a41bede8e08a6fec830}{dynamixel}(QString port\_num, \textcolor{keywordtype}{int} baud\_rate = 1000000);
+00101     
+\hypertarget{a00013_source_l00103}{}\hyperlink{a00003_a5ae4b2c6eb4c91f404f973ee8e6a1914}{00103}     \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \hyperlink{a00003_a5ae4b2c6eb4c91f404f973ee8e6a1914}{isOpen}() \{ \textcolor{keywordflow}{return} dH.\hyperlink{a00002_a88bba601b5c9f285fcdc14e18a1f3398}{isOpen}(); \}
+00104 
+00106     \textcolor{keywordtype}{int} \hyperlink{a00003_a87960244d5846ae7583e37d2407eb61e}{initialize}(QString port\_num, \textcolor{keywordtype}{int} baud\_rate);
+00107     
+00109     \textcolor{keywordtype}{int} \hyperlink{a00003_a7554c7889896e29e11a62027d89f3fdf}{change\_baudrate}(\textcolor{keywordtype}{int} baud\_rate);
+00110     
+00112     \textcolor{keywordtype}{int} \hyperlink{a00003_a92ea074ed1c1a9cf29e039f8c425f01a}{terminate}(\textcolor{keywordtype}{void});
+00113     
+\hypertarget{a00013_source_l00115}{}\hyperlink{a00003_ac8440d5d34ae3c4618b28fdbbd748edc}{00115}     \textcolor{keyword}{inline} \textcolor{keywordtype}{int} \hyperlink{a00003_ac8440d5d34ae3c4618b28fdbbd748edc}{get\_comm\_result}() \{ \textcolor{keywordflow}{return} \hyperlink{a00003_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{gbCommStatus}; \}
+00116     
+00117     
+00118     
+00120     \textcolor{keywordtype}{void} \hyperlink{a00003_a479187cd8940c16dd4374eb5be22b888}{tx\_packet}(\textcolor{keywordtype}{void});
+00121     
+00123     \textcolor{keywordtype}{void} \hyperlink{a00003_aa26d2d2dff768563a1cb1480aa061608}{rx\_packet}(\textcolor{keywordtype}{void});
+00124     
+00126     \textcolor{keywordtype}{void} \hyperlink{a00003_aebfc569c6b1eb0b98f8c385f0f921fc0}{txrx\_packet}(\textcolor{keywordtype}{void});
+00127     
+00129     \textcolor{keywordtype}{void} \hyperlink{a00003_a84e24c72c3e5be866f8b28c2e5bd1d95}{set\_txpacket\_id}(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id});
+00130     
+00132     \textcolor{keywordtype}{void} \hyperlink{a00003_a209a43f983f214323b6f0a627d5e8c13}{set\_txpacket\_instruction}(\textcolor{keywordtype}{int} instruction);
+00133     
+00135     \textcolor{keywordtype}{void} \hyperlink{a00003_a2c3d31bbbed70a69918e9972a620384b}{set\_txpacket\_parameter}(\textcolor{keywordtype}{int} index, \textcolor{keywordtype}{int} value);
+00136     
+00138     \textcolor{keywordtype}{void} \hyperlink{a00003_a829278f48e21c810b172eb8cab3b86de}{set\_txpacket\_length}(\textcolor{keywordtype}{int} length);
+00139     
+00142     \textcolor{keywordtype}{bool} \hyperlink{a00003_a843b0aac721e4264e7e3097f80980243}{get\_rxpacket\_error}(\textcolor{keywordtype}{int} error);
+00143     
+00145     \textcolor{keywordtype}{int}  \hyperlink{a00003_a6e62341ef9f51b6e152e769bd7be9d75}{get\_rxpacket\_error\_byte}(\textcolor{keywordtype}{void});
+00146     
+00148     \textcolor{keywordtype}{int}  \hyperlink{a00003_a68b5fa99719a9aec0734ecfb0635503b}{get\_rxpacket\_parameter}( \textcolor{keywordtype}{int} index );
+00149     
+00151     \textcolor{keywordtype}{int}  \hyperlink{a00003_ae9cc18fdeda8329f68fa0f2f0a7a9aba}{get\_rxpacket\_length}();
+00152     
+00155     \textcolor{keywordtype}{void} \hyperlink{a00003_af2bd714423e7c4fc089762805c0c71f3}{ping}(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id});
+00156     
+00160     \textcolor{keywordtype}{int}  \hyperlink{a00003_a888404b41c4c4395a0b745c77ff2cea9}{read\_byte}(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id}, \textcolor{keywordtype}{int} address);
+00161     
+00166     \textcolor{keywordtype}{void} \hyperlink{a00003_a66c1e32cc45dd46d329f1fc212e46a3d}{write\_byte}(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id}, \textcolor{keywordtype}{int} address, \textcolor{keywordtype}{int} value);
+00167     
+00171     \textcolor{keywordtype}{int}  \hyperlink{a00003_a45e99341e82c5114f6e829c9141bf96f}{read\_word}(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id}, \textcolor{keywordtype}{int} address);
+00172     
+00177     \textcolor{keywordtype}{void} \hyperlink{a00003_a925f62ce5e261e5ef4fe6dc46bdc7c63}{write\_word}(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id}, \textcolor{keywordtype}{int} address, \textcolor{keywordtype}{int} value);    
+00178     
+00180     \textcolor{keywordtype}{double} \hyperlink{a00003_a2fa5375537184c279a9ebfcfc0425071}{get\_packet\_time}();
+00181     
+00184     \textcolor{keywordtype}{void} \hyperlink{a00003_a067f82c21ed176e18fa224d16f3d1c5b}{set\_packet\_timeout}(\textcolor{keywordtype}{int} NumRcvByte);
+00185     
+00188     \textcolor{keywordtype}{void} \hyperlink{a00003_a125b42f776c4aac520f274074f68b591}{set\_packet\_timeout\_ms}(\textcolor{keywordtype}{int} msec);
+00189     
+00192     \textcolor{keywordtype}{bool} \hyperlink{a00003_a00d08481ebc4dee19debecf43f888522}{is\_packet\_timeout}();
+00193 \};
+00194 
+00195 \textcolor{preprocessor}{#endif}
+\end{DoxyCode}

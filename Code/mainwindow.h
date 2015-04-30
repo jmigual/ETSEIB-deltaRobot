@@ -1,18 +1,9 @@
+/// @file mainwindow.h Contains the MainWindow class declaration
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-// Standard libraries
-#include <utility>
-
-// Qt Libraries
-#include <QDebug>
-#include <QLabel>
-#include <QMainWindow>
-#include <QVector>
-#include <QStandardPaths>
-
-// Other libraries
-#include <xjoystick.h>
+// Adding precompiled header
+#include "stable.h"
 
 // User libraries
 #include "dxl/ax12.h"
@@ -20,11 +11,14 @@
 #include "optionswindow.h"
 #include "servothread.h"
 
+/// Namespace to work with a User Interface Qt Form
 namespace Ui {
 class MainWindow;
 }
 
 using namespace std;
+
+/// Contains all the windows and other classes
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -34,6 +28,10 @@ class MainWindow : public QMainWindow
     
     /// Contains the number of additional servos used
     static const int aSCount = 0;
+    
+    enum Version {
+        v_1_0
+    };
     
 public:
     
@@ -80,6 +78,12 @@ private:
     
     /// Contains the user interface
     Ui::MainWindow *ui;
+    
+    /// Writes the data to the default location
+    inline void write() { write(_dataP); }
+    
+    /// Writes the data to disk overloaded function
+    void write(QString path);
 
         
 private slots:
@@ -92,6 +96,8 @@ private slots:
     
     /// Updates all data to the servo thread
     void update();
+    void on_start_clicked();
+    void on_actionImport_triggered();
 };
 
 #endif // MAINWINDOW_H

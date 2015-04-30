@@ -3,7 +3,10 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = DeltaRobot
 TEMPLATE = app
-CONFIG += c++11
+CONFIG += c++14 precompile_header
+
+# Precompiled headers
+PRECOMPILED_HEADER = stable.h
 
 #--------------
 # SFML include
@@ -32,18 +35,21 @@ DEPENDPATH += $$PWD/Libraries/XJoystick
 SOURCES += main.cpp \ 
     dxl/dynamixel.cpp \
     dxl/dxl_hal.cpp \
-    dxl/ax12.cpp \
     mainwindow.cpp \
     optionswindow.cpp \
-    servothread.cpp
+    servothread.cpp \
+    dxl/ax12.cpp \
+    servofind.cpp
 
 HEADERS += \
     dxl/dxl_hal.h \
     dxl/dynamixel.h \
-    dxl/ax12.h \
     mainwindow.h \
     optionswindow.h \
-    servothread.h
+    servothread.h \
+    dxl/ax12.h \
+    stable.h \
+    servofind.h
 
 FORMS += \
     mainwindow.ui \
@@ -52,27 +58,31 @@ FORMS += \
 RESOURCES += \
     resources.qrc
 
-Release:DESTDIR = release
-Release:OBJECTS_DIR = release/.obj
-Release:MOC_DIR = release/.moc
-Release:RCC_DIR = release/.rcc
-Release:UI_DIR = release/.ui
+Release {
+    DESTDIR = release
+    OBJECTS_DIR = release/.obj
+    MOC_DIR = release/.moc
+    RCC_DIR = release/.rcc
+    UI_DIR = release/.ui
+}
 
-Debug:DESTDIR = debug
-Debug:OBJECTS_DIR = debug/.obj
-Debug:MOC_DIR = debug/.moc
-Debug:RCC_DIR = debug/.rcc
-Debug:UI_DIR = debug/.ui
+Debug {
+    DESTDIR = debug
+    OBJECTS_DIR = debug/.obj
+    MOC_DIR = debug/.moc
+    RCC_DIR = debug/.rcc
+    UI_DIR = debug/.ui
+}
 
 # To copy files
 win32 {
-CONFIG(release, debug|release) {
+Release {
     OTHER_FILES += \
         Libraries/XJoystick/XJoystick.dll \
         Libraries/SFML-2.2/bin/sfml-window-2.dll \
         Libraries/SFML-2.2/bin/sfml-system-2.dll
 }
-else {
+Debug {
     OTHER_FILES += \
         Libraries/XJoystick/XJoystickd.dll \
         Libraries/SFML-2.2/bin/sfml-window-d-2.dll \

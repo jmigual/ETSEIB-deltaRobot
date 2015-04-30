@@ -6,18 +6,24 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>349</width>
-    <height>340</height>
+    <width>560</width>
+    <height>445</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Options</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
       <widget class="QListWidget" name="option">
+       <property name="maximumSize">
+        <size>
+         <width>150</width>
+         <height>16777215</height>
+        </size>
+       </property>
        <item>
         <property name="text">
          <string>Joystick</string>
@@ -38,7 +44,7 @@
      <item>
       <widget class="QStackedWidget" name="stack">
        <property name="currentIndex">
-        <number>0</number>
+        <number>1</number>
        </property>
        <widget class="QWidget" name="joystick">
         <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -142,30 +148,6 @@
            </property>
           </spacer>
          </item>
-         <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_18">
-           <item>
-            <spacer name="horizontalSpacer_3">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>40</width>
-               <height>20</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-           <item>
-            <widget class="QPushButton" name="servoRefresh">
-             <property name="text">
-              <string>Refresh</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </item>
         </layout>
        </widget>
        <widget class="QWidget" name="servos">
@@ -253,27 +235,6 @@
           </spacer>
          </item>
          <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_2">
-           <item>
-            <widget class="QLabel" name="label_5">
-             <property name="text">
-              <string>Clamp</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QComboBox" name="servo3"/>
-           </item>
-           <item>
-            <widget class="QCheckBox" name="servo3A">
-             <property name="text">
-              <string>Activated</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </item>
-         <item>
           <layout class="QHBoxLayout" name="horizontalLayout_4">
            <item>
             <widget class="QLabel" name="label_4">
@@ -283,10 +244,10 @@
             </widget>
            </item>
            <item>
-            <widget class="QComboBox" name="servo4"/>
+            <widget class="QComboBox" name="servo3"/>
            </item>
            <item>
-            <widget class="QCheckBox" name="servo4A">
+            <widget class="QCheckBox" name="servo3A">
              <property name="text">
               <string>Activated</string>
              </property>
@@ -308,16 +269,71 @@
           </spacer>
          </item>
          <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_7">
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
            <item>
-            <widget class="QLabel" name="label_6">
+            <spacer name="horizontalSpacer_3">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_5">
              <property name="text">
-              <string>Com Port</string>
+              <string>Min</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QComboBox" name="com"/>
+            <widget class="QSpinBox" name="min">
+             <property name="maximum">
+              <number>254</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_6">
+             <property name="text">
+              <string>Max</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="max">
+             <property name="maximum">
+              <number>254</number>
+             </property>
+             <property name="value">
+              <number>50</number>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_33">
+           <item>
+            <widget class="QProgressBar" name="progressBar">
+             <property name="maximum">
+              <number>100</number>
+             </property>
+             <property name="value">
+              <number>0</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="servoRefresh">
+             <property name="text">
+              <string>Refresh</string>
+             </property>
+            </widget>
            </item>
           </layout>
          </item>
@@ -490,7 +506,7 @@
       <enum>Qt::Horizontal</enum>
      </property>
      <property name="standardButtons">
-      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+      <set>QDialogButtonBox::Apply|QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
      </property>
     </widget>
    </item>

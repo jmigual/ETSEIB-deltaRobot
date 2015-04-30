@@ -3,12 +3,11 @@
 #ifndef AX12_H
 #define AX12_H
 
-// Qt libraries
-#include <QObject>
-#include <QVector>
+// Standard variables
+#define M_PI		3.14159265358979323846
 
-// Standard libraries
-#include <algorithm>
+// Qt libraries
+#include <QVector>
 
 // User librarires
 #include "dynamixel.h"
@@ -16,9 +15,9 @@
 
 
 /// @brief The AX12 class is used to control AX-12 motors from Dynamixel
-class AX12 : public QObject
+class AX12
 {
-    Q_OBJECT
+    
 private:
     
     /// Contains all the EEPROM directions enumeration
@@ -65,7 +64,7 @@ private:
     };    
     
     /// Contains the dynamixel comunication
-    dynamixel &dxl;
+    dynamixel *_dxl;
     
     /// Stores the current ID
     int _ID;
@@ -73,11 +72,17 @@ private:
     /// True if we use the joint mode
     bool _mode;
     
+    /// True if the angle is returned in radians
+    bool _rads;
+    
 public:
     
-    /// Default constructor must pass an initialized dynamixel object
+    /// Default constructor
+    AX12();
+    
+    /// Initializator constructor
     /// if ID == -1 no action is done
-    AX12(dynamixel &dxl, int ID = -1, QObject *parent = 0);
+    AX12(dynamixel *_dxl, int ID = -1);
     
     /// Copy constructor
     AX12(const AX12 &a);
@@ -108,13 +113,21 @@ public:
     /// To get the current ID
     inline int getID() { return _ID; }
     
+    /// Sets the dynamixel interface
+    /// @param dxl Pointer to the dynamixel control class
+    inline void setDxl(dynamixel *dxl) { _dxl = dxl; }
+    
     /// Sets the Goal's position (in degrees) or speed depending on the mode
+    /// @param goal Position (in degrees if not radian mode) or % speed if 
+    /// used wheel mode
     void setGoalPosition(double goal);
     
     /// To set a new ID
+    /// @param ID the new ID
     void setID(int ID);
     
-    /// To set Joint/Wheel mode, true if Joint
+    /// To set Joint/Wheel mode
+    /// @param mode True if Joint and false if Wheel mode
     void setJointMode(bool mode);
     
     /// To set the minimum and maximum angle from 0 to 300º
@@ -124,10 +137,6 @@ public:
     /// to 100% if wheel mode
     void setSpeed(double speed);
     
-    
-signals:
-    
-public slots:
 };
 
 #endif // AX12_H

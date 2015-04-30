@@ -1,3 +1,4 @@
+/// @file mainwindow.cpp Contains the MainWindow class implementation
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
@@ -10,12 +11,17 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    
     _sT.start();
-    _timer.setInterval(10);
-    _timer.start();
     
     connect(&_joy, SIGNAL(changed()), this, SLOT(joyChanged()));
     connect(&_timer, SIGNAL(timeout()), this, SLOT(update()));
+    connect(&_sT, SIGNAL(statusBar(QString)), 
+            ui->statusbar, SLOT(showMessage(QString)));
+    
+    
+    _timer.setInterval(10);
+    _timer.start();
     
     // JOYSTICK
     QVector< QString > V(_joy.getAllAxis());
@@ -43,8 +49,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->joyAxis->hide();
     ui->joyButs->hide();
     ui->line->hide();
-    // TODO: Create dataPath
     
+    // Creating data Path    
     _dataP = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
     QDir dir(_dataP);
     if (!dir.exists()) dir.mkpath(_dataP);
@@ -53,6 +59,21 @@ MainWindow::MainWindow(QWidget *parent) :
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::write(QString path)
+{
+    QDir dir(path);
+    QFile file(dir.filePath("main.opts"));
+    if(not file.open(QIODevice::WriteOnly)) {
+        ui->statusbar->showMessage("Error saving file", 1000);
+        return;
+    }
+    
+    QDataStream f(&file);
+    f << int(Version::v_1_0) << _jAxisX << _jAxisY << _jAxisZ;
+    
+    _sT.write(dir.filePath("servo.opts"));
 }
 
 void MainWindow::joyChanged()
@@ -90,21 +111,82 @@ void MainWindow::joyChanged()
 
 void MainWindow::on_actionOptions_triggered()
 {
-    OptionsWindow o(_joy, &_sT, this);
-    o.exec();
+    _sT.pause();
+    
+    OptionsWindow o(_joy, &_sT, _jAxisX, _jAxisY, _jAxisZ, this);
     
     connect(this, SIGNAL(joystickChanged()), &o, SLOT(joystickChanged()));
     
-    if (o.result()) o.storeData();
+    if (o.exec()) {
+        o.storeData();
+        this->write();
+    }
 }
 
 void MainWindow::update()
 {
+    // Joystick values
     _joy.update();
-    for (int i = 0; i < XJoystick::AxisCount; ++i) _axisV[i] = _joy[i];
-    for (int i = 0; i < XJoystick::ButtonCount; ++i) _butsV[i] = _joy.button(i);
+    for (int i = 0; i < XJoystick::AxisCount; ++i) {
+        float temp = _joy[i];
+        _axisV[i] = temp;
+        _axis[i]->setText(QString::number(temp));
+    }
+    for (int i = 0; i < XJoystick::ButtonCount; ++i) {
+        bool temp = _joy.button(i);
+        _butsV[i] = temp;
+        _buts[i]->setEnabled(temp);
+    }
     
     _sT.setData(_axisV, _butsV);
     
-    // TODO: Finish update function
+    QVector<ServoThread::Servo> servo(_sT.getServosInfo());
+    
+    // Updating position sliders
+    ui->servo0S->setValue(servo[0].pos);
+    ui->servo1S->setValue(servo[1].pos);
+    ui->servo2S->setValue(servo[2].pos);
+    
+    // Updating position labels
+    ui->servo0->setText(QString::number(servo[0].pos));
+    ui->servo1->setText(QString::number(servo[1].pos));
+    ui->servo2->setText(QString::number(servo[2].pos));
+    
+    // Updating load labels
+    ui->servo0L->setText(QString::number(servo[0].load));
+    ui->servo1L->setText(QString::number(servo[1].load));
+    ui->servo2L->setText(QString::number(servo[2].load));
+    
+}
+
+void MainWindow::on_start_clicked()
+{
+    QString text = ui->start->text();
+    
+    if (text == "Start") {
+        _sT.wakeUp();
+        ui->start->setText("Stop");
+    }
+    else if (text == "Stop") {
+        _sT.pause();
+        ui->start->setText("Start");
+    }
+}
+
+void MainWindow::on_actionImport_triggered()
+{
+    QFileDialog fD(this);
+    fD.setFileMode(QFileDialog::ExistingFile);
+    fD.setViewMode(QFileDialog::Detail);
+    fD.setAcceptMode(QFileDialog::AcceptOpen);
+    fD.setNameFilter(tr("Dominoes file (*df)"));
+    fD.setDirectory(QDir::home());
+    
+    if (fD.exec()) {
+        QString file;
+        fD.fileSelected(file);
+        
+        qDebug() << "Accepted" << file;
+    }
+    else qDebug() << "Rejected";
 }

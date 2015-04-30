@@ -1,8 +1,8 @@
-// Dynamixel SDK platform dependent header
+/// @file dxl_hal.h Contains the Dynamixel SDK platform dependent header
+/// declaration
 #ifndef _DYNAMIXEL_HAL_HEADER
 #define _DYNAMIXEL_HAL_HEADER
 
-#include <QDebug>
 #include <QSerialPort>
 #include <QString>
 #include <QTime>
@@ -10,6 +10,7 @@
 #define MAXNUM_TXPACKET  (10000)
 #define MAXNUM_RXPACKET  (10000)
 
+/// Dynamixel SDK platform dependent
 class dxl_hal {
 private:
     QSerialPort _serial;
@@ -19,7 +20,7 @@ private:
     bool _open = false;
     
 public:
-    int open(QString &devName, int baudrate );
+    bool open(QString &devName, int baudrate );
     void close(void);
     void clear(void);
     int change_baudrate(float baudrate);

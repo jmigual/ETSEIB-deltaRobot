@@ -1,8 +1,9 @@
-// Dynamixel SDK platform dependent source
+/// @file dxl_hal.cpp Contains the Dynamixel SDK platform dependent header
+/// source
 #include "dxl_hal.h"
 
 
-int dxl_hal::open(QString &devName, int baudrate )
+bool dxl_hal::open(QString &devName, int baudrate )
 {
     // Opening device
 	// devIndex: Device index
@@ -15,9 +16,9 @@ int dxl_hal::open(QString &devName, int baudrate )
     _serial.setParity(QSerialPort::NoParity);
     _serial.setStopBits(QSerialPort::OneStop);
     _serial.setFlowControl(QSerialPort::NoFlowControl);
-    if(not _serial.open(QIODevice::ReadWrite)) return 0;
+    if(not _serial.open(QIODevice::ReadWrite)) return false;
     _open = true;
-    return 1;
+    return true;
 }
 
 void dxl_hal::close()
