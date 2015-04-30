@@ -31,6 +31,8 @@ void dxl_hal::close()
 void dxl_hal::clear(void)
 {
 	// Clear communication buffer
+    
+    if (!_serial.isOpen()) return;
     _serial.clear();
     
 }

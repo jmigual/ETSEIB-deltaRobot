@@ -131,7 +131,13 @@ public:
     void setJointMode(bool mode);
     
     /// To set the minimum and maximum angle from 0 to 300º
+    /// @param min Minimum value from servo
+    /// @param max Maximum value from servo
     void setMinMax(double min, double max);
+    
+    /// Sets the radians mode
+    /// @param rads True if radians mode is used
+    inline void setRadians(bool rads) { _rads = rads; }
     
     /// To set the maximum speed from 0% to 100% if joint mode or from -100%
     /// to 100% if wheel mode

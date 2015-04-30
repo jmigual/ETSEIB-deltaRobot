@@ -52,8 +52,7 @@ double AX12::getCurrentLoad()
 {
     if (_ID < 0 or _dxl == NULL) return 0;
     int load = _dxl->read_word(_ID, RAM::PresentLoad);
-    load -= 1024;
-    if (load == -1024) load = 0;
+    if (load >= 1024) load -= 1024;
     return double((load/1023)*100);
 }
 
@@ -63,7 +62,7 @@ double AX12::getCurrentPos()
     int pos = _dxl->read_word(_ID, RAM::PresentPosition);
     if (_dxl->get_comm_result() != COMM_RXSUCCESS) return -1;
     
-    if (_rads) return double((pos/1023.0)*5*M_PI/3);
+    if (_rads) return double((pos/1023.0)*(5.0*M_PI)/3.0);
     return double((pos/1023.0)*300);
 }
 
@@ -96,6 +95,10 @@ double AX12::getCurrentVoltage()
 void AX12::setGoalPosition(double goal)
 {
     if (_ID < 0 or _dxl == NULL) return;
+    
+    // Conversion to radians if radians mode
+    if (_rads) goal *= 180/M_PI;
+    
     if (goal > 300.0) goal = 300.0;
     else if (goal < 0) goal = 0;
     _dxl->write_word(_ID, RAM::GoalPosition, int((goal/300.0)*1023));
@@ -131,6 +134,8 @@ void AX12::setMinMax(double min, double max)
         min = max;
         max = aux;
     }
+    
+    if (_rads) min *= 180/M_PI;
     
     if (min < 0.0) min = 0;
     if (max > 300.0) max = 300;
