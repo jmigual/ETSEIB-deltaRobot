@@ -54,11 +54,35 @@ MainWindow::MainWindow(QWidget *parent) :
     _dataP = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
     QDir dir(_dataP);
     if (!dir.exists()) dir.mkpath(_dataP);
+    
+    read();
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::read(QString path)
+{
+    QDir dir(path);
+    QFile file(dir.filePath("main.opts"));
+    if (not file.open(QIODevice::ReadOnly)) {
+        ui->statusbar->showMessage("Error opening settings", 1000);
+        return;
+    }
+    
+    QDataStream f(&file);
+    int v;
+    f >> v;
+    if (v != Version::v_1_0) {
+        ui->statusbar->showMessage("Error: data corrupted", 1000);
+        return;
+    }
+    
+    f >> _jAxisX >> _jAxisY >> _jAxisZ;
+    
+    _sT.read(dir.filePath("servo.opts"));
 }
 
 void MainWindow::write(QString path)

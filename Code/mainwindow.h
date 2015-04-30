@@ -79,6 +79,12 @@ private:
     /// Contains the user interface
     Ui::MainWindow *ui;
     
+    /// Reads the data from the default location
+    inline void read() { read(_dataP); }
+    
+    /// Reads the data from the selected path, overloaded function
+    void read(QString path);
+    
     /// Writes the data to the default location
     inline void write() { write(_dataP); }
     

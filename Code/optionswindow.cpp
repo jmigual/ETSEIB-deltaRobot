@@ -67,7 +67,11 @@ OptionsWindow::OptionsWindow(XJoystick &J, ServoThread *servo, int &aX,
     
     for (int i = 0; i < S.size(); ++i) {
         int ID = S[i].ID;
-        if (ID >= 0) _servoC[i]->addItem(QString::number(ID), ID);
+        
+        if (ID >= 0) {
+            _servoC[i]->addItem(QString::number(ID), ID);
+            _servoC[i]->setCurrentIndex(1);
+        }
     }
     
     // Obtaining Servo Port information
@@ -150,10 +154,12 @@ void OptionsWindow::events()
             text += ": " + ports[i].description();
             ui->portC->addItem(text, ports[i].portName());
             ui->portS->addItem(text, ports[i].portName());
-            
+            qDebug() << ports[i].portName();    
             if (ports[i].portName() == portC) selC = i + 1;
             if (ports[i].portName() == portS) selS = i + 1;
         }
+        
+        if (selS == 0 && ports.size() > 0) selS = 1;
 
         ui->portC->setCurrentIndex(selC);
         ui->portS->setCurrentIndex(selS);
