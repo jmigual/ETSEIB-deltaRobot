@@ -56,27 +56,31 @@ FORMS += \
 RESOURCES += \
     resources.qrc
 
-Release:DESTDIR = release
-Release:OBJECTS_DIR = release/.obj
-Release:MOC_DIR = release/.moc
-Release:RCC_DIR = release/.rcc
-Release:UI_DIR = release/.ui
+Release {
+    DESTDIR = release
+    OBJECTS_DIR = release/.obj
+    MOC_DIR = release/.moc
+    RCC_DIR = release/.rcc
+    UI_DIR = release/.ui
+}
 
-Debug:DESTDIR = debug
-Debug:OBJECTS_DIR = debug/.obj
-Debug:MOC_DIR = debug/.moc
-Debug:RCC_DIR = debug/.rcc
-Debug:UI_DIR = debug/.ui
+Debug {
+    DESTDIR = debug
+    OBJECTS_DIR = debug/.obj
+    MOC_DIR = debug/.moc
+    RCC_DIR = debug/.rcc
+    UI_DIR = debug/.ui
+}
 
 # To copy files
 win32 {
-CONFIG(release, debug|release) {
+Release {
     OTHER_FILES += \
         Libraries/XJoystick/XJoystick.dll \
         Libraries/SFML-2.2/bin/sfml-window-2.dll \
         Libraries/SFML-2.2/bin/sfml-system-2.dll
 }
-else {
+Debug {
     OTHER_FILES += \
         Libraries/XJoystick/XJoystickd.dll \
         Libraries/SFML-2.2/bin/sfml-window-d-2.dll \

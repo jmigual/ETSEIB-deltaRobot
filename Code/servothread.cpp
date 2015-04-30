@@ -122,7 +122,6 @@ void ServoThread::run()
     double D[3];
     
     QElapsedTimer time;
-    double x = 0;
     
     while (not _end) {
         msleep(10);
@@ -149,13 +148,12 @@ void ServoThread::run()
         _dChanged = false;
         _mutex.unlock();
         
-        setAngles(0, x, 0, D[0], D[1], D[2]);
+        setAngles(0, -30, 0, D[0], D[1], D[2]);
         for (double &d : D) d *= 180/M_PI;
+        qDebug() << D[0] << D[1] << D[2];
         
-        if (x < 100) qDebug() << D[0] << D[1] << D[2];
-        
-        x += 1;
-        //for (int i = 0; i < A.size(); ++i) A[i].setGoalPosition(240 - D[i]*180/M_PI);
+
+        //for (int i = 0; i < A.size(); ++i) A[i].setGoalPosition(240 + D[i]*180/M_PI);
     }
     
     dxl.terminate();

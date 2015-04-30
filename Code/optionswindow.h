@@ -43,6 +43,9 @@ private slots:
     /// Handles events that need to be updated continously
     void events();
     
+    /// Handles a button clicked
+    void buttonClicked(QAbstractButton *but);
+    
     /// Refreshes all the servos connected to the port
     void on_servoRefresh_clicked();
     

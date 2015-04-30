@@ -1,7 +1,9 @@
 /// @file stable.h Contains all includes in a precompiled header
 /// 
 /// The includes are:
+/// - QAbstractButton
 /// - QApplication
+/// - QElapsedTimer
 /// - QDebug
 /// - QDir
 /// - QDialog
@@ -24,6 +26,7 @@
 
 #ifdef __cplusplus
 
+#include <QAbstractButton>
 #include <QApplication>
 #include <QElapsedTimer>
 #include <QDebug>

@@ -8,6 +8,7 @@
 // User libraries
 #include "dxl/ax12.h"
 
+#undef M_PI
 #define M_PI 3.14159265358979323846264338327d
 
 /// The ServoThread's class handles the comunication between the delta robot
@@ -119,6 +120,9 @@ public:
         return _servos;
     }
     
+    /// Returns the number of servos to handle
+    inline int getServosNum() { return _sNum; }
+    
     /// Returns the mutex used in the thread
     inline QMutex* mutex() { return &_mutex; }
     
@@ -163,6 +167,7 @@ public:
         _sBaud = baud;
         _mutex.unlock();
     }
+    
     
     /// Sets the servos ID
     /// @param V Vector containing all the servos ID
@@ -219,7 +224,7 @@ private:
     const double L1 = 6.374;        ///< The base center length
     const double L2 = 6.000;        ///< The clamp support center lenght
     
-    const int _sNum = 4;            ///< Number of servos to manage
+    static const int _sNum = 4;            ///< Number of servos to manage
     
     /// Contains the axis value
     QVector < float > _axis;

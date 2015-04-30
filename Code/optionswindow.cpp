@@ -16,6 +16,9 @@ OptionsWindow::OptionsWindow(XJoystick &J, ServoThread *servo, int &aX,
 {
     ui->setupUi(this);
     
+    connect(ui->buttonBox, SIGNAL(clicked(QAbstractButton*)), 
+            this, SLOT(buttonClicked(QAbstractButton*)));
+    
     QVector< QString > A(_joy.getAllAxis());
     
     // Adding joystick axis movement
@@ -45,6 +48,13 @@ OptionsWindow::OptionsWindow(XJoystick &J, ServoThread *servo, int &aX,
     ui->servo1->addItem("None", -1);
     ui->servo2->addItem("None", -1);
     ui->servo3->addItem("None", -1);
+    
+    QVector<ServoThread::Servo> S(_servo->getServosInfo());
+    Q_ASSERT(S.size() == _servo->getServosNum());
+    if (S[0].ID >= 0) ui->servo0->addItem(QString::number(S[0].ID), S[0].ID);
+    if (S[1].ID >= 0) ui->servo1->addItem(QString::number(S[1].ID), S[1].ID);
+    if (S[2].ID >= 0) ui->servo2->addItem(QString::number(S[2].ID), S[2].ID);
+    if (S[3].ID >= 0) ui->servo3->addItem(QString::number(S[3].ID), S[3].ID);
     
     // Obtaining Servo Port information
     QString port;
@@ -134,6 +144,16 @@ void OptionsWindow::events()
 
         ui->portC->setCurrentIndex(selC);
         ui->portS->setCurrentIndex(selS);
+    }
+}
+
+void OptionsWindow::buttonClicked(QAbstractButton *but)
+{
+    QDialogButtonBox::ButtonRole role = ui->buttonBox->buttonRole(but);
+    switch(role) {
+        case role::ApplyRole:
+        this->storeData();
+        break;
     }
 }
 
