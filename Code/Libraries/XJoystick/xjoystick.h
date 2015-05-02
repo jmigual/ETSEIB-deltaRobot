@@ -57,13 +57,6 @@ class XJOYSTICKSHARED_EXPORT XJoystick : public QObject
     
 public:
     
-    /// Basic enumerations
-    enum {
-        Count = J::Count,
-        AxisCount = J::AxisCount,
-        ButtonCount = J::ButtonCount
-    };
-    
     /// Struct to handle the info 
     struct Info {
         /// Contains the Joystick's ID
