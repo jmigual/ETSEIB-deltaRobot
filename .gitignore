@@ -21,7 +21,6 @@
 # Compiled Static libraries
 *.lai
 *.la
-*.a
 *.lib
 
 # Executables
@@ -36,7 +35,6 @@
 *.slo
 *.lo
 *.o
-*.a
 *.la
 *.lai
 *.so
