@@ -6,7 +6,7 @@ ServoThread::ServoThread() :
     _buts(XJoystick::ButtonCount),
     _cBaud(9600),
     _cPort("COM3"),
-    _dChanged(false),
+    _dChanged(true),
     _end(false),
     _mod(Mode::manual),
     _pause(true),
@@ -45,11 +45,14 @@ void ServoThread::read(QString file)
         return;
     }
     
+    _mutex.lock();
     df >> _cBaud >> _cPort >> _sBaud >> _sPort >> _sSpeed;
     int size;
     df >> size;
     _servos.resize(size);
     for (Servo &s : _servos) df >> s.ID;
+    _dChanged = true;
+    _mutex.unlock();
     
 }
 
@@ -104,71 +107,97 @@ void ServoThread::write(QString file)
 
 void ServoThread::run()
 {
+    // First initializations
     _mutex.lock();
     int sBaud = _sBaud;
     QString sPort = _sPort;
-    
     _mutex.unlock();
+    
+    // Serial port interface
     dynamixel dxl(sPort, sBaud);
+    
+    // Contains the servos comunication
     QVector< AX12 > A(_sNum);    
+    
+    // Contains the servos angles
+    QVector<double> D(3);
     
     for (int i = 0; i < A.size(); ++i) {
         A[i] = AX12(&dxl);  
         A[i].setID(i);
     }
     
-
     QVector< Servo > S(_sNum);
+    int dom = 0;
     
     while (not _end) {
         msleep(10);
         _mutex.lock();
+        
+        // Pause
         if (not _end and _pause) {
             dxl.terminate();
             _cond.wait(&_mutex);
             dxl.initialize(sPort, sBaud);
-        }        
+        }       
+        
+        // Data changed handle
         if (_dChanged) {
-            if (sPort != _sPort) {
+            if (sPort != _sPort or sBaud != _sBaud) {
                 sPort = _sPort;
                 sBaud = _sBaud;
                 dxl.terminate();
                 dxl.initialize(sPort, sBaud);
             }
+            
+            setAngles(0, -10, 0, D);
             for (int i = 0; i < S.size(); ++i) {
                 A[i].setID(_servos[i].ID);
                 A[i].setSpeed(_sSpeed);
             }
         }
+        
+        
         for (int i = 0; i < A.size(); ++i) {
             _servos[i].load = A[i].getCurrentLoad();
             _servos[i].pos = A[i].getCurrentPos();
         }
         _dChanged = false;
         _mutex.unlock();
-    }
+        
+        
+        switch(_mod) {
     
+        case Mode::manual:
+            
+            break;
+            
+        case Mode::controlled:
+            
+            break;
+        }
+        
+    }
     dxl.terminate();
     exit(0);
 }
 
-void ServoThread::setAngles(double x0, double y0, double z0, 
-                            double &theta1, double &theta2, double &theta3)
+void ServoThread::setAngles(double x0, double y0, double z0, QVector<double> &D)
 {    
     double x1 = x0 + L2 - L1;
     double y1 = y0;
     double z1 = z0;
-    theta1 = singleAngle(x1,y1,z1);
+    D[0] = singleAngle(x1,y1,z1);
     
     double x2 = z0*sin60 - x0*cos60 + L2 - L1;
     double y2 = y0;
     double z2 = -z0*cos60 - x0*sin60;
-    theta2 = singleAngle(x2,y2,z2);
+    D[1] = singleAngle(x2,y2,z2);
     
     double x3 = -z0*sin60 - x0*cos60 + L2 - L1;
     double y3 = y0;
     double z3 = -z0*cos60 + x0*sin60;
-    theta3 = singleAngle(x3,y3,z3);
+    D[2] = singleAngle(x3,y3,z3);
 }
 
 double ServoThread::singleAngle(double x0, double y0, double z0)

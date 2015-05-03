@@ -23,6 +23,13 @@ class ServoThread : public QThread
         v_1_0
     };
     
+    /// Conains the current status
+    enum Status
+    {
+        waiting,
+        working
+    };
+    
     /// Struct to handle the dominoe pieces
     struct Dominoe
     {
@@ -134,6 +141,25 @@ public:
     /// @param file Path to the file where to read the pieces
     void readPath(QString file);
     
+    /// Resets to default positions (used when the mode changes or when some
+    /// data has changed
+    /// @pre The thread is sleeping
+    inline void reset()
+    {
+        
+    }
+    
+    /// Sets the current working mode
+    /// @pre The thread must be on pause
+    /// @param m Contains the desired working mode
+    inline void setMode(Mode m)
+    {
+        QMutexLocker mut(&_mutex);
+        if (_pause) return;
+        _mod = m;
+        _dChanged = true;
+    }
+    
     /// Adds the loaded data
     /// @param aV Contains the axis values
     /// @param buts Contains the buttons values
@@ -141,30 +167,33 @@ public:
     
     /// Sets the servos port baud rate
     /// @param baud Positive number containing the baud rate
-    void setServoBaud(unsigned int baud)
+    inline void setServoBaud(unsigned int baud)
     {
         _mutex.lock();
         _sBaud = baud;
+        _dChanged = true;
         _mutex.unlock();
     }
     
     /// Sets the servos port
     /// @param port String containing the port name
-    void setServoPort(QString &port)
+    inline void setServoPort(QString &port)
     {
         _mutex.lock();
         _sPort = port;
+        _dChanged = true;
         _mutex.unlock();
     }
     
     /// Sets the servos port info, data and selected port
     /// @param port String containing the selected port
     /// @param baud Contains the selected baud rate
-    void setServoPortInfo(QString &port, unsigned int baud)
+    inline void setServoPortInfo(QString &port, unsigned int baud)
     {
         _mutex.lock();
         _sPort = port;
         _sBaud = baud;
+        _dChanged = true;
         _mutex.unlock();
     }
     
@@ -173,6 +202,7 @@ public:
     /// @param V Vector containing all the servos ID
     inline void setSID (QVector< int > &V) 
     {
+        // Error passing the data
         if (V.size() != _sNum) {
             qDebug() << "Error setting servos";
             return;
@@ -193,6 +223,7 @@ public:
         
         _mutex.lock();
         _sSpeed = speed;
+        _dChanged = true;
         _mutex.unlock();
     }
     
@@ -278,7 +309,7 @@ private:
     
     /// Used to calculate the servos angles
     void setAngles(double x0, double y0, double z0, 
-                   double &theta1, double &theta2, double &theta3);
+                   QVector<double> &D);
     
     /// Calculates the angle of one servo in the selected position
     double singleAngle(double x0, double y0, double z0);
