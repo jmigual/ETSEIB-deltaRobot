@@ -45,7 +45,7 @@ void ServoThread::read(QString file)
         return;
     }
     
-    df >> _cBaud >> _cPort >> _sBaud >> _sPort;
+    df >> _cBaud >> _cPort >> _sBaud >> _sPort >> _sSpeed;
     int size;
     df >> size;
     _servos.resize(size);
@@ -95,7 +95,7 @@ void ServoThread::write(QString file)
     _mutex.lock();
     
     // Clamp and servos baud rate and port must be writen
-    df << int(Version::v_1_0) << _cBaud << _cPort << _sBaud << _sPort
+    df << int(Version::v_1_0) << _cBaud << _cPort << _sBaud << _sPort << _sSpeed
        << _servos.size();    
     for (const Servo &s : _servos) df << s.ID;
     
@@ -119,9 +119,6 @@ void ServoThread::run()
     
 
     QVector< Servo > S(_sNum);
-    double D[3];
-    
-    QElapsedTimer time;
     
     while (not _end) {
         msleep(10);
@@ -129,8 +126,6 @@ void ServoThread::run()
         if (not _end and _pause) {
             dxl.terminate();
             _cond.wait(&_mutex);
-            time.restart();
-            emit statusBar("Changed");
             dxl.initialize(sPort, sBaud);
         }        
         if (_dChanged) {
@@ -140,21 +135,17 @@ void ServoThread::run()
                 dxl.terminate();
                 dxl.initialize(sPort, sBaud);
             }
-            for (int i = 0; i < S.size(); ++i) A[i].setID(_servos[i].ID);
+            for (int i = 0; i < S.size(); ++i) {
+                A[i].setID(_servos[i].ID);
+                A[i].setSpeed(_sSpeed);
+            }
         }
         for (int i = 0; i < A.size(); ++i) {
+            _servos[i].load = A[i].getCurrentLoad();
             _servos[i].pos = A[i].getCurrentPos();
         }
         _dChanged = false;
         _mutex.unlock();
-        
-        setAngles(0, -30, 0, D[0], D[1], D[2]);
-        for (double &d : D) d *= 180/M_PI;
-        
-        qDebug() << D[0] << D[1] << D[2];
-        
-        
-        //for (int i = 0; i < A.size(); ++i) A[i].setGoalPosition(240 + D[i]*180/M_PI);
     }
     
     dxl.terminate();

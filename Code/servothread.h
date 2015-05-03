@@ -186,11 +186,10 @@ public:
     }
     
     /// Sets the servos speed
-    /// @param speed Integer from 0 to 100 containing the % of speed
-    inline void setSpeed(unsigned int speed)
+    /// @param speed unsigned char from 0 to 100 containing the % of speed
+    inline void setSpeed(unsigned char speed)
     {
-        if (speed < 0) speed = 0;
-        else if (speed > 100) speed = 100;
+        if (speed > 100) speed = 100;
         
         _mutex.lock();
         _sSpeed = speed;
