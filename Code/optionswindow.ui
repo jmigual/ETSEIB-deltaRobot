@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>560</width>
-    <height>445</height>
+    <width>336</width>
+    <height>376</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -204,7 +204,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QSpinBox" name="spinBox">
+            <widget class="QSpinBox" name="speed">
              <property name="minimum">
               <number>10</number>
              </property>

@@ -108,6 +108,7 @@ void OptionsWindow::storeData()
     for (QComboBox *s : _servoC) sID.push_back(s->currentData().toInt());
     
     _servo->setSID(sID);
+    _servo->setSpeed(ui->speed->value());
 }
 
 void OptionsWindow::joystickChanged()

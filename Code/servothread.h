@@ -187,7 +187,7 @@ public:
     
     /// Sets the servos speed
     /// @param speed Integer from 0 to 100 containing the % of speed
-    inline void setSpeed(int speed)
+    inline void setSpeed(unsigned int speed)
     {
         if (speed < 0) speed = 0;
         else if (speed > 100) speed = 100;
@@ -272,7 +272,7 @@ private:
     bool _sPortChanged;
     
     /// Speed of the robot
-    int _sSpeed;
+    unsigned int _sSpeed;
     
     /// Used to create another thread
     void run();
