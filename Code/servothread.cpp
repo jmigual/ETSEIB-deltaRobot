@@ -144,7 +144,7 @@ void ServoThread::run()
     double dom = 0;
     
     while (not _end) {
-        msleep(10);
+        msleep(200);
         _mutex.lock();
         
         // Pause
@@ -183,6 +183,7 @@ void ServoThread::run()
             S[i].load = A[i].getCurrentLoad();
             S[i].pos = A[i].getCurrentPos();
         }
+        axis = _axis;
         _servos = S;
         _mutex.unlock();
         
@@ -198,7 +199,7 @@ void ServoThread::run()
         } else if (_mod == Mode::controlled) {
             ++dom;
         }
-        qDebug() << pos.x() << pos.y() << pos.z();
+        //qDebug() << pos.x() << pos.y() << pos.z() << axis.x() << axis.y() << axis.z();
         this->setAngles(pos, D);
         for (int i = 0; i < 3; ++i) A[i].setGoalPosition(D[i]);
     }
