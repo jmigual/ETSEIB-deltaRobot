@@ -2,7 +2,7 @@
 #include "servothread.h"
 
 ServoThread::ServoThread() :
-    _axis(XJoystick::AxisCount),
+    _axis(0, 0, 0),
     _buts(XJoystick::ButtonCount),
     _cBaud(9600),
     _cPort("COM3"),
@@ -14,7 +14,7 @@ ServoThread::ServoThread() :
     _servos(_sNum),
     _sPort("COM9"),
     _sPortChanged(false),
-    _sSpeed(60)
+    _sSpeed(30)
 {
     for (Servo &s : _servos) s.ID = -1;
 }
@@ -33,7 +33,10 @@ void ServoThread::read(QString file)
 {
     // Opening file for reading
     QFile f(file);
-    f.open(QIODevice::ReadOnly);
+    if (!f.open(QIODevice::ReadOnly)) {
+        emit statusBar("Cannot read stored data");
+        return;
+    }
     QDataStream df(&f);
     
     QMutexLocker mL(&_mutex);
@@ -45,14 +48,16 @@ void ServoThread::read(QString file)
         return;
     }
     
-    _mutex.lock();
     df >> _cBaud >> _cPort >> _sBaud >> _sPort >> _sSpeed;
+    unsigned int en;
+    df >> en;
+    _mod = static_cast<Mode>(en);
+    
     int size;
     df >> size;
     _servos.resize(size);
     for (Servo &s : _servos) df >> s.ID;
     _dChanged = true;
-    _mutex.unlock();
     
 }
 
@@ -81,10 +86,9 @@ void ServoThread::setData(QVector<float> &aV, QVector<bool> &buts)
 {
     _mutex.lock();
     // Copying the joystick values
-    _axis = aV;
-    _buts = buts;
-    _dChanged = true;
-    
+    _axis = QVector3D(aV[0], aV[1], aV[2]);
+    _axis.normalize();
+    _buts = buts;    
     _mutex.unlock();
 }
 
@@ -99,7 +103,7 @@ void ServoThread::write(QString file)
     
     // Clamp and servos baud rate and port must be writen
     df << int(Version::v_1_0) << _cBaud << _cPort << _sBaud << _sPort << _sSpeed
-       << _servos.size();    
+       << int(_mod) << _servos.size();    
     for (const Servo &s : _servos) df << s.ID;
     
     _mutex.unlock();
@@ -122,13 +126,22 @@ void ServoThread::run()
     // Contains the servos angles
     QVector<double> D(3);
     
+    // First initialization
+    _mutex.lock();
     for (int i = 0; i < A.size(); ++i) {
         A[i] = AX12(&dxl);  
-        A[i].setID(i);
+        A[i].setID(_servos[i].ID);
     }
+    _mutex.unlock();
     
+    // Contains the current servo data
     QVector< Servo > S(_sNum);
-    int dom = 0;
+    
+    QVector3D pos(0, -20, 0);
+    QVector3D axis(0, 0, 0);
+    
+    // Contains the domino number to put
+    double dom = 0;
     
     while (not _end) {
         msleep(10);
@@ -150,53 +163,64 @@ void ServoThread::run()
                 dxl.initialize(sPort, sBaud);
             }
             
-            setAngles(0, -10, 0, D);
             for (int i = 0; i < S.size(); ++i) {
                 A[i].setID(_servos[i].ID);
                 A[i].setSpeed(_sSpeed);
             }
+            
+            
+            pos = QVector3D(0, -20, 0);            
+            
+            setAngles(pos, D);
+            for (int i = 0; i < 3; ++i) {
+                double d = 240 + D[i]*180/M_PI;
+                A[i].setGoalPosition(d);
+            }
+            _dChanged = false;
         }
-        
-        
+
         for (int i = 0; i < A.size(); ++i) {
-            _servos[i].load = A[i].getCurrentLoad();
-            _servos[i].pos = A[i].getCurrentPos();
+            S[i].load = A[i].getCurrentLoad();
+            S[i].pos = A[i].getCurrentPos();
         }
-        _dChanged = false;
+        _servos = S;
         _mutex.unlock();
         
         
-        switch(_mod) {
-    
-        case Mode::manual:
-            
-            break;
-            
-        case Mode::controlled:
-            
-            break;
+        // Main function with data updated
+        if (_mod == Mode::manual) {
+            for (int i = 0; i < 3; ++i) {
+                double diff = abs(S[i].pos - D[i]);
+                if (diff < 0.5) {
+                    pos += 3*axis;
+                }
+            }
+        } else if (_mod == Mode::controlled) {
+            ++dom;
         }
-        
+        qDebug() << pos.x() << pos.y() << pos.z();
+        this->setAngles(pos, D);
+        for (int i = 0; i < 3; ++i) A[i].setGoalPosition(D[i]);
     }
     dxl.terminate();
     exit(0);
 }
 
-void ServoThread::setAngles(double x0, double y0, double z0, QVector<double> &D)
+void ServoThread::setAngles(const QVector3D &pos, QVector<double> &D)
 {    
-    double x1 = x0 + L2 - L1;
-    double y1 = y0;
-    double z1 = z0;
+    double x1 = pos.x() + L2 - L1;
+    double y1 = pos.y();
+    double z1 = pos.z();
     D[0] = singleAngle(x1,y1,z1);
     
-    double x2 = z0*sin60 - x0*cos60 + L2 - L1;
-    double y2 = y0;
-    double z2 = -z0*cos60 - x0*sin60;
+    double x2 = pos.z()*sin60 - pos.x()*cos60 + L2 - L1;
+    double y2 = pos.y();
+    double z2 = -pos.z()*cos60 - pos.x()*sin60;
     D[1] = singleAngle(x2,y2,z2);
     
-    double x3 = -z0*sin60 - x0*cos60 + L2 - L1;
-    double y3 = y0;
-    double z3 = -z0*cos60 + x0*sin60;
+    double x3 = -pos.z()*sin60 - pos.x()*cos60 + L2 - L1;
+    double y3 = pos.y();
+    double z3 = -pos.z()*cos60 + pos.x()*sin60;
     D[2] = singleAngle(x3,y3,z3);
 }
 

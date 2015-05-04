@@ -2,12 +2,8 @@
 #include "optionswindow.h"
 #include "ui_optionswindow.h"
 
-OptionsWindow::OptionsWindow(XJoystick &J, ServoThread *servo, int &aX, 
-                             int &aY, int &aZ, QWidget *parent) :
+OptionsWindow::OptionsWindow(XJoystick &J, ServoThread *servo, QWidget *parent) :
     QDialog(parent),
-    _jAxisX(aX),
-    _jAxisY(aY),
-    _jAxisZ(aZ),
     _joy(J),
     _portSize(-1),
     _servo(servo),
@@ -37,19 +33,6 @@ OptionsWindow::OptionsWindow(XJoystick &J, ServoThread *servo, int &aX,
     this->layout()->addWidget(status);    
     
     QVector< QString > A(_joy.getAllAxis());
-    
-    // Adding joystick axis movement
-    ui->joyMX->addItem("None", -1);
-    ui->joyMY->addItem("None", -1);
-    ui->joyMZ->addItem("None", -1);
-    
-    for (int i = 0; i < A.size(); ++i) ui->joyMX->addItem(A[i], i);
-    for (int i = 0; i < A.size(); ++i) ui->joyMY->addItem(A[i], i);
-    for (int i = 0; i < A.size(); ++i) ui->joyMZ->addItem(A[i], i);
-    
-    ui->joyMX->setCurrentIndex(_jAxisX + 1);
-    ui->joyMY->setCurrentIndex(_jAxisY + 1);
-    ui->joyMZ->setCurrentIndex(_jAxisZ + 1);
     
     // Updating joystick data
     joystickChanged();
@@ -94,11 +77,6 @@ void OptionsWindow::storeData()
     
     // Storing joystick data
     _joy.select(ui->joySel->currentData().toInt());
-    
-    // Joystick movement axis
-    _jAxisX = ui->joyMX->currentData().toInt();
-    _jAxisY = ui->joyMY->currentData().toInt();
-    _jAxisZ = ui->joyMZ->currentData().toInt();
     
     QString portS(ui->portS->currentData().toString());
     int baudS(ui->baudRS->value());

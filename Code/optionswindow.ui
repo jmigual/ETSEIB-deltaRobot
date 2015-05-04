@@ -44,7 +44,7 @@
      <item>
       <widget class="QStackedWidget" name="stack">
        <property name="currentIndex">
-        <number>1</number>
+        <number>0</number>
        </property>
        <widget class="QWidget" name="joystick">
         <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -90,48 +90,6 @@
            </item>
            <item>
             <widget class="QComboBox" name="joySel"/>
-           </item>
-          </layout>
-         </item>
-         <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_12">
-           <item>
-            <widget class="QLabel" name="label_11">
-             <property name="text">
-              <string>X movement</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QComboBox" name="joyMX"/>
-           </item>
-          </layout>
-         </item>
-         <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_14">
-           <item>
-            <widget class="QLabel" name="label_13">
-             <property name="text">
-              <string>Y movement</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QComboBox" name="joyMY"/>
-           </item>
-          </layout>
-         </item>
-         <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_15">
-           <item>
-            <widget class="QLabel" name="label_14">
-             <property name="text">
-              <string>Z movement</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QComboBox" name="joyMZ"/>
            </item>
           </layout>
          </item>

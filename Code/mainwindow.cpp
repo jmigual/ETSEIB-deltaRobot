@@ -12,8 +12,6 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     
-    _sT.start();
-    
     connect(&_joy, SIGNAL(changed()), this, SLOT(joyChanged()));
     connect(&_timer, SIGNAL(timeout()), this, SLOT(update()));
     connect(&_sT, SIGNAL(statusBar(QString)), 
@@ -56,6 +54,7 @@ MainWindow::MainWindow(QWidget *parent) :
     if (!dir.exists()) dir.mkpath(_dataP);
     
     read();
+    _sT.start();
 }
 
 MainWindow::~MainWindow()
@@ -63,40 +62,37 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::keyPressEvent(QKeyEvent *event)
+{
+    if (event->isAutoRepeat()) return;
+    if (event->key() == Qt::Key_A) _joy.axisPress(0, -100);
+    else if (event->key() == Qt::Key_D) _joy.axisPress(0, 100);
+    else if (event->key() == Qt::Key_W) _joy.axisPress(1, 100);
+    else if (event->key() == Qt::Key_S) _joy.axisPress(1, -100);
+    
+    this->update();
+}
+
+void MainWindow::keyReleaseEvent(QKeyEvent *event)
+{
+    if (event->isAutoRepeat()) return;
+    if (event->key() == Qt::Key_A) _joy.axisRelease(0);
+    else if (event->key() == Qt::Key_D) _joy.axisRelease(0);
+    else if (event->key() == Qt::Key_W) _joy.axisRelease(1);
+    else if (event->key() == Qt::Key_S) _joy.axisRelease(1);
+    
+    this->update();
+}
+
 void MainWindow::read(QString path)
 {
-    QDir dir(path);
-    QFile file(dir.filePath("main.opts"));
-    if (not file.open(QIODevice::ReadOnly)) {
-        ui->statusbar->showMessage("Error opening settings", 1000);
-        return;
-    }
-    
-    QDataStream f(&file);
-    int v;
-    f >> v;
-    if (v != Version::v_1_0) {
-        ui->statusbar->showMessage("Error: data corrupted", 1000);
-        return;
-    }
-    
-    f >> _jAxisX >> _jAxisY >> _jAxisZ;
-    
+    QDir dir(path); 
     _sT.read(dir.filePath("servo.opts"));
 }
 
 void MainWindow::write(QString path)
 {
-    QDir dir(path);
-    QFile file(dir.filePath("main.opts"));
-    if(not file.open(QIODevice::WriteOnly)) {
-        ui->statusbar->showMessage("Error saving file", 1000);
-        return;
-    }
-    
-    QDataStream f(&file);
-    f << int(Version::v_1_0) << _jAxisX << _jAxisY << _jAxisZ;
-    
+    QDir dir(path);    
     _sT.write(dir.filePath("servo.opts"));
 }
 
@@ -137,7 +133,7 @@ void MainWindow::on_actionOptions_triggered()
 {
     _sT.pause();
     
-    OptionsWindow o(_joy, &_sT, _jAxisX, _jAxisY, _jAxisZ, this);
+    OptionsWindow o(_joy, &_sT, this);
     
     connect(this, SIGNAL(joystickChanged()), &o, SLOT(joystickChanged()));
     
@@ -145,6 +141,43 @@ void MainWindow::on_actionOptions_triggered()
         o.storeData();
         this->write();
     }
+}
+
+void MainWindow::on_actionImport_triggered()
+{
+    QFileDialog fD(this);
+    fD.setFileMode(QFileDialog::ExistingFile);
+    fD.setViewMode(QFileDialog::Detail);
+    fD.setAcceptMode(QFileDialog::AcceptOpen);
+    fD.setNameFilter(tr("Dominoes file (*df)"));
+    fD.setDirectory(QDir::home());
+    
+    if (fD.exec()) {
+        QString file;
+        fD.fileSelected(file);
+        
+        qDebug() << "Accepted" << file;
+    }
+    else qDebug() << "Rejected";
+}
+
+void MainWindow::on_start_clicked()
+{
+    QString text = ui->start->text();
+    
+    if (text == "Start") {
+        _sT.wakeUp();
+        ui->start->setText("Stop");
+    }
+    else if (text == "Stop") {
+        _sT.pause();
+        ui->start->setText("Start");
+    }
+}
+
+void MainWindow::statusBar(QString s)
+{
+    ui->statusbar->showMessage(s, 1500);
 }
 
 void MainWindow::update()
@@ -181,36 +214,4 @@ void MainWindow::update()
     ui->servo1L->setText(QString::number(servo[1].load));
     ui->servo2L->setText(QString::number(servo[2].load));
     
-}
-
-void MainWindow::on_start_clicked()
-{
-    QString text = ui->start->text();
-    
-    if (text == "Start") {
-        _sT.wakeUp();
-        ui->start->setText("Stop");
-    }
-    else if (text == "Stop") {
-        _sT.pause();
-        ui->start->setText("Start");
-    }
-}
-
-void MainWindow::on_actionImport_triggered()
-{
-    QFileDialog fD(this);
-    fD.setFileMode(QFileDialog::ExistingFile);
-    fD.setViewMode(QFileDialog::Detail);
-    fD.setAcceptMode(QFileDialog::AcceptOpen);
-    fD.setNameFilter(tr("Dominoes file (*df)"));
-    fD.setDirectory(QDir::home());
-    
-    if (fD.exec()) {
-        QString file;
-        fD.fileSelected(file);
-        
-        qDebug() << "Accepted" << file;
-    }
-    else qDebug() << "Rejected";
 }

@@ -22,6 +22,7 @@
 /// - QTime
 /// - QTimer
 /// - QVector
+/// - QVector3D
 /// - QWaitCondition
 /// - XJoystick
 
@@ -51,6 +52,7 @@
 #include <QTime>
 #include <QTimer>
 #include <QVector>
+#include <QVector3D>
 #include <QWaitCondition>
 
 #include <xjoystick.h>

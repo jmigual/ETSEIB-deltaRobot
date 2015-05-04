@@ -7,9 +7,10 @@
 
 // User libraries
 #include "dxl/ax12.h"
+#include <QVector>
 
 #undef M_PI
-#define M_PI 3.14159265358979323846264338327d
+#define M_PI 3.14159265358979323846264338327
 
 /// The ServoThread's class handles the comunication between the delta robot
 /// servos and the PC.
@@ -53,6 +54,14 @@ public:
         
         /// Copy constructor
         Servo(const Servo &s) : ID(s.ID), load(s.load), pos(s.pos) {}
+        
+        /// Operator overloading
+        void operator=(const Servo &s) 
+        {
+            this->ID = s.ID;
+            this->load = s.load;
+            this->pos = s.pos;
+        }
     };
     
     /// Contains the working mode
@@ -257,7 +266,7 @@ private:
     static const int _sNum = 4;            ///< Number of servos to manage
     
     /// Contains the axis value
-    QVector < float > _axis;
+    QVector3D _axis;
     
     /// Contains the buttons value
     QVector < bool > _buts;
@@ -308,7 +317,7 @@ private:
     void run();
     
     /// Used to calculate the servos angles
-    void setAngles(double x0, double y0, double z0, 
+    void setAngles(const QVector3D &pos, 
                    QVector<double> &D);
     
     /// Calculates the angle of one servo in the selected position

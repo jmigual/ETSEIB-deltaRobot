@@ -63,10 +63,6 @@ private:
     /// Contains the path to the data location
     QString _dataP;
     
-    int _jAxisX = -1;   ///< Axis for the X value
-    int _jAxisY = -1;   ///< Axis for the Y value
-    int _jAxisZ = -1;   ///< AXis for the Z value
-    
     /// To handle the joystick
     XJoystick _joy;
     
@@ -78,6 +74,12 @@ private:
     
     /// Contains the user interface
     Ui::MainWindow *ui;
+    
+    /// Handles the press of a key
+    void keyPressEvent(QKeyEvent *event);
+    
+    /// Handles the realease of a key
+    void keyReleaseEvent(QKeyEvent *event);
     
     /// Reads the data from the default location
     inline void read() { read(_dataP); }
@@ -100,10 +102,14 @@ private slots:
     /// To select the options
     void on_actionOptions_triggered();
     
+    void on_actionImport_triggered();
+    
+    void on_start_clicked();
+    
+    void statusBar(QString s);
+    
     /// Updates all data to the servo thread
     void update();
-    void on_start_clicked();
-    void on_actionImport_triggered();
 };
 
 #endif // MAINWINDOW_H

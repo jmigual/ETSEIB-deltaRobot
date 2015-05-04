@@ -27,8 +27,7 @@ public:
     /// @param aX Axis for the X value
     /// @param aY Axis for the Y value
     /// @param aZ Axis for the Z value
-    explicit OptionsWindow(XJoystick &J, ServoThread *servo, int &aX, int &aY, 
-                           int &aZ, QWidget *parent = 0);
+    explicit OptionsWindow(XJoystick &J, ServoThread *servo, QWidget *parent = 0);
     
     /// Destructor
     ~OptionsWindow();
@@ -56,10 +55,6 @@ private slots:
     void refreshFinish();
     
 private:
-    
-    int &_jAxisX;   ///< Reference to axis for the X value
-    int &_jAxisY;   ///< Reference to axis for the Y value
-    int &_jAxisZ;   ///< Reference to axis for the Z value
     
     /// Contains the Joystick to handle options
     XJoystick &_joy;

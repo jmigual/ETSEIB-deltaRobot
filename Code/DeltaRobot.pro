@@ -3,7 +3,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = DeltaRobot
 TEMPLATE = app
-CONFIG += c++14 precompile_header
+CONFIG += c++11 precompile_header
 
 # Precompiled headers
 PRECOMPILED_HEADER = stable.h
