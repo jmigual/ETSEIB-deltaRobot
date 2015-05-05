@@ -35,7 +35,7 @@ public class dominoPosition : MonoBehaviour {
 
 	void OnCollisionEnter (Collision collision){
 		if (forceApplyer && collision.gameObject.tag == "Player") {
-			Destroy(gameObject);
+						gameObject.SetActive(false);
 						//Debug.Log ("lel");
 				}
 	}
