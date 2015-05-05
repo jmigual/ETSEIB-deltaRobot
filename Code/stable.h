@@ -18,6 +18,7 @@
 /// - QStandardPaths
 /// - QStatusBar
 /// - QString
+/// - QtGlobal
 /// - QThread
 /// - QTime
 /// - QTimer
@@ -48,6 +49,7 @@
 #include <QStandardPaths>
 #include <QStatusBar>
 #include <QString>
+#include <QtGlobal>
 #include <QThread>
 #include <QTime>
 #include <QTimer>

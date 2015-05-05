@@ -71,6 +71,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
     else if (event->key() == Qt::Key_S) _joy.axisPress(1, -100);
     else if (event->key() == Qt::Key_Q) _joy.axisPress(2, -100);
     else if (event->key() == Qt::Key_E) _joy.axisPress(2, 100);
+    else if (event->key() == Qt::Key_R) _sT.reset();
     
     this->update();
 }
@@ -152,7 +153,7 @@ void MainWindow::on_actionImport_triggered()
     fD.setFileMode(QFileDialog::ExistingFile);
     fD.setViewMode(QFileDialog::Detail);
     fD.setAcceptMode(QFileDialog::AcceptOpen);
-    fD.setNameFilter(tr("Dominoes file (*df)"));
+    fD.setNameFilter(tr("Dominoes file (*.df)"));
     fD.setDirectory(QDir::home());
     
     if (fD.exec()) {

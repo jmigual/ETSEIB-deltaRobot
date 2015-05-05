@@ -194,8 +194,15 @@ void ServoThread::run()
                 if (diff >= 2.0) ok = false;
             }
             QVector3D posAux = pos + axis;
-            if (posAux.toVector2D().lengthSquared() > 100) ok = false;
-            if (posAux.z() > -11.0 or posAux.z() < -38.0) ok = false;
+            if (ok && posAux.toVector2D().lengthSquared() > 100) ok = false;
+            QVector<double> theta(3);
+            setAngles(posAux, theta);
+            for (double &d : theta) {
+                if (qIsNaN(d)) ok = false;
+                else if (d > 250 or d < 60) ok = false;
+            }
+            
+            
             if (ok) pos = posAux;
             
             
