@@ -73,6 +73,7 @@ NavMeshSettings:
     minRegionArea: 2
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
+    tileSizeHint: 0
   m_NavMesh: {fileID: 0}
 --- !u!1 &179993396
 GameObject:
@@ -106,6 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   center: {fileID: 790853745}
+  centered: 1
   distance: 20
   distanceMin: 3
   distanceMax: 50
@@ -462,8 +464,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64e27f3db4daece498903b4d65bde77e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  r1: 17.2999992
-  r2: 23.6000004
 --- !u!4 &843154044
 Transform:
   m_ObjectHideFlags: 0
