@@ -92,6 +92,13 @@ double AX12::getCurrentVoltage()
     return double(voltage/10.0);
 }
 
+void AX12::setComplianceSlope(uchar ccw, uchar cw)
+{
+    if (_ID < 0 or _dxl == NULL) return;
+    _dxl->write_byte(_ID, RAM::CCWComplianceMargin, ccw);
+    _dxl->write_byte(_ID, RAM::CWComplianceMargin, cw);
+}
+
 void AX12::setGoalPosition(double goal)
 {
     if (_ID < 0 or _dxl == NULL) return;

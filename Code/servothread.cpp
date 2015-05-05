@@ -8,7 +8,7 @@ ServoThread::ServoThread() :
     _cPort("COM3"),
     _dChanged(true),
     _end(false),
-    _mod(Mode::manual),
+    _mod(Mode::Manual),
     _pause(true),
     _sBaud(1000000),
     _servos(_sNum),
@@ -76,8 +76,9 @@ void ServoThread::readPath(QString file)
     pF >> size;
     _mutex.lock();
     _dominoe.resize(size);
-    for (Dominoe &d : _dominoe) pF >> d.X >> d.Y >> d.ori;
+    for (Dominoe &d : _dominoe) pF >> d.X >> d.Z >> d.ori;
     _mutex.unlock();
+    f.close();
     
     emit statusBar("File loaded succesfully");
 }
@@ -131,20 +132,21 @@ void ServoThread::run()
     for (int i = 0; i < A.size(); ++i) {
         A[i] = AX12(&dxl);  
         A[i].setID(_servos[i].ID);
+        A[i].setSpeed(_sSpeed);
+        A[i].setComplianceSlope(ccwCS, cwCS);
     }
     _mutex.unlock();
     
     // Contains the current servo data
     QVector< Servo > S(_sNum);
     
-    QVector3D pos(0, -20, 0);
+    QVector3D pos(0, 0, -20);
     QVector3D axis(0, 0, 0);
     
     // Contains the domino number to put
     double dom = 0;
     
     while (not _end) {
-        msleep(200);
         _mutex.lock();
         
         // Pause
@@ -166,40 +168,47 @@ void ServoThread::run()
             for (int i = 0; i < S.size(); ++i) {
                 A[i].setID(_servos[i].ID);
                 A[i].setSpeed(_sSpeed);
+                A[i].setComplianceSlope(ccwCS, cwCS);
             }
             
             
-            pos = QVector3D(0, -20, 0);            
+            pos = QVector3D(0, 0,-20);            
             
-            setAngles(pos, D);
-            for (int i = 0; i < 3; ++i) {
-                double d = 240 + D[i]*180/M_PI;
-                A[i].setGoalPosition(d);
-            }
+            this->setAngles(pos, D);
+            for (int i = 0; i < 3; ++i) A[i].setGoalPosition(D[i]);
             _dChanged = false;
         }
 
-        for (int i = 0; i < A.size(); ++i) {
-            S[i].load = A[i].getCurrentLoad();
-            S[i].pos = A[i].getCurrentPos();
-        }
+        for (int i = 0; i < A.size(); ++i) S[i].pos = A[i].getCurrentPos();
         axis = _axis;
         _servos = S;
+        _pos = pos;
         _mutex.unlock();
         
         
         // Main function with data updated
-        if (_mod == Mode::manual) {
+        if (_mod == Mode::Manual) {
+            bool ok = true;
             for (int i = 0; i < 3; ++i) {
                 double diff = abs(S[i].pos - D[i]);
-                if (diff < 0.5) {
-                    pos += 3*axis;
-                }
+                if (diff >= 2.0) ok = false;
             }
-        } else if (_mod == Mode::controlled) {
+            QVector3D posAux = pos + axis;
+            if (posAux.toVector2D().lengthSquared() > 100) ok = false;
+            if (posAux.z() > -11.0 or posAux.z() < -38.0) ok = false;
+            if (ok) pos = posAux;
+            
+            
+        } 
+        else if (_mod == Mode::Controlled) {
             ++dom;
+        } 
+        else if (_mod == Mode::Reset) {
+            _mod = Mode::Manual;
+            pos = QVector3D(0, 0, -20);
+            dom = 0;
         }
-        //qDebug() << pos.x() << pos.y() << pos.z() << axis.x() << axis.y() << axis.z();
+        
         this->setAngles(pos, D);
         for (int i = 0; i < 3; ++i) A[i].setGoalPosition(D[i]);
     }
@@ -210,19 +219,21 @@ void ServoThread::run()
 void ServoThread::setAngles(const QVector3D &pos, QVector<double> &D)
 {    
     double x1 = pos.x() + L2 - L1;
-    double y1 = pos.y();
-    double z1 = pos.z();
+    double y1 = pos.z();
+    double z1 = pos.y();
     D[0] = singleAngle(x1,y1,z1);
     
-    double x2 = pos.z()*sin60 - pos.x()*cos60 + L2 - L1;
-    double y2 = pos.y();
-    double z2 = -pos.z()*cos60 - pos.x()*sin60;
+    double x2 = pos.y()*sin60 - pos.x()*cos60 + L2 - L1;
+    double y2 = pos.z();
+    double z2 = -pos.y()*cos60 - pos.x()*sin60;
     D[1] = singleAngle(x2,y2,z2);
     
-    double x3 = -pos.z()*sin60 - pos.x()*cos60 + L2 - L1;
-    double y3 = pos.y();
-    double z3 = -pos.z()*cos60 + pos.x()*sin60;
+    double x3 = -pos.y()*sin60 - pos.x()*cos60 + L2 - L1;
+    double y3 = pos.z();
+    double z3 = -pos.y()*cos60 + pos.x()*sin60;
     D[2] = singleAngle(x3,y3,z3);
+    
+    for (double &d : D) d = 240 + d*180/M_PI;
 }
 
 double ServoThread::singleAngle(double x0, double y0, double z0)

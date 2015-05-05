@@ -35,7 +35,7 @@ class ServoThread : public QThread
     struct Dominoe
     {
         double X;   ///< X position
-        double Y;   ///< Y position
+        double Z;   ///< Y position
         double ori; ///< Orientation from X = 0 in degrees
     };
     
@@ -45,21 +45,19 @@ public:
     struct Servo 
     {
         int ID;         ///< Contains the servo ID
-        double load;    ///< Contains the servo load
         double pos;     ///< Contains the servo position
         
         /// Default constructor
-        Servo(int ID = -1, double load = -1, double pos = -1) 
-            : ID(ID), load(load), pos(pos) {}
+        Servo(int ID = -1, double pos = -1) 
+            : ID(ID), pos(pos) {}
         
         /// Copy constructor
-        Servo(const Servo &s) : ID(s.ID), load(s.load), pos(s.pos) {}
+        Servo(const Servo &s) : ID(s.ID), pos(s.pos) {}
         
         /// Operator overloading
         void operator=(const Servo &s) 
         {
             this->ID = s.ID;
-            this->load = s.load;
             this->pos = s.pos;
         }
     };
@@ -67,8 +65,9 @@ public:
     /// Contains the working mode
     enum Mode 
     {
-        controlled,
-        manual
+        Controlled,
+        Manual,
+        Reset
     };
     
     /// Default constructor
@@ -88,12 +87,11 @@ public:
         wait();
     }
     
-    /// Pauses the execution
-    inline void pause()
+    /// Returns the current position
+    inline QVector3D getCurrentPos()
     {
-        _mutex.lock();
-        _pause = true;
-        _mutex.unlock();
+        QMutexLocker m(&_mutex);
+        return _pos;
     }
     
     /// Returns the current servo Baud rate
@@ -119,7 +117,6 @@ public:
         _mutex.unlock();
     }
     
-    
     /// Returns the servos info, with all its load and current position
     /// @param V Servo vector to store information
     inline void getServosInfo(QVector<Servo> &V)
@@ -139,8 +136,23 @@ public:
     /// Returns the number of servos to handle
     inline int getServosNum() { return _sNum; }
     
+    /// Returns true if the servos are active
+    inline bool isActive()
+    {
+        QMutexLocker m(&_mutex);
+        return _pause;
+    }
+    
     /// Returns the mutex used in the thread
     inline QMutex* mutex() { return &_mutex; }
+    
+    /// Pauses the execution
+    inline void pause()
+    {
+        _mutex.lock();
+        _pause = true;
+        _mutex.unlock();
+    }
     
     /// Reads and loads the data from the selected file
     /// @param file Path to the selected file
@@ -153,9 +165,11 @@ public:
     /// Resets to default positions (used when the mode changes or when some
     /// data has changed
     /// @pre The thread is sleeping
-    inline void reset()
-    {
-        
+    inline void reset() 
+    { 
+        _mutex.lock();
+        _mod = Mode::Reset; 
+        _mutex.unlock();
     }
     
     /// Sets the current working mode
@@ -263,6 +277,9 @@ private:
     const double L1 = 6.374;        ///< The base center length
     const double L2 = 6.000;        ///< The clamp support center lenght
     
+    const uchar ccwCS = 2;         ///< The Counter Clock Wise Compliance Slope
+    const uchar cwCS = 2;          ///< The Clock Wise Compliance Slope
+    
     static const int _sNum = 4;            ///< Number of servos to manage
     
     /// Contains the axis value
@@ -298,6 +315,9 @@ private:
     /// Pauses the execution of the thread
     bool _pause;
     
+    /// Contains the current position to show to the window
+    QVector3D _pos;
+    
     /// Contains the used baud rate to comunicate with the servos
     int _sBaud;
     
@@ -326,3 +346,5 @@ private:
 };
 
 #endif // SERVOTHREAD_H
+
+// TODO: Arreglar canvis besties

@@ -113,6 +113,11 @@ public:
     /// To get the current ID
     inline int getID() { return _ID; }
     
+    /// Sets the compliance slope
+    /// @param ccw Counter Clock Wise Compliance Slope
+    /// @param cw Clock Wise Compliance Slope
+    void setComplianceSlope(uchar ccw, uchar cw);
+    
     /// Sets the dynamixel interface
     /// @param dxl Pointer to the dynamixel control class
     inline void setDxl(dynamixel *dxl) { _dxl = dxl; }

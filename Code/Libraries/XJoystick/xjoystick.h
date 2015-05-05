@@ -29,7 +29,6 @@ using namespace sf;
 /// with <em>signals and slots</em>
 class XJOYSTICKSHARED_EXPORT XJoystick : public QObject
 {
-    
     Q_OBJECT
     
     /// Typedef for the String and int pair
@@ -58,12 +57,12 @@ class XJOYSTICKSHARED_EXPORT XJoystick : public QObject
     
 public:
     
+    /// Basic enumerations
     enum {
+        Count = J::Count,
         AxisCount = J::AxisCount,
-        
         ButtonCount = J::ButtonCount
     };
-    
     
     /// Struct to handle the info 
     struct Info {

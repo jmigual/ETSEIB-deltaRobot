@@ -69,6 +69,8 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
     else if (event->key() == Qt::Key_D) _joy.axisPress(0, 100);
     else if (event->key() == Qt::Key_W) _joy.axisPress(1, 100);
     else if (event->key() == Qt::Key_S) _joy.axisPress(1, -100);
+    else if (event->key() == Qt::Key_Q) _joy.axisPress(2, -100);
+    else if (event->key() == Qt::Key_E) _joy.axisPress(2, 100);
     
     this->update();
 }
@@ -80,7 +82,8 @@ void MainWindow::keyReleaseEvent(QKeyEvent *event)
     else if (event->key() == Qt::Key_D) _joy.axisRelease(0);
     else if (event->key() == Qt::Key_W) _joy.axisRelease(1);
     else if (event->key() == Qt::Key_S) _joy.axisRelease(1);
-    
+    else if (event->key() == Qt::Key_Q) _joy.axisRelease(2);
+    else if (event->key() == Qt::Key_E) _joy.axisRelease(2);
     this->update();
 }
 
@@ -197,7 +200,12 @@ void MainWindow::update()
     
     _sT.setData(_axisV, _butsV);
     
-    QVector<ServoThread::Servo> servo(_sT.getServosInfo());
+    QVector<ServoThread::Servo> servo = _sT.getServosInfo();
+    QVector3D pos = _sT.getCurrentPos();
+    QString x = QString::number(pos.x());
+    QString y = QString::number(pos.y());
+    QString z = QString::number(pos.z());
+    ui->pos->setText(x + " " + y + " " + z);
     
     // Updating position sliders
     ui->servo0S->setValue(servo[0].pos);
@@ -207,11 +215,15 @@ void MainWindow::update()
     // Updating position labels
     ui->servo0->setText(QString::number(servo[0].pos));
     ui->servo1->setText(QString::number(servo[1].pos));
-    ui->servo2->setText(QString::number(servo[2].pos));
-    
-    // Updating load labels
-    ui->servo0L->setText(QString::number(servo[0].load));
-    ui->servo1L->setText(QString::number(servo[1].load));
-    ui->servo2L->setText(QString::number(servo[2].load));
-    
+    ui->servo2->setText(QString::number(servo[2].pos));    
+}
+
+void MainWindow::on_mode_clicked()
+{
+    if (_sT.isActive()) _sT.pause();
+}
+
+void MainWindow::on_reset_clicked()
+{
+    _sT.reset();
 }
