@@ -235,8 +235,8 @@ public class Editor : MonoBehaviour {
 	}
 
 	public void saveState (){
-		string content = "";
 		GameObject[] pieces = GameObject.FindGameObjectsWithTag ("Player");
+		string content = pieces.Length.ToString() + Environment.NewLine;
 		for (int i = 0; i<pieces.Length; ++i)
 						content = content + pieces [i].transform.position.x.ToString("F2") +" " +
 								pieces [i].transform.position.z.ToString("F2") + " " + 
