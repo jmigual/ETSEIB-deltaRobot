@@ -98880,6 +98880,7 @@ GameObject:
   m_Component:
   - 224: {fileID: 1769579419}
   - 114: {fileID: 1769579420}
+  - 222: {fileID: 1769579422}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -98967,6 +98968,12 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!222 &1769579422
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1769579418}
 --- !u!1 &1770123754
 GameObject:
   m_ObjectHideFlags: 0
