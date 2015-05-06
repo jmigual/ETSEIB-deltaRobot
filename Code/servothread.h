@@ -35,7 +35,7 @@ class ServoThread : public QThread
     struct Dominoe
     {
         double X;   ///< X position
-        double Z;   ///< Y position
+        double Y;   ///< Y position
         double ori; ///< Orientation from X = 0 in degrees
     };
     
@@ -178,7 +178,7 @@ public:
     inline void setMode(Mode m)
     {
         QMutexLocker mut(&_mutex);
-        if (_pause) return;
+        if (!_pause) return;
         _mod = m;
         _dChanged = true;
     }
@@ -248,6 +248,7 @@ public:
         _sSpeed = speed;
         _dChanged = true;
         _mutex.unlock();
+        qDebug() << "Speed changed" << speed;
     }
     
     /// Continues program's execution
@@ -276,10 +277,10 @@ private:
     const double b = 22.648;        ///< The forearm length
     const double L1 = 6.374;        ///< The base center length
     const double L2 = 6.000;        ///< The clamp support center lenght
-    const double maxErr = 2.0;      ///< Max available error
+    const double maxErr = 3.0;      ///< Max available error
     const double minAngle = 60.0;   ///< Minimum servo angle
     const double maxAngle = 240.0;  ///< Maximum servo angle
-    const double workRadSq = 100.0; ///< Working radius squared
+    const double workRadSq = 144.0; ///< Working radius squared
     
     const uchar ccwCS = 2;         ///< The Counter Clock Wise Compliance Slope
     const uchar cwCS = 2;          ///< The Clock Wise Compliance Slope
@@ -338,8 +339,7 @@ private:
     unsigned int _sSpeed;
     
     /// Returns true if the position is available
-    bool isPosAvailable(const QVector<Servo> &S, const QVector<double> &D,
-                        const QVector3D &pos, const QVector3D &newPos);
+    bool isPosAvailable(const QVector<Servo> &S, const QVector<double> &D, const QVector3D &newPos, double err);
     
     /// Used to create another thread
     void run();
@@ -356,3 +356,4 @@ private:
 #endif // SERVOTHREAD_H
 
 // TODO: Arreglar canvis besties
+// BUG: En el moment de canviar de mode es para el Thread

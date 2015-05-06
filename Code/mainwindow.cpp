@@ -136,6 +136,7 @@ void MainWindow::joyChanged()
 void MainWindow::on_actionOptions_triggered()
 {
     _sT.pause();
+    ui->start->setText("Start");
     
     OptionsWindow o(_joy, &_sT, this);
     
@@ -149,20 +150,15 @@ void MainWindow::on_actionOptions_triggered()
 
 void MainWindow::on_actionImport_triggered()
 {
-    QFileDialog fD(this);
-    fD.setFileMode(QFileDialog::ExistingFile);
-    fD.setViewMode(QFileDialog::Detail);
-    fD.setAcceptMode(QFileDialog::AcceptOpen);
-    fD.setNameFilter(tr("Dominoes file (*.df)"));
-    fD.setDirectory(QDir::home());
+    QString caption("Open Dominoes File");
+    QString dir(QDir::homePath());
+    QString filter(tr("Dominoes file (*.df)"));
     
-    if (fD.exec()) {
-        QString file;
-        fD.fileSelected(file);
-        
-        qDebug() << "Accepted" << file;
-    }
-    else qDebug() << "Rejected";
+    QString file = QFileDialog::getOpenFileName(this, caption, dir, filter);
+    
+    if (!file.size()) return;
+    
+    _sT.readPath(file);
 }
 
 void MainWindow::on_start_clicked()
@@ -222,6 +218,14 @@ void MainWindow::update()
 void MainWindow::on_mode_clicked()
 {
     if (_sT.isActive()) _sT.pause();
+    if (ui->mode->text() == "Manual") {
+        ui->mode->setText("Auto");
+        _sT.setMode(ServoThread::Controlled);
+    }
+    else if (ui->mode->text() == "Auto") {
+        ui->mode->setText("Manual");
+        _sT.setMode(ServoThread::Manual);
+    }
 }
 
 void MainWindow::on_reset_clicked()

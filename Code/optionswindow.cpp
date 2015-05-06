@@ -132,8 +132,7 @@ void OptionsWindow::events()
             QString text(ports[i].portName());
             text += ": " + ports[i].description();
             ui->portC->addItem(text, ports[i].portName());
-            ui->portS->addItem(text, ports[i].portName());
-            qDebug() << ports[i].portName();    
+            ui->portS->addItem(text, ports[i].portName()); 
             if (ports[i].portName() == portC) selC = i + 1;
             if (ports[i].portName() == portS) selS = i + 1;
         }

@@ -102,15 +102,22 @@ private slots:
     /// To select the options
     void on_actionOptions_triggered();
     
+    /// Opens the import of Dominoes file
     void on_actionImport_triggered();
     
+    /// Starts or stops the thread
     void on_start_clicked();
     
+    /// Emits something to the status bar
     void statusBar(QString s);
     
     /// Updates all data to the servo thread
     void update();
+    
+    /// Handles the change of the mode
     void on_mode_clicked();
+    
+    /// Handles a reset
     void on_reset_clicked();
 };
 
