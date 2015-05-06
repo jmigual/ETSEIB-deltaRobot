@@ -276,6 +276,10 @@ private:
     const double b = 22.648;        ///< The forearm length
     const double L1 = 6.374;        ///< The base center length
     const double L2 = 6.000;        ///< The clamp support center lenght
+    const double maxErr = 2.0;      ///< Max available error
+    const double minAngle = 60.0;   ///< Minimum servo angle
+    const double maxAngle = 240.0;  ///< Maximum servo angle
+    const double workRadSq = 100.0; ///< Working radius squared
     
     const uchar ccwCS = 2;         ///< The Counter Clock Wise Compliance Slope
     const uchar cwCS = 2;          ///< The Clock Wise Compliance Slope
@@ -332,6 +336,10 @@ private:
     
     /// Speed of the robot
     unsigned int _sSpeed;
+    
+    /// Returns true if the position is available
+    bool isPosAvailable(const QVector<Servo> &S, const QVector<double> &D,
+                        const QVector3D &pos, const QVector3D &newPos);
     
     /// Used to create another thread
     void run();

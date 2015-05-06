@@ -4,7 +4,7 @@
 #define AX12_H
 
 // Standard variables
-#define M_PI		3.14159265358979323846
+#define M_PI 3.14159265358979323846264338327
 
 // Qt libraries
 #include <QVector>

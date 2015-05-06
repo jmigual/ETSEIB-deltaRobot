@@ -110,6 +110,28 @@ void ServoThread::write(QString file)
     _mutex.unlock();
 }
 
+bool ServoThread::isPosAvailable(const QVector<ServoThread::Servo> &S, 
+                                 const QVector<double> &D, const QVector3D &pos, 
+                                 const QVector3D &newPos)
+{
+    for (int i = 0; i < 3; ++i) {
+        double aux = abs(S[i].pos - D[i]);
+        if (aux > maxErr) return false;
+    }
+    
+    if (newPos.toVector2D().lengthSquared() > workRadSq) return false;
+    
+    QVector<double> theta(3);
+    this->setAngles(newPos, theta);
+    
+    for (const double &d : theta) {
+        if (qIsNaN(d)) return false;
+        else if (d > maxAngle or d < minAngle) return false;
+    }
+    
+    return true;
+}
+
 void ServoThread::run()
 {
     // First initializations
@@ -188,24 +210,9 @@ void ServoThread::run()
         
         // Main function with data updated
         if (_mod == Mode::Manual) {
-            bool ok = true;
-            for (int i = 0; i < 3; ++i) {
-                double diff = abs(S[i].pos - D[i]);
-                if (diff >= 2.0) ok = false;
-            }
             QVector3D posAux = pos + axis;
-            if (ok && posAux.toVector2D().lengthSquared() > 100) ok = false;
-            QVector<double> theta(3);
-            setAngles(posAux, theta);
-            for (double &d : theta) {
-                if (qIsNaN(d)) ok = false;
-                else if (d > 250 or d < 60) ok = false;
-            }
-            
-            
-            if (ok) pos = posAux;
-            
-            
+            bool ok = this->isPosAvailable(S, D, pos, posAux);            
+            if (ok) pos = posAux;            
         } 
         else if (_mod == Mode::Controlled) {
             ++dom;
