@@ -37,6 +37,12 @@ class ServoThread : public QThread
         double X;   ///< X position
         double Y;   ///< Y position
         double ori; ///< Orientation from X = 0 in degrees
+        
+        bool operator<(const Dominoe &d) const
+        {
+            if (this->X != d.X) return this->X < d.X;
+            return this->Y < d.Y;
+        }
     };
     
 public:
@@ -136,11 +142,18 @@ public:
     /// Returns the number of servos to handle
     inline int getServosNum() { return _sNum; }
     
+    /// Returns the current speed
+    inline int getSpeed()
+    {
+        QMutexLocker m(&_mutex);
+        return _sSpeed;
+    }
+    
     /// Returns true if the servos are active
     inline bool isActive()
     {
         QMutexLocker m(&_mutex);
-        return _pause;
+        return not _pause;
     }
     
     /// Returns the mutex used in the thread
@@ -248,7 +261,6 @@ public:
         _sSpeed = speed;
         _dChanged = true;
         _mutex.unlock();
-        qDebug() << "Speed changed" << speed;
     }
     
     /// Continues program's execution
@@ -265,6 +277,9 @@ public:
     void write(QString file);
     
 signals:
+    
+    /// To show the change of a mode
+    void modeChanged(Mode);
     
     /// Emmitted when the status bar must be changed
     void statusBar(QString);
@@ -310,6 +325,9 @@ private:
     
     /// True when we must end executino
     bool _end;
+    
+    /// True if the enter key is pressed
+    bool _enter;
     
     /// Contains the working mode
     Mode _mod;
