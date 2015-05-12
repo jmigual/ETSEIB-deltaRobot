@@ -14,8 +14,13 @@ public class Movements : MonoBehaviour {
 
 	public float rangexz, rangey, steps;
 
-	void Start(){
+	public void Start(){
+		StartCoroutine(wot());
 
+		//robot.calculateWorkspace=false;
+	}
+
+	public IEnumerator wot(){
 		if (robot.calculateWorkspace){
 			
 			string content="";
@@ -30,21 +35,24 @@ public class Movements : MonoBehaviour {
 						if (robot.valid){
 							Vector3 res=robot.Ocontrolled-trans.position;
 							content = content + res.x.ToString("F2") +" " +
-												res.z.ToString("F2") + " " + 
-												res.y.ToString("F2") + Environment.NewLine;
+								res.z.ToString("F2") + " " + 
+									res.y.ToString("F2") + Environment.NewLine;
 						}
+						yield return new WaitForSeconds(0.000000f);
 					}
 				}
 			}
 			
 			System.IO.File.WriteAllText(path, content);
+			robot.calculateWorkspace=false;
 		}
+		yield return new WaitForSeconds(2);	
 	}
-
+	
 	void Update () {
 		t+=Time.deltaTime;
 		if ((w*t)>(2*Mathf.PI))t-=2*Mathf.PI/w;
-		robot.Ocontrolled.Set (radius*Mathf.Sin (w*t),height,radius*Mathf.Cos (w*t));
+		if (!robot.calculateWorkspace)robot.Ocontrolled.Set (radius*Mathf.Sin (w*t),height,radius*Mathf.Cos (w*t));
 		//Debug.Log (robot.valid);
 	}
 }
