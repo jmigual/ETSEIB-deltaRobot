@@ -107,9 +107,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   center: {fileID: 790853745}
   centered: 1
-  distance: 20
+  distance: 150
   distanceMin: 3
-  distanceMax: 50
+  distanceMax: 500
   zoomspeed: 500
   theta: 45
   phi: 50
@@ -402,10 +402,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c35673f910e63b24294def4e3cfebf91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  L1: 3
-  a: 7
-  b: 10
-  L2: 2
+  L1: 6.37400007
+  a: 17.2329998
+  b: 22.6480007
+  L2: 6
   O: {x: 0, y: 20, z: 0}
   ColorRGBA: {r: .014489633, g: .985294104, b: .985294104, a: 1}
   arms: {r: .0207612664, g: .941176474, b: .0271089058, a: 1}
@@ -414,7 +414,7 @@ MonoBehaviour:
   theta1: 60
   theta2: 60
   theta3: 60
-  controlled: 0
+  controlled: 1
   calculateWorkspace: 1
   Ocontrolled: {x: 0, y: 0, z: 0}
   valid: 1
@@ -425,7 +425,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 790853745}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 20, z: 0}
+  m_LocalPosition: {x: 0, y: 60, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1096913811}
@@ -478,14 +478,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4eae997a069f17b4fabc45db400dd3e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  height: 10
+  height: 40
   radius: 5
   w: 3
   robot: {fileID: 790853746}
   path: .\Punts Valids.txt
-  rangexz: 25
-  rangey: 40
-  steps: 60
+  rangexz: 80
+  rangey: 80
+  steps: 20
 --- !u!1 &908963462
 GameObject:
   m_ObjectHideFlags: 0
@@ -927,7 +927,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1921304668
 Transform:
   m_ObjectHideFlags: 0
@@ -935,8 +935,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1921304667}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -17.5, z: 0}
-  m_LocalScale: {x: 35, y: 35, z: 35}
+  m_LocalPosition: {x: 0, y: -20, z: 0}
+  m_LocalScale: {x: 40, y: 40, z: 40}
   m_Children: []
   m_Father: {fileID: 790853747}
   m_RootOrder: 8
@@ -952,7 +952,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7a18fc0f3bb4d9147bcf7bad4d0e9547, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0

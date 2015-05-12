@@ -90,6 +90,7 @@ public class RobotCreator : MonoBehaviour {
 
 		
 		valid=(!float.IsNaN(theta1) && !float.IsNaN(theta2) && !float.IsNaN(theta3));
+		if (!calculateWorkspace)Debug.Log (valid);
 	}
 	float singleAngle (float x0, float y0, float z0, float r1, float r2){
 		float n = r2 * r2 - r1 * r1 - z0 * z0 - x0 * x0 - y0 * y0;
