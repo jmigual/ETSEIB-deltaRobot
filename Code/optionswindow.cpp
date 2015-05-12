@@ -61,6 +61,7 @@ OptionsWindow::OptionsWindow(XJoystick &J, ServoThread *servo, QWidget *parent) 
     QString port;
     int baud;
     _servo->getServoPortInfo(port, baud);
+    ui->speed->setValue(_servo->getSpeed());
     ui->baudRS->setValue(baud);
     ui->portS->addItem("", port);
 }

@@ -1,0 +1,6 @@
+>> delaunay(x, y, z);
+>> tri = delaunay(x, y, z);
+>> trisurf(tri,x, y, z)
+>> hold on
+>> trisurf(tri,x, y, z)
+>> axis('equal')

@@ -167,7 +167,6 @@ void ServoThread::run()
     // Contains the domino number to put
     double dom = 0;
     QVector< Dominoe > Dom;
-    bool domStart = true;
     
     while (not _end) {
         _mutex.lock();
@@ -196,7 +195,6 @@ void ServoThread::run()
             
             Dom = _dominoe;
             dom = 0;
-            domStart = true;
             
             pos = QVector3D(0, 0,-25);            
             this->setAngles(pos, D);
@@ -205,48 +203,40 @@ void ServoThread::run()
             _dChanged = false;
         }
 
-        for (int i = 0; i < A.size(); ++i) S[i].pos = A[i].getCurrentPos();
+        for (int i = 0; i < A.size(); ++i) {
+            _servos[i].pos = S[i].pos = A[i].getCurrentPos();
+        }
         axis = _axis;
-        _servos = S;
         _pos = pos;
         _mutex.unlock();
         
         
         // Main function with data updated
         if (_mod == Mode::Manual) {
-            QVector3D posAux = pos + axis;
+            QVector3D posAux = pos + 0.5*axis;
             
-            bool ok = this->isPosAvailable(S, D, posAux, maxErr + 2);
+            bool ok = this->isPosAvailable(S, D, posAux, maxErr + 4);
             if (ok) pos = posAux;            
         } 
         else if (_mod == Mode::Controlled) {
             QVector3D posAux(0, 0, -30);
-            if (domStart) {
-                domStart = false;
-                if (Dom.size() != 0) {
-                    
-                    posAux.setX(Dom[dom].X);
-                    posAux.setY(Dom[dom].Y);
-                    pos = posAux;
-                    ++dom;
-                }
-                else qDebug() << "False";
-            }
-            else if (dom < Dom.size()) {
+            if (dom < Dom.size()) {
                 posAux.setX(Dom[dom].X);
                 posAux.setY(Dom[dom].Y);
                 
                 bool ok = this->isPosAvailable(S, D, posAux, maxErr);
-                qDebug() << "OK:" << ok;
                 if (ok) {
                     QThread::msleep(1000);
                     pos = posAux;
                     ++dom;
-                }
+                } else if (dom == 0) { pos = posAux; ++dom; }
+                
             }
             else {
                 _mod = Mode::Reset;
                 emit statusBar("Finished!!");
+                
+                emit modeChanged(Mode::Manual);
             }
         } 
         else if (_mod == Mode::Reset) {
@@ -254,10 +244,6 @@ void ServoThread::run()
             pos = QVector3D(0, 0, -25);
             dom = 0;
         }
-        
-        QVector< double > aux;
-        for (int i = 0; i < 3; ++i) aux.push_back(S[i].pos);
-        qDebug() << dom << pos << aux << D;
         
         this->setAngles(pos, D);
         for (int i = 0; i < 3; ++i) A[i].setGoalPosition(D[i]);

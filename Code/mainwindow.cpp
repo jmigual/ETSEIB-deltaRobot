@@ -14,8 +14,8 @@ MainWindow::MainWindow(QWidget *parent) :
     
     connect(&_joy, SIGNAL(changed()), this, SLOT(joyChanged()));
     connect(&_timer, SIGNAL(timeout()), this, SLOT(update()));
-    connect(&_sT, SIGNAL(statusBar(QString)), 
-            ui->statusbar, SLOT(showMessage(QString)));
+    connect(&_sT, SIGNAL(statusBar(QString)), this, SLOT(statusBar(QString)));
+    connect(&_sT, SIGNAL(modeChanged(Mode)), this, SLOT(modeChanged(Mode)));
     
     
     _timer.setInterval(10);
@@ -132,6 +132,13 @@ void MainWindow::joyChanged()
     emit joystickChanged();
 }
 
+void MainWindow::modeChanged(Mode m)
+{
+    qDebug() << int(m);
+    if (m == Mode::Manual) ui->mode->setText("Manual");
+    else if (m == Mode::Controlled) ui->mode->setText("Auto");
+}
+
 
 void MainWindow::on_actionOptions_triggered()
 {
@@ -159,6 +166,27 @@ void MainWindow::on_actionImport_triggered()
     if (!file.size()) return;
     
     _sT.readPath(file);
+}
+
+void MainWindow::on_mode_clicked()
+{
+    if (_sT.isActive()) {
+        _sT.pause();
+        ui->start->setText("Start");
+    }
+    if (ui->mode->text() == "Manual") {
+        ui->mode->setText("Auto");
+        _sT.setMode(Mode::Controlled);
+    }
+    else if (ui->mode->text() == "Auto") {
+        ui->mode->setText("Manual");
+        _sT.setMode(Mode::Manual);
+    }
+}
+
+void MainWindow::on_reset_clicked()
+{
+    _sT.reset();
 }
 
 void MainWindow::on_start_clicked()
@@ -213,22 +241,4 @@ void MainWindow::update()
     ui->servo0->setText(QString::number(servo[0].pos));
     ui->servo1->setText(QString::number(servo[1].pos));
     ui->servo2->setText(QString::number(servo[2].pos));    
-}
-
-void MainWindow::on_mode_clicked()
-{
-    if (_sT.isActive()) _sT.pause();
-    if (ui->mode->text() == "Manual") {
-        ui->mode->setText("Auto");
-        _sT.setMode(ServoThread::Controlled);
-    }
-    else if (ui->mode->text() == "Auto") {
-        ui->mode->setText("Manual");
-        _sT.setMode(ServoThread::Manual);
-    }
-}
-
-void MainWindow::on_reset_clicked()
-{
-    _sT.reset();
 }

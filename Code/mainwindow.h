@@ -23,6 +23,8 @@ class MainWindow : public QMainWindow
 {
     Q_OBJECT
     
+    typedef ServoThread::Mode Mode;
+    
     /// Contains the number of minimun servos to work
     static const int sCount = 3;
     
@@ -99,11 +101,20 @@ private slots:
     /// Handles a joystick update
     void joyChanged();
     
+    /// Handles the change of a mode in the thread
+    void modeChanged(Mode m);
+    
     /// To select the options
     void on_actionOptions_triggered();
     
     /// Opens the import of Dominoes file
     void on_actionImport_triggered();
+    
+    /// Handles the change of the mode
+    void on_mode_clicked();
+    
+    /// Handles a reset
+    void on_reset_clicked();
     
     /// Starts or stops the thread
     void on_start_clicked();
@@ -113,12 +124,6 @@ private slots:
     
     /// Updates all data to the servo thread
     void update();
-    
-    /// Handles the change of the mode
-    void on_mode_clicked();
-    
-    /// Handles a reset
-    void on_reset_clicked();
 };
 
 #endif // MAINWINDOW_H
