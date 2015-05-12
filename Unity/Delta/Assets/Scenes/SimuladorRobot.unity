@@ -73,6 +73,7 @@ NavMeshSettings:
     minRegionArea: 2
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
+    tileSizeHint: 0
   m_NavMesh: {fileID: 0}
 --- !u!1 &179993396
 GameObject:
@@ -415,7 +416,7 @@ MonoBehaviour:
   theta2: 60
   theta3: 60
   controlled: 0
-  calculateWorkspace: 1
+  calculateWorkspace: 0
   Ocontrolled: {x: 0, y: 0, z: 0}
   valid: 1
 --- !u!4 &790853747
@@ -483,9 +484,9 @@ MonoBehaviour:
   w: 3
   robot: {fileID: 790853746}
   path: .\Punts Valids.txt
-  rangexz: 25
-  rangey: 40
-  steps: 60
+  rangexz: 50
+  rangey: 50
+  steps: 35
 --- !u!1 &908963462
 GameObject:
   m_ObjectHideFlags: 0
