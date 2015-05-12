@@ -8,8 +8,10 @@ public class RobotCreator : MonoBehaviour {
 	public Color Base, arms, forearms, platform;
 	public float theta1=60f,theta2=60f,theta3=60f;
 	public bool controlled=false;
+	public bool calculateWorkspace=true;
 
-	public static Vector3 Ocontrolled;
+	public Vector3 Ocontrolled;
+	public bool valid=true;
 
 	private const float rad = 2f*Mathf.PI/360f;
 	//private int signe = 1;
@@ -58,7 +60,8 @@ public class RobotCreator : MonoBehaviour {
 		drawArms ();
 		drawForearm();
 	}
-	void setAngles (){
+	public void setAngles (){
+		if (calculateWorkspace)O=Ocontrolled;
 		float cos60=Mathf.Cos (60*rad);
 		float sin60=Mathf.Sin (60*rad);
 
@@ -84,6 +87,9 @@ public class RobotCreator : MonoBehaviour {
 		y3=y0;
 		z3=-z0*cos60+x0*sin60;
 		theta3=singleAngle (x3,y3,z3,a,b);
+
+		
+		valid=(!float.IsNaN(theta1) && !float.IsNaN(theta2) && !float.IsNaN(theta3));
 	}
 	float singleAngle (float x0, float y0, float z0, float r1, float r2){
 		float n = r2 * r2 - r1 * r1 - z0 * z0 - x0 * x0 - y0 * y0;
