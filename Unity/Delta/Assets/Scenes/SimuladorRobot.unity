@@ -73,7 +73,6 @@ NavMeshSettings:
     minRegionArea: 2
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
-    tileSizeHint: 0
   m_NavMesh: {fileID: 0}
 --- !u!1 &179993396
 GameObject:
@@ -415,7 +414,10 @@ MonoBehaviour:
   theta1: 60
   theta2: 60
   theta3: 60
-  controlled: 1
+  controlled: 0
+  calculateWorkspace: 1
+  Ocontrolled: {x: 0, y: 0, z: 0}
+  valid: 1
 --- !u!4 &790853747
 Transform:
   m_ObjectHideFlags: 0
@@ -434,6 +436,7 @@ Transform:
   - {fileID: 2129306200}
   - {fileID: 984066004}
   - {fileID: 1897022155}
+  - {fileID: 1921304668}
   m_Father: {fileID: 0}
   m_RootOrder: 5
 --- !u!1 &843154042
@@ -444,7 +447,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 843154044}
-  - 114: {fileID: 843154043}
   - 114: {fileID: 843154045}
   m_Layer: 0
   m_Name: Troll
@@ -453,17 +455,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &843154043
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 843154042}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e27f3db4daece498903b4d65bde77e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &843154044
 Transform:
   m_ObjectHideFlags: 0
@@ -490,6 +481,11 @@ MonoBehaviour:
   height: 10
   radius: 5
   w: 3
+  robot: {fileID: 790853746}
+  path: .\Punts Valids.txt
+  rangexz: 25
+  rangey: 40
+  steps: 60
 --- !u!1 &908963462
 GameObject:
   m_ObjectHideFlags: 0
@@ -914,6 +910,75 @@ LineRenderer:
       serializedVersion: 2
       rgba: 4294967295
   m_UseWorldSpace: 1
+--- !u!1 &1921304667
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1921304668}
+  - 33: {fileID: 1921304671}
+  - 65: {fileID: 1921304670}
+  - 23: {fileID: 1921304669}
+  m_Layer: 0
+  m_Name: Cube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1921304668
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1921304667}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -17.5, z: 0}
+  m_LocalScale: {x: 35, y: 35, z: 35}
+  m_Children: []
+  m_Father: {fileID: 790853747}
+  m_RootOrder: 8
+--- !u!23 &1921304669
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1921304667}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!65 &1921304670
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1921304667}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &1921304671
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1921304667}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1927091657
 GameObject:
   m_ObjectHideFlags: 0
