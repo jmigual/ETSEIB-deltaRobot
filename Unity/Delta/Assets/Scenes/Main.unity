@@ -105246,7 +105246,7 @@ MonoBehaviour:
   DominoPiece: {fileID: 151428, guid: b93f374cb2d27fd43b2b8bbbdd2083ce, type: 2}
   Force: {fileID: 116834, guid: c68c1d87fb8748445b8dd543d3b1702b, type: 2}
   Stair: {fileID: 165250, guid: 6cb46f76fbc375847ade7f9fcb8ee01b, type: 2}
-  path: .\SaveState.txt
+  path: .\SaveState.df
   slider: {fileID: 1769579420}
 --- !u!4 &1898910140
 Transform:
