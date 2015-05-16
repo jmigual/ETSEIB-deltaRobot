@@ -1,13 +1,14 @@
 \select@language {catalan}
-\contentsline {section}{\numberline {1}Assemblatge general}{3}{section.1}
-\contentsline {section}{\numberline {2}Servomotors}{4}{section.2}
-\contentsline {subsection}{\numberline {2.1}Plataforma suport}{4}{subsection.2.1}
-\contentsline {section}{\numberline {3}Braç}{5}{section.3}
-\contentsline {subsection}{\numberline {3.1}Estructura}{5}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Estabilitzador}{6}{subsection.3.2}
-\contentsline {section}{\numberline {4}Avantbraç}{7}{section.4}
-\contentsline {subsection}{\numberline {4.1}Vara unió}{7}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Eix Braç}{7}{subsection.4.2}
-\contentsline {subsection}{\numberline {4.3}Eix Pinça}{8}{subsection.4.3}
-\contentsline {subsection}{\numberline {4.4}Unió}{8}{subsection.4.4}
-\contentsline {section}{\numberline {5}Pinça}{9}{section.5}
+\contentsline {section}{\numberline {1}Informe mecànic}{3}{section.1}
+\contentsline {subsection}{\numberline {1.1}Assemblatge general}{3}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Servomotors}{4}{subsection.1.2}
+\contentsline {subsubsection}{\numberline {1.2.1}Plataforma suport}{4}{subsubsection.1.2.1}
+\contentsline {subsection}{\numberline {1.3}Braç}{5}{subsection.1.3}
+\contentsline {subsubsection}{\numberline {1.3.1}Estructura}{5}{subsubsection.1.3.1}
+\contentsline {subsubsection}{\numberline {1.3.2}Estabilitzador}{6}{subsubsection.1.3.2}
+\contentsline {subsection}{\numberline {1.4}Avantbraç}{7}{subsection.1.4}
+\contentsline {subsubsection}{\numberline {1.4.1}Vara unió}{7}{subsubsection.1.4.1}
+\contentsline {subsubsection}{\numberline {1.4.2}Eix Braç}{7}{subsubsection.1.4.2}
+\contentsline {subsubsection}{\numberline {1.4.3}Eix Pinça}{8}{subsubsection.1.4.3}
+\contentsline {subsubsection}{\numberline {1.4.4}Unió}{8}{subsubsection.1.4.4}
+\contentsline {subsection}{\numberline {1.5}Pinça}{9}{subsection.1.5}

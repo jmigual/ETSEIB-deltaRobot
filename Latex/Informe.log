@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99991 (MiKTeX 2.9) (preloaded format=xelatex 2015.5.16)  16 MAY 2015 20:27
+This is XeTeX, Version 3.14159265-2.6-0.99991 (MiKTeX 2.9) (preloaded format=xelatex 2015.5.16)  16 MAY 2015 20:32
 entering extended mode
 **Informe.tex
 (Informe.tex
@@ -719,6 +719,8 @@ Requested font "[lmroman17-regular]:mapping=tex-text" at 17.28pt
 Requested font "[lmroman12-bold]:mapping=tex-text" at 17.28pt
  -> C:/Program Files/MiKTeX 2.9/fonts/opentype/public/lm/lmroman12-bold.otf
  (Informe.toc
+Requested font "[lmroman12-bold]:mapping=tex-text" at 14.4pt
+ -> C:/Program Files/MiKTeX 2.9/fonts/opentype/public/lm/lmroman12-bold.otf
 Requested font "[lmroman12-bold]:mapping=tex-text" at 12.0pt
  -> C:/Program Files/MiKTeX 2.9/fonts/opentype/public/lm/lmroman12-bold.otf
 Requested font "[lmroman8-regular]:mapping=tex-text" at 8.0pt
@@ -732,11 +734,11 @@ Requested font "cmsy10" at 12.0pt
 Requested font "cmsy8" at 8.0pt
 Requested font "cmsy6" at 6.0pt
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 4.
+(Font)              <12> on input line 5.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 4.
+(Font)              <8> on input line 5.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 4.
+(Font)              <6> on input line 5.
 Requested font "cmr8" at 8.0pt
 Requested font "cmr6" at 6.0pt
 )
@@ -749,29 +751,27 @@ Requested font "[lmroman12-italic]:mapping=tex-text" at 12.0pt
 File: ./imgComp/servo.png Graphic file (type QTm)
 
 <use  "./imgComp/servo.png" >
-Invalid UTF-8 byte or sequence at line 59 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 59 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 59 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 59 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 59 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 59 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 60 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 60 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 60 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 60 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 60 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 60 replaced by U+FFFD.
 File: ./sketch/servo.eps Graphic file (type eps)
  <./sketch/servo.eps>
-Requested font "[lmroman12-bold]:mapping=tex-text" at 14.4pt
- -> C:/Program Files/MiKTeX 2.9/fonts/opentype/public/lm/lmroman12-bold.otf
 File: ./imgComp/plataforma.png Graphic file (type QTm)
 
 <use  "./imgComp/plataforma.png" >
-Invalid UTF-8 byte or sequence at line 76 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 76 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 76 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 76 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 76 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 76 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 76 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 76 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 76 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 76 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 77 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 77 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 77 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 77 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 77 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 77 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 77 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 77 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 77 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 77 replaced by U+FFFD.
 File: ./sketch/plataforma.eps Graphic file (type eps)
  <./sketch/plataforma.eps> [4]
 File: ./imgComp/brac.png Graphic file (type QTm)
@@ -782,13 +782,13 @@ File: ./imgComp/brac_expl.png Graphic file (type QTm)
 File: ./imgComp/estructura.png Graphic file (type QTm)
 
 <use  "./imgComp/estructura.png" >
-Invalid UTF-8 byte or sequence at line 114 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 114 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 114 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 114 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 114 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 114 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 114 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 115 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 115 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 115 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 115 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 115 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 115 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 115 replaced by U+FFFD.
 File: ./sketch/estructura.eps Graphic file (type eps)
  <./sketch/estructura.eps> [5]
 File: ./imgComp/estab.png Graphic file (type QTm)
@@ -796,7 +796,7 @@ File: ./imgComp/estab.png Graphic file (type QTm)
 <use  "./imgComp/estab.png" >
 File: ./imgComp/estab_expl.png Graphic file (type QTm)
  <use  "./imgComp/estab_expl.png" >
-Overfull \hbox (49.12935pt too wide) in paragraph at lines 142--143
+Overfull \hbox (49.12935pt too wide) in paragraph at lines 143--145
  [][] 
  []
 
@@ -805,77 +805,77 @@ File: ./imgComp/avant.png Graphic file (type QTm)
  <use  "./imgComp/avant.png" >
 File: ./imgComp/avant_expl.png Graphic file (type QTm)
  <use  "./imgComp/avant_expl.png" >
-Invalid UTF-8 byte or sequence at line 172 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 172 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 172 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 172 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 172 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 172 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 172 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 172 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 174 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 174 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 174 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 174 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 174 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 174 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 174 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 174 replaced by U+FFFD.
 File: ./sketch/vara.eps Graphic file (type eps)
 
 <./sketch/vara.eps>
-Invalid UTF-8 byte or sequence at line 181 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 181 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 181 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 181 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 181 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 181 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 183 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 183 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 183 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 183 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 183 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 183 replaced by U+FFFD.
 File: ./sketch/eix.eps Graphic file (type eps)
  <./sketch/eix.eps>
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-Invalid UTF-8 byte or sequence at line 189 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 189 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 189 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 189 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 189 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 189 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 189 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 189 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 191 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 191 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 191 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 191 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 191 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 191 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 191 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 191 replaced by U+FFFD.
 File: ./sketch/eix2.eps Graphic file (type eps)
 <./sketch/eix2.eps> [7]
-Invalid UTF-8 byte or sequence at line 197 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 197 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 197 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 197 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 197 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 197 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 199 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 199 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 199 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 199 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 199 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 199 replaced by U+FFFD.
 File: ./sketch/unio.eps Graphic file (type eps)
  <./sketch/unio.eps> [8]
 File: ./imgComp/pinca.png Graphic file (type QTm)
  <use  "./imgComp/pinca.png" >
-Overfull \hbox (9.95993pt too wide) in paragraph at lines 212--213
+Overfull \hbox (9.95993pt too wide) in paragraph at lines 214--215
  [][] 
  []
 
-Invalid UTF-8 byte or sequence at line 218 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 218 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 218 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 218 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 218 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 218 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 220 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 220 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 220 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 220 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 220 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 220 replaced by U+FFFD.
 File: ./sketch/pinca.eps Graphic file (type eps)
 <./sketch/pinca.eps>
-Overfull \hbox (38.41269pt too wide) in paragraph at lines 218--219
+Overfull \hbox (38.41269pt too wide) in paragraph at lines 220--221
  [][] 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 222.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 224.
 [9]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 222.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 224.
  (Informe.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 222.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 222.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 222.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 224.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 224.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 224.
  ) 
 Here is how much of TeX's memory you used:
- 21179 strings out of 428760
- 391597 string characters out of 3164296
- 439151 words of memory out of 3000000
- 24383 multiletter control sequences out of 15000+200000
+ 21180 strings out of 428760
+ 391605 string characters out of 3164296
+ 439224 words of memory out of 3000000
+ 24384 multiletter control sequences out of 15000+200000
  7777 words of font info for 43 fonts, out of 3000000 for 9000
  1096 hyphenation exceptions out of 8191
  46i,8n,45p,10390b,388s stack positions out of 5000i,500n,10000p,200000b,50000s

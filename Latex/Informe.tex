@@ -26,7 +26,8 @@
 \tableofcontents{}
 
 \newpage
-\section{Assemblatge general}
+\section{Informe mecànic}
+\subsection{Assemblatge general}
 
 Aquest robot delta està format per quatre parts generals: els servos, els braços, els avantbraços i la pinça final. 
 
@@ -42,7 +43,7 @@ braços estan units mitjançant un eix amb l'avantbraç. Tots els avantbraços a
 
 
 \newpage
-\section{Servomotors}
+\subsection{Servomotors}
 Els servomotors permeten el posicionament específic d'un eix a un cert angle. N'hi ha tres. S'utilitza el model AX-12 de dynamixel. 
 
 A part dels servos també s'han utilitzat els accessoris \emph{FP04-F2 i FP04-F3}. Per tal de facilitar l'ancoratge entre el servomotor i les diferents peces.
@@ -61,7 +62,7 @@ A part dels servos també s'han utilitzat els accessoris \emph{FP04-F2 i FP04-F3
 \end{minipage}
 \end{figure}
 
-\subsection{Plataforma suport}
+\subsubsection{Plataforma suport}
 Sobre aquesta plataforma estaran situats els tres servos del robot. Serà de fusta ja que permetrà cargolar els servomotors a sobre i així impedir un moviment no desitjat.
 \begin{figure}[h!]
 \centering
@@ -83,7 +84,7 @@ Sobre aquesta plataforma estaran situats els tres servos del robot. Serà de fus
 % BRAÇ
 %------------
 \newpage
-\section{Braç}
+\subsection{Braç}
 Es recolza en els servomotors i principalment està fet de fusta. La part estructural és tota de fusta i està tota enganxada amb cola i després hi ha tres estabilitzadors que eviten vibracions innecessàries a la part del braç més propera a l'eix. 
 
 \begin{figure}[h!]
@@ -99,7 +100,7 @@ Es recolza en els servomotors i principalment està fet de fusta. La part estruc
 \end{minipage}
 \end{figure}
 
-\subsection{Estructura}
+\subsubsection{Estructura}
 L'estructura està feta amb llistons de fusta. S'ha utilitzat un llistó de 45º d'inclinació per la part de suport que es troba entre la base i la columna vertical i per a fer tant la base com les columnes verticals s'ha utilitzat un llistó de 5 mm de gruix que s'ha tallat perquè tingui la forma desitjada. 
 
 La raó per la que s'ha escollit fer-ho amb fusta és per poder fer-hi forats i talls amb relativa facilitat ja que la fusta és fàcil de treballar; també el reduït cost econòmic d'aquesta ha motivat escollir aquest material.
@@ -116,7 +117,7 @@ La raó per la que s'ha escollit fer-ho amb fusta és per poder fer-hi forats i 
 \end{minipage}
 \end{figure}
 
-\subsection{Estabilitzador}
+\subsubsection{Estabilitzador}
 L'estabilitzador s'utilitza per tal que l'estructura de fusta no vibri ni es deformi degut al moviment del robot. 
 És un conjunt de peces que està format per:
 \begin{itemize}
@@ -140,7 +141,8 @@ El tub de plàstic es situa entre les dues fustes verticals de l'estructura del 
 \begin{minipage}[b]{0.45\linewidth}
 \centering
 \includegraphics[height=5cm]{./imgComp/estab_expl}
-\caption{Muntatge estabilitzador}
+\caption{
+	Muntatge estabilitzador}
 \end{minipage}
 \end{figure}
 
@@ -149,7 +151,7 @@ El tub de plàstic es situa entre les dues fustes verticals de l'estructura del 
 % AVANTBRAÇ
 %---------------
 \newpage
-\section{Avantbraç}
+\subsection{Avantbraç}
 L'avantbraç ha de connectar el braç amb la pinça i ha d'estar fet de tal manera que les dues rectes que hi ha entre els eixos sempre siguin paral·leles, a part la unió amb el braç i la pinça ha de ser mitjançant una junta esfèrica. En aquest robot s'ha separat la junta esfèrica en dos eixos per tal que faci la mateixa funció i sigui més fàcil de fabricar.
 
 \begin{figure}[h!]
@@ -165,7 +167,7 @@ L'avantbraç ha de connectar el braç amb la pinça i ha d'estar fet de tal mane
 \end{minipage}
 \end{figure}
 
-\subsection{Vara unió}
+\subsubsection{Vara unió}
 És la que uneix l'eix situat a la pinça i l'eix situat al braç. És d'alumini que és un metall bastant lleuger i, a més a més, s'ha pensat en fer-la buida per dins per tal d'estalviar pes i així evitar errors en el posicionament final del robot.
 \begin{figure}[h!]
 \centering
@@ -173,7 +175,7 @@ L'avantbraç ha de connectar el braç amb la pinça i ha d'estar fet de tal mane
 \caption{Plànol de la vara}
 \end{figure}
 
-\subsection{Eix Braç}
+\subsubsection{Eix Braç}
 És el que es troba situat al braç de cada servo, el material utilitzat també ha estat l'alumini ja que és un material prou resistent com per fer d'eix i a la vegada també és fàcil de perforar.
 Aquest eix té un petit forat just al mig per tal de poder posar-hi un passador i que així quedin units l'eix i un tub de plàstic que estarà situat entre les dues columnes del braç; d'aquesta manera s'espera que l'eix es mantingui centrat i lateralment. El tub de plàstic tindrà les mateixes mides que la separació entre les columnes.
 \begin{figure}[h!]
@@ -182,7 +184,7 @@ Aquest eix té un petit forat just al mig per tal de poder posar-hi un passador 
 \caption{Plànol de l'eix}
 \end{figure}
 
-\subsection{Eix Pinça}
+\subsubsection{Eix Pinça}
 És l'eix que estarà situat al suport de la pinça, és exactament igual a l'eix del braç a excepció que aquest no estarà centrat mitjançant un passador. Un cop muntat al suport de la pinça, hi haurà una goma a cada costat de l'eix del suport de la pinça per evitar el moviment lateral.
 \begin{figure}[h!]
 \centering
@@ -190,7 +192,7 @@ Aquest eix té un petit forat just al mig per tal de poder posar-hi un passador 
 \caption{Plànol de l'eix de la pinça}
 \end{figure}
 
-\subsection{Unió}
+\subsubsection{Unió}
 Amb aquesta peça es pretén unir la vara a l'eix. Està feta de manera que la part que té un radi de 6 mm entri dins del forat interior de la vara i quedi fixat allà. D'aquesta manera s'acaba tenint el mateix resultat a tenir una sola vara amb els forats d'unió a cada costat però amb un pes inferior.
 \begin{figure}[h!]
 \centering
@@ -202,7 +204,7 @@ Amb aquesta peça es pretén unir la vara a l'eix. Està feta de manera que la p
 % PINÇA
 %--------
 \newpage
-\section{Pinça}
+\subsection{Pinça}
 De moment només s'ha pensat el suport de la pinça ja que fins que no estigui aquesta part muntada i provat el seu correcte funcionament no es pot estar segur a seguir afegint més components. 
 El suport serà de plàstic, imprès en 3D ja que la fusta aquí resulta ser un element massa dèbil i en el moment de fer els forats per on ha de passar l'eix, es trenca.
 \begin{figure}[h!]
