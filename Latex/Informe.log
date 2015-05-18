@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99991 (MiKTeX 2.9) (preloaded format=xelatex 2015.2.25)  18 MAY 2015 13:35
+This is XeTeX, Version 3.14159265-2.6-0.99991 (MiKTeX 2.9) (preloaded format=xelatex 2015.2.25)  18 MAY 2015 20:44
 entering extended mode
 **Informe.tex
 (Informe.tex
@@ -887,23 +887,55 @@ Overfull \hbox (38.41269pt too wide) in paragraph at lines 191--192
 
 ) [10] (cinematic.tex
 File: ./imgComp/esquema_general.png Graphic file (type QTm)
- <use  "./imgComp/esquema_general.png" >)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 40.
- [11]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 40.
+ <use  "./imgComp/esquema_general.png" >
+Invalid UTF-8 byte or sequence at line 23 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 23 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 23 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 23 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 23 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 23 replaced by U+FFFD.
+File: ./sketch/canvi_base.eps Graphic file (type eps)
 
-(Informe.aux)
+<./sketch/canvi_base.eps>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: Command \= invalid in math mode on input line 26.
+
+Missing character: There is no ̄ in font cmmi12!
+
+LaTeX Warning: Command \= invalid in math mode on input line 27.
+
+Missing character: There is no ̄ in font cmmi12!
+
+LaTeX Warning: Command \= invalid in math mode on input line 28.
+
+Missing character: There is no ̄ in font cmmi12!
+[11]
+Invalid UTF-8 byte or sequence at line 36 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 36 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 36 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 36 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 36 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 36 replaced by U+FFFD.
+File: ./sketch/calcul_angle.eps Graphic file (type eps)
+ <./sketch/calcul_angle.eps> [12])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 40.
+ [13]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 40.
+ (Informe.aux)
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 40.
 Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 40.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 40.
  ) 
 Here is how much of TeX's memory you used:
- 21247 strings out of 428790
- 392517 string characters out of 3163801
- 440609 words of memory out of 3000000
- 24419 multiletter control sequences out of 15000+200000
+ 21252 strings out of 428790
+ 392604 string characters out of 3163801
+ 440610 words of memory out of 3000000
+ 24422 multiletter control sequences out of 15000+200000
  7777 words of font info for 43 fonts, out of 3000000 for 9000
  1096 hyphenation exceptions out of 8191
  46i,8n,45p,10390b,389s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on Informe.pdf (11 pages).
+Output written on Informe.pdf (13 pages).
