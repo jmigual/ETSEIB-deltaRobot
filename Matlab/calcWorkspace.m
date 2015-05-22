@@ -1,4 +1,4 @@
-function [X, Y, Z] = calcWorkspace(x, y, z, steps)
+function M = calcWorkspace(x, y, z, steps)
 i = 1;
 for dz = 0:z/steps:z
    for dx = -x:x/steps:x
@@ -14,11 +14,12 @@ for dz = 0:z/steps:z
    end
 end
 
-delaunay(X, Y, Z);
 tri = delaunay(X, Y, Z);
-trisurf(tri,X, Y, Z)
-hold on
-trisurf(tri,X, Y, Z)
+trisurf(tri,X, Y, Z, 'EdgeColor', 'black', 'LineWidth', 0.05);
 axis('equal')
 
+
+M(:, 1) = X;
+M(:, 2) = Y;
+M(:, 3) = Z;
 end
