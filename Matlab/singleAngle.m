@@ -1,7 +1,7 @@
 function angle = singleAngle(x0, y0, z0, a, b)
 
 n = b^2 - a^2 - z0^2 - x0^2 - y0^2;
-root = sqrt (n^2*y0^2 - 4*(x0*^2 + y0*^2)*(-x0*^2*a^2 + n^2/4));
+root = sqrt (n^2*y0^2 - 4*(x0^2 + y0^2)*(-x0^2*a^2 + n^2/4));
 
 if (x0 < 0)
     root = root * -1;
