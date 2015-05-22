@@ -41,7 +41,7 @@ Ara només cal resoldre el sistema d'equacions.
 
 \[x^2-2xx_i+x_i^2+y^2-2yy_i+y_i^2+z_i^2=b^2\]
 \[-2xx_i-2yy_i=b^2-a^2-x_i^2-y_i^2-z_i^2\equiv n\]
-\[-2\sqrt{a^2-y^2}x_i=n+2yy_i\]
+\[-2x_i\sqrt{a^2-y^2}=n+2yy_i\]
 \[4a^2x_i^2-4y^2x_i^2=n^2+4yy_in+4y^2y_i^2\]
 \[a^2x_i^2-y^2x_i^2=\frac{n^2}{4}+yy_in+y^2y_i^2\]
 \[y^2(x_i^2+y_i^2)+y(y_in)+(\frac{n^2}{4}-a^2x_i^2)=0\]
@@ -51,6 +51,8 @@ Ara només cal resoldre el sistema d'equacions.
 
 \subsection{Rang de treball}
 
-Per calcular el rang de treball s'ha utilitzat la fórmula de l'apartat anterior  
+Per calcular el rang de treball s'ha utilitzat la fórmula de l'apartat anterior i buscant una gran quantitat de punts, d'aquests els que donaven un resultat possible s'han agafat com a vàlids i els altres s'han descartat. Tot seguit s'han passat els punts a Matlab\textsuperscript{\textregistered} i s'ha generat la següent superfície.
+
+\lstinputlisting[language=Octave]{./code/matlab.m}
 
 \subsection{Implementació en C++}
