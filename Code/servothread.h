@@ -24,11 +24,14 @@ class ServoThread : public QThread
         v_1_0
     };
     
-    /// Conains the current status
-    enum Status
-    {
+    /// Contains the available status for the Controlled mode
+    enum Status {
+        begin,
+        take,
         waiting,
-        working
+        rotate,
+        going,
+        ending
     };
     
     /// Struct to handle the dominoe pieces
@@ -38,14 +41,27 @@ class ServoThread : public QThread
         double Y;   ///< Y position
         double ori; ///< Orientation from X = 0 in degrees
         
-        bool operator<(const Dominoe &d) const
+        /// Overloaded operator for comparisions
+        bool operator <(const Dominoe &d) const
         {
             if (this->X != d.X) return this->X < d.X;
             return this->Y < d.Y;
         }
         
+        /// Overloaded operator to copy
+        Dominoe& operator =(const Dominoe &d)
+        {
+            this->X = d.X;
+            this->Y = d.Y;
+            this->ori = d.ori;
+            return *this;
+        }
+        
         /// Initialization constructor
         Dominoe(double X, double Y, double ori) : X(X), Y(Y), ori(ori) {}
+        
+        /// Initialization constructor with vector
+        Dominoe(QVector2D point, double ori): X(point.x()), Y(point.y()), ori(ori) {}
     };
     
 public:
@@ -305,6 +321,11 @@ private:
     
     static const int _sNum = 4;            ///< Number of servos to manage
     
+    /// Starting position for the controlled mode 
+    QVector3D posStart = QVector3D(11.5, 0, 20);
+    /// Height from the start position vertically
+    double workDist = 5.0;
+    
     /// Contains the axis value
     QVector3D _axis;
     
@@ -359,8 +380,14 @@ private:
     /// Speed of the robot
     unsigned int _sSpeed;
     
+    /// Current status
+    Status _status;
+    
     /// Returns true if the position is available
-    bool isPosAvailable(const QVector<Servo> &S, const QVector<double> &D, const QVector3D &newPos, double err);
+    bool isPosAvailable(const QVector<Servo> &S, const QVector<double> &D, 
+                        const QVector3D &newPos, double err);
+    
+    bool isReady(const QVector<Servo> &S, const QVector3D &pos, double err);
     
     /// Used to create another thread
     void run();

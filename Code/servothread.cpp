@@ -14,7 +14,8 @@ ServoThread::ServoThread() :
     _servos(_sNum),
     _sPort("COM9"),
     _sPortChanged(false),
-    _sSpeed(30)
+    _sSpeed(30),
+    _status(Status::begin)
 {
     for (Servo &s : _servos) s.ID = -1;
 }
@@ -77,15 +78,17 @@ void ServoThread::readPath(QString file)
     for (Dominoe &d : temp) pF >> d.X >> d.Y >> d.ori;
 
     _mutex.lock();
-    unsigned double sep = 2; // 2cm of separation
-    QPoint ori(12, 0);
+    double sep = 2; // 2cm of separation
+    QVector2D ori(12, 0);
     int i = 0;
-    for (const Dominoe &d : temp) {
-        QVector2D aux(d.X, d.Y);
+    for (int i = 0; i < temp.size(); ++i) {
+        QVector2D aux(temp[i].X, temp[i].Y);
         aux -= ori;
-        double mag = aux.length();       
-        for (int j = 1; i<mag/sep; ++j){                
-            _dominoe[i].push_back(Dominoe (j*(aux.x())*mag/sep+ori.x(),j*(aux.y())*mag/sep+ori.y(), d.ori));         
+        int steps = aux.length()/sep; 
+      
+        for (int j = 1; j <= steps; ++j){                
+            Dominoe dAux(j*aux/double(steps) + ori, temp[i].ori);
+            _dominoe[i].push_back(dAux);         
         }
     }
     _dChanged = true;
@@ -145,6 +148,19 @@ bool ServoThread::isPosAvailable(const QVector<ServoThread::Servo> &S,
     return true;
 }
 
+bool ServoThread::isReady(const QVector<ServoThread::Servo> &S, 
+                          const QVector3D &pos, double err)
+{
+    QVector<double> D(3);
+    this->setAngles(pos, D);
+    
+    for (int i = 0; i < 3; ++i) {
+        double aux = abs(S[i].pos - D[i]);
+        if (aux > err) return false;
+    }
+    return true;
+}
+
 void ServoThread::run()
 {
     // First initializations
@@ -177,10 +193,11 @@ void ServoThread::run()
     
     QVector3D pos(0, 0, -25);
     QVector3D axis(0, 0, 0);
+    QVector< bool > buts;
     
     // Contains the domino number to put
     double dom = 0;
-    QVector< Dominoe > Dom;
+    QVector< QVector< Dominoe > > Dom;
     
     while (not _end) {
         _mutex.lock();
@@ -221,6 +238,7 @@ void ServoThread::run()
             _servos[i].pos = S[i].pos = A[i].getCurrentPos();
         }
         axis = _axis;
+        buts = _buts;
         _pos = pos;
         _mutex.unlock();
         
@@ -233,6 +251,42 @@ void ServoThread::run()
             if (ok) pos = posAux;            
         } 
         else if (_mod == Mode::Controlled) {
+            switch(_status) {
+            case Status::begin:
+                pos = posStart;
+                if (this->isReady(S, pos, maxErr)) _status = Status::take;                
+                break;
+                
+            case Status::take:
+                pos[2] += workDist;
+                if (this->isReady(S, pos, maxErr)) _status = Status::waiting;
+                break;
+                
+            case Status::waiting:
+                
+                break;
+                
+            case Status::rotate:
+                
+                break;
+                
+            case Status::going:
+                
+                break;
+                
+            case Status::ending:
+                
+                break;
+            
+            default:
+                _status = Status::begin;
+            
+            }
+            
+            
+            
+            
+            
             QVector3D posAux(0, 0, -30);
             if (dom < Dom.size()) {
                 posAux.setX(Dom[dom].X);
