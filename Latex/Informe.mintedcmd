@@ -1,0 +1,1 @@
+pygmentize -l matlab -f latex -F tokenmerge -P style=default -P commandprefix=PYGdefault -o ".texpadtmp/Informe.out.pyg" "../Matlab/calcWorkspace.m" 

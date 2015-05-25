@@ -1,6 +1,6 @@
 function M = calcWorkspace(x, y, z, steps)
 i = 1;
-for dz = 0:z/steps:z
+for dz = 0:z/(2*steps):z
    for dx = -x:x/steps:x
       for dy = -y:y/steps:y
          D = setAngles(dx, dy, dz);

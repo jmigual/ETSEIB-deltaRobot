@@ -20,12 +20,12 @@ Com el càlcul de cada angle es independent de la resta, es poden fer canvis de 
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=8cm]{./sketch/canvi_base}
+\includegraphics[width=7cm]{./sketch/canvi_base}
 \end{figure}
 
-\[\{x_1,y_1,z_1\}\=\{x_0+L2-L1,y_0,z_0\}\]
-\[\{x_2,y_2,z_2\}\=\{z_0sin(60)-x_0cos(60)+L2-L1,y_0,-z_0cos(60)-x_0sin(60)\}\]
-\[\{x_3,y_3,z_3\}\=\{-z_0sin(60)-x_0cos(60)+L2-L1,y_0,-z_0cos(60)+x_0sin(60)\}\]
+\[\{x_1,y_1,z_1\}=\{x_0+L2-L1,y_0,z_0\}\]
+\[\{x_2,y_2,z_2\}=\{z_0sin(60)-x_0cos(60)+L2-L1,y_0,-z_0cos(60)-x_0sin(60)\}\]
+\[\{x_3,y_3,z_3\}=\{-z_0sin(60)-x_0cos(60)+L2-L1,y_0,-z_0cos(60)+x_0sin(60)\}\]
 
 \subsubsection{Càlcul d'un angle}
 
@@ -39,11 +39,10 @@ El motor només pot moure el final del braç en un cercle, gràcies a això es p
 També es pot veure que, com ha d'estar connectat a la plataforma amb una distancia b mitjançant l'avantbraç, s'ha de complir la formula: \[(x-x_i)^2+(y-y_i)^2+(z-z_i)^2=b^2\]
 Ara només cal resoldre el sistema d'equacions.
 
-\[x^2-2xx_i+x_i^2+y^2-2yy_i+y_i^2+z_i^2=b^2\]
-\[-2xx_i-2yy_i=b^2-a^2-x_i^2-y_i^2-z_i^2\equiv n\]
+\[x^2 - 2xx_i + x_i^2 + y^2 - 2yy_i + y_i^2 + z_i^2 = b^2\]
+\[-2xx_i - 2yy_i = \underbrace{b^2 - a^2 - x_i^2 - y_i^2 - z_i^2}_{n}\]
 \[-2x_i\sqrt{a^2-y^2}=n+2yy_i\]
 \[4a^2x_i^2-4y^2x_i^2=n^2+4yy_in+4y^2y_i^2\]
-\[a^2x_i^2-y^2x_i^2=\frac{n^2}{4}+yy_in+y^2y_i^2\]
 \[y^2(x_i^2+y_i^2)+y(y_in)+(\frac{n^2}{4}-a^2x_i^2)=0\]
 \[y=\frac{-y_i\pm\sqrt{y_i^2n^2-4(x_i^2+y_i^2)(\frac{n^2}{4}-a^2x_i^2)}}{2(x_i^2+y_i^2)}\]
 \[x=\pm\sqrt{a^2-y^2}\]
@@ -53,6 +52,32 @@ Ara només cal resoldre el sistema d'equacions.
 
 Per calcular el rang de treball s'ha utilitzat la fórmula de l'apartat anterior i buscant una gran quantitat de punts, d'aquests els que donaven un resultat possible s'han agafat com a vàlids i els altres s'han descartat. Tot seguit s'han passat els punts a Matlab\textsuperscript{\textregistered} i s'ha generat la següent superfície.
 
-\lstinputlisting[language=Octave]{./code/matlab.m}
+\begin{figure}[h!]
+\centering
+\begin{minipage}{7cm}
+\centering
+\includegraphics[width=7cm]{./images/rangTreball}
+\end{minipage}
+\\
+\hfill
+\begin{minipage}{7cm}
+\centering
+\includegraphics[width=7cm]{./images/rangTreball2}
+\end{minipage}
+\hfill
+\begin{minipage}{7cm}
+\centering
+\includegraphics[width=7cm]{./images/rangTreball3}
+\end{minipage}
+\hfill
+\end{figure}
 
-\subsection{Implementació en C++}
+\subsection{Implementació en Matlab}
+
+La implementació de Matlab té tres parts, dues per al càlcul dels angles de treball i la tercera per poder calcular el rang de treball del robot.
+
+\subsubsection{Càlcul d'un angle}
+
+\subsubsection{Càlcul de tots els angles}
+
+\subsubsection{Càlcul del rang de treball}
