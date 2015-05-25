@@ -57,6 +57,9 @@ class ServoThread : public QThread
             return *this;
         }
         
+        /// Default constructor
+        Dominoe() : X(0), Y(0), ori(0) {}
+        
         /// Initialization constructor
         Dominoe(double X, double Y, double ori) : X(X), Y(Y), ori(ori) {}
         
@@ -402,6 +405,3 @@ private:
 };
 
 #endif // SERVOTHREAD_H
-
-// TODO: Arreglar canvis besties
-// BUG: En el moment de canviar de mode es para el Thread

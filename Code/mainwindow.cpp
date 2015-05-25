@@ -72,6 +72,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
     else if (event->key() == Qt::Key_Q) _joy.axisPress(2, -100);
     else if (event->key() == Qt::Key_E) _joy.axisPress(2, 100);
     else if (event->key() == Qt::Key_R) _sT.reset();
+    else if (event->key() == Qt::Key_Enter) _joy.buttonPress(0, true);
     
     this->update();
 }
@@ -85,7 +86,7 @@ void MainWindow::keyReleaseEvent(QKeyEvent *event)
     else if (event->key() == Qt::Key_S) _joy.axisRelease(1);
     else if (event->key() == Qt::Key_Q) _joy.axisRelease(2);
     else if (event->key() == Qt::Key_E) _joy.axisRelease(2);
-    else if (event->key() == Qt::Key_Enter)
+    else if (event->key() == Qt::Key_Enter) _joy.buttonRelease(0);
     this->update();
 }
 

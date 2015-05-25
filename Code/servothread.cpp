@@ -80,7 +80,7 @@ void ServoThread::readPath(QString file)
     _mutex.lock();
     double sep = 2; // 2cm of separation
     QVector2D ori(12, 0);
-    int i = 0;
+    
     for (int i = 0; i < temp.size(); ++i) {
         QVector2D aux(temp[i].X, temp[i].Y);
         aux -= ori;
@@ -173,11 +173,10 @@ void ServoThread::run()
     dynamixel dxl(sPort, sBaud);
     
     // Contains the servos comunication
-    QVector< AX12 > A(_sNum);    
+    QVector<AX12> A(4);
     
     // Contains the servos angles
     QVector<double> D(3);
-    
     // First initialization
     _mutex.lock();
     for (int i = 0; i < A.size(); ++i) {
@@ -196,7 +195,8 @@ void ServoThread::run()
     QVector< bool > buts;
     
     // Contains the domino number to put
-    double dom = 0;
+    unsigned int dom = 0;
+    unsigned int pas = 0;
     QVector< QVector< Dominoe > > Dom;
     
     while (not _end) {
@@ -263,11 +263,21 @@ void ServoThread::run()
                 break;
                 
             case Status::waiting:
-                
-                break;
+                if (buts[0]) _status = Status::rotate;
+                else break;
                 
             case Status::rotate:
-                
+            {
+                double angle = Dom[dom][0].ori;
+                angle += 150.0;
+                if (angle > 180.0) angle -= 180.0;
+                A[3].setGoalPosition(angle);
+                double aux = abs(S[3].pos - angle);
+                if (aux < maxErr) {
+                    _status = Status::going;
+                    pas = 0;
+                }
+            }
                 break;
                 
             case Status::going:
@@ -281,30 +291,6 @@ void ServoThread::run()
             default:
                 _status = Status::begin;
             
-            }
-            
-            
-            
-            
-            
-            QVector3D posAux(0, 0, -30);
-            if (dom < Dom.size()) {
-                posAux.setX(Dom[dom].X);
-                posAux.setY(Dom[dom].Y);
-                
-                bool ok = this->isPosAvailable(S, D, posAux, maxErr);
-                if (ok) {
-                    QThread::msleep(1000);
-                    pos = posAux;
-                    ++dom;
-                } else if (dom == 0) { pos = posAux; ++dom; }
-                
-            }
-            else {
-                _mod = Mode::Reset;
-                emit statusBar("Finished!!");
-                
-                emit modeChanged(Mode::Manual);
             }
         } 
         else if (_mod == Mode::Reset) {

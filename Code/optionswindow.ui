@@ -44,7 +44,7 @@
      <item>
       <widget class="QStackedWidget" name="stack">
        <property name="currentIndex">
-        <number>0</number>
+        <number>1</number>
        </property>
        <widget class="QWidget" name="joystick">
         <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -203,13 +203,6 @@
            </item>
            <item>
             <widget class="QComboBox" name="servo3"/>
-           </item>
-           <item>
-            <widget class="QCheckBox" name="servo3A">
-             <property name="text">
-              <string>Activated</string>
-             </property>
-            </widget>
            </item>
           </layout>
          </item>
