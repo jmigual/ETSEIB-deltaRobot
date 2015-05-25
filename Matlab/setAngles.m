@@ -1,30 +1,30 @@
-% Rep com a paràmetre la posició x, y, z on es vol saber els tres angles
-% del robot que és el que retorna la funció.
+% Rep com a parametre la posicio x, y, z on es vol saber els tres angles
+% del robot que es el que retorna la funcio.
 function D = setAngles(x, y, z)
 
 % Mides del robot
 a = 17.233;     % Llargada brac
 b = 22.648;     % Llargada avantbrac
-L1 = 6.374;     % Distància al centre del triangle de la base
-L2 = 6;         % Distància al centre del triangle de la pinca
+L1 = 6.374;     % Distancia al centre del triangle de la base
+L2 = 6;         % Distancia al centre del triangle de la pinca
 
 % Definicions de constants
 sin60 = sqrt(3)/2;
 cos60 = 1/2;
     
-% Càlcul primer angle
+% Calcul primer angle
 x1 = x + L2 - L1;
 y1 = z;
 z1 = y;
 D(1) = singleAngle(x1,y1,z1, a, b);
 
-% Càlcul segon angle
+% Calcul segon angle
 x2 = y*sin60 - x*cos60 + L2 - L1;
 y2 = z;
 z2 = -y*cos60 - x*sin60;
 D(2) = singleAngle(x2,y2,z2, a, b);
 
-% Càlcul tercer angle
+% Calcul tercer angle
 x3 = -y*sin60 - x*cos60 + L2 - L1;
 y3 = z;
 z3 = -y*cos60 + x*sin60;

@@ -1,5 +1,5 @@
 % Rep com a paràmetres:
-% - x, y, z de la posició a calcular en la base adequada
+% - x, y, z de la posicio a calcular en la base adequada
 % - a la llargada del brac
 % - b la llargada de l'avantbrac
 function angle = singleAngle(x0, y0, z0, a, b)

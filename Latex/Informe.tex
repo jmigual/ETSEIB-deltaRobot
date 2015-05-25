@@ -1,6 +1,6 @@
 \documentclass[a4paper, 12pt]{article}
 
-\usepackage{color} % Code highlighting color
+\usepackage[dvipsnames]{xcolor} % Code highlighting color
 \usepackage{fontspec} 
 \usepackage[hidelinks]{hyperref} % Links color
 \usepackage[catalan]{babel} % Language 
@@ -11,10 +11,7 @@
 \usepackage{ragged2e}
 \usepackage{wrapfig} %To Text wrap
 
-\definecolor{codegreen}{rgb}{0,0.6,0}
-\definecolor{codegray}{rgb}{0.5,0.5,0.5}
-\definecolor{codepurple}{rgb}{0.58,0,0.82}
-\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+%\definecolor{lincolngreen}{rgb}{0.11, 0.35, 0.02}
 
 %\lstdefinestyle{mystyle}{
 %    backgroundcolor=\color{backcolour},   
@@ -36,7 +33,13 @@
 %    literate={á}{{\'a}}1 {ã}{{\~a}}1 {é}{{\'e}}1 {ç}{{\c{c}}}1 {Ç}{{\c{C}}}1,
 %}
 %
-\lstset{basicstyle=\ttfamily, keywordstyle=\color{blue}\ttfamily, 	stringstyle=\color{red}\ttfamily, commentstyle=\color{green}\ttfamily, 	morecomment=[l][\color{magenta}]{\#}}
+\lstset{
+basicstyle=\ttfamily, 
+keywordstyle=\color{blue}, 
+stringstyle=\color{red}, 
+commentstyle=\color{OliveGreen},
+numbers=left
+}
 
 \renewcommand*\contentsname{Índex}
 \setlength\parindent{0pt}
