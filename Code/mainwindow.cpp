@@ -85,6 +85,7 @@ void MainWindow::keyReleaseEvent(QKeyEvent *event)
     else if (event->key() == Qt::Key_S) _joy.axisRelease(1);
     else if (event->key() == Qt::Key_Q) _joy.axisRelease(2);
     else if (event->key() == Qt::Key_E) _joy.axisRelease(2);
+    else if (event->key() == Qt::Key_Enter)
     this->update();
 }
 

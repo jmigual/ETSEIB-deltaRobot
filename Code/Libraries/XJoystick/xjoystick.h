@@ -97,11 +97,23 @@ public:
     /// Returns the system available joysticks
     QVector< Info > available();
     
+    /// To mantain an axis in a certain value
+    void axisPress(unsigned char a, float value = 100);
+    
+    /// To release an axis and restore it's value with the joystick
+    void axisRelease(unsigned char a);
+    
     /// Returns the button state
     bool button(int n);
     
     /// Returns the number of buttons
     inline int buttonCount() { return _butCount; }
+    
+    /// To mantain a button in a certain value
+    void buttonPress(unsigned char b, bool state);
+    
+    /// To release a button and restore it's value with the joystick
+    void buttonRelease(unsigned char b);
     
     /// @brief Returns the current selected joystick, -1 if there's no selected 
     /// joystick
@@ -112,12 +124,6 @@ public:
     
     /// Returns the current Joystick's axis and it's names
     inline QVector< P > getAxis() { return _aName; }
-    
-    /// To mantain an axis in a certain value
-    void axisPress(unsigned char a, float value = 100);
-    
-    /// To release an axis and restore it's value with the joystick
-    void axisRelease(unsigned char a);
     
     /// Returns the 'n' axis value
     inline const float& operator[] (int n) const { return _axis[n]; }
@@ -149,6 +155,9 @@ private:
     
     /// Contains the number of buttons
     int _butCount;
+    
+    /// To hold a button value
+    QVector< bool > _butH;
     
     /// Contains the button values
     QVector< bool > _buttons;
