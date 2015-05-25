@@ -43,6 +43,9 @@ class ServoThread : public QThread
             if (this->X != d.X) return this->X < d.X;
             return this->Y < d.Y;
         }
+        
+        /// Initialization constructor
+        Dominoe(double X, double Y, double ori) : X(X), Y(Y), ori(ori) {}
     };
     
 public:
@@ -321,7 +324,7 @@ private:
     bool _dChanged;
     
     /// Contains all the dominoes information
-    QVector< Dominoe > _dominoe;
+    QVector< QVector< Dominoe > > _dominoe;
     
     /// True when we must end executino
     bool _end;

@@ -73,10 +73,24 @@ void ServoThread::readPath(QString file)
     
     int size;
     pF >> size;
+    QVector<Dominoe> temp(size);
+    for (Dominoe &d : temp) pF >> d.X >> d.Y >> d.ori;
+
     _mutex.lock();
-    _dominoe.resize(size);
-    for (Dominoe &d : _dominoe) pF >> d.X >> d.Y >> d.ori;
+    unsigned double sep = 2; // 2cm of separation
+    QPoint ori(12, 0);
+    int i = 0;
+    for (const Dominoe &d : temp) {
+        QVector2D aux(d.X, d.Y);
+        aux -= ori;
+        double mag = aux.length();       
+        for (int j = 1; i<mag/sep; ++j){                
+            _dominoe[i].push_back(Dominoe (j*(aux.x())*mag/sep+ori.x(),j*(aux.y())*mag/sep+ori.y(), d.ori));         
+        }
+    }
+    _dChanged = true;
     _mutex.unlock();
+    
     f.close();
     
     emit statusBar("File loaded succesfully");
