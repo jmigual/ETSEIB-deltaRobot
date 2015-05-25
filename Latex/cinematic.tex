@@ -16,7 +16,7 @@ El càlcul invers és el que ens serveix per trobar els angles a partir de la po
 \end{description}
 
 \subsubsection{Canvis de base}
-Com el càlcul de cada angle es independent de la resta, es poden fer canvis de base per poder fer-ho tot amb una sola funció a l'hora de programar. La base inicial \(\{x_0,y_0,z_0\}\) esta al centre de la base, amb la x en la direcció del motor 1. Les bases \(\{x_i,y_i,z_i\}\) que farem servir per calcular l'angle del motor \emph{i} estan posicionades al centre del eix de cada motor, i la seva x apunta en la direcció perpendicular al eix del motor.
+Com el càlcul de cada angle es independent de la resta, es poden fer canvis de base per poder fer-ho tot amb una sola funció a l'hora de programar. La base inicial \(\{x_0,y_0,z_0\}\) esta al centre de la base, amb la x en la direcció del motor 1. Les bases \(\{x_i,y_i,z_i\}\) que farem servir per calcular l'angle del motor \emph{i} estan posicionades al centre del eix de cada motor, i la seva x apunta en la direcció perpendicular al eix del motor. També es suma L2 a \(x_i\) per fer que la posició objectiu sigui el punt de connexió entre la plataforma i l'avantbraç en lloc del centre de la plataforma.
 
 \begin{figure}[h!]
 \centering
@@ -48,6 +48,18 @@ Ara només cal resoldre el sistema d'equacions.
 \[x=\pm\sqrt{a^2-y^2}\]
 \[\textrm{Finalment, }\theta=atan(\frac{y}{x})\]
 
+\subsection{Comprovació dels càlculs}
+
+Per poder provar les nostres funcions sense trencar el robot, vam decidir fer una simulació en del Robot en Unity. La simulació es molt simple, Unity s'encarrega de dibuixar un esquema 3D del robot fent servir línies a partir de la posició desitjada de la plataforma i els angles del robot, calculats amb la nostra funció.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=7cm]{./images/simulacioRobot}
+\end{figure}
+
+Aquesta aplicació també es fa ver servir per determinar quin símbol s'ha de posar abans de les dos arrels. Per la primera arrel es va determinar que havia de anar acompanyada d'un signe negatiu només quan \(x_i\) és negatiu. La segona arrel només ha de ser negativa a partir de quan el ha d'estar completament cap a dalt. La condició exacta es: \(b^2-(y_i+a)^2<x_i^2+z_i^2\) 
+
+\newpage
 \subsection{Rang de treball}
 
 Per calcular el rang de treball s'ha utilitzat la fórmula de l'apartat anterior i buscant una gran quantitat de punts, d'aquests els que donaven un resultat possible s'han agafat com a vàlids i els altres s'han descartat. Tot seguit s'han passat els punts a Matlab\textsuperscript{\textregistered} i s'ha generat la següent superfície.
@@ -72,12 +84,20 @@ Per calcular el rang de treball s'ha utilitzat la fórmula de l'apartat anterior
 \hfill
 \end{figure}
 
+Aquesta superfície esta calculada amb tots els punts possibles teòrics però el robot te moltes limitacions mecàniques que no es tenen en compte en aquest càlcul. Per exemple els paral·lelograms dels avantbraços no poden tenir un angle qualsevol, ja que les barres de metall xoquen contra les plaques de fusta del braç si l'angle es molt petit.
+
+\clearpage
 \subsection{Implementació en Matlab}
 
 La implementació de Matlab té tres parts, dues per al càlcul dels angles de treball i la tercera per poder calcular el rang de treball del robot.
 
 \subsubsection{Càlcul d'un angle}
+\lstinputlisting[language=Matlab]{../Matlab/singleAngle.m}
 
+\newpage
 \subsubsection{Càlcul de tots els angles}
+\lstinputlisting[language=Matlab]{../Matlab/setAngles.m}
 
+\newpage
 \subsubsection{Càlcul del rang de treball}
+\lstinputlisting[language=Matlab]{../Matlab/calcWorkspace.m}
