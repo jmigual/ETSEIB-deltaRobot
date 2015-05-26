@@ -9,10 +9,19 @@ for dz = 0:z/(2*steps):z
       for dy = -y:y/steps:y
          D = setAngles(dx, dy, dz);
          if (~isnan(D))
-            X(i) = dx;
-            Y(i) = dy;
-            Z(i) = dz;
-            i = i + 1;
+            bool = 1;
+            for j=1:3
+               if(D(j) > 250 || D(j) < 80) 
+                   bool = 0; 
+               end
+            end
+            
+            if(bool == 1)
+                X(i) = dx;
+                Y(i) = dy;
+                Z(i) = dz;
+                i = i + 1;
+            end
          end
       end
    end

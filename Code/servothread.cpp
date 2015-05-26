@@ -127,12 +127,12 @@ void ServoThread::write(QString file)
     _mutex.unlock();
 }
 
-bool ServoThread::isPosAvailable(const QVector<ServoThread::Servo> &S, 
+bool ServoThread::isPosAvailable(const QVector<double> &S, 
                                  const QVector<double> &D, 
                                  const QVector3D &newPos, double err)
 {
     for (int i = 0; i < 3; ++i) {
-        double aux = abs(S[i].pos - D[i]);
+        double aux = abs(S[i] - D[i]);
         if (aux > err) return false;
     }
     
@@ -183,7 +183,9 @@ void ServoThread::run()
     QVector< double > S(_sNum);
     
     // Contains the servos angles
-    QVector<double> D(3);
+    QVector<double> D(4);
+    D[3] = 150.0;
+    
     // First initialization
     _mutex.lock();
     for (int i = 0; i < A.size(); ++i) {
@@ -229,7 +231,6 @@ void ServoThread::run()
                 dxl.terminate();
                 dxl.initialize(sPort, sBaud);
             }
-            
             for (int i = 0; i < S.size(); ++i) {
                 A[i].setID(_servos[i].ID);
                 ID[i] = _servos[i].ID;
@@ -287,7 +288,7 @@ void ServoThread::run()
                 angle += 150.0;
                 if (angle > 180.0) angle -= 180.0;
                 A[3].setGoalPosition(angle);
-                double aux = abs(S[3].pos - angle);
+                double aux = abs(S[3] - angle);
                 if (aux < maxErr) {
                     _status = Status::going;
                     pas = 0;
@@ -310,11 +311,12 @@ void ServoThread::run()
         } 
         else if (_mod == Mode::Reset) {
             _mod = Mode::Manual;
-            pos = QVector3D(0, 0, -20);
+            pos = posStart;
             dom = 0;
         }
         this->setAngles(pos.toVector3D(), D);
         t3 = time3.elapsed();
+        D[3] = pos.w();
         this->setGoalPosition(ID, D, dxl);
         
         qDebug() << t1 << t2 << t3;
@@ -326,17 +328,17 @@ void ServoThread::run()
 void ServoThread::setAngles(const QVector3D &pos, QVector<double> &D)
 {    
     double x1 = pos.x() + L2 - L1;
-    double y1 = pos.z();
+    double y1 = -pos.z();
     double z1 = pos.y();
     D[0] = singleAngle(x1,y1,z1);
     
     double x2 = pos.y()*sin60 - pos.x()*cos60 + L2 - L1;
-    double y2 = pos.z();
+    double y2 = -pos.z();
     double z2 = -pos.y()*cos60 - pos.x()*sin60;
     D[1] = singleAngle(x2,y2,z2);
     
     double x3 = -pos.y()*sin60 - pos.x()*cos60 + L2 - L1;
-    double y3 = pos.z();
+    double y3 = -pos.z();
     double z3 = -pos.y()*cos60 + pos.x()*sin60;
     D[2] = singleAngle(x3,y3,z3);
     
@@ -351,6 +353,7 @@ void ServoThread::setGoalPosition(const QVector<int> &ID,
     dxl.set_txpacket_parameter(0, AX12::RAM::GoalPosition);
     dxl.set_txpacket_parameter(1, 2);
     
+    Q_ASSERT(ID.size() == pos.size());
     for (int i = 0; i < ID.size(); ++i) {
         unsigned int data = (pos[i]/300.0)*1023.0;
         
