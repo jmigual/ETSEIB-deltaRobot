@@ -2,7 +2,7 @@
 #include "servothread.h"
 
 ServoThread::ServoThread() :
-    _axis(0, 0, 0),
+    _axis(0, 0, 0, 0),
     _buts(XJoystick::ButtonCount),
     _cBaud(9600),
     _cPort("COM3"),
@@ -103,7 +103,7 @@ void ServoThread::setData(QVector<float> &aV, QVector<bool> &buts)
 {
     _mutex.lock();
     // Copying the joystick values
-    _axis = QVector3D(aV[0], aV[1], aV[2]);
+    _axis = QVector4D(aV[0], aV[1], aV[2], aV[3]);
     _axis.normalize();
     _buts = buts;    
     _mutex.unlock();
@@ -190,8 +190,8 @@ void ServoThread::run()
     // Contains the current servo data
     QVector< Servo > S(_sNum);
     
-    QVector3D pos(0, 0, -25);
-    QVector3D axis(0, 0, 0);
+    QVector4D pos(posIdle);
+    QVector4D axis(0, 0, 0, 0);
     QVector< bool > buts;
     
     // Contains the domino number to put
@@ -227,8 +227,8 @@ void ServoThread::run()
             Dom = _dominoe;
             dom = 0;
             
-            pos = QVector3D(0, 0,-25);            
-            this->setAngles(pos, D);
+            pos = posIdle;            
+            this->setAngles(pos.toVector3D(), D);
             for (int i = 0; i < 3; ++i) A[i].setGoalPosition(D[i]);
             
             _dChanged = false;
@@ -245,21 +245,24 @@ void ServoThread::run()
         
         // Main function with data updated
         if (_mod == Mode::Manual) {
-            QVector3D posAux = pos + 0.5*axis;
+            QVector4D posAux = pos + 0.5*axis;
             
-            bool ok = this->isPosAvailable(S, D, posAux, maxErr + 4);
+            bool ok = this->isPosAvailable(S, D, posAux.toVector3D(), 
+                                           maxErr + 4);
             if (ok) pos = posAux;            
         } 
         else if (_mod == Mode::Controlled) {
             switch(_status) {
             case Status::begin:
                 pos = posStart;
-                if (this->isReady(S, pos, maxErr)) _status = Status::take;                
+                if (this->isReady(S, pos.toVector3D(), maxErr)) 
+                    _status = Status::take;                
                 break;
                 
             case Status::take:
-                pos[2] += workDist;
-                if (this->isReady(S, pos, maxErr)) _status = Status::waiting;
+                pos[2] = workHeigh;
+                if (this->isReady(S, pos.toVector3D(), maxErr)) 
+                    _status = Status::waiting;
                 break;
                 
             case Status::waiting:
@@ -295,12 +298,13 @@ void ServoThread::run()
         } 
         else if (_mod == Mode::Reset) {
             _mod = Mode::Manual;
-            pos = QVector3D(0, 0, -25);
+            pos = QVector3D(0, 0, -20);
             dom = 0;
         }
         
-        this->setAngles(pos, D);
+        this->setAngles(pos.toVector3D(), D);
         for (int i = 0; i < 3; ++i) A[i].setGoalPosition(D[i]);
+        A[3].setGoalPosition(pos.w());
     }
     dxl.terminate();
     exit(0);

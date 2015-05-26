@@ -71,6 +71,8 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
     else if (event->key() == Qt::Key_S) _joy.axisPress(1, -100);
     else if (event->key() == Qt::Key_Q) _joy.axisPress(2, -100);
     else if (event->key() == Qt::Key_E) _joy.axisPress(2, 100);
+    else if (event->key() == Qt::Key_J) _joy.axisPress(3, -100);
+    else if (event->key() == Qt::Key_K) _joy.axisPress(3, 100);
     else if (event->key() == Qt::Key_R) _sT.reset();
     else if (event->key() == Qt::Key_Enter) _joy.buttonPress(0, true);
     
@@ -86,6 +88,8 @@ void MainWindow::keyReleaseEvent(QKeyEvent *event)
     else if (event->key() == Qt::Key_S) _joy.axisRelease(1);
     else if (event->key() == Qt::Key_Q) _joy.axisRelease(2);
     else if (event->key() == Qt::Key_E) _joy.axisRelease(2);
+    else if (event->key() == Qt::Key_J) _joy.axisRelease(3);
+    else if (event->key() == Qt::Key_K) _joy.axisRelease(3);
     else if (event->key() == Qt::Key_Enter) _joy.buttonRelease(0);
     this->update();
 }
@@ -228,11 +232,12 @@ void MainWindow::update()
     _sT.setData(_axisV, _butsV);
     
     QVector<ServoThread::Servo> servo = _sT.getServosInfo();
-    QVector3D pos = _sT.getCurrentPos();
+    QVector4D pos = _sT.getCurrentPos();
     QString x = QString::number(pos.x());
     QString y = QString::number(pos.y());
     QString z = QString::number(pos.z());
-    ui->pos->setText(x + " " + y + " " + z);
+    QString rot = QString::number(pos.w());
+    ui->pos->setText(x + " " + y + " " + z + " " + rot + "º");
     
     // Updating position sliders
     ui->servo0S->setValue(servo[0].pos);

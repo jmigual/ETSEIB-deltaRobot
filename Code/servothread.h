@@ -116,7 +116,7 @@ public:
     }
     
     /// Returns the current position
-    inline QVector3D getCurrentPos()
+    inline QVector4D getCurrentPos()
     {
         QMutexLocker m(&_mutex);
         return _pos;
@@ -319,18 +319,20 @@ private:
     const double maxAngle = 240.0;  ///< Maximum servo angle
     const double workRadSq = 144.0; ///< Working radius squared
     
-    const uchar ccwCS = 2;         ///< The Counter Clock Wise Compliance Slope
-    const uchar cwCS = 2;          ///< The Clock Wise Compliance Slope
+    const uchar ccwCS = 2;          ///< The Counter Clock Wise Compliance Slope
+    const uchar cwCS = 2;           ///< The Clock Wise Compliance Slope
     
-    static const int _sNum = 4;            ///< Number of servos to manage
+    static const int _sNum = 4;     ///< Number of servos to manage
     
     /// Starting position for the controlled mode 
-    QVector3D posStart = QVector3D(11.5, 0, 20);
-    /// Height from the start position vertically
-    double workDist = 5.0;
+    QVector4D posStart = QVector4D(11.5, 0.0f, -20, 150); 
+    /// Idle position
+    QVector4D posIdle = QVector4D(0.0f, 0.0f, -20, 150);
+    /// Working heigh
+    double workHeigh = -25.0;
     
     /// Contains the axis value
-    QVector3D _axis;
+    QVector4D _axis;
     
     /// Contains the buttons value
     QVector < bool > _buts;
@@ -366,7 +368,7 @@ private:
     bool _pause;
     
     /// Contains the current position to show to the window
-    QVector3D _pos;
+    QVector4D _pos;
     
     /// Contains the used baud rate to comunicate with the servos
     int _sBaud;
