@@ -54,11 +54,11 @@ Dynamixel S\+D\+K platform dependent.
 )}\label{a00003_a0eaaa5340bc9dce73cc920dc8befe5b0}
 
 \begin{DoxyCode}
-00039 \{
-00040     \textcolor{keywordtype}{bool} res = \hyperlink{a00003_a785d0e35b81d779b54869cad668f9745}{\_serial}.setBaudRate(qint32(baudrate));
-00041     \textcolor{keywordflow}{return} int(res);
-00042     
-00043 \}
+00041 \{
+00042     \textcolor{keywordtype}{bool} res = \hyperlink{a00003_a785d0e35b81d779b54869cad668f9745}{\_serial}.setBaudRate(qint32(baudrate));
+00043     \textcolor{keywordflow}{return} int(res);
+00044     
+00045 \}
 \end{DoxyCode}
 \hypertarget{a00003_a004eedde5af69219d7288ec8ea97c89f}{}\index{dxl\+\_\+hal@{dxl\+\_\+hal}!clear@{clear}}
 \index{clear@{clear}!dxl\+\_\+hal@{dxl\+\_\+hal}}
@@ -71,9 +71,11 @@ Dynamixel S\+D\+K platform dependent.
 \begin{DoxyCode}
 00032 \{
 00033     \textcolor{comment}{// Clear communication buffer}
-00034     \hyperlink{a00003_a785d0e35b81d779b54869cad668f9745}{\_serial}.clear();
-00035     
-00036 \}
+00034     
+00035     \textcolor{keywordflow}{if} (!\hyperlink{a00003_a785d0e35b81d779b54869cad668f9745}{\_serial}.isOpen()) \textcolor{keywordflow}{return};
+00036     \hyperlink{a00003_a785d0e35b81d779b54869cad668f9745}{\_serial}.clear();
+00037     
+00038 \}
 \end{DoxyCode}
 \hypertarget{a00003_a250fd7e4acabf54d0733551a13e89a2d}{}\index{dxl\+\_\+hal@{dxl\+\_\+hal}!close@{close}}
 \index{close@{close}!dxl\+\_\+hal@{dxl\+\_\+hal}}
@@ -99,9 +101,9 @@ Dynamixel S\+D\+K platform dependent.
 )}\label{a00003_a6b6b7381c45308662fc3df6e7f74bc61}
 
 \begin{DoxyCode}
-00080 \{
-00081     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{double})QTime::currentTime().msecsSinceStartOfDay();
-00082 \}
+00082 \{
+00083     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{double})QTime::currentTime().msecsSinceStartOfDay();
+00084 \}
 \end{DoxyCode}
 \hypertarget{a00003_a88bba601b5c9f285fcdc14e18a1f3398}{}\index{dxl\+\_\+hal@{dxl\+\_\+hal}!is\+Open@{is\+Open}}
 \index{is\+Open@{is\+Open}!dxl\+\_\+hal@{dxl\+\_\+hal}}
@@ -151,21 +153,21 @@ Dynamixel S\+D\+K platform dependent.
 )}\label{a00003_ac36331febb2eaa66303af3483795742a}
 
 \begin{DoxyCode}
-00063 \{
-00064     \textcolor{comment}{// Recieving date}
-00065     \textcolor{comment}{// *pPacket: data array pointer}
-00066     \textcolor{comment}{// numPacket: number of data array}
-00067     \textcolor{comment}{// Return: number of data recieved. -1 is error.}
-00068     \hyperlink{a00003_a10d474daa3ca42b5c5ceb6558a955ca1}{\_timed} = \textcolor{keyword}{false};
-00069     \textcolor{keywordflow}{if} (\hyperlink{a00003_a785d0e35b81d779b54869cad668f9745}{\_serial}.isOpen()) \{
-00070         \textcolor{keywordtype}{int} n = \hyperlink{a00003_a785d0e35b81d779b54869cad668f9745}{\_serial}.read((\textcolor{keywordtype}{char}*)pPacket, numPacket);
-00071         \hyperlink{a00003_a10d474daa3ca42b5c5ceb6558a955ca1}{\_timed} = \hyperlink{a00003_a785d0e35b81d779b54869cad668f9745}{\_serial}.waitForReadyRead(\hyperlink{a00003_ae3d8733b5ca778b070218765ca0746ac}{\_time});
-00072         \hyperlink{a00003_a10d474daa3ca42b5c5ceb6558a955ca1}{\_timed} = not \hyperlink{a00003_a10d474daa3ca42b5c5ceb6558a955ca1}{\_timed};
-00073         \textcolor{keywordflow}{return} n;
-00074     \}
-00075     \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} -1;
-00076     
-00077 \}
+00065 \{
+00066     \textcolor{comment}{// Recieving date}
+00067     \textcolor{comment}{// *pPacket: data array pointer}
+00068     \textcolor{comment}{// numPacket: number of data array}
+00069     \textcolor{comment}{// Return: number of data recieved. -1 is error.}
+00070     \hyperlink{a00003_a10d474daa3ca42b5c5ceb6558a955ca1}{\_timed} = \textcolor{keyword}{false};
+00071     \textcolor{keywordflow}{if} (\hyperlink{a00003_a785d0e35b81d779b54869cad668f9745}{\_serial}.isOpen()) \{
+00072         \textcolor{keywordtype}{int} n = \hyperlink{a00003_a785d0e35b81d779b54869cad668f9745}{\_serial}.read((\textcolor{keywordtype}{char}*)pPacket, numPacket);
+00073         \hyperlink{a00003_a10d474daa3ca42b5c5ceb6558a955ca1}{\_timed} = \hyperlink{a00003_a785d0e35b81d779b54869cad668f9745}{\_serial}.waitForReadyRead(\hyperlink{a00003_ae3d8733b5ca778b070218765ca0746ac}{\_time});
+00074         \hyperlink{a00003_a10d474daa3ca42b5c5ceb6558a955ca1}{\_timed} = not \hyperlink{a00003_a10d474daa3ca42b5c5ceb6558a955ca1}{\_timed};
+00075         \textcolor{keywordflow}{return} n;
+00076     \}
+00077     \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} -1;
+00078     
+00079 \}
 \end{DoxyCode}
 \hypertarget{a00003_a90106970438fb0ab65852730a1c0776a}{}\index{dxl\+\_\+hal@{dxl\+\_\+hal}!write@{write}}
 \index{write@{write}!dxl\+\_\+hal@{dxl\+\_\+hal}}
@@ -177,21 +179,21 @@ Dynamixel S\+D\+K platform dependent.
 )}\label{a00003_a90106970438fb0ab65852730a1c0776a}
 
 \begin{DoxyCode}
-00046 \{
-00047     \textcolor{comment}{// Transmiting date}
-00048     \textcolor{comment}{// *pPacket: data array pointer}
-00049     \textcolor{comment}{// numPacket: number of data array}
-00050     \textcolor{comment}{// Return: number of data transmitted. -1 is error.}
-00051     \hyperlink{a00003_a10d474daa3ca42b5c5ceb6558a955ca1}{\_timed} = \textcolor{keyword}{false};
-00052     \textcolor{keywordflow}{if} (\hyperlink{a00003_a785d0e35b81d779b54869cad668f9745}{\_serial}.isOpen()) \{
-00053         \textcolor{keywordtype}{int} n = \hyperlink{a00003_a785d0e35b81d779b54869cad668f9745}{\_serial}.write((\textcolor{keywordtype}{char}*)pPacket, numPacket);
-00054         \hyperlink{a00003_a10d474daa3ca42b5c5ceb6558a955ca1}{\_timed} = \hyperlink{a00003_a785d0e35b81d779b54869cad668f9745}{\_serial}.waitForBytesWritten(\hyperlink{a00003_ae3d8733b5ca778b070218765ca0746ac}{\_time});
-00055         \hyperlink{a00003_a10d474daa3ca42b5c5ceb6558a955ca1}{\_timed} = not \hyperlink{a00003_a10d474daa3ca42b5c5ceb6558a955ca1}{\_timed};
-00056         \textcolor{keywordflow}{return} n;
-00057     \}
-00058     \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} -1;
-00059 
-00060 \}
+00048 \{
+00049     \textcolor{comment}{// Transmiting date}
+00050     \textcolor{comment}{// *pPacket: data array pointer}
+00051     \textcolor{comment}{// numPacket: number of data array}
+00052     \textcolor{comment}{// Return: number of data transmitted. -1 is error.}
+00053     \hyperlink{a00003_a10d474daa3ca42b5c5ceb6558a955ca1}{\_timed} = \textcolor{keyword}{false};
+00054     \textcolor{keywordflow}{if} (\hyperlink{a00003_a785d0e35b81d779b54869cad668f9745}{\_serial}.isOpen()) \{
+00055         \textcolor{keywordtype}{int} n = \hyperlink{a00003_a785d0e35b81d779b54869cad668f9745}{\_serial}.write((\textcolor{keywordtype}{char}*)pPacket, numPacket);
+00056         \hyperlink{a00003_a10d474daa3ca42b5c5ceb6558a955ca1}{\_timed} = \hyperlink{a00003_a785d0e35b81d779b54869cad668f9745}{\_serial}.waitForBytesWritten(\hyperlink{a00003_ae3d8733b5ca778b070218765ca0746ac}{\_time});
+00057         \hyperlink{a00003_a10d474daa3ca42b5c5ceb6558a955ca1}{\_timed} = not \hyperlink{a00003_a10d474daa3ca42b5c5ceb6558a955ca1}{\_timed};
+00058         \textcolor{keywordflow}{return} n;
+00059     \}
+00060     \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} -1;
+00061 
+00062 \}
 \end{DoxyCode}
 
 
@@ -212,5 +214,5 @@ Dynamixel S\+D\+K platform dependent.
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-dxl/\hyperlink{a00012}{dxl\+\_\+hal.\+h}\item 
-dxl/\hyperlink{a00011}{dxl\+\_\+hal.\+cpp}\end{DoxyCompactItemize}
+dxl/\hyperlink{a00013}{dxl\+\_\+hal.\+h}\item 
+dxl/\hyperlink{a00012}{dxl\+\_\+hal.\+cpp}\end{DoxyCompactItemize}

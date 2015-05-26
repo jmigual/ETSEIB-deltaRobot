@@ -15,7 +15,7 @@ Collaboration diagram for dynamixel\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=141pt]{d5/d16/a00029}
+\includegraphics[width=141pt]{dc/d87/a00032}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -25,6 +25,8 @@ Collaboration diagram for dynamixel\+:\nopagebreak
 \begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
 \hyperlink{a00004_a5d4fed957a4b2d1690c0fa72127f5cbf}{dynamixel} (Q\+String port\+\_\+num, int baud\+\_\+rate=1000000)
 \begin{DoxyCompactList}\small\item\em Initialization constructor. \end{DoxyCompactList}\item 
+\hyperlink{a00004_a58fec564d9417d2d09bc29003a9feb7a}{$\sim$dynamixel} ()
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
 bool \hyperlink{a00004_a5ae4b2c6eb4c91f404f973ee8e6a1914}{is\+Open} ()
 \begin{DoxyCompactList}\small\item\em True if the port is open. \end{DoxyCompactList}\item 
 int \hyperlink{a00004_a87960244d5846ae7583e37d2407eb61e}{initialize} (Q\+String port\+\_\+num, int baud\+\_\+rate)
@@ -137,6 +139,21 @@ Initialization constructor.
 00012     \hyperlink{a00004_a87960244d5846ae7583e37d2407eb61e}{initialize}(port\_num, baud\_rate);
 00013 \}
 \end{DoxyCode}
+\hypertarget{a00004_a58fec564d9417d2d09bc29003a9feb7a}{}\index{dynamixel@{dynamixel}!````~dynamixel@{$\sim$dynamixel}}
+\index{````~dynamixel@{$\sim$dynamixel}!dynamixel@{dynamixel}}
+\subsubsection[{$\sim$dynamixel}]{\setlength{\rightskip}{0pt plus 5cm}dynamixel\+::$\sim$dynamixel (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00004_a58fec564d9417d2d09bc29003a9feb7a}
+
+
+Default destructor. 
+
+
+\begin{DoxyCode}
+00103 \{ \hyperlink{a00004_ae003cc90ada6d7b70eaa4ea9d42d4deb}{dH}.\hyperlink{a00003_a250fd7e4acabf54d0733551a13e89a2d}{close}(); \}
+\end{DoxyCode}
 
 
 \subsection{Member Function Documentation}
@@ -178,7 +195,7 @@ Returns the current com status.
 
 
 \begin{DoxyCode}
-00115 \{ \textcolor{keywordflow}{return} \hyperlink{a00004_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{gbCommStatus}; \}
+00118 \{ \textcolor{keywordflow}{return} \hyperlink{a00004_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{gbCommStatus}; \}
 \end{DoxyCode}
 \hypertarget{a00004_a2fa5375537184c279a9ebfcfc0425071}{}\index{dynamixel@{dynamixel}!get\+\_\+packet\+\_\+time@{get\+\_\+packet\+\_\+time}}
 \index{get\+\_\+packet\+\_\+time@{get\+\_\+packet\+\_\+time}!dynamixel@{dynamixel}}
@@ -344,7 +361,7 @@ True if the port is open.
 
 
 \begin{DoxyCode}
-00103 \{ \textcolor{keywordflow}{return} \hyperlink{a00004_ae003cc90ada6d7b70eaa4ea9d42d4deb}{dH}.\hyperlink{a00003_a88bba601b5c9f285fcdc14e18a1f3398}{isOpen}(); \}
+00106 \{ \textcolor{keywordflow}{return} \hyperlink{a00004_ae003cc90ada6d7b70eaa4ea9d42d4deb}{dH}.\hyperlink{a00003_a88bba601b5c9f285fcdc14e18a1f3398}{isOpen}(); \}
 \end{DoxyCode}
 \hypertarget{a00004_af2bd714423e7c4fc089762805c0c71f3}{}\index{dynamixel@{dynamixel}!ping@{ping}}
 \index{ping@{ping}!dynamixel@{dynamixel}}
@@ -935,5 +952,5 @@ True if the bus if being used.
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-dxl/\hyperlink{a00014}{dynamixel.\+h}\item 
-dxl/\hyperlink{a00013}{dynamixel.\+cpp}\end{DoxyCompactItemize}
+dxl/\hyperlink{a00015}{dynamixel.\+h}\item 
+dxl/\hyperlink{a00014}{dynamixel.\+cpp}\end{DoxyCompactItemize}

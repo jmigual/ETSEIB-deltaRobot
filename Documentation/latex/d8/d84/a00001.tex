@@ -15,7 +15,7 @@ Collaboration diagram for A\+X12\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=141pt]{d6/d5b/a00026}
+\includegraphics[width=141pt]{d5/d16/a00029}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -43,6 +43,8 @@ double \hyperlink{a00001_a9ef946bfc1ad4dce5fed4101ed321efe}{get\+Current\+Voltag
 \begin{DoxyCompactList}\small\item\em Returns the current voltage in Volts. \end{DoxyCompactList}\item 
 int \hyperlink{a00001_a745ab1f31fa2cd8c7a5797aeb605cd0b}{get\+I\+D} ()
 \begin{DoxyCompactList}\small\item\em To get the current I\+D. \end{DoxyCompactList}\item 
+void \hyperlink{a00001_a6ef2e11a3b0bdb5015142ba04593a770}{set\+Compliance\+Slope} (uchar ccw, uchar cw)
+\begin{DoxyCompactList}\small\item\em Sets the compliance slope. \end{DoxyCompactList}\item 
 void \hyperlink{a00001_a74a5a89387f0f51e053f05a6c2c0b9c5}{set\+Dxl} (\hyperlink{a00004}{dynamixel} $\ast$dxl)
 \begin{DoxyCompactList}\small\item\em Sets the dynamixel interface. \end{DoxyCompactList}\item 
 void \hyperlink{a00001_a6b27a3c6314604b499d9fa47d180f5d3}{set\+Goal\+Position} (double goal)
@@ -53,6 +55,8 @@ void \hyperlink{a00001_ac48405a5f4aa73c1f2d56f633dfbec50}{set\+Joint\+Mode} (boo
 \begin{DoxyCompactList}\small\item\em To set Joint/\+Wheel mode. \end{DoxyCompactList}\item 
 void \hyperlink{a00001_a914864d133f8cbaf95594747aaff55f2}{set\+Min\+Max} (double min, double max)
 \begin{DoxyCompactList}\small\item\em To set the minimum and maximum angle from 0 to 300º \end{DoxyCompactList}\item 
+void \hyperlink{a00001_a120a8fb196ce724f118fd1774b658040}{set\+Radians} (bool rads)
+\begin{DoxyCompactList}\small\item\em Sets the radians mode. \end{DoxyCompactList}\item 
 void \hyperlink{a00001_a95428eea4d5165b81d80e4ab38e33b7b}{set\+Speed} (double speed)
 \begin{DoxyCompactList}\small\item\em To set the maximum speed from 0\% to 100\% if joint mode or from -\/100\% to 100\% if wheel mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Types}
@@ -383,10 +387,9 @@ Returns the current load from -\/100\% to 100\%, 100\% is Clock\+Wise and -\/100
 00052 \{
 00053     \textcolor{keywordflow}{if} (\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID} < 0 or \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl} == NULL) \textcolor{keywordflow}{return} 0;
 00054     \textcolor{keywordtype}{int} load = \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl}->\hyperlink{a00004_a45e99341e82c5114f6e829c9141bf96f}{read\_word}(\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, RAM::PresentLoad);
-00055     load -= 1024;
-00056     \textcolor{keywordflow}{if} (load == -1024) load = 0;
-00057     \textcolor{keywordflow}{return} double((load/1023)*100);
-00058 \}
+00055     \textcolor{keywordflow}{if} (load >= 1024) load -= 1024;
+00056     \textcolor{keywordflow}{return} double((load/1023)*100);
+00057 \}
 \end{DoxyCode}
 \hypertarget{a00001_af9722b9c1f82fbfd97fe5e0a44369e8a}{}\index{A\+X12@{A\+X12}!get\+Current\+Pos@{get\+Current\+Pos}}
 \index{get\+Current\+Pos@{get\+Current\+Pos}!A\+X12@{A\+X12}}
@@ -401,14 +404,14 @@ Returns the current position from 0º to 300º
 
 
 \begin{DoxyCode}
-00061 \{
-00062     \textcolor{keywordflow}{if} (\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID} < 0 or \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl} == NULL) \textcolor{keywordflow}{return} 0;
-00063     \textcolor{keywordtype}{int} pos = \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl}->\hyperlink{a00004_a45e99341e82c5114f6e829c9141bf96f}{read\_word}(\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, RAM::PresentPosition);
-00064     \textcolor{keywordflow}{if} (\hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl}->\hyperlink{a00004_ac8440d5d34ae3c4618b28fdbbd748edc}{get\_comm\_result}() != COMM\_RXSUCCESS) \textcolor{keywordflow}{return} -1;
-00065     
-00066     \textcolor{keywordflow}{if} (\hyperlink{a00001_aba71492043d7a3226f0793db57372bec}{\_rads}) \textcolor{keywordflow}{return} double((pos/1023.0)*5*M\_PI/3);
-00067     \textcolor{keywordflow}{return} double((pos/1023.0)*300);
-00068 \}
+00060 \{
+00061     \textcolor{keywordflow}{if} (\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID} < 0 or \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl} == NULL) \textcolor{keywordflow}{return} 0;
+00062     \textcolor{keywordtype}{int} pos = \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl}->\hyperlink{a00004_a45e99341e82c5114f6e829c9141bf96f}{read\_word}(\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, RAM::PresentPosition);
+00063     \textcolor{keywordflow}{if} (\hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl}->\hyperlink{a00004_ac8440d5d34ae3c4618b28fdbbd748edc}{get\_comm\_result}() != COMM\_RXSUCCESS) \textcolor{keywordflow}{return} -1;
+00064     
+00065     \textcolor{keywordflow}{if} (\hyperlink{a00001_aba71492043d7a3226f0793db57372bec}{\_rads}) \textcolor{keywordflow}{return} double((pos/1023.0)*(5.0*M\_PI)/3.0);
+00066     \textcolor{keywordflow}{return} double((pos/1023.0)*300);
+00067 \}
 \end{DoxyCode}
 \hypertarget{a00001_a23c7ed54716c4b144a68d801f324e3ef}{}\index{A\+X12@{A\+X12}!get\+Current\+Speed@{get\+Current\+Speed}}
 \index{get\+Current\+Speed@{get\+Current\+Speed}!A\+X12@{A\+X12}}
@@ -423,14 +426,14 @@ Returns the current speed from -\/100\% to 100\%, 100\% is Clock\+Wise and -\/10
 
 
 \begin{DoxyCode}
-00079 \{
-00080     \textcolor{keywordflow}{if} (\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID} < 0 or \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl} == NULL) \textcolor{keywordflow}{return} 0;
-00081     \textcolor{keywordtype}{int} speed = \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl}->\hyperlink{a00004_a45e99341e82c5114f6e829c9141bf96f}{read\_word}(\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, RAM::PresentSpeed);
-00082     \textcolor{keywordflow}{if} (\hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl}->\hyperlink{a00004_ac8440d5d34ae3c4618b28fdbbd748edc}{get\_comm\_result}() != COMM\_RXSUCCESS) \textcolor{keywordflow}{return} -1;
-00083     speed -= 1024;
-00084     \textcolor{keywordflow}{if} (speed == -1024) speed = 0;
-00085     \textcolor{keywordflow}{return} double((speed/1023.0)*100);
-00086 \}
+00078 \{
+00079     \textcolor{keywordflow}{if} (\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID} < 0 or \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl} == NULL) \textcolor{keywordflow}{return} 0;
+00080     \textcolor{keywordtype}{int} speed = \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl}->\hyperlink{a00004_a45e99341e82c5114f6e829c9141bf96f}{read\_word}(\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, RAM::PresentSpeed);
+00081     \textcolor{keywordflow}{if} (\hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl}->\hyperlink{a00004_ac8440d5d34ae3c4618b28fdbbd748edc}{get\_comm\_result}() != COMM\_RXSUCCESS) \textcolor{keywordflow}{return} -1;
+00082     speed -= 1024;
+00083     \textcolor{keywordflow}{if} (speed == -1024) speed = 0;
+00084     \textcolor{keywordflow}{return} double((speed/1023.0)*100);
+00085 \}
 \end{DoxyCode}
 \hypertarget{a00001_ab16fad4c8c034d56acce15fc9102f34d}{}\index{A\+X12@{A\+X12}!get\+Current\+Temp@{get\+Current\+Temp}}
 \index{get\+Current\+Temp@{get\+Current\+Temp}!A\+X12@{A\+X12}}
@@ -445,12 +448,12 @@ Returns the current Temperature in Celsius.
 
 
 \begin{DoxyCode}
-00071 \{
-00072     \textcolor{keywordflow}{if} (\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID} < 0 or \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl} == NULL) \textcolor{keywordflow}{return} 0;
-00073     \textcolor{keywordtype}{int} temp = \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl}->\hyperlink{a00004_a888404b41c4c4395a0b745c77ff2cea9}{read\_byte}(\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, RAM::PresentTemperature);
-00074     \textcolor{keywordflow}{if} (\hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl}->\hyperlink{a00004_ac8440d5d34ae3c4618b28fdbbd748edc}{get\_comm\_result}() != COMM\_RXSUCCESS) \textcolor{keywordflow}{return} -1;
-00075     \textcolor{keywordflow}{return} temp;
-00076 \}
+00070 \{
+00071     \textcolor{keywordflow}{if} (\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID} < 0 or \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl} == NULL) \textcolor{keywordflow}{return} 0;
+00072     \textcolor{keywordtype}{int} temp = \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl}->\hyperlink{a00004_a888404b41c4c4395a0b745c77ff2cea9}{read\_byte}(\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, RAM::PresentTemperature);
+00073     \textcolor{keywordflow}{if} (\hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl}->\hyperlink{a00004_ac8440d5d34ae3c4618b28fdbbd748edc}{get\_comm\_result}() != COMM\_RXSUCCESS) \textcolor{keywordflow}{return} -1;
+00074     \textcolor{keywordflow}{return} temp;
+00075 \}
 \end{DoxyCode}
 \hypertarget{a00001_a9ef946bfc1ad4dce5fed4101ed321efe}{}\index{A\+X12@{A\+X12}!get\+Current\+Voltage@{get\+Current\+Voltage}}
 \index{get\+Current\+Voltage@{get\+Current\+Voltage}!A\+X12@{A\+X12}}
@@ -465,12 +468,12 @@ Returns the current voltage in Volts.
 
 
 \begin{DoxyCode}
-00089 \{
-00090     \textcolor{keywordflow}{if} (\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID} < 0 or \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl} == NULL) \textcolor{keywordflow}{return} 0;
-00091     \textcolor{keywordtype}{char} voltage = \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl}->\hyperlink{a00004_a888404b41c4c4395a0b745c77ff2cea9}{read\_byte}(\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, RAM::PresentVoltage);
-00092     \textcolor{keywordflow}{if} (\hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl}->\hyperlink{a00004_ac8440d5d34ae3c4618b28fdbbd748edc}{get\_comm\_result}() != COMM\_RXSUCCESS) \textcolor{keywordflow}{return} -1;
-00093     \textcolor{keywordflow}{return} double(voltage/10.0);
-00094 \}
+00088 \{
+00089     \textcolor{keywordflow}{if} (\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID} < 0 or \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl} == NULL) \textcolor{keywordflow}{return} 0;
+00090     \textcolor{keywordtype}{char} voltage = \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl}->\hyperlink{a00004_a888404b41c4c4395a0b745c77ff2cea9}{read\_byte}(\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, RAM::PresentVoltage);
+00091     \textcolor{keywordflow}{if} (\hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl}->\hyperlink{a00004_ac8440d5d34ae3c4618b28fdbbd748edc}{get\_comm\_result}() != COMM\_RXSUCCESS) \textcolor{keywordflow}{return} -1;
+00092     \textcolor{keywordflow}{return} double(voltage/10.0);
+00093 \}
 \end{DoxyCode}
 \hypertarget{a00001_a745ab1f31fa2cd8c7a5797aeb605cd0b}{}\index{A\+X12@{A\+X12}!get\+I\+D@{get\+I\+D}}
 \index{get\+I\+D@{get\+I\+D}!A\+X12@{A\+X12}}
@@ -486,6 +489,33 @@ To get the current I\+D.
 
 \begin{DoxyCode}
 00114 \{ \textcolor{keywordflow}{return} \hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}; \}
+\end{DoxyCode}
+\hypertarget{a00001_a6ef2e11a3b0bdb5015142ba04593a770}{}\index{A\+X12@{A\+X12}!set\+Compliance\+Slope@{set\+Compliance\+Slope}}
+\index{set\+Compliance\+Slope@{set\+Compliance\+Slope}!A\+X12@{A\+X12}}
+\subsubsection[{set\+Compliance\+Slope}]{\setlength{\rightskip}{0pt plus 5cm}void A\+X12\+::set\+Compliance\+Slope (
+\begin{DoxyParamCaption}
+\item[{uchar}]{ccw, }
+\item[{uchar}]{cw}
+\end{DoxyParamCaption}
+)}\label{a00001_a6ef2e11a3b0bdb5015142ba04593a770}
+
+
+Sets the compliance slope. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ccw} & Counter Clock Wise Compliance Slope \\
+\hline
+{\em cw} & Clock Wise Compliance Slope \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+00096 \{
+00097     \textcolor{keywordflow}{if} (\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID} < 0 or \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl} == NULL) \textcolor{keywordflow}{return};
+00098     \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl}->\hyperlink{a00004_a66c1e32cc45dd46d329f1fc212e46a3d}{write\_byte}(\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, RAM::CCWComplianceMargin, ccw);
+00099     \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl}->\hyperlink{a00004_a66c1e32cc45dd46d329f1fc212e46a3d}{write\_byte}(\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, RAM::CWComplianceMargin, cw);
+00100 \}
 \end{DoxyCode}
 \hypertarget{a00001_a74a5a89387f0f51e053f05a6c2c0b9c5}{}\index{A\+X12@{A\+X12}!set\+Dxl@{set\+Dxl}}
 \index{set\+Dxl@{set\+Dxl}!A\+X12@{A\+X12}}
@@ -505,7 +535,7 @@ Sets the dynamixel interface.
 \end{DoxyParams}
 
 \begin{DoxyCode}
-00118 \{ \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl} = dxl; \}
+00123 \{ \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl} = dxl; \}
 \end{DoxyCode}
 \hypertarget{a00001_a6b27a3c6314604b499d9fa47d180f5d3}{}\index{A\+X12@{A\+X12}!set\+Goal\+Position@{set\+Goal\+Position}}
 \index{set\+Goal\+Position@{set\+Goal\+Position}!A\+X12@{A\+X12}}
@@ -525,12 +555,16 @@ Sets the Goal\textquotesingle{}s position (in degrees) or speed depending on the
 \end{DoxyParams}
 
 \begin{DoxyCode}
-00097 \{
-00098     \textcolor{keywordflow}{if} (\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID} < 0 or \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl} == NULL) \textcolor{keywordflow}{return};
-00099     \textcolor{keywordflow}{if} (goal > 300.0) goal = 300.0;
-00100     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (goal < 0) goal = 0;
-00101     \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl}->\hyperlink{a00004_a925f62ce5e261e5ef4fe6dc46bdc7c63}{write\_word}(\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, RAM::GoalPosition, \textcolor{keywordtype}{int}((goal/300.0)*1023));
-00102 \}
+00103 \{
+00104     \textcolor{keywordflow}{if} (\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID} < 0 or \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl} == NULL) \textcolor{keywordflow}{return};
+00105     
+00106     \textcolor{comment}{// Conversion to radians if radians mode}
+00107     \textcolor{keywordflow}{if} (\hyperlink{a00001_aba71492043d7a3226f0793db57372bec}{\_rads}) goal *= 180/M\_PI;
+00108     
+00109     \textcolor{keywordflow}{if} (goal > 300.0) goal = 300.0;
+00110     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (goal < 0) goal = 0;
+00111     \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl}->\hyperlink{a00004_a925f62ce5e261e5ef4fe6dc46bdc7c63}{write\_word}(\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, RAM::GoalPosition, \textcolor{keywordtype}{int}((goal/300.0)*1023));
+00112 \}
 \end{DoxyCode}
 \hypertarget{a00001_ab9fe5d0e2286985977985de6d84b1103}{}\index{A\+X12@{A\+X12}!set\+I\+D@{set\+I\+D}}
 \index{set\+I\+D@{set\+I\+D}!A\+X12@{A\+X12}}
@@ -550,11 +584,11 @@ To set a new I\+D.
 \end{DoxyParams}
 
 \begin{DoxyCode}
-00105 \{
-00106     \hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID} = \hyperlink{a00001_a08d272b502d65464202a3aa97825aec0ab2565d5698c9d943a8bcecf02b1389ad}{ID};
-00107     \textcolor{keywordflow}{if} (\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID} < 0 or \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl} == NULL) \textcolor{keywordflow}{return};
-00108     \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl}->\hyperlink{a00004_a66c1e32cc45dd46d329f1fc212e46a3d}{write\_byte}(\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, RAM::TorqueEnable, \textcolor{keyword}{true});
-00109 \}
+00115 \{
+00116     \hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID} = \hyperlink{a00001_a08d272b502d65464202a3aa97825aec0ab2565d5698c9d943a8bcecf02b1389ad}{ID};
+00117     \textcolor{keywordflow}{if} (\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID} < 0 or \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl} == NULL) \textcolor{keywordflow}{return};
+00118     \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl}->\hyperlink{a00004_a66c1e32cc45dd46d329f1fc212e46a3d}{write\_byte}(\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, RAM::TorqueEnable, \textcolor{keyword}{true});
+00119 \}
 \end{DoxyCode}
 \hypertarget{a00001_ac48405a5f4aa73c1f2d56f633dfbec50}{}\index{A\+X12@{A\+X12}!set\+Joint\+Mode@{set\+Joint\+Mode}}
 \index{set\+Joint\+Mode@{set\+Joint\+Mode}!A\+X12@{A\+X12}}
@@ -574,18 +608,18 @@ To set Joint/\+Wheel mode.
 \end{DoxyParams}
 
 \begin{DoxyCode}
-00112 \{
-00113     \textcolor{keywordflow}{if} (\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID} < 0 or \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl} == NULL) \textcolor{keywordflow}{return};
-00114     \hyperlink{a00001_a2fd07e2e636003227a32d09d211bd6d4}{\_mode} = mode;
-00115     \textcolor{keywordflow}{if} (\hyperlink{a00001_a2fd07e2e636003227a32d09d211bd6d4}{\_mode}) \{
-00116         \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl}->\hyperlink{a00004_a925f62ce5e261e5ef4fe6dc46bdc7c63}{write\_word}(\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, ROM::CWAngleLimit, 0);
-00117         \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl}->\hyperlink{a00004_a925f62ce5e261e5ef4fe6dc46bdc7c63}{write\_word}(\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, ROM::CCWAngleLimit, 1023);
-00118     \}
-00119     \textcolor{keywordflow}{else} \{
-00120         \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl}->\hyperlink{a00004_a925f62ce5e261e5ef4fe6dc46bdc7c63}{write\_word}(\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, ROM::CWAngleLimit, 0);
-00121         \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl}->\hyperlink{a00004_a925f62ce5e261e5ef4fe6dc46bdc7c63}{write\_word}(\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, ROM::CCWAngleLimit, 0);
-00122     \}
-00123 \}
+00122 \{
+00123     \textcolor{keywordflow}{if} (\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID} < 0 or \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl} == NULL) \textcolor{keywordflow}{return};
+00124     \hyperlink{a00001_a2fd07e2e636003227a32d09d211bd6d4}{\_mode} = mode;
+00125     \textcolor{keywordflow}{if} (\hyperlink{a00001_a2fd07e2e636003227a32d09d211bd6d4}{\_mode}) \{
+00126         \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl}->\hyperlink{a00004_a925f62ce5e261e5ef4fe6dc46bdc7c63}{write\_word}(\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, ROM::CWAngleLimit, 0);
+00127         \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl}->\hyperlink{a00004_a925f62ce5e261e5ef4fe6dc46bdc7c63}{write\_word}(\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, ROM::CCWAngleLimit, 1023);
+00128     \}
+00129     \textcolor{keywordflow}{else} \{
+00130         \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl}->\hyperlink{a00004_a925f62ce5e261e5ef4fe6dc46bdc7c63}{write\_word}(\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, ROM::CWAngleLimit, 0);
+00131         \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl}->\hyperlink{a00004_a925f62ce5e261e5ef4fe6dc46bdc7c63}{write\_word}(\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, ROM::CCWAngleLimit, 0);
+00132     \}
+00133 \}
 \end{DoxyCode}
 \hypertarget{a00001_a914864d133f8cbaf95594747aaff55f2}{}\index{A\+X12@{A\+X12}!set\+Min\+Max@{set\+Min\+Max}}
 \index{set\+Min\+Max@{set\+Min\+Max}!A\+X12@{A\+X12}}
@@ -600,25 +634,54 @@ To set Joint/\+Wheel mode.
 To set the minimum and maximum angle from 0 to 300º 
 
 
+\begin{DoxyParams}{Parameters}
+{\em min} & Minimum value from servo \\
+\hline
+{\em max} & Maximum value from servo \\
+\hline
+\end{DoxyParams}
+
 \begin{DoxyCode}
-00126 \{
-00127     \textcolor{keywordflow}{if} (\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID} < 0 or \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl} == NULL) \textcolor{keywordflow}{return};
-00128     
-00129     \textcolor{keywordflow}{if} (min > max)  \{
-00130         \textcolor{keywordtype}{double} aux = min;
-00131         min = max;
-00132         max = aux;
-00133     \}
-00134     
-00135     \textcolor{keywordflow}{if} (min < 0.0) min = 0;
-00136     \textcolor{keywordflow}{if} (max > 300.0) max = 300;
-00137     
-00138     min = (min/300)*1023;
-00139     max = (max/300)*1023;
-00140     
-00141     \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl}->\hyperlink{a00004_a925f62ce5e261e5ef4fe6dc46bdc7c63}{write\_word}(\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, ROM::CWAngleLimit, \textcolor{keywordtype}{int} (min));
-00142     \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl}->\hyperlink{a00004_a925f62ce5e261e5ef4fe6dc46bdc7c63}{write\_word}(\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, ROM::CCWAngleLimit, \textcolor{keywordtype}{int} (max));
-00143 \}
+00136 \{
+00137     \textcolor{keywordflow}{if} (\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID} < 0 or \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl} == NULL) \textcolor{keywordflow}{return};
+00138     
+00139     \textcolor{keywordflow}{if} (min > max)  \{
+00140         \textcolor{keywordtype}{double} aux = min;
+00141         min = max;
+00142         max = aux;
+00143     \}
+00144     
+00145     \textcolor{keywordflow}{if} (\hyperlink{a00001_aba71492043d7a3226f0793db57372bec}{\_rads}) min *= 180/M\_PI;
+00146     
+00147     \textcolor{keywordflow}{if} (min < 0.0) min = 0;
+00148     \textcolor{keywordflow}{if} (max > 300.0) max = 300;
+00149     
+00150     min = (min/300)*1023;
+00151     max = (max/300)*1023;
+00152     
+00153     \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl}->\hyperlink{a00004_a925f62ce5e261e5ef4fe6dc46bdc7c63}{write\_word}(\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, ROM::CWAngleLimit, \textcolor{keywordtype}{int} (min));
+00154     \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl}->\hyperlink{a00004_a925f62ce5e261e5ef4fe6dc46bdc7c63}{write\_word}(\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, ROM::CCWAngleLimit, \textcolor{keywordtype}{int} (max));
+00155 \}
+\end{DoxyCode}
+\hypertarget{a00001_a120a8fb196ce724f118fd1774b658040}{}\index{A\+X12@{A\+X12}!set\+Radians@{set\+Radians}}
+\index{set\+Radians@{set\+Radians}!A\+X12@{A\+X12}}
+\subsubsection[{set\+Radians}]{\setlength{\rightskip}{0pt plus 5cm}void A\+X12\+::set\+Radians (
+\begin{DoxyParamCaption}
+\item[{bool}]{rads}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00001_a120a8fb196ce724f118fd1774b658040}
+
+
+Sets the radians mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rads} & True if radians mode is used \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+00145 \{ \hyperlink{a00001_aba71492043d7a3226f0793db57372bec}{\_rads} = rads; \}
 \end{DoxyCode}
 \hypertarget{a00001_a95428eea4d5165b81d80e4ab38e33b7b}{}\index{A\+X12@{A\+X12}!set\+Speed@{set\+Speed}}
 \index{set\+Speed@{set\+Speed}!A\+X12@{A\+X12}}
@@ -633,24 +696,24 @@ To set the maximum speed from 0\% to 100\% if joint mode or from -\/100\% to 100
 
 
 \begin{DoxyCode}
-00146 \{
-00147     \textcolor{keywordflow}{if} (\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID} < 0 or \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl} == NULL) \textcolor{keywordflow}{return};
-00148     \textcolor{keywordflow}{if} (speed > 100.0) speed = 100.0;
-00149     \textcolor{keywordflow}{if} (\hyperlink{a00001_a2fd07e2e636003227a32d09d211bd6d4}{\_mode}) \{
-00150         \textcolor{keywordflow}{if} (speed < 0.0) speed = 0.0;
-00151         
-00152         \textcolor{keywordtype}{int} byte = int((speed/100.0) * 1024.0);
-00153         \textcolor{keywordflow}{if} (speed == 100.0) byte = 0;
-00154         \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl}->\hyperlink{a00004_a66c1e32cc45dd46d329f1fc212e46a3d}{write\_byte}(\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, RAM::MovingSpeed, byte);        
-00155     \}
-00156     \textcolor{keywordflow}{else} \{
-00157         \textcolor{keywordflow}{if} (speed < -100.0) speed = -100.0;   
-00158         
-00159         \textcolor{keywordtype}{int} byte = int(((speed + 100)/100.0) * 1024);
-00160         \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl}->\hyperlink{a00004_a66c1e32cc45dd46d329f1fc212e46a3d}{write\_byte}(\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, RAM::MovingSpeed, byte);
-00161     \}
-00162 
-00163 \}
+00158 \{
+00159     \textcolor{keywordflow}{if} (\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID} < 0 or \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl} == NULL) \textcolor{keywordflow}{return};
+00160     \textcolor{keywordflow}{if} (speed > 100.0) speed = 100.0;
+00161     \textcolor{keywordflow}{if} (\hyperlink{a00001_a2fd07e2e636003227a32d09d211bd6d4}{\_mode}) \{
+00162         \textcolor{keywordflow}{if} (speed < 0.0) speed = 0.0;
+00163         
+00164         \textcolor{keywordtype}{int} byte = int((speed/100.0) * 1024.0);
+00165         \textcolor{keywordflow}{if} (speed == 100.0) byte = 0;
+00166         \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl}->\hyperlink{a00004_a66c1e32cc45dd46d329f1fc212e46a3d}{write\_byte}(\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, RAM::MovingSpeed, byte);        
+00167     \}
+00168     \textcolor{keywordflow}{else} \{
+00169         \textcolor{keywordflow}{if} (speed < -100.0) speed = -100.0;   
+00170         
+00171         \textcolor{keywordtype}{int} byte = int(((speed + 100)/100.0) * 1024);
+00172         \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\_dxl}->\hyperlink{a00004_a66c1e32cc45dd46d329f1fc212e46a3d}{write\_byte}(\hyperlink{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{\_ID}, RAM::MovingSpeed, byte);
+00173     \}
+00174 
+00175 \}
 \end{DoxyCode}
 
 
@@ -687,5 +750,5 @@ True if the angle is returned in radians.
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-dxl/\hyperlink{a00010}{ax12.\+h}\item 
-dxl/\hyperlink{a00009}{ax12.\+cpp}\end{DoxyCompactItemize}
+dxl/\hyperlink{a00011}{ax12.\+h}\item 
+dxl/\hyperlink{a00010}{ax12.\+cpp}\end{DoxyCompactItemize}

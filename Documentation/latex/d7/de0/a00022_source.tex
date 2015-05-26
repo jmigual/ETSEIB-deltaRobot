@@ -1,33 +1,45 @@
-\hypertarget{a00022_source}{}\section{stable.\+h}
+\hypertarget{a00022_source}{}\section{servofind.\+h}
 
 \begin{DoxyCode}
-00001 
-00022 \textcolor{preprocessor}{#ifndef STABLE\_H}
-00023 \textcolor{preprocessor}{#define STABLE\_H}
-00024 
-00025 \textcolor{preprocessor}{#ifdef \_\_cplusplus}
-00026 
-00027 \textcolor{preprocessor}{#include <QApplication>}
-00028 \textcolor{preprocessor}{#include <QDebug>}
-00029 \textcolor{preprocessor}{#include <QDir>}
-00030 \textcolor{preprocessor}{#include <QDialog>}
-00031 \textcolor{preprocessor}{#include <QLabel>}
-00032 \textcolor{preprocessor}{#include <QMainWindow>}
-00033 \textcolor{preprocessor}{#include <QMutex>}
-00034 \textcolor{preprocessor}{#include <QSerialPortInfo>}
-00035 \textcolor{preprocessor}{#include <QStandardPaths>}
-00036 \textcolor{preprocessor}{#include <QStatusBar>}
-00037 \textcolor{preprocessor}{#include <QString>}
-00038 \textcolor{preprocessor}{#include <QThread>}
-00039 \textcolor{preprocessor}{#include <QTime>}
-00040 \textcolor{preprocessor}{#include <QTimer>}
-00041 \textcolor{preprocessor}{#include <QVector>}
-00042 \textcolor{preprocessor}{#include <QWaitCondition>}
-00043 
-00044 \textcolor{preprocessor}{#include <xjoystick.h>}
-00045 
-00046 \textcolor{preprocessor}{#endif}
-00047 
-00048 \textcolor{preprocessor}{#endif // STABLE\_H}
-00049 
+00001 \textcolor{preprocessor}{#ifndef SERVOFIND\_H}
+00002 \textcolor{preprocessor}{#define SERVOFIND\_H}
+00003 
+00004 \textcolor{preprocessor}{#include "\hyperlink{a00025}{stable.h}"}
+00005 \textcolor{preprocessor}{#include "\hyperlink{a00011}{dxl/ax12.h}"}
+00006 
+\hypertarget{a00022_source_l00007}{}\hyperlink{a00008}{00007} \textcolor{keyword}{class }\hyperlink{a00008}{ServoFind} : \textcolor{keyword}{public} QThread
+00008 \{
+00009     Q\_OBJECT
+00010     
+\hypertarget{a00022_source_l00011}{}\hyperlink{a00008_a8cfdbef4d4dc51f1b200a885ff827711}{00011}     \textcolor{keyword}{typedef} QComboBox \hyperlink{a00008_a8cfdbef4d4dc51f1b200a885ff827711}{QCB};
+00012 \textcolor{keyword}{public}:
+00013     
+00015     \hyperlink{a00008_ad9b1d82aecc71025fb606b79b9bf6ce1}{ServoFind}();
+00016     
+00018     \hyperlink{a00008_a5f353598d5d40289c039412288e5bf73}{~ServoFind}();
+00019     
+00021     \textcolor{keywordtype}{void} \hyperlink{a00008_a4edb0ac2852a93f84c6aa04d5953e28d}{run}();
+00022     
+00024     \textcolor{keywordtype}{void} \hyperlink{a00008_a440f961980162cfd7c2ca9031b2a76e8}{setData}(QVector<QComboBox *> servo, QString port, 
+00025                  \textcolor{keywordtype}{int} baud, \textcolor{keywordtype}{int} min = 0, \textcolor{keywordtype}{int} max = MAX\_ID);
+00026     
+00027     
+00028 signals:
+00029     
+00031     \textcolor{keywordtype}{void} \hyperlink{a00008_a8ae9f951508e8376c3c7421df37ea619}{completion}(\textcolor{keywordtype}{int});
+00032     
+00033 \textcolor{keyword}{private}:
+00034     
+\hypertarget{a00022_source_l00036}{}\hyperlink{a00008_ad2f3b1ab924ff2051178eb981d030b66}{00036}     \textcolor{keywordtype}{int} \hyperlink{a00008_ad2f3b1ab924ff2051178eb981d030b66}{\_baud};
+00037     
+\hypertarget{a00022_source_l00039}{}\hyperlink{a00008_a65a3d5606c9a8bcd6ace9be36c3551e1}{00039}     \textcolor{keywordtype}{int} \hyperlink{a00008_a65a3d5606c9a8bcd6ace9be36c3551e1}{\_min} = 0;
+00040     
+\hypertarget{a00022_source_l00042}{}\hyperlink{a00008_abb4bcc300ab0a9c1df3c41b4e7d1fe2d}{00042}     \textcolor{keywordtype}{int} \hyperlink{a00008_abb4bcc300ab0a9c1df3c41b4e7d1fe2d}{\_max} = MAX\_ID;
+00043     
+\hypertarget{a00022_source_l00045}{}\hyperlink{a00008_acc6d9f94a8cf7a7a777fd9c818d98207}{00045}     QString \hyperlink{a00008_acc6d9f94a8cf7a7a777fd9c818d98207}{\_port};
+00046     
+\hypertarget{a00022_source_l00048}{}\hyperlink{a00008_a571ee1fc45255666e5baa0d5e9111551}{00048}     QVector<QComboBox *> \hyperlink{a00008_a571ee1fc45255666e5baa0d5e9111551}{\_servo};    
+00049 \};
+00050 
+00051 \textcolor{preprocessor}{#endif // SERVOFIND\_H}
 \end{DoxyCode}

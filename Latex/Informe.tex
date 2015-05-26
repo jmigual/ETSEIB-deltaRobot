@@ -4,10 +4,12 @@
 \usepackage{fontspec} 
 \usepackage[hidelinks]{hyperref} % Links color
 \usepackage[catalan]{babel} % Language 
-\usepackage{listings} % Add lists
+\usepackage{import}
+\usepackage{listings} % Add code
 \usepackage{fullpage}
 \usepackage[a4paper, margin=2cm]{geometry} % To change the margins
 \usepackage{graphicx} % Insert images
+\usepackage{pdfpages}
 \usepackage{ragged2e}
 \usepackage{wrapfig} %To Text wrap
 
@@ -69,5 +71,9 @@ El nostre objectiu és construir un robot delta que sigui capaç de posicionar p
 \newpage
 \section{Informe cinemàtic}
 \input{./cinematic}
+
+\newpage
+\section{Annex: Documentació codi}
+\subimport{./}{../Documentation/latex/refman.tex}
 
 \end{document}

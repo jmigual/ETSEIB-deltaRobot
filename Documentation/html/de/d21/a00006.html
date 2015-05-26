@@ -48,9 +48,11 @@
   <div class="summary">
 <a href="#pub-slots">Public Slots</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-types">Private Types</a> &#124;
 <a href="#pri-slots">Private Slots</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
-<a href="../../d0/dc0/a00033.html">List of all members</a>  </div>
+<a href="../../de/d8c/a00036.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">OptionsWindow Class Reference</div>  </div>
 </div><!--header-->
@@ -59,22 +61,20 @@
 <p>Class used to handle a Window to set the options.  
  <a href="../../de/d21/a00006.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="../../dd/da2/a00019_source.html">optionswindow.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="../../db/db2/a00020_source.html">optionswindow.h</a>&gt;</code></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="../../closed.png" alt="+"/> Inheritance diagram for OptionsWindow:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="../../db/df3/a00034.png" border="0" usemap="#_options_window_inherit__map" alt="Inheritance graph"/></div>
+<div class="center"><img src="../../d1/dc6/a00037.png" border="0" usemap="#_options_window_inherit__map" alt="Inheritance graph"/></div>
 <center><span class="legend">[<a href="../../graph_legend.html">legend</a>]</span></center></div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Collaboration diagram for OptionsWindow:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="../../d4/d8c/a00035.png" border="0" usemap="#_options_window_coll__map" alt="Collaboration graph"/></div>
-<map name="_options_window_coll__map" id="_options_window_coll__map">
-<area shape="rect" id="node3" href="../../d4/dee/a00008.html" title="The ServoThread&#39;s class handles the comunication between the delta robot servos and the PC..." alt="" coords="98,81,191,108"/></map>
+<div class="center"><img src="../../d8/d41/a00038.png" border="0" usemap="#_options_window_coll__map" alt="Collaboration graph"/></div>
 <center><span class="legend">[<a href="../../graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
@@ -85,9 +85,9 @@ Public Slots</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a968da93eec85561ebdb3a464eff15611"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/a00006.html#a968da93eec85561ebdb3a464eff15611">OptionsWindow</a> (XJoystick &amp;J, <a class="el" href="../../d4/dee/a00008.html">ServoThread</a> *servo, int &amp;aX, int &amp;aY, int &amp;aZ, QWidget *parent=0)</td></tr>
-<tr class="memdesc:a968da93eec85561ebdb3a464eff15611"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor must be intialized with a few values.  <a href="#a968da93eec85561ebdb3a464eff15611">More...</a><br /></td></tr>
-<tr class="separator:a968da93eec85561ebdb3a464eff15611"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8e0a610d13a0478bdac57ec7cd4afba"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/a00006.html#ae8e0a610d13a0478bdac57ec7cd4afba">OptionsWindow</a> (XJoystick &amp;J, <a class="el" href="../../da/da0/a00009.html">ServoThread</a> *servo, QWidget *parent=0)</td></tr>
+<tr class="memdesc:ae8e0a610d13a0478bdac57ec7cd4afba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor must be intialized with a few values.  <a href="#ae8e0a610d13a0478bdac57ec7cd4afba">More...</a><br /></td></tr>
+<tr class="separator:ae8e0a610d13a0478bdac57ec7cd4afba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a034c885fe8bb4416e732a9571d14a6b4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/a00006.html#a034c885fe8bb4416e732a9571d14a6b4">~OptionsWindow</a> ()</td></tr>
 <tr class="memdesc:a034c885fe8bb4416e732a9571d14a6b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <a href="#a034c885fe8bb4416e732a9571d14a6b4">More...</a><br /></td></tr>
 <tr class="separator:a034c885fe8bb4416e732a9571d14a6b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -95,35 +95,51 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ab0a56ad7347c20046602a7a2a1c83397"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores all data.  <a href="#ab0a56ad7347c20046602a7a2a1c83397">More...</a><br /></td></tr>
 <tr class="separator:ab0a56ad7347c20046602a7a2a1c83397"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-types"></a>
+Private Types</h2></td></tr>
+<tr class="memitem:aadac35a91eb1992c12e4ba6c4d5ad1be"><td class="memItemLeft" align="right" valign="top">typedef QDialogButtonBox&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/a00006.html#aadac35a91eb1992c12e4ba6c4d5ad1be">QDB</a></td></tr>
+<tr class="separator:aadac35a91eb1992c12e4ba6c4d5ad1be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-slots"></a>
 Private Slots</h2></td></tr>
 <tr class="memitem:a18763ff318688083c7ee5a21f22e8e98"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/a00006.html#a18763ff318688083c7ee5a21f22e8e98">events</a> ()</td></tr>
 <tr class="memdesc:a18763ff318688083c7ee5a21f22e8e98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles events that need to be updated continously.  <a href="#a18763ff318688083c7ee5a21f22e8e98">More...</a><br /></td></tr>
 <tr class="separator:a18763ff318688083c7ee5a21f22e8e98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f7d6790701ff9b1301533b8ad045ede"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/a00006.html#a1f7d6790701ff9b1301533b8ad045ede">buttonClicked</a> (QAbstractButton *but)</td></tr>
+<tr class="memdesc:a1f7d6790701ff9b1301533b8ad045ede"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles a button clicked.  <a href="#a1f7d6790701ff9b1301533b8ad045ede">More...</a><br /></td></tr>
+<tr class="separator:a1f7d6790701ff9b1301533b8ad045ede"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5365d452e8bcd86cbb64b9ec42c3b7e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/a00006.html#ad5365d452e8bcd86cbb64b9ec42c3b7e">on_servoRefresh_clicked</a> ()</td></tr>
 <tr class="memdesc:ad5365d452e8bcd86cbb64b9ec42c3b7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refreshes all the servos connected to the port.  <a href="#ad5365d452e8bcd86cbb64b9ec42c3b7e">More...</a><br /></td></tr>
 <tr class="separator:ad5365d452e8bcd86cbb64b9ec42c3b7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae52f8ca70b1bfa4c8d21d25e49e309d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/a00006.html#ae52f8ca70b1bfa4c8d21d25e49e309d7">refreshFinish</a> ()</td></tr>
+<tr class="memdesc:ae52f8ca70b1bfa4c8d21d25e49e309d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles the endig of refresh function.  <a href="#ae52f8ca70b1bfa4c8d21d25e49e309d7">More...</a><br /></td></tr>
+<tr class="separator:ae52f8ca70b1bfa4c8d21d25e49e309d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:aae43fcdcc9941fbce40c35c449bfd39e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/a00006.html#aae43fcdcc9941fbce40c35c449bfd39e">keyPressEvent</a> (QKeyEvent *event)</td></tr>
+<tr class="separator:aae43fcdcc9941fbce40c35c449bfd39e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a01d6284355011203ee6e8856a0bdf557"><td class="memItemLeft" align="right" valign="top">int &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/a00006.html#a01d6284355011203ee6e8856a0bdf557">_jAxisX</a></td></tr>
-<tr class="memdesc:a01d6284355011203ee6e8856a0bdf557"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to axis for the X value.  <a href="#a01d6284355011203ee6e8856a0bdf557">More...</a><br /></td></tr>
-<tr class="separator:a01d6284355011203ee6e8856a0bdf557"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8921d1cc5bcb527466c28feb5dcc59b1"><td class="memItemLeft" align="right" valign="top">int &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/a00006.html#a8921d1cc5bcb527466c28feb5dcc59b1">_jAxisY</a></td></tr>
-<tr class="memdesc:a8921d1cc5bcb527466c28feb5dcc59b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to axis for the Y value.  <a href="#a8921d1cc5bcb527466c28feb5dcc59b1">More...</a><br /></td></tr>
-<tr class="separator:a8921d1cc5bcb527466c28feb5dcc59b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a47409f50a87942706baaea3d025785e3"><td class="memItemLeft" align="right" valign="top">int &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/a00006.html#a47409f50a87942706baaea3d025785e3">_jAxisZ</a></td></tr>
-<tr class="memdesc:a47409f50a87942706baaea3d025785e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to axis for the Z value.  <a href="#a47409f50a87942706baaea3d025785e3">More...</a><br /></td></tr>
-<tr class="separator:a47409f50a87942706baaea3d025785e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1bf846ab681ab245f70adac30999947c"><td class="memItemLeft" align="right" valign="top">XJoystick &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/a00006.html#a1bf846ab681ab245f70adac30999947c">_joy</a></td></tr>
 <tr class="memdesc:a1bf846ab681ab245f70adac30999947c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the Joystick to handle options.  <a href="#a1bf846ab681ab245f70adac30999947c">More...</a><br /></td></tr>
 <tr class="separator:a1bf846ab681ab245f70adac30999947c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9bd4dccc7a544b1db78dc8cf330b88f6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/a00006.html#a9bd4dccc7a544b1db78dc8cf330b88f6">_portSize</a></td></tr>
 <tr class="memdesc:a9bd4dccc7a544b1db78dc8cf330b88f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the size of the ports.  <a href="#a9bd4dccc7a544b1db78dc8cf330b88f6">More...</a><br /></td></tr>
 <tr class="separator:a9bd4dccc7a544b1db78dc8cf330b88f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acba1566fea3f831000d5e1c1edc3e776"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/dee/a00008.html">ServoThread</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/a00006.html#acba1566fea3f831000d5e1c1edc3e776">_servo</a></td></tr>
+<tr class="memitem:acba1566fea3f831000d5e1c1edc3e776"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/da0/a00009.html">ServoThread</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/a00006.html#acba1566fea3f831000d5e1c1edc3e776">_servo</a></td></tr>
 <tr class="memdesc:acba1566fea3f831000d5e1c1edc3e776"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the servo thread class.  <a href="#acba1566fea3f831000d5e1c1edc3e776">More...</a><br /></td></tr>
 <tr class="separator:acba1566fea3f831000d5e1c1edc3e776"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45137fbf71bbee10e171019c913b88b7"><td class="memItemLeft" align="right" valign="top">QVector&lt; QComboBox * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/a00006.html#a45137fbf71bbee10e171019c913b88b7">_servoC</a></td></tr>
+<tr class="memdesc:a45137fbf71bbee10e171019c913b88b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains all servo QComboBoxes.  <a href="#a45137fbf71bbee10e171019c913b88b7">More...</a><br /></td></tr>
+<tr class="separator:a45137fbf71bbee10e171019c913b88b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab143e1d06250ec778309da1a3807b602"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/dee/a00008.html">ServoFind</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/a00006.html#ab143e1d06250ec778309da1a3807b602">_sF</a></td></tr>
+<tr class="memdesc:ab143e1d06250ec778309da1a3807b602"><td class="mdescLeft">&#160;</td><td class="mdescRight">Thread to find the servos in a non blocking operation.  <a href="#ab143e1d06250ec778309da1a3807b602">More...</a><br /></td></tr>
+<tr class="separator:ab143e1d06250ec778309da1a3807b602"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af031403c7017cf086c0b85186c53471e"><td class="memItemLeft" align="right" valign="top">QStatusBar *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/a00006.html#af031403c7017cf086c0b85186c53471e">status</a></td></tr>
+<tr class="memdesc:af031403c7017cf086c0b85186c53471e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Status bar.  <a href="#af031403c7017cf086c0b85186c53471e">More...</a><br /></td></tr>
+<tr class="separator:af031403c7017cf086c0b85186c53471e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6320942b8558140989f552b3bbc1fbd"><td class="memItemLeft" align="right" valign="top">QTimer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/a00006.html#af6320942b8558140989f552b3bbc1fbd">_timer</a></td></tr>
 <tr class="memdesc:af6320942b8558140989f552b3bbc1fbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for a new COM port.  <a href="#af6320942b8558140989f552b3bbc1fbd">More...</a><br /></td></tr>
 <tr class="separator:af6320942b8558140989f552b3bbc1fbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -133,8 +149,29 @@ Private Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class used to handle a Window to set the options. </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a968da93eec85561ebdb3a464eff15611"></a>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a class="anchor" id="aadac35a91eb1992c12e4ba6c4d5ad1be"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef QDialogButtonBox <a class="el" href="../../de/d21/a00006.html#aadac35a91eb1992c12e4ba6c4d5ad1be">OptionsWindow::QDB</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="ae8e0a610d13a0478bdac57ec7cd4afba"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -150,26 +187,8 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="../../d4/dee/a00008.html">ServoThread</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="../../da/da0/a00009.html">ServoThread</a> *&#160;</td>
           <td class="paramname"><em>servo</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int &amp;&#160;</td>
-          <td class="paramname"><em>aX</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int &amp;&#160;</td>
-          <td class="paramname"><em>aY</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int &amp;&#160;</td>
-          <td class="paramname"><em>aZ</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -194,69 +213,92 @@ Private Attributes</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">J</td><td>Refernce to the Joystick handler </td></tr>
-    <tr><td class="paramname">servo</td><td>Pointer to the <a class="el" href="../../d4/dee/a00008.html" title="The ServoThread&#39;s class handles the comunication between the delta robot servos and the PC...">ServoThread</a> </td></tr>
+    <tr><td class="paramname">servo</td><td>Pointer to the <a class="el" href="../../da/da0/a00009.html" title="The ServoThread&#39;s class handles the comunication between the delta robot servos and the PC...">ServoThread</a> </td></tr>
     <tr><td class="paramname">aX</td><td>Axis for the X value </td></tr>
     <tr><td class="paramname">aY</td><td>Axis for the Y value </td></tr>
     <tr><td class="paramname">aZ</td><td>Axis for the Z value </td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;                                                                :</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    QDialog(parent),</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <a class="code" href="../../de/d21/a00006.html#a01d6284355011203ee6e8856a0bdf557">_jAxisX</a>(aX),</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <a class="code" href="../../de/d21/a00006.html#a8921d1cc5bcb527466c28feb5dcc59b1">_jAxisY</a>(aY),</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <a class="code" href="../../de/d21/a00006.html#a47409f50a87942706baaea3d025785e3">_jAxisZ</a>(aZ),</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="../../de/d21/a00006.html#a1bf846ab681ab245f70adac30999947c">_joy</a>(J),</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="../../de/d21/a00006.html#a9bd4dccc7a544b1db78dc8cf330b88f6">_portSize</a>(-1),</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="../../de/d21/a00006.html#acba1566fea3f831000d5e1c1edc3e776">_servo</a>(servo),</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="../../de/d21/a00006.html#af6320942b8558140989f552b3bbc1fbd">_timer</a>(<span class="keyword">this</span>),</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>(<span class="keyword">new</span> Ui::OptionsWindow)</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;setupUi(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    QVector&lt; QString &gt; A(<a class="code" href="../../de/d21/a00006.html#a1bf846ab681ab245f70adac30999947c">_joy</a>.getAllAxis());</div>
+<div class="fragment"><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;                                                                              :</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    QDialog(parent),</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <a class="code" href="../../de/d21/a00006.html#a1bf846ab681ab245f70adac30999947c">_joy</a>(J),</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <a class="code" href="../../de/d21/a00006.html#a9bd4dccc7a544b1db78dc8cf330b88f6">_portSize</a>(-1),</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <a class="code" href="../../de/d21/a00006.html#acba1566fea3f831000d5e1c1edc3e776">_servo</a>(servo),</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <a class="code" href="../../de/d21/a00006.html#af6320942b8558140989f552b3bbc1fbd">_timer</a>(<span class="keyword">this</span>),</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>(<span class="keyword">new</span> Ui::OptionsWindow)</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;setupUi(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    connect(<a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;buttonBox, SIGNAL(clicked(QAbstractButton*)), </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            <span class="keyword">this</span>, SLOT(<a class="code" href="../../de/d21/a00006.html#a1f7d6790701ff9b1301533b8ad045ede">buttonClicked</a>(QAbstractButton*)));</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    connect(&amp;<a class="code" href="../../de/d21/a00006.html#ab143e1d06250ec778309da1a3807b602">_sF</a>, SIGNAL(completion(<span class="keywordtype">int</span>)),</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;progressBar, SLOT(setValue(<span class="keywordtype">int</span>)));</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="comment">// Adding joystick axis movement</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;joyMX-&gt;addItem(<span class="stringliteral">&quot;None&quot;</span>, -1);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;joyMY-&gt;addItem(<span class="stringliteral">&quot;None&quot;</span>, -1);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;joyMZ-&gt;addItem(<span class="stringliteral">&quot;None&quot;</span>, -1);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    connect(&amp;<a class="code" href="../../de/d21/a00006.html#ab143e1d06250ec778309da1a3807b602">_sF</a>, SIGNAL(finished()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../de/d21/a00006.html#ae52f8ca70b1bfa4c8d21d25e49e309d7">refreshFinish</a>()));</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    connect(&amp;<a class="code" href="../../de/d21/a00006.html#af6320942b8558140989f552b3bbc1fbd">_timer</a>, SIGNAL(timeout()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../de/d21/a00006.html#a18763ff318688083c7ee5a21f22e8e98">events</a>()));</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    </div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; A.size(); ++i) <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;joyMX-&gt;addItem(A[i], i);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; A.size(); ++i) <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;joyMY-&gt;addItem(A[i], i);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; A.size(); ++i) <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;joyMZ-&gt;addItem(A[i], i);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;joyMX-&gt;setCurrentIndex(<a class="code" href="../../de/d21/a00006.html#a01d6284355011203ee6e8856a0bdf557">_jAxisX</a> + 1);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;joyMY-&gt;setCurrentIndex(<a class="code" href="../../de/d21/a00006.html#a8921d1cc5bcb527466c28feb5dcc59b1">_jAxisY</a> + 1);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;joyMZ-&gt;setCurrentIndex(<a class="code" href="../../de/d21/a00006.html#a47409f50a87942706baaea3d025785e3">_jAxisZ</a> + 1);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">// Updating joystick data</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="../../de/d21/a00006.html#ae8c0373be58da710194f8d14f1c3c4dc">joystickChanged</a>();</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="comment">// Configuring event funcion</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="../../de/d21/a00006.html#af6320942b8558140989f552b3bbc1fbd">_timer</a>.setInterval(500);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="../../de/d21/a00006.html#af6320942b8558140989f552b3bbc1fbd">_timer</a>.setSingleShot(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="../../de/d21/a00006.html#af6320942b8558140989f552b3bbc1fbd">_timer</a>.start();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="../../de/d21/a00006.html#af031403c7017cf086c0b85186c53471e">status</a> = <span class="keyword">new</span> QStatusBar(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="../../de/d21/a00006.html#af031403c7017cf086c0b85186c53471e">status</a>-&gt;setContentsMargins(0, 0, 0, 0);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    this-&gt;layout()-&gt;addWidget(<a class="code" href="../../de/d21/a00006.html#af031403c7017cf086c0b85186c53471e">status</a>);    </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    QVector&lt; QString &gt; A(<a class="code" href="../../de/d21/a00006.html#a1bf846ab681ab245f70adac30999947c">_joy</a>.getAllAxis());</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">// Configuring event funcion</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="../../de/d21/a00006.html#af6320942b8558140989f552b3bbc1fbd">_timer</a>.setInterval(500);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="../../de/d21/a00006.html#af6320942b8558140989f552b3bbc1fbd">_timer</a>.setSingleShot(<span class="keyword">false</span>);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="../../de/d21/a00006.html#af6320942b8558140989f552b3bbc1fbd">_timer</a>.start();</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    connect(&amp;<a class="code" href="../../de/d21/a00006.html#af6320942b8558140989f552b3bbc1fbd">_timer</a>, SIGNAL(timeout()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../de/d21/a00006.html#a18763ff318688083c7ee5a21f22e8e98">events</a>()));</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">// Adding servos</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;servo0-&gt;addItem(<span class="stringliteral">&quot;None&quot;</span>, -1);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;servo1-&gt;addItem(<span class="stringliteral">&quot;None&quot;</span>, -1);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;servo2-&gt;addItem(<span class="stringliteral">&quot;None&quot;</span>, -1);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;servo3-&gt;addItem(<span class="stringliteral">&quot;None&quot;</span>, -1);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    this-&gt;<a class="code" href="../../de/d21/a00006.html#ad5365d452e8bcd86cbb64b9ec42c3b7e">on_servoRefresh_clicked</a>();</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
-<div class="ttc" id="a00006_html_a9bd4dccc7a544b1db78dc8cf330b88f6"><div class="ttname"><a href="../../de/d21/a00006.html#a9bd4dccc7a544b1db78dc8cf330b88f6">OptionsWindow::_portSize</a></div><div class="ttdeci">int _portSize</div><div class="ttdoc">Contains the size of the ports. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:59</div></div>
-<div class="ttc" id="a00006_html_a18763ff318688083c7ee5a21f22e8e98"><div class="ttname"><a href="../../de/d21/a00006.html#a18763ff318688083c7ee5a21f22e8e98">OptionsWindow::events</a></div><div class="ttdeci">void events()</div><div class="ttdoc">Handles events that need to be updated continously. </div><div class="ttdef"><b>Definition:</b> optionswindow.cpp:98</div></div>
-<div class="ttc" id="a00006_html_ad5365d452e8bcd86cbb64b9ec42c3b7e"><div class="ttname"><a href="../../de/d21/a00006.html#ad5365d452e8bcd86cbb64b9ec42c3b7e">OptionsWindow::on_servoRefresh_clicked</a></div><div class="ttdeci">void on_servoRefresh_clicked()</div><div class="ttdoc">Refreshes all the servos connected to the port. </div><div class="ttdef"><b>Definition:</b> optionswindow.cpp:132</div></div>
-<div class="ttc" id="a00006_html_a01d6284355011203ee6e8856a0bdf557"><div class="ttname"><a href="../../de/d21/a00006.html#a01d6284355011203ee6e8856a0bdf557">OptionsWindow::_jAxisX</a></div><div class="ttdeci">int &amp; _jAxisX</div><div class="ttdoc">Reference to axis for the X value. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:51</div></div>
-<div class="ttc" id="a00006_html_a47409f50a87942706baaea3d025785e3"><div class="ttname"><a href="../../de/d21/a00006.html#a47409f50a87942706baaea3d025785e3">OptionsWindow::_jAxisZ</a></div><div class="ttdeci">int &amp; _jAxisZ</div><div class="ttdoc">Reference to axis for the Z value. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:53</div></div>
-<div class="ttc" id="a00006_html_ae8c0373be58da710194f8d14f1c3c4dc"><div class="ttname"><a href="../../de/d21/a00006.html#ae8c0373be58da710194f8d14f1c3c4dc">OptionsWindow::joystickChanged</a></div><div class="ttdeci">void joystickChanged()</div><div class="ttdoc">To handle the change of a joystick. </div><div class="ttdef"><b>Definition:</b> optionswindow.cpp:78</div></div>
-<div class="ttc" id="a00006_html_a8921d1cc5bcb527466c28feb5dcc59b1"><div class="ttname"><a href="../../de/d21/a00006.html#a8921d1cc5bcb527466c28feb5dcc59b1">OptionsWindow::_jAxisY</a></div><div class="ttdeci">int &amp; _jAxisY</div><div class="ttdoc">Reference to axis for the Y value. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:52</div></div>
-<div class="ttc" id="a00006_html_af6320942b8558140989f552b3bbc1fbd"><div class="ttname"><a href="../../de/d21/a00006.html#af6320942b8558140989f552b3bbc1fbd">OptionsWindow::_timer</a></div><div class="ttdeci">QTimer _timer</div><div class="ttdoc">Waits for a new COM port. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:65</div></div>
-<div class="ttc" id="a00006_html_acba1566fea3f831000d5e1c1edc3e776"><div class="ttname"><a href="../../de/d21/a00006.html#acba1566fea3f831000d5e1c1edc3e776">OptionsWindow::_servo</a></div><div class="ttdeci">ServoThread * _servo</div><div class="ttdoc">Pointer to the servo thread class. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:62</div></div>
-<div class="ttc" id="a00006_html_a1bf846ab681ab245f70adac30999947c"><div class="ttname"><a href="../../de/d21/a00006.html#a1bf846ab681ab245f70adac30999947c">OptionsWindow::_joy</a></div><div class="ttdeci">XJoystick &amp; _joy</div><div class="ttdoc">Contains the Joystick to handle options. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:56</div></div>
-<div class="ttc" id="a00006_html_a8347442d5b3b670e8fff0c4102db1f88"><div class="ttname"><a href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">OptionsWindow::ui</a></div><div class="ttdeci">Ui::OptionsWindow * ui</div><div class="ttdoc">Containsh the GUI. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:68</div></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">// Updating joystick data</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="../../de/d21/a00006.html#ae8c0373be58da710194f8d14f1c3c4dc">joystickChanged</a>();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="comment">// Adding servos</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="../../de/d21/a00006.html#a45137fbf71bbee10e171019c913b88b7">_servoC</a>.push_back(<a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;servo0);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="../../de/d21/a00006.html#a45137fbf71bbee10e171019c913b88b7">_servoC</a>.push_back(<a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;servo1);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="../../de/d21/a00006.html#a45137fbf71bbee10e171019c913b88b7">_servoC</a>.push_back(<a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;servo2);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="../../de/d21/a00006.html#a45137fbf71bbee10e171019c913b88b7">_servoC</a>.push_back(<a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;servo3);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">for</span>(QComboBox *s : <a class="code" href="../../de/d21/a00006.html#a45137fbf71bbee10e171019c913b88b7">_servoC</a>) s-&gt;addItem(<span class="stringliteral">&quot;None&quot;</span>, -1);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    QVector&lt;ServoThread::Servo&gt; S(<a class="code" href="../../de/d21/a00006.html#acba1566fea3f831000d5e1c1edc3e776">_servo</a>-&gt;<a class="code" href="../../da/da0/a00009.html#a5fd8ef13314428f5ba7646730cc58f1c">getServosInfo</a>());</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    Q_ASSERT(S.size() == <a class="code" href="../../de/d21/a00006.html#acba1566fea3f831000d5e1c1edc3e776">_servo</a>-&gt;<a class="code" href="../../da/da0/a00009.html#ad6ead0ac6fce4539d4b0ff5a3e18ac38">getServosNum</a>());</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; S.size(); ++i) {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordtype">int</span> ID = S[i].ID;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordflow">if</span> (ID &gt;= 0) {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            _servoC[i]-&gt;addItem(QString::number(ID), ID);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            _servoC[i]-&gt;setCurrentIndex(1);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="comment">// Obtaining Servo Port information</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    QString port;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">int</span> baud;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="../../de/d21/a00006.html#acba1566fea3f831000d5e1c1edc3e776">_servo</a>-&gt;<a class="code" href="../../da/da0/a00009.html#afcf834d93f1ac9663d6ebaab820e5f74">getServoPortInfo</a>(port, baud);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;speed-&gt;setValue(<a class="code" href="../../de/d21/a00006.html#acba1566fea3f831000d5e1c1edc3e776">_servo</a>-&gt;<a class="code" href="../../da/da0/a00009.html#a6af364effc9c52c0acec7d00a2c3d262">getSpeed</a>());</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;baudRS-&gt;setValue(baud);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;portS-&gt;addItem(<span class="stringliteral">&quot;&quot;</span>, port);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
+<div class="ttc" id="a00006_html_a9bd4dccc7a544b1db78dc8cf330b88f6"><div class="ttname"><a href="../../de/d21/a00006.html#a9bd4dccc7a544b1db78dc8cf330b88f6">OptionsWindow::_portSize</a></div><div class="ttdeci">int _portSize</div><div class="ttdoc">Contains the size of the ports. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:63</div></div>
+<div class="ttc" id="a00006_html_a18763ff318688083c7ee5a21f22e8e98"><div class="ttname"><a href="../../de/d21/a00006.html#a18763ff318688083c7ee5a21f22e8e98">OptionsWindow::events</a></div><div class="ttdeci">void events()</div><div class="ttdoc">Handles events that need to be updated continously. </div><div class="ttdef"><b>Definition:</b> optionswindow.cpp:113</div></div>
+<div class="ttc" id="a00009_html_ad6ead0ac6fce4539d4b0ff5a3e18ac38"><div class="ttname"><a href="../../da/da0/a00009.html#ad6ead0ac6fce4539d4b0ff5a3e18ac38">ServoThread::getServosNum</a></div><div class="ttdeci">int getServosNum()</div><div class="ttdoc">Returns the number of servos to handle. </div><div class="ttdef"><b>Definition:</b> servothread.h:165</div></div>
+<div class="ttc" id="a00006_html_a1f7d6790701ff9b1301533b8ad045ede"><div class="ttname"><a href="../../de/d21/a00006.html#a1f7d6790701ff9b1301533b8ad045ede">OptionsWindow::buttonClicked</a></div><div class="ttdeci">void buttonClicked(QAbstractButton *but)</div><div class="ttdoc">Handles a button clicked. </div><div class="ttdef"><b>Definition:</b> optionswindow.cpp:148</div></div>
+<div class="ttc" id="a00006_html_a45137fbf71bbee10e171019c913b88b7"><div class="ttname"><a href="../../de/d21/a00006.html#a45137fbf71bbee10e171019c913b88b7">OptionsWindow::_servoC</a></div><div class="ttdeci">QVector&lt; QComboBox * &gt; _servoC</div><div class="ttdoc">Contains all servo QComboBoxes. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:69</div></div>
+<div class="ttc" id="a00006_html_ab143e1d06250ec778309da1a3807b602"><div class="ttname"><a href="../../de/d21/a00006.html#ab143e1d06250ec778309da1a3807b602">OptionsWindow::_sF</a></div><div class="ttdeci">ServoFind _sF</div><div class="ttdoc">Thread to find the servos in a non blocking operation. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:72</div></div>
+<div class="ttc" id="a00006_html_ae52f8ca70b1bfa4c8d21d25e49e309d7"><div class="ttname"><a href="../../de/d21/a00006.html#ae52f8ca70b1bfa4c8d21d25e49e309d7">OptionsWindow::refreshFinish</a></div><div class="ttdeci">void refreshFinish()</div><div class="ttdoc">Handles the endig of refresh function. </div><div class="ttdef"><b>Definition:</b> optionswindow.cpp:173</div></div>
+<div class="ttc" id="a00009_html_a5fd8ef13314428f5ba7646730cc58f1c"><div class="ttname"><a href="../../da/da0/a00009.html#a5fd8ef13314428f5ba7646730cc58f1c">ServoThread::getServosInfo</a></div><div class="ttdeci">void getServosInfo(QVector&lt; Servo &gt; &amp;V)</div><div class="ttdoc">Returns the servos info, with all its load and current position. </div><div class="ttdef"><b>Definition:</b> servothread.h:150</div></div>
+<div class="ttc" id="a00009_html_a6af364effc9c52c0acec7d00a2c3d262"><div class="ttname"><a href="../../da/da0/a00009.html#a6af364effc9c52c0acec7d00a2c3d262">ServoThread::getSpeed</a></div><div class="ttdeci">int getSpeed()</div><div class="ttdoc">Returns the current speed. </div><div class="ttdef"><b>Definition:</b> servothread.h:168</div></div>
+<div class="ttc" id="a00006_html_af031403c7017cf086c0b85186c53471e"><div class="ttname"><a href="../../de/d21/a00006.html#af031403c7017cf086c0b85186c53471e">OptionsWindow::status</a></div><div class="ttdeci">QStatusBar * status</div><div class="ttdoc">Status bar. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:75</div></div>
+<div class="ttc" id="a00006_html_ae8c0373be58da710194f8d14f1c3c4dc"><div class="ttname"><a href="../../de/d21/a00006.html#ae8c0373be58da710194f8d14f1c3c4dc">OptionsWindow::joystickChanged</a></div><div class="ttdeci">void joystickChanged()</div><div class="ttdoc">To handle the change of a joystick. </div><div class="ttdef"><b>Definition:</b> optionswindow.cpp:93</div></div>
+<div class="ttc" id="a00006_html_af6320942b8558140989f552b3bbc1fbd"><div class="ttname"><a href="../../de/d21/a00006.html#af6320942b8558140989f552b3bbc1fbd">OptionsWindow::_timer</a></div><div class="ttdeci">QTimer _timer</div><div class="ttdoc">Waits for a new COM port. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:78</div></div>
+<div class="ttc" id="a00006_html_acba1566fea3f831000d5e1c1edc3e776"><div class="ttname"><a href="../../de/d21/a00006.html#acba1566fea3f831000d5e1c1edc3e776">OptionsWindow::_servo</a></div><div class="ttdeci">ServoThread * _servo</div><div class="ttdoc">Pointer to the servo thread class. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:66</div></div>
+<div class="ttc" id="a00009_html_afcf834d93f1ac9663d6ebaab820e5f74"><div class="ttname"><a href="../../da/da0/a00009.html#afcf834d93f1ac9663d6ebaab820e5f74">ServoThread::getServoPortInfo</a></div><div class="ttdeci">void getServoPortInfo(QString &amp;port, int &amp;baud)</div><div class="ttdoc">Returns both servo Port and baud Rate. </div><div class="ttdef"><b>Definition:</b> servothread.h:140</div></div>
+<div class="ttc" id="a00006_html_a1bf846ab681ab245f70adac30999947c"><div class="ttname"><a href="../../de/d21/a00006.html#a1bf846ab681ab245f70adac30999947c">OptionsWindow::_joy</a></div><div class="ttdeci">XJoystick &amp; _joy</div><div class="ttdoc">Contains the Joystick to handle options. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:60</div></div>
+<div class="ttc" id="a00006_html_a8347442d5b3b670e8fff0c4102db1f88"><div class="ttname"><a href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">OptionsWindow::ui</a></div><div class="ttdeci">Ui::OptionsWindow * ui</div><div class="ttdoc">Containsh the GUI. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:81</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -274,14 +316,55 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Destructor. </p>
-<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;{</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">delete</span> <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
-<div class="ttc" id="a00006_html_a8347442d5b3b670e8fff0c4102db1f88"><div class="ttname"><a href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">OptionsWindow::ui</a></div><div class="ttdeci">Ui::OptionsWindow * ui</div><div class="ttdoc">Containsh the GUI. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:68</div></div>
+<div class="fragment"><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;{</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keyword">delete</span> <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../de/d21/a00006.html#ab143e1d06250ec778309da1a3807b602">_sF</a>.isRunning()) <a class="code" href="../../de/d21/a00006.html#ab143e1d06250ec778309da1a3807b602">_sF</a>.exit();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
+<div class="ttc" id="a00006_html_ab143e1d06250ec778309da1a3807b602"><div class="ttname"><a href="../../de/d21/a00006.html#ab143e1d06250ec778309da1a3807b602">OptionsWindow::_sF</a></div><div class="ttdeci">ServoFind _sF</div><div class="ttdoc">Thread to find the servos in a non blocking operation. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:72</div></div>
+<div class="ttc" id="a00006_html_a8347442d5b3b670e8fff0c4102db1f88"><div class="ttname"><a href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">OptionsWindow::ui</a></div><div class="ttdeci">Ui::OptionsWindow * ui</div><div class="ttdoc">Containsh the GUI. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:81</div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a1f7d6790701ff9b1301533b8ad045ede"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OptionsWindow::buttonClicked </td>
+          <td>(</td>
+          <td class="paramtype">QAbstractButton *&#160;</td>
+          <td class="paramname"><em>but</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Handles a button clicked. </p>
+<div class="fragment"><div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;{</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    QDB::ButtonRole role = <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;buttonBox-&gt;buttonRole(but);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordflow">switch</span>(role) {</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keywordflow">case</span> QDB::ApplyRole:</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        this-&gt;<a class="code" href="../../de/d21/a00006.html#ab0a56ad7347c20046602a7a2a1c83397">storeData</a>();</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        </div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    }</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;}</div>
+<div class="ttc" id="a00006_html_ab0a56ad7347c20046602a7a2a1c83397"><div class="ttname"><a href="../../de/d21/a00006.html#ab0a56ad7347c20046602a7a2a1c83397">OptionsWindow::storeData</a></div><div class="ttdeci">void storeData()</div><div class="ttdoc">Stores all data. </div><div class="ttdef"><b>Definition:</b> optionswindow.cpp:75</div></div>
+<div class="ttc" id="a00006_html_a8347442d5b3b670e8fff0c4102db1f88"><div class="ttname"><a href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">OptionsWindow::ui</a></div><div class="ttdeci">Ui::OptionsWindow * ui</div><div class="ttdoc">Containsh the GUI. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:81</div></div>
+</div><!-- fragment -->
+</div>
+</div>
 <a class="anchor" id="a18763ff318688083c7ee5a21f22e8e98"></a>
 <div class="memitem">
 <div class="memproto">
@@ -304,40 +387,41 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Handles events that need to be updated continously. </p>
-<div class="fragment"><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;{</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keyword">auto</span> ports = QSerialPortInfo::availablePorts();</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;portN-&gt;setText(QString::number(ports.size()));</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    </div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">if</span> (ports.size() != <a class="code" href="../../de/d21/a00006.html#a9bd4dccc7a544b1db78dc8cf330b88f6">_portSize</a>) {</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <a class="code" href="../../de/d21/a00006.html#a9bd4dccc7a544b1db78dc8cf330b88f6">_portSize</a> = ports.size();</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        QString portC(<a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;portC-&gt;currentData().toString());</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        QString portS(<a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;portS-&gt;currentData().toString());</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keywordtype">int</span> selC = 0, selS = 0;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        </div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;portC-&gt;clear();</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;portS-&gt;clear();</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        </div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;portC-&gt;addItem(<span class="stringliteral">&quot;None&quot;</span>, <span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;portS-&gt;addItem(<span class="stringliteral">&quot;None&quot;</span>, <span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; ports.size(); ++i) {</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            QString text(ports[i].portName());</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            text += <span class="stringliteral">&quot;: &quot;</span> + ports[i].description();</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;portC-&gt;addItem(text, ports[i].portName());</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;portS-&gt;addItem(text, ports[i].portName());</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            </div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            <span class="keywordflow">if</span> (ports[i].portName() == portC) selC = i + 1;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            <span class="keywordflow">if</span> (ports[i].portName() == portS) selS = i + 1;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        }</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;portC-&gt;setCurrentIndex(selC);</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;portS-&gt;setCurrentIndex(selS);</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    }</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;}</div>
-<div class="ttc" id="a00006_html_a9bd4dccc7a544b1db78dc8cf330b88f6"><div class="ttname"><a href="../../de/d21/a00006.html#a9bd4dccc7a544b1db78dc8cf330b88f6">OptionsWindow::_portSize</a></div><div class="ttdeci">int _portSize</div><div class="ttdoc">Contains the size of the ports. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:59</div></div>
-<div class="ttc" id="a00006_html_a8347442d5b3b670e8fff0c4102db1f88"><div class="ttname"><a href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">OptionsWindow::ui</a></div><div class="ttdeci">Ui::OptionsWindow * ui</div><div class="ttdoc">Containsh the GUI. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:68</div></div>
+<div class="fragment"><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;{</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keyword">auto</span> ports = QSerialPortInfo::availablePorts();</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;portN-&gt;setText(QString::number(ports.size()));</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordflow">if</span> (ports.size() != <a class="code" href="../../de/d21/a00006.html#a9bd4dccc7a544b1db78dc8cf330b88f6">_portSize</a>) {</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <a class="code" href="../../de/d21/a00006.html#a9bd4dccc7a544b1db78dc8cf330b88f6">_portSize</a> = ports.size();</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        QString portC(<a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;portC-&gt;currentData().toString());</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        QString portS(<a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;portS-&gt;currentData().toString());</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="keywordtype">int</span> selC = 0, selS = 0;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;portC-&gt;clear();</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;portS-&gt;clear();</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;portC-&gt;addItem(<span class="stringliteral">&quot;None&quot;</span>, <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;portS-&gt;addItem(<span class="stringliteral">&quot;None&quot;</span>, <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; ports.size(); ++i) {</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            QString text(ports[i].portName());</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            text += <span class="stringliteral">&quot;: &quot;</span> + ports[i].description();</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;portC-&gt;addItem(text, ports[i].portName());</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;portS-&gt;addItem(text, ports[i].portName()); </div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            <span class="keywordflow">if</span> (ports[i].portName() == portC) selC = i + 1;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;            <span class="keywordflow">if</span> (ports[i].portName() == portS) selS = i + 1;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        }</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        </div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        <span class="keywordflow">if</span> (selS == 0 &amp;&amp; ports.size() &gt; 0) selS = 1;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;portC-&gt;setCurrentIndex(selC);</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;portS-&gt;setCurrentIndex(selS);</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    }</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;}</div>
+<div class="ttc" id="a00006_html_a9bd4dccc7a544b1db78dc8cf330b88f6"><div class="ttname"><a href="../../de/d21/a00006.html#a9bd4dccc7a544b1db78dc8cf330b88f6">OptionsWindow::_portSize</a></div><div class="ttdeci">int _portSize</div><div class="ttdoc">Contains the size of the ports. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:63</div></div>
+<div class="ttc" id="a00006_html_a8347442d5b3b670e8fff0c4102db1f88"><div class="ttname"><a href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">OptionsWindow::ui</a></div><div class="ttdeci">Ui::OptionsWindow * ui</div><div class="ttdoc">Containsh the GUI. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:81</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -363,26 +447,54 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>To handle the change of a joystick. </p>
-<div class="fragment"><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;{</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="comment">// Clear all the items and write the new items</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;joySel-&gt;clear();</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;joySel-&gt;addItem(<span class="stringliteral">&quot;None&quot;</span>, -1);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">// Adding items and searching the current</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">int</span> pos = 0;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    QVector&lt;XJoystick::Info&gt; V(<a class="code" href="../../de/d21/a00006.html#a1bf846ab681ab245f70adac30999947c">_joy</a>.available());</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; V.size(); ++i) {</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        QString text(V[i].name);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        text += <span class="stringliteral">&quot;: &quot;</span> + QString::number(V[i].ID);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordflow">if</span> (V[i].ID == <a class="code" href="../../de/d21/a00006.html#a1bf846ab681ab245f70adac30999947c">_joy</a>.current()) pos = i;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;joySel-&gt;addItem(text, V[i].ID);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;joySel-&gt;setCurrentIndex(pos);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;joyN-&gt;setText(QString::number(V.size()));</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}</div>
-<div class="ttc" id="a00006_html_a1bf846ab681ab245f70adac30999947c"><div class="ttname"><a href="../../de/d21/a00006.html#a1bf846ab681ab245f70adac30999947c">OptionsWindow::_joy</a></div><div class="ttdeci">XJoystick &amp; _joy</div><div class="ttdoc">Contains the Joystick to handle options. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:56</div></div>
-<div class="ttc" id="a00006_html_a8347442d5b3b670e8fff0c4102db1f88"><div class="ttname"><a href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">OptionsWindow::ui</a></div><div class="ttdeci">Ui::OptionsWindow * ui</div><div class="ttdoc">Containsh the GUI. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:68</div></div>
+<div class="fragment"><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;{</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="comment">// Clear all the items and write the new items</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;joySel-&gt;clear();</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;joySel-&gt;addItem(<span class="stringliteral">&quot;None&quot;</span>, -1);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="comment">// Adding items and searching the current</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordtype">int</span> pos = 0;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    QVector&lt;XJoystick::Info&gt; V(<a class="code" href="../../de/d21/a00006.html#a1bf846ab681ab245f70adac30999947c">_joy</a>.available());</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; V.size(); ++i) {</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        QString text(V[i].name);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        text += <span class="stringliteral">&quot;: &quot;</span> + QString::number(V[i].ID);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordflow">if</span> (V[i].ID == <a class="code" href="../../de/d21/a00006.html#a1bf846ab681ab245f70adac30999947c">_joy</a>.current()) pos = i;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;joySel-&gt;addItem(text, V[i].ID);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    }</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;joySel-&gt;setCurrentIndex(pos);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;joyN-&gt;setText(QString::number(V.size()));</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;}</div>
+<div class="ttc" id="a00006_html_a1bf846ab681ab245f70adac30999947c"><div class="ttname"><a href="../../de/d21/a00006.html#a1bf846ab681ab245f70adac30999947c">OptionsWindow::_joy</a></div><div class="ttdeci">XJoystick &amp; _joy</div><div class="ttdoc">Contains the Joystick to handle options. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:60</div></div>
+<div class="ttc" id="a00006_html_a8347442d5b3b670e8fff0c4102db1f88"><div class="ttname"><a href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">OptionsWindow::ui</a></div><div class="ttdeci">Ui::OptionsWindow * ui</div><div class="ttdoc">Containsh the GUI. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:81</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="aae43fcdcc9941fbce40c35c449bfd39e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OptionsWindow::keyPressEvent </td>
+          <td>(</td>
+          <td class="paramtype">QKeyEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;{</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="keywordflow">if</span> (event-&gt;key() == Qt::Key_Enter || <span class="keyword">event</span>-&gt;key() == Qt::Key_Return) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    QDialog::keyPressEvent(event);</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -408,53 +520,51 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Refreshes all the servos connected to the port. </p>
-<div class="fragment"><div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;{</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    </div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    QString port;</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keywordtype">int</span> baud;</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <a class="code" href="../../de/d21/a00006.html#acba1566fea3f831000d5e1c1edc3e776">_servo</a>-&gt;<a class="code" href="../../d4/dee/a00008.html#afcf834d93f1ac9663d6ebaab820e5f74">getServoPortInfo</a>(port, baud);</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <a class="code" href="../../d0/d0b/a00004.html">dynamixel</a> dxl(port, baud);</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    </div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keywordtype">int</span> s0 = <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;servo0-&gt;currentData().toInt();</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="keywordtype">int</span> s1 = <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;servo1-&gt;currentData().toInt();</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keywordtype">int</span> s2 = <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;servo2-&gt;currentData().toInt();</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordtype">int</span> s3 = <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;servo3-&gt;currentData().toInt();</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    </div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;servo0-&gt;clear();</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;servo1-&gt;clear();</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;servo2-&gt;clear();</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;servo3-&gt;clear();</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    </div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keywordtype">int</span> index = 0;</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordtype">int</span> p0 = 0, p1 = 0, p2 = 0, p3 = 0;</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    </div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt;= MAX_ID; ++i) {</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        dxl.ping(i);</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        <span class="keywordflow">if</span> (dxl.get_comm_result() == COMM_RXSUCCESS) {</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            <span class="keywordflow">if</span> (i == s0) p0 = index;</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            <span class="keywordflow">if</span> (i == s1) p1 = index;</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            <span class="keywordflow">if</span> (i == s2) p2 = index;</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            <span class="keywordflow">if</span> (i == s3) p3 = index;</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            </div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;            <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;servo0-&gt;addItem(QString::number(i), i);</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;            <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;servo1-&gt;addItem(QString::number(i), i);</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;servo2-&gt;addItem(QString::number(i), i);</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;servo3-&gt;addItem(QString::number(i), i);</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            </div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            ++index;</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        }</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    }</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    </div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;servo0-&gt;setCurrentIndex(p0);</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;servo1-&gt;setCurrentIndex(p1);</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;servo2-&gt;setCurrentIndex(p2);</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;servo3-&gt;setCurrentIndex(p3);</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        </div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;}</div>
-<div class="ttc" id="a00008_html_afcf834d93f1ac9663d6ebaab820e5f74"><div class="ttname"><a href="../../d4/dee/a00008.html#afcf834d93f1ac9663d6ebaab820e5f74">ServoThread::getServoPortInfo</a></div><div class="ttdeci">void getServoPortInfo(QString &amp;port, int &amp;baud)</div><div class="ttdoc">Returns both servo Port and baud Rate. </div><div class="ttdef"><b>Definition:</b> servothread.h:98</div></div>
-<div class="ttc" id="a00004_html"><div class="ttname"><a href="../../d0/d0b/a00004.html">dynamixel</a></div><div class="ttdoc">Dynamixel 1.0 protocol class. </div><div class="ttdef"><b>Definition:</b> dynamixel.h:61</div></div>
-<div class="ttc" id="a00006_html_acba1566fea3f831000d5e1c1edc3e776"><div class="ttname"><a href="../../de/d21/a00006.html#acba1566fea3f831000d5e1c1edc3e776">OptionsWindow::_servo</a></div><div class="ttdeci">ServoThread * _servo</div><div class="ttdoc">Pointer to the servo thread class. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:62</div></div>
-<div class="ttc" id="a00006_html_a8347442d5b3b670e8fff0c4102db1f88"><div class="ttname"><a href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">OptionsWindow::ui</a></div><div class="ttdeci">Ui::OptionsWindow * ui</div><div class="ttdoc">Containsh the GUI. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:68</div></div>
+<div class="fragment"><div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;{</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../de/d21/a00006.html#ab143e1d06250ec778309da1a3807b602">_sF</a>.isRunning()) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    QString port;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keywordtype">int</span> baud;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <a class="code" href="../../de/d21/a00006.html#acba1566fea3f831000d5e1c1edc3e776">_servo</a>-&gt;<a class="code" href="../../da/da0/a00009.html#afcf834d93f1ac9663d6ebaab820e5f74">getServoPortInfo</a>(port, baud);</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keywordtype">int</span> min = <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;min-&gt;value();</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keywordtype">int</span> max = <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;max-&gt;value();</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <a class="code" href="../../de/d21/a00006.html#ab143e1d06250ec778309da1a3807b602">_sF</a>.<a class="code" href="../../d4/dee/a00008.html#a440f961980162cfd7c2ca9031b2a76e8">setData</a>(<a class="code" href="../../de/d21/a00006.html#a45137fbf71bbee10e171019c913b88b7">_servoC</a>, port, baud, min, max);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <a class="code" href="../../de/d21/a00006.html#ab143e1d06250ec778309da1a3807b602">_sF</a>.start();</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;}</div>
+<div class="ttc" id="a00008_html_a440f961980162cfd7c2ca9031b2a76e8"><div class="ttname"><a href="../../d4/dee/a00008.html#a440f961980162cfd7c2ca9031b2a76e8">ServoFind::setData</a></div><div class="ttdeci">void setData(QVector&lt; QComboBox * &gt; servo, QString port, int baud, int min=0, int max=MAX_ID)</div><div class="ttdoc">To set all data. </div><div class="ttdef"><b>Definition:</b> servofind.cpp:47</div></div>
+<div class="ttc" id="a00006_html_a45137fbf71bbee10e171019c913b88b7"><div class="ttname"><a href="../../de/d21/a00006.html#a45137fbf71bbee10e171019c913b88b7">OptionsWindow::_servoC</a></div><div class="ttdeci">QVector&lt; QComboBox * &gt; _servoC</div><div class="ttdoc">Contains all servo QComboBoxes. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:69</div></div>
+<div class="ttc" id="a00006_html_ab143e1d06250ec778309da1a3807b602"><div class="ttname"><a href="../../de/d21/a00006.html#ab143e1d06250ec778309da1a3807b602">OptionsWindow::_sF</a></div><div class="ttdeci">ServoFind _sF</div><div class="ttdoc">Thread to find the servos in a non blocking operation. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:72</div></div>
+<div class="ttc" id="a00006_html_acba1566fea3f831000d5e1c1edc3e776"><div class="ttname"><a href="../../de/d21/a00006.html#acba1566fea3f831000d5e1c1edc3e776">OptionsWindow::_servo</a></div><div class="ttdeci">ServoThread * _servo</div><div class="ttdoc">Pointer to the servo thread class. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:66</div></div>
+<div class="ttc" id="a00009_html_afcf834d93f1ac9663d6ebaab820e5f74"><div class="ttname"><a href="../../da/da0/a00009.html#afcf834d93f1ac9663d6ebaab820e5f74">ServoThread::getServoPortInfo</a></div><div class="ttdeci">void getServoPortInfo(QString &amp;port, int &amp;baud)</div><div class="ttdoc">Returns both servo Port and baud Rate. </div><div class="ttdef"><b>Definition:</b> servothread.h:140</div></div>
+<div class="ttc" id="a00006_html_a8347442d5b3b670e8fff0c4102db1f88"><div class="ttname"><a href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">OptionsWindow::ui</a></div><div class="ttdeci">Ui::OptionsWindow * ui</div><div class="ttdoc">Containsh the GUI. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:81</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ae52f8ca70b1bfa4c8d21d25e49e309d7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OptionsWindow::refreshFinish </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Handles the endig of refresh function. </p>
+<div class="fragment"><div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;{</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;progressBar-&gt;setValue(0);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;}</div>
+<div class="ttc" id="a00006_html_a8347442d5b3b670e8fff0c4102db1f88"><div class="ttname"><a href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">OptionsWindow::ui</a></div><div class="ttdeci">Ui::OptionsWindow * ui</div><div class="ttdoc">Containsh the GUI. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:81</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -472,102 +582,34 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Stores all data. </p>
-<div class="fragment"><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;{</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="comment">// Storing joystick data</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="../../de/d21/a00006.html#a1bf846ab681ab245f70adac30999947c">_joy</a>.select(<a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;joySel-&gt;currentData().toInt());</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">// Joystick movement axis</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="../../de/d21/a00006.html#a01d6284355011203ee6e8856a0bdf557">_jAxisX</a> = <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;joyMX-&gt;currentData().toInt();</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="../../de/d21/a00006.html#a8921d1cc5bcb527466c28feb5dcc59b1">_jAxisY</a> = <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;joyMY-&gt;currentData().toInt();</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="../../de/d21/a00006.html#a47409f50a87942706baaea3d025785e3">_jAxisZ</a> = <a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;joyMZ-&gt;currentData().toInt();</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    QString portS(<a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;portS-&gt;currentData().toString());</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">int</span> baudS(<a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;baudRS-&gt;value());</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <a class="code" href="../../de/d21/a00006.html#acba1566fea3f831000d5e1c1edc3e776">_servo</a>-&gt;<a class="code" href="../../d4/dee/a00008.html#a76af3e89d1a8705426584bedb0624909">setServoPortInfo</a>(portS, baudS);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    QVector&lt;int&gt; sID;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;servo0-&gt;count()) sID.push_back(<a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;servo0-&gt;currentData().toInt());</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;servo1-&gt;count()) sID.push_back(<a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;servo1-&gt;currentData().toInt());</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;servo2-&gt;count()) sID.push_back(<a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;servo2-&gt;currentData().toInt());</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;servo3-&gt;count()) sID.push_back(<a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;servo3-&gt;currentData().toInt());</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
-<div class="ttc" id="a00008_html_a76af3e89d1a8705426584bedb0624909"><div class="ttname"><a href="../../d4/dee/a00008.html#a76af3e89d1a8705426584bedb0624909">ServoThread::setServoPortInfo</a></div><div class="ttdeci">void setServoPortInfo(QString &amp;port, unsigned int baud)</div><div class="ttdoc">Sets the servos port info, data and selected port. </div><div class="ttdef"><b>Definition:</b> servothread.h:160</div></div>
-<div class="ttc" id="a00006_html_a01d6284355011203ee6e8856a0bdf557"><div class="ttname"><a href="../../de/d21/a00006.html#a01d6284355011203ee6e8856a0bdf557">OptionsWindow::_jAxisX</a></div><div class="ttdeci">int &amp; _jAxisX</div><div class="ttdoc">Reference to axis for the X value. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:51</div></div>
-<div class="ttc" id="a00006_html_a47409f50a87942706baaea3d025785e3"><div class="ttname"><a href="../../de/d21/a00006.html#a47409f50a87942706baaea3d025785e3">OptionsWindow::_jAxisZ</a></div><div class="ttdeci">int &amp; _jAxisZ</div><div class="ttdoc">Reference to axis for the Z value. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:53</div></div>
-<div class="ttc" id="a00006_html_a8921d1cc5bcb527466c28feb5dcc59b1"><div class="ttname"><a href="../../de/d21/a00006.html#a8921d1cc5bcb527466c28feb5dcc59b1">OptionsWindow::_jAxisY</a></div><div class="ttdeci">int &amp; _jAxisY</div><div class="ttdoc">Reference to axis for the Y value. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:52</div></div>
-<div class="ttc" id="a00006_html_acba1566fea3f831000d5e1c1edc3e776"><div class="ttname"><a href="../../de/d21/a00006.html#acba1566fea3f831000d5e1c1edc3e776">OptionsWindow::_servo</a></div><div class="ttdeci">ServoThread * _servo</div><div class="ttdoc">Pointer to the servo thread class. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:62</div></div>
-<div class="ttc" id="a00006_html_a1bf846ab681ab245f70adac30999947c"><div class="ttname"><a href="../../de/d21/a00006.html#a1bf846ab681ab245f70adac30999947c">OptionsWindow::_joy</a></div><div class="ttdeci">XJoystick &amp; _joy</div><div class="ttdoc">Contains the Joystick to handle options. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:56</div></div>
-<div class="ttc" id="a00006_html_a8347442d5b3b670e8fff0c4102db1f88"><div class="ttname"><a href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">OptionsWindow::ui</a></div><div class="ttdeci">Ui::OptionsWindow * ui</div><div class="ttdoc">Containsh the GUI. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:68</div></div>
+<div class="fragment"><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;{</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="../../de/d21/a00006.html#af031403c7017cf086c0b85186c53471e">status</a>-&gt;showMessage(<span class="stringliteral">&quot;Data Stored&quot;</span>, 2000);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="comment">// Storing joystick data</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="../../de/d21/a00006.html#a1bf846ab681ab245f70adac30999947c">_joy</a>.select(<a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;joySel-&gt;currentData().toInt());</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    QString portS(<a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;portS-&gt;currentData().toString());</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">int</span> baudS(<a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;baudRS-&gt;value());</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="code" href="../../de/d21/a00006.html#acba1566fea3f831000d5e1c1edc3e776">_servo</a>-&gt;<a class="code" href="../../da/da0/a00009.html#a76af3e89d1a8705426584bedb0624909">setServoPortInfo</a>(portS, baudS);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    QVector&lt;int&gt; sID;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">for</span> (QComboBox *s : <a class="code" href="../../de/d21/a00006.html#a45137fbf71bbee10e171019c913b88b7">_servoC</a>) sID.push_back(s-&gt;currentData().toInt());</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <a class="code" href="../../de/d21/a00006.html#acba1566fea3f831000d5e1c1edc3e776">_servo</a>-&gt;<a class="code" href="../../da/da0/a00009.html#ac3471e5020f5d9babd3f2ff7b3b82aca">setSID</a>(sID);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <a class="code" href="../../de/d21/a00006.html#acba1566fea3f831000d5e1c1edc3e776">_servo</a>-&gt;<a class="code" href="../../da/da0/a00009.html#a906ea2c67acbffb3e8dedabc03288992">setSpeed</a>(<a class="code" href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">ui</a>-&gt;speed-&gt;value());</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
+<div class="ttc" id="a00009_html_a906ea2c67acbffb3e8dedabc03288992"><div class="ttname"><a href="../../da/da0/a00009.html#a906ea2c67acbffb3e8dedabc03288992">ServoThread::setSpeed</a></div><div class="ttdeci">void setSpeed(unsigned char speed)</div><div class="ttdoc">Sets the servos speed. </div><div class="ttdef"><b>Definition:</b> servothread.h:278</div></div>
+<div class="ttc" id="a00009_html_a76af3e89d1a8705426584bedb0624909"><div class="ttname"><a href="../../da/da0/a00009.html#a76af3e89d1a8705426584bedb0624909">ServoThread::setServoPortInfo</a></div><div class="ttdeci">void setServoPortInfo(QString &amp;port, unsigned int baud)</div><div class="ttdoc">Sets the servos port info, data and selected port. </div><div class="ttdef"><b>Definition:</b> servothread.h:249</div></div>
+<div class="ttc" id="a00006_html_a45137fbf71bbee10e171019c913b88b7"><div class="ttname"><a href="../../de/d21/a00006.html#a45137fbf71bbee10e171019c913b88b7">OptionsWindow::_servoC</a></div><div class="ttdeci">QVector&lt; QComboBox * &gt; _servoC</div><div class="ttdoc">Contains all servo QComboBoxes. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:69</div></div>
+<div class="ttc" id="a00009_html_ac3471e5020f5d9babd3f2ff7b3b82aca"><div class="ttname"><a href="../../da/da0/a00009.html#ac3471e5020f5d9babd3f2ff7b3b82aca">ServoThread::setSID</a></div><div class="ttdeci">void setSID(QVector&lt; int &gt; &amp;V)</div><div class="ttdoc">Sets the servos ID. </div><div class="ttdef"><b>Definition:</b> servothread.h:261</div></div>
+<div class="ttc" id="a00006_html_af031403c7017cf086c0b85186c53471e"><div class="ttname"><a href="../../de/d21/a00006.html#af031403c7017cf086c0b85186c53471e">OptionsWindow::status</a></div><div class="ttdeci">QStatusBar * status</div><div class="ttdoc">Status bar. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:75</div></div>
+<div class="ttc" id="a00006_html_acba1566fea3f831000d5e1c1edc3e776"><div class="ttname"><a href="../../de/d21/a00006.html#acba1566fea3f831000d5e1c1edc3e776">OptionsWindow::_servo</a></div><div class="ttdeci">ServoThread * _servo</div><div class="ttdoc">Pointer to the servo thread class. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:66</div></div>
+<div class="ttc" id="a00006_html_a1bf846ab681ab245f70adac30999947c"><div class="ttname"><a href="../../de/d21/a00006.html#a1bf846ab681ab245f70adac30999947c">OptionsWindow::_joy</a></div><div class="ttdeci">XJoystick &amp; _joy</div><div class="ttdoc">Contains the Joystick to handle options. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:60</div></div>
+<div class="ttc" id="a00006_html_a8347442d5b3b670e8fff0c4102db1f88"><div class="ttname"><a href="../../de/d21/a00006.html#a8347442d5b3b670e8fff0c4102db1f88">OptionsWindow::ui</a></div><div class="ttdeci">Ui::OptionsWindow * ui</div><div class="ttdoc">Containsh the GUI. </div><div class="ttdef"><b>Definition:</b> optionswindow.h:81</div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a01d6284355011203ee6e8856a0bdf557"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int&amp; OptionsWindow::_jAxisX</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Reference to axis for the X value. </p>
-
-</div>
-</div>
-<a class="anchor" id="a8921d1cc5bcb527466c28feb5dcc59b1"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int&amp; OptionsWindow::_jAxisY</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Reference to axis for the Y value. </p>
-
-</div>
-</div>
-<a class="anchor" id="a47409f50a87942706baaea3d025785e3"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int&amp; OptionsWindow::_jAxisZ</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Reference to axis for the Z value. </p>
-
-</div>
-</div>
 <a class="anchor" id="a1bf846ab681ab245f70adac30999947c"></a>
 <div class="memitem">
 <div class="memproto">
@@ -620,7 +662,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d4/dee/a00008.html">ServoThread</a>* OptionsWindow::_servo</td>
+          <td class="memname"><a class="el" href="../../da/da0/a00009.html">ServoThread</a>* OptionsWindow::_servo</td>
         </tr>
       </table>
   </td>
@@ -631,6 +673,50 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Pointer to the servo thread class. </p>
+
+</div>
+</div>
+<a class="anchor" id="a45137fbf71bbee10e171019c913b88b7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVector&lt; QComboBox *&gt; OptionsWindow::_servoC</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Contains all servo QComboBoxes. </p>
+
+</div>
+</div>
+<a class="anchor" id="ab143e1d06250ec778309da1a3807b602"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/dee/a00008.html">ServoFind</a> OptionsWindow::_sF</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Thread to find the servos in a non blocking operation. </p>
 
 </div>
 </div>
@@ -653,6 +739,28 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Waits for a new COM port. </p>
+
+</div>
+</div>
+<a class="anchor" id="af031403c7017cf086c0b85186c53471e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStatusBar* OptionsWindow::status</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Status bar. </p>
 
 </div>
 </div>
@@ -679,13 +787,13 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../dd/da2/a00019_source.html">optionswindow.h</a></li>
-<li><a class="el" href="../../d1/d2b/a00018.html">optionswindow.cpp</a></li>
+<li><a class="el" href="../../db/db2/a00020_source.html">optionswindow.h</a></li>
+<li><a class="el" href="../../dd/da2/a00019.html">optionswindow.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Apr 26 2015 20:14:01 for DeltaRobot by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue May 26 2015 14:49:14 for DeltaRobot by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

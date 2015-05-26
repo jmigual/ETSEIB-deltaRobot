@@ -5,6 +5,19 @@
 Struct to handle the dominoe pieces.  
 
 
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{a00002_ab2bda7d8d5ea90e61e3904c87bf01245}{operator$<$} (const \hyperlink{a00002}{Dominoe} \&d) const 
+\begin{DoxyCompactList}\small\item\em Overloaded operator for comparisions. \end{DoxyCompactList}\item 
+\hyperlink{a00002}{Dominoe} \& \hyperlink{a00002_af7ad901ee679234b8826af58a13fba45}{operator=} (const \hyperlink{a00002}{Dominoe} \&d)
+\begin{DoxyCompactList}\small\item\em Overloaded operator to copy. \end{DoxyCompactList}\item 
+\hyperlink{a00002_aa9c033e180ad43bfe5127e96cef77b9d}{Dominoe} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{a00002_a9cd75d2de5cec349594c40c321c204c4}{Dominoe} (double \hyperlink{a00002_a8caa44969c79e0e46576da349957975b}{X}, double \hyperlink{a00002_ae7711996c8204586b6d8a5e657c4b06a}{Y}, double \hyperlink{a00002_a451efc4d2eb2f1dd10006c6c49846e8d}{ori})
+\begin{DoxyCompactList}\small\item\em Initialization constructor. \end{DoxyCompactList}\item 
+\hyperlink{a00002_aea355d23a1420ef5206bdcf6d60070da}{Dominoe} (Q\+Vector2\+D point, double \hyperlink{a00002_a451efc4d2eb2f1dd10006c6c49846e8d}{ori})
+\begin{DoxyCompactList}\small\item\em Initialization constructor with vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -18,6 +31,98 @@ double \hyperlink{a00002_a451efc4d2eb2f1dd10006c6c49846e8d}{ori}
 
 \subsection{Detailed Description}
 Struct to handle the dominoe pieces. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{a00002_aa9c033e180ad43bfe5127e96cef77b9d}{}\index{Servo\+Thread\+::\+Dominoe@{Servo\+Thread\+::\+Dominoe}!Dominoe@{Dominoe}}
+\index{Dominoe@{Dominoe}!Servo\+Thread\+::\+Dominoe@{Servo\+Thread\+::\+Dominoe}}
+\subsubsection[{Dominoe}]{\setlength{\rightskip}{0pt plus 5cm}Servo\+Thread\+::\+Dominoe\+::\+Dominoe (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00002_aa9c033e180ad43bfe5127e96cef77b9d}
+
+
+Default constructor. 
+
+
+\begin{DoxyCode}
+00061 : \hyperlink{a00002_a8caa44969c79e0e46576da349957975b}{X}(0), \hyperlink{a00002_ae7711996c8204586b6d8a5e657c4b06a}{Y}(0), \hyperlink{a00002_a451efc4d2eb2f1dd10006c6c49846e8d}{ori}(0) \{\}
+\end{DoxyCode}
+\hypertarget{a00002_a9cd75d2de5cec349594c40c321c204c4}{}\index{Servo\+Thread\+::\+Dominoe@{Servo\+Thread\+::\+Dominoe}!Dominoe@{Dominoe}}
+\index{Dominoe@{Dominoe}!Servo\+Thread\+::\+Dominoe@{Servo\+Thread\+::\+Dominoe}}
+\subsubsection[{Dominoe}]{\setlength{\rightskip}{0pt plus 5cm}Servo\+Thread\+::\+Dominoe\+::\+Dominoe (
+\begin{DoxyParamCaption}
+\item[{double}]{X, }
+\item[{double}]{Y, }
+\item[{double}]{ori}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00002_a9cd75d2de5cec349594c40c321c204c4}
+
+
+Initialization constructor. 
+
+
+\begin{DoxyCode}
+00064 : \hyperlink{a00002_a8caa44969c79e0e46576da349957975b}{X}(\hyperlink{a00002_a8caa44969c79e0e46576da349957975b}{X}), \hyperlink{a00002_ae7711996c8204586b6d8a5e657c4b06a}{Y}(\hyperlink{a00002_ae7711996c8204586b6d8a5e657c4b06a}{Y}), \hyperlink{a00002_a451efc4d2eb2f1dd10006c6c49846e8d}{ori}(\hyperlink{a00002_a451efc4d2eb2f1dd10006c6c49846e8d}{ori}) \{\}
+\end{DoxyCode}
+\hypertarget{a00002_aea355d23a1420ef5206bdcf6d60070da}{}\index{Servo\+Thread\+::\+Dominoe@{Servo\+Thread\+::\+Dominoe}!Dominoe@{Dominoe}}
+\index{Dominoe@{Dominoe}!Servo\+Thread\+::\+Dominoe@{Servo\+Thread\+::\+Dominoe}}
+\subsubsection[{Dominoe}]{\setlength{\rightskip}{0pt plus 5cm}Servo\+Thread\+::\+Dominoe\+::\+Dominoe (
+\begin{DoxyParamCaption}
+\item[{Q\+Vector2\+D}]{point, }
+\item[{double}]{ori}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00002_aea355d23a1420ef5206bdcf6d60070da}
+
+
+Initialization constructor with vector. 
+
+
+\begin{DoxyCode}
+00067 : \hyperlink{a00002_a8caa44969c79e0e46576da349957975b}{X}(point.x()), \hyperlink{a00002_ae7711996c8204586b6d8a5e657c4b06a}{Y}(point.y()), \hyperlink{a00002_a451efc4d2eb2f1dd10006c6c49846e8d}{ori}(\hyperlink{a00002_a451efc4d2eb2f1dd10006c6c49846e8d}{ori}) \{\}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{a00002_ab2bda7d8d5ea90e61e3904c87bf01245}{}\index{Servo\+Thread\+::\+Dominoe@{Servo\+Thread\+::\+Dominoe}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Servo\+Thread\+::\+Dominoe@{Servo\+Thread\+::\+Dominoe}}
+\subsubsection[{operator$<$}]{\setlength{\rightskip}{0pt plus 5cm}bool Servo\+Thread\+::\+Dominoe\+::operator$<$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Dominoe} \&}]{d}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{a00002_ab2bda7d8d5ea90e61e3904c87bf01245}
+
+
+Overloaded operator for comparisions. 
+
+
+\begin{DoxyCode}
+00046         \{
+00047             \textcolor{keywordflow}{if} (this->\hyperlink{a00002_a8caa44969c79e0e46576da349957975b}{X} != d.X) \textcolor{keywordflow}{return} this->\hyperlink{a00002_a8caa44969c79e0e46576da349957975b}{X} < d.X;
+00048             \textcolor{keywordflow}{return} this->\hyperlink{a00002_ae7711996c8204586b6d8a5e657c4b06a}{Y} < d.Y;
+00049         \}
+\end{DoxyCode}
+\hypertarget{a00002_af7ad901ee679234b8826af58a13fba45}{}\index{Servo\+Thread\+::\+Dominoe@{Servo\+Thread\+::\+Dominoe}!operator=@{operator=}}
+\index{operator=@{operator=}!Servo\+Thread\+::\+Dominoe@{Servo\+Thread\+::\+Dominoe}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dominoe}\& Servo\+Thread\+::\+Dominoe\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Dominoe} \&}]{d}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00002_af7ad901ee679234b8826af58a13fba45}
+
+
+Overloaded operator to copy. 
+
+
+\begin{DoxyCode}
+00053         \{
+00054             this->\hyperlink{a00002_a8caa44969c79e0e46576da349957975b}{X} = d.X;
+00055             this->\hyperlink{a00002_ae7711996c8204586b6d8a5e657c4b06a}{Y} = d.Y;
+00056             this->\hyperlink{a00002_a451efc4d2eb2f1dd10006c6c49846e8d}{ori} = d.ori;
+00057             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+00058         \}
+\end{DoxyCode}
+
 
 \subsection{Member Data Documentation}
 \hypertarget{a00002_a451efc4d2eb2f1dd10006c6c49846e8d}{}\index{Servo\+Thread\+::\+Dominoe@{Servo\+Thread\+::\+Dominoe}!ori@{ori}}
@@ -45,4 +150,4 @@ Y position.
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-\hyperlink{a00021}{servothread.\+h}\end{DoxyCompactItemize}
+\hyperlink{a00024}{servothread.\+h}\end{DoxyCompactItemize}

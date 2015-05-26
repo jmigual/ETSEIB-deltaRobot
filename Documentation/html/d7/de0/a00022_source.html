@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.9.1"/>
-<title>DeltaRobot: stable.h Source File</title>
+<title>DeltaRobot: servofind.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -45,42 +45,68 @@
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">stable.h</div>  </div>
+<div class="title">servofind.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="../../d7/de0/a00022.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#ifndef STABLE_H</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#define STABLE_H</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;QApplication&gt;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;QDebug&gt;</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;QDir&gt;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;QDialog&gt;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &lt;QLabel&gt;</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &lt;QMainWindow&gt;</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &lt;QMutex&gt;</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &lt;QSerialPortInfo&gt;</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;QStandardPaths&gt;</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;QStatusBar&gt;</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;QString&gt;</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &lt;QThread&gt;</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &lt;QTime&gt;</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &lt;QTimer&gt;</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &lt;QVector&gt;</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &lt;QWaitCondition&gt;</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &lt;xjoystick.h&gt;</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#endif // STABLE_H</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<a href="../../d7/de0/a00022.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef SERVOFIND_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define SERVOFIND_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d3/dfe/a00025.html">stable.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../da/d45/a00011.html">dxl/ax12.h</a>&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="../../d4/dee/a00008.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d4/dee/a00008.html">ServoFind</a> : <span class="keyword">public</span> QThread</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    </div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="../../d4/dee/a00008.html#a8cfdbef4d4dc51f1b200a885ff827711">   11</a></span>&#160;    <span class="keyword">typedef</span> QComboBox <a class="code" href="../../d4/dee/a00008.html#a8cfdbef4d4dc51f1b200a885ff827711">QCB</a>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="../../d4/dee/a00008.html#ad9b1d82aecc71025fb606b79b9bf6ce1">ServoFind</a>();</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="../../d4/dee/a00008.html#a5f353598d5d40289c039412288e5bf73">~ServoFind</a>();</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d4/dee/a00008.html#a4edb0ac2852a93f84c6aa04d5953e28d">run</a>();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d4/dee/a00008.html#a440f961980162cfd7c2ca9031b2a76e8">setData</a>(QVector&lt;QComboBox *&gt; servo, QString port, </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                 <span class="keywordtype">int</span> baud, <span class="keywordtype">int</span> min = 0, <span class="keywordtype">int</span> max = MAX_ID);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;signals:</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d4/dee/a00008.html#a8ae9f951508e8376c3c7421df37ea619">completion</a>(<span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    </div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="../../d4/dee/a00008.html#ad2f3b1ab924ff2051178eb981d030b66">   36</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../d4/dee/a00008.html#ad2f3b1ab924ff2051178eb981d030b66">_baud</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    </div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="../../d4/dee/a00008.html#a65a3d5606c9a8bcd6ace9be36c3551e1">   39</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../d4/dee/a00008.html#a65a3d5606c9a8bcd6ace9be36c3551e1">_min</a> = 0;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    </div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="../../d4/dee/a00008.html#abb4bcc300ab0a9c1df3c41b4e7d1fe2d">   42</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../d4/dee/a00008.html#abb4bcc300ab0a9c1df3c41b4e7d1fe2d">_max</a> = MAX_ID;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    </div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="../../d4/dee/a00008.html#acc6d9f94a8cf7a7a777fd9c818d98207">   45</a></span>&#160;    QString <a class="code" href="../../d4/dee/a00008.html#acc6d9f94a8cf7a7a777fd9c818d98207">_port</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    </div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="../../d4/dee/a00008.html#a571ee1fc45255666e5baa0d5e9111551">   48</a></span>&#160;    QVector&lt;QComboBox *&gt; <a class="code" href="../../d4/dee/a00008.html#a571ee1fc45255666e5baa0d5e9111551">_servo</a>;    </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;};</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#endif // SERVOFIND_H</span></div>
+<div class="ttc" id="a00008_html_a65a3d5606c9a8bcd6ace9be36c3551e1"><div class="ttname"><a href="../../d4/dee/a00008.html#a65a3d5606c9a8bcd6ace9be36c3551e1">ServoFind::_min</a></div><div class="ttdeci">int _min</div><div class="ttdoc">Minimum value to find. </div><div class="ttdef"><b>Definition:</b> servofind.h:39</div></div>
+<div class="ttc" id="a00008_html_a440f961980162cfd7c2ca9031b2a76e8"><div class="ttname"><a href="../../d4/dee/a00008.html#a440f961980162cfd7c2ca9031b2a76e8">ServoFind::setData</a></div><div class="ttdeci">void setData(QVector&lt; QComboBox * &gt; servo, QString port, int baud, int min=0, int max=MAX_ID)</div><div class="ttdoc">To set all data. </div><div class="ttdef"><b>Definition:</b> servofind.cpp:47</div></div>
+<div class="ttc" id="a00008_html_a571ee1fc45255666e5baa0d5e9111551"><div class="ttname"><a href="../../d4/dee/a00008.html#a571ee1fc45255666e5baa0d5e9111551">ServoFind::_servo</a></div><div class="ttdeci">QVector&lt; QComboBox * &gt; _servo</div><div class="ttdoc">Contains the pointer to the servos QComboBoxes. </div><div class="ttdef"><b>Definition:</b> servofind.h:48</div></div>
+<div class="ttc" id="a00008_html_a8ae9f951508e8376c3c7421df37ea619"><div class="ttname"><a href="../../d4/dee/a00008.html#a8ae9f951508e8376c3c7421df37ea619">ServoFind::completion</a></div><div class="ttdeci">void completion(int)</div><div class="ttdoc">Shows the completion of the process. </div></div>
+<div class="ttc" id="a00008_html_ad2f3b1ab924ff2051178eb981d030b66"><div class="ttname"><a href="../../d4/dee/a00008.html#ad2f3b1ab924ff2051178eb981d030b66">ServoFind::_baud</a></div><div class="ttdeci">int _baud</div><div class="ttdoc">Contains the baud rate. </div><div class="ttdef"><b>Definition:</b> servofind.h:36</div></div>
+<div class="ttc" id="a00008_html_ad9b1d82aecc71025fb606b79b9bf6ce1"><div class="ttname"><a href="../../d4/dee/a00008.html#ad9b1d82aecc71025fb606b79b9bf6ce1">ServoFind::ServoFind</a></div><div class="ttdeci">ServoFind()</div><div class="ttdoc">Default constructor. </div><div class="ttdef"><b>Definition:</b> servofind.cpp:3</div></div>
+<div class="ttc" id="a00008_html_acc6d9f94a8cf7a7a777fd9c818d98207"><div class="ttname"><a href="../../d4/dee/a00008.html#acc6d9f94a8cf7a7a777fd9c818d98207">ServoFind::_port</a></div><div class="ttdeci">QString _port</div><div class="ttdoc">Contains the current port. </div><div class="ttdef"><b>Definition:</b> servofind.h:45</div></div>
+<div class="ttc" id="a00008_html_a4edb0ac2852a93f84c6aa04d5953e28d"><div class="ttname"><a href="../../d4/dee/a00008.html#a4edb0ac2852a93f84c6aa04d5953e28d">ServoFind::run</a></div><div class="ttdeci">void run()</div><div class="ttdoc">Main function. </div><div class="ttdef"><b>Definition:</b> servofind.cpp:13</div></div>
+<div class="ttc" id="a00025_html"><div class="ttname"><a href="../../d3/dfe/a00025.html">stable.h</a></div><div class="ttdoc">Contains all includes in a precompiled header. </div></div>
+<div class="ttc" id="a00011_html"><div class="ttname"><a href="../../da/d45/a00011.html">ax12.h</a></div><div class="ttdoc">Contains the AX12 class declaration. </div></div>
+<div class="ttc" id="a00008_html"><div class="ttname"><a href="../../d4/dee/a00008.html">ServoFind</a></div><div class="ttdef"><b>Definition:</b> servofind.h:7</div></div>
+<div class="ttc" id="a00008_html_abb4bcc300ab0a9c1df3c41b4e7d1fe2d"><div class="ttname"><a href="../../d4/dee/a00008.html#abb4bcc300ab0a9c1df3c41b4e7d1fe2d">ServoFind::_max</a></div><div class="ttdeci">int _max</div><div class="ttdoc">Maximum value to find. </div><div class="ttdef"><b>Definition:</b> servofind.h:42</div></div>
+<div class="ttc" id="a00008_html_a8cfdbef4d4dc51f1b200a885ff827711"><div class="ttname"><a href="../../d4/dee/a00008.html#a8cfdbef4d4dc51f1b200a885ff827711">ServoFind::QCB</a></div><div class="ttdeci">QComboBox QCB</div><div class="ttdef"><b>Definition:</b> servofind.h:11</div></div>
+<div class="ttc" id="a00008_html_a5f353598d5d40289c039412288e5bf73"><div class="ttname"><a href="../../d4/dee/a00008.html#a5f353598d5d40289c039412288e5bf73">ServoFind::~ServoFind</a></div><div class="ttdeci">~ServoFind()</div><div class="ttdoc">Default destructor. </div><div class="ttdef"><b>Definition:</b> servofind.cpp:8</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Apr 26 2015 20:14:01 for DeltaRobot by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue May 26 2015 14:49:14 for DeltaRobot by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

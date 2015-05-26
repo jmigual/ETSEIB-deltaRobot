@@ -1,137 +1,150 @@
-\hypertarget{a00015_source}{}\section{mainwindow.\+cpp}
+\hypertarget{a00015_source}{}\section{dynamixel.\+h}
+\label{a00015_source}\index{dxl/dynamixel.\+h@{dxl/dynamixel.\+h}}
 
 \begin{DoxyCode}
-00001 \textcolor{preprocessor}{#include "\hyperlink{a00016}{mainwindow.h}"}
-00003 \textcolor{preprocessor}{#include "ui\_mainwindow.h"}
-00004 
-\hypertarget{a00015_source_l00005}{}\hyperlink{a00004_a8b244be8b7b7db1b08de2a2acb9409db}{00005} \hyperlink{a00004_a8b244be8b7b7db1b08de2a2acb9409db}{MainWindow::MainWindow}(QWidget *parent) :
-00006     QMainWindow(parent),
-00007     \_axis(XJoystick::AxisCount),
-00008     \_axisV(XJoystick::AxisCount),
-00009     \_buts(XJoystick::ButtonCount),
-00010     \_butsV(XJoystick::ButtonCount),
-00011     ui(new \hyperlink{a00023}{Ui}::\hyperlink{a00004}{MainWindow})
-00012 \{
-00013     \hyperlink{a00004_a35466a70ed47252a0191168126a352a5}{ui}->setupUi(\textcolor{keyword}{this});
-00014     
-00015     \hyperlink{a00004_a97f8ecc7ecb930b796178cef7b975013}{\_sT}.start();
-00016     
-00017     connect(&\hyperlink{a00004_a671f35800890e518713e1946671d8730}{\_joy}, SIGNAL(changed()), \textcolor{keyword}{this}, SLOT(\hyperlink{a00004_abb4c2d8a79c9f80010ea031366bf8226}{joyChanged}()));
-00018     connect(&\hyperlink{a00004_a254b03b878cfda75c1c411a2f8568d33}{\_timer}, SIGNAL(timeout()), \textcolor{keyword}{this}, SLOT(\hyperlink{a00004_a128f71880d4b9683149023fc46fcc9f8}{update}()));
-00019     connect(&\hyperlink{a00004_a97f8ecc7ecb930b796178cef7b975013}{\_sT}, SIGNAL(statusBar(QString)), 
-00020             \hyperlink{a00004_a35466a70ed47252a0191168126a352a5}{ui}->statusbar, SLOT(showMessage(QString)));
-00021     
-00022     
-00023     \hyperlink{a00004_a254b03b878cfda75c1c411a2f8568d33}{\_timer}.setInterval(10);
-00024     \hyperlink{a00004_a254b03b878cfda75c1c411a2f8568d33}{\_timer}.start();
-00025     
-00026     \textcolor{comment}{// JOYSTICK}
-00027     QVector< QString > V(\hyperlink{a00004_a671f35800890e518713e1946671d8730}{\_joy}.getAllAxis());
-00028     \textcolor{comment}{// Adding axis}
-00029     QGridLayout *wL = \textcolor{keyword}{new} QGridLayout;
-00030     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < XJoystick::AxisCount; ++i) \{
-00031         QHBoxLayout *L = \textcolor{keyword}{new} QHBoxLayout;
-00032         L->addWidget(\textcolor{keyword}{new} QLabel(V[i].append(\textcolor{stringliteral}{":"}), \textcolor{keyword}{this}));
-00033         \hyperlink{a00004_a30c99d7a544f74b0650758e5cc7ead5a}{\_axis}[i] = \textcolor{keyword}{new} QLabel(\textcolor{stringliteral}{"#"});
-00034         L->addWidget(\hyperlink{a00004_a30c99d7a544f74b0650758e5cc7ead5a}{\_axis}[i]);
-00035         L->addStretch();
-00036         wL->addLayout(L, i%3, i/3); 
-00037     \}
-00038     \hyperlink{a00004_a35466a70ed47252a0191168126a352a5}{ui}->joyAxis->setLayout(wL);
-00039     
-00040     \textcolor{comment}{// Adding buttons}
-00041     wL = \textcolor{keyword}{new} QGridLayout;
-00042     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < XJoystick::ButtonCount; ++i) \{
-00043         \hyperlink{a00004_a8eaf474e1b8672f32873ed009e28ce8a}{\_buts}[i] = \textcolor{keyword}{new} QLabel(QString::number(i + 1));
-00044         wL->addWidget(\hyperlink{a00004_a8eaf474e1b8672f32873ed009e28ce8a}{\_buts}[i], i/8, i%8);
-00045         \hyperlink{a00004_a8eaf474e1b8672f32873ed009e28ce8a}{\_buts}[i]->setEnabled(\textcolor{keyword}{false});
-00046         \hyperlink{a00004_a8eaf474e1b8672f32873ed009e28ce8a}{\_buts}[i]->hide();
-00047     \}
-00048     \hyperlink{a00004_a35466a70ed47252a0191168126a352a5}{ui}->joyButs->setLayout(wL);
-00049     \hyperlink{a00004_a35466a70ed47252a0191168126a352a5}{ui}->joyAxis->hide();
-00050     \hyperlink{a00004_a35466a70ed47252a0191168126a352a5}{ui}->joyButs->hide();
-00051     \hyperlink{a00004_a35466a70ed47252a0191168126a352a5}{ui}->line->hide();
-00052     
-00053     
-00054     \textcolor{comment}{// Creating data Path    }
-00055     \hyperlink{a00004_aaccbe653019df03668429890e325ac21}{\_dataP} = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
-00056     QDir dir(\hyperlink{a00004_aaccbe653019df03668429890e325ac21}{\_dataP});
-00057     \textcolor{keywordflow}{if} (!dir.exists()) dir.mkpath(\hyperlink{a00004_aaccbe653019df03668429890e325ac21}{\_dataP});
-00058 \}
+00001 \textcolor{comment}{// Dynamixel SDK platform independent header}
+00003 \textcolor{preprocessor}{#ifndef \_DYNAMIXEL\_HEADER}
+00004 \textcolor{preprocessor}{#define \_DYNAMIXEL\_HEADER}
+00005 
+00006 \textcolor{preprocessor}{#include "\hyperlink{a00013}{dxl\_hal.h}"}
+00007 
+00008 \textcolor{preprocessor}{#define MAX\_ID              (252)}
+00009 \textcolor{preprocessor}{#define BROADCAST\_ID        (254)  //BroadCast ID}
+00010 
+00011 \textcolor{comment}{/* Communication Errorrobotis1  1 List */}
+00012 \textcolor{preprocessor}{#define COMM\_TXSUCCESS      (0)  //Succeed transmit instruction packet}
+00013 \textcolor{preprocessor}{#define COMM\_RXSUCCESS      (1)  //Succeed get status packet}
+00014 \textcolor{preprocessor}{#define COMM\_TXFAIL         (2)  //Failed transmit instruction packet}
+00015 \textcolor{preprocessor}{#define COMM\_RXFAIL         (3)  //Failed get status packet}
+00016 \textcolor{preprocessor}{#define COMM\_TXERROR        (4)  //Incorrect instruction packet}
+00017 \textcolor{preprocessor}{#define COMM\_RXWAITING      (5)  //Now recieving status packet}
+00018 \textcolor{preprocessor}{#define COMM\_RXTIMEOUT      (6)  //There is no status packet}
+00019 \textcolor{preprocessor}{#define COMM\_RXCORRUPT      (7)  //Incorrect status packet}
+00020 
+00021 \textcolor{comment}{/* Error Status List */}
+00022 \textcolor{preprocessor}{#define ERRBIT\_ALERT        (128)//When the device has a problem, it is et as 1. Check "Device Status
+       Check" value.}
+00023 
+00024 \textcolor{preprocessor}{#define ERR\_RESULT\_FAIL     (1)  //Failed to process the instruction packet.}
+00025 \textcolor{preprocessor}{#define ERR\_INSTRUCTION     (2)  //Instruction error}
+00026 \textcolor{preprocessor}{#define ERR\_CRC             (3)  //CRC check error}
+00027 \textcolor{preprocessor}{#define ERR\_DATA\_RANGE      (4)  //Data range error}
+00028 \textcolor{preprocessor}{#define ERR\_DATA\_LENGTH     (5)  //Data length error}
+00029 \textcolor{preprocessor}{#define ERR\_DATA\_LIMIT      (6)  //Data limit error}
+00030 \textcolor{preprocessor}{#define ERR\_ACCESS          (7)  //Access error}
+00031 
+00032 
+00033 \textcolor{preprocessor}{#define PRT1\_PKT\_ID                 (2)}
+00034 \textcolor{preprocessor}{#define PRT1\_PKT\_LENGTH             (3)}
+00035 \textcolor{preprocessor}{#define PRT1\_PKT\_INSTRUCTION        (4)}
+00036 \textcolor{preprocessor}{#define PRT1\_PKT\_ERRBIT             (4)}
+00037 \textcolor{preprocessor}{#define PRT1\_PKT\_PARAMETER0         (5)}
+00038 
+00039 
+00040 \textcolor{preprocessor}{#define INST\_PING           (1)}
+00041 \textcolor{preprocessor}{#define INST\_READ           (2)}
+00042 \textcolor{preprocessor}{#define INST\_WRITE          (3)}
+00043 \textcolor{preprocessor}{#define INST\_REG\_WRITE      (4)}
+00044 \textcolor{preprocessor}{#define INST\_ACTION         (5)}
+00045 \textcolor{preprocessor}{#define INST\_RESET          (6)}
+00046 \textcolor{preprocessor}{#define INST\_SYNC\_WRITE     (131)}
+00047 \textcolor{preprocessor}{#define INST\_BULK\_READ      (146)  // 0x92}
+00048 
+00049 \textcolor{preprocessor}{#define PING\_INFO\_MODEL\_NUM   (1)}
+00050 \textcolor{preprocessor}{#define PING\_INFO\_FIRM\_VER    (2)}
+00051     
+00053 \textcolor{preprocessor}{#define MAKEWORD(a, b)      ((unsigned short)(((unsigned char)(((unsigned long)(a)) & 0xff)) | ((unsigned
+       short)((unsigned char)(((unsigned long)(b)) & 0xff))) << 8))}
+00054 \textcolor{preprocessor}{#define MAKEDWORD(a, b)     ((unsigned int)(((unsigned short)(((unsigned long)(a)) & 0xffff)) | ((unsigned
+       int)((unsigned short)(((unsigned long)(b)) & 0xffff))) << 16))}
+00055 \textcolor{preprocessor}{#define LOWORD(l)           ((unsigned short)(((unsigned long)(l)) & 0xffff))}
+00056 \textcolor{preprocessor}{#define HIWORD(l)           ((unsigned short)((((unsigned long)(l)) >> 16) & 0xffff))}
+00057 \textcolor{preprocessor}{#define LOBYTE(w)           ((unsigned char)(((unsigned long)(w)) & 0xff))}
+00058 \textcolor{preprocessor}{#define HIBYTE(w)           ((unsigned char)((((unsigned long)(w)) >> 8) & 0xff))}
 00059 
-\hypertarget{a00015_source_l00060}{}\hyperlink{a00004_ae98d00a93bc118200eeef9f9bba1dba7}{00060} \hyperlink{a00004_ae98d00a93bc118200eeef9f9bba1dba7}{MainWindow::~MainWindow}()
-00061 \{
-00062     \textcolor{keyword}{delete} \hyperlink{a00004_a35466a70ed47252a0191168126a352a5}{ui};
-00063 \}
-00064 
-\hypertarget{a00015_source_l00065}{}\hyperlink{a00004_abb4c2d8a79c9f80010ea031366bf8226}{00065} \textcolor{keywordtype}{void} \hyperlink{a00004_abb4c2d8a79c9f80010ea031366bf8226}{MainWindow::joyChanged}()
-00066 \{
-00067     \textcolor{keywordtype}{int} sel = \hyperlink{a00004_a671f35800890e518713e1946671d8730}{\_joy}.current();
-00068     
-00069     QVector< XJoystick::Info > V(\hyperlink{a00004_a671f35800890e518713e1946671d8730}{\_joy}.available());
-00070     \textcolor{keywordtype}{bool} found = \textcolor{keyword}{false};
-00071     \textcolor{keywordtype}{int} i = 0;
-00072     \textcolor{keywordflow}{while} (i < V.size() and not found) \{ found = V[i].ID == sel; ++i; \}
-00073     \textcolor{keywordflow}{if} (not found) \{
-00074         \textcolor{keywordflow}{if} (V.size() > 0) \{
-00075             \hyperlink{a00004_a671f35800890e518713e1946671d8730}{\_joy}.select(V[0].ID);
-00076             \hyperlink{a00004_a35466a70ed47252a0191168126a352a5}{ui}->line->hide();
-00077             
-00078             \textcolor{comment}{// Showing axis}
-00079             \hyperlink{a00004_a35466a70ed47252a0191168126a352a5}{ui}->joyAxis->show();
-00080             
-00081             \textcolor{comment}{// Showing buttons}
-00082             \textcolor{keywordflow}{for} (QLabel *l : \hyperlink{a00004_a8eaf474e1b8672f32873ed009e28ce8a}{\_buts}) l->hide();
-00083             \hyperlink{a00004_a35466a70ed47252a0191168126a352a5}{ui}->joyButs->show();
-00084             \textcolor{keywordtype}{int} n = \hyperlink{a00004_a671f35800890e518713e1946671d8730}{\_joy}.buttonCount();
-00085             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < n; ++i) \_buts[i]->show();
-00086         \}
-00087         \textcolor{keywordflow}{else} \{
-00088             \hyperlink{a00004_a671f35800890e518713e1946671d8730}{\_joy}.select(-1);
-00089             \hyperlink{a00004_a35466a70ed47252a0191168126a352a5}{ui}->joyAxis->hide();
-00090             \hyperlink{a00004_a35466a70ed47252a0191168126a352a5}{ui}->joyButs->hide();
-00091             \hyperlink{a00004_a35466a70ed47252a0191168126a352a5}{ui}->line->hide();
-00092         \}
-00093     \}
-00094     emit \hyperlink{a00004_ac85ba5aec3be2a51a348ff669b9dc842}{joystickChanged}();
-00095 \}
-00096 
-00097 
-\hypertarget{a00015_source_l00098}{}\hyperlink{a00004_a1dd57ccb62bc6f5a361aba6e088dd2e1}{00098} \textcolor{keywordtype}{void} \hyperlink{a00004_a1dd57ccb62bc6f5a361aba6e088dd2e1}{MainWindow::on\_actionOptions\_triggered}()
-00099 \{
-00100     \hyperlink{a00005}{OptionsWindow} o(\hyperlink{a00004_a671f35800890e518713e1946671d8730}{\_joy}, &\hyperlink{a00004_a97f8ecc7ecb930b796178cef7b975013}{\_sT}, \hyperlink{a00004_a282d4090e96c676578c4336391b1af08}{\_jAxisX}, \hyperlink{a00004_aaaced09ce813bbcac92047f5ef39f182}{\_jAxisY}, 
-      \hyperlink{a00004_a18cc17eff4ff04ee0aae07c609e82d33}{\_jAxisZ}, \textcolor{keyword}{this});
-00101     o.exec();
-00102     
-00103     connect(\textcolor{keyword}{this}, SIGNAL(\hyperlink{a00004_ac85ba5aec3be2a51a348ff669b9dc842}{joystickChanged}()), &o, SLOT(
-      \hyperlink{a00004_ac85ba5aec3be2a51a348ff669b9dc842}{joystickChanged}()));
+\hypertarget{a00015_source_l00061}{}\hyperlink{a00004}{00061} \textcolor{keyword}{class }\hyperlink{a00004}{dynamixel} \{
+00062 \textcolor{keyword}{private}:
+00063     
+\hypertarget{a00015_source_l00065}{}\hyperlink{a00004_ae003cc90ada6d7b70eaa4ea9d42d4deb}{00065}     \hyperlink{a00003}{dxl\_hal} \hyperlink{a00004_ae003cc90ada6d7b70eaa4ea9d42d4deb}{dH};
+00066     
+\hypertarget{a00015_source_l00068}{}\hyperlink{a00004_afd94dcf01b8e96298727776e222de722}{00068}     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \hyperlink{a00004_afd94dcf01b8e96298727776e222de722}{gbInstructionPacket}[MAXNUM\_TXPACKET] = \{0\};
+00069     
+\hypertarget{a00015_source_l00071}{}\hyperlink{a00004_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{00071}     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \hyperlink{a00004_aa57c86d3bbbeaf5c9d4f6bd00376b04f}{gbStatusPacket}[MAXNUM\_RXPACKET] = \{0\};
+00072     
+\hypertarget{a00015_source_l00074}{}\hyperlink{a00004_a333686e1b5903d16c41df8172b6bd5a8}{00074}     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \hyperlink{a00004_a333686e1b5903d16c41df8172b6bd5a8}{gbRxPacketLength} = 0;
+00075     
+\hypertarget{a00015_source_l00077}{}\hyperlink{a00004_a9d590ce24791d111c2db9b66be1e046d}{00077}     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \hyperlink{a00004_a9d590ce24791d111c2db9b66be1e046d}{gbRxGetLength} = 0;
+00078     
+\hypertarget{a00015_source_l00080}{}\hyperlink{a00004_a6c6314fb7070e6fd361e57c5de17e0ec}{00080}     \textcolor{keywordtype}{double} \hyperlink{a00004_a6c6314fb7070e6fd361e57c5de17e0ec}{gdPacketStartTime} = 0.0;
+00081     
+\hypertarget{a00015_source_l00083}{}\hyperlink{a00004_a2173f25c6299da7ddb37ba3d2bf1f738}{00083}     \textcolor{keywordtype}{double} \hyperlink{a00004_a2173f25c6299da7ddb37ba3d2bf1f738}{gdByteTransTime} = 0.0;
+00084     
+\hypertarget{a00015_source_l00086}{}\hyperlink{a00004_a9f47887864517d74955a2bc787ae4456}{00086}     \textcolor{keywordtype}{double} \hyperlink{a00004_a9f47887864517d74955a2bc787ae4456}{gdRcvWaitTime} = 0.0;
+00087     
+\hypertarget{a00015_source_l00089}{}\hyperlink{a00004_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{00089}     \textcolor{keywordtype}{int} \hyperlink{a00004_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{gbCommStatus} = COMM\_RXSUCCESS;
+00090     
+\hypertarget{a00015_source_l00092}{}\hyperlink{a00004_ad10e0e49f5fef04bf789a89c14cc470a}{00092}     \textcolor{keywordtype}{int} \hyperlink{a00004_ad10e0e49f5fef04bf789a89c14cc470a}{giBusUsing} = 0; 
+00093     
+00094 \textcolor{keyword}{public}:
+00095     
+\hypertarget{a00015_source_l00097}{}\hyperlink{a00004_a7aa668a213db6a41bede8e08a6fec830}{00097}     \hyperlink{a00004_a7aa668a213db6a41bede8e08a6fec830}{dynamixel}() \{\}
+00098     
+00100     \hyperlink{a00004_a7aa668a213db6a41bede8e08a6fec830}{dynamixel}(QString port\_num, \textcolor{keywordtype}{int} baud\_rate = 1000000);
+00101     
+\hypertarget{a00015_source_l00103}{}\hyperlink{a00004_a58fec564d9417d2d09bc29003a9feb7a}{00103}     \hyperlink{a00004_a58fec564d9417d2d09bc29003a9feb7a}{~dynamixel}() \{ dH.\hyperlink{a00003_a250fd7e4acabf54d0733551a13e89a2d}{close}(); \}
 00104     
-00105     \textcolor{keywordflow}{if} (o.result()) o.\hyperlink{a00005_ab0a56ad7347c20046602a7a2a1c83397}{storeData}();
-00106 \}
+\hypertarget{a00015_source_l00106}{}\hyperlink{a00004_a5ae4b2c6eb4c91f404f973ee8e6a1914}{00106}     \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \hyperlink{a00004_a5ae4b2c6eb4c91f404f973ee8e6a1914}{isOpen}() \{ \textcolor{keywordflow}{return} dH.\hyperlink{a00003_a88bba601b5c9f285fcdc14e18a1f3398}{isOpen}(); \}
 00107 
-\hypertarget{a00015_source_l00108}{}\hyperlink{a00004_a128f71880d4b9683149023fc46fcc9f8}{00108} \textcolor{keywordtype}{void} \hyperlink{a00004_a128f71880d4b9683149023fc46fcc9f8}{MainWindow::update}()
-00109 \{
-00110     \hyperlink{a00004_a671f35800890e518713e1946671d8730}{\_joy}.update();
-00111     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < XJoystick::AxisCount; ++i) \hyperlink{a00004_a20f66f574ed4c96d8dfc0013e1095f15}{\_axisV}[i] = \hyperlink{a00004_a671f35800890e518713e1946671d8730}{\_joy}[i];
-00112     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < XJoystick::ButtonCount; ++i) \hyperlink{a00004_a519ae4630572cb63fbd04bce12fe8e77}{\_butsV}[i] = \hyperlink{a00004_a671f35800890e518713e1946671d8730}{\_joy}.button(i);
+00109     \textcolor{keywordtype}{int} \hyperlink{a00004_a87960244d5846ae7583e37d2407eb61e}{initialize}(QString port\_num, \textcolor{keywordtype}{int} baud\_rate);
+00110     
+00112     \textcolor{keywordtype}{int} \hyperlink{a00004_a7554c7889896e29e11a62027d89f3fdf}{change\_baudrate}(\textcolor{keywordtype}{int} baud\_rate);
 00113     
-00114     \hyperlink{a00004_a97f8ecc7ecb930b796178cef7b975013}{\_sT}.\hyperlink{a00007_a8497ea56991b620981ce1fbf53d9ebdb}{setData}(\hyperlink{a00004_a20f66f574ed4c96d8dfc0013e1095f15}{\_axisV}, \hyperlink{a00004_a519ae4630572cb63fbd04bce12fe8e77}{\_butsV});
-00115     QVector<ServoThread::Servo> servo(\hyperlink{a00004_a97f8ecc7ecb930b796178cef7b975013}{\_sT}.\hyperlink{a00007_a5fd8ef13314428f5ba7646730cc58f1c}{getServosInfo}());
+00115     \textcolor{keywordtype}{int} \hyperlink{a00004_a92ea074ed1c1a9cf29e039f8c425f01a}{terminate}(\textcolor{keywordtype}{void});
 00116     
-00117     \textcolor{comment}{// TODO: Finish update function}
-00118 \}
-00119 
-\hypertarget{a00015_source_l00120}{}\hyperlink{a00004_ae66e9ab15f911b93fce0f161d2fde880}{00120} \textcolor{keywordtype}{void} \hyperlink{a00004_ae66e9ab15f911b93fce0f161d2fde880}{MainWindow::on\_start\_clicked}()
-00121 \{
-00122     QString text = \hyperlink{a00004_a35466a70ed47252a0191168126a352a5}{ui}->start->text();
-00123     
-00124     \textcolor{keywordflow}{if} (text == \textcolor{stringliteral}{"Start"}) \{
-00125         \hyperlink{a00004_a97f8ecc7ecb930b796178cef7b975013}{\_sT}.\hyperlink{a00007_a5f32574f843d76deffec45995028389b}{wakeUp}();
-00126         \hyperlink{a00004_a35466a70ed47252a0191168126a352a5}{ui}->start->setText(\textcolor{stringliteral}{"Stop"});
-00127     \}
-00128     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (text == \textcolor{stringliteral}{"Stop"}) \{
-00129         \hyperlink{a00004_a97f8ecc7ecb930b796178cef7b975013}{\_sT}.\hyperlink{a00007_ae0d4a59954aafbe8cd85f9326e4fcdd0}{pause}();
-00130         \hyperlink{a00004_a35466a70ed47252a0191168126a352a5}{ui}->start->setText(\textcolor{stringliteral}{"Start"});
-00131     \}
-00132 \}
+\hypertarget{a00015_source_l00118}{}\hyperlink{a00004_ac8440d5d34ae3c4618b28fdbbd748edc}{00118}     \textcolor{keyword}{inline} \textcolor{keywordtype}{int} \hyperlink{a00004_ac8440d5d34ae3c4618b28fdbbd748edc}{get\_comm\_result}() \{ \textcolor{keywordflow}{return} \hyperlink{a00004_a5b603f6bed7ccc595f1f50bd6a6ebbfc}{gbCommStatus}; \}
+00119     
+00120     
+00121     
+00123     \textcolor{keywordtype}{void} \hyperlink{a00004_a479187cd8940c16dd4374eb5be22b888}{tx\_packet}(\textcolor{keywordtype}{void});
+00124     
+00126     \textcolor{keywordtype}{void} \hyperlink{a00004_aa26d2d2dff768563a1cb1480aa061608}{rx\_packet}(\textcolor{keywordtype}{void});
+00127     
+00129     \textcolor{keywordtype}{void} \hyperlink{a00004_aebfc569c6b1eb0b98f8c385f0f921fc0}{txrx\_packet}(\textcolor{keywordtype}{void});
+00130     
+00132     \textcolor{keywordtype}{void} \hyperlink{a00004_a84e24c72c3e5be866f8b28c2e5bd1d95}{set\_txpacket\_id}(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id});
+00133     
+00135     \textcolor{keywordtype}{void} \hyperlink{a00004_a209a43f983f214323b6f0a627d5e8c13}{set\_txpacket\_instruction}(\textcolor{keywordtype}{int} instruction);
+00136     
+00138     \textcolor{keywordtype}{void} \hyperlink{a00004_a2c3d31bbbed70a69918e9972a620384b}{set\_txpacket\_parameter}(\textcolor{keywordtype}{int} index, \textcolor{keywordtype}{int} value);
+00139     
+00141     \textcolor{keywordtype}{void} \hyperlink{a00004_a829278f48e21c810b172eb8cab3b86de}{set\_txpacket\_length}(\textcolor{keywordtype}{int} length);
+00142     
+00145     \textcolor{keywordtype}{bool} \hyperlink{a00004_a843b0aac721e4264e7e3097f80980243}{get\_rxpacket\_error}(\textcolor{keywordtype}{int} error);
+00146     
+00148     \textcolor{keywordtype}{int}  \hyperlink{a00004_a6e62341ef9f51b6e152e769bd7be9d75}{get\_rxpacket\_error\_byte}(\textcolor{keywordtype}{void});
+00149     
+00151     \textcolor{keywordtype}{int}  \hyperlink{a00004_a68b5fa99719a9aec0734ecfb0635503b}{get\_rxpacket\_parameter}( \textcolor{keywordtype}{int} index );
+00152     
+00154     \textcolor{keywordtype}{int}  \hyperlink{a00004_ae9cc18fdeda8329f68fa0f2f0a7a9aba}{get\_rxpacket\_length}();
+00155     
+00158     \textcolor{keywordtype}{void} \hyperlink{a00004_af2bd714423e7c4fc089762805c0c71f3}{ping}(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id});
+00159     
+00163     \textcolor{keywordtype}{int}  \hyperlink{a00004_a888404b41c4c4395a0b745c77ff2cea9}{read\_byte}(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id}, \textcolor{keywordtype}{int} address);
+00164     
+00169     \textcolor{keywordtype}{void} \hyperlink{a00004_a66c1e32cc45dd46d329f1fc212e46a3d}{write\_byte}(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id}, \textcolor{keywordtype}{int} address, \textcolor{keywordtype}{int} value);
+00170     
+00174     \textcolor{keywordtype}{int}  \hyperlink{a00004_a45e99341e82c5114f6e829c9141bf96f}{read\_word}(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id}, \textcolor{keywordtype}{int} address);
+00175     
+00180     \textcolor{keywordtype}{void} \hyperlink{a00004_a925f62ce5e261e5ef4fe6dc46bdc7c63}{write\_word}(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id}, \textcolor{keywordtype}{int} address, \textcolor{keywordtype}{int} value);    
+00181     
+00183     \textcolor{keywordtype}{double} \hyperlink{a00004_a2fa5375537184c279a9ebfcfc0425071}{get\_packet\_time}();
+00184     
+00187     \textcolor{keywordtype}{void} \hyperlink{a00004_a067f82c21ed176e18fa224d16f3d1c5b}{set\_packet\_timeout}(\textcolor{keywordtype}{int} NumRcvByte);
+00188     
+00191     \textcolor{keywordtype}{void} \hyperlink{a00004_a125b42f776c4aac520f274074f68b591}{set\_packet\_timeout\_ms}(\textcolor{keywordtype}{int} msec);
+00192     
+00195     \textcolor{keywordtype}{bool} \hyperlink{a00004_a00d08481ebc4dee19debecf43f888522}{is\_packet\_timeout}();
+00196 \};
+00197 
+00198 \textcolor{preprocessor}{#endif}
 \end{DoxyCode}

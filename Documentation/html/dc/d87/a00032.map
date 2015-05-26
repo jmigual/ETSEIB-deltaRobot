@@ -1,3 +1,3 @@
-<map id="MainWindow" name="MainWindow">
-<area shape="rect" id="node3" href="$d4/dee/a00008.html" title="The ServoThread&#39;s class handles the comunication between the delta robot servos and the PC..." alt="" coords="136,81,229,108"/>
+<map id="dynamixel" name="dynamixel">
+<area shape="rect" id="node2" href="$d1/d7c/a00003.html" title="Dynamixel SDK platform dependent. " alt="" coords="15,5,77,32"/>
 </map>
