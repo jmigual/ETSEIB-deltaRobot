@@ -22,7 +22,7 @@ void ServoFind::run()
         s->addItem("None", -1);
     }
     
-    int index = 0;
+    int index = 1;
     QVector<int> pos(_servo.size(), 0);
     
     dynamixel dxl(_port, _baud);

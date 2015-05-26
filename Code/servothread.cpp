@@ -105,6 +105,7 @@ void ServoThread::setData(QVector<float> &aV, QVector<bool> &buts)
     // Copying the joystick values
     _axis = QVector4D(aV[0], aV[1], aV[2], aV[3]);
     _axis.normalize();
+    _axis[3] *= 5;
     _buts = buts;    
     _mutex.unlock();
 }
@@ -148,14 +149,14 @@ bool ServoThread::isPosAvailable(const QVector<ServoThread::Servo> &S,
     return true;
 }
 
-bool ServoThread::isReady(const QVector<ServoThread::Servo> &S, 
+bool ServoThread::isReady(const QVector<double> &S, 
                           const QVector3D &pos, double err)
 {
     QVector<double> D(3);
     this->setAngles(pos, D);
     
     for (int i = 0; i < 3; ++i) {
-        double aux = abs(S[i].pos - D[i]);
+        double aux = abs(S[i] - D[i]);
         if (aux > err) return false;
     }
     return true;
@@ -175,6 +176,12 @@ void ServoThread::run()
     // Contains the servos comunication
     QVector<AX12> A(4);
     
+    // Contains the servos ID
+    QVector< int > ID(_sNum);
+    
+    // Contains the current servo data
+    QVector< double > S(_sNum);
+    
     // Contains the servos angles
     QVector<double> D(3);
     // First initialization
@@ -182,13 +189,11 @@ void ServoThread::run()
     for (int i = 0; i < A.size(); ++i) {
         A[i] = AX12(&dxl);  
         A[i].setID(_servos[i].ID);
+        ID[i] = _servos[i].ID;
         A[i].setSpeed(_sSpeed);
         A[i].setComplianceSlope(ccwCS, cwCS);
     }
     _mutex.unlock();
-    
-    // Contains the current servo data
-    QVector< Servo > S(_sNum);
     
     QVector4D pos(posIdle);
     QVector4D axis(0, 0, 0, 0);
@@ -198,14 +203,21 @@ void ServoThread::run()
     unsigned int dom = 0;
     unsigned int pas = 0;
     QVector< QVector< Dominoe > > Dom;
-    
+    QElapsedTimer time, time2, time3;
+    unsigned long long t1, t2, t3;
+    time.start();
+    time2.start();
+    time3.start();
     while (not _end) {
+        t1 = time.restart();
+        time2.restart();
         _mutex.lock();
         
         // Pause
         if (not _end and _pause) {
             dxl.terminate();
             _cond.wait(&_mutex);
+            if (_end) exit(0);
             dxl.initialize(sPort, sBaud);
         }       
         
@@ -220,6 +232,7 @@ void ServoThread::run()
             
             for (int i = 0; i < S.size(); ++i) {
                 A[i].setID(_servos[i].ID);
+                ID[i] = _servos[i].ID;
                 A[i].setSpeed(_sSpeed);
                 A[i].setComplianceSlope(ccwCS, cwCS);
             }
@@ -229,20 +242,19 @@ void ServoThread::run()
             
             pos = posIdle;            
             this->setAngles(pos.toVector3D(), D);
-            for (int i = 0; i < 3; ++i) A[i].setGoalPosition(D[i]);
-            
+            this->setGoalPosition(ID, D, dxl);
             _dChanged = false;
         }
 
-        for (int i = 0; i < A.size(); ++i) {
-            _servos[i].pos = S[i].pos = A[i].getCurrentPos();
+        for (int i = 0; i < 3; ++i) {
+            _servos[i].pos = S[i] = A[i].getCurrentPos();
         }
         axis = _axis;
         buts = _buts;
         _pos = pos;
         _mutex.unlock();
-        
-        
+        t2 = time2.elapsed();
+        time3.restart();
         // Main function with data updated
         if (_mod == Mode::Manual) {
             QVector4D posAux = pos + 0.5*axis;
@@ -301,10 +313,11 @@ void ServoThread::run()
             pos = QVector3D(0, 0, -20);
             dom = 0;
         }
-        
         this->setAngles(pos.toVector3D(), D);
-        for (int i = 0; i < 3; ++i) A[i].setGoalPosition(D[i]);
-        A[3].setGoalPosition(pos.w());
+        t3 = time3.elapsed();
+        this->setGoalPosition(ID, D, dxl);
+        
+        qDebug() << t1 << t2 << t3;
     }
     dxl.terminate();
     exit(0);
@@ -328,6 +341,26 @@ void ServoThread::setAngles(const QVector3D &pos, QVector<double> &D)
     D[2] = singleAngle(x3,y3,z3);
     
     for (double &d : D) d = 240 + d*180/M_PI;
+}
+
+void ServoThread::setGoalPosition(const QVector<int> &ID, 
+                                  const QVector<double> &pos, dynamixel &dxl)
+{
+    dxl.set_txpacket_id(BROADCAST_ID);
+    dxl.set_txpacket_instruction(INST_SYNC_WRITE);
+    dxl.set_txpacket_parameter(0, AX12::RAM::GoalPosition);
+    dxl.set_txpacket_parameter(1, 2);
+    
+    for (int i = 0; i < ID.size(); ++i) {
+        unsigned int data = (pos[i]/300.0)*1023.0;
+        
+        dxl.set_txpacket_parameter(2 + 3*i, ID[i]);
+        dxl.set_txpacket_parameter(2 + 3*i + 1, LOBYTE(data));
+        dxl.set_txpacket_parameter(2 + 3*i + 2, HIBYTE(data));
+    }
+    
+    dxl.set_txpacket_length(4 + 3*ID.size());
+    dxl.txrx_packet();
 }
 
 double ServoThread::singleAngle(double x0, double y0, double z0)

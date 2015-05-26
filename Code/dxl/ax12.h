@@ -18,7 +18,21 @@
 class AX12
 {
     
-private:
+private: 
+    
+    /// Contains the dynamixel comunication
+    dynamixel *_dxl;
+    
+    /// Stores the current ID
+    int _ID;
+    
+    /// True if we use the joint mode
+    bool _mode;
+    
+    /// True if the angle is returned in radians
+    bool _rads;
+    
+public:
     
     /// Contains all the EEPROM directions enumeration
     enum ROM 
@@ -61,21 +75,7 @@ private:
         Lock                = 47,
         Punch               = 48
         
-    };    
-    
-    /// Contains the dynamixel comunication
-    dynamixel *_dxl;
-    
-    /// Stores the current ID
-    int _ID;
-    
-    /// True if we use the joint mode
-    bool _mode;
-    
-    /// True if the angle is returned in radians
-    bool _rads;
-    
-public:
+    };   
     
     /// Default constructor
     AX12();

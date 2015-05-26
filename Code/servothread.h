@@ -392,7 +392,7 @@ private:
     bool isPosAvailable(const QVector<Servo> &S, const QVector<double> &D, 
                         const QVector3D &newPos, double err);
     
-    bool isReady(const QVector<Servo> &S, const QVector3D &pos, double err);
+    bool isReady(const QVector<double> &S, const QVector3D &pos, double err);
     
     /// Used to create another thread
     void run();
@@ -400,6 +400,8 @@ private:
     /// Used to calculate the servos angles
     void setAngles(const QVector3D &pos, 
                    QVector<double> &D);
+    
+    void setGoalPosition(const QVector<int> &ID, const QVector<double> &pos, dynamixel &dxl);
     
     /// Calculates the angle of one servo in the selected position
     double singleAngle(double x0, double y0, double z0);
