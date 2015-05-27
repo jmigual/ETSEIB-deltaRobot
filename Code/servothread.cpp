@@ -202,17 +202,22 @@ void ServoThread::run()
     
     // Main while
     while (not _end) {
-        _mutex.lock();
         
         // Pause
+        _mutex.lock();
         if (not _end and _pause) {
             dxl.terminate();
             _cond.wait(&_mutex);
             if (_end) exit(0);
             dxl.initialize(sPort, sBaud);
-        }       
+        }
+        _mutex.unlock();
         
-        // Data changed handle
+        // Get current servo position
+        for (int i = 0; i < 3; ++i) S[i] = A[i].getCurrentPos();
+        
+        // Handling changes of data
+        _mutex.lock();
         if (_dChanged) {
             if (sPort != _sPort or sBaud != _sBaud) {
                 sPort = _sPort;
@@ -236,7 +241,7 @@ void ServoThread::run()
             _dChanged = false;
         }
 
-        for (int i = 0; i < 3; ++i) S[i] = A[i].getCurrentPos();
+        // Joystick and buttons update, must use mutex
         for (int i = 0; i < _sNum; ++i) _servos[i].pos =  S[i];
         axis = _axis;
         buts = _buts;
