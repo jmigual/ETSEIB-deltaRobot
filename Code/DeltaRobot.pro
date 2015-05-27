@@ -59,7 +59,7 @@ RESOURCES += \
     resources.qrc
 
 Release {
-    DESTDIR = release
+    DESTDIR = BRelease
     OBJECTS_DIR = release/.obj
     MOC_DIR = release/.moc
     RCC_DIR = release/.rcc
@@ -67,7 +67,7 @@ Release {
 }
 
 Debug {
-    DESTDIR = debug
+    DESTDIR = BDebug
     OBJECTS_DIR = debug/.obj
     MOC_DIR = debug/.moc
     RCC_DIR = debug/.rcc
@@ -120,7 +120,7 @@ else: TARGET_CUSTOM_EXT = $${TARGET_EXT}
 win32: DEPLOY_COMMAND = windeployqt
 macx: DEPLOY_COMMAND = macdeployqt
 
-CONFIG( debug, debug|release ): DEPLOY_TARGET = $$shell_quote($$shell_path($${OUT_PWD}/debug/$${TARGET}$${TARGET_CUSTOM_EXT}))
-else: DEPLOY_TARGET = $$shell_quote($$shell_path($${OUT_PWD}/release/$${TARGET}$${TARGET_CUSTOM_EXT}))
+CONFIG( debug, debug|release ): DEPLOY_TARGET = $$shell_quote($$shell_path($${DESTDIR}/$${TARGET}$${TARGET_CUSTOM_EXT}))
+else: DEPLOY_TARGET = $$shell_quote($$shell_path($${DESTDIR}/$${TARGET}$${TARGET_CUSTOM_EXT}))
 
 QMAKE_POST_LINK += $${DEPLOY_COMMAND} $${DEPLOY_TARGET}

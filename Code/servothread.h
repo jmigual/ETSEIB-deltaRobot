@@ -325,11 +325,11 @@ private:
     static const int _sNum = 4;     ///< Number of servos to manage
     
     /// Starting position for the controlled mode 
-    QVector4D posStart = QVector4D(11.5, 0.0f, 23, 150); 
+    const QVector4D posStart = QVector4D(11.5, 0.0f, 23, 150); 
     /// Idle position
-    QVector4D posIdle = QVector4D(0.0f, 0.0f, 23 + 8, 150);
+    const QVector4D posIdle = QVector4D(0.0f, 0.0f, 23, 150);
     /// Working heigh
-    double workHeigh = -25.0;
+    const double workHeigh = 25.0;
     
     /// Contains the axis value
     QVector4D _axis;
@@ -390,15 +390,15 @@ private:
     
     /// Returns true if the position is available
     bool isPosAvailable(const QVector<double> &S, const QVector<double> &D, 
-                        const QVector3D &newPos, double err);
+                        const QVector4D &newPos, double err);
     
-    bool isReady(const QVector<double> &S, const QVector3D &pos, double err);
+    bool isReady(const QVector<double> &S, const QVector4D &pos, double err);
     
     /// Used to create another thread
     void run();
     
     /// Used to calculate the servos angles
-    void setAngles(const QVector3D &pos, 
+    void setAngles(const QVector4D &pos, 
                    QVector<double> &D);
     
     void setGoalPosition(const QVector<int> &ID, const QVector<double> &pos, dynamixel &dxl);

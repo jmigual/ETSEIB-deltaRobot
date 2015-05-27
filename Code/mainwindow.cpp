@@ -243,9 +243,11 @@ void MainWindow::update()
     ui->servo0S->setValue(servo[0].pos);
     ui->servo1S->setValue(servo[1].pos);
     ui->servo2S->setValue(servo[2].pos);
+    ui->servo3S->setValue(servo[3].pos);
     
     // Updating position labels
     ui->servo0->setText(QString::number(servo[0].pos));
     ui->servo1->setText(QString::number(servo[1].pos));
-    ui->servo2->setText(QString::number(servo[2].pos));    
+    ui->servo2->setText(QString::number(servo[2].pos)); 
+    ui->servo3->setText(QString::number(servo[3].pos));
 }

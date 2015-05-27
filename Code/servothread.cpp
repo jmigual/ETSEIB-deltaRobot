@@ -129,36 +129,30 @@ void ServoThread::write(QString file)
 
 bool ServoThread::isPosAvailable(const QVector<double> &S, 
                                  const QVector<double> &D, 
-                                 const QVector3D &newPos, double err)
+                                 const QVector4D &newPos, double err)
 {
-    for (int i = 0; i < 3; ++i) {
-        double aux = abs(S[i] - D[i]);
-        if (aux > err) return false;
-    }
+    for (int i = 0; i < 3; ++i) if (abs(S[i] - D[i]) > err) return false;
     
     if (newPos.toVector2D().lengthSquared() > workRadSq) return false;
     
-    QVector<double> theta(3);
+    QVector<double> theta(4);
     this->setAngles(newPos, theta);
     
-    for (const double &d : theta) {
-        if (qIsNaN(d)) return false;
-        else if (d > maxAngle or d < minAngle) return false;
+    for (int i = 0; i < 3; ++i) {
+        if (qIsNaN(D[i])) return false;
+        if (D[i] > maxAngle or D[i] < minAngle) return false;
     }
     
     return true;
 }
 
 bool ServoThread::isReady(const QVector<double> &S, 
-                          const QVector3D &pos, double err)
+                          const QVector4D &pos, double err)
 {
-    QVector<double> D(3);
+    QVector<double> D(4);
     this->setAngles(pos, D);
     
-    for (int i = 0; i < 3; ++i) {
-        double aux = abs(S[i] - D[i]);
-        if (aux > err) return false;
-    }
+    for (int i = 0; i < 3; ++i) if (abs(S[i] - D[i]) > err) return false;
     return true;
 }
 
@@ -205,14 +199,9 @@ void ServoThread::run()
     unsigned int dom = 0;
     unsigned int pas = 0;
     QVector< QVector< Dominoe > > Dom;
-    QElapsedTimer time, time2, time3;
-    unsigned long long t1, t2, t3;
-    time.start();
-    time2.start();
-    time3.start();
+    
+    // Main while
     while (not _end) {
-        t1 = time.restart();
-        time2.restart();
         _mutex.lock();
         
         // Pause
@@ -242,40 +231,39 @@ void ServoThread::run()
             dom = 0;
             
             pos = posIdle;            
-            this->setAngles(pos.toVector3D(), D);
+            this->setAngles(pos, D);
             this->setGoalPosition(ID, D, dxl);
             _dChanged = false;
         }
 
-        for (int i = 0; i < 3; ++i) {
-            _servos[i].pos = S[i] = A[i].getCurrentPos();
-        }
+        for (int i = 0; i < 3; ++i) S[i] = A[i].getCurrentPos();
+        for (int i = 0; i < _sNum; ++i) _servos[i].pos =  S[i];
         axis = _axis;
         buts = _buts;
         _pos = pos;
         _mutex.unlock();
-        t2 = time2.elapsed();
-        time3.restart();
+        
+        
         // Main function with data updated
         if (_mod == Mode::Manual) {
             QVector4D posAux = pos + 0.5*axis;
             
-            bool ok = this->isPosAvailable(S, D, posAux.toVector3D(), 
-                                           maxErr + 4);
+            bool ok = this->isPosAvailable(S, D, posAux, maxErr + 4);
             if (ok) pos = posAux;            
         } 
         else if (_mod == Mode::Controlled) {
             switch(_status) {
             case Status::begin:
                 pos = posStart;
-                if (this->isReady(S, pos.toVector3D(), maxErr)) 
-                    _status = Status::take;                
+                if (this->isReady(S, pos, maxErr))  {
+                    _status = Status::take;
+                    QThread::msleep(500);
+                }
                 break;
                 
             case Status::take:
                 pos[2] = workHeigh;
-                if (this->isReady(S, pos.toVector3D(), maxErr)) 
-                    _status = Status::waiting;
+                if (this->isReady(S, pos, maxErr)) _status = Status::waiting;
                 break;
                 
             case Status::waiting:
@@ -314,18 +302,15 @@ void ServoThread::run()
             pos = posStart;
             dom = 0;
         }
-        this->setAngles(pos.toVector3D(), D);
-        t3 = time3.elapsed();
-        D[3] = pos.w();
-        this->setGoalPosition(ID, D, dxl);
         
-        qDebug() << t1 << t2 << t3;
+        this->setAngles(pos, D);
+        this->setGoalPosition(ID, D, dxl);
     }
     dxl.terminate();
     exit(0);
 }
 
-void ServoThread::setAngles(const QVector3D &pos, QVector<double> &D)
+void ServoThread::setAngles(const QVector4D &pos, QVector<double> &D)
 {    
     double x1 = pos.x() + L2 - L1;
     double y1 = -pos.z();
@@ -341,6 +326,7 @@ void ServoThread::setAngles(const QVector3D &pos, QVector<double> &D)
     double y3 = -pos.z();
     double z3 = -pos.y()*cos60 + pos.x()*sin60;
     D[2] = singleAngle(x3,y3,z3);
+    D[3] = pos.w();
     
     for (double &d : D) d = 240 + d*180/M_PI;
 }
