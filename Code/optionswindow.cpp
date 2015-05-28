@@ -47,7 +47,7 @@ OptionsWindow::OptionsWindow(XJoystick &J, ServoThread *servo, QWidget *parent) 
     
     QVector<ServoThread::Servo> S(_servo->getServosInfo());
     Q_ASSERT(S.size() == _servo->getServosNum());
-    
+     
     for (int i = 0; i < S.size(); ++i) {
         int ID = S[i].ID;
         

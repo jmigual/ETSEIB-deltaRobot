@@ -14,7 +14,7 @@ ServoThread::ServoThread() :
     _servos(_sNum),
     _sPort("COM9"),
     _sPortChanged(false),
-    _sSpeed(30),
+    _sSpeed(100),
     _status(Status::begin)
 {
     for (Servo &s : _servos) s.ID = -1;
@@ -106,7 +106,7 @@ void ServoThread::setData(QVector<float> &aV, QVector<bool> &buts)
     _axis = QVector4D(aV[0], aV[1], aV[2], aV[3]);
     _axis.normalize();
     _axis[3] *= 5;
-    _buts = buts;    
+    for (uint i = 0; i < buts.size(); ++i) _buts[i] |= buts[i];    
     _mutex.unlock();
 }
 
@@ -207,7 +207,10 @@ void ServoThread::run()
         _mutex.lock();
         if (not _end and _pause) {
             dxl.terminate();
+            
+            // Thread pause
             _cond.wait(&_mutex);
+            
             if (_end) exit(0);
             dxl.initialize(sPort, sBaud);
         }
@@ -215,6 +218,7 @@ void ServoThread::run()
         
         // Get current servo position
         for (int i = 0; i < 3; ++i) S[i] = A[i].getCurrentPos();
+        if (_mod == Mode::Manual) S[3] = A[3].getCurrentPos();
         
         // Handling changes of data
         _mutex.lock();
@@ -245,6 +249,7 @@ void ServoThread::run()
         for (int i = 0; i < _sNum; ++i) _servos[i].pos =  S[i];
         axis = _axis;
         buts = _buts;
+        for (bool &b : _buts) b = 0;
         _pos = pos;
         _mutex.unlock();
         
@@ -254,7 +259,7 @@ void ServoThread::run()
             QVector4D posAux = pos + 0.5*axis;
             
             bool ok = this->isPosAvailable(S, D, posAux, maxErr + 4);
-            if (ok) pos = posAux;            
+            if (ok) pos = posAux;    
         } 
         else if (_mod == Mode::Controlled) {
             switch(_status) {
@@ -331,9 +336,9 @@ void ServoThread::setAngles(const QVector4D &pos, QVector<double> &D)
     double y3 = -pos.z();
     double z3 = -pos.y()*cos60 + pos.x()*sin60;
     D[2] = singleAngle(x3,y3,z3);
-    D[3] = pos.w();
     
     for (double &d : D) d = 240 + d*180/M_PI;
+    D[3] = pos.w();
 }
 
 void ServoThread::setGoalPosition(const QVector<int> &ID, 
@@ -352,7 +357,6 @@ void ServoThread::setGoalPosition(const QVector<int> &ID,
         dxl.set_txpacket_parameter(2 + 3*i + 1, LOBYTE(data));
         dxl.set_txpacket_parameter(2 + 3*i + 2, HIBYTE(data));
     }
-    
     dxl.set_txpacket_length(4 + 3*ID.size());
     dxl.txrx_packet();
 }
