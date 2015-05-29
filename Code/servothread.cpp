@@ -81,15 +81,30 @@ void ServoThread::readPath(QString file)
     double sep = 2; // 2cm of separation
     QVector2D ori(12, 0);
     
+    _dominoe.clear();
     for (int i = 0; i < temp.size(); ++i) {
         QVector2D aux(temp[i].X, temp[i].Y);
+        
+        // Checking if its a vàlid position
+        QVector4D aux2(aux);
+        aux2[2] = workHeigh;
+        if (not this->isPosAvailable(aux2)) continue;
+        
+        // Calculating direction vector
         aux -= ori;
         int steps = aux.length()/sep; 
-      
+        
+        QVector<Dominoe> V(steps);
+        
+        // Initial point
+        V.push_back(Dominoe(ori, temp[i].ori));
+        
+        // Adding intermediate positions
         for (int j = 1; j <= steps; ++j){                
             Dominoe dAux(j*aux/double(steps) + ori, temp[i].ori);
-            _dominoe[i].push_back(dAux);         
+            V[i] = dAux;
         }
+        _dominoe.push_back(V);
     }
     _dChanged = true;
     _mutex.unlock();
@@ -106,7 +121,7 @@ void ServoThread::setData(QVector<float> &aV, QVector<bool> &buts)
     _axis = QVector4D(aV[0], aV[1], aV[2], aV[3]);
     _axis.normalize();
     _axis[3] *= 5;
-    for (uint i = 0; i < buts.size(); ++i) _buts[i] |= buts[i];    
+    for (int i = 0; i < buts.size(); ++i) _buts[i] |= buts[i];    
     _mutex.unlock();
 }
 
@@ -127,16 +142,12 @@ void ServoThread::write(QString file)
     _mutex.unlock();
 }
 
-bool ServoThread::isPosAvailable(const QVector<double> &S, 
-                                 const QVector<double> &D, 
-                                 const QVector4D &newPos, double err)
-{
-    for (int i = 0; i < 3; ++i) if (abs(S[i] - D[i]) > err) return false;
-    
+bool ServoThread::isPosAvailable(const QVector4D &newPos)
+{    
     if (newPos.toVector2D().lengthSquared() > workRadSq) return false;
     
-    QVector<double> theta(4);
-    this->setAngles(newPos, theta);
+    QVector<double> D(4);
+    this->setAngles(newPos, D);
     
     for (int i = 0; i < 3; ++i) {
         if (qIsNaN(D[i])) return false;
@@ -196,8 +207,8 @@ void ServoThread::run()
     QVector< bool > buts;
     
     // Contains the domino number to put
-    unsigned int dom = 0;
-    unsigned int pas = 0;
+    int dom = 0;
+    int pas = 0;
     QVector< QVector< Dominoe > > Dom;
     
     // Main while
@@ -220,6 +231,8 @@ void ServoThread::run()
         for (int i = 0; i < 3; ++i) S[i] = A[i].getCurrentPos();
         if (_mod == Mode::Manual) S[3] = A[3].getCurrentPos();
         
+        
+        /*********** MUTEX ***********/
         // Handling changes of data
         _mutex.lock();
         if (_dChanged) {
@@ -254,13 +267,18 @@ void ServoThread::run()
         _mutex.unlock();
         
         
+        /******** MODE ********/
         // Main function with data updated
+        
+        ////// MANUAL //////
         if (_mod == Mode::Manual) {
             QVector4D posAux = pos + 0.5*axis;
             
-            bool ok = this->isPosAvailable(S, D, posAux, maxErr + 4);
+            bool ok = this->isPosAvailable(posAux);
+            ok &= this->isReady(S, pos, maxErr + 5.0);
             if (ok) pos = posAux;    
         } 
+        ////// CONTROLLED //////
         else if (_mod == Mode::Controlled) {
             switch(_status) {
             case Status::begin:
@@ -277,11 +295,15 @@ void ServoThread::run()
                 break;
                 
             case Status::waiting:
-                if (buts[0]) _status = Status::rotate;
+                if (buts[0]) {
+                    pas = 0;
+                    _status = Status::rotate;
+                }
                 else break;
                 
             case Status::rotate:
             {
+                S[3] = A[3].getCurrentPos();
                 double angle = Dom[dom][0].ori;
                 angle += 150.0;
                 if (angle > 180.0) angle -= 180.0;
@@ -289,13 +311,24 @@ void ServoThread::run()
                 double aux = abs(S[3] - angle);
                 if (aux < maxErr) {
                     _status = Status::going;
-                    pas = 0;
+                    QThread::msleep(500);
                 }
             }
                 break;
                 
             case Status::going:
+            {
+                Dominoe &domi = Dom[dom][pas];
+                QVector4D newPos(domi.X, domi.Y, workHeigh, domi.ori);
                 
+                double err;
+                pas == Dom[dom].size() - 1 ? err = maxErr : err = 2*maxErr;
+                
+                if (this->isReady(S, pos, err)) {
+                    ++pas;
+                    if (pas == Dom[dom].size()) _status = Status::ending;
+                else pos = newPos;
+            }   
                 break;
                 
             case Status::ending:

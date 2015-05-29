@@ -324,12 +324,16 @@ private:
     
     static const int _sNum = 4;     ///< Number of servos to manage
     
-    /// Starting position for the controlled mode 
-    const QVector4D posStart = QVector4D(11.5, 0.0f, 23, 150); 
-    /// Idle position
-    const QVector4D posIdle = QVector4D(0.0f, 0.0f, 23, 150);
+    
     /// Working heigh
     const double workHeigh = 25.0;
+    /// Idle heigh
+    const double idleHeigh = 23.0;
+    
+    /// Starting position for the controlled mode 
+    const QVector4D posStart = QVector4D(11.5, 0.0f, idleHeigh, 150); 
+    /// Idle position
+    const QVector4D posIdle = QVector4D(0.0f, 0.0f, idleHeigh, 150);
     
     /// Contains the axis value
     QVector4D _axis;
@@ -389,8 +393,7 @@ private:
     Status _status;
     
     /// Returns true if the position is available
-    bool isPosAvailable(const QVector<double> &S, const QVector<double> &D, 
-                        const QVector4D &newPos, double err);
+    bool isPosAvailable(const QVector4D &newPos);
     
     bool isReady(const QVector<double> &S, const QVector4D &pos, double err);
     
