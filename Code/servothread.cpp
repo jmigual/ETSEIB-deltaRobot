@@ -326,13 +326,26 @@ void ServoThread::run()
                 
                 if (this->isReady(S, pos, err)) {
                     ++pas;
-                    if (pas == Dom[dom].size()) _status = Status::ending;
-                else pos = newPos;
+                    pos = newPos;
+                    if (pas == Dom[dom].size()) {
+                        _status = Status::ending;
+                        QThread::msleep(500);
+                    }
+                }
             }   
                 break;
                 
             case Status::ending:
-                
+                pos[2] = idleHeigh;
+                if (this->isReady(S, pos, maxErr)) {
+                    _status = Status::begin;
+                    
+                    if (dom == Dom.size() - 1) { 
+                        dom = 0;
+                        _mod = Mode::Reset;
+                    }
+                    else ++dom;
+                }
                 break;
             
             default:
