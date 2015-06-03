@@ -79,7 +79,7 @@ void ServoThread::readPath(QString file)
     std::sort(temp.begin(), temp.end());
     
     _mutex.lock();
-    double sep = 2; // 2cm of separation
+    double sep = 0.8; // 2cm of separation
     QVector2D ori(posStart.toVector2D());
     
     _dominoe.clear();
