@@ -34,7 +34,7 @@ void ServoThread::read(QString file)
     // Opening file for reading
     QFile f(file);
     if (!f.open(QIODevice::ReadOnly)) {
-        emit statusBar("Cannot read stored data");
+        emit statusBar("Cannot read stored data", 2000);
         return;
     }
     QDataStream df(&f);
@@ -44,7 +44,7 @@ void ServoThread::read(QString file)
     int version;
     df >> version;
     if (version != Version::v_1_0) {
-        emit statusBar("Error opening file");
+        emit statusBar("Error opening file", 2000);
         return;
     }
     
@@ -66,7 +66,7 @@ void ServoThread::readPath(QString file)
     // Opening file for reading
     QFile f(file);
     if (!f.open(QIODevice::ReadOnly)) {
-        emit statusBar("Error opening file");
+        emit statusBar("Error opening file", 2000);
         return;
     }
     
@@ -76,10 +76,11 @@ void ServoThread::readPath(QString file)
     pF >> size;
     QVector<Dominoe> temp(size);
     for (Dominoe &d : temp) pF >> d.X >> d.Y >> d.ori;
-
+    std::sort(temp.begin(), temp.end());
+    
     _mutex.lock();
     double sep = 2; // 2cm of separation
-    QVector2D ori(12, 0);
+    QVector2D ori(posStart.toVector2D());
     
     _dominoe.clear();
     for (int i = 0; i < temp.size(); ++i) {
@@ -90,19 +91,23 @@ void ServoThread::readPath(QString file)
         aux2[2] = workHeigh;
         if (not this->isPosAvailable(aux2)) continue;
         
+        double angle = temp[i].ori + 60.0;
+        if (angle >= 180.0) angle -= 180.0;
+        else if (angle >= 360.0) angle -= 360.0;
+        
         // Calculating direction vector
         aux -= ori;
         int steps = aux.length()/sep; 
         
-        QVector<Dominoe> V(steps);
+        QVector<Dominoe> V(steps + 1);
         
         // Initial point
-        V.push_back(Dominoe(ori, temp[i].ori));
+        V[0] = Dominoe(ori, angle);
         
         // Adding intermediate positions
         for (int j = 1; j <= steps; ++j){                
-            Dominoe dAux(j*aux/double(steps) + ori, temp[i].ori);
-            V[i] = dAux;
+            Dominoe dAux(j*aux/double(steps) + ori, angle);
+            V[j] = dAux;
         }
         _dominoe.push_back(V);
     }
@@ -111,7 +116,7 @@ void ServoThread::readPath(QString file)
     
     f.close();
     
-    emit statusBar("File loaded succesfully");
+    emit statusBar("File loaded succesfully", 1000);
 }
 
 void ServoThread::setData(QVector<float> &aV, QVector<bool> &buts)
@@ -209,6 +214,7 @@ void ServoThread::run()
     // Contains the domino number to put
     int dom = 0;
     int pas = 0;
+    double speed = 100.0;
     QVector< QVector< Dominoe > > Dom;
     
     // Main while
@@ -249,9 +255,10 @@ void ServoThread::run()
                 A[i].setComplianceSlope(ccwCS, cwCS);
             }
             
+            speed = _sSpeed;
             Dom = _dominoe;
             dom = 0;
-            
+            pas = 0;
             pos = posIdle;            
             this->setAngles(pos, D);
             this->setGoalPosition(ID, D, dxl);
@@ -291,27 +298,31 @@ void ServoThread::run()
                 
             case Status::take:
                 pos[2] = workHeigh;
-                if (this->isReady(S, pos, maxErr)) _status = Status::waiting;
+                if (this->isReady(S, pos, maxErr)) {
+                    emit statusBar("Esperant peça", -1);
+                    _status = Status::waiting;
+                }
                 break;
                 
             case Status::waiting:
                 if (buts[0]) {
                     pas = 0;
                     _status = Status::rotate;
+                    emit statusBar("Girant!", -1);
+                    
+                    for (AX12 &a : A) a.setSpeed(speed/3.5);
                 }
                 else break;
                 
             case Status::rotate:
             {
                 S[3] = A[3].getCurrentPos();
-                double angle = Dom[dom][0].ori;
-                angle += 150.0;
-                if (angle > 180.0) angle -= 180.0;
-                A[3].setGoalPosition(angle);
-                double aux = abs(S[3] - angle);
+                pos[3] = Dom[dom][0].ori;
+                double aux = abs(S[3] - Dom[dom][0].ori);
                 if (aux < maxErr) {
                     _status = Status::going;
-                    QThread::msleep(500);
+                    QThread::msleep(1000);
+                    emit statusBar("Posicionant", -1);
                 }
             }
                 break;
@@ -319,32 +330,38 @@ void ServoThread::run()
             case Status::going:
             {
                 Dominoe &domi = Dom[dom][pas];
-                QVector4D newPos(domi.X, domi.Y, workHeigh, domi.ori);
-                
+                pos = QVector4D (domi.X, domi.Y, workHeigh, domi.ori);
                 double err;
                 pas == Dom[dom].size() - 1 ? err = maxErr : err = 2*maxErr;
                 
                 if (this->isReady(S, pos, err)) {
                     ++pas;
-                    pos = newPos;
                     if (pas == Dom[dom].size()) {
+                        pas = 0;
                         _status = Status::ending;
-                        QThread::msleep(500);
+                        QThread::msleep(1000);
+                        emit statusBar("Col·locada", 1500);
+                        
+                        for (AX12 &a : A) a.setSpeed(speed);
                     }
                 }
             }   
                 break;
                 
             case Status::ending:
-                pos[2] = idleHeigh;
+                pos[2] = descHeigh[pas];
+                
                 if (this->isReady(S, pos, maxErr)) {
-                    _status = Status::begin;
-                    
-                    if (dom == Dom.size() - 1) { 
-                        dom = 0;
-                        _mod = Mode::Reset;
+                    ++pas;
+                    if (pas == 3) {
+                        _status = Status::begin;
+                        if (dom == Dom.size() - 1) {
+                            dom = 0;
+                            pas = 0;
+                            _mod = Mode::Reset;
+                        }
+                        else ++dom;
                     }
-                    else ++dom;
                 }
                 break;
             
@@ -355,7 +372,7 @@ void ServoThread::run()
         } 
         else if (_mod == Mode::Reset) {
             _mod = Mode::Manual;
-            pos = posStart;
+            pos = posIdle;
             dom = 0;
         }
         

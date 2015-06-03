@@ -1,6 +1,7 @@
 /// @file stable.h Contains all includes in a precompiled header
 /// 
 /// The includes are:
+/// - Algorithm
 /// - QAbstractButton
 /// - QApplication
 /// - QComboBox
@@ -33,6 +34,7 @@
 
 #ifdef __cplusplus
 
+#include <algorithm>
 #include <QAbstractButton>
 #include <QApplication>
 #include <QComboBox>

@@ -119,9 +119,6 @@ private slots:
     /// Starts or stops the thread
     void on_start_clicked();
     
-    /// Emits something to the status bar
-    void statusBar(QString s);
-    
     /// Updates all data to the servo thread
     void update();
 };

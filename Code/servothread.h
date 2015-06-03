@@ -304,15 +304,15 @@ signals:
     void modeChanged(Mode);
     
     /// Emmitted when the status bar must be changed
-    void statusBar(QString);
+    void statusBar(QString, int);
     
 private:
     
     const double cos60 = 0.5;       ///< Contains the cosinus of 60
     const double sin60 = sqrt(3)/2; ///< Contains the sinus of 60
-    const double a = 12.0;        ///< The arm length
+    const double a = 11.6;        ///< The arm length
     const double b = 22.648;        ///< The forearm length
-    const double L1 = 6.374;        ///< The base center length
+    const double L1 = 5.499;        ///< The base center length
     const double L2 = 6.000;        ///< The clamp support center lenght
     const double maxErr = 3.0;      ///< Max available error
     const double minAngle = 60.0;   ///< Minimum servo angle
@@ -326,9 +326,12 @@ private:
     
     
     /// Working heigh
-    const double workHeigh = 25.0;
+    const double workHeigh = 23.3;
     /// Idle heigh
-    const double idleHeigh = 23.0;
+    const double idleHeigh = 22.0;
+    
+    /// Descent height
+    const double descHeigh[3] = { 23.0, 22.7, 22.3 };
     
     /// Starting position for the controlled mode 
     const QVector4D posStart = QVector4D(11.5, 0.0f, idleHeigh, 150); 

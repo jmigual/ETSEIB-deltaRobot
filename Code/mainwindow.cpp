@@ -14,7 +14,8 @@ MainWindow::MainWindow(QWidget *parent) :
     
     connect(&_joy, SIGNAL(changed()), this, SLOT(joyChanged()));
     connect(&_timer, SIGNAL(timeout()), this, SLOT(update()));
-    connect(&_sT, SIGNAL(statusBar(QString)), this, SLOT(statusBar(QString)));
+    connect(&_sT, SIGNAL(statusBar(QString, int)), 
+            ui->statusbar, SLOT(showMessage(QString,int)));
     connect(&_sT, SIGNAL(modeChanged(Mode)), this, SLOT(modeChanged(Mode)));
     
     
@@ -74,7 +75,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
     else if (event->key() == Qt::Key_J) _joy.axisPress(3, -100);
     else if (event->key() == Qt::Key_K) _joy.axisPress(3, 100);
     else if (event->key() == Qt::Key_R) _sT.reset();
-    else if (event->key() == Qt::Key_Enter) _joy.buttonPress(0, true);
+    else if (event->key() == Qt::Key_Return) _joy.buttonPress(0, true);
     
     this->update();
 }
@@ -90,7 +91,7 @@ void MainWindow::keyReleaseEvent(QKeyEvent *event)
     else if (event->key() == Qt::Key_E) _joy.axisRelease(2);
     else if (event->key() == Qt::Key_J) _joy.axisRelease(3);
     else if (event->key() == Qt::Key_K) _joy.axisRelease(3);
-    else if (event->key() == Qt::Key_Enter) _joy.buttonRelease(0);
+    else if (event->key() == Qt::Key_Return) _joy.buttonRelease(0);
     this->update();
 }
 
@@ -209,11 +210,6 @@ void MainWindow::on_start_clicked()
     }
 }
 
-void MainWindow::statusBar(QString s)
-{
-    ui->statusbar->showMessage(s, 1500);
-}
-
 void MainWindow::update()
 {
     // Joystick values
@@ -228,7 +224,6 @@ void MainWindow::update()
         _butsV[i] = temp;
         _buts[i]->setEnabled(temp);
     }
-    
     _sT.setData(_axisV, _butsV);
     
     QVector<ServoThread::Servo> servo = _sT.getServosInfo();
