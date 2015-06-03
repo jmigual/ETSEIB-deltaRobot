@@ -383,7 +383,7 @@ void ServoThread::setAngles(const QVector4D &pos, QVector<double> &D)
     double z3 = -pos.y()*cos60 + pos.x()*sin60;
     D[2] = singleAngle(x3,y3,z3);
     
-    for (double &d : D) d = 240 + d*180/M_PI;
+    for (double &d : D) d = 150.0 - d*180/M_PI;
     D[3] = pos.w();
 }
 

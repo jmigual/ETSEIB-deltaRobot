@@ -310,7 +310,7 @@ private:
     
     const double cos60 = 0.5;       ///< Contains the cosinus of 60
     const double sin60 = sqrt(3)/2; ///< Contains the sinus of 60
-    const double a = 17.233;        ///< The arm length
+    const double a = 12.0;        ///< The arm length
     const double b = 22.648;        ///< The forearm length
     const double L1 = 6.374;        ///< The base center length
     const double L2 = 6.000;        ///< The clamp support center lenght

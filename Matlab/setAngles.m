@@ -4,7 +4,7 @@ function D = setAngles(x, y, z)
 
 % Mides del robot
 %a = 17.233;     % Llargada brac
-a = 10;
+a = 12;
 b = 22.648;     % Llargada avantbrac
 L1 = 6.374;     % Distancia al centre del triangle de la base
 L2 = 6;         % Distancia al centre del triangle de la pinca
@@ -32,7 +32,7 @@ z3 = -y*cos60 + x*sin60;
 D(3) = singleAngle(x3,y3,z3, a, b);
 
 for  i = 1:3
-    D(i) = 240 + D(i)*180/pi;
+    D(i) = 150 - D(i)*180/pi;
 end
 
 end
