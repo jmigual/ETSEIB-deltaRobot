@@ -25,3 +25,5 @@
 \contentsline {subsubsection}{\numberline {3.4.2}Càlcul de tots els angles}{16}{subsubsection.3.4.2}
 \contentsline {subsubsection}{\numberline {3.4.3}Càlcul del rang de treball}{17}{subsubsection.3.4.3}
 \contentsline {section}{\numberline {4}Informe de programació}{18}{section.4}
+\contentsline {subsection}{\numberline {4.1}Control automàtic}{18}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Unity}{19}{subsection.4.2}

@@ -1,6 +1,7 @@
+\section{Informe cinemàtic}
 \subsection{Cinemàtica inversa}
 
-El càlcul invers és el que ens serveix per trobar els angles a partir de la posició a la que volem situar la plataforma. Es pot fer el càlcul per cada motor de manera separada. Primer s'han de definir les mides principals del robot que s'utilitzaran en el càlcul.
+El càlcul invers és el que serveix per trobar els angles a partir de la posició a la que es vol situar la plataforma. Es pot fer el càlcul per cada motor de manera separada. Primer s'han de definir les mides principals del robot que s'usaran en el càlcul.
 
 \subsubsection{Definicions de variables}
 \begin{figure}[h!]
@@ -16,27 +17,27 @@ El càlcul invers és el que ens serveix per trobar els angles a partir de la po
 \end{description}
 
 \subsubsection{Canvis de base}
-Com el càlcul de cada angle es independent de la resta, es poden fer canvis de base per poder fer-ho tot amb una sola funció a l'hora de programar. La base inicial \(\{x_0,y_0,z_0\}\) esta al centre de la base, amb la x en la direcció del motor 1. Les bases \(\{x_i,y_i,z_i\}\) que farem servir per calcular l'angle del motor \emph{i} estan posicionades al centre del eix de cada motor, i la seva x apunta en la direcció perpendicular al eix del motor. També es suma L2 a \(x_i\) per fer que la posició objectiu sigui el punt de connexió entre la plataforma i l'avantbraç en lloc del centre de la plataforma.
+Com el càlcul de cada angle és independent de la resta, es poden fer canvis de base per poder fer-ho tot amb una sola funció a l'hora de programar. La base inicial $\{x_0,y_0,z_0\}$ està al centre de la base, amb la $x$ en la direcció del motor 1. Les bases $\{x_i,y_i,z_i\}$ que s'utilitzaran per calcular l'angle del motor $i$ estan posicionades al centre del eix de cada motor, i la seva $x$ apunta en la direcció perpendicular al eix del motor. També es suma $L2$ a $x_i$ per fer que la posició objectiu sigui el punt de connexió entre la plataforma i l'avantbraç en lloc del centre de la plataforma.
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=7cm]{./sketch/canvi_base}
 \end{figure}
 
-\[\{x_1,y_1,z_1\}=\{x_0+L2-L1,y_0,z_0\}\]
-\[\{x_2,y_2,z_2\}=\{z_0sin(60)-x_0cos(60)+L2-L1,y_0,-z_0cos(60)-x_0sin(60)\}\]
-\[\{x_3,y_3,z_3\}=\{-z_0sin(60)-x_0cos(60)+L2-L1,y_0,-z_0cos(60)+x_0sin(60)\}\]
+$$\{x_1,y_1,z_1\}=\{x_0+L2-L1,y_0,z_0\}$$
+$$\{x_2,y_2,z_2\}=\{z_0sin(60)-x_0cos(60)+L2-L1,y_0,-z_0cos(60)-x_0sin(60)\}$$
+$$\{x_3,y_3,z_3\}=\{-z_0sin(60)-x_0cos(60)+L2-L1,y_0,-z_0cos(60)+x_0sin(60)\}$$
 
 \subsubsection{Càlcul d'un angle}
 
-El motor només pot moure el final del braç en un cercle, gràcies a això es poden deduir dos formules:\[x^2+y^2=a^2 \quad \textrm{i} \quad z=0\]
+El motor només pot moure el final del braç en un cercle, gràcies a això es poden deduir dues formules:$$x^2+y^2=a^2 \quad \textrm{i} \quad z=0$$
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=8cm]{./sketch/calcul_angle}
 \end{figure}
 
-També es pot veure que, com ha d'estar connectat a la plataforma amb una distancia b mitjançant l'avantbraç, s'ha de complir la formula: \[(x-x_i)^2+(y-y_i)^2+(z-z_i)^2=b^2\]
+També es pot veure que, com ha d'estar connectat a la plataforma amb una distancia $b$ mitjançant l'avantbraç, s'ha de complir la formula: \[(x-x_i)^2+(y-y_i)^2+(z-z_i)^2=b^2\]
 Ara només cal resoldre el sistema d'equacions.
 
 \[x^2 - 2xx_i + x_i^2 + y^2 - 2yy_i + y_i^2 + z_i^2 = b^2\]
@@ -50,14 +51,14 @@ Ara només cal resoldre el sistema d'equacions.
 
 \subsection{Comprovació dels càlculs}
 
-Per poder provar les nostres funcions sense trencar el robot, vam decidir fer una simulació en del Robot en Unity. La simulació es molt simple, Unity s'encarrega de dibuixar un esquema 3D del robot fent servir línies a partir de la posició desitjada de la plataforma i els angles del robot, calculats amb la nostra funció.
+Per poder provar les nostres funcions sense trencar el robot, es va decidir fer una simulació en del Robot en Unity. La simulació és molt simple, Unity s'encarrega de dibuixar un esquema 3D del robot utilitzant línies a partir de la posició desitjada de la plataforma i els angles del robot calculats amb la funció trobada.
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=7cm]{./images/simulacioRobot}
 \end{figure}
 
-Aquesta aplicació també es fa ver servir per determinar quin símbol s'ha de posar abans de les dos arrels. Per la primera arrel es va determinar que havia de anar acompanyada d'un signe negatiu només quan \(x_i\) és negatiu. La segona arrel només ha de ser negativa a partir de quan el ha d'estar completament cap a dalt. La condició exacta es: \(b^2-(y_i+a)^2<x_i^2+z_i^2\) 
+Aquesta aplicació també es va usar per determinar quin símbol s'ha de posar abans de les dos arrels. Per la primera arrel es va determinar que havia de anar acompanyada d'un signe negatiu només quan \(x_i\) és negatiu. La segona arrel només ha de ser negativa a partir de quan el ha d'estar completament cap a dalt. La condició exacta es: \(b^2-(y_i+a)^2<x_i^2+z_i^2\) 
 
 \newpage
 \subsection{Rang de treball}
@@ -84,7 +85,7 @@ Per calcular el rang de treball s'ha utilitzat la fórmula de l'apartat anterior
 \hfill
 \end{figure}
 
-Aquesta superfície esta calculada amb tots els punts possibles teòrics però el robot te moltes limitacions mecàniques que no es tenen en compte en aquest càlcul. Per exemple els paral·lelograms dels avantbraços no poden tenir un angle qualsevol, ja que les barres de metall xoquen contra les plaques de fusta del braç si l'angle es molt petit.
+Aquesta superfície està calculada amb tots els punts possibles teòrics però el robot te moltes limitacions mecàniques que no es tenen en compte en aquest càlcul. Per exemple els paral·lelograms dels avantbraços no poden tenir un angle qualsevol, ja que les barres de metall xoquen contra les plaques de fusta del braç si l'angle es molt petit.
 
 \clearpage
 \subsection{Implementació en Matlab}

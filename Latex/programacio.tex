@@ -1,0 +1,61 @@
+\section{Informe de programació}
+\subsection{Control automàtic}
+
+Al control automàtic se li carrega un arxiu que conté totes les peces de dominó que s'han de col·locar i executar el programa. Aquest llegeix l'arxiu i, mitjançant el següent algoritme, les va posant al seu lloc d'una en una. 
+
+Per col·locar una peça es divideix la trajectòria en múltiples passos, aquí cada posició en un pas concret per a un dominó en concret es denota \verb|posicio[domino][pas]|.
+\newline
+
+\begin{tikzpicture}[node distance=1cm, auto, align=center]
+\node(start)[startstop] {Inici};
+\node(init)[process, below = of start]{\verb|domino = 1|};
+\node(take)[process, below = of init, text width = 4cm]{Anar a posició d'espera per sota};
+\node(takeUp)[process, below = of take, text width = 4cm]{Augmentar altura fins altura de treball};
+
+\node(waitRead)[io, below = of takeUp]{Llegir teclat};
+\node(waitDeci)[decision, below = of waitRead]{Enter premut?};
+
+\node(rotate)[process, below = of waitDeci, text width=5cm]{Girar peça els angles especificats};
+\node(init2)[process, below = of rotate]{pas = 1};
+
+\node(going)[node distance = 3.7, process, right = of start]{\verb|pos = posicio[domino][pas]|};
+\node(going2)[process, below = of going, text width=4cm]{Ordenar als servos anar a l'angle de 'pos'};
+\node(goingRead)[io, below = of going2, text width=3cm]{Llegir posició servos};
+\node(goingIf)[decision, below = of goingRead]{\verb|pos == posicio servos ?|};
+\node(goingEnd)[decision, below = of goingIf]{\verb|pas == passos[domino] ?|};
+\node(goingInc)[process, right = of goingEnd, node distance = 0.8cm]{\verb|pas = pas + 1|};
+\node(goingEnd2)[decision, below = of goingEnd]{\verb|domino == nº dominos ?|};
+\node(goingEnd3)[process, below = of goingEnd2]{\verb|domino = domino + 1|};
+\node(end)[startstop, right = of goingEnd2, node distance = 0.8cm]{Fi};
+
+
+\node(precalc)[outcalc, above = of start, node distance = 0.5cm]{Precàlcul};
+
+\draw [arrow] (start) -- (init);
+\draw [arrow] (init) -- (take);
+\draw [arrow] (take) -- (takeUp);
+\draw [arrow] (takeUp) -- (waitRead);
+
+\draw [arrow] (waitRead) -- (waitDeci);
+\draw [arrow] (waitDeci) --++ (3, 0) node[near start]{no} |- (waitRead);
+\draw [arrow] (waitDeci) -- node[near start] {si} (rotate);
+
+\draw [arrow] (rotate) -- (init2);
+\draw [arrow] (init2) --++ (3.5, 0) |- (going);
+
+\draw [arrow] (going) -- (going2);
+\draw [arrow] (going2) -- (goingRead);
+\draw [arrow] (goingRead) -- (goingIf);
+\draw [arrow] (goingIf) --++ (4, 0) node[near start]{no} |- (goingRead);
+\draw [arrow] (goingIf) -- node[near start]{si} (goingEnd);
+\draw [arrow] (goingEnd) -- node[near start]{no} (goingInc);
+\draw [arrow] (goingInc) |- (going);
+\draw [arrow] (goingEnd) -- node[near start]{si} (goingEnd2);
+\draw [arrow] (goingEnd2) -- node[near start]{no} (goingEnd3);
+
+\draw [arrow] (goingEnd3) --++(-4, 0) |- (take);
+\draw [arrow] (goingEnd2) -- node[near start]{si} (end);
+\end{tikzpicture}
+
+\subsection{Unity}
+
