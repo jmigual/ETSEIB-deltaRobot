@@ -1,4 +1,4 @@
-\hypertarget{a00006}{}\section{Options\+Window Class Reference}
+\hypertarget{a00006}{}\subsection{Options\+Window Class Reference}
 \label{a00006}\index{Options\+Window@{Options\+Window}}
 
 
@@ -27,12 +27,12 @@ Collaboration diagram for Options\+Window\+:\nopagebreak
 \includegraphics[width=297pt]{d8/d41/a00038}
 \end{center}
 \end{figure}
-\subsection*{Public Slots}
+\subsubsection*{Public Slots}
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{a00006_ae8c0373be58da710194f8d14f1c3c4dc}{joystick\+Changed} ()
 \begin{DoxyCompactList}\small\item\em To handle the change of a joystick. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Public Member Functions}
+\subsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{a00006_ae8e0a610d13a0478bdac57ec7cd4afba}{Options\+Window} (X\+Joystick \&J, \hyperlink{a00009}{Servo\+Thread} $\ast$servo, Q\+Widget $\ast$parent=0)
@@ -41,12 +41,12 @@ void \hyperlink{a00006_ae8c0373be58da710194f8d14f1c3c4dc}{joystick\+Changed} ()
 \begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
 void \hyperlink{a00006_ab0a56ad7347c20046602a7a2a1c83397}{store\+Data} ()
 \begin{DoxyCompactList}\small\item\em Stores all data. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Private Types}
+\subsubsection*{Private Types}
 \begin{DoxyCompactItemize}
 \item 
 typedef Q\+Dialog\+Button\+Box \hyperlink{a00006_aadac35a91eb1992c12e4ba6c4d5ad1be}{Q\+D\+B}
 \end{DoxyCompactItemize}
-\subsection*{Private Slots}
+\subsubsection*{Private Slots}
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{a00006_a18763ff318688083c7ee5a21f22e8e98}{events} ()
@@ -57,12 +57,12 @@ void \hyperlink{a00006_ad5365d452e8bcd86cbb64b9ec42c3b7e}{on\+\_\+servo\+Refresh
 \begin{DoxyCompactList}\small\item\em Refreshes all the servos connected to the port. \end{DoxyCompactList}\item 
 void \hyperlink{a00006_ae52f8ca70b1bfa4c8d21d25e49e309d7}{refresh\+Finish} ()
 \begin{DoxyCompactList}\small\item\em Handles the endig of refresh function. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Private Member Functions}
+\subsubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{a00006_aae43fcdcc9941fbce40c35c449bfd39e}{key\+Press\+Event} (Q\+Key\+Event $\ast$event)
 \end{DoxyCompactItemize}
-\subsection*{Private Attributes}
+\subsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 X\+Joystick \& \hyperlink{a00006_a1bf846ab681ab245f70adac30999947c}{\+\_\+joy}
@@ -83,19 +83,19 @@ Ui\+::\+Options\+Window $\ast$ \hyperlink{a00006_a8347442d5b3b670e8fff0c4102db1f
 \begin{DoxyCompactList}\small\item\em Containsh the G\+U\+I. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
+\subsubsection{Detailed Description}
 Class used to handle a Window to set the options. 
 
-\subsection{Member Typedef Documentation}
+\subsubsection{Member Typedef Documentation}
 \hypertarget{a00006_aadac35a91eb1992c12e4ba6c4d5ad1be}{}\index{Options\+Window@{Options\+Window}!Q\+D\+B@{Q\+D\+B}}
 \index{Q\+D\+B@{Q\+D\+B}!Options\+Window@{Options\+Window}}
-\subsubsection[{Q\+D\+B}]{\setlength{\rightskip}{0pt plus 5cm}typedef Q\+Dialog\+Button\+Box {\bf Options\+Window\+::\+Q\+D\+B}\hspace{0.3cm}{\ttfamily [private]}}\label{a00006_aadac35a91eb1992c12e4ba6c4d5ad1be}
+\paragraph[{Q\+D\+B}]{\setlength{\rightskip}{0pt plus 5cm}typedef Q\+Dialog\+Button\+Box {\bf Options\+Window\+::\+Q\+D\+B}\hspace{0.3cm}{\ttfamily [private]}}\label{a00006_aadac35a91eb1992c12e4ba6c4d5ad1be}
 
 
-\subsection{Constructor \& Destructor Documentation}
+\subsubsection{Constructor \& Destructor Documentation}
 \hypertarget{a00006_ae8e0a610d13a0478bdac57ec7cd4afba}{}\index{Options\+Window@{Options\+Window}!Options\+Window@{Options\+Window}}
 \index{Options\+Window@{Options\+Window}!Options\+Window@{Options\+Window}}
-\subsubsection[{Options\+Window}]{\setlength{\rightskip}{0pt plus 5cm}Options\+Window\+::\+Options\+Window (
+\paragraph[{Options\+Window}]{\setlength{\rightskip}{0pt plus 5cm}Options\+Window\+::\+Options\+Window (
 \begin{DoxyParamCaption}
 \item[{X\+Joystick \&}]{J, }
 \item[{{\bf Servo\+Thread} $\ast$}]{servo, }
@@ -166,7 +166,7 @@ Default constructor must be intialized with a few values.
 00047     
 00048     QVector<ServoThread::Servo> S(\hyperlink{a00006_acba1566fea3f831000d5e1c1edc3e776}{\_servo}->\hyperlink{a00009_a5fd8ef13314428f5ba7646730cc58f1c}{getServosInfo}());
 00049     Q\_ASSERT(S.size() == \hyperlink{a00006_acba1566fea3f831000d5e1c1edc3e776}{\_servo}->\hyperlink{a00009_ad6ead0ac6fce4539d4b0ff5a3e18ac38}{getServosNum}());
-00050     
+00050      
 00051     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < S.size(); ++i) \{
 00052         \textcolor{keywordtype}{int} ID = S[i].ID;
 00053         
@@ -187,7 +187,7 @@ Default constructor must be intialized with a few values.
 \end{DoxyCode}
 \hypertarget{a00006_a034c885fe8bb4416e732a9571d14a6b4}{}\index{Options\+Window@{Options\+Window}!````~Options\+Window@{$\sim$\+Options\+Window}}
 \index{````~Options\+Window@{$\sim$\+Options\+Window}!Options\+Window@{Options\+Window}}
-\subsubsection[{$\sim$\+Options\+Window}]{\setlength{\rightskip}{0pt plus 5cm}Options\+Window\+::$\sim$\+Options\+Window (
+\paragraph[{$\sim$\+Options\+Window}]{\setlength{\rightskip}{0pt plus 5cm}Options\+Window\+::$\sim$\+Options\+Window (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
@@ -205,10 +205,10 @@ Destructor.
 \end{DoxyCode}
 
 
-\subsection{Member Function Documentation}
+\subsubsection{Member Function Documentation}
 \hypertarget{a00006_a1f7d6790701ff9b1301533b8ad045ede}{}\index{Options\+Window@{Options\+Window}!button\+Clicked@{button\+Clicked}}
 \index{button\+Clicked@{button\+Clicked}!Options\+Window@{Options\+Window}}
-\subsubsection[{button\+Clicked}]{\setlength{\rightskip}{0pt plus 5cm}void Options\+Window\+::button\+Clicked (
+\paragraph[{button\+Clicked}]{\setlength{\rightskip}{0pt plus 5cm}void Options\+Window\+::button\+Clicked (
 \begin{DoxyParamCaption}
 \item[{Q\+Abstract\+Button $\ast$}]{but}
 \end{DoxyParamCaption}
@@ -233,7 +233,7 @@ Handles a button clicked.
 \end{DoxyCode}
 \hypertarget{a00006_a18763ff318688083c7ee5a21f22e8e98}{}\index{Options\+Window@{Options\+Window}!events@{events}}
 \index{events@{events}!Options\+Window@{Options\+Window}}
-\subsubsection[{events}]{\setlength{\rightskip}{0pt plus 5cm}void Options\+Window\+::events (
+\paragraph[{events}]{\setlength{\rightskip}{0pt plus 5cm}void Options\+Window\+::events (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
@@ -280,7 +280,7 @@ Handles events that need to be updated continously.
 \end{DoxyCode}
 \hypertarget{a00006_ae8c0373be58da710194f8d14f1c3c4dc}{}\index{Options\+Window@{Options\+Window}!joystick\+Changed@{joystick\+Changed}}
 \index{joystick\+Changed@{joystick\+Changed}!Options\+Window@{Options\+Window}}
-\subsubsection[{joystick\+Changed}]{\setlength{\rightskip}{0pt plus 5cm}void Options\+Window\+::joystick\+Changed (
+\paragraph[{joystick\+Changed}]{\setlength{\rightskip}{0pt plus 5cm}void Options\+Window\+::joystick\+Changed (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
@@ -312,7 +312,7 @@ To handle the change of a joystick.
 \end{DoxyCode}
 \hypertarget{a00006_aae43fcdcc9941fbce40c35c449bfd39e}{}\index{Options\+Window@{Options\+Window}!key\+Press\+Event@{key\+Press\+Event}}
 \index{key\+Press\+Event@{key\+Press\+Event}!Options\+Window@{Options\+Window}}
-\subsubsection[{key\+Press\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void Options\+Window\+::key\+Press\+Event (
+\paragraph[{key\+Press\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void Options\+Window\+::key\+Press\+Event (
 \begin{DoxyParamCaption}
 \item[{Q\+Key\+Event $\ast$}]{event}
 \end{DoxyParamCaption}
@@ -326,7 +326,7 @@ To handle the change of a joystick.
 \end{DoxyCode}
 \hypertarget{a00006_ad5365d452e8bcd86cbb64b9ec42c3b7e}{}\index{Options\+Window@{Options\+Window}!on\+\_\+servo\+Refresh\+\_\+clicked@{on\+\_\+servo\+Refresh\+\_\+clicked}}
 \index{on\+\_\+servo\+Refresh\+\_\+clicked@{on\+\_\+servo\+Refresh\+\_\+clicked}!Options\+Window@{Options\+Window}}
-\subsubsection[{on\+\_\+servo\+Refresh\+\_\+clicked}]{\setlength{\rightskip}{0pt plus 5cm}void Options\+Window\+::on\+\_\+servo\+Refresh\+\_\+clicked (
+\paragraph[{on\+\_\+servo\+Refresh\+\_\+clicked}]{\setlength{\rightskip}{0pt plus 5cm}void Options\+Window\+::on\+\_\+servo\+Refresh\+\_\+clicked (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
@@ -350,7 +350,7 @@ Refreshes all the servos connected to the port.
 \end{DoxyCode}
 \hypertarget{a00006_ae52f8ca70b1bfa4c8d21d25e49e309d7}{}\index{Options\+Window@{Options\+Window}!refresh\+Finish@{refresh\+Finish}}
 \index{refresh\+Finish@{refresh\+Finish}!Options\+Window@{Options\+Window}}
-\subsubsection[{refresh\+Finish}]{\setlength{\rightskip}{0pt plus 5cm}void Options\+Window\+::refresh\+Finish (
+\paragraph[{refresh\+Finish}]{\setlength{\rightskip}{0pt plus 5cm}void Options\+Window\+::refresh\+Finish (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
@@ -367,7 +367,7 @@ Handles the endig of refresh function.
 \end{DoxyCode}
 \hypertarget{a00006_ab0a56ad7347c20046602a7a2a1c83397}{}\index{Options\+Window@{Options\+Window}!store\+Data@{store\+Data}}
 \index{store\+Data@{store\+Data}!Options\+Window@{Options\+Window}}
-\subsubsection[{store\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void Options\+Window\+::store\+Data (
+\paragraph[{store\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void Options\+Window\+::store\+Data (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
@@ -397,59 +397,59 @@ Stores all data.
 \end{DoxyCode}
 
 
-\subsection{Member Data Documentation}
+\subsubsection{Member Data Documentation}
 \hypertarget{a00006_a1bf846ab681ab245f70adac30999947c}{}\index{Options\+Window@{Options\+Window}!\+\_\+joy@{\+\_\+joy}}
 \index{\+\_\+joy@{\+\_\+joy}!Options\+Window@{Options\+Window}}
-\subsubsection[{\+\_\+joy}]{\setlength{\rightskip}{0pt plus 5cm}X\+Joystick\& Options\+Window\+::\+\_\+joy\hspace{0.3cm}{\ttfamily [private]}}\label{a00006_a1bf846ab681ab245f70adac30999947c}
+\paragraph[{\+\_\+joy}]{\setlength{\rightskip}{0pt plus 5cm}X\+Joystick\& Options\+Window\+::\+\_\+joy\hspace{0.3cm}{\ttfamily [private]}}\label{a00006_a1bf846ab681ab245f70adac30999947c}
 
 
 Contains the Joystick to handle options. 
 
 \hypertarget{a00006_a9bd4dccc7a544b1db78dc8cf330b88f6}{}\index{Options\+Window@{Options\+Window}!\+\_\+port\+Size@{\+\_\+port\+Size}}
 \index{\+\_\+port\+Size@{\+\_\+port\+Size}!Options\+Window@{Options\+Window}}
-\subsubsection[{\+\_\+port\+Size}]{\setlength{\rightskip}{0pt plus 5cm}int Options\+Window\+::\+\_\+port\+Size\hspace{0.3cm}{\ttfamily [private]}}\label{a00006_a9bd4dccc7a544b1db78dc8cf330b88f6}
+\paragraph[{\+\_\+port\+Size}]{\setlength{\rightskip}{0pt plus 5cm}int Options\+Window\+::\+\_\+port\+Size\hspace{0.3cm}{\ttfamily [private]}}\label{a00006_a9bd4dccc7a544b1db78dc8cf330b88f6}
 
 
 Contains the size of the ports. 
 
 \hypertarget{a00006_acba1566fea3f831000d5e1c1edc3e776}{}\index{Options\+Window@{Options\+Window}!\+\_\+servo@{\+\_\+servo}}
 \index{\+\_\+servo@{\+\_\+servo}!Options\+Window@{Options\+Window}}
-\subsubsection[{\+\_\+servo}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Servo\+Thread}$\ast$ Options\+Window\+::\+\_\+servo\hspace{0.3cm}{\ttfamily [private]}}\label{a00006_acba1566fea3f831000d5e1c1edc3e776}
+\paragraph[{\+\_\+servo}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Servo\+Thread}$\ast$ Options\+Window\+::\+\_\+servo\hspace{0.3cm}{\ttfamily [private]}}\label{a00006_acba1566fea3f831000d5e1c1edc3e776}
 
 
 Pointer to the servo thread class. 
 
 \hypertarget{a00006_a45137fbf71bbee10e171019c913b88b7}{}\index{Options\+Window@{Options\+Window}!\+\_\+servo\+C@{\+\_\+servo\+C}}
 \index{\+\_\+servo\+C@{\+\_\+servo\+C}!Options\+Window@{Options\+Window}}
-\subsubsection[{\+\_\+servo\+C}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Vector$<$ Q\+Combo\+Box $\ast$$>$ Options\+Window\+::\+\_\+servo\+C\hspace{0.3cm}{\ttfamily [private]}}\label{a00006_a45137fbf71bbee10e171019c913b88b7}
+\paragraph[{\+\_\+servo\+C}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Vector$<$ Q\+Combo\+Box $\ast$$>$ Options\+Window\+::\+\_\+servo\+C\hspace{0.3cm}{\ttfamily [private]}}\label{a00006_a45137fbf71bbee10e171019c913b88b7}
 
 
 Contains all servo Q\+Combo\+Boxes. 
 
 \hypertarget{a00006_ab143e1d06250ec778309da1a3807b602}{}\index{Options\+Window@{Options\+Window}!\+\_\+s\+F@{\+\_\+s\+F}}
 \index{\+\_\+s\+F@{\+\_\+s\+F}!Options\+Window@{Options\+Window}}
-\subsubsection[{\+\_\+s\+F}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Servo\+Find} Options\+Window\+::\+\_\+s\+F\hspace{0.3cm}{\ttfamily [private]}}\label{a00006_ab143e1d06250ec778309da1a3807b602}
+\paragraph[{\+\_\+s\+F}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Servo\+Find} Options\+Window\+::\+\_\+s\+F\hspace{0.3cm}{\ttfamily [private]}}\label{a00006_ab143e1d06250ec778309da1a3807b602}
 
 
 Thread to find the servos in a non blocking operation. 
 
 \hypertarget{a00006_af6320942b8558140989f552b3bbc1fbd}{}\index{Options\+Window@{Options\+Window}!\+\_\+timer@{\+\_\+timer}}
 \index{\+\_\+timer@{\+\_\+timer}!Options\+Window@{Options\+Window}}
-\subsubsection[{\+\_\+timer}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Timer Options\+Window\+::\+\_\+timer\hspace{0.3cm}{\ttfamily [private]}}\label{a00006_af6320942b8558140989f552b3bbc1fbd}
+\paragraph[{\+\_\+timer}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Timer Options\+Window\+::\+\_\+timer\hspace{0.3cm}{\ttfamily [private]}}\label{a00006_af6320942b8558140989f552b3bbc1fbd}
 
 
 Waits for a new C\+O\+M port. 
 
 \hypertarget{a00006_af031403c7017cf086c0b85186c53471e}{}\index{Options\+Window@{Options\+Window}!status@{status}}
 \index{status@{status}!Options\+Window@{Options\+Window}}
-\subsubsection[{status}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Status\+Bar$\ast$ Options\+Window\+::status\hspace{0.3cm}{\ttfamily [private]}}\label{a00006_af031403c7017cf086c0b85186c53471e}
+\paragraph[{status}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Status\+Bar$\ast$ Options\+Window\+::status\hspace{0.3cm}{\ttfamily [private]}}\label{a00006_af031403c7017cf086c0b85186c53471e}
 
 
 Status bar. 
 
 \hypertarget{a00006_a8347442d5b3b670e8fff0c4102db1f88}{}\index{Options\+Window@{Options\+Window}!ui@{ui}}
 \index{ui@{ui}!Options\+Window@{Options\+Window}}
-\subsubsection[{ui}]{\setlength{\rightskip}{0pt plus 5cm}Ui\+::\+Options\+Window$\ast$ Options\+Window\+::ui\hspace{0.3cm}{\ttfamily [private]}}\label{a00006_a8347442d5b3b670e8fff0c4102db1f88}
+\paragraph[{ui}]{\setlength{\rightskip}{0pt plus 5cm}Ui\+::\+Options\+Window$\ast$ Options\+Window\+::ui\hspace{0.3cm}{\ttfamily [private]}}\label{a00006_a8347442d5b3b670e8fff0c4102db1f88}
 
 
 Containsh the G\+U\+I. 

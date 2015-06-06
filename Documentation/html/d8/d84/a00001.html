@@ -46,8 +46,8 @@
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-types">Private Types</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../dc/d3c/a00028.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -69,6 +69,58 @@
 <area shape="rect" id="node2" href="../../d0/d0b/a00004.html" title="Dynamixel 1.0 protocol class. " alt="" coords="5,95,87,121"/><area shape="rect" id="node3" href="../../d1/d7c/a00003.html" title="Dynamixel SDK platform dependent. " alt="" coords="15,5,77,32"/></map>
 <center><span class="legend">[<a href="../../graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a08d272b502d65464202a3aa97825aec0"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0">ROM</a> { <br />
+&#160;&#160;<a class="el" href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0afaeddb6fc62aacc16e88f98a77efbcff">ModelNumber</a> = 0, 
+<a class="el" href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0a234de9d5194d6b6f4e45b854dbf1442d">VersionFirmware</a> = 2, 
+<a class="el" href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0ab2565d5698c9d943a8bcecf02b1389ad">ID</a> = 3, 
+<a class="el" href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0afa8229ff24576bd10b061c259cc1146d">BaudRate</a> = 4, 
+<br />
+&#160;&#160;<a class="el" href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0a1e7fa07a9a5a28584a287668a95dbb4f">ReturnDelayTime</a> = 5, 
+<a class="el" href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0aae428847c3648681e8aae8f0a12c6880">CWAngleLimit</a> = 6, 
+<a class="el" href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0ac631a1a4dfb22cd02e863fa19f509523">CCWAngleLimit</a> = 8, 
+<a class="el" href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0aa9f1a3f67a0bf70f6e6530cac9f55153">HighestLimitTemp</a> = 11, 
+<br />
+&#160;&#160;<a class="el" href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0a75d2b929c12ad95dfe84b3214e5badd5">LowestLimitVoltage</a> = 12, 
+<a class="el" href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0a39bed5183cada3039894ec459e9cdba4">HighestLimitVoltage</a> = 13, 
+<a class="el" href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0aa45ee204b37e8a8657bbb0be1f3f2ee5">MaxTorque</a> = 14, 
+<a class="el" href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0a1f50b233b75db417410a9ad75671c5f8">StatusReturnLevel</a> = 16, 
+<br />
+&#160;&#160;<a class="el" href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0a69af7afba3f29c206407f802a6975dd1">AlarmLED</a> = 17, 
+<a class="el" href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0a017096d92de6aa9fa691df824cd21757">AlarmShutdown</a> = 18
+<br />
+ }</td></tr>
+<tr class="memdesc:a08d272b502d65464202a3aa97825aec0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains all the EEPROM directions enumeration.  <a href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0">More...</a><br /></td></tr>
+<tr class="separator:a08d272b502d65464202a3aa97825aec0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a672068c48bbee921e5856cc44b1c81c1"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1">RAM</a> { <br />
+&#160;&#160;<a class="el" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1ac4597f1de691116b512ae043da6ae7a3">TorqueEnable</a> = 24, 
+<a class="el" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1af9d9ebff7bdb8cbb20edfac6f553f796">LED</a> = 25, 
+<a class="el" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1ac2410c95fb1bb2343adc3d3b621cb1d0">CWComplianceMargin</a> = 26, 
+<a class="el" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1aa9e82bf2f003910708111a4ade3ec42d">CCWComplianceMargin</a> = 27, 
+<br />
+&#160;&#160;<a class="el" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1a1dffe196ada84077dfbfcd72d31be8c8">CWComplianceSlope</a> = 28, 
+<a class="el" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1a624015aab9c06310e1f96bafe8f934a7">CCWComplianceSlope</a> = 29, 
+<a class="el" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1ae3d6ac0b56a8ab2b188f14545473cbef">GoalPosition</a> = 30, 
+<a class="el" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1a77389ef2d6dc4bfe760357bd375d5284">MovingSpeed</a> = 32, 
+<br />
+&#160;&#160;<a class="el" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1adc48ae20914d1771097b17c08be83bbc">TorqueLimit</a> = 34, 
+<a class="el" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1ac3714d28e016c704ea8451c18700dea8">PresentPosition</a> = 36, 
+<a class="el" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1a481b48fdf5e3609568bdbde19c32ef90">PresentSpeed</a> = 38, 
+<a class="el" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1a4acb9c359962b60a1dfc900550f4b2b2">PresentLoad</a> = 40, 
+<br />
+&#160;&#160;<a class="el" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1a908c1a7f566782c4c258c779b5ca54cd">PresentVoltage</a> = 42, 
+<a class="el" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1ae00a92c23c2af2faf19eb051424cf271">PresentTemperature</a> = 43, 
+<a class="el" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1a426e2185243d7ae4213d048abbf56938">Registered</a> = 44, 
+<a class="el" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1a1649d49cd35bc3ebfdc8be06b61b7caf">Moving</a> = 46, 
+<br />
+&#160;&#160;<a class="el" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1a67e9c5c73f91985138111a792458e5ad">Lock</a> = 47, 
+<a class="el" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1a491959069a5cf99cf49bd2fd9ea5ec92">Punch</a> = 48
+<br />
+ }</td></tr>
+<tr class="memdesc:a672068c48bbee921e5856cc44b1c81c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains all the RAM directions enumerations.  <a href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1">More...</a><br /></td></tr>
+<tr class="separator:a672068c48bbee921e5856cc44b1c81c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ab7c557985e755d6119e5e2d979f928ae"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d84/a00001.html#ab7c557985e755d6119e5e2d979f928ae">AX12</a> ()</td></tr>
@@ -129,58 +181,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a95428eea4d5165b81d80e4ab38e33b7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">To set the maximum speed from 0% to 100% if joint mode or from -100% to 100% if wheel mode.  <a href="#a95428eea4d5165b81d80e4ab38e33b7b">More...</a><br /></td></tr>
 <tr class="separator:a95428eea4d5165b81d80e4ab38e33b7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-types"></a>
-Private Types</h2></td></tr>
-<tr class="memitem:a08d272b502d65464202a3aa97825aec0"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0">ROM</a> { <br />
-&#160;&#160;<a class="el" href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0afaeddb6fc62aacc16e88f98a77efbcff">ModelNumber</a> = 0, 
-<a class="el" href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0a234de9d5194d6b6f4e45b854dbf1442d">VersionFirmware</a> = 2, 
-<a class="el" href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0ab2565d5698c9d943a8bcecf02b1389ad">ID</a> = 3, 
-<a class="el" href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0afa8229ff24576bd10b061c259cc1146d">BaudRate</a> = 4, 
-<br />
-&#160;&#160;<a class="el" href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0a1e7fa07a9a5a28584a287668a95dbb4f">ReturnDelayTime</a> = 5, 
-<a class="el" href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0aae428847c3648681e8aae8f0a12c6880">CWAngleLimit</a> = 6, 
-<a class="el" href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0ac631a1a4dfb22cd02e863fa19f509523">CCWAngleLimit</a> = 8, 
-<a class="el" href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0aa9f1a3f67a0bf70f6e6530cac9f55153">HighestLimitTemp</a> = 11, 
-<br />
-&#160;&#160;<a class="el" href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0a75d2b929c12ad95dfe84b3214e5badd5">LowestLimitVoltage</a> = 12, 
-<a class="el" href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0a39bed5183cada3039894ec459e9cdba4">HighestLimitVoltage</a> = 13, 
-<a class="el" href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0aa45ee204b37e8a8657bbb0be1f3f2ee5">MaxTorque</a> = 14, 
-<a class="el" href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0a1f50b233b75db417410a9ad75671c5f8">StatusReturnLevel</a> = 16, 
-<br />
-&#160;&#160;<a class="el" href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0a69af7afba3f29c206407f802a6975dd1">AlarmLED</a> = 17, 
-<a class="el" href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0a017096d92de6aa9fa691df824cd21757">AlarmShutdown</a> = 18
-<br />
- }</td></tr>
-<tr class="memdesc:a08d272b502d65464202a3aa97825aec0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains all the EEPROM directions enumeration.  <a href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0">More...</a><br /></td></tr>
-<tr class="separator:a08d272b502d65464202a3aa97825aec0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a672068c48bbee921e5856cc44b1c81c1"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1">RAM</a> { <br />
-&#160;&#160;<a class="el" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1ac4597f1de691116b512ae043da6ae7a3">TorqueEnable</a> = 24, 
-<a class="el" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1af9d9ebff7bdb8cbb20edfac6f553f796">LED</a> = 25, 
-<a class="el" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1ac2410c95fb1bb2343adc3d3b621cb1d0">CWComplianceMargin</a> = 26, 
-<a class="el" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1aa9e82bf2f003910708111a4ade3ec42d">CCWComplianceMargin</a> = 27, 
-<br />
-&#160;&#160;<a class="el" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1a1dffe196ada84077dfbfcd72d31be8c8">CWComplianceSlope</a> = 28, 
-<a class="el" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1a624015aab9c06310e1f96bafe8f934a7">CCWComplianceSlope</a> = 29, 
-<a class="el" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1ae3d6ac0b56a8ab2b188f14545473cbef">GoalPosition</a> = 30, 
-<a class="el" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1a77389ef2d6dc4bfe760357bd375d5284">MovingSpeed</a> = 32, 
-<br />
-&#160;&#160;<a class="el" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1adc48ae20914d1771097b17c08be83bbc">TorqueLimit</a> = 34, 
-<a class="el" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1ac3714d28e016c704ea8451c18700dea8">PresentPosition</a> = 36, 
-<a class="el" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1a481b48fdf5e3609568bdbde19c32ef90">PresentSpeed</a> = 38, 
-<a class="el" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1a4acb9c359962b60a1dfc900550f4b2b2">PresentLoad</a> = 40, 
-<br />
-&#160;&#160;<a class="el" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1a908c1a7f566782c4c258c779b5ca54cd">PresentVoltage</a> = 42, 
-<a class="el" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1ae00a92c23c2af2faf19eb051424cf271">PresentTemperature</a> = 43, 
-<a class="el" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1a426e2185243d7ae4213d048abbf56938">Registered</a> = 44, 
-<a class="el" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1a1649d49cd35bc3ebfdc8be06b61b7caf">Moving</a> = 46, 
-<br />
-&#160;&#160;<a class="el" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1a67e9c5c73f91985138111a792458e5ad">Lock</a> = 47, 
-<a class="el" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1a491959069a5cf99cf49bd2fd9ea5ec92">Punch</a> = 48
-<br />
- }</td></tr>
-<tr class="memdesc:a672068c48bbee921e5856cc44b1c81c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains all the RAM directions enumerations.  <a href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1">More...</a><br /></td></tr>
-<tr class="separator:a672068c48bbee921e5856cc44b1c81c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a16df7ccc0a8d3c585a93b6916734bb17"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/d0b/a00004.html">dynamixel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d84/a00001.html#a16df7ccc0a8d3c585a93b6916734bb17">_dxl</a></td></tr>
@@ -202,19 +202,11 @@ Private Attributes</h2></td></tr>
 <a class="anchor" id="a672068c48bbee921e5856cc44b1c81c1"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">enum <a class="el" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1">AX12::RAM</a></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Contains all the RAM directions enumerations. </p>
@@ -256,64 +248,56 @@ Private Attributes</h2></td></tr>
 <tr><td class="fieldname"><a class="anchor" id="a672068c48bbee921e5856cc44b1c81c1a491959069a5cf99cf49bd2fd9ea5ec92"></a>Punch&#160;</td><td class="fielddoc">
 </td></tr>
 </table>
-<div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1ac4597f1de691116b512ae043da6ae7a3">TorqueEnable</a>        = 24,</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1af9d9ebff7bdb8cbb20edfac6f553f796">LED</a>                 = 25,</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1ac2410c95fb1bb2343adc3d3b621cb1d0">CWComplianceMargin</a>  = 26,</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1aa9e82bf2f003910708111a4ade3ec42d">CCWComplianceMargin</a> = 27,</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1a1dffe196ada84077dfbfcd72d31be8c8">CWComplianceSlope</a>   = 28,</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1a624015aab9c06310e1f96bafe8f934a7">CCWComplianceSlope</a>  = 29,</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1ae3d6ac0b56a8ab2b188f14545473cbef">GoalPosition</a>        = 30,</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1a77389ef2d6dc4bfe760357bd375d5284">MovingSpeed</a>         = 32,</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1adc48ae20914d1771097b17c08be83bbc">TorqueLimit</a>         = 34,</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1ac3714d28e016c704ea8451c18700dea8">PresentPosition</a>     = 36,</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1a481b48fdf5e3609568bdbde19c32ef90">PresentSpeed</a>        = 38,</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1a4acb9c359962b60a1dfc900550f4b2b2">PresentLoad</a>         = 40,</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1a908c1a7f566782c4c258c779b5ca54cd">PresentVoltage</a>      = 42,</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1ae00a92c23c2af2faf19eb051424cf271">PresentTemperature</a>  = 43,</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1a426e2185243d7ae4213d048abbf56938">Registered</a>          = 44,</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1a1649d49cd35bc3ebfdc8be06b61b7caf">Moving</a>              = 46,</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1a67e9c5c73f91985138111a792458e5ad">Lock</a>                = 47,</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1a491959069a5cf99cf49bd2fd9ea5ec92">Punch</a>               = 48</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    };    </div>
-<div class="ttc" id="a00001_html_a672068c48bbee921e5856cc44b1c81c1a908c1a7f566782c4c258c779b5ca54cd"><div class="ttname"><a href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1a908c1a7f566782c4c258c779b5ca54cd">AX12::PresentVoltage</a></div><div class="ttdef"><b>Definition:</b> ax12.h:57</div></div>
-<div class="ttc" id="a00001_html_a672068c48bbee921e5856cc44b1c81c1ac4597f1de691116b512ae043da6ae7a3"><div class="ttname"><a href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1ac4597f1de691116b512ae043da6ae7a3">AX12::TorqueEnable</a></div><div class="ttdef"><b>Definition:</b> ax12.h:45</div></div>
-<div class="ttc" id="a00001_html_a672068c48bbee921e5856cc44b1c81c1aa9e82bf2f003910708111a4ade3ec42d"><div class="ttname"><a href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1aa9e82bf2f003910708111a4ade3ec42d">AX12::CCWComplianceMargin</a></div><div class="ttdef"><b>Definition:</b> ax12.h:48</div></div>
-<div class="ttc" id="a00001_html_a672068c48bbee921e5856cc44b1c81c1a481b48fdf5e3609568bdbde19c32ef90"><div class="ttname"><a href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1a481b48fdf5e3609568bdbde19c32ef90">AX12::PresentSpeed</a></div><div class="ttdef"><b>Definition:</b> ax12.h:55</div></div>
-<div class="ttc" id="a00001_html_a672068c48bbee921e5856cc44b1c81c1ac3714d28e016c704ea8451c18700dea8"><div class="ttname"><a href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1ac3714d28e016c704ea8451c18700dea8">AX12::PresentPosition</a></div><div class="ttdef"><b>Definition:</b> ax12.h:54</div></div>
-<div class="ttc" id="a00001_html_a672068c48bbee921e5856cc44b1c81c1a4acb9c359962b60a1dfc900550f4b2b2"><div class="ttname"><a href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1a4acb9c359962b60a1dfc900550f4b2b2">AX12::PresentLoad</a></div><div class="ttdef"><b>Definition:</b> ax12.h:56</div></div>
-<div class="ttc" id="a00001_html_a672068c48bbee921e5856cc44b1c81c1a1649d49cd35bc3ebfdc8be06b61b7caf"><div class="ttname"><a href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1a1649d49cd35bc3ebfdc8be06b61b7caf">AX12::Moving</a></div><div class="ttdef"><b>Definition:</b> ax12.h:60</div></div>
-<div class="ttc" id="a00001_html_a672068c48bbee921e5856cc44b1c81c1a1dffe196ada84077dfbfcd72d31be8c8"><div class="ttname"><a href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1a1dffe196ada84077dfbfcd72d31be8c8">AX12::CWComplianceSlope</a></div><div class="ttdef"><b>Definition:</b> ax12.h:49</div></div>
-<div class="ttc" id="a00001_html_a672068c48bbee921e5856cc44b1c81c1a624015aab9c06310e1f96bafe8f934a7"><div class="ttname"><a href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1a624015aab9c06310e1f96bafe8f934a7">AX12::CCWComplianceSlope</a></div><div class="ttdef"><b>Definition:</b> ax12.h:50</div></div>
-<div class="ttc" id="a00001_html_a672068c48bbee921e5856cc44b1c81c1ae00a92c23c2af2faf19eb051424cf271"><div class="ttname"><a href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1ae00a92c23c2af2faf19eb051424cf271">AX12::PresentTemperature</a></div><div class="ttdef"><b>Definition:</b> ax12.h:58</div></div>
-<div class="ttc" id="a00001_html_a672068c48bbee921e5856cc44b1c81c1ac2410c95fb1bb2343adc3d3b621cb1d0"><div class="ttname"><a href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1ac2410c95fb1bb2343adc3d3b621cb1d0">AX12::CWComplianceMargin</a></div><div class="ttdef"><b>Definition:</b> ax12.h:47</div></div>
-<div class="ttc" id="a00001_html_a672068c48bbee921e5856cc44b1c81c1adc48ae20914d1771097b17c08be83bbc"><div class="ttname"><a href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1adc48ae20914d1771097b17c08be83bbc">AX12::TorqueLimit</a></div><div class="ttdef"><b>Definition:</b> ax12.h:53</div></div>
-<div class="ttc" id="a00001_html_a672068c48bbee921e5856cc44b1c81c1af9d9ebff7bdb8cbb20edfac6f553f796"><div class="ttname"><a href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1af9d9ebff7bdb8cbb20edfac6f553f796">AX12::LED</a></div><div class="ttdef"><b>Definition:</b> ax12.h:46</div></div>
-<div class="ttc" id="a00001_html_a672068c48bbee921e5856cc44b1c81c1a426e2185243d7ae4213d048abbf56938"><div class="ttname"><a href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1a426e2185243d7ae4213d048abbf56938">AX12::Registered</a></div><div class="ttdef"><b>Definition:</b> ax12.h:59</div></div>
-<div class="ttc" id="a00001_html_a672068c48bbee921e5856cc44b1c81c1a67e9c5c73f91985138111a792458e5ad"><div class="ttname"><a href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1a67e9c5c73f91985138111a792458e5ad">AX12::Lock</a></div><div class="ttdef"><b>Definition:</b> ax12.h:61</div></div>
-<div class="ttc" id="a00001_html_a672068c48bbee921e5856cc44b1c81c1ae3d6ac0b56a8ab2b188f14545473cbef"><div class="ttname"><a href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1ae3d6ac0b56a8ab2b188f14545473cbef">AX12::GoalPosition</a></div><div class="ttdef"><b>Definition:</b> ax12.h:51</div></div>
-<div class="ttc" id="a00001_html_a672068c48bbee921e5856cc44b1c81c1a77389ef2d6dc4bfe760357bd375d5284"><div class="ttname"><a href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1a77389ef2d6dc4bfe760357bd375d5284">AX12::MovingSpeed</a></div><div class="ttdef"><b>Definition:</b> ax12.h:52</div></div>
-<div class="ttc" id="a00001_html_a672068c48bbee921e5856cc44b1c81c1a491959069a5cf99cf49bd2fd9ea5ec92"><div class="ttname"><a href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1a491959069a5cf99cf49bd2fd9ea5ec92">AX12::Punch</a></div><div class="ttdef"><b>Definition:</b> ax12.h:62</div></div>
+<div class="fragment"><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1ac4597f1de691116b512ae043da6ae7a3">TorqueEnable</a>        = 24,</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1af9d9ebff7bdb8cbb20edfac6f553f796">LED</a>                 = 25,</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1ac2410c95fb1bb2343adc3d3b621cb1d0">CWComplianceMargin</a>  = 26,</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1aa9e82bf2f003910708111a4ade3ec42d">CCWComplianceMargin</a> = 27,</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1a1dffe196ada84077dfbfcd72d31be8c8">CWComplianceSlope</a>   = 28,</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1a624015aab9c06310e1f96bafe8f934a7">CCWComplianceSlope</a>  = 29,</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1ae3d6ac0b56a8ab2b188f14545473cbef">GoalPosition</a>        = 30,</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1a77389ef2d6dc4bfe760357bd375d5284">MovingSpeed</a>         = 32,</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1adc48ae20914d1771097b17c08be83bbc">TorqueLimit</a>         = 34,</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1ac3714d28e016c704ea8451c18700dea8">PresentPosition</a>     = 36,</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1a481b48fdf5e3609568bdbde19c32ef90">PresentSpeed</a>        = 38,</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1a4acb9c359962b60a1dfc900550f4b2b2">PresentLoad</a>         = 40,</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1a908c1a7f566782c4c258c779b5ca54cd">PresentVoltage</a>      = 42,</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1ae00a92c23c2af2faf19eb051424cf271">PresentTemperature</a>  = 43,</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1a426e2185243d7ae4213d048abbf56938">Registered</a>          = 44,</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1a1649d49cd35bc3ebfdc8be06b61b7caf">Moving</a>              = 46,</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1a67e9c5c73f91985138111a792458e5ad">Lock</a>                = 47,</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1a491959069a5cf99cf49bd2fd9ea5ec92">Punch</a>               = 48</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    };   </div>
+<div class="ttc" id="a00001_html_a672068c48bbee921e5856cc44b1c81c1a908c1a7f566782c4c258c779b5ca54cd"><div class="ttname"><a href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1a908c1a7f566782c4c258c779b5ca54cd">AX12::PresentVoltage</a></div><div class="ttdef"><b>Definition:</b> ax12.h:71</div></div>
+<div class="ttc" id="a00001_html_a672068c48bbee921e5856cc44b1c81c1ac4597f1de691116b512ae043da6ae7a3"><div class="ttname"><a href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1ac4597f1de691116b512ae043da6ae7a3">AX12::TorqueEnable</a></div><div class="ttdef"><b>Definition:</b> ax12.h:59</div></div>
+<div class="ttc" id="a00001_html_a672068c48bbee921e5856cc44b1c81c1aa9e82bf2f003910708111a4ade3ec42d"><div class="ttname"><a href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1aa9e82bf2f003910708111a4ade3ec42d">AX12::CCWComplianceMargin</a></div><div class="ttdef"><b>Definition:</b> ax12.h:62</div></div>
+<div class="ttc" id="a00001_html_a672068c48bbee921e5856cc44b1c81c1a481b48fdf5e3609568bdbde19c32ef90"><div class="ttname"><a href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1a481b48fdf5e3609568bdbde19c32ef90">AX12::PresentSpeed</a></div><div class="ttdef"><b>Definition:</b> ax12.h:69</div></div>
+<div class="ttc" id="a00001_html_a672068c48bbee921e5856cc44b1c81c1ac3714d28e016c704ea8451c18700dea8"><div class="ttname"><a href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1ac3714d28e016c704ea8451c18700dea8">AX12::PresentPosition</a></div><div class="ttdef"><b>Definition:</b> ax12.h:68</div></div>
+<div class="ttc" id="a00001_html_a672068c48bbee921e5856cc44b1c81c1a4acb9c359962b60a1dfc900550f4b2b2"><div class="ttname"><a href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1a4acb9c359962b60a1dfc900550f4b2b2">AX12::PresentLoad</a></div><div class="ttdef"><b>Definition:</b> ax12.h:70</div></div>
+<div class="ttc" id="a00001_html_a672068c48bbee921e5856cc44b1c81c1a1649d49cd35bc3ebfdc8be06b61b7caf"><div class="ttname"><a href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1a1649d49cd35bc3ebfdc8be06b61b7caf">AX12::Moving</a></div><div class="ttdef"><b>Definition:</b> ax12.h:74</div></div>
+<div class="ttc" id="a00001_html_a672068c48bbee921e5856cc44b1c81c1a1dffe196ada84077dfbfcd72d31be8c8"><div class="ttname"><a href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1a1dffe196ada84077dfbfcd72d31be8c8">AX12::CWComplianceSlope</a></div><div class="ttdef"><b>Definition:</b> ax12.h:63</div></div>
+<div class="ttc" id="a00001_html_a672068c48bbee921e5856cc44b1c81c1a624015aab9c06310e1f96bafe8f934a7"><div class="ttname"><a href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1a624015aab9c06310e1f96bafe8f934a7">AX12::CCWComplianceSlope</a></div><div class="ttdef"><b>Definition:</b> ax12.h:64</div></div>
+<div class="ttc" id="a00001_html_a672068c48bbee921e5856cc44b1c81c1ae00a92c23c2af2faf19eb051424cf271"><div class="ttname"><a href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1ae00a92c23c2af2faf19eb051424cf271">AX12::PresentTemperature</a></div><div class="ttdef"><b>Definition:</b> ax12.h:72</div></div>
+<div class="ttc" id="a00001_html_a672068c48bbee921e5856cc44b1c81c1ac2410c95fb1bb2343adc3d3b621cb1d0"><div class="ttname"><a href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1ac2410c95fb1bb2343adc3d3b621cb1d0">AX12::CWComplianceMargin</a></div><div class="ttdef"><b>Definition:</b> ax12.h:61</div></div>
+<div class="ttc" id="a00001_html_a672068c48bbee921e5856cc44b1c81c1adc48ae20914d1771097b17c08be83bbc"><div class="ttname"><a href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1adc48ae20914d1771097b17c08be83bbc">AX12::TorqueLimit</a></div><div class="ttdef"><b>Definition:</b> ax12.h:67</div></div>
+<div class="ttc" id="a00001_html_a672068c48bbee921e5856cc44b1c81c1af9d9ebff7bdb8cbb20edfac6f553f796"><div class="ttname"><a href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1af9d9ebff7bdb8cbb20edfac6f553f796">AX12::LED</a></div><div class="ttdef"><b>Definition:</b> ax12.h:60</div></div>
+<div class="ttc" id="a00001_html_a672068c48bbee921e5856cc44b1c81c1a426e2185243d7ae4213d048abbf56938"><div class="ttname"><a href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1a426e2185243d7ae4213d048abbf56938">AX12::Registered</a></div><div class="ttdef"><b>Definition:</b> ax12.h:73</div></div>
+<div class="ttc" id="a00001_html_a672068c48bbee921e5856cc44b1c81c1a67e9c5c73f91985138111a792458e5ad"><div class="ttname"><a href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1a67e9c5c73f91985138111a792458e5ad">AX12::Lock</a></div><div class="ttdef"><b>Definition:</b> ax12.h:75</div></div>
+<div class="ttc" id="a00001_html_a672068c48bbee921e5856cc44b1c81c1ae3d6ac0b56a8ab2b188f14545473cbef"><div class="ttname"><a href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1ae3d6ac0b56a8ab2b188f14545473cbef">AX12::GoalPosition</a></div><div class="ttdef"><b>Definition:</b> ax12.h:65</div></div>
+<div class="ttc" id="a00001_html_a672068c48bbee921e5856cc44b1c81c1a77389ef2d6dc4bfe760357bd375d5284"><div class="ttname"><a href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1a77389ef2d6dc4bfe760357bd375d5284">AX12::MovingSpeed</a></div><div class="ttdef"><b>Definition:</b> ax12.h:66</div></div>
+<div class="ttc" id="a00001_html_a672068c48bbee921e5856cc44b1c81c1a491959069a5cf99cf49bd2fd9ea5ec92"><div class="ttname"><a href="../../d8/d84/a00001.html#a672068c48bbee921e5856cc44b1c81c1a491959069a5cf99cf49bd2fd9ea5ec92">AX12::Punch</a></div><div class="ttdef"><b>Definition:</b> ax12.h:76</div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a08d272b502d65464202a3aa97825aec0"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">enum <a class="el" href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0">AX12::ROM</a></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Contains all the EEPROM directions enumeration. </p>
@@ -347,36 +331,36 @@ Private Attributes</h2></td></tr>
 <tr><td class="fieldname"><a class="anchor" id="a08d272b502d65464202a3aa97825aec0a017096d92de6aa9fa691df824cd21757"></a>AlarmShutdown&#160;</td><td class="fielddoc">
 </td></tr>
 </table>
-<div class="fragment"><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0afaeddb6fc62aacc16e88f98a77efbcff">ModelNumber</a>         = 0,</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0a234de9d5194d6b6f4e45b854dbf1442d">VersionFirmware</a>     = 2,</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0ab2565d5698c9d943a8bcecf02b1389ad">ID</a>                  = 3,</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0afa8229ff24576bd10b061c259cc1146d">BaudRate</a>            = 4,</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0a1e7fa07a9a5a28584a287668a95dbb4f">ReturnDelayTime</a>     = 5,</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0aae428847c3648681e8aae8f0a12c6880">CWAngleLimit</a>        = 6,</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0ac631a1a4dfb22cd02e863fa19f509523">CCWAngleLimit</a>       = 8,</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0aa9f1a3f67a0bf70f6e6530cac9f55153">HighestLimitTemp</a>    = 11,</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0a75d2b929c12ad95dfe84b3214e5badd5">LowestLimitVoltage</a>  = 12,</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0a39bed5183cada3039894ec459e9cdba4">HighestLimitVoltage</a> = 13,</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0aa45ee204b37e8a8657bbb0be1f3f2ee5">MaxTorque</a>           = 14,</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0a1f50b233b75db417410a9ad75671c5f8">StatusReturnLevel</a>   = 16,</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0a69af7afba3f29c206407f802a6975dd1">AlarmLED</a>            = 17,</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0a017096d92de6aa9fa691df824cd21757">AlarmShutdown</a>       = 18</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    };</div>
-<div class="ttc" id="a00001_html_a08d272b502d65464202a3aa97825aec0aa9f1a3f67a0bf70f6e6530cac9f55153"><div class="ttname"><a href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0aa9f1a3f67a0bf70f6e6530cac9f55153">AX12::HighestLimitTemp</a></div><div class="ttdef"><b>Definition:</b> ax12.h:33</div></div>
-<div class="ttc" id="a00001_html_a08d272b502d65464202a3aa97825aec0a75d2b929c12ad95dfe84b3214e5badd5"><div class="ttname"><a href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0a75d2b929c12ad95dfe84b3214e5badd5">AX12::LowestLimitVoltage</a></div><div class="ttdef"><b>Definition:</b> ax12.h:34</div></div>
-<div class="ttc" id="a00001_html_a08d272b502d65464202a3aa97825aec0aa45ee204b37e8a8657bbb0be1f3f2ee5"><div class="ttname"><a href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0aa45ee204b37e8a8657bbb0be1f3f2ee5">AX12::MaxTorque</a></div><div class="ttdef"><b>Definition:</b> ax12.h:36</div></div>
-<div class="ttc" id="a00001_html_a08d272b502d65464202a3aa97825aec0afa8229ff24576bd10b061c259cc1146d"><div class="ttname"><a href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0afa8229ff24576bd10b061c259cc1146d">AX12::BaudRate</a></div><div class="ttdef"><b>Definition:</b> ax12.h:29</div></div>
-<div class="ttc" id="a00001_html_a08d272b502d65464202a3aa97825aec0afaeddb6fc62aacc16e88f98a77efbcff"><div class="ttname"><a href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0afaeddb6fc62aacc16e88f98a77efbcff">AX12::ModelNumber</a></div><div class="ttdef"><b>Definition:</b> ax12.h:26</div></div>
-<div class="ttc" id="a00001_html_a08d272b502d65464202a3aa97825aec0ac631a1a4dfb22cd02e863fa19f509523"><div class="ttname"><a href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0ac631a1a4dfb22cd02e863fa19f509523">AX12::CCWAngleLimit</a></div><div class="ttdef"><b>Definition:</b> ax12.h:32</div></div>
-<div class="ttc" id="a00001_html_a08d272b502d65464202a3aa97825aec0a234de9d5194d6b6f4e45b854dbf1442d"><div class="ttname"><a href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0a234de9d5194d6b6f4e45b854dbf1442d">AX12::VersionFirmware</a></div><div class="ttdef"><b>Definition:</b> ax12.h:27</div></div>
-<div class="ttc" id="a00001_html_a08d272b502d65464202a3aa97825aec0a1f50b233b75db417410a9ad75671c5f8"><div class="ttname"><a href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0a1f50b233b75db417410a9ad75671c5f8">AX12::StatusReturnLevel</a></div><div class="ttdef"><b>Definition:</b> ax12.h:37</div></div>
-<div class="ttc" id="a00001_html_a08d272b502d65464202a3aa97825aec0a39bed5183cada3039894ec459e9cdba4"><div class="ttname"><a href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0a39bed5183cada3039894ec459e9cdba4">AX12::HighestLimitVoltage</a></div><div class="ttdef"><b>Definition:</b> ax12.h:35</div></div>
-<div class="ttc" id="a00001_html_a08d272b502d65464202a3aa97825aec0a017096d92de6aa9fa691df824cd21757"><div class="ttname"><a href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0a017096d92de6aa9fa691df824cd21757">AX12::AlarmShutdown</a></div><div class="ttdef"><b>Definition:</b> ax12.h:39</div></div>
-<div class="ttc" id="a00001_html_a08d272b502d65464202a3aa97825aec0aae428847c3648681e8aae8f0a12c6880"><div class="ttname"><a href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0aae428847c3648681e8aae8f0a12c6880">AX12::CWAngleLimit</a></div><div class="ttdef"><b>Definition:</b> ax12.h:31</div></div>
-<div class="ttc" id="a00001_html_a08d272b502d65464202a3aa97825aec0a1e7fa07a9a5a28584a287668a95dbb4f"><div class="ttname"><a href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0a1e7fa07a9a5a28584a287668a95dbb4f">AX12::ReturnDelayTime</a></div><div class="ttdef"><b>Definition:</b> ax12.h:30</div></div>
-<div class="ttc" id="a00001_html_a08d272b502d65464202a3aa97825aec0ab2565d5698c9d943a8bcecf02b1389ad"><div class="ttname"><a href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0ab2565d5698c9d943a8bcecf02b1389ad">AX12::ID</a></div><div class="ttdef"><b>Definition:</b> ax12.h:28</div></div>
-<div class="ttc" id="a00001_html_a08d272b502d65464202a3aa97825aec0a69af7afba3f29c206407f802a6975dd1"><div class="ttname"><a href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0a69af7afba3f29c206407f802a6975dd1">AX12::AlarmLED</a></div><div class="ttdef"><b>Definition:</b> ax12.h:38</div></div>
+<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0afaeddb6fc62aacc16e88f98a77efbcff">ModelNumber</a>         = 0,</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0a234de9d5194d6b6f4e45b854dbf1442d">VersionFirmware</a>     = 2,</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0ab2565d5698c9d943a8bcecf02b1389ad">ID</a>                  = 3,</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0afa8229ff24576bd10b061c259cc1146d">BaudRate</a>            = 4,</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0a1e7fa07a9a5a28584a287668a95dbb4f">ReturnDelayTime</a>     = 5,</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0aae428847c3648681e8aae8f0a12c6880">CWAngleLimit</a>        = 6,</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0ac631a1a4dfb22cd02e863fa19f509523">CCWAngleLimit</a>       = 8,</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0aa9f1a3f67a0bf70f6e6530cac9f55153">HighestLimitTemp</a>    = 11,</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0a75d2b929c12ad95dfe84b3214e5badd5">LowestLimitVoltage</a>  = 12,</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0a39bed5183cada3039894ec459e9cdba4">HighestLimitVoltage</a> = 13,</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0aa45ee204b37e8a8657bbb0be1f3f2ee5">MaxTorque</a>           = 14,</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0a1f50b233b75db417410a9ad75671c5f8">StatusReturnLevel</a>   = 16,</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0a69af7afba3f29c206407f802a6975dd1">AlarmLED</a>            = 17,</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0a017096d92de6aa9fa691df824cd21757">AlarmShutdown</a>       = 18</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    };</div>
+<div class="ttc" id="a00001_html_a08d272b502d65464202a3aa97825aec0aa9f1a3f67a0bf70f6e6530cac9f55153"><div class="ttname"><a href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0aa9f1a3f67a0bf70f6e6530cac9f55153">AX12::HighestLimitTemp</a></div><div class="ttdef"><b>Definition:</b> ax12.h:47</div></div>
+<div class="ttc" id="a00001_html_a08d272b502d65464202a3aa97825aec0a75d2b929c12ad95dfe84b3214e5badd5"><div class="ttname"><a href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0a75d2b929c12ad95dfe84b3214e5badd5">AX12::LowestLimitVoltage</a></div><div class="ttdef"><b>Definition:</b> ax12.h:48</div></div>
+<div class="ttc" id="a00001_html_a08d272b502d65464202a3aa97825aec0aa45ee204b37e8a8657bbb0be1f3f2ee5"><div class="ttname"><a href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0aa45ee204b37e8a8657bbb0be1f3f2ee5">AX12::MaxTorque</a></div><div class="ttdef"><b>Definition:</b> ax12.h:50</div></div>
+<div class="ttc" id="a00001_html_a08d272b502d65464202a3aa97825aec0afa8229ff24576bd10b061c259cc1146d"><div class="ttname"><a href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0afa8229ff24576bd10b061c259cc1146d">AX12::BaudRate</a></div><div class="ttdef"><b>Definition:</b> ax12.h:43</div></div>
+<div class="ttc" id="a00001_html_a08d272b502d65464202a3aa97825aec0afaeddb6fc62aacc16e88f98a77efbcff"><div class="ttname"><a href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0afaeddb6fc62aacc16e88f98a77efbcff">AX12::ModelNumber</a></div><div class="ttdef"><b>Definition:</b> ax12.h:40</div></div>
+<div class="ttc" id="a00001_html_a08d272b502d65464202a3aa97825aec0ac631a1a4dfb22cd02e863fa19f509523"><div class="ttname"><a href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0ac631a1a4dfb22cd02e863fa19f509523">AX12::CCWAngleLimit</a></div><div class="ttdef"><b>Definition:</b> ax12.h:46</div></div>
+<div class="ttc" id="a00001_html_a08d272b502d65464202a3aa97825aec0a234de9d5194d6b6f4e45b854dbf1442d"><div class="ttname"><a href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0a234de9d5194d6b6f4e45b854dbf1442d">AX12::VersionFirmware</a></div><div class="ttdef"><b>Definition:</b> ax12.h:41</div></div>
+<div class="ttc" id="a00001_html_a08d272b502d65464202a3aa97825aec0a1f50b233b75db417410a9ad75671c5f8"><div class="ttname"><a href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0a1f50b233b75db417410a9ad75671c5f8">AX12::StatusReturnLevel</a></div><div class="ttdef"><b>Definition:</b> ax12.h:51</div></div>
+<div class="ttc" id="a00001_html_a08d272b502d65464202a3aa97825aec0a39bed5183cada3039894ec459e9cdba4"><div class="ttname"><a href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0a39bed5183cada3039894ec459e9cdba4">AX12::HighestLimitVoltage</a></div><div class="ttdef"><b>Definition:</b> ax12.h:49</div></div>
+<div class="ttc" id="a00001_html_a08d272b502d65464202a3aa97825aec0a017096d92de6aa9fa691df824cd21757"><div class="ttname"><a href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0a017096d92de6aa9fa691df824cd21757">AX12::AlarmShutdown</a></div><div class="ttdef"><b>Definition:</b> ax12.h:53</div></div>
+<div class="ttc" id="a00001_html_a08d272b502d65464202a3aa97825aec0aae428847c3648681e8aae8f0a12c6880"><div class="ttname"><a href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0aae428847c3648681e8aae8f0a12c6880">AX12::CWAngleLimit</a></div><div class="ttdef"><b>Definition:</b> ax12.h:45</div></div>
+<div class="ttc" id="a00001_html_a08d272b502d65464202a3aa97825aec0a1e7fa07a9a5a28584a287668a95dbb4f"><div class="ttname"><a href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0a1e7fa07a9a5a28584a287668a95dbb4f">AX12::ReturnDelayTime</a></div><div class="ttdef"><b>Definition:</b> ax12.h:44</div></div>
+<div class="ttc" id="a00001_html_a08d272b502d65464202a3aa97825aec0ab2565d5698c9d943a8bcecf02b1389ad"><div class="ttname"><a href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0ab2565d5698c9d943a8bcecf02b1389ad">AX12::ID</a></div><div class="ttdef"><b>Definition:</b> ax12.h:42</div></div>
+<div class="ttc" id="a00001_html_a08d272b502d65464202a3aa97825aec0a69af7afba3f29c206407f802a6975dd1"><div class="ttname"><a href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0a69af7afba3f29c206407f802a6975dd1">AX12::AlarmLED</a></div><div class="ttdef"><b>Definition:</b> ax12.h:52</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -403,10 +387,10 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    </div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;}</div>
-<div class="ttc" id="a00001_html_a16df7ccc0a8d3c585a93b6916734bb17"><div class="ttname"><a href="../../d8/d84/a00001.html#a16df7ccc0a8d3c585a93b6916734bb17">AX12::_dxl</a></div><div class="ttdeci">dynamixel * _dxl</div><div class="ttdoc">Contains the dynamixel comunication. </div><div class="ttdef"><b>Definition:</b> ax12.h:67</div></div>
-<div class="ttc" id="a00001_html_a2fd07e2e636003227a32d09d211bd6d4"><div class="ttname"><a href="../../d8/d84/a00001.html#a2fd07e2e636003227a32d09d211bd6d4">AX12::_mode</a></div><div class="ttdeci">bool _mode</div><div class="ttdoc">True if we use the joint mode. </div><div class="ttdef"><b>Definition:</b> ax12.h:73</div></div>
-<div class="ttc" id="a00001_html_a0ae2b35fee3d120075e1d8f1e2055804"><div class="ttname"><a href="../../d8/d84/a00001.html#a0ae2b35fee3d120075e1d8f1e2055804">AX12::_ID</a></div><div class="ttdeci">int _ID</div><div class="ttdoc">Stores the current ID. </div><div class="ttdef"><b>Definition:</b> ax12.h:70</div></div>
-<div class="ttc" id="a00001_html_aba71492043d7a3226f0793db57372bec"><div class="ttname"><a href="../../d8/d84/a00001.html#aba71492043d7a3226f0793db57372bec">AX12::_rads</a></div><div class="ttdeci">bool _rads</div><div class="ttdoc">True if the angle is returned in radians. </div><div class="ttdef"><b>Definition:</b> ax12.h:76</div></div>
+<div class="ttc" id="a00001_html_a16df7ccc0a8d3c585a93b6916734bb17"><div class="ttname"><a href="../../d8/d84/a00001.html#a16df7ccc0a8d3c585a93b6916734bb17">AX12::_dxl</a></div><div class="ttdeci">dynamixel * _dxl</div><div class="ttdoc">Contains the dynamixel comunication. </div><div class="ttdef"><b>Definition:</b> ax12.h:24</div></div>
+<div class="ttc" id="a00001_html_a2fd07e2e636003227a32d09d211bd6d4"><div class="ttname"><a href="../../d8/d84/a00001.html#a2fd07e2e636003227a32d09d211bd6d4">AX12::_mode</a></div><div class="ttdeci">bool _mode</div><div class="ttdoc">True if we use the joint mode. </div><div class="ttdef"><b>Definition:</b> ax12.h:30</div></div>
+<div class="ttc" id="a00001_html_a0ae2b35fee3d120075e1d8f1e2055804"><div class="ttname"><a href="../../d8/d84/a00001.html#a0ae2b35fee3d120075e1d8f1e2055804">AX12::_ID</a></div><div class="ttdeci">int _ID</div><div class="ttdoc">Stores the current ID. </div><div class="ttdef"><b>Definition:</b> ax12.h:27</div></div>
+<div class="ttc" id="a00001_html_aba71492043d7a3226f0793db57372bec"><div class="ttname"><a href="../../d8/d84/a00001.html#aba71492043d7a3226f0793db57372bec">AX12::_rads</a></div><div class="ttdeci">bool _rads</div><div class="ttdoc">True if the angle is returned in radians. </div><div class="ttdef"><b>Definition:</b> ax12.h:33</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -444,11 +428,11 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d8/d84/a00001.html#a0ae2b35fee3d120075e1d8f1e2055804">_ID</a> &lt; 0 or _dxl == NULL) <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    dxl-&gt;write_byte(<a class="code" href="../../d8/d84/a00001.html#a0ae2b35fee3d120075e1d8f1e2055804">_ID</a>, RAM::TorqueEnable, <span class="keyword">true</span>);</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
-<div class="ttc" id="a00001_html_a16df7ccc0a8d3c585a93b6916734bb17"><div class="ttname"><a href="../../d8/d84/a00001.html#a16df7ccc0a8d3c585a93b6916734bb17">AX12::_dxl</a></div><div class="ttdeci">dynamixel * _dxl</div><div class="ttdoc">Contains the dynamixel comunication. </div><div class="ttdef"><b>Definition:</b> ax12.h:67</div></div>
-<div class="ttc" id="a00001_html_a2fd07e2e636003227a32d09d211bd6d4"><div class="ttname"><a href="../../d8/d84/a00001.html#a2fd07e2e636003227a32d09d211bd6d4">AX12::_mode</a></div><div class="ttdeci">bool _mode</div><div class="ttdoc">True if we use the joint mode. </div><div class="ttdef"><b>Definition:</b> ax12.h:73</div></div>
-<div class="ttc" id="a00001_html_a0ae2b35fee3d120075e1d8f1e2055804"><div class="ttname"><a href="../../d8/d84/a00001.html#a0ae2b35fee3d120075e1d8f1e2055804">AX12::_ID</a></div><div class="ttdeci">int _ID</div><div class="ttdoc">Stores the current ID. </div><div class="ttdef"><b>Definition:</b> ax12.h:70</div></div>
-<div class="ttc" id="a00001_html_a08d272b502d65464202a3aa97825aec0ab2565d5698c9d943a8bcecf02b1389ad"><div class="ttname"><a href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0ab2565d5698c9d943a8bcecf02b1389ad">AX12::ID</a></div><div class="ttdef"><b>Definition:</b> ax12.h:28</div></div>
-<div class="ttc" id="a00001_html_aba71492043d7a3226f0793db57372bec"><div class="ttname"><a href="../../d8/d84/a00001.html#aba71492043d7a3226f0793db57372bec">AX12::_rads</a></div><div class="ttdeci">bool _rads</div><div class="ttdoc">True if the angle is returned in radians. </div><div class="ttdef"><b>Definition:</b> ax12.h:76</div></div>
+<div class="ttc" id="a00001_html_a16df7ccc0a8d3c585a93b6916734bb17"><div class="ttname"><a href="../../d8/d84/a00001.html#a16df7ccc0a8d3c585a93b6916734bb17">AX12::_dxl</a></div><div class="ttdeci">dynamixel * _dxl</div><div class="ttdoc">Contains the dynamixel comunication. </div><div class="ttdef"><b>Definition:</b> ax12.h:24</div></div>
+<div class="ttc" id="a00001_html_a2fd07e2e636003227a32d09d211bd6d4"><div class="ttname"><a href="../../d8/d84/a00001.html#a2fd07e2e636003227a32d09d211bd6d4">AX12::_mode</a></div><div class="ttdeci">bool _mode</div><div class="ttdoc">True if we use the joint mode. </div><div class="ttdef"><b>Definition:</b> ax12.h:30</div></div>
+<div class="ttc" id="a00001_html_a0ae2b35fee3d120075e1d8f1e2055804"><div class="ttname"><a href="../../d8/d84/a00001.html#a0ae2b35fee3d120075e1d8f1e2055804">AX12::_ID</a></div><div class="ttdeci">int _ID</div><div class="ttdoc">Stores the current ID. </div><div class="ttdef"><b>Definition:</b> ax12.h:27</div></div>
+<div class="ttc" id="a00001_html_a08d272b502d65464202a3aa97825aec0ab2565d5698c9d943a8bcecf02b1389ad"><div class="ttname"><a href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0ab2565d5698c9d943a8bcecf02b1389ad">AX12::ID</a></div><div class="ttdef"><b>Definition:</b> ax12.h:42</div></div>
+<div class="ttc" id="a00001_html_aba71492043d7a3226f0793db57372bec"><div class="ttname"><a href="../../d8/d84/a00001.html#aba71492043d7a3226f0793db57372bec">AX12::_rads</a></div><div class="ttdeci">bool _rads</div><div class="ttdoc">True if the angle is returned in radians. </div><div class="ttdef"><b>Definition:</b> ax12.h:33</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -475,10 +459,10 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    </div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
-<div class="ttc" id="a00001_html_a16df7ccc0a8d3c585a93b6916734bb17"><div class="ttname"><a href="../../d8/d84/a00001.html#a16df7ccc0a8d3c585a93b6916734bb17">AX12::_dxl</a></div><div class="ttdeci">dynamixel * _dxl</div><div class="ttdoc">Contains the dynamixel comunication. </div><div class="ttdef"><b>Definition:</b> ax12.h:67</div></div>
-<div class="ttc" id="a00001_html_a2fd07e2e636003227a32d09d211bd6d4"><div class="ttname"><a href="../../d8/d84/a00001.html#a2fd07e2e636003227a32d09d211bd6d4">AX12::_mode</a></div><div class="ttdeci">bool _mode</div><div class="ttdoc">True if we use the joint mode. </div><div class="ttdef"><b>Definition:</b> ax12.h:73</div></div>
-<div class="ttc" id="a00001_html_a0ae2b35fee3d120075e1d8f1e2055804"><div class="ttname"><a href="../../d8/d84/a00001.html#a0ae2b35fee3d120075e1d8f1e2055804">AX12::_ID</a></div><div class="ttdeci">int _ID</div><div class="ttdoc">Stores the current ID. </div><div class="ttdef"><b>Definition:</b> ax12.h:70</div></div>
-<div class="ttc" id="a00001_html_aba71492043d7a3226f0793db57372bec"><div class="ttname"><a href="../../d8/d84/a00001.html#aba71492043d7a3226f0793db57372bec">AX12::_rads</a></div><div class="ttdeci">bool _rads</div><div class="ttdoc">True if the angle is returned in radians. </div><div class="ttdef"><b>Definition:</b> ax12.h:76</div></div>
+<div class="ttc" id="a00001_html_a16df7ccc0a8d3c585a93b6916734bb17"><div class="ttname"><a href="../../d8/d84/a00001.html#a16df7ccc0a8d3c585a93b6916734bb17">AX12::_dxl</a></div><div class="ttdeci">dynamixel * _dxl</div><div class="ttdoc">Contains the dynamixel comunication. </div><div class="ttdef"><b>Definition:</b> ax12.h:24</div></div>
+<div class="ttc" id="a00001_html_a2fd07e2e636003227a32d09d211bd6d4"><div class="ttname"><a href="../../d8/d84/a00001.html#a2fd07e2e636003227a32d09d211bd6d4">AX12::_mode</a></div><div class="ttdeci">bool _mode</div><div class="ttdoc">True if we use the joint mode. </div><div class="ttdef"><b>Definition:</b> ax12.h:30</div></div>
+<div class="ttc" id="a00001_html_a0ae2b35fee3d120075e1d8f1e2055804"><div class="ttname"><a href="../../d8/d84/a00001.html#a0ae2b35fee3d120075e1d8f1e2055804">AX12::_ID</a></div><div class="ttdeci">int _ID</div><div class="ttdoc">Stores the current ID. </div><div class="ttdef"><b>Definition:</b> ax12.h:27</div></div>
+<div class="ttc" id="a00001_html_aba71492043d7a3226f0793db57372bec"><div class="ttname"><a href="../../d8/d84/a00001.html#aba71492043d7a3226f0793db57372bec">AX12::_rads</a></div><div class="ttdeci">bool _rads</div><div class="ttdoc">True if the angle is returned in radians. </div><div class="ttdef"><b>Definition:</b> ax12.h:33</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -529,7 +513,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">return</span> res;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
 <div class="ttc" id="a00004_html_ac8440d5d34ae3c4618b28fdbbd748edc"><div class="ttname"><a href="../../d0/d0b/a00004.html#ac8440d5d34ae3c4618b28fdbbd748edc">dynamixel::get_comm_result</a></div><div class="ttdeci">int get_comm_result()</div><div class="ttdoc">Returns the current com status. </div><div class="ttdef"><b>Definition:</b> dynamixel.h:118</div></div>
-<div class="ttc" id="a00001_html_a16df7ccc0a8d3c585a93b6916734bb17"><div class="ttname"><a href="../../d8/d84/a00001.html#a16df7ccc0a8d3c585a93b6916734bb17">AX12::_dxl</a></div><div class="ttdeci">dynamixel * _dxl</div><div class="ttdoc">Contains the dynamixel comunication. </div><div class="ttdef"><b>Definition:</b> ax12.h:67</div></div>
+<div class="ttc" id="a00001_html_a16df7ccc0a8d3c585a93b6916734bb17"><div class="ttname"><a href="../../d8/d84/a00001.html#a16df7ccc0a8d3c585a93b6916734bb17">AX12::_dxl</a></div><div class="ttdeci">dynamixel * _dxl</div><div class="ttdoc">Contains the dynamixel comunication. </div><div class="ttdef"><b>Definition:</b> ax12.h:24</div></div>
 <div class="ttc" id="a00004_html_af2bd714423e7c4fc089762805c0c71f3"><div class="ttname"><a href="../../d0/d0b/a00004.html#af2bd714423e7c4fc089762805c0c71f3">dynamixel::ping</a></div><div class="ttdeci">void ping(int id)</div><div class="ttdoc">Ping to the selected id, check com status for the ping result. </div><div class="ttdef"><b>Definition:</b> dynamixel.cpp:293</div></div>
 </div><!-- fragment -->
 </div>
@@ -554,8 +538,8 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">if</span> (load &gt;= 1024) load -= 1024;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">return</span> double((load/1023)*100);</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
-<div class="ttc" id="a00001_html_a16df7ccc0a8d3c585a93b6916734bb17"><div class="ttname"><a href="../../d8/d84/a00001.html#a16df7ccc0a8d3c585a93b6916734bb17">AX12::_dxl</a></div><div class="ttdeci">dynamixel * _dxl</div><div class="ttdoc">Contains the dynamixel comunication. </div><div class="ttdef"><b>Definition:</b> ax12.h:67</div></div>
-<div class="ttc" id="a00001_html_a0ae2b35fee3d120075e1d8f1e2055804"><div class="ttname"><a href="../../d8/d84/a00001.html#a0ae2b35fee3d120075e1d8f1e2055804">AX12::_ID</a></div><div class="ttdeci">int _ID</div><div class="ttdoc">Stores the current ID. </div><div class="ttdef"><b>Definition:</b> ax12.h:70</div></div>
+<div class="ttc" id="a00001_html_a16df7ccc0a8d3c585a93b6916734bb17"><div class="ttname"><a href="../../d8/d84/a00001.html#a16df7ccc0a8d3c585a93b6916734bb17">AX12::_dxl</a></div><div class="ttdeci">dynamixel * _dxl</div><div class="ttdoc">Contains the dynamixel comunication. </div><div class="ttdef"><b>Definition:</b> ax12.h:24</div></div>
+<div class="ttc" id="a00001_html_a0ae2b35fee3d120075e1d8f1e2055804"><div class="ttname"><a href="../../d8/d84/a00001.html#a0ae2b35fee3d120075e1d8f1e2055804">AX12::_ID</a></div><div class="ttdeci">int _ID</div><div class="ttdoc">Stores the current ID. </div><div class="ttdef"><b>Definition:</b> ax12.h:27</div></div>
 <div class="ttc" id="a00004_html_a45e99341e82c5114f6e829c9141bf96f"><div class="ttname"><a href="../../d0/d0b/a00004.html#a45e99341e82c5114f6e829c9141bf96f">dynamixel::read_word</a></div><div class="ttdeci">int read_word(int id, int address)</div><div class="ttdoc">Reads a word to the selected ID at the selected address. </div><div class="ttdef"><b>Definition:</b> dynamixel.cpp:332</div></div>
 </div><!-- fragment -->
 </div>
@@ -583,10 +567,10 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">return</span> double((pos/1023.0)*300);</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
 <div class="ttc" id="a00004_html_ac8440d5d34ae3c4618b28fdbbd748edc"><div class="ttname"><a href="../../d0/d0b/a00004.html#ac8440d5d34ae3c4618b28fdbbd748edc">dynamixel::get_comm_result</a></div><div class="ttdeci">int get_comm_result()</div><div class="ttdoc">Returns the current com status. </div><div class="ttdef"><b>Definition:</b> dynamixel.h:118</div></div>
-<div class="ttc" id="a00001_html_a16df7ccc0a8d3c585a93b6916734bb17"><div class="ttname"><a href="../../d8/d84/a00001.html#a16df7ccc0a8d3c585a93b6916734bb17">AX12::_dxl</a></div><div class="ttdeci">dynamixel * _dxl</div><div class="ttdoc">Contains the dynamixel comunication. </div><div class="ttdef"><b>Definition:</b> ax12.h:67</div></div>
-<div class="ttc" id="a00001_html_a0ae2b35fee3d120075e1d8f1e2055804"><div class="ttname"><a href="../../d8/d84/a00001.html#a0ae2b35fee3d120075e1d8f1e2055804">AX12::_ID</a></div><div class="ttdeci">int _ID</div><div class="ttdoc">Stores the current ID. </div><div class="ttdef"><b>Definition:</b> ax12.h:70</div></div>
+<div class="ttc" id="a00001_html_a16df7ccc0a8d3c585a93b6916734bb17"><div class="ttname"><a href="../../d8/d84/a00001.html#a16df7ccc0a8d3c585a93b6916734bb17">AX12::_dxl</a></div><div class="ttdeci">dynamixel * _dxl</div><div class="ttdoc">Contains the dynamixel comunication. </div><div class="ttdef"><b>Definition:</b> ax12.h:24</div></div>
+<div class="ttc" id="a00001_html_a0ae2b35fee3d120075e1d8f1e2055804"><div class="ttname"><a href="../../d8/d84/a00001.html#a0ae2b35fee3d120075e1d8f1e2055804">AX12::_ID</a></div><div class="ttdeci">int _ID</div><div class="ttdoc">Stores the current ID. </div><div class="ttdef"><b>Definition:</b> ax12.h:27</div></div>
 <div class="ttc" id="a00004_html_a45e99341e82c5114f6e829c9141bf96f"><div class="ttname"><a href="../../d0/d0b/a00004.html#a45e99341e82c5114f6e829c9141bf96f">dynamixel::read_word</a></div><div class="ttdeci">int read_word(int id, int address)</div><div class="ttdoc">Reads a word to the selected ID at the selected address. </div><div class="ttdef"><b>Definition:</b> dynamixel.cpp:332</div></div>
-<div class="ttc" id="a00001_html_aba71492043d7a3226f0793db57372bec"><div class="ttname"><a href="../../d8/d84/a00001.html#aba71492043d7a3226f0793db57372bec">AX12::_rads</a></div><div class="ttdeci">bool _rads</div><div class="ttdoc">True if the angle is returned in radians. </div><div class="ttdef"><b>Definition:</b> ax12.h:76</div></div>
+<div class="ttc" id="a00001_html_aba71492043d7a3226f0793db57372bec"><div class="ttname"><a href="../../d8/d84/a00001.html#aba71492043d7a3226f0793db57372bec">AX12::_rads</a></div><div class="ttdeci">bool _rads</div><div class="ttdoc">True if the angle is returned in radians. </div><div class="ttdef"><b>Definition:</b> ax12.h:33</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -613,8 +597,8 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">return</span> double((speed/1023.0)*100);</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}</div>
 <div class="ttc" id="a00004_html_ac8440d5d34ae3c4618b28fdbbd748edc"><div class="ttname"><a href="../../d0/d0b/a00004.html#ac8440d5d34ae3c4618b28fdbbd748edc">dynamixel::get_comm_result</a></div><div class="ttdeci">int get_comm_result()</div><div class="ttdoc">Returns the current com status. </div><div class="ttdef"><b>Definition:</b> dynamixel.h:118</div></div>
-<div class="ttc" id="a00001_html_a16df7ccc0a8d3c585a93b6916734bb17"><div class="ttname"><a href="../../d8/d84/a00001.html#a16df7ccc0a8d3c585a93b6916734bb17">AX12::_dxl</a></div><div class="ttdeci">dynamixel * _dxl</div><div class="ttdoc">Contains the dynamixel comunication. </div><div class="ttdef"><b>Definition:</b> ax12.h:67</div></div>
-<div class="ttc" id="a00001_html_a0ae2b35fee3d120075e1d8f1e2055804"><div class="ttname"><a href="../../d8/d84/a00001.html#a0ae2b35fee3d120075e1d8f1e2055804">AX12::_ID</a></div><div class="ttdeci">int _ID</div><div class="ttdoc">Stores the current ID. </div><div class="ttdef"><b>Definition:</b> ax12.h:70</div></div>
+<div class="ttc" id="a00001_html_a16df7ccc0a8d3c585a93b6916734bb17"><div class="ttname"><a href="../../d8/d84/a00001.html#a16df7ccc0a8d3c585a93b6916734bb17">AX12::_dxl</a></div><div class="ttdeci">dynamixel * _dxl</div><div class="ttdoc">Contains the dynamixel comunication. </div><div class="ttdef"><b>Definition:</b> ax12.h:24</div></div>
+<div class="ttc" id="a00001_html_a0ae2b35fee3d120075e1d8f1e2055804"><div class="ttname"><a href="../../d8/d84/a00001.html#a0ae2b35fee3d120075e1d8f1e2055804">AX12::_ID</a></div><div class="ttdeci">int _ID</div><div class="ttdoc">Stores the current ID. </div><div class="ttdef"><b>Definition:</b> ax12.h:27</div></div>
 <div class="ttc" id="a00004_html_a45e99341e82c5114f6e829c9141bf96f"><div class="ttname"><a href="../../d0/d0b/a00004.html#a45e99341e82c5114f6e829c9141bf96f">dynamixel::read_word</a></div><div class="ttdeci">int read_word(int id, int address)</div><div class="ttdoc">Reads a word to the selected ID at the selected address. </div><div class="ttdef"><b>Definition:</b> dynamixel.cpp:332</div></div>
 </div><!-- fragment -->
 </div>
@@ -640,9 +624,9 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">return</span> temp;</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
 <div class="ttc" id="a00004_html_ac8440d5d34ae3c4618b28fdbbd748edc"><div class="ttname"><a href="../../d0/d0b/a00004.html#ac8440d5d34ae3c4618b28fdbbd748edc">dynamixel::get_comm_result</a></div><div class="ttdeci">int get_comm_result()</div><div class="ttdoc">Returns the current com status. </div><div class="ttdef"><b>Definition:</b> dynamixel.h:118</div></div>
-<div class="ttc" id="a00001_html_a16df7ccc0a8d3c585a93b6916734bb17"><div class="ttname"><a href="../../d8/d84/a00001.html#a16df7ccc0a8d3c585a93b6916734bb17">AX12::_dxl</a></div><div class="ttdeci">dynamixel * _dxl</div><div class="ttdoc">Contains the dynamixel comunication. </div><div class="ttdef"><b>Definition:</b> ax12.h:67</div></div>
+<div class="ttc" id="a00001_html_a16df7ccc0a8d3c585a93b6916734bb17"><div class="ttname"><a href="../../d8/d84/a00001.html#a16df7ccc0a8d3c585a93b6916734bb17">AX12::_dxl</a></div><div class="ttdeci">dynamixel * _dxl</div><div class="ttdoc">Contains the dynamixel comunication. </div><div class="ttdef"><b>Definition:</b> ax12.h:24</div></div>
 <div class="ttc" id="a00004_html_a888404b41c4c4395a0b745c77ff2cea9"><div class="ttname"><a href="../../d0/d0b/a00004.html#a888404b41c4c4395a0b745c77ff2cea9">dynamixel::read_byte</a></div><div class="ttdeci">int read_byte(int id, int address)</div><div class="ttdoc">Reads a byte from the selected ID at the selected address. </div><div class="ttdef"><b>Definition:</b> dynamixel.cpp:304</div></div>
-<div class="ttc" id="a00001_html_a0ae2b35fee3d120075e1d8f1e2055804"><div class="ttname"><a href="../../d8/d84/a00001.html#a0ae2b35fee3d120075e1d8f1e2055804">AX12::_ID</a></div><div class="ttdeci">int _ID</div><div class="ttdoc">Stores the current ID. </div><div class="ttdef"><b>Definition:</b> ax12.h:70</div></div>
+<div class="ttc" id="a00001_html_a0ae2b35fee3d120075e1d8f1e2055804"><div class="ttname"><a href="../../d8/d84/a00001.html#a0ae2b35fee3d120075e1d8f1e2055804">AX12::_ID</a></div><div class="ttdeci">int _ID</div><div class="ttdoc">Stores the current ID. </div><div class="ttdef"><b>Definition:</b> ax12.h:27</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -667,9 +651,9 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">return</span> double(voltage/10.0);</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div>
 <div class="ttc" id="a00004_html_ac8440d5d34ae3c4618b28fdbbd748edc"><div class="ttname"><a href="../../d0/d0b/a00004.html#ac8440d5d34ae3c4618b28fdbbd748edc">dynamixel::get_comm_result</a></div><div class="ttdeci">int get_comm_result()</div><div class="ttdoc">Returns the current com status. </div><div class="ttdef"><b>Definition:</b> dynamixel.h:118</div></div>
-<div class="ttc" id="a00001_html_a16df7ccc0a8d3c585a93b6916734bb17"><div class="ttname"><a href="../../d8/d84/a00001.html#a16df7ccc0a8d3c585a93b6916734bb17">AX12::_dxl</a></div><div class="ttdeci">dynamixel * _dxl</div><div class="ttdoc">Contains the dynamixel comunication. </div><div class="ttdef"><b>Definition:</b> ax12.h:67</div></div>
+<div class="ttc" id="a00001_html_a16df7ccc0a8d3c585a93b6916734bb17"><div class="ttname"><a href="../../d8/d84/a00001.html#a16df7ccc0a8d3c585a93b6916734bb17">AX12::_dxl</a></div><div class="ttdeci">dynamixel * _dxl</div><div class="ttdoc">Contains the dynamixel comunication. </div><div class="ttdef"><b>Definition:</b> ax12.h:24</div></div>
 <div class="ttc" id="a00004_html_a888404b41c4c4395a0b745c77ff2cea9"><div class="ttname"><a href="../../d0/d0b/a00004.html#a888404b41c4c4395a0b745c77ff2cea9">dynamixel::read_byte</a></div><div class="ttdeci">int read_byte(int id, int address)</div><div class="ttdoc">Reads a byte from the selected ID at the selected address. </div><div class="ttdef"><b>Definition:</b> dynamixel.cpp:304</div></div>
-<div class="ttc" id="a00001_html_a0ae2b35fee3d120075e1d8f1e2055804"><div class="ttname"><a href="../../d8/d84/a00001.html#a0ae2b35fee3d120075e1d8f1e2055804">AX12::_ID</a></div><div class="ttdeci">int _ID</div><div class="ttdoc">Stores the current ID. </div><div class="ttdef"><b>Definition:</b> ax12.h:70</div></div>
+<div class="ttc" id="a00001_html_a0ae2b35fee3d120075e1d8f1e2055804"><div class="ttname"><a href="../../d8/d84/a00001.html#a0ae2b35fee3d120075e1d8f1e2055804">AX12::_ID</a></div><div class="ttdeci">int _ID</div><div class="ttdoc">Stores the current ID. </div><div class="ttdef"><b>Definition:</b> ax12.h:27</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -696,7 +680,7 @@ Private Attributes</h2></td></tr>
 
 <p>To get the current ID. </p>
 <div class="fragment"><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="../../d8/d84/a00001.html#a0ae2b35fee3d120075e1d8f1e2055804">_ID</a>; }</div>
-<div class="ttc" id="a00001_html_a0ae2b35fee3d120075e1d8f1e2055804"><div class="ttname"><a href="../../d8/d84/a00001.html#a0ae2b35fee3d120075e1d8f1e2055804">AX12::_ID</a></div><div class="ttdeci">int _ID</div><div class="ttdoc">Stores the current ID. </div><div class="ttdef"><b>Definition:</b> ax12.h:70</div></div>
+<div class="ttc" id="a00001_html_a0ae2b35fee3d120075e1d8f1e2055804"><div class="ttname"><a href="../../d8/d84/a00001.html#a0ae2b35fee3d120075e1d8f1e2055804">AX12::_ID</a></div><div class="ttdeci">int _ID</div><div class="ttdoc">Stores the current ID. </div><div class="ttdef"><b>Definition:</b> ax12.h:27</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -737,9 +721,9 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <a class="code" href="../../d8/d84/a00001.html#a16df7ccc0a8d3c585a93b6916734bb17">_dxl</a>-&gt;<a class="code" href="../../d0/d0b/a00004.html#a66c1e32cc45dd46d329f1fc212e46a3d">write_byte</a>(<a class="code" href="../../d8/d84/a00001.html#a0ae2b35fee3d120075e1d8f1e2055804">_ID</a>, RAM::CCWComplianceMargin, ccw);</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <a class="code" href="../../d8/d84/a00001.html#a16df7ccc0a8d3c585a93b6916734bb17">_dxl</a>-&gt;<a class="code" href="../../d0/d0b/a00004.html#a66c1e32cc45dd46d329f1fc212e46a3d">write_byte</a>(<a class="code" href="../../d8/d84/a00001.html#a0ae2b35fee3d120075e1d8f1e2055804">_ID</a>, RAM::CWComplianceMargin, cw);</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
-<div class="ttc" id="a00001_html_a16df7ccc0a8d3c585a93b6916734bb17"><div class="ttname"><a href="../../d8/d84/a00001.html#a16df7ccc0a8d3c585a93b6916734bb17">AX12::_dxl</a></div><div class="ttdeci">dynamixel * _dxl</div><div class="ttdoc">Contains the dynamixel comunication. </div><div class="ttdef"><b>Definition:</b> ax12.h:67</div></div>
+<div class="ttc" id="a00001_html_a16df7ccc0a8d3c585a93b6916734bb17"><div class="ttname"><a href="../../d8/d84/a00001.html#a16df7ccc0a8d3c585a93b6916734bb17">AX12::_dxl</a></div><div class="ttdeci">dynamixel * _dxl</div><div class="ttdoc">Contains the dynamixel comunication. </div><div class="ttdef"><b>Definition:</b> ax12.h:24</div></div>
 <div class="ttc" id="a00004_html_a66c1e32cc45dd46d329f1fc212e46a3d"><div class="ttname"><a href="../../d0/d0b/a00004.html#a66c1e32cc45dd46d329f1fc212e46a3d">dynamixel::write_byte</a></div><div class="ttdeci">void write_byte(int id, int address, int value)</div><div class="ttdoc">Writes a byte to the selected ID at the selected address. </div><div class="ttdef"><b>Definition:</b> dynamixel.cpp:319</div></div>
-<div class="ttc" id="a00001_html_a0ae2b35fee3d120075e1d8f1e2055804"><div class="ttname"><a href="../../d8/d84/a00001.html#a0ae2b35fee3d120075e1d8f1e2055804">AX12::_ID</a></div><div class="ttdeci">int _ID</div><div class="ttdoc">Stores the current ID. </div><div class="ttdef"><b>Definition:</b> ax12.h:70</div></div>
+<div class="ttc" id="a00001_html_a0ae2b35fee3d120075e1d8f1e2055804"><div class="ttname"><a href="../../d8/d84/a00001.html#a0ae2b35fee3d120075e1d8f1e2055804">AX12::_ID</a></div><div class="ttdeci">int _ID</div><div class="ttdoc">Stores the current ID. </div><div class="ttdef"><b>Definition:</b> ax12.h:27</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -773,7 +757,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 <div class="fragment"><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;{ <a class="code" href="../../d8/d84/a00001.html#a16df7ccc0a8d3c585a93b6916734bb17">_dxl</a> = dxl; }</div>
-<div class="ttc" id="a00001_html_a16df7ccc0a8d3c585a93b6916734bb17"><div class="ttname"><a href="../../d8/d84/a00001.html#a16df7ccc0a8d3c585a93b6916734bb17">AX12::_dxl</a></div><div class="ttdeci">dynamixel * _dxl</div><div class="ttdoc">Contains the dynamixel comunication. </div><div class="ttdef"><b>Definition:</b> ax12.h:67</div></div>
+<div class="ttc" id="a00001_html_a16df7ccc0a8d3c585a93b6916734bb17"><div class="ttname"><a href="../../d8/d84/a00001.html#a16df7ccc0a8d3c585a93b6916734bb17">AX12::_dxl</a></div><div class="ttdeci">dynamixel * _dxl</div><div class="ttdoc">Contains the dynamixel comunication. </div><div class="ttdef"><b>Definition:</b> ax12.h:24</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -808,10 +792,10 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (goal &lt; 0) goal = 0;</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <a class="code" href="../../d8/d84/a00001.html#a16df7ccc0a8d3c585a93b6916734bb17">_dxl</a>-&gt;<a class="code" href="../../d0/d0b/a00004.html#a925f62ce5e261e5ef4fe6dc46bdc7c63">write_word</a>(<a class="code" href="../../d8/d84/a00001.html#a0ae2b35fee3d120075e1d8f1e2055804">_ID</a>, RAM::GoalPosition, <span class="keywordtype">int</span>((goal/300.0)*1023));</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;}</div>
-<div class="ttc" id="a00001_html_a16df7ccc0a8d3c585a93b6916734bb17"><div class="ttname"><a href="../../d8/d84/a00001.html#a16df7ccc0a8d3c585a93b6916734bb17">AX12::_dxl</a></div><div class="ttdeci">dynamixel * _dxl</div><div class="ttdoc">Contains the dynamixel comunication. </div><div class="ttdef"><b>Definition:</b> ax12.h:67</div></div>
+<div class="ttc" id="a00001_html_a16df7ccc0a8d3c585a93b6916734bb17"><div class="ttname"><a href="../../d8/d84/a00001.html#a16df7ccc0a8d3c585a93b6916734bb17">AX12::_dxl</a></div><div class="ttdeci">dynamixel * _dxl</div><div class="ttdoc">Contains the dynamixel comunication. </div><div class="ttdef"><b>Definition:</b> ax12.h:24</div></div>
 <div class="ttc" id="a00004_html_a925f62ce5e261e5ef4fe6dc46bdc7c63"><div class="ttname"><a href="../../d0/d0b/a00004.html#a925f62ce5e261e5ef4fe6dc46bdc7c63">dynamixel::write_word</a></div><div class="ttdeci">void write_word(int id, int address, int value)</div><div class="ttdoc">Writes a word to the selected ID at the selected address. </div><div class="ttdef"><b>Definition:</b> dynamixel.cpp:347</div></div>
-<div class="ttc" id="a00001_html_a0ae2b35fee3d120075e1d8f1e2055804"><div class="ttname"><a href="../../d8/d84/a00001.html#a0ae2b35fee3d120075e1d8f1e2055804">AX12::_ID</a></div><div class="ttdeci">int _ID</div><div class="ttdoc">Stores the current ID. </div><div class="ttdef"><b>Definition:</b> ax12.h:70</div></div>
-<div class="ttc" id="a00001_html_aba71492043d7a3226f0793db57372bec"><div class="ttname"><a href="../../d8/d84/a00001.html#aba71492043d7a3226f0793db57372bec">AX12::_rads</a></div><div class="ttdeci">bool _rads</div><div class="ttdoc">True if the angle is returned in radians. </div><div class="ttdef"><b>Definition:</b> ax12.h:76</div></div>
+<div class="ttc" id="a00001_html_a0ae2b35fee3d120075e1d8f1e2055804"><div class="ttname"><a href="../../d8/d84/a00001.html#a0ae2b35fee3d120075e1d8f1e2055804">AX12::_ID</a></div><div class="ttdeci">int _ID</div><div class="ttdoc">Stores the current ID. </div><div class="ttdef"><b>Definition:</b> ax12.h:27</div></div>
+<div class="ttc" id="a00001_html_aba71492043d7a3226f0793db57372bec"><div class="ttname"><a href="../../d8/d84/a00001.html#aba71492043d7a3226f0793db57372bec">AX12::_rads</a></div><div class="ttdeci">bool _rads</div><div class="ttdoc">True if the angle is returned in radians. </div><div class="ttdef"><b>Definition:</b> ax12.h:33</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -841,10 +825,10 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d8/d84/a00001.html#a0ae2b35fee3d120075e1d8f1e2055804">_ID</a> &lt; 0 or <a class="code" href="../../d8/d84/a00001.html#a16df7ccc0a8d3c585a93b6916734bb17">_dxl</a> == NULL) <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <a class="code" href="../../d8/d84/a00001.html#a16df7ccc0a8d3c585a93b6916734bb17">_dxl</a>-&gt;<a class="code" href="../../d0/d0b/a00004.html#a66c1e32cc45dd46d329f1fc212e46a3d">write_byte</a>(<a class="code" href="../../d8/d84/a00001.html#a0ae2b35fee3d120075e1d8f1e2055804">_ID</a>, RAM::TorqueEnable, <span class="keyword">true</span>);</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;}</div>
-<div class="ttc" id="a00001_html_a16df7ccc0a8d3c585a93b6916734bb17"><div class="ttname"><a href="../../d8/d84/a00001.html#a16df7ccc0a8d3c585a93b6916734bb17">AX12::_dxl</a></div><div class="ttdeci">dynamixel * _dxl</div><div class="ttdoc">Contains the dynamixel comunication. </div><div class="ttdef"><b>Definition:</b> ax12.h:67</div></div>
+<div class="ttc" id="a00001_html_a16df7ccc0a8d3c585a93b6916734bb17"><div class="ttname"><a href="../../d8/d84/a00001.html#a16df7ccc0a8d3c585a93b6916734bb17">AX12::_dxl</a></div><div class="ttdeci">dynamixel * _dxl</div><div class="ttdoc">Contains the dynamixel comunication. </div><div class="ttdef"><b>Definition:</b> ax12.h:24</div></div>
 <div class="ttc" id="a00004_html_a66c1e32cc45dd46d329f1fc212e46a3d"><div class="ttname"><a href="../../d0/d0b/a00004.html#a66c1e32cc45dd46d329f1fc212e46a3d">dynamixel::write_byte</a></div><div class="ttdeci">void write_byte(int id, int address, int value)</div><div class="ttdoc">Writes a byte to the selected ID at the selected address. </div><div class="ttdef"><b>Definition:</b> dynamixel.cpp:319</div></div>
-<div class="ttc" id="a00001_html_a0ae2b35fee3d120075e1d8f1e2055804"><div class="ttname"><a href="../../d8/d84/a00001.html#a0ae2b35fee3d120075e1d8f1e2055804">AX12::_ID</a></div><div class="ttdeci">int _ID</div><div class="ttdoc">Stores the current ID. </div><div class="ttdef"><b>Definition:</b> ax12.h:70</div></div>
-<div class="ttc" id="a00001_html_a08d272b502d65464202a3aa97825aec0ab2565d5698c9d943a8bcecf02b1389ad"><div class="ttname"><a href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0ab2565d5698c9d943a8bcecf02b1389ad">AX12::ID</a></div><div class="ttdef"><b>Definition:</b> ax12.h:28</div></div>
+<div class="ttc" id="a00001_html_a0ae2b35fee3d120075e1d8f1e2055804"><div class="ttname"><a href="../../d8/d84/a00001.html#a0ae2b35fee3d120075e1d8f1e2055804">AX12::_ID</a></div><div class="ttdeci">int _ID</div><div class="ttdoc">Stores the current ID. </div><div class="ttdef"><b>Definition:</b> ax12.h:27</div></div>
+<div class="ttc" id="a00001_html_a08d272b502d65464202a3aa97825aec0ab2565d5698c9d943a8bcecf02b1389ad"><div class="ttname"><a href="../../d8/d84/a00001.html#a08d272b502d65464202a3aa97825aec0ab2565d5698c9d943a8bcecf02b1389ad">AX12::ID</a></div><div class="ttdef"><b>Definition:</b> ax12.h:42</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -881,10 +865,10 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <a class="code" href="../../d8/d84/a00001.html#a16df7ccc0a8d3c585a93b6916734bb17">_dxl</a>-&gt;<a class="code" href="../../d0/d0b/a00004.html#a925f62ce5e261e5ef4fe6dc46bdc7c63">write_word</a>(<a class="code" href="../../d8/d84/a00001.html#a0ae2b35fee3d120075e1d8f1e2055804">_ID</a>, ROM::CCWAngleLimit, 0);</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    }</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;}</div>
-<div class="ttc" id="a00001_html_a16df7ccc0a8d3c585a93b6916734bb17"><div class="ttname"><a href="../../d8/d84/a00001.html#a16df7ccc0a8d3c585a93b6916734bb17">AX12::_dxl</a></div><div class="ttdeci">dynamixel * _dxl</div><div class="ttdoc">Contains the dynamixel comunication. </div><div class="ttdef"><b>Definition:</b> ax12.h:67</div></div>
-<div class="ttc" id="a00001_html_a2fd07e2e636003227a32d09d211bd6d4"><div class="ttname"><a href="../../d8/d84/a00001.html#a2fd07e2e636003227a32d09d211bd6d4">AX12::_mode</a></div><div class="ttdeci">bool _mode</div><div class="ttdoc">True if we use the joint mode. </div><div class="ttdef"><b>Definition:</b> ax12.h:73</div></div>
+<div class="ttc" id="a00001_html_a16df7ccc0a8d3c585a93b6916734bb17"><div class="ttname"><a href="../../d8/d84/a00001.html#a16df7ccc0a8d3c585a93b6916734bb17">AX12::_dxl</a></div><div class="ttdeci">dynamixel * _dxl</div><div class="ttdoc">Contains the dynamixel comunication. </div><div class="ttdef"><b>Definition:</b> ax12.h:24</div></div>
+<div class="ttc" id="a00001_html_a2fd07e2e636003227a32d09d211bd6d4"><div class="ttname"><a href="../../d8/d84/a00001.html#a2fd07e2e636003227a32d09d211bd6d4">AX12::_mode</a></div><div class="ttdeci">bool _mode</div><div class="ttdoc">True if we use the joint mode. </div><div class="ttdef"><b>Definition:</b> ax12.h:30</div></div>
 <div class="ttc" id="a00004_html_a925f62ce5e261e5ef4fe6dc46bdc7c63"><div class="ttname"><a href="../../d0/d0b/a00004.html#a925f62ce5e261e5ef4fe6dc46bdc7c63">dynamixel::write_word</a></div><div class="ttdeci">void write_word(int id, int address, int value)</div><div class="ttdoc">Writes a word to the selected ID at the selected address. </div><div class="ttdef"><b>Definition:</b> dynamixel.cpp:347</div></div>
-<div class="ttc" id="a00001_html_a0ae2b35fee3d120075e1d8f1e2055804"><div class="ttname"><a href="../../d8/d84/a00001.html#a0ae2b35fee3d120075e1d8f1e2055804">AX12::_ID</a></div><div class="ttdeci">int _ID</div><div class="ttdoc">Stores the current ID. </div><div class="ttdef"><b>Definition:</b> ax12.h:70</div></div>
+<div class="ttc" id="a00001_html_a0ae2b35fee3d120075e1d8f1e2055804"><div class="ttname"><a href="../../d8/d84/a00001.html#a0ae2b35fee3d120075e1d8f1e2055804">AX12::_ID</a></div><div class="ttdeci">int _ID</div><div class="ttdoc">Stores the current ID. </div><div class="ttdef"><b>Definition:</b> ax12.h:27</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -940,10 +924,10 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <a class="code" href="../../d8/d84/a00001.html#a16df7ccc0a8d3c585a93b6916734bb17">_dxl</a>-&gt;<a class="code" href="../../d0/d0b/a00004.html#a925f62ce5e261e5ef4fe6dc46bdc7c63">write_word</a>(<a class="code" href="../../d8/d84/a00001.html#a0ae2b35fee3d120075e1d8f1e2055804">_ID</a>, ROM::CWAngleLimit, <span class="keywordtype">int</span> (min));</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <a class="code" href="../../d8/d84/a00001.html#a16df7ccc0a8d3c585a93b6916734bb17">_dxl</a>-&gt;<a class="code" href="../../d0/d0b/a00004.html#a925f62ce5e261e5ef4fe6dc46bdc7c63">write_word</a>(<a class="code" href="../../d8/d84/a00001.html#a0ae2b35fee3d120075e1d8f1e2055804">_ID</a>, ROM::CCWAngleLimit, <span class="keywordtype">int</span> (max));</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;}</div>
-<div class="ttc" id="a00001_html_a16df7ccc0a8d3c585a93b6916734bb17"><div class="ttname"><a href="../../d8/d84/a00001.html#a16df7ccc0a8d3c585a93b6916734bb17">AX12::_dxl</a></div><div class="ttdeci">dynamixel * _dxl</div><div class="ttdoc">Contains the dynamixel comunication. </div><div class="ttdef"><b>Definition:</b> ax12.h:67</div></div>
+<div class="ttc" id="a00001_html_a16df7ccc0a8d3c585a93b6916734bb17"><div class="ttname"><a href="../../d8/d84/a00001.html#a16df7ccc0a8d3c585a93b6916734bb17">AX12::_dxl</a></div><div class="ttdeci">dynamixel * _dxl</div><div class="ttdoc">Contains the dynamixel comunication. </div><div class="ttdef"><b>Definition:</b> ax12.h:24</div></div>
 <div class="ttc" id="a00004_html_a925f62ce5e261e5ef4fe6dc46bdc7c63"><div class="ttname"><a href="../../d0/d0b/a00004.html#a925f62ce5e261e5ef4fe6dc46bdc7c63">dynamixel::write_word</a></div><div class="ttdeci">void write_word(int id, int address, int value)</div><div class="ttdoc">Writes a word to the selected ID at the selected address. </div><div class="ttdef"><b>Definition:</b> dynamixel.cpp:347</div></div>
-<div class="ttc" id="a00001_html_a0ae2b35fee3d120075e1d8f1e2055804"><div class="ttname"><a href="../../d8/d84/a00001.html#a0ae2b35fee3d120075e1d8f1e2055804">AX12::_ID</a></div><div class="ttdeci">int _ID</div><div class="ttdoc">Stores the current ID. </div><div class="ttdef"><b>Definition:</b> ax12.h:70</div></div>
-<div class="ttc" id="a00001_html_aba71492043d7a3226f0793db57372bec"><div class="ttname"><a href="../../d8/d84/a00001.html#aba71492043d7a3226f0793db57372bec">AX12::_rads</a></div><div class="ttdeci">bool _rads</div><div class="ttdoc">True if the angle is returned in radians. </div><div class="ttdef"><b>Definition:</b> ax12.h:76</div></div>
+<div class="ttc" id="a00001_html_a0ae2b35fee3d120075e1d8f1e2055804"><div class="ttname"><a href="../../d8/d84/a00001.html#a0ae2b35fee3d120075e1d8f1e2055804">AX12::_ID</a></div><div class="ttdeci">int _ID</div><div class="ttdoc">Stores the current ID. </div><div class="ttdef"><b>Definition:</b> ax12.h:27</div></div>
+<div class="ttc" id="a00001_html_aba71492043d7a3226f0793db57372bec"><div class="ttname"><a href="../../d8/d84/a00001.html#aba71492043d7a3226f0793db57372bec">AX12::_rads</a></div><div class="ttdeci">bool _rads</div><div class="ttdoc">True if the angle is returned in radians. </div><div class="ttdef"><b>Definition:</b> ax12.h:33</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -977,7 +961,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 <div class="fragment"><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;{ <a class="code" href="../../d8/d84/a00001.html#aba71492043d7a3226f0793db57372bec">_rads</a> = rads; }</div>
-<div class="ttc" id="a00001_html_aba71492043d7a3226f0793db57372bec"><div class="ttname"><a href="../../d8/d84/a00001.html#aba71492043d7a3226f0793db57372bec">AX12::_rads</a></div><div class="ttdeci">bool _rads</div><div class="ttdoc">True if the angle is returned in radians. </div><div class="ttdef"><b>Definition:</b> ax12.h:76</div></div>
+<div class="ttc" id="a00001_html_aba71492043d7a3226f0793db57372bec"><div class="ttname"><a href="../../d8/d84/a00001.html#aba71492043d7a3226f0793db57372bec">AX12::_rads</a></div><div class="ttdeci">bool _rads</div><div class="ttdoc">True if the angle is returned in radians. </div><div class="ttdef"><b>Definition:</b> ax12.h:33</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1014,10 +998,10 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    }</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;}</div>
-<div class="ttc" id="a00001_html_a16df7ccc0a8d3c585a93b6916734bb17"><div class="ttname"><a href="../../d8/d84/a00001.html#a16df7ccc0a8d3c585a93b6916734bb17">AX12::_dxl</a></div><div class="ttdeci">dynamixel * _dxl</div><div class="ttdoc">Contains the dynamixel comunication. </div><div class="ttdef"><b>Definition:</b> ax12.h:67</div></div>
+<div class="ttc" id="a00001_html_a16df7ccc0a8d3c585a93b6916734bb17"><div class="ttname"><a href="../../d8/d84/a00001.html#a16df7ccc0a8d3c585a93b6916734bb17">AX12::_dxl</a></div><div class="ttdeci">dynamixel * _dxl</div><div class="ttdoc">Contains the dynamixel comunication. </div><div class="ttdef"><b>Definition:</b> ax12.h:24</div></div>
 <div class="ttc" id="a00004_html_a66c1e32cc45dd46d329f1fc212e46a3d"><div class="ttname"><a href="../../d0/d0b/a00004.html#a66c1e32cc45dd46d329f1fc212e46a3d">dynamixel::write_byte</a></div><div class="ttdeci">void write_byte(int id, int address, int value)</div><div class="ttdoc">Writes a byte to the selected ID at the selected address. </div><div class="ttdef"><b>Definition:</b> dynamixel.cpp:319</div></div>
-<div class="ttc" id="a00001_html_a2fd07e2e636003227a32d09d211bd6d4"><div class="ttname"><a href="../../d8/d84/a00001.html#a2fd07e2e636003227a32d09d211bd6d4">AX12::_mode</a></div><div class="ttdeci">bool _mode</div><div class="ttdoc">True if we use the joint mode. </div><div class="ttdef"><b>Definition:</b> ax12.h:73</div></div>
-<div class="ttc" id="a00001_html_a0ae2b35fee3d120075e1d8f1e2055804"><div class="ttname"><a href="../../d8/d84/a00001.html#a0ae2b35fee3d120075e1d8f1e2055804">AX12::_ID</a></div><div class="ttdeci">int _ID</div><div class="ttdoc">Stores the current ID. </div><div class="ttdef"><b>Definition:</b> ax12.h:70</div></div>
+<div class="ttc" id="a00001_html_a2fd07e2e636003227a32d09d211bd6d4"><div class="ttname"><a href="../../d8/d84/a00001.html#a2fd07e2e636003227a32d09d211bd6d4">AX12::_mode</a></div><div class="ttdeci">bool _mode</div><div class="ttdoc">True if we use the joint mode. </div><div class="ttdef"><b>Definition:</b> ax12.h:30</div></div>
+<div class="ttc" id="a00001_html_a0ae2b35fee3d120075e1d8f1e2055804"><div class="ttname"><a href="../../d8/d84/a00001.html#a0ae2b35fee3d120075e1d8f1e2055804">AX12::_ID</a></div><div class="ttdeci">int _ID</div><div class="ttdoc">Stores the current ID. </div><div class="ttdef"><b>Definition:</b> ax12.h:27</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1117,7 +1101,7 @@ Private Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue May 26 2015 14:49:14 for DeltaRobot by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Jun 6 2015 13:05:15 for DeltaRobot by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

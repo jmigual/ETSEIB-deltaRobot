@@ -1,40 +1,27 @@
 \documentclass[a4paper, 12pt]{article}
 
 \usepackage[dvipsnames]{xcolor} % Code highlighting color
-\usepackage{fontspec} 
-\usepackage[hidelinks]{hyperref} % Links color
 \usepackage[catalan]{babel} % Language 
-\usepackage{import}
-\usepackage{listings} % Add code
+\usepackage{fontspec} 
 \usepackage{fullpage}
 \usepackage[a4paper, margin=2cm]{geometry} % To change the margins
 \usepackage{graphicx} % Insert images
-\usepackage{pdfpages}
+\usepackage[hidelinks]{hyperref} % Links color
+\usepackage{import}
+\usepackage[final]{pdfpages}
 \usepackage{ragged2e}
 \usepackage{wrapfig} %To Text wrap
+\usepackage{listings} % Add code
+\usepackage{tikz}
 
-%\definecolor{lincolngreen}{rgb}{0.11, 0.35, 0.02}
+\usetikzlibrary{shapes, arrows, positioning}
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw, fill=red!30]
+\tikzstyle{outcalc} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=yellow!30]
+\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=orange!40]
+\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=blue!30]
+\tikzstyle{decision} = [diamond, aspect=3, minimum width=3cm, minimum height=0.5cm, text centered, draw=black, fill=green!30]
+\tikzstyle{arrow} = [thick,->,>=stealth]
 
-%\lstdefinestyle{mystyle}{
-%    backgroundcolor=\color{backcolour},   
-%    commentstyle=\color{codegreen},
-%    keywordstyle=\color{magenta},
-%    numberstyle=\tiny\color{codegray},
-%    stringstyle=\color{codepurple},
-%    basicstyle=\footnotesize,
-%    breakatwhitespace=false,         
-%    breaklines=true,                 
-%    captionpos=b,                    
-%    keepspaces=true,                 
-%    numbers=left,                    
-%    numbersep=5pt,                  
-%    showspaces=false,                
-%    showstringspaces=false,
-%    showtabs=false,                  
-%    tabsize=2
-%    literate={á}{{\'a}}1 {ã}{{\~a}}1 {é}{{\'e}}1 {ç}{{\c{c}}}1 {Ç}{{\c{C}}}1,
-%}
-%
 \lstset{
 basicstyle=\ttfamily, 
 keywordstyle=\color{blue}, 
@@ -73,7 +60,7 @@ El nostre objectiu és construir un robot delta que sigui capaç de posicionar p
 \input{./cinematic}
 
 \newpage
-\section{Annex: Documentació codi}
-\subimport{./}{../Documentation/latex/refman.tex}
+\section{Informe de programació}
+\input{./programacio}
 
 \end{document}

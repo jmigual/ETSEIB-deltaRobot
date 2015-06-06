@@ -1,4 +1,4 @@
-\hypertarget{a00001}{}\section{A\+X12 Class Reference}
+\hypertarget{a00001}{}\subsection{A\+X12 Class Reference}
 \label{a00001}\index{A\+X12@{A\+X12}}
 
 
@@ -18,48 +18,7 @@ Collaboration diagram for A\+X12\+:\nopagebreak
 \includegraphics[width=141pt]{d5/d16/a00029}
 \end{center}
 \end{figure}
-\subsection*{Public Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-\hyperlink{a00001_ab7c557985e755d6119e5e2d979f928ae}{A\+X12} ()
-\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
-\hyperlink{a00001_a205be9b4dde785bd40b88f575a64f4d8}{A\+X12} (\hyperlink{a00004}{dynamixel} $\ast$\hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\+\_\+dxl}, int \hyperlink{a00001_a08d272b502d65464202a3aa97825aec0ab2565d5698c9d943a8bcecf02b1389ad}{I\+D}=-\/1)
-\begin{DoxyCompactList}\small\item\em Initializator constructor if I\+D == -\/1 no action is done. \end{DoxyCompactList}\item 
-\hyperlink{a00001_a37b76666533323ec317f5156dbef2a89}{A\+X12} (const \hyperlink{a00001}{A\+X12} \&a)
-\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
-\hyperlink{a00001_a5e9382e65479cdcb248f5303ac4c96d9}{$\sim$\+A\+X12} ()
-\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
-Q\+Vector$<$ int $>$ \hyperlink{a00001_a2fa05296aa57896a5cb0ef4ce0aa96f1}{connected\+I\+D} ()
-\begin{DoxyCompactList}\small\item\em Returns all active servos;. \end{DoxyCompactList}\item 
-double \hyperlink{a00001_a0bd930c81b7a9c088ecab789b3a7e525}{get\+Current\+Load} ()
-\begin{DoxyCompactList}\small\item\em Returns the current load from -\/100\% to 100\%, 100\% is Clock\+Wise and -\/100\% is Counter\+Clock\+Wise. \end{DoxyCompactList}\item 
-double \hyperlink{a00001_af9722b9c1f82fbfd97fe5e0a44369e8a}{get\+Current\+Pos} ()
-\begin{DoxyCompactList}\small\item\em Returns the current position from 0º to 300º \end{DoxyCompactList}\item 
-int \hyperlink{a00001_ab16fad4c8c034d56acce15fc9102f34d}{get\+Current\+Temp} ()
-\begin{DoxyCompactList}\small\item\em Returns the current Temperature in Celsius. \end{DoxyCompactList}\item 
-double \hyperlink{a00001_a23c7ed54716c4b144a68d801f324e3ef}{get\+Current\+Speed} ()
-\begin{DoxyCompactList}\small\item\em Returns the current speed from -\/100\% to 100\%, 100\% is Clock\+Wise and -\/100\% is Counter\+Clock\+Wise. \end{DoxyCompactList}\item 
-double \hyperlink{a00001_a9ef946bfc1ad4dce5fed4101ed321efe}{get\+Current\+Voltage} ()
-\begin{DoxyCompactList}\small\item\em Returns the current voltage in Volts. \end{DoxyCompactList}\item 
-int \hyperlink{a00001_a745ab1f31fa2cd8c7a5797aeb605cd0b}{get\+I\+D} ()
-\begin{DoxyCompactList}\small\item\em To get the current I\+D. \end{DoxyCompactList}\item 
-void \hyperlink{a00001_a6ef2e11a3b0bdb5015142ba04593a770}{set\+Compliance\+Slope} (uchar ccw, uchar cw)
-\begin{DoxyCompactList}\small\item\em Sets the compliance slope. \end{DoxyCompactList}\item 
-void \hyperlink{a00001_a74a5a89387f0f51e053f05a6c2c0b9c5}{set\+Dxl} (\hyperlink{a00004}{dynamixel} $\ast$dxl)
-\begin{DoxyCompactList}\small\item\em Sets the dynamixel interface. \end{DoxyCompactList}\item 
-void \hyperlink{a00001_a6b27a3c6314604b499d9fa47d180f5d3}{set\+Goal\+Position} (double goal)
-\begin{DoxyCompactList}\small\item\em Sets the Goal\textquotesingle{}s position (in degrees) or speed depending on the mode. \end{DoxyCompactList}\item 
-void \hyperlink{a00001_ab9fe5d0e2286985977985de6d84b1103}{set\+I\+D} (int \hyperlink{a00001_a08d272b502d65464202a3aa97825aec0ab2565d5698c9d943a8bcecf02b1389ad}{I\+D})
-\begin{DoxyCompactList}\small\item\em To set a new I\+D. \end{DoxyCompactList}\item 
-void \hyperlink{a00001_ac48405a5f4aa73c1f2d56f633dfbec50}{set\+Joint\+Mode} (bool mode)
-\begin{DoxyCompactList}\small\item\em To set Joint/\+Wheel mode. \end{DoxyCompactList}\item 
-void \hyperlink{a00001_a914864d133f8cbaf95594747aaff55f2}{set\+Min\+Max} (double min, double max)
-\begin{DoxyCompactList}\small\item\em To set the minimum and maximum angle from 0 to 300º \end{DoxyCompactList}\item 
-void \hyperlink{a00001_a120a8fb196ce724f118fd1774b658040}{set\+Radians} (bool rads)
-\begin{DoxyCompactList}\small\item\em Sets the radians mode. \end{DoxyCompactList}\item 
-void \hyperlink{a00001_a95428eea4d5165b81d80e4ab38e33b7b}{set\+Speed} (double speed)
-\begin{DoxyCompactList}\small\item\em To set the maximum speed from 0\% to 100\% if joint mode or from -\/100\% to 100\% if wheel mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Private Types}
+\subsubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
 enum \hyperlink{a00001_a08d272b502d65464202a3aa97825aec0}{R\+O\+M} \{ \\*
@@ -107,7 +66,48 @@ enum \hyperlink{a00001_a672068c48bbee921e5856cc44b1c81c1}{R\+A\+M} \{ \\*
 \hyperlink{a00001_a672068c48bbee921e5856cc44b1c81c1a491959069a5cf99cf49bd2fd9ea5ec92}{Punch} = 48
  \}
 \begin{DoxyCompactList}\small\item\em Contains all the R\+A\+M directions enumerations. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Private Attributes}
+\subsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00001_ab7c557985e755d6119e5e2d979f928ae}{A\+X12} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{a00001_a205be9b4dde785bd40b88f575a64f4d8}{A\+X12} (\hyperlink{a00004}{dynamixel} $\ast$\hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\+\_\+dxl}, int \hyperlink{a00001_a08d272b502d65464202a3aa97825aec0ab2565d5698c9d943a8bcecf02b1389ad}{I\+D}=-\/1)
+\begin{DoxyCompactList}\small\item\em Initializator constructor if I\+D == -\/1 no action is done. \end{DoxyCompactList}\item 
+\hyperlink{a00001_a37b76666533323ec317f5156dbef2a89}{A\+X12} (const \hyperlink{a00001}{A\+X12} \&a)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\hyperlink{a00001_a5e9382e65479cdcb248f5303ac4c96d9}{$\sim$\+A\+X12} ()
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+Q\+Vector$<$ int $>$ \hyperlink{a00001_a2fa05296aa57896a5cb0ef4ce0aa96f1}{connected\+I\+D} ()
+\begin{DoxyCompactList}\small\item\em Returns all active servos;. \end{DoxyCompactList}\item 
+double \hyperlink{a00001_a0bd930c81b7a9c088ecab789b3a7e525}{get\+Current\+Load} ()
+\begin{DoxyCompactList}\small\item\em Returns the current load from -\/100\% to 100\%, 100\% is Clock\+Wise and -\/100\% is Counter\+Clock\+Wise. \end{DoxyCompactList}\item 
+double \hyperlink{a00001_af9722b9c1f82fbfd97fe5e0a44369e8a}{get\+Current\+Pos} ()
+\begin{DoxyCompactList}\small\item\em Returns the current position from 0º to 300º \end{DoxyCompactList}\item 
+int \hyperlink{a00001_ab16fad4c8c034d56acce15fc9102f34d}{get\+Current\+Temp} ()
+\begin{DoxyCompactList}\small\item\em Returns the current Temperature in Celsius. \end{DoxyCompactList}\item 
+double \hyperlink{a00001_a23c7ed54716c4b144a68d801f324e3ef}{get\+Current\+Speed} ()
+\begin{DoxyCompactList}\small\item\em Returns the current speed from -\/100\% to 100\%, 100\% is Clock\+Wise and -\/100\% is Counter\+Clock\+Wise. \end{DoxyCompactList}\item 
+double \hyperlink{a00001_a9ef946bfc1ad4dce5fed4101ed321efe}{get\+Current\+Voltage} ()
+\begin{DoxyCompactList}\small\item\em Returns the current voltage in Volts. \end{DoxyCompactList}\item 
+int \hyperlink{a00001_a745ab1f31fa2cd8c7a5797aeb605cd0b}{get\+I\+D} ()
+\begin{DoxyCompactList}\small\item\em To get the current I\+D. \end{DoxyCompactList}\item 
+void \hyperlink{a00001_a6ef2e11a3b0bdb5015142ba04593a770}{set\+Compliance\+Slope} (uchar ccw, uchar cw)
+\begin{DoxyCompactList}\small\item\em Sets the compliance slope. \end{DoxyCompactList}\item 
+void \hyperlink{a00001_a74a5a89387f0f51e053f05a6c2c0b9c5}{set\+Dxl} (\hyperlink{a00004}{dynamixel} $\ast$dxl)
+\begin{DoxyCompactList}\small\item\em Sets the dynamixel interface. \end{DoxyCompactList}\item 
+void \hyperlink{a00001_a6b27a3c6314604b499d9fa47d180f5d3}{set\+Goal\+Position} (double goal)
+\begin{DoxyCompactList}\small\item\em Sets the Goal\textquotesingle{}s position (in degrees) or speed depending on the mode. \end{DoxyCompactList}\item 
+void \hyperlink{a00001_ab9fe5d0e2286985977985de6d84b1103}{set\+I\+D} (int \hyperlink{a00001_a08d272b502d65464202a3aa97825aec0ab2565d5698c9d943a8bcecf02b1389ad}{I\+D})
+\begin{DoxyCompactList}\small\item\em To set a new I\+D. \end{DoxyCompactList}\item 
+void \hyperlink{a00001_ac48405a5f4aa73c1f2d56f633dfbec50}{set\+Joint\+Mode} (bool mode)
+\begin{DoxyCompactList}\small\item\em To set Joint/\+Wheel mode. \end{DoxyCompactList}\item 
+void \hyperlink{a00001_a914864d133f8cbaf95594747aaff55f2}{set\+Min\+Max} (double min, double max)
+\begin{DoxyCompactList}\small\item\em To set the minimum and maximum angle from 0 to 300º \end{DoxyCompactList}\item 
+void \hyperlink{a00001_a120a8fb196ce724f118fd1774b658040}{set\+Radians} (bool rads)
+\begin{DoxyCompactList}\small\item\em Sets the radians mode. \end{DoxyCompactList}\item 
+void \hyperlink{a00001_a95428eea4d5165b81d80e4ab38e33b7b}{set\+Speed} (double speed)
+\begin{DoxyCompactList}\small\item\em To set the maximum speed from 0\% to 100\% if joint mode or from -\/100\% to 100\% if wheel mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{a00004}{dynamixel} $\ast$ \hyperlink{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{\+\_\+dxl}
@@ -120,13 +120,13 @@ bool \hyperlink{a00001_aba71492043d7a3226f0793db57372bec}{\+\_\+rads}
 \begin{DoxyCompactList}\small\item\em True if the angle is returned in radians. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
+\subsubsection{Detailed Description}
 The \hyperlink{a00001}{A\+X12} class is used to control A\+X-\/12 motors from Dynamixel. 
 
-\subsection{Member Enumeration Documentation}
+\subsubsection{Member Enumeration Documentation}
 \hypertarget{a00001_a672068c48bbee921e5856cc44b1c81c1}{}\index{A\+X12@{A\+X12}!R\+A\+M@{R\+A\+M}}
 \index{R\+A\+M@{R\+A\+M}!A\+X12@{A\+X12}}
-\subsubsection[{R\+A\+M}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf A\+X12\+::\+R\+A\+M}\hspace{0.3cm}{\ttfamily [private]}}\label{a00001_a672068c48bbee921e5856cc44b1c81c1}
+\paragraph[{R\+A\+M}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf A\+X12\+::\+R\+A\+M}}\label{a00001_a672068c48bbee921e5856cc44b1c81c1}
 
 
 Contains all the R\+A\+M directions enumerations. 
@@ -174,31 +174,31 @@ Contains all the R\+A\+M directions enumerations.
 \end{Desc}
 
 \begin{DoxyCode}
-00044     \{
-00045         \hyperlink{a00001_a672068c48bbee921e5856cc44b1c81c1ac4597f1de691116b512ae043da6ae7a3}{TorqueEnable}        = 24,
-00046         \hyperlink{a00001_a672068c48bbee921e5856cc44b1c81c1af9d9ebff7bdb8cbb20edfac6f553f796}{LED}                 = 25,
-00047         \hyperlink{a00001_a672068c48bbee921e5856cc44b1c81c1ac2410c95fb1bb2343adc3d3b621cb1d0}{CWComplianceMargin}  = 26,
-00048         \hyperlink{a00001_a672068c48bbee921e5856cc44b1c81c1aa9e82bf2f003910708111a4ade3ec42d}{CCWComplianceMargin} = 27,
-00049         \hyperlink{a00001_a672068c48bbee921e5856cc44b1c81c1a1dffe196ada84077dfbfcd72d31be8c8}{CWComplianceSlope}   = 28,
-00050         \hyperlink{a00001_a672068c48bbee921e5856cc44b1c81c1a624015aab9c06310e1f96bafe8f934a7}{CCWComplianceSlope}  = 29,
-00051         \hyperlink{a00001_a672068c48bbee921e5856cc44b1c81c1ae3d6ac0b56a8ab2b188f14545473cbef}{GoalPosition}        = 30,
-00052         \hyperlink{a00001_a672068c48bbee921e5856cc44b1c81c1a77389ef2d6dc4bfe760357bd375d5284}{MovingSpeed}         = 32,
-00053         \hyperlink{a00001_a672068c48bbee921e5856cc44b1c81c1adc48ae20914d1771097b17c08be83bbc}{TorqueLimit}         = 34,
-00054         \hyperlink{a00001_a672068c48bbee921e5856cc44b1c81c1ac3714d28e016c704ea8451c18700dea8}{PresentPosition}     = 36,
-00055         \hyperlink{a00001_a672068c48bbee921e5856cc44b1c81c1a481b48fdf5e3609568bdbde19c32ef90}{PresentSpeed}        = 38,
-00056         \hyperlink{a00001_a672068c48bbee921e5856cc44b1c81c1a4acb9c359962b60a1dfc900550f4b2b2}{PresentLoad}         = 40,
-00057         \hyperlink{a00001_a672068c48bbee921e5856cc44b1c81c1a908c1a7f566782c4c258c779b5ca54cd}{PresentVoltage}      = 42,
-00058         \hyperlink{a00001_a672068c48bbee921e5856cc44b1c81c1ae00a92c23c2af2faf19eb051424cf271}{PresentTemperature}  = 43,
-00059         \hyperlink{a00001_a672068c48bbee921e5856cc44b1c81c1a426e2185243d7ae4213d048abbf56938}{Registered}          = 44,
-00060         \hyperlink{a00001_a672068c48bbee921e5856cc44b1c81c1a1649d49cd35bc3ebfdc8be06b61b7caf}{Moving}              = 46,
-00061         \hyperlink{a00001_a672068c48bbee921e5856cc44b1c81c1a67e9c5c73f91985138111a792458e5ad}{Lock}                = 47,
-00062         \hyperlink{a00001_a672068c48bbee921e5856cc44b1c81c1a491959069a5cf99cf49bd2fd9ea5ec92}{Punch}               = 48
-00063         
-00064     \};    
+00058     \{
+00059         \hyperlink{a00001_a672068c48bbee921e5856cc44b1c81c1ac4597f1de691116b512ae043da6ae7a3}{TorqueEnable}        = 24,
+00060         \hyperlink{a00001_a672068c48bbee921e5856cc44b1c81c1af9d9ebff7bdb8cbb20edfac6f553f796}{LED}                 = 25,
+00061         \hyperlink{a00001_a672068c48bbee921e5856cc44b1c81c1ac2410c95fb1bb2343adc3d3b621cb1d0}{CWComplianceMargin}  = 26,
+00062         \hyperlink{a00001_a672068c48bbee921e5856cc44b1c81c1aa9e82bf2f003910708111a4ade3ec42d}{CCWComplianceMargin} = 27,
+00063         \hyperlink{a00001_a672068c48bbee921e5856cc44b1c81c1a1dffe196ada84077dfbfcd72d31be8c8}{CWComplianceSlope}   = 28,
+00064         \hyperlink{a00001_a672068c48bbee921e5856cc44b1c81c1a624015aab9c06310e1f96bafe8f934a7}{CCWComplianceSlope}  = 29,
+00065         \hyperlink{a00001_a672068c48bbee921e5856cc44b1c81c1ae3d6ac0b56a8ab2b188f14545473cbef}{GoalPosition}        = 30,
+00066         \hyperlink{a00001_a672068c48bbee921e5856cc44b1c81c1a77389ef2d6dc4bfe760357bd375d5284}{MovingSpeed}         = 32,
+00067         \hyperlink{a00001_a672068c48bbee921e5856cc44b1c81c1adc48ae20914d1771097b17c08be83bbc}{TorqueLimit}         = 34,
+00068         \hyperlink{a00001_a672068c48bbee921e5856cc44b1c81c1ac3714d28e016c704ea8451c18700dea8}{PresentPosition}     = 36,
+00069         \hyperlink{a00001_a672068c48bbee921e5856cc44b1c81c1a481b48fdf5e3609568bdbde19c32ef90}{PresentSpeed}        = 38,
+00070         \hyperlink{a00001_a672068c48bbee921e5856cc44b1c81c1a4acb9c359962b60a1dfc900550f4b2b2}{PresentLoad}         = 40,
+00071         \hyperlink{a00001_a672068c48bbee921e5856cc44b1c81c1a908c1a7f566782c4c258c779b5ca54cd}{PresentVoltage}      = 42,
+00072         \hyperlink{a00001_a672068c48bbee921e5856cc44b1c81c1ae00a92c23c2af2faf19eb051424cf271}{PresentTemperature}  = 43,
+00073         \hyperlink{a00001_a672068c48bbee921e5856cc44b1c81c1a426e2185243d7ae4213d048abbf56938}{Registered}          = 44,
+00074         \hyperlink{a00001_a672068c48bbee921e5856cc44b1c81c1a1649d49cd35bc3ebfdc8be06b61b7caf}{Moving}              = 46,
+00075         \hyperlink{a00001_a672068c48bbee921e5856cc44b1c81c1a67e9c5c73f91985138111a792458e5ad}{Lock}                = 47,
+00076         \hyperlink{a00001_a672068c48bbee921e5856cc44b1c81c1a491959069a5cf99cf49bd2fd9ea5ec92}{Punch}               = 48
+00077         
+00078     \};   
 \end{DoxyCode}
 \hypertarget{a00001_a08d272b502d65464202a3aa97825aec0}{}\index{A\+X12@{A\+X12}!R\+O\+M@{R\+O\+M}}
 \index{R\+O\+M@{R\+O\+M}!A\+X12@{A\+X12}}
-\subsubsection[{R\+O\+M}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf A\+X12\+::\+R\+O\+M}\hspace{0.3cm}{\ttfamily [private]}}\label{a00001_a08d272b502d65464202a3aa97825aec0}
+\paragraph[{R\+O\+M}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf A\+X12\+::\+R\+O\+M}}\label{a00001_a08d272b502d65464202a3aa97825aec0}
 
 
 Contains all the E\+E\+P\+R\+O\+M directions enumeration. 
@@ -238,29 +238,29 @@ Contains all the E\+E\+P\+R\+O\+M directions enumeration.
 \end{Desc}
 
 \begin{DoxyCode}
-00025     \{
-00026         \hyperlink{a00001_a08d272b502d65464202a3aa97825aec0afaeddb6fc62aacc16e88f98a77efbcff}{ModelNumber}         = 0,
-00027         \hyperlink{a00001_a08d272b502d65464202a3aa97825aec0a234de9d5194d6b6f4e45b854dbf1442d}{VersionFirmware}     = 2,
-00028         \hyperlink{a00001_a08d272b502d65464202a3aa97825aec0ab2565d5698c9d943a8bcecf02b1389ad}{ID}                  = 3,
-00029         \hyperlink{a00001_a08d272b502d65464202a3aa97825aec0afa8229ff24576bd10b061c259cc1146d}{BaudRate}            = 4,
-00030         \hyperlink{a00001_a08d272b502d65464202a3aa97825aec0a1e7fa07a9a5a28584a287668a95dbb4f}{ReturnDelayTime}     = 5,
-00031         \hyperlink{a00001_a08d272b502d65464202a3aa97825aec0aae428847c3648681e8aae8f0a12c6880}{CWAngleLimit}        = 6,
-00032         \hyperlink{a00001_a08d272b502d65464202a3aa97825aec0ac631a1a4dfb22cd02e863fa19f509523}{CCWAngleLimit}       = 8,
-00033         \hyperlink{a00001_a08d272b502d65464202a3aa97825aec0aa9f1a3f67a0bf70f6e6530cac9f55153}{HighestLimitTemp}    = 11,
-00034         \hyperlink{a00001_a08d272b502d65464202a3aa97825aec0a75d2b929c12ad95dfe84b3214e5badd5}{LowestLimitVoltage}  = 12,
-00035         \hyperlink{a00001_a08d272b502d65464202a3aa97825aec0a39bed5183cada3039894ec459e9cdba4}{HighestLimitVoltage} = 13,
-00036         \hyperlink{a00001_a08d272b502d65464202a3aa97825aec0aa45ee204b37e8a8657bbb0be1f3f2ee5}{MaxTorque}           = 14,
-00037         \hyperlink{a00001_a08d272b502d65464202a3aa97825aec0a1f50b233b75db417410a9ad75671c5f8}{StatusReturnLevel}   = 16,
-00038         \hyperlink{a00001_a08d272b502d65464202a3aa97825aec0a69af7afba3f29c206407f802a6975dd1}{AlarmLED}            = 17,
-00039         \hyperlink{a00001_a08d272b502d65464202a3aa97825aec0a017096d92de6aa9fa691df824cd21757}{AlarmShutdown}       = 18
-00040     \};
+00039     \{
+00040         \hyperlink{a00001_a08d272b502d65464202a3aa97825aec0afaeddb6fc62aacc16e88f98a77efbcff}{ModelNumber}         = 0,
+00041         \hyperlink{a00001_a08d272b502d65464202a3aa97825aec0a234de9d5194d6b6f4e45b854dbf1442d}{VersionFirmware}     = 2,
+00042         \hyperlink{a00001_a08d272b502d65464202a3aa97825aec0ab2565d5698c9d943a8bcecf02b1389ad}{ID}                  = 3,
+00043         \hyperlink{a00001_a08d272b502d65464202a3aa97825aec0afa8229ff24576bd10b061c259cc1146d}{BaudRate}            = 4,
+00044         \hyperlink{a00001_a08d272b502d65464202a3aa97825aec0a1e7fa07a9a5a28584a287668a95dbb4f}{ReturnDelayTime}     = 5,
+00045         \hyperlink{a00001_a08d272b502d65464202a3aa97825aec0aae428847c3648681e8aae8f0a12c6880}{CWAngleLimit}        = 6,
+00046         \hyperlink{a00001_a08d272b502d65464202a3aa97825aec0ac631a1a4dfb22cd02e863fa19f509523}{CCWAngleLimit}       = 8,
+00047         \hyperlink{a00001_a08d272b502d65464202a3aa97825aec0aa9f1a3f67a0bf70f6e6530cac9f55153}{HighestLimitTemp}    = 11,
+00048         \hyperlink{a00001_a08d272b502d65464202a3aa97825aec0a75d2b929c12ad95dfe84b3214e5badd5}{LowestLimitVoltage}  = 12,
+00049         \hyperlink{a00001_a08d272b502d65464202a3aa97825aec0a39bed5183cada3039894ec459e9cdba4}{HighestLimitVoltage} = 13,
+00050         \hyperlink{a00001_a08d272b502d65464202a3aa97825aec0aa45ee204b37e8a8657bbb0be1f3f2ee5}{MaxTorque}           = 14,
+00051         \hyperlink{a00001_a08d272b502d65464202a3aa97825aec0a1f50b233b75db417410a9ad75671c5f8}{StatusReturnLevel}   = 16,
+00052         \hyperlink{a00001_a08d272b502d65464202a3aa97825aec0a69af7afba3f29c206407f802a6975dd1}{AlarmLED}            = 17,
+00053         \hyperlink{a00001_a08d272b502d65464202a3aa97825aec0a017096d92de6aa9fa691df824cd21757}{AlarmShutdown}       = 18
+00054     \};
 \end{DoxyCode}
 
 
-\subsection{Constructor \& Destructor Documentation}
+\subsubsection{Constructor \& Destructor Documentation}
 \hypertarget{a00001_ab7c557985e755d6119e5e2d979f928ae}{}\index{A\+X12@{A\+X12}!A\+X12@{A\+X12}}
 \index{A\+X12@{A\+X12}!A\+X12@{A\+X12}}
-\subsubsection[{A\+X12}]{\setlength{\rightskip}{0pt plus 5cm}A\+X12\+::\+A\+X12 (
+\paragraph[{A\+X12}]{\setlength{\rightskip}{0pt plus 5cm}A\+X12\+::\+A\+X12 (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
@@ -282,7 +282,7 @@ Default constructor.
 \end{DoxyCode}
 \hypertarget{a00001_a205be9b4dde785bd40b88f575a64f4d8}{}\index{A\+X12@{A\+X12}!A\+X12@{A\+X12}}
 \index{A\+X12@{A\+X12}!A\+X12@{A\+X12}}
-\subsubsection[{A\+X12}]{\setlength{\rightskip}{0pt plus 5cm}A\+X12\+::\+A\+X12 (
+\paragraph[{A\+X12}]{\setlength{\rightskip}{0pt plus 5cm}A\+X12\+::\+A\+X12 (
 \begin{DoxyParamCaption}
 \item[{{\bf dynamixel} $\ast$}]{\+\_\+dxl, }
 \item[{int}]{I\+D = {\ttfamily -\/1}}
@@ -306,7 +306,7 @@ Initializator constructor if I\+D == -\/1 no action is done.
 \end{DoxyCode}
 \hypertarget{a00001_a37b76666533323ec317f5156dbef2a89}{}\index{A\+X12@{A\+X12}!A\+X12@{A\+X12}}
 \index{A\+X12@{A\+X12}!A\+X12@{A\+X12}}
-\subsubsection[{A\+X12}]{\setlength{\rightskip}{0pt plus 5cm}A\+X12\+::\+A\+X12 (
+\paragraph[{A\+X12}]{\setlength{\rightskip}{0pt plus 5cm}A\+X12\+::\+A\+X12 (
 \begin{DoxyParamCaption}
 \item[{const {\bf A\+X12} \&}]{a}
 \end{DoxyParamCaption}
@@ -328,7 +328,7 @@ Copy constructor.
 \end{DoxyCode}
 \hypertarget{a00001_a5e9382e65479cdcb248f5303ac4c96d9}{}\index{A\+X12@{A\+X12}!````~A\+X12@{$\sim$\+A\+X12}}
 \index{````~A\+X12@{$\sim$\+A\+X12}!A\+X12@{A\+X12}}
-\subsubsection[{$\sim$\+A\+X12}]{\setlength{\rightskip}{0pt plus 5cm}A\+X12\+::$\sim$\+A\+X12 (
+\paragraph[{$\sim$\+A\+X12}]{\setlength{\rightskip}{0pt plus 5cm}A\+X12\+::$\sim$\+A\+X12 (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
@@ -345,10 +345,10 @@ Default destructor.
 \end{DoxyCode}
 
 
-\subsection{Member Function Documentation}
+\subsubsection{Member Function Documentation}
 \hypertarget{a00001_a2fa05296aa57896a5cb0ef4ce0aa96f1}{}\index{A\+X12@{A\+X12}!connected\+I\+D@{connected\+I\+D}}
 \index{connected\+I\+D@{connected\+I\+D}!A\+X12@{A\+X12}}
-\subsubsection[{connected\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Vector$<$ int $>$ A\+X12\+::connected\+I\+D (
+\paragraph[{connected\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Vector$<$ int $>$ A\+X12\+::connected\+I\+D (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
@@ -373,7 +373,7 @@ Returns all active servos;.
 \end{DoxyCode}
 \hypertarget{a00001_a0bd930c81b7a9c088ecab789b3a7e525}{}\index{A\+X12@{A\+X12}!get\+Current\+Load@{get\+Current\+Load}}
 \index{get\+Current\+Load@{get\+Current\+Load}!A\+X12@{A\+X12}}
-\subsubsection[{get\+Current\+Load}]{\setlength{\rightskip}{0pt plus 5cm}double A\+X12\+::get\+Current\+Load (
+\paragraph[{get\+Current\+Load}]{\setlength{\rightskip}{0pt plus 5cm}double A\+X12\+::get\+Current\+Load (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
@@ -393,7 +393,7 @@ Returns the current load from -\/100\% to 100\%, 100\% is Clock\+Wise and -\/100
 \end{DoxyCode}
 \hypertarget{a00001_af9722b9c1f82fbfd97fe5e0a44369e8a}{}\index{A\+X12@{A\+X12}!get\+Current\+Pos@{get\+Current\+Pos}}
 \index{get\+Current\+Pos@{get\+Current\+Pos}!A\+X12@{A\+X12}}
-\subsubsection[{get\+Current\+Pos}]{\setlength{\rightskip}{0pt plus 5cm}double A\+X12\+::get\+Current\+Pos (
+\paragraph[{get\+Current\+Pos}]{\setlength{\rightskip}{0pt plus 5cm}double A\+X12\+::get\+Current\+Pos (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
@@ -415,7 +415,7 @@ Returns the current position from 0º to 300º
 \end{DoxyCode}
 \hypertarget{a00001_a23c7ed54716c4b144a68d801f324e3ef}{}\index{A\+X12@{A\+X12}!get\+Current\+Speed@{get\+Current\+Speed}}
 \index{get\+Current\+Speed@{get\+Current\+Speed}!A\+X12@{A\+X12}}
-\subsubsection[{get\+Current\+Speed}]{\setlength{\rightskip}{0pt plus 5cm}double A\+X12\+::get\+Current\+Speed (
+\paragraph[{get\+Current\+Speed}]{\setlength{\rightskip}{0pt plus 5cm}double A\+X12\+::get\+Current\+Speed (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
@@ -437,7 +437,7 @@ Returns the current speed from -\/100\% to 100\%, 100\% is Clock\+Wise and -\/10
 \end{DoxyCode}
 \hypertarget{a00001_ab16fad4c8c034d56acce15fc9102f34d}{}\index{A\+X12@{A\+X12}!get\+Current\+Temp@{get\+Current\+Temp}}
 \index{get\+Current\+Temp@{get\+Current\+Temp}!A\+X12@{A\+X12}}
-\subsubsection[{get\+Current\+Temp}]{\setlength{\rightskip}{0pt plus 5cm}int A\+X12\+::get\+Current\+Temp (
+\paragraph[{get\+Current\+Temp}]{\setlength{\rightskip}{0pt plus 5cm}int A\+X12\+::get\+Current\+Temp (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
@@ -457,7 +457,7 @@ Returns the current Temperature in Celsius.
 \end{DoxyCode}
 \hypertarget{a00001_a9ef946bfc1ad4dce5fed4101ed321efe}{}\index{A\+X12@{A\+X12}!get\+Current\+Voltage@{get\+Current\+Voltage}}
 \index{get\+Current\+Voltage@{get\+Current\+Voltage}!A\+X12@{A\+X12}}
-\subsubsection[{get\+Current\+Voltage}]{\setlength{\rightskip}{0pt plus 5cm}double A\+X12\+::get\+Current\+Voltage (
+\paragraph[{get\+Current\+Voltage}]{\setlength{\rightskip}{0pt plus 5cm}double A\+X12\+::get\+Current\+Voltage (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
@@ -477,7 +477,7 @@ Returns the current voltage in Volts.
 \end{DoxyCode}
 \hypertarget{a00001_a745ab1f31fa2cd8c7a5797aeb605cd0b}{}\index{A\+X12@{A\+X12}!get\+I\+D@{get\+I\+D}}
 \index{get\+I\+D@{get\+I\+D}!A\+X12@{A\+X12}}
-\subsubsection[{get\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}int A\+X12\+::get\+I\+D (
+\paragraph[{get\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}int A\+X12\+::get\+I\+D (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
@@ -492,7 +492,7 @@ To get the current I\+D.
 \end{DoxyCode}
 \hypertarget{a00001_a6ef2e11a3b0bdb5015142ba04593a770}{}\index{A\+X12@{A\+X12}!set\+Compliance\+Slope@{set\+Compliance\+Slope}}
 \index{set\+Compliance\+Slope@{set\+Compliance\+Slope}!A\+X12@{A\+X12}}
-\subsubsection[{set\+Compliance\+Slope}]{\setlength{\rightskip}{0pt plus 5cm}void A\+X12\+::set\+Compliance\+Slope (
+\paragraph[{set\+Compliance\+Slope}]{\setlength{\rightskip}{0pt plus 5cm}void A\+X12\+::set\+Compliance\+Slope (
 \begin{DoxyParamCaption}
 \item[{uchar}]{ccw, }
 \item[{uchar}]{cw}
@@ -519,7 +519,7 @@ Sets the compliance slope.
 \end{DoxyCode}
 \hypertarget{a00001_a74a5a89387f0f51e053f05a6c2c0b9c5}{}\index{A\+X12@{A\+X12}!set\+Dxl@{set\+Dxl}}
 \index{set\+Dxl@{set\+Dxl}!A\+X12@{A\+X12}}
-\subsubsection[{set\+Dxl}]{\setlength{\rightskip}{0pt plus 5cm}void A\+X12\+::set\+Dxl (
+\paragraph[{set\+Dxl}]{\setlength{\rightskip}{0pt plus 5cm}void A\+X12\+::set\+Dxl (
 \begin{DoxyParamCaption}
 \item[{{\bf dynamixel} $\ast$}]{dxl}
 \end{DoxyParamCaption}
@@ -539,7 +539,7 @@ Sets the dynamixel interface.
 \end{DoxyCode}
 \hypertarget{a00001_a6b27a3c6314604b499d9fa47d180f5d3}{}\index{A\+X12@{A\+X12}!set\+Goal\+Position@{set\+Goal\+Position}}
 \index{set\+Goal\+Position@{set\+Goal\+Position}!A\+X12@{A\+X12}}
-\subsubsection[{set\+Goal\+Position}]{\setlength{\rightskip}{0pt plus 5cm}void A\+X12\+::set\+Goal\+Position (
+\paragraph[{set\+Goal\+Position}]{\setlength{\rightskip}{0pt plus 5cm}void A\+X12\+::set\+Goal\+Position (
 \begin{DoxyParamCaption}
 \item[{double}]{goal}
 \end{DoxyParamCaption}
@@ -568,7 +568,7 @@ Sets the Goal\textquotesingle{}s position (in degrees) or speed depending on the
 \end{DoxyCode}
 \hypertarget{a00001_ab9fe5d0e2286985977985de6d84b1103}{}\index{A\+X12@{A\+X12}!set\+I\+D@{set\+I\+D}}
 \index{set\+I\+D@{set\+I\+D}!A\+X12@{A\+X12}}
-\subsubsection[{set\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}void A\+X12\+::set\+I\+D (
+\paragraph[{set\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}void A\+X12\+::set\+I\+D (
 \begin{DoxyParamCaption}
 \item[{int}]{I\+D}
 \end{DoxyParamCaption}
@@ -592,7 +592,7 @@ To set a new I\+D.
 \end{DoxyCode}
 \hypertarget{a00001_ac48405a5f4aa73c1f2d56f633dfbec50}{}\index{A\+X12@{A\+X12}!set\+Joint\+Mode@{set\+Joint\+Mode}}
 \index{set\+Joint\+Mode@{set\+Joint\+Mode}!A\+X12@{A\+X12}}
-\subsubsection[{set\+Joint\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}void A\+X12\+::set\+Joint\+Mode (
+\paragraph[{set\+Joint\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}void A\+X12\+::set\+Joint\+Mode (
 \begin{DoxyParamCaption}
 \item[{bool}]{mode}
 \end{DoxyParamCaption}
@@ -623,7 +623,7 @@ To set Joint/\+Wheel mode.
 \end{DoxyCode}
 \hypertarget{a00001_a914864d133f8cbaf95594747aaff55f2}{}\index{A\+X12@{A\+X12}!set\+Min\+Max@{set\+Min\+Max}}
 \index{set\+Min\+Max@{set\+Min\+Max}!A\+X12@{A\+X12}}
-\subsubsection[{set\+Min\+Max}]{\setlength{\rightskip}{0pt plus 5cm}void A\+X12\+::set\+Min\+Max (
+\paragraph[{set\+Min\+Max}]{\setlength{\rightskip}{0pt plus 5cm}void A\+X12\+::set\+Min\+Max (
 \begin{DoxyParamCaption}
 \item[{double}]{min, }
 \item[{double}]{max}
@@ -665,7 +665,7 @@ To set the minimum and maximum angle from 0 to 300º
 \end{DoxyCode}
 \hypertarget{a00001_a120a8fb196ce724f118fd1774b658040}{}\index{A\+X12@{A\+X12}!set\+Radians@{set\+Radians}}
 \index{set\+Radians@{set\+Radians}!A\+X12@{A\+X12}}
-\subsubsection[{set\+Radians}]{\setlength{\rightskip}{0pt plus 5cm}void A\+X12\+::set\+Radians (
+\paragraph[{set\+Radians}]{\setlength{\rightskip}{0pt plus 5cm}void A\+X12\+::set\+Radians (
 \begin{DoxyParamCaption}
 \item[{bool}]{rads}
 \end{DoxyParamCaption}
@@ -685,7 +685,7 @@ Sets the radians mode.
 \end{DoxyCode}
 \hypertarget{a00001_a95428eea4d5165b81d80e4ab38e33b7b}{}\index{A\+X12@{A\+X12}!set\+Speed@{set\+Speed}}
 \index{set\+Speed@{set\+Speed}!A\+X12@{A\+X12}}
-\subsubsection[{set\+Speed}]{\setlength{\rightskip}{0pt plus 5cm}void A\+X12\+::set\+Speed (
+\paragraph[{set\+Speed}]{\setlength{\rightskip}{0pt plus 5cm}void A\+X12\+::set\+Speed (
 \begin{DoxyParamCaption}
 \item[{double}]{speed}
 \end{DoxyParamCaption}
@@ -717,31 +717,31 @@ To set the maximum speed from 0\% to 100\% if joint mode or from -\/100\% to 100
 \end{DoxyCode}
 
 
-\subsection{Member Data Documentation}
+\subsubsection{Member Data Documentation}
 \hypertarget{a00001_a16df7ccc0a8d3c585a93b6916734bb17}{}\index{A\+X12@{A\+X12}!\+\_\+dxl@{\+\_\+dxl}}
 \index{\+\_\+dxl@{\+\_\+dxl}!A\+X12@{A\+X12}}
-\subsubsection[{\+\_\+dxl}]{\setlength{\rightskip}{0pt plus 5cm}{\bf dynamixel}$\ast$ A\+X12\+::\+\_\+dxl\hspace{0.3cm}{\ttfamily [private]}}\label{a00001_a16df7ccc0a8d3c585a93b6916734bb17}
+\paragraph[{\+\_\+dxl}]{\setlength{\rightskip}{0pt plus 5cm}{\bf dynamixel}$\ast$ A\+X12\+::\+\_\+dxl\hspace{0.3cm}{\ttfamily [private]}}\label{a00001_a16df7ccc0a8d3c585a93b6916734bb17}
 
 
 Contains the dynamixel comunication. 
 
 \hypertarget{a00001_a0ae2b35fee3d120075e1d8f1e2055804}{}\index{A\+X12@{A\+X12}!\+\_\+\+I\+D@{\+\_\+\+I\+D}}
 \index{\+\_\+\+I\+D@{\+\_\+\+I\+D}!A\+X12@{A\+X12}}
-\subsubsection[{\+\_\+\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}int A\+X12\+::\+\_\+\+I\+D\hspace{0.3cm}{\ttfamily [private]}}\label{a00001_a0ae2b35fee3d120075e1d8f1e2055804}
+\paragraph[{\+\_\+\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}int A\+X12\+::\+\_\+\+I\+D\hspace{0.3cm}{\ttfamily [private]}}\label{a00001_a0ae2b35fee3d120075e1d8f1e2055804}
 
 
 Stores the current I\+D. 
 
 \hypertarget{a00001_a2fd07e2e636003227a32d09d211bd6d4}{}\index{A\+X12@{A\+X12}!\+\_\+mode@{\+\_\+mode}}
 \index{\+\_\+mode@{\+\_\+mode}!A\+X12@{A\+X12}}
-\subsubsection[{\+\_\+mode}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+X12\+::\+\_\+mode\hspace{0.3cm}{\ttfamily [private]}}\label{a00001_a2fd07e2e636003227a32d09d211bd6d4}
+\paragraph[{\+\_\+mode}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+X12\+::\+\_\+mode\hspace{0.3cm}{\ttfamily [private]}}\label{a00001_a2fd07e2e636003227a32d09d211bd6d4}
 
 
 True if we use the joint mode. 
 
 \hypertarget{a00001_aba71492043d7a3226f0793db57372bec}{}\index{A\+X12@{A\+X12}!\+\_\+rads@{\+\_\+rads}}
 \index{\+\_\+rads@{\+\_\+rads}!A\+X12@{A\+X12}}
-\subsubsection[{\+\_\+rads}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+X12\+::\+\_\+rads\hspace{0.3cm}{\ttfamily [private]}}\label{a00001_aba71492043d7a3226f0793db57372bec}
+\paragraph[{\+\_\+rads}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+X12\+::\+\_\+rads\hspace{0.3cm}{\ttfamily [private]}}\label{a00001_aba71492043d7a3226f0793db57372bec}
 
 
 True if the angle is returned in radians. 

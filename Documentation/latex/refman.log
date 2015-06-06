@@ -1,30 +1,28 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.2.25)  26 MAY 2015 14:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.2.25)  6 JUN 2015 13:05
 entering extended mode
 **refman
 (refman.tex
 LaTeX2e <2014/05/01>
 Babel <3.9l> and hyphenation patterns for 68 languages loaded.
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\book.cls"
-Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\bk10.clo"
-File: bk10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\article.cls"
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\size10.clo"
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
-\c@chapter=\count80
-\c@section=\count81
-\c@subsection=\count82
-\c@subsubsection=\count83
-\c@paragraph=\count84
-\c@subparagraph=\count85
-\c@figure=\count86
-\c@table=\count87
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\fixltx2e.sty"
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\fixltx2e.sty"
 Package: fixltx2e 2015/02/21 v2.0a fixes to LaTeX (obsolete)
-
 
 Package fixltx2e Warning: fixltx2e is not required with releases after 2015
 (fixltx2e)                All fixes are now in the LaTeX kernel.
@@ -32,72 +30,61 @@ Package fixltx2e Warning: fixltx2e is not required with releases after 2015
 
 ) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\calc.sty"
 Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count88
-\calc@Bcount=\count89
+\calc@Acount=\count87
+\calc@Bcount=\count88
 \calc@Adimen=\dimen103
 \calc@Bdimen=\dimen104
 \calc@Askip=\skip43
 \calc@Bskip=\skip44
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count90
+\calc@Ccount=\count89
 \calc@Cskip=\skip45
 ) (doxygen.sty
 Package: doxygen 
-
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\alltt.sty"
 Package: alltt 1997/06/16 v2.0g defines alltt environment
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\array.sty"
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\array.sty"
 Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
 \col@sep=\dimen105
 \extrarowheight=\dimen106
 \NC@list=\toks14
 \extratabsurround=\skip46
 \backup@length=\skip47
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\float\float.sty"
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\float\float.sty"
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count91
+\c@float@type=\count90
 \float@exts=\toks15
 \float@box=\box26
 \@float@everytoks=\toks16
 \@floatcapt=\box27
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ifthen.sty"
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\verbatim.sty"
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\verbatim.sty"
 Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
 \every@verbatim=\toks17
 \verbatim@line=\toks18
 \verbatim@in@stream=\read1
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\xcolor\xcolor.sty"
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\xcolor\xcolor.sty"
 Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
-
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
-
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
-
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
-\Gread@gobject=\count92
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\colortbl\colortbl.sty"
+\Gread@gobject=\count91
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\colortbl\colortbl.sty"
 Package: colortbl 2012/02/13 v1.0a Color table columns (DPC)
 \everycr=\toks19
 \minrowclearance=\skip48
 )
-\rownum=\count93
+\rownum=\count92
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
 Package xcolor Info: Model `RGB' extended on input line 1353.
@@ -107,21 +94,20 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\xtab\xtab.sty"
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\xtab\xtab.sty"
 Package: xtab 2011/07/31 v2.3f Extended supertabular package
-\c@tracingst=\count94
+\c@tracingst=\count93
 \PWSTcapht=\dimen107
 \ST@wd=\dimen108
 \ST@rightskip=\skip49
 \ST@leftskip=\skip50
 \ST@parfillskip=\skip51
-\c@PWSTtable=\count95
-\PWSTlastpage=\count96
-\PWSTpenultimate=\count97
-\PWSTcurpage=\count98
-\PWSTtempc=\count99
-\PWSTlines=\count100
+\c@PWSTtable=\count94
+\PWSTlastpage=\count95
+\PWSTpenultimate=\count96
+\PWSTcurpage=\count97
+\PWSTtempc=\count98
+\PWSTlines=\count99
 \PWST@lastht=\dimen109
 \PWST@generalht=\dimen110
 \PWST@ht=\dimen111
@@ -140,47 +126,36 @@ Package: xtab 2011/07/31 v2.3f Extended supertabular package
 \xrefbox=\box29
 \xreflength=\skip52
 \tmplength=\skip53
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\adjustbox\adjustbox.sty"
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\adjustbox\adjustbox.sty"
 Package: adjustbox 2012/05/21 v1.0 Adjusting TeX boxes (trim, clip, ...)
-
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\xkeyval\xkeyval.sty"
 Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\xkeyval\xkeyval.tex"
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\xkeyval\xkvutils.tex"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\xkeyval\xkeyval.tex" ("C:\Progr
+am Files (x86)\MiKTeX 2.9\tex\generic\xkeyval\xkvutils.tex"
 \XKV@toks=\toks20
 \XKV@tempa@toks=\toks21
-
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\xkeyval\keyval.tex"))
-\XKV@depth=\count101
+\XKV@depth=\count100
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
-))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\adjustbox\adjcalc.sty"
+)) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\adjustbox\adjcalc.sty"
 Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
 -ends (calc, etex, pgfmath)
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\adjustbox\trimclip.sty"
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\adjustbox\trimclip.sty"
 Package: trimclip 2012/05/16 v1.0 Trim and clip general TeX material
-
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
-
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
 Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
-
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
 File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
 Package graphics Info: Driver file: pdftex.def on input line 94.
 )
 \Gin@req@height=\dimen122
 \Gin@req@width=\dimen123
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\collectbox\collectbox.sty"
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\collectbox\collectbox.sty"
 Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
 \collectedbox=\box30
 )
@@ -189,7 +164,6 @@ Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
 \tc@urx=\dimen126
 \tc@ury=\dimen127
 Package trimclip Info: Using driver 'tc-pdftex.def'.
-
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\adjustbox\tc-pdftex.def"
 File: tc-pdftex.def 2012/05/13 v1.0 Clipping driver for pdftex
 ))
@@ -197,30 +171,25 @@ File: tc-pdftex.def 2012/05/13 v1.0 Clipping driver for pdftex
 \adjbox@Height=\dimen129
 \adjbox@Depth=\dimen130
 \adjbox@Totalheight=\dimen131
-
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ifoddpage\ifoddpage.sty"
 Package: ifoddpage 2011/09/13 v1.0 Conditionals for odd/even page detection
-\c@checkoddpage=\count102
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ltxmisc\varwidth.sty"
+\c@checkoddpage=\count101
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ltxmisc\varwidth.sty"
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \@vwid@box=\box31
-\sift@deathcycles=\count103
+\sift@deathcycles=\count102
 \@vwid@loff=\dimen132
 \@vwid@roff=\dimen133
-))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\inputenc.sty"
+)) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\inputenc.sty"
 Package: inputenc 2015/03/17 v1.2c Input encoding file
 \inpenc@prehook=\toks22
 \inpenc@posthook=\toks23
-
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\utf8.def"
 File: utf8.def 2014/09/29 v1.1m UTF-8 support for inputenc
 Now handling font encoding OML ...
 ... no UTF-8 mapping file for font encoding OML
 Now handling font encoding T1 ...
 ... processing UTF-8 mapping file for font encoding T1
-
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1enc.dfu"
 File: t1enc.dfu 2014/09/29 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
@@ -370,7 +339,6 @@ File: t1enc.dfu 2014/09/29 v1.1m UTF-8 support for inputenc
 )
 Now handling font encoding OT1 ...
 ... processing UTF-8 mapping file for font encoding OT1
-
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ot1enc.dfu"
 File: ot1enc.dfu 2014/09/29 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
@@ -401,7 +369,6 @@ File: ot1enc.dfu 2014/09/29 v1.1m UTF-8 support for inputenc
 )
 Now handling font encoding OMS ...
 ... processing UTF-8 mapping file for font encoding OMS
-
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omsenc.dfu"
 File: omsenc.dfu 2014/09/29 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A7 (decimal 167)
@@ -425,20 +392,18 @@ Now handling font encoding U ...
    defining Unicode char U+2026 (decimal 8230)
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
-))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\makeidx.sty"
+)) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\makeidx.sty"
 Package: makeidx 2014/09/29 v1.0m Standard LaTeX package
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\multicol.sty"
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\multicol.sty"
 Package: multicol 2015/03/31 v1.8m multicolumn formatting (FMi)
-\c@tracingmulticols=\count104
+\c@tracingmulticols=\count103
 \mult@box=\box32
 \multicol@leftmargin=\dimen134
-\c@unbalance=\count105
-\c@collectmore=\count106
-\doublecol@number=\count107
-\multicoltolerance=\count108
-\multicolpretolerance=\count109
+\c@unbalance=\count104
+\c@collectmore=\count105
+\doublecol@number=\count106
+\multicoltolerance=\count107
+\multicolpretolerance=\count108
 \full@width=\dimen135
 \page@free=\dimen136
 \premulticols=\dimen137
@@ -469,19 +434,17 @@ Package: multicol 2015/03/31 v1.8m multicolumn formatting (FMi)
 \@tempa=\box53
 \@tempa=\box54
 \@tempa=\box55
-\c@columnbadness=\count110
-\c@finalcolumnbadness=\count111
+\c@columnbadness=\count109
+\c@finalcolumnbadness=\count110
 \last@try=\dimen140
 \multicolovershoot=\dimen141
 \multicolundershoot=\dimen142
 \mult@nat@firstbox=\box56
 \colbreak@box=\box57
-\mc@col@check@num=\count112
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\multirow\multirow.sty"
+\mc@col@check@num=\count111
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\multirow\multirow.sty"
 \bigstrutjot=\dimen143
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\textcomp.sty"
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\textcomp.sty"
 Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
 Package textcomp Info: Sub-encoding information:
 (textcomp)               5 = only ISO-Adobe without \textcurrency
@@ -495,12 +458,10 @@ Package textcomp Info: Sub-encoding information:
 (textcomp)             Family '?' is the default used for unknown fonts.
 (textcomp)             See the documentation for details.
 Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 79.
-
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ts1enc.def"
 File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
 Now handling font encoding TS1 ...
 ... processing UTF-8 mapping file for font encoding TS1
-
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ts1enc.dfu"
 File: ts1enc.dfu 2014/09/29 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A2 (decimal 162)
@@ -636,29 +597,22 @@ Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 406.
 Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
 Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\wasysym\wasysym.sty"
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\wasysym\wasysym.sty"
 Package: wasysym 2003/10/30 v2.0 Wasy-2 symbol support package
 \symwasy=\mathgroup4
 LaTeX Font Info:    Overwriting symbol font `wasy' in version `bold'
 (Font)                  U/wasy/m/n --> U/wasy/b/n on input line 90.
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\fontenc.sty"
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\fontenc.sty"
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
-
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1enc.def"
 File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
-))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\helvet.sty"
+)) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\helvet.sty"
 Package: helvet 2005/04/12 PSNFSS-v9.2a (WaS) 
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\courier.sty"
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\courier.sty"
 Package: courier 2005/04/12 PSNFSS-v9.2a (WaS) 
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
-
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \@emptytoks=\toks24
@@ -666,28 +620,23 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSb=\mathgroup6
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\sectsty\sectsty.sty"
+)) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\sectsty\sectsty.sty"
 Package: sectsty 2002/02/25 v2.0.2 Commands to change all sectional heading sty
 les
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
 Package: geometry 2010/09/12 v5.6 Page Geometry
-
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
 Package ifpdf Info: pdfTeX in PDF mode is detected.
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
 Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-\Gm@cnth=\count113
-\Gm@cntv=\count114
-\c@Gm@tempcnt=\count115
+\Gm@cnth=\count112
+\Gm@cntv=\count113
+\c@Gm@tempcnt=\count114
 \Gm@bindingoffset=\dimen144
 \Gm@wd@mp=\dimen145
 \Gm@odd@mp=\dimen146
@@ -697,9 +646,8 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layouthoffset=\dimen150
 \Gm@layoutvoffset=\dimen151
 \Gm@dimlist=\toks25
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fancyhdr\fancyhdr.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.cfg")) ("C:\Pro
+gram Files (x86)\MiKTeX 2.9\tex\latex\fancyhdr\fancyhdr.sty"
 \fancy@headwidth=\skip56
 \f@ncyO@elh=\skip57
 \f@ncyO@erh=\skip58
@@ -709,63 +657,55 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \f@ncyO@erf=\skip62
 \f@ncyO@olf=\skip63
 \f@ncyO@orf=\skip64
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\natbib\natbib.sty"
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\natbib\natbib.sty"
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip65
 \bibsep=\skip66
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count116
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tocloft\tocloft.sty"
+\c@NAT@ctr=\count115
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tocloft\tocloft.sty"
 Package: tocloft 2013/05/02 v2.3f parameterised ToC, etc., typesetting
-Package tocloft Info: The document has chapter divisions on input line 44.
+Package tocloft Info: The document has section divisions on input line 44.
 \cftparskip=\skip67
 \cftbeforetoctitleskip=\skip68
 \cftaftertoctitleskip=\skip69
 \cftbeforepartskip=\skip70
 \cftpartnumwidth=\skip71
 \cftpartindent=\skip72
-\cftbeforechapskip=\skip73
-\cftchapindent=\skip74
-\cftchapnumwidth=\skip75
-\cftbeforesecskip=\skip76
-\cftsecindent=\skip77
-\cftsecnumwidth=\skip78
-\cftbeforesubsecskip=\skip79
-\cftsubsecindent=\skip80
-\cftsubsecnumwidth=\skip81
-\cftbeforesubsubsecskip=\skip82
-\cftsubsubsecindent=\skip83
-\cftsubsubsecnumwidth=\skip84
-\cftbeforeparaskip=\skip85
-\cftparaindent=\skip86
-\cftparanumwidth=\skip87
-\cftbeforesubparaskip=\skip88
-\cftsubparaindent=\skip89
-\cftsubparanumwidth=\skip90
-\cftbeforeloftitleskip=\skip91
-\cftafterloftitleskip=\skip92
-\cftbeforefigskip=\skip93
-\cftfigindent=\skip94
-\cftfignumwidth=\skip95
-\c@lofdepth=\count117
-\c@lotdepth=\count118
-\cftbeforelottitleskip=\skip96
-\cftafterlottitleskip=\skip97
-\cftbeforetabskip=\skip98
-\cfttabindent=\skip99
-\cfttabnumwidth=\skip100
+\cftbeforesecskip=\skip73
+\cftsecindent=\skip74
+\cftsecnumwidth=\skip75
+\cftbeforesubsecskip=\skip76
+\cftsubsecindent=\skip77
+\cftsubsecnumwidth=\skip78
+\cftbeforesubsubsecskip=\skip79
+\cftsubsubsecindent=\skip80
+\cftsubsubsecnumwidth=\skip81
+\cftbeforeparaskip=\skip82
+\cftparaindent=\skip83
+\cftparanumwidth=\skip84
+\cftbeforesubparaskip=\skip85
+\cftsubparaindent=\skip86
+\cftsubparanumwidth=\skip87
+\cftbeforeloftitleskip=\skip88
+\cftafterloftitleskip=\skip89
+\cftbeforefigskip=\skip90
+\cftfigindent=\skip91
+\cftfignumwidth=\skip92
+\c@lofdepth=\count116
+\c@lotdepth=\count117
+\cftbeforelottitleskip=\skip93
+\cftafterlottitleskip=\skip94
+\cftbeforetabskip=\skip95
+\cfttabindent=\skip96
+\cfttabnumwidth=\skip97
 )
 \@indexfile=\write3
-
 Writing index file refman.idx
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty"
 Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
-
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\hobsub-hyperref.sty"
 Package: hobsub-hyperref 2012/04/25 v1.12 Bundle oberdiek, subset hyperref (HO)
-
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\hobsub-generic.sty"
 Package: hobsub-generic 2012/04/25 v1.12 Bundle oberdiek, subset generic (HO)
@@ -805,24 +745,20 @@ Package atveryend Info: \enddocument detected (standard20110627).
 Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
 Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
 Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\auxhook.sty"
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\auxhook.sty"
 Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 )
 \@linkdim=\dimen152
-\Hy@linkcounter=\count119
-\Hy@pagecounter=\count120
-
+\Hy@linkcounter=\count118
+\Hy@pagecounter=\count119
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\pd1enc.def"
 File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
-\Hy@SavedSpaceFactor=\count121
-
+\Hy@SavedSpaceFactor=\count120
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg"
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
@@ -833,24 +769,21 @@ Package hyperref Info: Plain pages OFF on input line 4458.
 Package hyperref Info: Backreferencing ON on input line 4461.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4688.
-
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\backref.sty"
 Package: backref 2012/07/25 v1.38 Bibliographical back referencing
-
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\rerunfilecheck.sty"
 Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 ))
-\c@Hy@tempcnt=\count122
-
+\c@Hy@tempcnt=\count121
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\url\url.sty"
 \Urlmuskip=\muskip10
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5041.
 \XeTeXLinkMargin=\dimen153
-\Fld@menulength=\count123
+\Fld@menulength=\count122
 \Field@Width=\dimen154
 \Fld@charsize=\dimen155
 Package hyperref Info: Hyper figures OFF on input line 6295.
@@ -862,70 +795,67 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6320.
 Package hyperref Info: PDF/A mode OFF on input line 6325.
 LaTeX Info: Redefining \ref on input line 6365.
 LaTeX Info: Redefining \pageref on input line 6369.
-\Hy@abspage=\count124
-\c@Item=\count125
-\c@Hfootnote=\count126
+\Hy@abspage=\count123
+\c@Item=\count124
+\c@Hfootnote=\count125
 )
 
 Package hyperref Message: Driver: hpdftex.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\hpdftex.def"
 File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
-\Fld@listcount=\count127
-\c@bookmark@seq@number=\count128
-\Hy@SectionHShift=\skip101
+\Fld@listcount=\count126
+\c@bookmark@seq@number=\count127
+\Hy@SectionHShift=\skip98
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 105.
-Package hyperref Info: Option `unicode' set `true' on input line 105.
-
+Package hyperref Info: Option `colorlinks' set `true' on input line 103.
+Package hyperref Info: Option `unicode' set `true' on input line 103.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\puenc.def"
 File: puenc.def 2012/11/06 v6.83m Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 ) (refman.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 115.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 115.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 113.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 113.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 113.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 113.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 113.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 113.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 113.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 113.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Try loading font information for T1+phv on input line 115.
-
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 113.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 113.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Try loading font information for T1+phv on input line 113.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\t1phv.fd"
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 8.99994pt on input line 115.
-
+(Font)              scaled to size 8.99994pt on input line 113.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count129
+\scratchcounter=\count128
 \scratchdimen=\dimen156
 \scratchbox=\box58
-\nofMPsegments=\count130
-\nofMParguments=\count131
+\nofMPsegments=\count129
+\nofMParguments=\count130
 \everyMPshowfont=\toks26
-\MPscratchCnt=\count132
+\MPscratchCnt=\count131
 \MPscratchDim=\dimen157
-\MPnumerator=\count133
-\makeMPintoPDFobject=\count134
+\MPnumerator=\count132
+\makeMPintoPDFobject=\count133
 \everyMPtoPDFconversion=\toks27
 )
 *geometry* driver: auto-detecting
@@ -944,13 +874,13 @@ LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 * \textheight=702.78308pt
 * \oddsidemargin=-1.1381pt
 * \evensidemargin=-1.1381pt
-* \topmargin=-31.2056pt
+* \topmargin=-38.1381pt
 * \headheight=12.0pt
-* \headsep=18.06749pt
+* \headsep=25.0pt
 * \topskip=10.0pt
-* \footskip=25.29494pt
-* \marginparwidth=125.0pt
-* \marginparsep=7.0pt
+* \footskip=30.0pt
+* \marginparwidth=121.0pt
+* \marginparsep=11.0pt
 * \columnsep=10.0pt
 * \skip\footins=9.0pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
@@ -963,159 +893,112 @@ LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \AtBeginShipoutBox=\box59
-Package backref Info: ** backref set up for natbib ** on input line 115.
-Package hyperref Info: Link coloring ON on input line 115.
+Package backref Info: ** backref set up for natbib ** on input line 113.
+Package hyperref Info: Link coloring ON on input line 113.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
-
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count135
+\c@section@level=\count134
 )
-LaTeX Info: Redefining \ref on input line 115.
-LaTeX Info: Redefining \pageref on input line 115.
-LaTeX Info: Redefining \nameref on input line 115.
-
+LaTeX Info: Redefining \ref on input line 113.
+LaTeX Info: Redefining \pageref on input line 113.
+LaTeX Info: Redefining \nameref on input line 113.
 (refman.out) (refman.out)
 \@outlinefile=\write4
-Package hyperref Info: Option `pageanchor' set `false' on input line 122.
-
+Package hyperref Info: Option `pageanchor' set `false' on input line 120.
 
 Package hyperref Warning: Option `bookmarks' has already been used,
-(hyperref)                setting the option has no effect on input line 122.
+(hyperref)                setting the option has no effect on input line 120.
 
-Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 122.
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 120.
 
-Package hyperref Info: Option `unicode' set `true' on input line 122.
+Package hyperref Info: Option `unicode' set `true' on input line 120.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 12.9599pt on input line 127.
+(Font)              scaled to size 12.9599pt on input line 125.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 6.29996pt on input line 127.
-LaTeX Font Info:    Try loading font information for U+wasy on input line 127.
+(Font)              scaled to size 6.29996pt on input line 125.
+LaTeX Font Info:    Try loading font information for U+wasy on input line 125.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\wasysym\uwasy.fd"
 File: uwasy.fd 2003/10/30 v2.0 Wasy-2 symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 127.
-
+LaTeX Font Info:    Try loading font information for U+msa on input line 125.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 127.
-
+LaTeX Font Info:    Try loading font information for U+msb on input line 125.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 10.79993pt on input line 127.
+(Font)              scaled to size 10.79993pt on input line 125.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 8.09995pt on input line 131.
- [1
+(Font)              scaled to size 8.09995pt on input line 129.
+[1
 
-
-{C:/Users/Joan/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2
-
-]
-LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 22.39185pt on input line 135.
-LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <24.88> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 135.
+{C:/Users/Joan/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 132.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 22.39185pt on input line 135.
+(Font)              scaled to size 12.9599pt on input line 132.
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
-(Font)              scaled to size 22.39185pt on input line 135.
- (refman.toc
+(Font)              scaled to size 12.9599pt on input line 132.
+(refman.toc
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 1.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 8.99994pt on input line 1.
- [3
-
-]
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <7> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 72.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 170.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 6.29996pt on input line 72.
-
-[4] [5] [6] [7] [8] [9])
+(Font)              scaled to size 6.29996pt on input line 170.
+[2] [3])
 \tf@toc=\write5
- [10]
-Package hyperref Info: Option `pageanchor' set `true' on input line 138.
-
-Chapter 1.
-LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 18.66588pt on input line 141.
-LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <20.74> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 141.
-LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 18.66588pt on input line 141.
-LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
-(Font)              scaled to size 18.66588pt on input line 141.
-(index.tex) [1
-
-
-] [2
-
-]
-Chapter 2.
-(d0/d33/a00027.tex
-LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <14.4> not available
+Package hyperref Info: Option `pageanchor' set `true' on input line 134.
+(index.tex) (d0/d33/a00027.tex
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 1.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 12.9599pt on input line 1.
+(Font)              scaled to size 10.79993pt on input line 1.
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
-(Font)              scaled to size 12.9599pt on input line 1.
-LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 10.
-LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 10.79993pt on input line 10.
+(Font)              scaled to size 10.79993pt on input line 1.
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
-(Font)              scaled to size 10.79993pt on input line 10.
-) [3] [4
-
-]
-Chapter 3.
-(d8/d84/a00001.tex
+(Font)              scaled to size 8.99994pt on input line 10.
+) (d8/d84/a00001.tex
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
 (Font)              scaled to size 6.29996pt on input line 1.
 LaTeX Font Info:    Try loading font information for T1+pcr on input line 10.
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\t1pcr.fd"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\t1pcr.fd"
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-) <d5/d16/a00029.pdf, id=1598, 141.52875pt x 234.8775pt>
+) <d5/d16/a00029.pdf, id=454, 141.52875pt x 234.8775pt>
 File: d5/d16/a00029.pdf Graphic file (type pdf)
-
 <use d5/d16/a00029.pdf>
 Package pdftex.def Info: d5/d16/a00029.pdf used on input line 18.
 (pdftex.def)             Requested size: 141.0pt x 234.02036pt.
-LaTeX Font Info:    Try loading font information for TS1+phv on input line 24.
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[1]
+LaTeX Font Info:    Try loading font information for TS1+phv on input line 24.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ts1phv.fd"
 File: ts1phv.fd 2001/06/04 scalable font definitions for TS1/phv.
 )
 LaTeX Font Info:    Font shape `TS1/phv/m/n' will be
 (Font)              scaled to size 8.99994pt on input line 24.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 25.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 43.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 8.09995pt on input line 25.
+(Font)              scaled to size 8.09995pt on input line 43.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <7> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 27.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 43.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 6.29996pt on input line 27.
- [5 <./d5/d16/a00029.pdf>]
+(Font)              scaled to size 6.29996pt on input line 43.
 LaTeX Font Info:    Font shape `TS1/phv/m/it' in size <9> not available
-(Font)              Font shape `TS1/phv/m/sl' tried instead on input line 37.
+(Font)              Font shape `TS1/phv/m/sl' tried instead on input line 85.
 LaTeX Font Info:    Font shape `TS1/phv/m/sl' will be
-(Font)              scaled to size 8.09995pt on input line 37.
- [6]
-LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
-(Font)              scaled to size 8.99994pt on input line 129.
-
-
-LaTeX Font Warning: Font shape `T1/pcr/bc/n' undefined
-(Font)              using `T1/pcr/m/n' instead on input line 129.
-
-
+(Font)              scaled to size 8.09995pt on input line 85.
+[2 <./d5/d16/a00029.pdf>]
 Underfull \hbox (badness 10000) detected at line 135
 [][][]
  []
@@ -1132,11 +1015,12 @@ LaTeX Font Info:    Font shape `T1/phv/b/it' in size <7> not available
 (Font)              Font shape `T1/phv/b/sl' tried instead on input line 139.
 LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
 (Font)              scaled to size 6.29996pt on input line 139.
-[7]
+[3]
 Underfull \hbox (badness 10000) detected at line 207
 [][][]
  []
 
+[4]
 LaTeX Font Info:    Font shape `T1/phv/bc/it' in size <10> not available
 (Font)              Font shape `T1/phv/bc/sl' tried instead on input line 290.
 LaTeX Font Info:    Font shape `T1/phv/bc/sl' will be
@@ -1147,252 +1031,175 @@ LaTeX Font Info:    Font shape `T1/phv/bc/sl' will be
 (Font)              scaled to size 6.29996pt on input line 290.
 
 LaTeX Font Warning: Font shape `T1/pcr/bc/it' undefined
-(Font)              using `T1/pcr/bc/n' instead on input line 290.
+(Font)              using `T1/pcr/m/n' instead on input line 290.
 
-[8]
+[5] [6]
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 335.
+LaTeX Font Warning: Font shape `T1/pcr/bc/n' undefined
+(Font)              using `T1/pcr/m/n' instead on input line 484.
 
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sim' on input line 335.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 335.
-
-[9] [10]
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
 (Font)              Font shape `T1/phv/m/sl' tried instead on input line 507.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
 (Font)              scaled to size 8.99994pt on input line 507.
- [11] [12]) (d7/d46/a00002.tex [13]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 93.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 93.
-
-[14]) (d1/d7c/a00003.tex [15] [16]) (d0/d0b/a00004.tex
-<dc/d87/a00032.pdf, id=2052, 141.52875pt x 167.62625pt>
+[7] [8]) (d7/d46/a00002.tex [9] [10]) (d1/d7c/a00003.tex [11] [12]) (d0/d0b/a00
+004.tex <dc/d87/a00032.pdf, id=953, 141.52875pt x 167.62625pt>
 File: dc/d87/a00032.pdf Graphic file (type pdf)
-
 <use dc/d87/a00032.pdf>
 Package pdftex.def Info: dc/d87/a00032.pdf used on input line 18.
 (pdftex.def)             Requested size: 141.0pt x 167.01451pt.
- [17 <./dc/d87/a00032.pdf>] [18]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 148.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sim' on input line 148.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 148.
-
-[19] [20]
+[13 <./dc/d87/a00032.pdf>] [14] [15] [16]
 Underfull \hbox (badness 10000) detected at line 340
 [][][]
  []
 
-[21] [22] [23]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+[17] [18]
+Underfull \vbox (badness 1242) has occurred while \output is active []
 
- [24]
-[25] [26] [27]) (dd/dad/a00005.tex [28]
-<db/df3/a00034.pdf, id=2339, 160.6pt x 156.585pt>
+[19] [20] [21] [22] [23]) (dd/dad/a00005.tex <db/df3/a00034.pdf, id=1273, 160.6
+pt x 156.585pt>
 File: db/df3/a00034.pdf Graphic file (type pdf)
- <use db/df3/a00034.pdf>
+<use db/df3/a00034.pdf>
 Package pdftex.def Info: db/df3/a00034.pdf used on input line 18.
 (pdftex.def)             Requested size: 160.0pt x 156.004pt.
-
-<d4/d8c/a00035.pdf, id=2340, 248.93pt x 224.84pt>
+<d4/d8c/a00035.pdf, id=1274, 248.93pt x 224.84pt>
 File: d4/d8c/a00035.pdf Graphic file (type pdf)
- <use d4/d8c/a00035.pdf>
+<use d4/d8c/a00035.pdf>
 Package pdftex.def Info: d4/d8c/a00035.pdf used on input line 27.
 (pdftex.def)             Requested size: 248.0pt x 224.00577pt.
 
-[29 <./db/df3/a00034.pdf> <./d4/d8c/a00035.pdf
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-pdfTeX warning: pdflatex (file ./d4/d8c/a00035.pdf): PDF inclusion: multiple pd
-fs with page group included in a single page
->] [30]
-Underfull \hbox (badness 10000) detected at line 130
+[24 <./db/df3/a00034.pdf>] [25 <./d4/d8c/a00035.pdf>] [26]
+Underfull \hbox (badness 10000) detected at line 128
 [][][]
  []
 
-[31]
+[27] [28] [29] [30]
+LaTeX Font Info:    Try loading font information for TS1+pcr on input line 554.
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 220.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sim' on input line 220.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 220.
-
-[32] [33] [34]
-LaTeX Font Info:    Try loading font information for TS1+pcr on input line 573.
-
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ts1pcr.fd"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ts1pcr.fd"
 File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
-) [35] [36]) (de/d21/a00006.tex
-<d1/dc6/a00037.pdf, id=2621, 165.61874pt x 156.585pt>
+) [31]) (de/d21/a00006.tex <d1/dc6/a00037.pdf, id=1586, 165.61874pt x 156.585pt
+>
 File: d1/dc6/a00037.pdf Graphic file (type pdf)
- <use d1/dc6/a00037.pdf>
+<use d1/dc6/a00037.pdf>
 Package pdftex.def Info: d1/dc6/a00037.pdf used on input line 18.
 (pdftex.def)             Requested size: 165.0pt x 156.0064pt.
-
-<d8/d41/a00038.pdf, id=2622, 298.11375pt x 224.84pt>
+<d8/d41/a00038.pdf, id=1587, 298.11375pt x 224.84pt>
 File: d8/d41/a00038.pdf Graphic file (type pdf)
- <use d8/d41/a00038.pdf>
+<use d8/d41/a00038.pdf>
 Package pdftex.def Info: d8/d41/a00038.pdf used on input line 27.
 (pdftex.def)             Requested size: 297.0pt x 224.01262pt.
 
-Underfull \vbox (badness 2005) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [37 <./d1/dc6/a00037.pdf>] [38 <./d8/d41/a00038.pdf>] [39]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 194.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sim' on input line 194.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 194.
-
-[40] [41] [42]) (de/d5e/a00007.tex [43]) (d4/dee/a00008.tex
-<db/d3a/a00040.pdf, id=2848, 139.52126pt x 156.585pt>
+[32 <./d1/dc6/a00037.pdf>] [33 <./d8/d41/a00038.pdf>] [34] [35] [36] [37]) (de/
+d5e/a00007.tex [38]) (d4/dee/a00008.tex <db/d3a/a00040.pdf, id=1837, 139.52126p
+t x 156.585pt>
 File: db/d3a/a00040.pdf Graphic file (type pdf)
- <use db/d3a/a00040.pdf>
-Package pdftex.def Info: db/d3a/a00040.pdf used on input line 14.
+<use db/d3a/a00040.pdf>
+Package pdftex.def Info: db/d3a/a00040.pdf used on input line 13.
 (pdftex.def)             Requested size: 139.0pt x 156.004pt.
-
-<dd/d32/a00041.pdf, id=2849, 139.52126pt x 156.585pt>
+<dd/d32/a00041.pdf, id=1838, 139.52126pt x 156.585pt>
 File: dd/d32/a00041.pdf Graphic file (type pdf)
- <use dd/d32/a00041.pdf>
-Package pdftex.def Info: dd/d32/a00041.pdf used on input line 24.
+<use dd/d32/a00041.pdf>
+Package pdftex.def Info: dd/d32/a00041.pdf used on input line 22.
 (pdftex.def)             Requested size: 139.0pt x 156.004pt.
 
-[44 <./db/d3a/a00040.pdf>] [45 <./dd/d32/a00041.pdf>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 93.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sim' on input line 93.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 93.
-
-[46]) (da/da0/a00009.tex <d6/d42/a00043.pdf, id=2926, 150.5625pt x 156.585pt>
+[39 <./db/d3a/a00040.pdf>] [40 <./dd/d32/a00041.pdf>] [41]) (da/da0/a00009.tex 
+<d6/d42/a00043.pdf, id=1924, 150.5625pt x 156.585pt>
 File: d6/d42/a00043.pdf Graphic file (type pdf)
-
 <use d6/d42/a00043.pdf>
-Package pdftex.def Info: d6/d42/a00043.pdf used on input line 19.
-(pdftex.def)             Requested size: 150.0pt x 156.01357pt.
- [47]
-<d5/df9/a00044.pdf, id=2933, 150.5625pt x 156.585pt>
-File: d5/df9/a00044.pdf Graphic file (type pdf)
- <use d5/df9/a00044.pdf>
-Package pdftex.def Info: d5/df9/a00044.pdf used on input line 29.
+Package pdftex.def Info: d6/d42/a00043.pdf used on input line 18.
 (pdftex.def)             Requested size: 150.0pt x 156.01357pt.
 
-[48 <./d6/d42/a00043.pdf> <./d5/df9/a00044.pdf
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[42] <d5/df9/a00044.pdf, id=1936, 150.5625pt x 156.585pt>
+File: d5/df9/a00044.pdf Graphic file (type pdf)
+<use d5/df9/a00044.pdf>
+Package pdftex.def Info: d5/df9/a00044.pdf used on input line 27.
+(pdftex.def)             Requested size: 150.0pt x 156.01357pt.
+[43 <./d6/d42/a00043.pdf> <./d5/df9/a00044.pdf
 
 pdfTeX warning: pdflatex (file ./d5/df9/a00044.pdf): PDF inclusion: multiple pd
 fs with page group included in a single page
->] [49] [50] [51]
-Underfull \hbox (badness 10000) detected at line 230
+>] [44] [45] [46]
+Underfull \hbox (badness 10000) detected at line 234
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 256
+Underfull \hbox (badness 10000) detected at line 260
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 291
+Underfull \hbox (badness 10000) detected at line 295
+[][][]
+ []
+
+[47] [48] [49] [50] [51]
+Underfull \hbox (badness 10000) detected at line 783
 [][][]
  []
 
 [52]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 344.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sim' on input line 344.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 344.
-
-[53] [54] [55] [56]
-Underfull \hbox (badness 10000) detected at line 770
-[][][]
- []
-
-[57]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [58]
-Underfull \hbox (badness 10000) detected at line 1016
+[53] [54]
+Underfull \hbox (badness 10000) detected at line 1120
 [][][]
  []
 
-[59] [60] [61] [62] [63] [64] [65]) [66]
-Chapter 4.
-(d7/dec/a00010.tex) (da/d45/a00011.tex) (df/d86/a00012.tex) (d7/dd4/a00013.tex
-[67
+[55] [56] [57] [58]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-]) (d2/de7/a00014.tex) (dd/d1b/a00015.tex) (d7/d7a/a00016.tex [68])
-(d4/d51/a00017.tex) (d1/d2b/a00018.tex) (dd/da2/a00019.tex) (db/db2/a00020.tex
-[69]) (de/d11/a00021.tex) (d7/de0/a00022.tex) (d3/d52/a00023.tex)
-(dc/de2/a00024.tex) (d3/dfe/a00025.tex [70]) [71] [72
+[59]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-] (refman.ind [73
+[60]) (d7/dec/a00010.tex) (da/d45/a00011.tex) (df/d86/a00012.tex) (d7/dd4/a0001
+3.tex [61]) (d2/de7/a00014.tex) (dd/d1b/a00015.tex) (d7/d7a/a00016.tex [62]) (d
+4/d51/a00017.tex) (d1/d2b/a00018.tex) (dd/da2/a00019.tex) (db/db2/a00020.tex [6
+3]) (de/d11/a00021.tex) (d7/de0/a00022.tex) (d3/d52/a00023.tex) (dc/de2/a00024.
+tex) (d3/dfe/a00025.tex [64])
+! Undefined control sequence.
+l.171 \backmatter
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
+[65] [66
 
-]
-[74] [75] [76] [77] [78] [79])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 182.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 182.
- (refman.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 182.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 182.
+] (refman.ind [67
+
+] [68] [69] [70] [71] [72] [73])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 178.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 178.
+(refman.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 178.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 178.
 Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: E857CFA1C85B8DE5CFC4A8AAA0E60B37;55558.
-
+(rerunfilecheck)             Checksum: AA1E5672B51CB245280DE81266B32508;19895.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 182.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 178.
  ) 
 Here is how much of TeX's memory you used:
- 14355 strings out of 493698
- 218994 string characters out of 3141997
- 296036 words of memory out of 3000000
- 16625 multiletter control sequences out of 15000+200000
- 69928 words of font info for 74 fonts, out of 3000000 for 9000
+ 14106 strings out of 493698
+ 213260 string characters out of 3141997
+ 294597 words of memory out of 3000000
+ 16378 multiletter control sequences out of 15000+200000
+ 57728 words of font info for 66 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 48i,16n,43p,832b,520s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 48i,16n,43p,824b,520s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Progra
 m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program 
 Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Fi
@@ -1403,9 +1210,9 @@ ts/type1/urw/helvetic/uhvbo8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type
 1/urw/helvetic/uhvbo8ac.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/
 helvetic/uhvr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/helvetic
 /uhvro8a.pfb>
-Output written on refman.pdf (89 pages, 1000068 bytes).
+Output written on refman.pdf (76 pages, 883928 bytes).
 PDF statistics:
- 4226 PDF objects out of 4296 (max. 8388607)
- 724 named destinations out of 1000 (max. 500000)
- 2507 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3359 PDF objects out of 3580 (max. 8388607)
+ 723 named destinations out of 1000 (max. 500000)
+ 747 words of extra memory for PDF output out of 10000 (max. 10000000)
 
