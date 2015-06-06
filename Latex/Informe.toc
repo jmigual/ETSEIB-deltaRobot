@@ -4,15 +4,16 @@
 \contentsline {subsection}{\numberline {2.1}Assemblatge general}{4}{subsection.2.1}
 \contentsline {subsection}{\numberline {2.2}Servomotors}{5}{subsection.2.2}
 \contentsline {subsubsection}{\numberline {2.2.1}Plataforma suport}{5}{subsubsection.2.2.1}
-\contentsline {subsection}{\numberline {2.3}Braç}{6}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.3}Braç - inicial}{6}{subsection.2.3}
 \contentsline {subsubsection}{\numberline {2.3.1}Estructura}{6}{subsubsection.2.3.1}
-\contentsline {subsubsection}{\numberline {2.3.2}Estabilitzador}{7}{subsubsection.2.3.2}
-\contentsline {subsection}{\numberline {2.4}Avantbraç}{8}{subsection.2.4}
-\contentsline {subsubsection}{\numberline {2.4.1}Vara unió}{8}{subsubsection.2.4.1}
-\contentsline {subsubsection}{\numberline {2.4.2}Eix Braç}{8}{subsubsection.2.4.2}
-\contentsline {subsubsection}{\numberline {2.4.3}Eix Pinça}{9}{subsubsection.2.4.3}
-\contentsline {subsubsection}{\numberline {2.4.4}Unió}{9}{subsubsection.2.4.4}
-\contentsline {subsection}{\numberline {2.5}Pinça}{10}{subsection.2.5}
+\contentsline {subsubsection}{\numberline {2.3.2}Estabilitzador}{6}{subsubsection.2.3.2}
+\contentsline {subsection}{\numberline {2.4}Braç - final}{7}{subsection.2.4}
+\contentsline {subsection}{\numberline {2.5}Avantbraç}{8}{subsection.2.5}
+\contentsline {subsubsection}{\numberline {2.5.1}Vara unió}{8}{subsubsection.2.5.1}
+\contentsline {subsubsection}{\numberline {2.5.2}Eix Braç}{8}{subsubsection.2.5.2}
+\contentsline {subsubsection}{\numberline {2.5.3}Eix Pinça}{9}{subsubsection.2.5.3}
+\contentsline {subsubsection}{\numberline {2.5.4}Unió}{9}{subsubsection.2.5.4}
+\contentsline {subsection}{\numberline {2.6}Pinça}{10}{subsection.2.6}
 \contentsline {section}{\numberline {3}Informe cinemàtic}{11}{section.3}
 \contentsline {subsection}{\numberline {3.1}Cinemàtica inversa}{11}{subsection.3.1}
 \contentsline {subsubsection}{\numberline {3.1.1}Definicions de variables}{11}{subsubsection.3.1.1}
