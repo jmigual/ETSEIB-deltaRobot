@@ -9,6 +9,7 @@ public class Draw : MonoBehaviour {
 	private bool drawing = false;
 	private Vector3 lastPosition;
 	private bool first = true;
+	private GameObject lastDomino;
 
 	// Use this for initialization
 	void Start () {
@@ -47,16 +48,19 @@ public class Draw : MonoBehaviour {
 			Ray camRay = Camera.main.ScreenPointToRay (Input.mousePosition);
 			RaycastHit floorHit;
 		
-			if (Physics.Raycast (camRay, out floorHit, 100f, LayerMask.GetMask ("Floor")))
+			if (Physics.Raycast (camRay, out floorHit, 1000f, LayerMask.GetMask ("Floor")))
 			{
 				if (Vector3.Distance(floorHit.point, lastPosition)>= distance)
 				{
 					if (!first) {
-						Instantiate (dominoPiece, lastPosition+(floorHit.point-lastPosition).normalized*distance + 1.2f*Vector3.up, Quaternion.LookRotation(floorHit.point - lastPosition));
+						lastDomino.transform.rotation = Quaternion.LookRotation(floorHit.point-lastPosition);
+						lastDomino = Instantiate (dominoPiece, lastPosition+(floorHit.point-lastPosition).normalized*distance + 1.2f*dominoPiece.transform.localScale.y*Vector3.up, Quaternion.LookRotation(floorHit.point - lastPosition)) as GameObject;
 						lastPosition = lastPosition+(floorHit.point-lastPosition).normalized*distance;
 					}
 					else {
 						first = false;
+						lastDomino = Instantiate (dominoPiece, floorHit.point + 1.2f*dominoPiece.transform.localScale.y*Vector3.up, Quaternion.LookRotation(Vector3.forward)) as GameObject;
+						Debug.Log (floorHit.point);
 						lastPosition=floorHit.point;
 					}
 				}

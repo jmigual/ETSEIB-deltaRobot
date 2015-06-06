@@ -34321,7 +34321,7 @@ GameObject:
   - 23: {fileID: 589307944}
   - 65: {fileID: 589307945}
   m_Layer: 8
-  m_Name: Cylinder
+  m_Name: CylinderBlack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34353,12 +34353,12 @@ BoxCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 589307943}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: fa9a139ead11e8d6d00011d98d76c639, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.00000024, y: 2, z: 1.00000024}
-  m_Center: {x: 5.96046448e-08, y: 0, z: -8.94069672e-08}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &589307946
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -34373,8 +34373,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 589307943}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 24, y: .00999999978, z: 24}
+  m_LocalPosition: {x: 0, y: -.5, z: 0}
+  m_LocalScale: {x: 24, y: 1, z: 24}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
@@ -38707,8 +38707,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 661296752}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.5, y: 0, z: 0}
-  m_LocalScale: {x: .5, y: .0199999996, z: .5}
+  m_LocalPosition: {x: 11.5, y: -.5, z: 0}
+  m_LocalScale: {x: .5, y: 1.00999999, z: .5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
@@ -39779,7 +39779,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: .00800173823, g: .0163278691, b: .0294117928, a: .0196078438}
+  m_BackGroundColor: {r: .0410899669, g: .0794406012, b: .139705896, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
