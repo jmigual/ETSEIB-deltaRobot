@@ -56,6 +56,7 @@ public class Draw : MonoBehaviour {
 						lastDomino.transform.rotation = Quaternion.LookRotation(floorHit.point-lastPosition);
 						lastDomino = Instantiate (dominoPiece, lastPosition+(floorHit.point-lastPosition).normalized*distance + 1.2f*dominoPiece.transform.localScale.y*Vector3.up, Quaternion.LookRotation(floorHit.point - lastPosition)) as GameObject;
 						lastPosition = lastPosition+(floorHit.point-lastPosition).normalized*distance;
+						Debug.Log (floorHit.point.y);
 					}
 					else {
 						first = false;
