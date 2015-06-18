@@ -315,7 +315,7 @@ private:
     const double L1 = 5.499;        ///< The base center length
     const double L2 = 6.000;        ///< The clamp support center lenght
     const double maxErr = 3.0;      ///< Max available error
-    const double minAngle = 60.0;   ///< Minimum servo angle
+    const double minAngle = 126.0;   ///< Minimum servo angle
     const double maxAngle = 240.0;  ///< Maximum servo angle
     const double workRadSq = 144.0; ///< Working radius squared
     

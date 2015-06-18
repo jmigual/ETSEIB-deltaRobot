@@ -49,9 +49,6 @@ void ServoThread::read(QString file)
     }
     
     df >> _cBaud >> _cPort >> _sBaud >> _sPort >> _sSpeed;
-    unsigned int en;
-    df >> en;
-    _mod = static_cast<Mode>(en);
     
     int size;
     df >> size;
@@ -141,7 +138,7 @@ void ServoThread::write(QString file)
     
     // Clamp and servos baud rate and port must be writen
     df << int(Version::v_1_0) << _cBaud << _cPort << _sBaud << _sPort << _sSpeed
-       << int(_mod) << _servos.size();    
+       << _servos.size();    
     for (const Servo &s : _servos) df << s.ID;
     
     _mutex.unlock();
@@ -150,6 +147,7 @@ void ServoThread::write(QString file)
 bool ServoThread::isPosAvailable(const QVector4D &newPos)
 {    
     if (newPos.toVector2D().lengthSquared() > workRadSq) return false;
+    if (newPos.z() > workHeigh + 0.7) return false;
     
     QVector<double> D(4);
     this->setAngles(newPos, D);
@@ -280,6 +278,8 @@ void ServoThread::run()
         ////// MANUAL //////
         if (_mod == Mode::Manual) {
             QVector4D posAux = pos + 0.5*axis;
+            if (posAux[3] < 0) posAux[3] = 0;
+            if (posAux[3] > 300.0) posAux[3] = 300.0;
             
             bool ok = this->isPosAvailable(posAux);
             ok &= this->isReady(S, pos, maxErr + 5.0);
@@ -331,6 +331,7 @@ void ServoThread::run()
             {
                 Dominoe &domi = Dom[dom][pas];
                 pos = QVector4D (domi.X, domi.Y, workHeigh, domi.ori);
+                if (pos.x() < -4.9) pos[2] = workHeigh + 0.5;
                 double err;
                 pas == Dom[dom].size() - 1 ? err = maxErr : err = 2*maxErr;
                 
@@ -339,7 +340,7 @@ void ServoThread::run()
                     if (pas == Dom[dom].size()) {
                         pas = 0;
                         _status = Status::ending;
-                        QThread::msleep(1000);
+                        QThread::msleep(200);
                         emit statusBar("Col·locada", 1500);
                         
                         for (AX12 &a : A) a.setSpeed(speed);
@@ -355,6 +356,7 @@ void ServoThread::run()
                     ++pas;
                     if (pas == 3) {
                         _status = Status::begin;
+                        QThread::msleep(300);
                         if (dom == Dom.size() - 1) {
                             dom = 0;
                             pas = 0;

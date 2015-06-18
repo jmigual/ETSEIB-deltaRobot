@@ -1,10 +1,15 @@
 \section{Informe de programació}
+
+Tot el codi es pot trobar al següent repositori: \href{https://github.com/jmigual/deltaRobot}{https://github.com/jmigual/deltaRobot}
+
 \subsection{Control automàtic}
 
 Al control automàtic se li carrega un arxiu que conté totes les peces de dominó que s'han de col·locar i executar el programa. Aquest llegeix l'arxiu i, mitjançant el següent algoritme, les va posant al seu lloc d'una en una. 
 
 Per col·locar una peça es divideix la trajectòria en múltiples passos, aquí cada posició en un pas concret per a un dominó en concret es denota \verb|posicio[domino][pas]|.
 \newline
+
+Per fer el control automàtic s'ha utilitzat Qt 5.0 i també la API en C de Dynamixel de comunicació amb els servos.
 
 \begin{tikzpicture}[node distance=1cm, auto, align=center]
 \node(start)[startstop] {Inici};
@@ -58,4 +63,6 @@ Per col·locar una peça es divideix la trajectòria en múltiples passos, aquí
 \end{tikzpicture}
 
 \subsection{Unity}
+
+La part de Unity és la part gràfica del nostre
 
