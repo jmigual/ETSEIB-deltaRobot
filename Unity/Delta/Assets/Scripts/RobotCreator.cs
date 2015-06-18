@@ -90,13 +90,15 @@ public class RobotCreator : MonoBehaviour {
 
 		
 		valid=(!float.IsNaN(theta1) && !float.IsNaN(theta2) && !float.IsNaN(theta3));
-		if (!calculateWorkspace)Debug.Log (valid);
+		//if (!calculateWorkspace)Debug.Log (valid);
 	}
 	float singleAngle (float x0, float y0, float z0, float r1, float r2){
 		float n = r2 * r2 - r1 * r1 - z0 * z0 - x0 * x0 - y0 * y0;
-		float raiz = Mathf.Sqrt (n * n * y0 * y0 - 4 * (x0 * x0 + y0 * y0) * (-x0 * x0 * r1 * r1 + n * n / 4));
+		/*float raiz = Mathf.Sqrt (n * n * y0 * y0 - 4 * (x0 * x0 + y0 * y0) * (-x0 * x0 * r1 * r1 + n * n / 4));
 		if (x0 < 0)raiz = -raiz;
-		float y = (-n*y0 + raiz ) / (2*(x0*x0+y0*y0));
+		float y = (-n*y0 + raiz ) / (2*(x0*x0+y0*y0));*/
+		float y = -Mathf.Sqrt ((n*n+4*r1*x0*x0)/(4*(x0*x0-y0*y0)));
+		Debug.Log(y);
 		int signe=1;
 		if ((r2*r2-(y0+r1)*(y0+r1))<(x0*x0+z0*z0) && x0<0)signe = signe * -1;
 		float x = Mathf.Sqrt(r1 * r1 - y * y)*signe;

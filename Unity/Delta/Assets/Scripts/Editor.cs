@@ -68,12 +68,12 @@ public class Editor : MonoBehaviour {
 	}
 
 	void align_tools (){
-		X.SetActive(mode=="t");
-		Y.SetActive(mode=="t");
-		Z.SetActive(mode=="t");
-		RX.SetActive(mode=="r");
-		RY.SetActive(mode=="r");
-		RZ.SetActive(mode=="r");	
+		X.SetActive(mode=="t" & selectedExists);
+		Y.SetActive(mode=="t" & selectedExists);
+		Z.SetActive(mode=="t" & selectedExists);
+		RX.SetActive(mode=="r" & selectedExists);
+		RY.SetActive(mode=="r" & selectedExists);
+		RZ.SetActive(mode=="r" & selectedExists);	
 		if (selectedExists) {
 			X.transform.position = selected.transform.position;
 			Y.transform.position = selected.transform.position;
@@ -176,14 +176,15 @@ public class Editor : MonoBehaviour {
 	}
 
 	// CANVAS FUNCTIONS
-
 	public void PausePlay (){
 		//Debug.Log (Time.timeScale);
 		if (Time.timeScale == timescale) {
 						Time.timeScale = 0;
 						GameObject.FindGameObjectWithTag ("Pause").GetComponentInChildren <Text> ().text = "Play";
 						mode = lastMode;
-						
+			
+			//Debug.Log ("loadd");
+						loadState();
 				}
 		else {
 						if (selectedExists) selected.GetComponentInChildren<Renderer>().material.color = lastColor;
@@ -192,6 +193,13 @@ public class Editor : MonoBehaviour {
 						GameObject.FindGameObjectWithTag("Pause").GetComponentInChildren <Text>().text = "Pause";
 						lastMode = mode;
 						mode = "-";
+			
+			string aux=path;
+			path="./temp.df";
+			saveState();
+			path=aux;
+			
+			//Debug.Log ("save");
 		}
 	}
 
@@ -242,5 +250,23 @@ public class Editor : MonoBehaviour {
 								pieces [i].transform.position.z.ToString("F2") + " " + 
 								pieces[i].transform.rotation.eulerAngles.y.ToString("F2") + Environment.NewLine;
 		System.IO.File.WriteAllText(path, content);
+	}
+
+	void loadState (){
+		GameObject[] pieces = GameObject.FindGameObjectsWithTag("Player");
+		foreach (GameObject piece in pieces) Destroy (piece,0.0f);
+		selectedExists=false;
+		//Debug.Log ("load");
+		StreamReader sr = new StreamReader("./temp.df");
+		string fileContents = sr.ReadToEnd();
+		sr.Close();
+		
+		string[] lines = fileContents.Split(new char[] {'\n'});
+		//Debug.Log (lines[2]);
+		for (int i=1; i<lines.Length-1; i++) {
+			string[] vars = lines[i].Split(new char[] {' '});
+			Vector3 newpos= new Vector3 (float.Parse (vars[0]),0.5f,float.Parse(vars[1]));
+			Instantiate (DominoPiece, newpos+ 1.2f*DominoPiece.transform.localScale.y*Vector3.up,Quaternion.Euler(0,float.Parse(vars[2]),0));
+		}
 	}
 }
