@@ -64,5 +64,29 @@ Per fer el control automàtic s'ha utilitzat Qt 5.0 i també la API en C de Dyna
 
 \subsection{Unity}
 
-La part de Unity és la part gràfica del nostre
+En Unity s'han fet dos escenes, la principal (Main) i la del simulador del robot (\verb|SimuladorRobot|). Els scripts que s'han usat al Main són: 
+\begin{itemize}
+\item \verb|CameraController|: Permet moure la càmera i fer zoom.
+\lstinputlisting[tabsize=2]{../Unity/Delta/Assets/Scripts/CameraController.cs}
+
+\item \verb|dominoPosition|: Mou les peces de domino mentre les estas col·locant.
+\lstinputlisting[tabsize=2]{../Unity/Delta/Assets/Scripts/dominoPosition.cs}
+
+\item \verb|Draw|: Afegeix tota la funcionalitat de dibuixar circuits de domino.
+\lstinputlisting[tabsize=2]{../Unity/Delta/Assets/Scripts/Draw.cs}
+
+\item \verb|Editor|: Permet moure i rotar els objectes ja col·locats.
+\lstinputlisting[tabsize=2]{../Unity/Delta/Assets/Scripts/Editor.cs}
+\end{itemize}
+Els scripts que s'han usat a \verb|SimuladorRobot| són:
+\begin{itemize}
+\item \verb|CameraController|: (el mateix que a Main).
+\item \verb|RobotCreator|: Dibuixa el robot en 3D a partir dels paràmetres públics que se li passin.
+\lstinputlisting[tabsize=2]{../Unity/Delta/Assets/Scripts/RobotCreator.cs}
+\item \verb|Movements|: Modifica els paràmetres públics del robot per provar moviments determinats.
+\lstinputlisting[tabsize=2]{../Unity/Delta/Assets/Scripts/Movements.cs}
+\end{itemize}
+
+
+
 
