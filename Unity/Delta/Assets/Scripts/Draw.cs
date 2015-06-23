@@ -11,22 +11,20 @@ public class Draw : MonoBehaviour {
 	private bool first = true;
 	private GameObject lastDomino;
 
-	// Use this for initialization
 	void Start () {
 		canvas.SetActive (false);
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 		canvas.SetActive (false);
-		if (Input.GetKeyDown (KeyCode.Mouse0)) // Començar o parar un dibuix
+		if (Input.GetKeyDown (KeyCode.Mouse0)) 
 		{
 			drawing = !drawing;
 			first = true;
 			lastPosition = new Vector3(100,100,100);
 		}
 
-		if (Input.GetKeyDown (KeyCode.Escape) || Input.GetKeyDown (KeyCode.Return)) // Tornar al modo editor
+		if (Input.GetKeyDown (KeyCode.Escape) || Input.GetKeyDown (KeyCode.Return)) 
 		{
 			CameraController.onlyZoom = false;
 			Camera.main.orthographic = false;
@@ -37,13 +35,13 @@ public class Draw : MonoBehaviour {
 			GetComponent<Draw> ().enabled = false;
 		}
 
-		if (Input.GetKeyDown (KeyCode.Delete)) // Eliminar tots els dominos
+		if (Input.GetKeyDown (KeyCode.Delete)) 
 		{
 			GameObject[] pieces = GameObject.FindGameObjectsWithTag ("Player");
 			for (int i = 0; i<pieces.Length; ++i) Destroy (pieces[i]);
 		}
 
-		if (drawing) // Instantiate de dominos si estem dibuixant
+		if (drawing) 
 		{
 			Ray camRay = Camera.main.ScreenPointToRay (Input.mousePosition);
 			RaycastHit floorHit;
@@ -56,12 +54,10 @@ public class Draw : MonoBehaviour {
 						lastDomino.transform.rotation = Quaternion.LookRotation(floorHit.point-lastPosition);
 						lastDomino = Instantiate (dominoPiece, lastPosition+(floorHit.point-lastPosition).normalized*distance + 1.2f*dominoPiece.transform.localScale.y*Vector3.up, Quaternion.LookRotation(floorHit.point - lastPosition)) as GameObject;
 						lastPosition = lastPosition+(floorHit.point-lastPosition).normalized*distance;
-						Debug.Log (floorHit.point.y);
 					}
 					else {
 						first = false;
 						lastDomino = Instantiate (dominoPiece, floorHit.point + 1.2f*dominoPiece.transform.localScale.y*Vector3.up, Quaternion.LookRotation(Vector3.forward)) as GameObject;
-						Debug.Log (floorHit.point);
 						lastPosition=floorHit.point;
 					}
 				}

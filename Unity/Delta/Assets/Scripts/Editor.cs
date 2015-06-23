@@ -30,16 +30,13 @@ public class Editor : MonoBehaviour {
 	private Vector3 toLastMouseR;
 	private string lastMode;
 	private Quaternion RXinitial, RYinitial, RZinitial;
-
-	// Use this for initialization
+	
 	void Start () {
 	 	Physics.gravity = 19.6f * Vector3.down;
 		Time.timeScale=0f;
 		selected = Camera.main.GetComponent<CameraController>().center;
 		selectedExists = false;
 		camRayLength = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>().camRayLength;
-		//lastColor = selected.GetComponentInChildren<Renderer>().material.color;
-		//selected.GetComponentInChildren<Renderer>().material.color = selectedColor;
 		if (relativeRotation){
 			RXinitial=RX.transform.rotation;
 			RYinitial=RY.transform.rotation;
@@ -54,13 +51,8 @@ public class Editor : MonoBehaviour {
 		RZ.GetComponentInChildren<Renderer>().material.color = Color.blue;
 	}
 	
-	// Update is called once per frame
+
 	void Update () {
-
-		//bola.transform.position=pos;
-		//Debug.DrawRay (RX.transform.position, Vector3.Cross(RX.transform.forward,Vector3.up).normalized*4);
-
-
 		align_tools ();
 		update_mode ();
 		update_selected();
@@ -109,10 +101,8 @@ public class Editor : MonoBehaviour {
 			mode = "-";
 			Camera.main.GetComponent <CameraController>().centered = false;
 		}
-		//Debug.Log(dragging);
 		if (Input.GetKeyDown (KeyCode.Mouse0)){
 			Ray CamRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-			//Debug.DrawRay (CamRay.origin, CamRay.direction);
 			RaycastHit floorHit;
 			if (Physics.Raycast (CamRay, out floorHit, camRayLength, 1)) {
 				if (floorHit.collider.gameObject.CompareTag("Axis")){
@@ -138,7 +128,6 @@ public class Editor : MonoBehaviour {
 					if (selectedExists) selected.GetComponentInChildren<Renderer>().material.color = lastColor;
 					if (floorHit.collider.gameObject.CompareTag("EditorOnly")) selected = floorHit.collider.transform.parent.gameObject;
 					else selected = floorHit.collider.gameObject;
-					//Debug.Log(selected.name);
 					lastColor = selected.GetComponentInChildren<Renderer>().material.color;
 					Renderer[] letsColor = selected.GetComponentsInChildren<Renderer>();
 					for (int i=0; i<letsColor.Length; ++i) letsColor[i].material.color = selectedColor;
@@ -155,11 +144,6 @@ public class Editor : MonoBehaviour {
 			Vector2 axisScreenTip = Camera.main.WorldToScreenPoint(draggingAxis.transform.position+draggingAxis.transform.up*arrowlength);
 			Vector2 axisScreenBase = Camera.main.WorldToScreenPoint(draggingAxis.transform.position);
 			Vector2 axisScreen = axisScreenTip-axisScreenBase;
-			/*Debug.Log (' ');
-			Debug.Log (axisScreenTip);
-			Debug.Log (axisScreenBase);
-			Debug.Log ('=');
-			Debug.Log (axisScreen);*/
 			float res = Vector2.Dot (despMouse,axisScreen)/Mathf.Pow(axisScreen.magnitude,2);
 			selected.transform.position+=draggingAxis.transform.up*res*translateSpeed;
 		}
@@ -175,15 +159,11 @@ public class Editor : MonoBehaviour {
 		}
 	}
 
-	// CANVAS FUNCTIONS
 	public void PausePlay (){
-		//Debug.Log (Time.timeScale);
 		if (Time.timeScale == timescale) {
 						Time.timeScale = 0;
 						GameObject.FindGameObjectWithTag ("Pause").GetComponentInChildren <Text> ().text = "Play";
 						mode = lastMode;
-			
-			//Debug.Log ("loadd");
 						loadState();
 				}
 		else {
@@ -198,8 +178,6 @@ public class Editor : MonoBehaviour {
 			path="./temp.df";
 			saveState();
 			path=aux;
-			
-			//Debug.Log ("save");
 		}
 	}
 
@@ -215,6 +193,7 @@ public class Editor : MonoBehaviour {
 		if (Time.timeScale == 0) {
 						GameObject piece = (GameObject)Instantiate (Force, Force.transform.position, Force.transform.rotation);
 						piece.GetComponent<dominoPosition> ().adding = true;
+			selected=piece;
 				}
 	}
 
@@ -256,13 +235,11 @@ public class Editor : MonoBehaviour {
 		GameObject[] pieces = GameObject.FindGameObjectsWithTag("Player");
 		foreach (GameObject piece in pieces) Destroy (piece,0.0f);
 		selectedExists=false;
-		//Debug.Log ("load");
 		StreamReader sr = new StreamReader("./temp.df");
 		string fileContents = sr.ReadToEnd();
 		sr.Close();
 		
 		string[] lines = fileContents.Split(new char[] {'\n'});
-		//Debug.Log (lines[2]);
 		for (int i=1; i<lines.Length-1; i++) {
 			string[] vars = lines[i].Split(new char[] {' '});
 			Vector3 newpos= new Vector3 (float.Parse (vars[0]),0.5f,float.Parse(vars[1]));

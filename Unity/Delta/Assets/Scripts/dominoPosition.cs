@@ -6,15 +6,12 @@ public class dominoPosition : MonoBehaviour {
 	public bool forceApplyer;
 	public bool adding = false;
 	public float speed = 10f;
-
-
+	
 	private bool shot = false;
 
-	// Use this for initialization
 	void Start () {
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 		if (adding) {
 					Ray camRay = Camera.main.ScreenPointToRay (Input.mousePosition);
@@ -25,8 +22,10 @@ public class dominoPosition : MonoBehaviour {
 					}
 		}
 
-		if (Input.GetKeyDown (KeyCode.Mouse0))
+		if (Input.GetKeyDown (KeyCode.Mouse0)){
 						adding = false;
+						
+		}
 
 		if (forceApplyer && !shot && Time.timeScale==Editor.timescale) {
 			GetComponent<Rigidbody>().velocity = transform.forward * speed;
@@ -36,7 +35,6 @@ public class dominoPosition : MonoBehaviour {
 	void OnCollisionEnter (Collision collision){
 		if (forceApplyer && collision.gameObject.tag == "Player") {
 						gameObject.SetActive(false);
-						//Debug.Log ("lel");
 				}
 	}
 }

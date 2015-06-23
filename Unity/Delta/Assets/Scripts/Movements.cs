@@ -15,12 +15,10 @@ public class Movements : MonoBehaviour {
 	public float rangexz, rangey, steps;
 
 	public void Start(){
-		StartCoroutine(wot());
-
-		//robot.calculateWorkspace=false;
+		StartCoroutine(calc());
 	}
 
-	public IEnumerator wot(){
+	public IEnumerator calc(){
 		if (robot.calculateWorkspace){
 			
 			string content="";
@@ -53,6 +51,5 @@ public class Movements : MonoBehaviour {
 		t+=Time.deltaTime;
 		if ((w*t)>(2*Mathf.PI))t-=2*Mathf.PI/w;
 		if (!robot.calculateWorkspace)robot.Ocontrolled.Set (radius*Mathf.Sin (w*t),height,radius*Mathf.Cos (w*t));
-		//Debug.Log (robot.valid);
 	}
 }

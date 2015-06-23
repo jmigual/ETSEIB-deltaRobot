@@ -38,7 +38,6 @@ public class CameraController : MonoBehaviour {
 	}
 
 	void Update () {
-		//Debug.Log (centered);
 		if (!onlyZoom) update_objective ();
 		update_angles ();
 		if (!onlyZoom) update_transform();
@@ -48,7 +47,6 @@ public class CameraController : MonoBehaviour {
 	void update_objective (){
 		if (Input.GetKeyDown (KeyCode.Mouse2)){
 			Ray CamRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-			Debug.DrawRay (CamRay.origin, CamRay.direction);
 			RaycastHit floorHit;
 			if (Physics.Raycast (CamRay, out floorHit, camRayLength, 1)) {
 				switchingobjective=true;
@@ -96,18 +94,13 @@ public class CameraController : MonoBehaviour {
 		if (switchingobjective){
 			Vector3 error=ObjectiveDesired-obj_pos;
 			obj_pos=Vector3.Lerp(obj_pos, ObjectiveDesired, objectiveSwitchSpeed*Time.fixedDeltaTime/(Mathf.Pow (error.magnitude,0.5f)));
-			
-			//Debug.Log(error.magnitude);
 			if (error.magnitude<0.02)switchingobjective=false;
 		}
 		else{
 			if (centered)obj_pos=ObjectiveDesired;
-			Debug.DrawLine (transform.position, obj_pos);
 		}
 	}
 	void update_angles (){
-		//Debug.Log (desiredDistance);
-		//distance = Mathf.Clamp(distance - Input.GetAxis("Mouse ScrollWheel")*zoomspeed*Time.fixedDeltaTime, distanceMin, distanceMax);
 		desiredDistance = Mathf.Clamp(desiredDistance - Input.GetAxis("Mouse ScrollWheel")*zoomspeed*Time.fixedDeltaTime, distanceMin, distanceMax);
 		distance=Mathf.Lerp (distance,desiredDistance,10*Time.fixedDeltaTime);
 		size -= zoomspeed*Time.fixedDeltaTime*Input.GetAxis("Mouse ScrollWheel");
