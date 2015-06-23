@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99991 (MiKTeX 2.9) (preloaded format=xelatex 2015.2.25)  19 JUN 2015 02:03
+This is XeTeX, Version 3.14159265-2.6-0.99991 (MiKTeX 2.9) (preloaded format=xelatex 2015.2.25)  23 JUN 2015 13:29
 entering extended mode
 **Informe.tex
 (Informe.tex
@@ -1449,17 +1449,12 @@ Missing character: There is no � in font [lmmono8-regular]!
 
 ] (../Matlab/setAngles.m) [16]
 (../Matlab/calcWorkspace.m)) [17] (programacio.tex
-Underfull \hbox (badness 10000) in paragraph at lines 9--11
-
- []
-
-
-Overfull \hbox (40.52863pt too wide) in paragraph at lines 63--64
+Overfull \hbox (40.52863pt too wide) in paragraph at lines 75--76
 [][] 
  []
 
 [18]
-Overfull \hbox (5.34799pt too wide) in paragraph at lines 67--68
+Overfull \hbox (5.34799pt too wide) in paragraph at lines 80--81
 \EU1/lmr/m/n/12 En Unity s’han fet dos escenes, la principal (Main) i la del si
 mulador del robot ([]\EU1/lmtt/m/n/12 SimuladorRobot\EU1/lmr/m/n/12 ).
  []
@@ -1478,10 +1473,10 @@ Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 68.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 68.
  ) 
 Here is how much of TeX's memory you used:
- 36722 strings out of 428790
- 713457 string characters out of 3163801
- 1009582 words of memory out of 3000000
- 39549 multiletter control sequences out of 15000+200000
+ 36729 strings out of 428790
+ 713551 string characters out of 3163801
+ 1009586 words of memory out of 3000000
+ 39556 multiletter control sequences out of 15000+200000
  7801 words of font info for 46 fonts, out of 3000000 for 9000
  1096 hyphenation exceptions out of 8191
  55i,9n,67p,10379b,1826s stack positions out of 5000i,500n,10000p,200000b,50000s

@@ -76,7 +76,7 @@ void ServoThread::readPath(QString file)
     std::sort(temp.begin(), temp.end());
     
     _mutex.lock();
-    double sep = 0.8; // 2cm of separation
+    double sep = 0.6; // 0.5cm of separation
     QVector2D ori(posStart.toVector2D());
     
     _dominoe.clear();
@@ -289,6 +289,7 @@ void ServoThread::run()
         else if (_mod == Mode::Controlled) {
             switch(_status) {
             case Status::begin:
+                for (AX12 &a : A) a.setSpeed(speed/10.0);
                 pos = posStart;
                 if (this->isReady(S, pos, maxErr))  {
                     _status = Status::take;
@@ -299,6 +300,7 @@ void ServoThread::run()
             case Status::take:
                 pos[2] = workHeigh;
                 if (this->isReady(S, pos, maxErr)) {
+                    for (AX12 &a : A) a.setSpeed(speed);
                     emit statusBar("Esperant peça", -1);
                     _status = Status::waiting;
                 }
@@ -331,7 +333,10 @@ void ServoThread::run()
             {
                 Dominoe &domi = Dom[dom][pas];
                 pos = QVector4D (domi.X, domi.Y, workHeigh, domi.ori);
-                if (pos.x() < -4.9) pos[2] = workHeigh + 0.5;
+                if (pos.x() < 8.0) pos[2] = workHeigh + 0.3;
+                if (pos.x() < 7.5) pos[2] = workHeigh + 0.5;
+                if (pos.x() < 7.0) pos[2] = workHeigh + 0.6;
+                if (pos.x() < 2.0) pos[2] = workHeigh + 0.3;
                 double err;
                 pas == Dom[dom].size() - 1 ? err = maxErr : err = 2*maxErr;
                 
@@ -354,7 +359,7 @@ void ServoThread::run()
                 
                 if (this->isReady(S, pos, maxErr)) {
                     ++pas;
-                    if (pas == 3) {
+                    if (pas == 4) {
                         _status = Status::begin;
                         QThread::msleep(300);
                         if (dom == Dom.size() - 1) {

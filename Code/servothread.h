@@ -331,7 +331,7 @@ private:
     const double idleHeigh = 22.0;
     
     /// Descent height
-    const double descHeigh[3] = { 23.0, 22.7, 22.3 };
+    const double descHeigh[4] = { 23.5, 23.0, 22.0, 21.0 };
     
     /// Starting position for the controlled mode 
     const QVector4D posStart = QVector4D(11.5, 0.0f, idleHeigh, 150); 
