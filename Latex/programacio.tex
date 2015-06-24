@@ -13,13 +13,13 @@ Al programa se li carrega un arxiu que conté totes les peces de dominó (extens
 
 Per col·locar una peça es divideix la trajectòria en múltiples passos, aquí cada posició en un pas concret per a un dominó en concret es denota \verb|posicio[domino][pas]|.
 
-\subsubsection{Us del programa}
+\subsubsection{Ús del programa}
 
-Per fer anar el programa de control primer cal anar a \verb|Edit -> Options| i allà seleccionar els ID dels servos que s'utilitzen per a cada braç, el braç que està a sobre la plataforma és el 1 i els altres dos són el 2 i el 3 en sentit antihorari.
+Per fer anar el programa de control primer cal anar a \menu[,]{Edit, Options} i allà seleccionar els ID dels servos que s'utilitzen per a cada braç, el braç que està a sobre la plataforma és el 1 i els altres dos són el 2 i el 3 en sentit antihorari.
 Un cop seleccionat els servos llavors es pot seleccionar el mode:
 \begin{description}
-\item[Manual] permet controlar el robot mitjançant les tecles \verb|W, A, S, D| per moure'l; \verb|Q, E| per pujar i baixar i \verb|H, J| per girar la punta del robot.
-\item[Automàtic] començarà a executar el programa que se li hagi carregat prèviament, per carregar un programa anar a \verb|File -> Import|.
+\item[Manual] permet controlar el robot mitjançant les tecles \keys{W}, \keys{A}, \keys{S}, \keys{D} per moure'l; \keys{Q}, \keys{E} per pujar i baixar i \keys{H}, \keys{J} per girar la punta del robot.
+\item[Automàtic] començarà a executar el programa que se li hagi carregat prèviament, per carregar un programa anar a \menu[,]{File, Import}. Cada vegada que se li posa una peça a la posició marcada s'ha de prémer \keys{\return}.
 \end{description}
 
 
@@ -30,7 +30,7 @@ Un cop seleccionat els servos llavors es pot seleccionar el mode:
 \node(takeUp)[process, below = of take, text width = 4cm]{Augmentar altura fins altura de treball};
 
 \node(waitRead)[io, below = of takeUp]{Llegir teclat};
-\node(waitDeci)[decision, below = of waitRead]{Enter premut?};
+\node(waitDeci)[decision, below = of waitRead]{\keys{\return} premut?};
 
 \node(rotate)[process, below = of waitDeci, text width=5cm]{Girar peça els angles especificats};
 \node(init2)[process, below = of rotate]{pas = 1};

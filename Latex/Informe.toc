@@ -28,5 +28,5 @@
 \contentsline {section}{\numberline {4}Informe de programació}{18}{section.4}
 \contentsline {subsection}{\numberline {4.1}Control automàtic}{18}{subsection.4.1}
 \contentsline {subsubsection}{\numberline {4.1.1}Descripció del programa}{18}{subsubsection.4.1.1}
-\contentsline {subsubsection}{\numberline {4.1.2}Us del programa}{18}{subsubsection.4.1.2}
+\contentsline {subsubsection}{\numberline {4.1.2}Ús del programa}{18}{subsubsection.4.1.2}
 \contentsline {subsection}{\numberline {4.2}Unity}{19}{subsection.4.2}
