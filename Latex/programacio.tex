@@ -74,9 +74,23 @@ Un cop seleccionat els servos llavors es pot seleccionar el mode:
 \draw [arrow] (goingEnd2) -- node[near start]{si} (end);
 \end{tikzpicture}
 
-
+\newpage
 \subsection{Unity}
 
+\subsubsection{El programa}
+
+En Unity s'ha volgut fer un editor complet en el que es pugui navegar per l'espai de treball, afegir peces amb diferents eines, provar si el circuit dissenyat és correcte i finalment enviar la posició i angle de gir de cada peça al programa que controla el robot. Funciona de la següent manera:
+
+Un cop s'executa el programa es troba en el mode editor on el temps està aturat. En aquest mode es pot moure la càmera utilitzant els botons \keys{W} \keys{A} \keys{S} \keys{D} i canviar l'orientació fent clic i arrossegant el botó dret del ratolí. Si es fa clic central en un objecte la càmera automàticament es centrarà en ell.
+
+En quant a editar, hi ha dues maneres de fer-ho. Es pot clicar el botó de baix a l'esquerra amb la imatge d'una peça de domino i automàticament apareixerà una peça al cursor que es pot moure lliurement pel pla del terra, i deixar-la tornant a clicar (botó esquerre del ratolí). Un cop fet això es pot seleccionar la peça, que es posarà de color vermell. Si es prem \keys{T} apareixeran uns eixos que serveixen per acabar de col·locar de forma precisa la peça clicant i arrossegant l'eix que desitgem amb el clic esquerre. El mateix es pot fer per rotar la peça prement \keys{R}, encara que en aquest cas només és útil una rotació, la de l'eix vertical. En qualsevol moment es pot cancel·lar el mode editor actual tornant a clicar la tecla amb què s'ha iniciat (\keys{R} o \keys{T}). Seguint exactament el mateix procediment però clicant el botó de \keys{Add Force} es poden afegir unes fletxes que serviran de forces per comprovar que el circuit funciona.
+
+La segona manera i la més còmode d'utilitzar per fer circuits de peces és la de "dibuixar". Si es clica \keys{Let's draw!} la càmera automàticament es posarà en una vista aèria. Si ara es fa clic esquerre comença a posar peces per on es fa passar el ratolí, fins que es torna a fer clic. Les peces automàticament es posen en la direcció i distància les unes de les altres necessàries perquè el circuit funcioni, però pot ser que hagi sortit malament, així que si es prem \keys{\del} estant en el mode de dibuix totes les peces s'eliminen. Per acabar, es prem \keys{\esc} i torna al mode editor, on es poden retocar les peces que es vulguin.
+
+Per acabar, es fa clic a \keys{Play}. La fletxa avançarà endavant fins trobar-se una peça de dominó, empenyent-la i començant la reacció en cadena del circuit. Es pot utilitzar la barra de dalt a la dreta per augmentar o disminuir la velocitat en la que cauen les peces, encara que no és recomanable pujar-la massa per qüestions de rendiment del programa. Si s'acaba satisfet amb el comportament del circuit, es pot tornar a clicar el botó que abans es deia \keys{Play}, que ara té el nom de \keys{Pause}. Les peces es tornaran a posar com estaven abans de ferles caure i llavors es pot acabar amb el botó \keys{Save State}. Aquest botó actualitzara el document que s'utilitza per informar al programa principal de la posició de les peces.
+
+
+\subsubsection{Documentació del codi}
 En Unity s'han fet dos escenes, la principal (Main) i la del simulador del robot (\verb|SimuladorRobot|). Els scripts que s'han usat al Main són: 
 \begin{itemize}
 \item \verb|CameraController|: Permet moure la càmera i fer zoom.
